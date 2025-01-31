@@ -9,6 +9,8 @@ import ContactUs from "../UI/ContactUs/ContactUs";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProductCard from "@/components/UI/ProductCard/ProductCard";
+import ScrollableTable from "./ScrollableTable/ScrollableTable";
+import SubscribeAndShare from "../UI/SubscribeAndShare/SubscribeAndShare";
 export default function SingleNews({ data }) {
   const router = useRouter();
   const [activeButton, setActiveButton] = useState("");
@@ -29,7 +31,8 @@ export default function SingleNews({ data }) {
 
   return (
     <section className={styles.container}>
-      <div className={styles.leftContainer} onClick={handleBack}>
+    <div className={styles.containerInner}>
+    <div className={styles.leftContainer} onClick={handleBack}>
         <img src="/images/icons/back-arrow.svg" alt="" />
         Вернуться к новостям
       </div>
@@ -37,7 +40,7 @@ export default function SingleNews({ data }) {
         <div className={styles.newsInfo}>
           <div className={styles.newsDate}>{data.date}</div>
           <div className={styles.author}>
-            <author>Автор: </author>
+            <span>Автор: </span>
             {data.author}
           </div>
         </div>
@@ -158,8 +161,22 @@ export default function SingleNews({ data }) {
           </div>
         </div>
         {/* <LeaveRequestBanner /> */}
-       
+        <div className={styles.videoWrapper}>
+          <video autoPlay muted loop controls={false} style={{ width: "100%", height: "100%"}}>
+            <source
+              src="https://s3-figma-videos-production-sig.figma.com/video/1026790075068458266/TEAM/a4c9/e0ac/-db43-44cb-830e-b496539a502f?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o2QmQh1iCp-t7~rWg6ar3BW~eQhkMZHp7nPq5g7mO69zyYdB~Mjc8mWJejLMN5qXL1baSM-f~cG08b1hnBvFPHxaIA8AOhUgG7Y6KGdHIkwrXat8GpiTVdKXFJsbBhP-ezf5lKRLbCDLo8Sh36TOPkdNzLiKMd~HDwYIgtsuRF2yxvR1UNspMmwPYfnxBenLPvpAzIT0EJkjxrZNDzWnOA~9bwBOBKUfnM65LyzZbwHkVJ-baQtKtKA3W~~BcYe6zRVEq~vF1eMyFfvb55uVvxa7zKLoJFysjs401zL14FUlj77aM4cujrJE0wCCPHRspVRGFctJPe7AgewJY1-P0w__"
+              type="video/mp4"
+            />
+          </video>
+      
+          {/* <div className={styles.playIcon}>
+              <img src="/images/icons/play.svg" alt="play" />
+            </div> */}
+        </div>
+        <ScrollableTable />
+        <SubscribeAndShare />
       </div>
+     
       <div className={styles.rightContainer}>
         {/* <div>
           <div>Приглашаем к сотрудничеству</div>
@@ -170,7 +187,9 @@ export default function SingleNews({ data }) {
           <div>Оставить заявку</div>
         </div> */}
       </div>
-      {/* <ContactUs /> */}
+    </div>
+      <ContactUs />
+    
     </section>
   );
 }

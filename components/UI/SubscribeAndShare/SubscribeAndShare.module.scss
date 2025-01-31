@@ -1,0 +1,91 @@
+@import "/styles/variables";
+
+.subscribeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .title {
+    font-family: "DIN Pro medium", sans-serif;
+    color: $dark-gray;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36.4px;
+    letter-spacing: -0.02em;
+  }
+  .mailCOntainer {
+    display: flex;
+    gap: 24px;
+  }
+  .subscribe {
+    font-family: "DIN Pro medium", sans-serif;
+    padding: 21px 32px;
+    color: $white;
+    background-color: $main-blue;
+    cursor: pointer;
+    border-radius: 10px;
+    @each $property, $value in $b18-medium {
+      #{$property}: #{$value};
+    }
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+  .input {
+    width: 100%;
+    @each $property, $value in $b18-medium {
+      #{$property}: #{$value};
+    }
+    padding: 16px;
+    font-size: 16px;
+    font-family: "DIN Pro medium", sans-serif;
+    color: #2e363d;
+    background-color: #efefef;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: #2e363d;
+      opacity: 0.34;
+    }
+
+    &:focus {
+      box-shadow: 0 0 4px 2px rgba(0, 112, 243, 0.4); // Голубая тень при фокусе
+    }
+  }
+  .info {
+    font-family: "DIN Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    letter-spacing: -0.02em;
+    color: #2e333d4d;
+
+    a {
+      font-family: "DIN Pro", sans-serif;
+      color: #2e333d;
+    }
+  }
+
+  .shareContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    .titel {
+      font-family: "DIN Pro medium", sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 36.4px;
+      letter-spacing: -0.02em;
+      margin-right: 56px;
+      color: $dark-gray;
+    }
+    .icons {
+      display: flex;
+      gap: 10px;
+    }
+  }
+ 
+}

@@ -3,6 +3,7 @@
 .container {
   display: flex;
   padding: 0 30px 40px 30px;
+  flex-direction: column;
  
 
   @media (max-width: 1600px) {
@@ -13,6 +14,9 @@
   }
   @media (max-width: 640px) {
     padding: 0px 10px 24px 10px;
+  }
+  .containerInner {
+    display: flex;
   }
   .leftContainer {
     margin-right: 59px;
@@ -64,7 +68,7 @@
         font-family: "DIN Pro medium", sans-serif;
         @each $property, $value in $b18-medium {
           #{$property}: #{$value};
-          author {
+          span {
             color: $main-blue;
           }
         }
@@ -354,6 +358,28 @@
           color: $dark-gray;
           border-left: 1px #004985 solid;
         }
+      }
+    }
+    .videoWrapper {
+      margin-top: 64px;
+      width: 100%;
+      border-radius: 10px;
+      height: 100%;
+      background-color: #000;
+      overflow: hidden;
+      max-height: 591px;
+      video {
+        width: 100%;
+        height: 100%;
+        
+      }
+
+      .playIcon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
       }
     }
   }

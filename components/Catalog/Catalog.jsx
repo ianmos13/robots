@@ -18,7 +18,7 @@ import CompletedProjectsSlider from "./CompletedProjectsSlider/CompletedProjects
 export default function Catalog() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [activeView, setActiveView] = useState("cardView");
-  const [selectedFilters, setSelectedFilters] = useState([]);  
+  const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredRobots, setFilteredRobots] = useState(robotsList);
   const [currentPage, setCurrentPage] = useState(1);
   const { isTabletView, isMobileView, isDescktopView } = useDeviceType();
@@ -30,28 +30,30 @@ export default function Catalog() {
   const totalPages = Math.ceil(filteredRobots.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredRobots.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredRobots.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const handleViewChange = (view) => {
     setActiveView(view);
   };
 
- 
   const removeFilter = (filter) => {
     setSelectedFilters((prev) => prev.filter((item) => item !== filter));
   };
 
- 
   const clearFilters = () => {
     setSelectedFilters([]);
   };
-
 
   useEffect(() => {
     let filtered = robotsList;
 
     if (selectedCategory !== "all") {
-      filtered = filtered.filter((robot) => robot.category === selectedCategory);
+      filtered = filtered.filter(
+        (robot) => robot.category === selectedCategory
+      );
     }
 
     selectedFilters.forEach((filter) => {
@@ -84,7 +86,10 @@ export default function Catalog() {
         );
       }
       if (filter.startsWith("Вес: ")) {
-        const weight = parseInt(filter.replace("Вес: ", "").replace(" кг", ""), 10);
+        const weight = parseInt(
+          filter.replace("Вес: ", "").replace(" кг", ""),
+          10
+        );
         filtered = filtered.filter((r) => r.weight === weight);
       }
     });
@@ -106,7 +111,6 @@ export default function Catalog() {
           <ProductCardLong robot={robot} />
         )}
 
-     
         {((isMobileView &&
           (index === 2 ||
             (index === currentProducts.length - 1 && index < 2))) ||
@@ -145,8 +149,7 @@ export default function Catalog() {
               className={`${styles.cardView} ${
                 activeView === "cardView" ? styles.active : ""
               }`}
-              onClick={() => handleViewChange("cardView")}
-            >
+              onClick={() => handleViewChange("cardView")}>
               <img
                 src={
                   activeView === "cardView"
@@ -160,8 +163,7 @@ export default function Catalog() {
               className={`${styles.rowView} ${
                 activeView === "rowView" ? styles.active : ""
               }`}
-              onClick={() => handleViewChange("rowView")}
-            >
+              onClick={() => handleViewChange("rowView")}>
               <img
                 src={
                   activeView === "rowView"
@@ -178,8 +180,7 @@ export default function Catalog() {
           {(isTabletView || isMobileView) && (
             <div
               className={styles.filterButton}
-              onClick={() => setFiltersModalOpen(true)}
-            >
+              onClick={() => setFiltersModalOpen(true)}>
               <img src="/images/icons/mobile-filters.svg" alt="Фильтры" />
             </div>
           )}
@@ -189,8 +190,7 @@ export default function Catalog() {
                 <div
                   key={index}
                   className={styles.active}
-                  onClick={() => removeFilter(filter)}
-                >
+                  onClick={() => removeFilter(filter)}>
                   {filter}
                   <img src="/images/icons/x-blue.svg" alt="Удалить" />
                 </div>
@@ -206,7 +206,6 @@ export default function Catalog() {
         </div>
 
         <div className={styles.productContainer}>
-        
           {isDescktopView && (
             <Filters
               selectedFilters={selectedFilters}
@@ -216,22 +215,21 @@ export default function Catalog() {
 
           {!isDescktopView && (
             <FiltersModal
-            isOpen={isFiltersModalOpen}
-            onClose={() => setFiltersModalOpen(false)}
-            selectedFilters={selectedFilters}
-            onApply={(newFilters) => {
-              setSelectedFilters(newFilters); 
-              setFiltersModalOpen(false);
-            }}
-          />
+              isOpen={isFiltersModalOpen}
+              onClose={() => setFiltersModalOpen(false)}
+              selectedFilters={selectedFilters}
+              onApply={(newFilters) => {
+                setSelectedFilters(newFilters);
+                setFiltersModalOpen(false);
+              }}
+            />
           )}
 
           <div className={styles.productContainerInner}>
             <div
               className={`${styles.products} ${
                 activeView === "rowView" ? styles.rowView : ""
-              }`}
-            >
+              }`}>
               {currentProducts.length > 0 ? (
                 renderProducts()
               ) : (
@@ -295,8 +293,7 @@ const faqData = [
   },
   {
     question: "Область применения систем автоматизации",
-    answer:
-      "Системы автоматизации используются в автомобилестроении...",
+    answer: "Системы автоматизации используются в автомобилестроении...",
   },
   {
     question: "Развитие сферы роботизации",
