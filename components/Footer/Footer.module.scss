@@ -9,13 +9,21 @@
         display: flex;
         flex-direction: column;
         gap: 99px;
-        padding: 47px 60px 22px 30px;
+        padding: 50px 60px 22px 30px;
+
+        @media (max-width: 1600px) {
+            gap: 96px;
+            padding: 50px 50px 56px 30px;
+        }
 
         .footerLogo {
             margin-left: 6px;
             width: 225px;
             height: 26px;
             position: relative;
+            @media (max-width: 1600px) {
+                margin-left: 0;
+            }
 
             .logoContainer {
                 img {
@@ -31,6 +39,11 @@
             display: flex;
             flex-direction: row;
             gap: 120px;
+
+            @media (max-width: 1600px) {
+                flex-direction: column;
+                gap: 100px;
+            }
         }
 
         .footerInfo {
@@ -38,6 +51,10 @@
             display: flex;
             flex-direction: column;
             gap: 90px;
+            @media (max-width: 1600px) {
+                margin-top: 18px;
+                gap: 50px;
+            }
 
             .footerContacts {
                 display: flex;
@@ -49,6 +66,11 @@
                     display: flex;
                     flex-direction: row;
                     gap: 132px;
+
+                    @media (max-width: 1600px) {
+                        gap: 37px;
+                        flex-direction: column;
+                    }
                 }
 
                 .footerContactsEmail {
@@ -133,9 +155,18 @@
     flex-direction: column;
     gap: 30px;
 
+    @media (max-width: 1600px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .linkElement {
         max-width: 250px;
         width: 100%;
+        @media (max-width: 1600px) {
+            max-width: unset;
+            width: unset;
+        }
     }
 }
 
