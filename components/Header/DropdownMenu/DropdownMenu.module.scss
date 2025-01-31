@@ -1,0 +1,43 @@
+@import "/styles/variables";
+
+.container {
+    width: 100%;
+    min-height: calc(100vh - 124px);
+    background-color: $white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+
+    .menuContainer, .childrenContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .elementContainer {
+        width: 100%;
+    }
+
+    .buttonContainer {
+        width: 245px;
+
+        @media (max-width: 640px) {
+            width: 100%;
+        }
+    }
+
+    .link {
+        cursor: pointer;
+        text-decoration: none;
+        color: $dark-gray;
+        font-family: "DIN Pro medium", sans-serif;
+        letter-spacing: -0.02em;
+        @each $property, $value in $b32-medium {
+            #{$property}: #{$value};
+        }
+    }
+}

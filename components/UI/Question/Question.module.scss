@@ -1,0 +1,80 @@
+@import "/styles/variables";
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionItem {
+  border: 1px solid rgba(50, 50, 50, 0.1);
+  padding: 18px 17px;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 16px;
+  border-radius: 7px;
+  flex-direction: column;
+  @media (max-width: 1024px) {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 640px) {
+    margin-bottom: 8px;
+  }
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: "DIN Pro medium", sans-serif;
+  letter-spacing: -0.48px;
+  @each $property, $value in $b18-medium {
+    #{$property}: #{$value};
+    @media (max-width: 640px) {
+      font-size: 16px;
+
+      line-height: 130%;
+      letter-spacing: -0.32px;
+    }
+  }
+}
+.toggleButton {
+  background-color: $main-blue;
+
+  border: none;
+  width: 45px;
+  height: 45px;
+  padding: 11px 10px 10px 11px;
+  border-radius: 7px;
+
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plusIcon {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotated {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    margin-top 0.3s ease-in-out;
+  opacity: 0;
+  font-family: "DIN Pro ", sans-serif;
+  font-weight: normal;
+  @each $property, $value in $b18-medium {
+    #{$property}: #{$value};
+  }
+}
+
+.show {
+  max-height: 100px;
+  opacity: 1;
+  margin-top: 70px;
+}

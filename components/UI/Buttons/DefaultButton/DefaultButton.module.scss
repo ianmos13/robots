@@ -1,0 +1,61 @@
+@import "/styles/variables";
+
+.buttonContainer {
+    width: 100%;
+    min-width: 245px;
+    overflow: hidden;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $main-blue;
+    background-color: $white;
+    padding: 8px;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        height: 90px;
+    }
+
+    @media (max-width: 640px) {
+        height: 64px;
+    }
+
+    .text {
+        font-family: "DIN Pro condensedbold", sans-serif;
+        color: $main-blue;
+        letter-spacing: -0.02em;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 26px;
+    }
+
+    &:hover {
+        background-color: $blue-hover;
+
+        .text {
+            color: $white;
+        }
+    }
+}
+
+.whiteContainer {
+    height: 64px;
+    border: unset;
+
+    .text {
+        font-family: "DIN Pro condensedbold", sans-serif;
+        color: $dark-gray;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 26.4px;
+    }
+
+    &:hover {
+        background-color: $blue-hover;
+
+        .text {
+            color: $white;
+        }
+    }
+}

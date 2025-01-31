@@ -1,0 +1,331 @@
+@import "/styles/variables";
+
+.moreInfoContainer {
+    display: flex;
+    gap: 110px;
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            margin-bottom: 42px;
+            color: #000;
+            font-family: "DIN Pro medium", sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%;
+            letter-spacing: -0.24px;
+        }
+
+        .btnContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+            font-family: "DIN Pro medium", sans-serif;
+            letter-spacing: -0.48px;
+
+            @each $property, $value in $b24-medium {
+                #{$property}: #{$value};
+            }
+        }
+
+        .requestBatton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 340px;
+            transition: background-color 0.3s;
+            padding: 20px;
+            font-family: "DIN Pro medium", sans-serif;
+            color: $white;
+            background-color: $main-blue;
+            border-radius: 7px;
+            border: none;
+            width: max-content;
+            letter-spacing: -0.44px;
+            font-size: 22px;
+            font-style: normal;
+            line-height: 120%;
+            letter-spacing: -0.44px;
+
+            &:hover {
+                background-color: $blue-hover;
+            }
+        }
+    }
+
+    .rightSection {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        max-width: 1233px;
+    }
+
+    .btnContainer {
+        display: flex;
+        gap: 10px;
+
+        .btn {
+            cursor: pointer;
+            padding: 10px 20px 12px 20px;
+            border-radius: 7px;
+            border: 1px solid #c6dff5b2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "DIN Pro medium", sans-serif;
+
+            @each $property, $value in $b20-medium {
+                #{$property}: #{$value};
+            }
+        }
+
+        .btn.active {
+            border-color: $main-blue;
+            color: $main-blue;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .addInfoList {
+            font-family: "DIN Pro", sans-serif;
+
+            @each $property, $value in $b24-regular {
+                #{$property}: #{$value};
+            }
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+
+                li {
+                    position: relative;
+                    padding-left: 25px;
+                    margin-bottom: 30px;
+
+                    &::before {
+                        content: "•";
+                        position: absolute;
+                        left: 0;
+                        color: #000;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .technicalInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.imageContainer {
+    margin: 20px 0;
+    text-align: center;
+    max-width: 1233px;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.10);
+
+
+
+    }
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.techTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "DIN Pro", sans-serif;
+
+    tr {
+        border-bottom: 1px solid #eee;
+    }
+
+    td {
+        padding: 12px 8px;
+        vertical-align: middle;
+        height: 64px;
+        font-family: "DIN Pro";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.36px;
+        opacity: 0.5;
+    }
+
+    td:first-child {
+        color: var(--Text, #323232);
+        opacity: 1;
+
+        @each $property, $value in $b18-medium {
+            #{$property}: #{$value};
+        }
+
+        font-family: "DIN Pro medium",
+        sans-serif;
+
+        letter-spacing: -0.36px;
+    }
+}
+
+.showMore {
+    cursor: pointer;
+    font-family: "DIN Pro bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    color: $main-blue;
+
+
+}
+
+.downloadContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #c6dff5b2;
+    padding: 27px 34px;
+
+    .downladCharacter {
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+        font-family: "DIN Pro medium", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 31.2px;
+
+        gap: 26px;
+
+        img {
+            width: 40px;
+            height: 40px;
+
+        }
+    }
+
+    .downloadIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        position: relative;
+        border-radius: 100px;
+        border: 1.396px solid rgba(50, 50, 50, 0.1);
+        padding: 13px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background 0.3s ease;
+      
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: $main-blue;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: width 0.3s ease, height 0.3s ease;
+          z-index: -1;
+        }
+      
+        &:hover::before {
+          width: 150%;
+          height: 150%;
+        }
+      
+        img {
+          transition: opacity 0.3s ease;
+        }
+      
+        &:hover img {
+          content: url("/images/icons/download-white-without.svg");
+        }
+      }
+
+
+}
+
+.howItWorks {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .videoWrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+        source {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+  
+        .playIcon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+        }
+      }
+}
+.robotContains{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gridContainer {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+@keyframes moveIcon {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    45% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    55% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

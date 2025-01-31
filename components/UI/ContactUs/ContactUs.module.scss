@@ -1,0 +1,471 @@
+@import '/styles/variables';
+
+.container {
+	padding: 30px;
+	.contactUs {
+		min-height: 482px;
+		display: flex;
+		flex-direction: row;
+		gap: 100px;
+		justify-content: space-between;
+		.addInfo {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 40px;
+			.title {
+				max-width: 450px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 40px;
+				h4 {
+					font-family: 'DIN Pro Bold', sans-serif;
+					font-weight: 700;
+					font-size: 30px;
+					line-height: 36px;
+					letter-spacing: -0.03em;
+				}
+			}
+			.text {
+				max-width: 633px;
+				font-family: 'DIN Pro Medium', sans-serif;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 31.2px;
+				letter-spacing: -0.04em;
+			}
+		}
+
+		.contactForm {
+			width: 100%;
+			max-width: 920px;
+			@media (max-width: 1600px) {
+				max-width: 685px;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				.inputContainer {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+					.rowContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 20px;
+						.formRow {
+							display: flex;
+							gap: 20px;
+							input,
+							textarea {
+								width: 100%;
+								padding: 23px 24px;
+								border: none;
+								border-radius: 15px;
+								font-family: 'DIN Pro', sans-serif;
+								font-weight: 400px;
+								font-size: 20px;
+								line-height: 26px;
+								letter-spacing: -0.03em;
+								color: #9ea8af;
+								outline: none;
+								&::placeholder {
+									color: #9ea8af;
+								}
+							}
+							textarea {
+								resize: vertical;
+								height: 164px;
+							}
+						}
+					}
+				}
+
+				.consent {
+					display: flex;
+					align-items: center;
+					gap: 14px;
+
+					.checkBox {
+						position: absolute;
+						opacity: 0;
+						z-index: -1;
+					}
+
+					.checkBox + label {
+						position: relative;
+						padding-left: 34px;
+						cursor: pointer;
+						user-select: none;
+						font-family: 'DIN Pro', sans-serif;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 18.2px;
+						letter-spacing: -0.04em;
+					}
+
+					.checkBox + label .customMarker {
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 20px;
+						height: 20px;
+						border: 1px solid #0000001a;
+						border-radius: 3px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						transition: background-color 0.3s, border-color 0.3s;
+					}
+
+					.checkBox + label .customMarker svg {
+						display: none;
+					}
+
+					.checkBox:checked + label .customMarker svg {
+						display: block;
+					}
+
+					label {
+						font-family: 'DIN Pro', sans-serif;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 18.2px;
+						letter-spacing: -0.04em;
+					}
+				}
+
+				.submitButton {
+					height: 64px;
+					background-color: $main-blue;
+					color: #f5f5f5;
+					border: none;
+					border-radius: 8px;
+					padding: 22px;
+					cursor: pointer;
+					transition: background-color 0.3s;
+					font-family: 'DIN Pro Condensedbold', sans-serif;
+					line-height: 20px;
+					font-size: 20px;
+					letter-spacing: normal;
+					&:hover {
+						background-color: $blue-hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 20px;
+		.contactUs {
+			min-height: unset;
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			gap: 42px;
+			.addInfo {
+				display: flex;
+				flex-direction: column;
+				justify-content: start;
+				gap: 42px;
+				.title {
+					max-width: unset;
+					display: flex;
+					flex-direction: row;
+					align-items: start;
+					justify-content: space-between;
+					gap: 10px;
+
+					h4 {
+						max-width: 450px;
+						font-weight: 700;
+						font-size: 30px;
+						line-height: 39px;
+						letter-spacing: -0.02em;
+					}
+				}
+				.text {
+					max-width: unset;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 31.2px;
+					letter-spacing: -0.04em;
+				}
+			}
+			.contactForm {
+				width: 100%;
+				max-width: unset;
+				form {
+					display: flex;
+					flex-direction: column;
+					gap: 40px;
+					.inputContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 24px;
+						.rowContainer {
+							display: flex;
+							flex-direction: column;
+							gap: 10px;
+							.formRow {
+								display: flex;
+								gap: 10px;
+								input,
+								textarea {
+									width: 100%;
+									padding: 23px 24px;
+									border: none;
+									border-radius: 7px;
+									font-weight: 400px;
+									font-size: 20px;
+									line-height: 26px;
+									letter-spacing: -0.03em;
+									color: #9ea8af;
+									outline: none;
+									&::placeholder {
+										color: #9ea8af;
+									}
+								}
+								textarea {
+									resize: vertical;
+									height: 216px;
+								}
+							}
+						}
+					}
+
+					.consent {
+						display: flex;
+						align-items: center;
+						gap: 13px;
+
+						.checkBox {
+							position: absolute;
+							opacity: 0;
+							z-index: -1;
+						}
+
+						.checkBox + label {
+							position: relative;
+							padding-left: 40px;
+							cursor: pointer;
+							user-select: none;
+							font-size: 16px;
+							font-weight: 400;
+							line-height: 19.2px;
+							letter-spacing: -0.02em;
+						}
+
+						.checkBox + label .customMarker {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							width: 27px;
+							height: 27px;
+							border: 1px solid #0000001a;
+							border-radius: 3px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							transition: background-color 0.3s, border-color 0.3s;
+						}
+
+						.checkBox + label .customMarker svg {
+							display: none;
+						}
+
+						.checkBox:checked + label .customMarker svg {
+							display: block;
+						}
+
+						label {
+							font-family: 'DIN Pro', sans-serif;
+							font-size: 16px;
+							font-weight: 400;
+							line-height: 19.2px;
+							letter-spacing: -0.02em;
+						}
+					}
+
+					.submitButton {
+						background-color: $main-blue;
+						color: #f5f5f5;
+						border: none;
+						border-radius: 8px;
+						padding: 21px 0 17px 0;
+						cursor: pointer;
+						transition: background-color 0.3s;
+						line-height: 20px;
+						font-size: 20px;
+						letter-spacing: normal;
+						&:hover {
+							background-color: $blue-hover;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.container {
+		padding: 10px;
+		.contactUs {
+			min-height: unset;
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			gap: 24px;
+			.addInfo {
+				display: flex;
+				flex-direction: column;
+				justify-content: start;
+				gap: 16px;
+				.title {
+					max-width: unset;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					gap: 16px;
+					h4 {
+						max-width: 266px;
+						font-weight: 700;
+						font-size: 20px;
+						line-height: 26px;
+						letter-spacing: -0.02em;
+					}
+				}
+				.text {
+					max-width: 633px;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 18.2px;
+					letter-spacing: -0.04em;
+				}
+			}
+			.contactForm {
+				width: 100%;
+				max-width: unset;
+				form {
+					display: flex;
+					flex-direction: column;
+					gap: 24px;
+					.inputContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 24px;
+						.rowContainer {
+							display: flex;
+							flex-direction: column;
+							gap: 10px;
+							.formRow {
+								display: flex;
+								flex-direction: column;
+								gap: 10px;
+								input,
+								textarea {
+									width: 100%;
+									padding: 18px 20px 17px 20px;
+									border: none;
+									border-radius: 7px;
+									font-weight: 400px;
+									font-size: 16px;
+									line-height: 20.8px;
+									letter-spacing: -0.03em;
+									color: #9ea8af;
+									outline: none;
+									&::placeholder {
+										color: #9ea8af;
+									}
+								}
+								textarea {
+									resize: vertical;
+									height: 112px;
+								}
+							}
+						}
+					}
+
+					.consent {
+						display: flex;
+						align-items: center;
+						gap: 14px;
+
+						.checkBox {
+							position: absolute;
+							opacity: 0;
+							z-index: -1;
+						}
+
+						.checkBox + label {
+							position: relative;
+							padding-left: 45px;
+							cursor: pointer;
+							user-select: none;
+							font-size: 16px;
+							font-weight: 400;
+							line-height: 19.2px;
+							letter-spacing: -0.02em;
+						}
+
+						.checkBox + label .customMarker {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							width: 27px;
+							height: 27px;
+							border: 1px solid #3232324d;
+							border-radius: 7px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							transition: background-color 0.3s, border-color 0.3s;
+						}
+
+						.checkBox + label .customMarker svg {
+							display: none;
+						}
+
+						.checkBox:checked + label .customMarker svg {
+							display: block;
+						}
+
+						label {
+							font-size: 16px;
+							font-weight: 400;
+							line-height: 19.2px;
+							letter-spacing: -0.02em;
+						}
+					}
+
+					.submitButton {
+						height: 56px;
+						background-color: $main-blue;
+						color: #f5f5f5;
+						border: none;
+						border-radius: 7px;
+						padding: 18px;
+						cursor: pointer;
+						transition: background-color 0.3s;
+						line-height: 20px;
+						font-size: 20px;
+						letter-spacing: -0.02em;
+						letter-spacing: normal;
+						&:hover {
+							background-color: $blue-hover;
+						}
+					}
+				}
+			}
+		}
+	}
+}

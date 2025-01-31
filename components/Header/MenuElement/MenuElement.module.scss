@@ -1,0 +1,46 @@
+@import '/styles/variables';
+
+.container {
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "DIN Pro medium", sans-serif;
+    color: $dark-gray;
+    letter-spacing: -0.03em;
+    @each $property, $value in $b17-medium {
+        #{$property}: #{$value};
+    }
+}
+
+.dropdownMenuWrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s linear, opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+    position: absolute;
+    top: 80px;
+    z-index: 1001;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 #0000000D;
+
+    .dropdownMenu {
+        overflow: hidden;
+        width: 184px;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+
+        .dropdownElement {
+            list-style: none;
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,55 @@
+@import "/styles/variables";
+
+.pdfBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    text-decoration: none;
+    background-color: $white;
+    height: max-content;
+    padding: 8px 11px;
+    border-radius: 7px;
+    color: $main-blue;
+    font-family: "DIN Pro medium", sans-serif;
+    @each $property, $value in $b18-medium {
+      #{$property}: #{$value};
+    }
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+     background-color: #C6DFF566;
+
+
+  
+      .pdfIcon {
+        animation: moveIcon 0.5s ease forwards;
+      }
+    }
+  }
+  
+  .pdfIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+  }
+  
+  @keyframes moveIcon {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    45% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    55% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

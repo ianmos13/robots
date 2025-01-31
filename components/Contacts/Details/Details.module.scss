@@ -1,0 +1,122 @@
+.container {
+	padding: 0 30px 126px 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 32px;
+	.headerContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.header {
+			font-weight: 700;
+			font-size: 30px;
+			line-height: 39px;
+			color: #323232;
+			font-family: 'DIN Pro bold', sans-serif;
+		}
+		.buttonContainer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50px;
+			width: auto;
+			font-family: 'DIN Pro medium', sans-serif;
+		}
+	}
+
+	.infoContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.name {
+			padding: 20px 0;
+			display: flex;
+			align-items: center;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 27px;
+			letter-spacing: -0.03em;
+			color: #323232;
+			font-family: 'DIN Pro medium', sans-serif;
+		}
+
+		.rowContainer {
+			padding: 20px 0;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			border-top: 1px solid #3232321a;
+
+			.description {
+				flex: 2 1;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 27px;
+				letter-spacing: -0.03em;
+				color: #323232;
+				font-family: 'DIN Pro medium', sans-serif;
+			}
+
+			.text {
+				flex: 11 1;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 27px;
+				letter-spacing: -0.03em;
+				color: #32323280;
+				font-family: 'DIN Pro', sans-serif;
+			}
+		}
+		.rowContainer:last-child {
+			border-bottom: 1px solid #3232321a;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 0 20px 116px 20px;
+		gap: 40px;
+		.infoContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.rowContainer {
+				padding: 24px 0;
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+				justify-content: center;
+				align-items: unset;
+			}
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.container {
+		padding: 0 10px 60px 10px;
+		gap: 23px;
+		.headerContainer {
+			.buttonContainer {
+				display: none;
+			}
+		}
+		.infoContainer {
+			.name {
+				padding: 23px 0;
+			}
+			.rowContainer {
+				padding: 20px 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: unset;
+				gap: 16px;
+			}
+		}
+	}
+}

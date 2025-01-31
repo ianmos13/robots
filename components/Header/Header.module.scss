@@ -1,0 +1,162 @@
+@import "/styles/variables";
+
+.container {
+    margin: 0 auto;
+    max-width: 1920px;
+    position: relative;
+    width: 100%;
+    height: 130px;
+    padding: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: unset;
+    transition: all 0.3s ease;
+    gap: 16px;
+
+    @media (max-width: 1024px) {
+        height: 135px;
+        padding: 30px 30px 0 30px;
+    }
+
+    @media (max-width: 1024px) {
+        height: 124px;
+        padding: 20px 20px 0 20px;
+    }
+
+    @media (max-width: 730px) {
+        height: 72px;
+        padding: 10px;
+    }
+
+    .hiddenElement {
+        @media (max-width: 1024px) {
+            opacity: 0;
+            visibility: hidden;
+            cursor: unset;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .headerBody {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 5px;
+        height: 66px;
+        @media (max-width: 730px) {
+            height: 52px;
+        }
+
+        .logoContainer {
+            width: 208px;
+            min-width: 208px;
+            padding: 23px 15px;
+            background: #0149BF05;
+            border-radius: 8px;
+            @media (max-width: 730px) {
+                order: 1;
+                padding: 18px 12px;
+                width: 165px;
+                min-width: 165px;
+                border-radius: 6.35px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .catalogButton {
+            width: 185px;
+            min-width: 185px;
+            @media (max-width: 730px) {
+                display: none;
+            }
+        }
+
+        .downloadButton {
+            width: 61px;
+            @media (max-width: 730px) {
+                display: none;
+            }
+        }
+
+        .contactUsButtons {
+            width: 262px;
+            max-width: 262px;
+            @media (max-width: 1024px) {
+                width: unset;
+            }
+            @media (max-width: 730px) {
+                order: 2;
+                width: 52px;
+                max-width: 52px;
+            }
+        }
+
+        .mobileMenu {
+            display: none;
+            width: 100%;
+            transition: all 0.3s ease;
+
+            @media (max-width: 1024px) {
+                display: block;
+            }
+            @media (max-width: 730px) {
+                order: 3;
+                max-width: 150px;
+            }
+
+            .dropdownMenu {
+                opacity: 0;
+                visibility: hidden;
+                transition: visibility 0.5s linear, opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+                position: absolute;
+                z-index: 1;
+                top: 124px;
+                width: 100%;
+                left: 0;
+
+                @media (max-width: 730px) {
+                    top: 72px;
+                }
+
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+        }
+    }
+
+    .location {
+        @media (max-width: 730px) {
+            display: none;
+        }
+    }
+
+    .catalogPopup {
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.5s linear, opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+        position: absolute;
+        z-index: 1;
+        top: 96px;
+        width: 100%;
+        left: 0;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.whiteContainer {
+    @media (max-width: 1024px) {
+        background-color: $white;
+    }
+}

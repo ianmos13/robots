@@ -1,0 +1,61 @@
+@import "/styles/variables";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.pageButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: $dark-gray;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover:not(:disabled) {
+    background-color: #c6dff566;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+
+.active {
+  background-color: $main-blue;
+  color: #fff;
+  border-color: $main-blue;
+}
+
+
+.arrowButton {
+ border: none;
+  
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+
+.ellipsis {
+  color: $dark-gray;
+  padding: 0 8px;
+  font-weight: 500;
+}

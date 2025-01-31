@@ -1,0 +1,59 @@
+@import "/styles/variables";
+
+.btnDownload {
+  position: relative;
+  border-radius: 10px;
+  border: 1.476px $blue-light solid;
+  width: max-content;
+  padding: 26px 29px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-width: 340px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, min-width 0.4s ease;
+
+  .icon {
+    transition: transform 0.4s ease;
+    transform: translateY(0);
+  }
+
+  .buttonText {
+    transition: transform 0.4s ease;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: lighten($main-blue, 45%);
+  }
+
+  &.active {
+    background-color: $main-blue;
+    min-width: 320px;
+
+    .icon,
+    .buttonText {
+      animation: moveIcon 0.5s ease forwards;
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@keyframes moveIcon {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

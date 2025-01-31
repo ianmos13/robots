@@ -1,0 +1,243 @@
+@import "/styles/variables";
+
+.productSlider {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 72px;
+}
+
+
+.imageContainer {
+  position: relative;
+  width: 50%;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  width: 920px;
+  height: 587px;
+  background-color: $white;
+}
+
+.thumbnailContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  background-color: $white;
+  width: 169px;
+  height: 133px;
+
+  img {
+    width: 105px;
+    height: 95px;
+    object-fit: cover;
+    aspect-ratio: 21/19;
+  }
+
+  &.active {
+    border-color: $main-blue;
+  }
+}
+
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  max-width: 705px;
+
+  h3 {
+    letter-spacing: -0.96px;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 78px;
+  }
+
+  .assignmentTitle,
+  .sourceTitle,
+  .capabilityTitle,
+  .specTitle,
+  .sourceTitle {
+    color: #000;
+    font-family: "DIN Pro", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.54px;
+    margin-right: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  .advantage,
+  .assignment,
+  .specValue,
+  .capabilityValue {
+    font-family: "DIN Pro", sans-serif;
+    @each $property, $value in $b16-regular {
+      #{$property}: #{$value};
+    }
+    letter-spacing: -0.32px;
+  }
+
+  .advantagesContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+
+    .advantage {
+      padding: 10px 20px 12px 20px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7px;
+      background: rgba(50, 50, 50, 0.1);
+    }
+  }
+
+  .assignmentContainer {
+    display: flex;
+    gap: 10px;
+
+    .assignment {
+      padding: 10px 20px 12px 20px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #c6dff5b2;
+    }
+  }
+
+  .specContainer,
+  .capabilityContainer,
+  .sourceContainer {
+    display: flex;
+  }
+
+  .specValue,
+  .capabilityValue,
+  .source {
+    padding: 10px 20px 12px 20px;
+    border-radius: 7px;
+    border: 1px solid #c6dff5b2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sourceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .ctaButton {
+      transition: background-color 0.3s;
+      padding: 20px;
+      font-family: "DIN Pro medium", sans-serif;
+      color: $white;
+      background-color: $main-blue;
+      border-radius: 7px;
+      border: none;
+      width: 100%;
+      @each $property, $value in $b18-medium {
+        #{$property}: #{$value};
+      }
+
+      &:hover {
+        background-color: $blue-hover;
+      }
+    }
+
+    .btnContainerInner {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+
+ 
+      .compereBtn {
+        min-width: 330px; 
+        padding: 20px 30px;
+        border-radius: 7px;
+        border: 1px solid #c6dff5b2;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-family: "DIN Pro medium", sans-serif;
+   
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+        @each $property, $value in $b18-medium {
+          #{$property}: #{$value};
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+    
+      .favoriteBtn {
+        min-width: 215px; 
+        padding: 20px 30px;
+        border-radius: 7px;
+        border: 1px solid #c6dff5b2;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-family: "DIN Pro medium", sans-serif;
+      
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+        @each $property, $value in $b18-medium {
+          #{$property}: #{$value};
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .social {
+      height: max-content;
+      padding: 20px 23px;
+      border: 1px solid $blue-light;
+      border-radius: 8px;
+      gap: 10px;
+      display: flex;
+      width: max-content;
+    }
+  }
+}
+
+
+.activeBtn {
+  background-color: #C6DFF5;
+  color: $main-blue;
+  border-color: $main-blue;
+}

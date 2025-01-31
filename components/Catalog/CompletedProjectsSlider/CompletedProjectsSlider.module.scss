@@ -1,0 +1,122 @@
+@import "/styles/variables";
+.sliderContainer {
+  margin: 0 auto;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 105px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-family: "DIN Pro bold", sans-serif;
+
+}
+.separator {
+    margin: 24px 0;
+    height: 1px;
+    background-color: #3232321a;
+    width: 100%;
+    margin-bottom: 56px;
+  }
+.prevButton,
+.nextButton {
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.nextButton {
+  margin-left: 10px;
+}
+
+.slider {
+  display: block;
+  position: relative;
+}
+
+.card {
+  box-sizing: border-box;
+
+  background: white;
+
+  margin-right: 20px;
+  border-radius: 20px;
+  display: flex;
+  max-height: 1233px;
+
+  gap: 40px;
+}
+.imageContainer {
+  max-width: 437px;
+  max-height: 489px;
+  .image {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+.descriptionContainer {
+  margin: 40px 15px 58px 40px;
+  max-width: 653px;
+  .titleContainer {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    margin-bottom: 32px;
+    .data {
+      font-family: "DIN Pro condensedbold", sans-serif;
+      color: $dark-gray;
+      opacity: 0.5;
+
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      @media (max-width: 640px) {
+        font-size: 18px;
+        line-height: 21.6px;
+      }
+    }
+    .tag {
+      padding: 10px 20px;
+      width: max-content;
+      background-color: $main-blue;
+      color: #fff;
+
+      border-radius: 10px;
+      transition: background-color 0.2s;
+      font-family: "DIN Pro medium", sans-serif;
+      letter-spacing: -0.9px;
+      @each $property, $value in $b18-medium {
+        #{$property}: #{$value};
+      }
+    }
+    .title {
+        max-width: 468px;
+        @each $property, $value in $b32-medium {
+            #{$property}: #{$value};
+          }
+          letter-spacing: -0.64px;
+          font-family: "DIN Pro medium", sans-serif;
+    }
+  }
+  .description {
+    @each $property, $value in $b20-regular {
+        #{$property}: #{$value};
+      }
+      color: $dark-gray;
+      font-family: "DIN Pro", sans-serif;  }
+}

@@ -1,0 +1,63 @@
+@import "/styles/variables";
+
+.container {
+  padding: 40px 30px 40px 30px;
+
+  @media (max-width: 1600px) {
+    padding: 36px 30px 36px 30px;
+  }
+  @media (max-width: 1024px) {
+    padding: 32px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 10px 10px 24px 10px;
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbButton {
+    color: $dark-gray;
+    background-color: unset;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px $blue-light solid;
+    border-radius: 7px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: "DIN Pro";
+    @each $property, $value in $b16-regular {
+      #{$property}: #{$value};
+    }
+  
+   
+    &:hover:not(:disabled) {
+      
+      border-color: $main-blue;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      
+    }
+  
+   
+    &:disabled {
+      color: $white;
+      background-color: $blue-light;
+      border-color: $blue-light;
+      cursor: default;
+     
+    }
+  
+   
+    &:hover:disabled {
+      background-color: unset;
+      border-color: $main-blue;
+      color: $dark-gray;
+      transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+
+    }
+  }

@@ -1,0 +1,42 @@
+[
+  {
+    "key": "welding",
+    "name": "Сварочные роботы",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "polishing",
+    "name": "Роботы для полировки",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "maintenance",
+    "name": "Обслуживание станков",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "palletizing",
+    "name": "Роботы для паллетирования",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "scara",
+    "name": "Роботы SCARA",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "collaborative",
+    "name": "Коллаборативные роботы",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "milling",
+    "name": "Робот для фрезеровки",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "manipulator",
+    "name": "Роботы манипуляторы",
+    "image": "/images/welding-robot.svg"
+  }
+]
