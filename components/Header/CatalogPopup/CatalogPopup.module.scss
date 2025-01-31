@@ -1,0 +1,100 @@
+@import "/styles/variables";
+
+.container {
+    max-width: 1860px;
+    margin: 0 auto;
+    width: calc(100% - 60px);
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 1600px) {
+        width: calc(100% - 60px);
+    }
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        border-radius: 0;
+        height: calc(100vh - 96px);
+        justify-content: flex-start;
+    }
+
+    .catalogBox {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.buttonsContainer {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+
+    .buttonContainer {
+        width: 100%;
+        height: 114px;
+        border-radius: 10px;
+        background-color: $white;
+        border: 1px solid $blue-light;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 1024px) {
+            height: 100px;
+        }
+
+        .link {
+            text-decoration: none;
+            text-align: center;
+            font-family: "DIN Pro condensedbold", sans-serif;
+            color: $dark-gray;
+            letter-spacing: -0.02em;
+            @each $property, $value in $b28-bold {
+                #{$property}: #{$value};
+            }
+            @media (max-width: 640px) {
+            }
+        }
+
+        &:hover {
+            border: 1px solid $main-blue;
+            .link {
+                color: $main-blue;
+            }
+        }
+    }
+}
+
+.imageContainer {
+    width: 50%;
+    height: 516px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

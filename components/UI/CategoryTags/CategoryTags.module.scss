@@ -1,0 +1,30 @@
+@import "/styles/variables";
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+   
+
+    button {
+        padding: 10px 20px;
+        background-color: $white;
+        color: $dark-gray;
+        border: 1px solid $blue-light;
+        cursor: pointer;
+        border-radius: 7px;
+        transition: background-color 0.2s;
+        font-family: "DIN Pro medium", sans-serif;
+        @each $property, $value in $b18-medium {
+          #{$property}: #{$value};
+        }
+
+        &:hover {
+          background-color: #c6dff566;
+        }
+      }
+
+    .activeTag {
+      background-color: $main-blue;
+      color: #fff;
+    }
+  }

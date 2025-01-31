@@ -1,0 +1,102 @@
+.container {
+	padding: 40px 30px 230px 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 93px;
+	.pageHeader {
+		h1 {
+			font-family: 'DIN Pro Condensedbold', sans-serif;
+			font-weight: 900;
+			font-size: 48px;
+			line-height: 52.8px;
+			letter-spacing: -0.02em;
+			color: #323232;
+		}
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 55px;
+		.item {
+			display: flex;
+			flex-direction: column;
+			gap: 29px;
+			.header {
+				font-family: 'DIN Pro medium', sans-serif;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 31.2px;
+				letter-spacing: -0.02em;
+				color: #323232;
+			}
+			.textItemsContainer {
+				display: flex;
+				flex-direction: column;
+				gap: 27px;
+				.text {
+					font-family: 'DIN Pro', sans-serif;
+					font-weight: 400;
+					font-size: 20px;
+					line-height: 28px;
+					letter-spacing: -0.01em;
+					color: #323232;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 24px 20px 142px 20px;
+		gap: 71px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 24px 10px 123px 10px;
+		gap: 32px;
+		.pageHeader {
+			h1 {
+				font-family: 'DIN Pro Condensedbold', sans-serif;
+				font-weight: 900;
+				font-size: 32px;
+				line-height: 35.2px;
+				letter-spacing: -0.02em;
+				color: #323232;
+			}
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			gap: 55px;
+			.item {
+				display: flex;
+				flex-direction: column;
+				gap: 29px;
+				.header {
+					font-family: 'DIN Pro medium', sans-serif;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 31.2px;
+					letter-spacing: -0.02em;
+					color: #323232;
+				}
+				.textItemsContainer {
+					display: flex;
+					flex-direction: column;
+					gap: 27px;
+					.text {
+						font-family: 'DIN Pro', sans-serif;
+						font-weight: 400;
+						font-size: 20px;
+						line-height: 28px;
+						letter-spacing: -0.01em;
+						color: #323232;
+					}
+				}
+			}
+		}
+	}
+}

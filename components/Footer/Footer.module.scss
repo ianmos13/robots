@@ -1,0 +1,163 @@
+@import "/styles/variables";
+
+.container {
+    background-color: $main-blue;
+
+    .footerBody {
+        margin: 0 auto;
+        max-width: 1920px;
+        display: flex;
+        flex-direction: column;
+        gap: 99px;
+        padding: 47px 60px 22px 30px;
+
+        .footerLogo {
+            margin-left: 6px;
+            width: 225px;
+            height: 26px;
+            position: relative;
+
+            .logoContainer {
+                img {
+                    position: absolute;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .linksBox {
+            display: flex;
+            flex-direction: row;
+            gap: 120px;
+        }
+
+        .footerInfo {
+            margin-top: 38px;
+            display: flex;
+            flex-direction: column;
+            gap: 90px;
+
+            .footerContacts {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .footerContactsInfo {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 132px;
+                }
+
+                .footerContactsEmail {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-family: "DIN Pro сondensedblack", sans-serif;
+                    text-align: left;
+                    letter-spacing: unset;
+                    color: $white;
+                    font-size: 60px;
+                    line-height: 150%;
+                    font-weight: 900;
+
+                    span {
+                        font-family: "RobotoMono medium", sans-serif;
+                        font-weight: 500;
+                    }
+                }
+
+                .footerContactsButton {
+                    max-width: 458px;
+                    height: 64px;
+                    width: 100%;
+                }
+            }
+
+            .footerContactsLinks {
+                display: flex;
+                flex-direction: row;
+                gap: 210px;
+
+                .companyInfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 39px;
+                }
+
+                .companyInfoText {
+                    font-family: "DIN Pro Medium", sans-serif;
+                    color: $white;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+
+                .linksInfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 39px;
+                }
+
+                .linksBlock {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 35px;
+                }
+            }
+        }
+    }
+}
+
+.filterElements {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+
+    .filterElement {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .filterChildrenElements {
+            display: flex;
+            flex-direction: column;
+            gap: 21.4px;
+        }
+    }
+}
+
+.linkElements {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .linkElement {
+        max-width: 250px;
+        width: 100%;
+    }
+}
+
+.headerLink {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "DIN Pro сondensedblack", sans-serif;
+    text-align: left;
+    letter-spacing: unset;
+    color: $white;
+    @each $property, $value in $b20-bold {
+        #{$property}: #{$value};
+    }
+}
+
+.link {
+    text-decoration: none;
+    font-family: "DIN Pro Medium", sans-serif;
+    text-align: left;
+    letter-spacing: unset;
+    color: $white;
+    @each $property, $value in $b16-medium {
+        #{$property}: #{$value};
+    }
+}

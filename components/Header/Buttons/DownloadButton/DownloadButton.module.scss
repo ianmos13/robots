@@ -1,0 +1,73 @@
+@import "/styles/variables";
+
+.container {
+    width: 61px;
+    height: 66px;
+    transition: all 0.3s ease;
+
+    .buttonContainer {
+        overflow: hidden;
+        border-radius: 7px;
+        display: inline-flex;
+        align-items: center;
+        background-color: $main-blue;
+        padding: 23px 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $blue-light;
+
+            .imageContainer {
+                .icon {
+                    animation: moveDownIcon 0.5s ease forwards;
+                }
+            }
+        }
+    }
+}
+
+.unhovered {
+    .icon {
+        animation: moveUpIcon 0.5s ease forwards;
+    }
+}
+
+.imageContainer {
+    height: 20px;
+
+    .icon {
+        height: 20px;
+        width: 12px;
+        display: inline-block;
+    }
+}
+
+@keyframes moveDownIcon {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(250%);
+    }
+    50.5% {
+      transform: translateY(-250%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+@keyframes moveUpIcon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-250%);
+    }
+    50.5% {
+        transform: translateY(250%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

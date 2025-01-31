@@ -1,0 +1,165 @@
+@import "/styles/variables";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  overflow-y: auto;
+}
+
+.modalContent {
+  background: white;
+ 
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  height: 90vh;         
+  border-radius: 20px;
+  position: relative;
+  z-index: 10000;
+
+  overflow: hidden;
+}
+
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 1px $blue-light solid;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    display: flex;
+  }
+
+  @media (max-width: 640px) {
+    top: 20px;
+    right: 20px;
+    padding: 12px;
+  }
+}
+
+
+.modalHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1;           
+  background-color: $white;
+
+
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+
+.modalBody {
+  flex: 1;
+  overflow: auto;
+
+  
+}
+
+
+.modalFooter {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  background-color: $white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 20px;
+
+
+  .category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+
+    .active {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 9px 16px;
+      background-color: $white;
+      color: $main-blue;
+      border: 1px solid $main-blue;
+      border-radius: 7px;
+      cursor: default;
+      transition: background-color 0.2s;
+      font-family: "DIN Pro medium", sans-serif;
+      @each $property, $value in $b18-medium {
+        #{$property}: #{$value};
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .default {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 9px 16px;
+      border: none;
+      border-radius: 7px;
+      background: rgba(50, 50, 50, 0.1);
+      cursor: default;
+      transition: background-color 0.2s;
+      font-family: "DIN Pro medium", sans-serif;
+      @each $property, $value in $b18-medium {
+        #{$property}: #{$value};
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.applyButton {
+  width: max-content;
+  background-color: $main-blue;
+  color: $white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 15px 130px;
+
+  font-family: "DIN Pro condensedbold", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.36px;
+
+  &:hover {
+    background-color: $blue-hover;
+  }
+}

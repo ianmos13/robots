@@ -1,0 +1,137 @@
+@import "/styles/variables";
+
+.container {
+  padding: 30px 30px 50px 30px;
+  background-color: $white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+
+  @media (max-width: 1024px) {
+    padding: 20px 20px 50px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 10px 10px 50px 10px;
+  }
+
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    @media (max-width: 1600px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  .slider {
+    display: none;
+
+    @media (max-width: 640px) {
+      display: block;
+      position: relative;
+    }
+    .prevButton,
+    .nextButton {
+      position: absolute;
+
+      z-index: 10;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    .containerButton {
+      margin-top: 16px;
+    }
+
+    .nextButton {
+      margin-left: 58px;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: $background;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    gap: 30px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      .hoverOverlay {
+        opacity: 1;
+      }
+      .imageContainer {
+        opacity: 0.7;
+        @media (max-width: 640px) {
+          opacity: 1;
+        }
+      }
+    }
+
+    .hoverOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      opacity: 0;
+      transition: opacity 0.5s ease;
+
+      .hoverImage {
+        width: 66px;
+        height: 66px;
+      }
+    }
+
+    .imageContainer {
+      width: 152px;
+      height: 195px;
+      display: flex;
+      margin: 0 auto;
+      position: relative;
+      transition: opacity 0.5s ease;
+
+      .image {
+        position: absolute;
+        object-fit: contain;
+      }
+    }
+
+    .name {
+      padding-left: 30px;
+      font-family: "DIN Pro medium", sans-serif;
+      color: $dark-gray;
+      @each $property, $value in $b24-medium {
+        #{$property}: #{$value};
+      }
+      @media (max-width: 640px) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+}

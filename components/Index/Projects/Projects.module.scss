@@ -1,0 +1,209 @@
+@import "/styles/variables";
+
+.container {
+  padding: 30px;
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 10px;
+  }
+  background-color: $white;
+
+  .projectsContainer {
+    width: 100%;
+
+    .header {
+      display: flex;
+      margin-bottom: 72px;
+      justify-content: space-between;
+      @media (max-width: 1600px) {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 64px;
+      }
+      @media (max-width: 1024) {
+        gap: 36px;
+        margin-bottom: 36px;
+      }
+      @media (max-width: 640px) {
+        gap: 25px;
+        margin-bottom: 25px;
+      }
+
+      .title {
+        color: $dark-gray;
+        max-width: 780px;
+        text-transform: uppercase;
+        @media (max-width: 1600px) {
+          font-size: 48px;
+          line-height: 52.8px;
+          max-width: 913px;
+        }
+        @media (max-width: 1024px) { 
+         
+        }
+        @media (max-width: 640px) {
+          font-size: 32px;
+          line-height: 35.2px;
+        }
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 930px;
+        @media (max-width: 1600px) {
+          max-width: unset;
+        }
+        @media (max-width: 640px) {
+          display: none;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: $white;
+          color: $dark-gray;
+          border: 1px solid $blue-light;
+          cursor: pointer;
+          border-radius: 7px;
+          transition: background-color 0.2s;
+          font-family: "DIN Pro medium", sans-serif;
+          @each $property, $value in $b18-medium {
+            #{$property}: #{$value};
+          }
+
+          &:hover {
+            background-color: #c6dff566;
+          }
+        }
+
+        .activeTag {
+          background-color: $main-blue;
+          color: #fff;
+        }
+      }
+      .dropdown {
+        width: 100%;
+        padding: 10px;
+        font-family: "DIN Pro medium", sans-serif;
+        font-size: 16px;
+        color: $dark-gray;
+        border: 1px solid $blue-light;
+        border-radius: 7px;
+        background-color: $white;
+        appearance: none;
+        background-image: url("/images/icons/dropdown-arrow.svg");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 16px 16px;
+
+        @media (max-width: 640px) {
+          display: block;
+        }
+      }
+    }
+
+    .projectsList {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 640px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+        margin-bottom: 56px;
+      }
+
+      .projectCard {
+        border: none;
+        
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+
+        .imageContainer {
+          border-radius: 10px;
+          position: relative;
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          margin-bottom: 40px;
+          @media (max-width: 1024px) {
+            margin-bottom: 24px;
+          }
+          @media (max-width: 640px) {
+            margin-bottom: 16px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .tagBadge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: $main-blue;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 7px;
+            font-family: "DIN Pro medium", sans-serif;
+            @each $property, $value in $b18-medium {
+              #{$property}: #{$value};
+            }
+            @media (max-width: 640px) {
+              font-size: 14px;
+              line-height: 16.8px;
+              padding: 7px 17px;
+            }
+          }
+        }
+
+        .projectInfo {
+          font-family: "DIN Pro medium", sans-serif;
+          color: $dark-gray;
+          margin-bottom: 72px;
+          @each $property, $value in $b24-medium {
+            #{$property}: #{$value};
+          }
+          @media (max-width: 1600px) {
+            margin-bottom: 100px;
+            font-size: 20px;
+            line-height: 26px;
+          }
+          @media (max-width: 1024px) {
+            margin-bottom: 72px;
+          }
+          @media (max-width: 640px) {
+            font-size: 16px;
+            line-height: 20.8px;
+            margin-bottom: 0;
+          }
+
+          .projectDate {
+            font-family: "DIN Pro condensedbold", sans-serif;
+            color: $dark-gray;
+            opacity: 0.5;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            @media (max-width: 640px) {
+              font-size: 18px;
+              line-height: 21.6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

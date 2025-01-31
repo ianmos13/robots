@@ -1,0 +1,69 @@
+@import "/styles/variables";
+
+.container {
+    width: 100%;
+    height: 66px;
+
+    @media (max-width: 730px) {
+        height: 52px;
+    }
+
+    .buttonContainer {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 7px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $main-blue;
+        padding: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        @media (max-width: 730px) {
+            padding: 1px;
+        }
+
+        .buttonBody {
+            position: relative;
+            width: 75px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            @media (max-width: 730px) {
+                width: 57px;
+            }
+        }
+
+        .imageContainer {
+            position: absolute;
+            left: -12px;
+            & > div > div > div {
+                height: 2px !important;
+            }
+        }
+
+        .text {
+            font-family: "DIN Pro condensedbold", sans-serif;
+            color: $main-blue;
+            letter-spacing: -0.02em;
+            @each $property, $value in $b22-medium {
+                #{$property}: #{$value};
+            }
+            @media (max-width: 730px) {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 16px;
+            }
+        }
+
+        &:hover {
+            background-color: $blue-hover;
+
+            .text {
+                color: $white;
+            }
+        }
+    }
+}

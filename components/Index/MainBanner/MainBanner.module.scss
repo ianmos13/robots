@@ -1,0 +1,234 @@
+@import "/styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: $background;
+  width: 100%;
+
+  overflow: hidden;
+
+  .headerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 30px;
+
+    .headerMainText {
+      padding-left: 18px;
+      font-family: "DIN Pro сondensedblack", sans-serif;
+      font-size: 220px;
+      letter-spacing: -0.02em;
+      font-weight: 900;
+      line-height: 220px;
+      text-transform: uppercase;
+      color: $main-blue;
+      @media (max-width: 1600px) {
+        font-size: 160px;
+        line-height: 160px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 122px;
+        line-height: 122px;
+        padding-left: 20px;
+      }
+      @media (max-width: 640px) {
+        font-size: 52px;
+        line-height: 52px;
+        padding-left: 10px;
+      }
+    }
+
+    .headerSubText {
+      font-family: "DIN Pro сondensedblack", sans-serif;
+      font-size: 200px;
+      font-weight: 900;
+      line-height: 175px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $dark-gray;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      @media (max-width: 1600px) {
+        font-size: 160px;
+        line-height: 160px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 122px;
+        line-height: 122px;
+      }
+      @media (max-width: 640px) {
+        font-size: 52px;
+        line-height: 52px;
+      }
+    }
+    .headerSubTextContainer {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      @media (max-width: 1024px) {
+        justify-content: unset;
+        padding-left: 20px;
+      }
+      @media (max-width: 640px) {
+        padding-left: 10px;
+      }
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      max-width: 937px;
+      gap: 30px;
+    }
+    .headerDescription {
+      font-family: "DIN Pro medium", sans-serif;
+      font-size: 28px;
+      line-height: 36px;
+      color: $semi-dark-gray;
+      max-width: 601px;
+
+      font-weight: 500;
+
+      @media (max-width: 1600px) {
+        max-width: 492px;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      @media (max-width: 1024px) {
+        max-width: 580px;
+      }
+    }
+  }
+
+  .containerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1250px;
+    margin-top: -265px;
+    @media (max-width: 1600px) {
+      max-width: 1071px;
+      margin-top: -200px;
+    }
+    @media (max-width: 1024px) {
+      margin-top: 40px;
+      max-width: unset;
+    }
+    @media (max-width: 640px) {
+      flex-direction: column-reverse;
+      margin-top: -190px;
+      align-items: center;
+    }
+
+    .leftColumn {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 398px;
+      margin-top: 400px;
+      margin-left: 24px;
+      @media (max-width: 1600px) {
+        margin-top: -70px;
+      }
+      @media (max-width: 1024px) {
+        margin-top: 150px;
+      }
+      @media (max-width: 640px) {
+        margin-top: 100px;
+        margin-left: 0px;
+        max-width: unset;
+        padding: 10px;
+      }
+
+      .description {
+        font-weight: 500;
+        font-family: "DIN Pro medium", sans-serif;
+        font-size: 24px;
+        line-height: 31px;
+        color: $semi-dark-gray;
+      }
+      .requestMobile {
+        display: none;
+        width: 100%;
+        @media (max-width: 1024px) {
+          display: block;
+          margin-top: 86px;
+        }
+      }
+    }
+
+    .imageContainer {
+      width: 562px;
+      aspect-ratio: 0.88;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      @media (max-width: 1600px) {
+        width: 430px;
+      }
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .rightColumn {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 400px;
+      @media (max-width: 1600px) {
+        margin-top: 250px;
+      }
+    }
+  }
+  .submitButton {
+    font-family: "DIN Pro condensedbold", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+    color: $main-blue;
+    background: none;
+    border: 1px solid $main-blue;
+    border-radius: 7px;
+    padding: 32px 48px;
+    cursor: pointer;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+    @media (max-width: 1600px) {
+      padding: 25px 45px;
+      font-size: 22px;
+      line-height: 22px;
+    }
+    @media (max-width: 1024px) {
+      padding: 32px 48px;
+      font-size: 26px;
+
+      line-height: 26px;
+    }
+    @media (max-width: 640px) {
+      width: 100%;
+      padding: 19px;
+      font-size: 22px;
+
+      line-height: 26px;
+    }
+
+    &:hover {
+      background-color: $main-blue;
+      color: $white;
+    }
+  }
+  .requestDesctop {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+}

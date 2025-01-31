@@ -1,0 +1,107 @@
+@import "/styles/variables";
+
+.container {
+  padding: 30px;
+  @media (max-width: 1024px) {
+    padding: 20px;;
+  }
+  @media (max-width: 640px) {
+    padding: 10px;
+  }
+
+  background-color: $white;
+  .testIndustryRobots {
+    width: 100%;
+    position: relative;
+    height: 730px;
+    background: url("/images/industrial-robots.png") center center / cover
+      no-repeat;
+    border-radius: 15px;
+    @media (max-width: 1024px) {
+      height: 1037px;
+    }
+    @media (max-width: 640px) {
+      height: 576px;
+    }
+  }
+  .textContent {
+    display: flex;
+    flex-direction: row;
+    color: $white;
+    padding: 70px 57px 0 70px;
+    justify-content: space-between;
+    @media (max-width: 1600px) {
+      padding: 50px;
+    }
+    @media (max-width: 1024px) {
+      padding: 40px;
+      flex-direction: column;
+      gap: 40px;
+    }
+    @media (max-width: 640px) {
+      gap: 24px;
+      padding: 20px ;
+    }
+    .title {
+      h1 {
+        text-transform: uppercase;
+        @media (max-width: 1600px) {
+          font-size: 48px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 56px;
+        }
+        @media (max-width: 640px) {
+          line-height: 35.2px;
+          font-size: 32px;
+        }
+      }
+    }
+    .description {
+      display: flex;
+      flex-direction: column;
+      max-width: 560px;
+      gap: 30px;
+      p {
+        font-family: "DIN Pro medium", sans-serif;
+        @each $property, $value in $b24-medium {
+          #{$property}: #{$value};
+        }
+        @media (max-width: 1600px) {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 24px;
+          line-height: 31px;
+        }
+        @media (max-width: 640px) {
+          line-height: 19px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    button {
+      background-color: $main-blue;
+      color: $white;
+      border: none;
+      border-radius: 7px;
+      padding: 19px 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: "DIN Pro сondensedblack", sans-serif;
+      @each $property, $value in $b22-medium {
+        #{$property}: #{$value};
+      }
+      @media (max-width: 640px) {
+        line-height: 18px;
+        font-size: 18px;
+        padding: 15px;
+      }
+      &:hover {
+        background-color: $blue-hover;
+      }
+    }
+  }
+}

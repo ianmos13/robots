@@ -1,0 +1,60 @@
+@import "/styles/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    color: $dark-gray;
+  }
+
+  .addButton {
+    button {
+      padding: 10px 20px;
+      background-color: $white;
+      color: $main-blue;
+      border: 1px solid $main-blue;
+      cursor: pointer;
+      border-radius: 7px;
+      transition: background-color 0.2s, padding-right 0.2s;
+      font-family: "DIN Pro medium", sans-serif;
+      position: relative;
+
+      @each $property, $value in $b18-medium {
+        #{$property}: #{$value};
+      }
+
+      &:hover {
+        padding-right: 40px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          background-image: url("/images/icons/plus.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+  .text {
+    max-width: 967px;
+    margin-right: 90px;
+    font-family: "DIN Pro medium", sans-serif;
+    @each $property, $value in $b24-medium {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+.separator {
+  margin: 32px 0;
+  height: 1px;
+  background-color: #3232321a;
+  width: 100%;
+}

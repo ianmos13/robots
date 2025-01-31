@@ -1,0 +1,40 @@
+@import "/styles/variables";
+.container {
+  padding: 0 30px 40px 30px;
+
+  @media (max-width: 1600px) {
+    padding: 0px 30px 36px 30px;
+  }
+  @media (max-width: 1024px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 0px 10px 24px 10px;
+  }
+  .newsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 100px;
+    h3 {
+      color: $dark-gray;
+
+      letter-spacing: -0.02em;
+    }
+
+    .newsList {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 640px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+        margin-bottom: 56px;
+      }
+    }
+  }
+}

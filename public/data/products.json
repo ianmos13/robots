@@ -1,0 +1,5007 @@
+[
+  {
+    "id": 1,
+    "title": "Промышленный робот манипулятор CRP-RH14-10",
+    "armLength": "1530",
+    "mainImage": "/images/products/product1.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Паллетирование",
+    "axes": 4,
+    "reachRange": 1865,
+    "payloadRange": 49,
+    "weight": 426,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  }
+  ,
+  
+  {
+    "id": 2,
+    "title": "Промышленный робот манипулятор CRP-RH14-101",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product2.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "welding",
+    "application": "Сварка",
+    "axes": 6,
+    "reachRange": 1528,
+    "payloadRange": 48,
+    "weight": 78,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "title": "Промышленный робот манипулятор CRP-RH14-102",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product3.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "collaborative",
+    "application": "Обслуживание станков",
+    "axes": 5,
+    "reachRange": 954,
+    "payloadRange": 39,
+    "weight": 226,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "title": "Промышленный робот манипулятор CRP-RH14-103",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "scara",
+    "application": "Обслуживание станков",
+    "axes": 5,
+    "reachRange": 844,
+    "payloadRange": 15,
+    "weight": 442,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "title": "Промышленный робот манипулятор CRP-RH14-104",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Контактная сварка",
+    "axes": 4,
+    "reachRange": 1057,
+    "payloadRange": 26,
+    "weight": 430,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "title": "Промышленный робот манипулятор CRP-RH14-105",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "welding",
+    "application": "Плазменная резка",
+    "axes": 4,
+    "reachRange": 1725,
+    "payloadRange": 24,
+    "weight": 178,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "welding",
+    "application": "Фрезеровка",
+    "axes": 1,
+    "reachRange": 964,
+    "payloadRange": 11,
+    "weight": 409,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "welding",
+    "application": "Полировка",
+    "axes": 4,
+    "reachRange": 1559,
+    "payloadRange": 30,
+    "weight": 254,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "polishing",
+    "application": "Плазменная и гидроабразивная резка",
+    "axes": 1,
+    "reachRange": 1721,
+    "payloadRange": 7,
+    "weight": 117,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Обслуживание станков с ЧПУ",
+    "axes": 4,
+    "reachRange": 1690,
+    "payloadRange": 18,
+    "weight": 293,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "polishing",
+    "application": "Обслуживание ТПА",
+    "axes": 1,
+    "reachRange": 1605,
+    "payloadRange": 19,
+    "weight": 337,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 12,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "maintenance",
+    "application": "Обслуживание гибочного и штамповочного пресса",
+    "axes": 4,
+    "reachRange": 1039,
+    "payloadRange": 11,
+    "weight": 164,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 13,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "maintenance",
+    "application": "Обслуживание конвейерной линии",
+    "axes": 6,
+    "reachRange": 562,
+    "payloadRange": 25,
+    "weight": 103,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 14,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "maintenance",
+    "application": "SCARA",
+    "axes": 4,
+    "reachRange": 1149,
+    "payloadRange": 48,
+    "weight": 482,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 15,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "maintenance",
+    "application": "Гибка металла",
+    "axes": 6,
+    "reachRange": 703,
+    "payloadRange": 30,
+    "weight": 277,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 16,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Контактная сварка",
+    "axes": 5,
+    "reachRange": 985,
+    "payloadRange": 21,
+    "weight": 183,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 17,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Сварка",
+    "axes": 4,
+    "reachRange": 1878,
+    "payloadRange": 42,
+    "weight": 300,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 18,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Плазменная резка",
+    "axes": 2,
+    "reachRange": 1409,
+    "payloadRange": 39,
+    "weight": 322,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 19,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Контактная сварка",
+    "axes": 4,
+    "reachRange": 1715,
+    "payloadRange": 38,
+    "weight": 134,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 20,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "palletizing",
+    "application": "Обслуживание станков",
+    "axes": 4,
+    "reachRange": 1884,
+    "payloadRange": 36,
+    "weight": 47,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 21,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "scara",
+    "application": "Контактная сварка",
+    "axes": 1,
+    "reachRange": 1996,
+    "payloadRange": 9,
+    "weight": 147,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 22,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "scara",
+    "application": "Обслуживание станков",
+    "axes": 2,
+    "reachRange": 511,
+    "payloadRange": 42,
+    "weight": 403,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 23,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "scara",
+    "application": "Лазерная резка",
+    "axes": 3,
+    "reachRange": 1913,
+    "payloadRange": 18,
+    "weight": 493,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 24,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "scara",
+    "application": "Сварка",
+    "axes": 6,
+    "reachRange": 1894,
+    "payloadRange": 35,
+    "weight": 257,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 25,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "collaborative",
+    "application": "Паллетирование",
+    "axes": 6,
+    "reachRange": 969,
+    "payloadRange": 34,
+    "weight": 88,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 26,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "collaborative",
+    "application": "Контактная сварка",
+    "axes": 4,
+    "reachRange": 993,
+    "payloadRange": 35,
+    "weight": 196,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 27,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "collaborative",
+    "application": "Плазменная резка",
+    "axes": 4,
+    "reachRange": 1401,
+    "payloadRange": 43,
+    "weight": 385,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 28,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "milling",
+    "application": "Паллетирование",
+    "axes": 1,
+    "reachRange": 1490,
+    "payloadRange": 14,
+    "weight": 325,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 29,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "milling",
+    "application": "Плазменная резка",
+    "axes": 6,
+    "reachRange": 723,
+    "payloadRange": 45,
+    "weight": 157,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 30,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "milling",
+    "application": "Плазменная резка",
+    "axes": 3,
+    "reachRange": 1677,
+    "payloadRange": 38,
+    "weight": 426,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 31,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Обслуживание станков",
+    "axes": 1,
+    "reachRange": 1849,
+    "payloadRange": 23,
+    "weight": 340,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 32,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Контактная сварка",
+    "axes": 5,
+    "reachRange": 1185,
+    "payloadRange": 19,
+    "weight": 434,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 33,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Паллетирование",
+    "axes": 5,
+    "reachRange": 1804,
+    "payloadRange": 25,
+    "weight": 129,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 34,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Плазменная резка",
+    "axes": 6,
+    "reachRange": 822,
+    "payloadRange": 48,
+    "weight": 88,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 35,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Контактная сварка",
+    "axes": 4,
+    "reachRange": 717,
+    "payloadRange": 46,
+    "weight": 490,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  },
+  {
+    "id": 36,
+    "title": "Промышленный робот манипулятор CRP-RH14-106",
+    "armLength": "1530",
+
+   "mainImage": "/images/products/product4.svg",
+    "hoverImage": "/images/products/product-hover.png",
+    "category": "manipulator",
+    "application": "Плазменная резка",
+    "axes": 5,
+    "reachRange": 1336,
+    "payloadRange": 33,
+    "weight": 418,
+    "images": [
+      "/images/products/singleProduct/product.svg",
+      "/images/products/singleProduct/product1.svg",
+      "/images/products/singleProduct/product2.svg",
+      "/images/products/singleProduct/product3.svg",
+      "/images/products/singleProduct/product4.svg"
+    ],
+    "advantages": [
+      "Высокая скорость",
+      "Высокая мощность",
+      "Кабели с повышенным уровнем гибкости"
+    ],
+    "assignment": [
+      "Паллетирование",
+      "Укладка",
+      "Сортировка"
+    ],
+    "source": [
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR",
+      "MEGMEET EHAVE 2 CM350R",
+      "MEGMEET ARTSEN PLUS 350DR"
+    ],
+    "addInfo": [
+      {
+        "description": [
+          "Длина руки 1454 мм позволяет обрабатывать большинство деталей малых и средних производств.",
+          "Робот может быть установлен на полу или подвешен к потолку, напольные или потолочные рельсы.",
+          "Широкая сфера применения позволяет использовать робота в таких процессах, как: сварка, покраска, погрузо-разгрузочные работы, транспортировка, сортировка и т.д.",
+          "Независимый аварийный выключатель обеспечивает безопасность оператора.",
+          "Кабели с повышенным уровнем гибкости обеспечивают беспрепятственную и стабильную работу робота."
+        ],
+        "equipment": [
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация",
+          "Комплектация"
+        ]
+      }
+    ],
+    "technicalInfo": {
+      "axes": {
+        "table": [
+          {
+            "label": "Модель",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Степень подвижности",
+            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+          },
+          {
+            "label": "Ось 1",
+            "values": [
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
+              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
+            ]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Максимальная скорость движения по Осям",
+            "values": [null, null]
+          },
+          {
+            "label": "Ось 2",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          },
+          {
+            "label": "Ось 4",
+            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "bases": {
+        "table": [
+          {
+            "label": "Ширина",
+            "values": ["590 мм"]
+          },
+          {
+            "label": "Длина",
+            "values": ["425 мм"]
+          },
+          {
+            "label": "Высота",
+            "values": ["1114 мм"]
+          }
+        ],
+         "image": "/images/products/singleProduct/image 223.png"
+      },
+      "flange": {
+        "table": [
+          {
+            "label": "Диаметр фланца",
+            "values": ["175 мм"]
+          },
+          {
+            "label": "Количество отверстий",
+            "values": ["4"]
+          }
+        ],
+        "image": "/images/products/singleProduct/image 223.png"
+      }
+    }
+  }
+]

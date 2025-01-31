@@ -1,0 +1,79 @@
+@import '/styles/variables';
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 22px;
+	border: unset;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 16px 18px;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	&:hover {
+		background-color: $blue-light;
+		.imageContainer {
+			.icon {
+				animation: moveDownIcon 0.5s ease forwards;
+			}
+		}
+	}
+	.textContainer {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 18px;
+		letter-spacing: -0.03em;
+		color: #0149bf;
+	}
+	.imageContainer {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		height: 17.7px;
+		width: 11.9px;
+		.icon {
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+.unhovered {
+	.icon {
+		animation: moveUpIcon 0.5s ease forwards;
+	}
+}
+
+@keyframes moveDownIcon {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(250%);
+	}
+	50.5% {
+		transform: translateY(-250%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes moveUpIcon {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-250%);
+	}
+	50.5% {
+		transform: translateY(250%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

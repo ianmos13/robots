@@ -1,0 +1,179 @@
+@import "/styles/variables";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 530px;
+  width: 100%;
+  background-color: $white;
+  padding: 40px;
+  border-radius: 20px;
+  @media (max-width: 640px) {
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #000000;
+    margin-bottom: 63px;
+
+    .title {
+      font-family: "DIN Pro сondensedblack", sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 35.2px;
+      letter-spacing: -0.02em;
+      @media (max-width: 640px) {
+        font-size: 24px;
+        line-height: 26.4px;
+      }
+    }
+
+    .desciption {
+      font-family: "DIN Pro", sans-serif;
+      @each $property, $value in $b20-regular {
+        #{$property}: #{$value};
+      }
+      @media (max-width: 640px) {
+        font-size: 16px;
+        line-height: 19.2px;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      font-family: "DIN Pro", sans-serif;
+      padding: 23px 24px;
+      border-radius: 10px;
+      border: none;
+      background: #fafafa;
+      outline: none;
+
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: -0.03em;
+      color: #3232324d;
+      @media (max-width: 1024px) {
+      }
+
+      &::-webkit-input-placeholder {
+        font-family: "DIN Pro", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.03em;
+        color: #3232324d;
+      }
+      &::-moz-placeholder {
+        font-family: "DIN Pro", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.03em;
+        color: #3232324d;
+      }
+      &:-ms-input-placeholder {
+        font-family: "DIN Pro", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.03em;
+        color: #3232324d;
+      }
+      &:-moz-placeholder {
+        font-family: "DIN Pro", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.03em;
+        color: #3232324d;
+      }
+    }
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px;
+    border: 1px $blue-light solid;
+    border-radius: 7px;
+    @media (max-width: 640px) {
+      top: 20px;
+      right: 20px;
+      padding: 12px;
+    }
+  }
+
+  .agreement {
+    display: flex;
+
+    margin-top: 27px;
+    margin-bottom: 24px;
+    font-family: "DIN Pro", sans-serif;
+    @each $property, $value in $b16-regular {
+      #{$property}: #{$value};
+    }
+    @media (max-width: 640px) {
+      margin-top: 16px;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      a {
+        text-decoration: underline;
+        color: $main-blue;
+      }
+    }
+  }
+
+  .submitBtn {
+    padding: 12px 0;
+    background-color: $main-blue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "DIN Pro сondensedblack", sans-serif;
+    @each $property, $value in $b22-medium {
+      #{$property}: #{$value};
+    }
+    @media (max-width: 640px) {
+      font-size: 18px;
+
+      line-height: 18px;
+    }
+
+    &:hover {
+      background-color: darken($main-blue, 10%);
+    }
+  }
+}
