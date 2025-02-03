@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./ProductCategories.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -10,6 +11,7 @@ import TitleWithSeparator from "@/components/UI/TitleWithSeparator/TitleWithSepa
 
 const ProductCategories = () => {
   const [activeButton, setActiveButton] = useState("");
+  const router = useRouter();
 
   const handlePrevClick = () => {
     setActiveButton("prev");
@@ -21,13 +23,21 @@ const ProductCategories = () => {
     setTimeout(() => setActiveButton(""), 300); 
   };
 
+  const handleCategoryClick = (categoryKey) => {
+    router.push(`/catalog?category=${categoryKey}`);
+  };
+
   return (
     <section className={styles.container}>
       <TitleWithSeparator title={"Категории продукции"} />
 
       <div className={styles.grid}>
         {categories.map((category, index) => (
-          <div key={index} className={styles.card}>
+          <div
+            key={index}
+            className={styles.card}
+            onClick={() => handleCategoryClick(category.key)}
+          >
             <div className={styles.imageContainer}>
               <img
                 src={category.image}
@@ -55,10 +65,14 @@ const ProductCategories = () => {
             nextEl: `.${styles.nextButton}`,
             prevEl: `.${styles.prevButton}`,
           }}
-          modules={[Navigation]}>
+          modules={[Navigation]}
+        >
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
-              <div className={styles.card}>
+              <div
+                className={styles.card}
+                onClick={() => handleCategoryClick(category.key)}
+              >
                 <div className={styles.imageContainer}>
                   <img
                     src={category.image}
@@ -66,7 +80,6 @@ const ProductCategories = () => {
                     className={styles.image}
                   />
                 </div>
-
                 <div className={styles.name}>{category.name}</div>
               </div>
             </SwiperSlide>
@@ -77,7 +90,8 @@ const ProductCategories = () => {
             className={`${styles.prevButton} ${styles.navButton} ${
               activeButton === "prev" ? styles.active : ""
             }`}
-            onClick={handlePrevClick}>
+            onClick={handlePrevClick}
+          >
             <img
               src={
                 activeButton === "prev"
@@ -91,7 +105,8 @@ const ProductCategories = () => {
             className={`${styles.nextButton} ${styles.navButton} ${
               activeButton === "next" ? styles.active : ""
             }`}
-            onClick={handleNextClick}>
+            onClick={handleNextClick}
+          >
             <img
               src={
                 activeButton === "next"

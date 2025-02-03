@@ -9,6 +9,7 @@
     font-family: "DIN Pro medium", sans-serif;
     color: $dark-gray;
     letter-spacing: -0.03em;
+    height: 21px;
     @each $property, $value in $b17-medium {
         #{$property}: #{$value};
     }

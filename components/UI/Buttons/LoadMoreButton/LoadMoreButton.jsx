@@ -5,7 +5,7 @@ export default function LoadMoreButton({ onClick }) {
   return (
     <div className={styles.buttonContainer}>
       <button className={styles.showMoreBtn} onClick={onClick}>
-        Загрузить ещё
+        <span className={styles.btnText}>Загрузить ещё</span>
         <span className={styles.spinner}></span>
       </button>
     </div>

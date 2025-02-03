@@ -1,60 +1,52 @@
 @import "/styles/variables";
+
 .buttonContainer {
   width: 100%;
-  display: inline-flex;
+  /* Если требуется, чтобы кнопка была привязана слева, используйте flex-start.
+     Если кнопка должна быть центрирована, её левая граница сместится, но текст внутри останется на месте */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.showMoreBtn {
+  width: 285px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  .showMoreBtn {
-  
-    display: inline-flex;
-    gap: 78px;
-    align-items: center;
-    padding: 22px 21px;
-    cursor: pointer;
-    border: 1px solid $blue-light;
-    border-radius: 7px;
-    background-color: $white;
-    color: $main-blue;
-    font-family: "DIN Pro сondensedblack", sans-serif;
-    @each $property, $value in $b22-medium {
-      #{$property}: #{$value};
-    }
-    @media (max-width: 640px) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      font-size: 20px;
-      line-height: 20px;
-      gap: 178px;
-      padding: 22px 18px;
-    }
-    transition: background-color 0.2s;
+  justify-content: space-between;
+  padding: 22px 21px;
+  cursor: pointer;
+  border: 1px solid $blue-light;
+  border-radius: 7px;
+  background-color: $white;
+  color: $main-blue;
+  font-family: "DIN Pro сondensedblack", sans-serif;
+  @each $property, $value in $b22-medium {
+    #{$property}: #{$value};
+  }
+  transition: width 1s ease, background-color 1s ease, border 1s  ease;
 
-    &:hover {
-      background-color: #c6dff566;
-    }
-
-    .spinner {
-      margin-left: 10px;
-      width: 24px;
-      height: 24px;
-      background: url("/images/icons/loader.svg") no-repeat center;
-      background-size: contain;
-      animation: none;
-    }
-
-    &:hover .spinner {
-      animation: spin 0.8s linear infinite;
-    }
+  &:hover {
+    background-color: #c6dff566;
+    width: 265px;
+    border: 1px solid $main-blue;
   }
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  @media (max-width: 640px) {
+    width: 100%;
+    padding: 22px 18px;
+    justify-content: space-between;
   }
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  background: url("/images/icons/loader.svg") no-repeat center;
+  background-size: contain;
+  transition: transform 1s ease;
+}
+
+.showMoreBtn:hover .spinner {
+  transform: rotate(180deg);
 }

@@ -34,7 +34,7 @@ const LeaveRequestBanner = ({ theme }) => {
 
           <video
             className={styles.videoBackground}
-            src="https://s3-figma-videos-production-sig.figma.com/video/1026790075068458266/TEAM/4ba7/84e0/-dfbe-4c06-beae-4628a16ec18b?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FzMHxlL5gS8W8tdSea3ttiq39g7RbqDalJLYoNH87OheQBcQaqSiNWAN0y5MHT3vueLIz5nJpA7qUACpxeBelGDBcAVs-YQ0TtBbo45NtypRYvq-tr4fXOKAAG-ebfJ0ql1RklZX2zYk5LV0d8MCuAr4sWclJFmhZXygQCGoDlHOM7EXTc53QxH9za8e520lLnWqumN-9X7tWHgqmBJmJPvJG~fc-DIH21f6YhnHZ3uJ8WxT9ksGZKU7ko1c-b2iHoP8vc7AZlID6cDdqJUSrT0INF1BdnIQVkh4gHZpOFuAfoHkr0~MVmi3eTwiFv75hNm9nwVrWnyIb2d3ASIR0A__"
+              src="https://s3-figma-videos-production-sig.figma.com/video/1026790075068458266/TEAM/4ba7/84e0/-dfbe-4c06-beae-4628a16ec18b?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Ogm5xugfbCPrBA0UUyivD3t6Cxkfeau82x7ttf5ZtTbI1ojBhDq0tH3mPmLD8nQU-jiiuQsn3CIlpxJ4nT5h9~VvBk49i9uVpQYbEY-9S3lyv91PZ6hxoVvFMaHbYR22UT~KNcbSbPHS-KAn9y9~I6uzxUnIJ18euy2ELr8fpHYRzqw4RBxl7IGQaFu5-zyQuuQdS0~mJF19WF0fVJhPA1SjP-YDlPwM9vBRFfQMqEm2pE-Abs5o9rSd~NX2dAeqz~n6gOWDz8XrauUtJDnoKY-5YgwkpcyUNQtutoRm4Ly6z8jVVsOyWttyauwPz~~nvUO3MONtZU6qvPE-HevtSQ__"
             autoPlay
             loop
             muted

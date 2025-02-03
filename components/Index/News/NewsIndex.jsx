@@ -24,15 +24,15 @@ export default function NewsIndex() {
   };
 
   const handleShowAll = () => {
-    router.push('/news');
+    router.push("/news");
   };
 
   return (
     <section className={styles.container}>
-      <TitleWithSeparator 
-        title="Новости" 
-        addButton="Все новости" 
-        onClick={handleShowAll} 
+      <TitleWithSeparator
+        title="Новости"
+        addButton="Все новости"
+        onClick={handleShowAll}
       />
       <div className={styles.newsList}>
         {visibleNews.map((news) => (
@@ -47,7 +47,11 @@ export default function NewsIndex() {
         ))}
       </div>
       {itemsToShow < newsData.length && (
-        <LoadMoreButton onClick={handleShowMore} />
+        <div className={styles.loadButtonContainer}>
+          <div className={styles.loadButton}>
+            <LoadMoreButton onClick={handleShowMore} />
+          </div>
+        </div>
       )}
     </section>
   );

@@ -1,0 +1,45 @@
+@import "/styles/variables";
+
+.h4Container {
+  margin-top: 112px;
+  color: $dark-gray;
+}
+
+.h4Container h4 {
+  margin-bottom: 32px;
+}
+
+.h4Content {
+  font-family: "DIN Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.2px;
+  letter-spacing: -0.02em;
+  color: $dark-gray;
+}
+
+.h4Content ul {
+  padding-left: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.h4Content ul li {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.2px;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 20px;
+  color: $dark-gray;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-family: "DIN Pro", sans-serif;
+}
+
+.conclusion {
+  padding-left: 37px;
+  font-weight: bold;
+  color: $dark-gray;
+  border-left: 1px #004985 solid;
+}

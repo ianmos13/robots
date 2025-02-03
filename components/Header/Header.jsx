@@ -22,13 +22,17 @@ const Header = () => {
   useEffect(() => {
     if (pathname !== oldLink) {
         setOldLink(pathname);
-        setIsOpenCatalog(false);
-        setOpenMobileMenu(false);
+        closeAllPopups();
     }
   }, [pathname]);
 
   const openCatalogPopup = () => {
       setIsOpenCatalog(!openCatalog)
+  }
+
+  const closeAllPopups = () => {
+      setOpenMobileMenu(false)
+      setIsOpenCatalog(false)
   }
 
   const openMenuPopup = () => {
@@ -77,6 +81,10 @@ const Header = () => {
           <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }`}>
             <CatalogPopup catalogElements={catalogElements} />
           </div>
+          {openCatalog && (<div
+                className={styles.closeArea}
+                onClick={openCatalogPopup}
+          ></div>)}
       </header>
   );
 };
@@ -157,48 +165,48 @@ const catalogElements = [
         id: 1,
         title: "Сварочные роботы, серия RH",
         imageUrl: "/images/ventilation.webp",
-        link: "/catalog",
+        link: "/catalog?category=polishing",
     },
     {
         id: 2,
         title: "Фрезерные роботы",
         imageUrl: "/images/projects.svg",
-        link: "/catalog",
+        link: "/catalog?category=milling",
     },
     {
         id: 3,
         title: "Роботы для обслуживания станков",
         imageUrl: "/images/ventilation.webp",
-        link: "/catalog",
+        link: "/catalog?category=maintenance",
     },
     {
         id: 4,
         title: "Полировочные роботы",
         imageUrl: "/images/projects.svg",
-        link: "/catalog",
+        link: "/catalog?category=polishing",
     },
     {
         id: 5,
         title: "Роботы манипуляторы",
         imageUrl: "/images/ventilation.webp",
-        link: "/catalog",
+        link: "/catalog?category=manipulator",
     },
     {
         id: 6,
         title: "Scara",
         imageUrl: "/images/projects.svg",
-        link: "/catalog",
+        link: "/catalog?category=scara",
     },
     {
         id: 7,
         title: "Коллаборативные роботы",
         imageUrl: "/images/ventilation.webp",
-        link: "/catalog",
+        link: "/catalog?category=collaborative",
     },
     {
         id: 8,
         title: "Роботы для паллетирования",
         imageUrl: "/images/projects.svg",
-        link: "/catalog",
+        link: "/catalog?category=palletizing",
     },
 ]

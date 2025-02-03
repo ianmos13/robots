@@ -1,0 +1,8 @@
+@import "/styles/variables";
+
+.rightContainer {
+  position: sticky;
+  top: 40px;
+  align-self: flex-start;
+  max-width: 414px;
+}

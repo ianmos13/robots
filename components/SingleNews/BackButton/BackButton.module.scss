@@ -1,0 +1,16 @@
+@import "/styles/variables";
+
+.leftContainer {
+  margin-right: 59px;
+  display: flex;
+  gap: 30px;
+  border-radius: 7px;
+  padding: 10px 16px;
+  border: 1px #c6dff5 solid;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  font-family: "DIN Pro medium", sans-serif;
+  color: $main-blue;
+}

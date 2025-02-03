@@ -1,29 +1,47 @@
 "use client";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from "@/redux/features/favoriteSlice";
+import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice";
 import styles from "./ProductSlider.module.scss";
+
 
 export default function ProductSlider({ images, productInfo }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const dispatch = useDispatch();
 
+  const comparisons = useSelector((state) => state.compare || []);
+  const favorites = useSelector((state) => state.favorite || []);
 
-  const [isInComparison, setIsInComparison] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const isCompared = comparisons.some((item) => item.id === productInfo.id);
+  const isFavorited = favorites.some((item) => item.id === productInfo.id);
 
   const handleImageChange = (index) => {
     setCurrentImageIndex(index);
   };
 
   const handleComparisonClick = () => {
-    setIsInComparison((prev) => !prev);
+    if (isCompared) {
+      dispatch(removeFromCompare(productInfo.id));
+    } else {
+      dispatch(addToCompare(productInfo));
+    }
   };
 
   const handleFavoriteClick = () => {
-    setIsFavorite((prev) => !prev);
+    if (isFavorited) {
+      dispatch(removeFromFavorite(productInfo.id));
+    } else {
+      dispatch(addToFavorite(productInfo));
+    }
   };
 
   return (
-    <div className={styles.productSlider}>
     
+    <div className={styles.productSlider}>
       <div className={styles.imageContainer}>
         <img
           src={images[currentImageIndex]}
@@ -37,19 +55,16 @@ export default function ProductSlider({ images, productInfo }) {
               className={`${styles.thumbnail} ${
                 index === currentImageIndex ? styles.active : ""
               }`}
-              onClick={() => handleImageChange(index)}
-            >
+              onClick={() => handleImageChange(index)}>
               <img src={image} alt={`Thumbnail ${index + 1}`} />
             </div>
           ))}
         </div>
       </div>
 
-   
       <div className={styles.productInfo}>
         <h3>{productInfo.title}</h3>
 
-     
         <div className={styles.advantagesContainer}>
           {productInfo.advantages.map((advantage, index) => (
             <div className={styles.advantage} key={index}>
@@ -59,7 +74,6 @@ export default function ProductSlider({ images, productInfo }) {
         </div>
 
         <div className={styles.infoContainer}>
-         
           <div className={styles.assignmentContainer}>
             <div className={styles.assignmentTitle}>Назначение:</div>
             {productInfo.assignment.map((item, index) => (
@@ -69,13 +83,11 @@ export default function ProductSlider({ images, productInfo }) {
             ))}
           </div>
 
-         
           <div className={styles.specContainer}>
             <div className={styles.specTitle}>Длина рук (мм):</div>
             <div className={styles.specValue}>{productInfo.armLength}</div>
           </div>
 
-      
           <div className={styles.capabilityContainer}>
             <div className={styles.capabilityTitle}>Грузоподъемность (кг):</div>
             <div className={styles.capabilityValue}>
@@ -95,60 +107,50 @@ export default function ProductSlider({ images, productInfo }) {
           </div>
         </div>
 
-    
         <div className={styles.btnContainer}>
           <button className={styles.ctaButton}>
             Получить коммерческое предложение
           </button>
 
           <div className={styles.btnContainerInner}>
-           
             <div
               className={`${styles.compereBtn} ${
-                isInComparison ? styles.activeBtn : ""
+                isCompared ? styles.activeBtn : ""
               }`}
-              onClick={handleComparisonClick}
-            >
-              {
-             
-                !isInComparison && (
-                  <img
-                    src="/images/icons/bar-chart.svg"
-                    alt="Compare Icon"
-                    className={styles.compareIcon}
-                  />
-                )
-              }
-              {isInComparison
-                ? "Товар добавлен в сравнения"
+              onClick={handleComparisonClick}>
+              {!isCompared && (
+                <img
+                  src="/images/icons/bar-chart.svg"
+                  alt="Compare Icon"
+                  className={styles.compareIcon}
+                />
+              )}
+              {isCompared
+                ? "Товар добавлен в сравнение"
                 : "Сравнить с другим товаром"}
             </div>
 
-           
             <div
               className={`${styles.favoriteBtn} ${
-                isFavorite ? styles.activeBtn : ""
+                isFavorited ? styles.activeBtn : ""
               }`}
-              onClick={handleFavoriteClick}
-            >
+              onClick={handleFavoriteClick}>
               <img
                 src={
-                  isFavorite
+                  isFavorited
                     ? "/images/icons/heart-active.svg"
                     : "/images/icons/heart.svg"
                 }
                 alt="Favorite Icon"
               />
-              {isFavorite ? "Добавлен" : "В избранные"}
+              {isFavorited ? "Добавлен" : "В избранные"}
             </div>
 
-          
             <div className={styles.social}>
               <a
                 href="https://t.me/your_telegram_link"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 <img src="/images/icons/tg-icon.svg" alt="Telegram" />
               </a>
 
@@ -157,8 +159,7 @@ export default function ProductSlider({ images, productInfo }) {
               <a
                 href="whatsapp://chat?number=84992885394"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 <img src="/images/icons/whatsapp-icon.svg" alt="Whatsapp" />
               </a>
             </div>

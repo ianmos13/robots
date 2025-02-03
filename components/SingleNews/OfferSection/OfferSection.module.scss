@@ -1,0 +1,32 @@
+@import "/styles/variables";
+
+.takeOfferContainer {
+  margin-top: 32px;
+}
+
+.takeOfferText {
+  font-family: "DIN Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.2px;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.ctaButton {
+  transition: background-color 0.3s;
+  padding: 22px 30px;
+  font-family: "DIN Pro condensedbold", sans-serif;
+  color: $white;
+  background-color: $main-blue;
+  border-radius: 7px;
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  
+  &:hover {
+    background-color: $blue-hover;
+  }
+}
