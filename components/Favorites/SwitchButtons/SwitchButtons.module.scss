@@ -1,0 +1,18 @@
+.containerButton {
+	.prevButton,
+	.nextButton {
+		z-index: 10;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		img {
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	.nextButton {
+		margin-left: 10px;
+	}
+}

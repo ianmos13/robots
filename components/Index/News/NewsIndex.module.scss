@@ -24,4 +24,15 @@
     }
 
   }
+
+  .loadButtonContainer {
+    display: flex;
+    max-width: 285px;
+    width: 285px;
+    margin: 0 auto;
+
+    .loadButton {
+      width: 100%;
+    }
+  }
 }

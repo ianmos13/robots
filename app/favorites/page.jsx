@@ -1,7 +1,8 @@
+import FavoritesComponent from '@/components/Favorites/FavoritesComponent/FavoritesComponent'
 export default function page() {
-  return (
-    <div>
-      <h1>favorite</h1>
-    </div>
-  );
+	return (
+		<div>
+			<FavoritesComponent />
+		</div>
+	)
 }

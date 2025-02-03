@@ -23,7 +23,7 @@
   transition: background-color 0.2s, color 0.2s;
 
   &:hover:not(:disabled) {
-    background-color: #c6dff566;
+    border: 1px solid#C6DFF5B2;
   }
 
   &:disabled {

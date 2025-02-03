@@ -1,0 +1,45 @@
+@import "/styles/variables";
+
+.substance {
+  border-radius: 10px;
+  padding: 30px;
+  background-color: $white;
+  margin-top: 32px;
+  ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+  color: $main-blue;
+  cursor: pointer;
+  font-family: "DIN Pro", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+li::before {
+  content: "⬥";
+  position: absolute;
+  left: 0;
+  color: $main-blue;
+  font-size: 20px;
+}
+
+}
+
+.title {
+  font-family: "DIN Pro medium", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36.4px;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  color: $dark-gray;
+}
+

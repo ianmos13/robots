@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import styles from "./Catalog.module.scss";
 import categories from "@/public/data/products-catgories.json";
 import robotsList from "@/public/data/products.json";
@@ -21,8 +22,17 @@ export default function Catalog() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredRobots, setFilteredRobots] = useState(robotsList);
   const [currentPage, setCurrentPage] = useState(1);
-  const { isTabletView, isMobileView, isDescktopView } = useDeviceType();
+  const { isTabletView, isMobileView, isDesktopView } = useDeviceType();
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
+
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [searchParams]);
 
   const allCategories = [{ key: "all", name: "Все роботы" }, ...categories];
 
@@ -117,7 +127,7 @@ export default function Catalog() {
           (isTabletView &&
             (index === 3 ||
               (index === currentProducts.length - 1 && index < 3))) ||
-          (isDescktopView &&
+          (isDesktopView &&
             (index === 5 ||
               (index === currentProducts.length - 1 && index < 5)))) && (
           <div className={styles.bannerContainer}>
@@ -149,7 +159,8 @@ export default function Catalog() {
               className={`${styles.cardView} ${
                 activeView === "cardView" ? styles.active : ""
               }`}
-              onClick={() => handleViewChange("cardView")}>
+              onClick={() => handleViewChange("cardView")}
+            >
               <img
                 src={
                   activeView === "cardView"
@@ -163,7 +174,8 @@ export default function Catalog() {
               className={`${styles.rowView} ${
                 activeView === "rowView" ? styles.active : ""
               }`}
-              onClick={() => handleViewChange("rowView")}>
+              onClick={() => handleViewChange("rowView")}
+            >
               <img
                 src={
                   activeView === "rowView"
@@ -180,7 +192,8 @@ export default function Catalog() {
           {(isTabletView || isMobileView) && (
             <div
               className={styles.filterButton}
-              onClick={() => setFiltersModalOpen(true)}>
+              onClick={() => setFiltersModalOpen(true)}
+            >
               <img src="/images/icons/mobile-filters.svg" alt="Фильтры" />
             </div>
           )}
@@ -190,7 +203,8 @@ export default function Catalog() {
                 <div
                   key={index}
                   className={styles.active}
-                  onClick={() => removeFilter(filter)}>
+                  onClick={() => removeFilter(filter)}
+                >
                   {filter}
                   <img src="/images/icons/x-blue.svg" alt="Удалить" />
                 </div>
@@ -206,14 +220,14 @@ export default function Catalog() {
         </div>
 
         <div className={styles.productContainer}>
-          {isDescktopView && (
+          {isDesktopView && (
             <Filters
               selectedFilters={selectedFilters}
               onChangeFilters={setSelectedFilters}
             />
           )}
 
-          {!isDescktopView && (
+          {!isDesktopView && (
             <FiltersModal
               isOpen={isFiltersModalOpen}
               onClose={() => setFiltersModalOpen(false)}
@@ -229,7 +243,8 @@ export default function Catalog() {
             <div
               className={`${styles.products} ${
                 activeView === "rowView" ? styles.rowView : ""
-              }`}>
+              }`}
+            >
               {currentProducts.length > 0 ? (
                 renderProducts()
               ) : (

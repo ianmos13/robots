@@ -1,0 +1,222 @@
+.container {
+	padding: 40px 30px 150px 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	.topContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		.headerContainer {
+			display: flex;
+			justify-content: space-between;
+			.headerText {
+				font-family: 'DIN Pro condensedbold', sans-serif;
+				font-weight: 900;
+				font-size: 48px;
+				line-height: 52.8px;
+				letter-spacing: -0.02em;
+				color: #323232;
+			}
+		}
+		.controllers {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.tagsControllers {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 48px;
+				max-width: 50%;
+				.tag {
+					max-width: 1270px;
+					@media (max-width: 1600px) {
+						max-width: 845px;
+					}
+				}
+			}
+			.buttonsWrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: end;
+				.buttonsContainer {
+					height: 64px;
+					display: flex;
+					gap: 10px;
+					.prevButton,
+					.nextButton {
+						z-index: 10;
+						background: none;
+						border: none;
+						cursor: pointer;
+
+						img {
+							width: 64px;
+							height: 64px;
+						}
+					}
+				}
+			}
+		}
+		.deleteContainer {
+			display: none;
+		}
+	}
+	.sliderContainer {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 20px;
+		.slider {
+			display: flex;
+			transition: transform 0.5s ease;
+			gap: 20px;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 24px 20px 150px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+		.topContainer {
+			display: flex;
+			flex-direction: column;
+			gap: 48px;
+			.headerContainer {
+				display: flex;
+				justify-content: space-between;
+				.headerText {
+					font-family: 'DIN Pro condensedbold', sans-serif;
+					font-weight: 900;
+					font-size: 48px;
+					line-height: 52.8px;
+					letter-spacing: -0.02em;
+				}
+				.deleteContainer{
+					display: none;
+				}
+			}
+			.controllers {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				.tagsControllers {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 48px;
+					max-width: 50%;
+					.tag {
+						max-width: 1270px;
+						@media (max-width: 1600px) {
+							max-width: 845px;
+						}
+					}
+				}
+				.buttonsWrapper {
+					display: flex;
+					flex-direction: column;
+					justify-content: end;
+					.buttonsContainer {
+						height: 64px;
+						display: flex;
+						gap: 10px;
+						.prevButton,
+						.nextButton {
+							z-index: 10;
+							background: none;
+							border: none;
+							cursor: pointer;
+
+							img {
+								width: 64px;
+								height: 64px;
+							}
+						}
+					}
+				}
+			}
+			.deleteContainer {
+				display: block;
+			}
+		}
+		.sliderContainer {
+			width: 100%;
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 20px;
+			.slider {
+				display: flex;
+				transition: transform 0.5s ease;
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 640px){
+	.container {
+		padding: 24px 10px 56px 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		.topContainer {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			.headerContainer {
+				display: flex;
+				justify-content: space-between;
+				.headerText {
+					font-family: 'DIN Pro condensedbold', sans-serif;
+					font-weight: 900;
+					font-size: 48px;
+					line-height: 52.8px;
+					letter-spacing: -0.02em;
+					color: #323232;
+				}
+			}
+			.controllers {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				.tagsControllers {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 48px;
+					max-width: 50%;
+					.tag {
+						max-width: 1270px;
+						@media (max-width: 1600px) {
+							max-width: 845px;
+						}
+					}
+				}
+				.buttonsWrapper {
+					display: none;
+				}
+			}
+			.deleteContainer {
+				margin-top: 8px;
+				display: block;
+			}
+		}
+		.sliderContainer {
+			width: 100%;
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 20px;
+			.slider {
+				display: flex;
+				transition: transform 0.5s ease;
+				gap: 20px;
+			}
+		}
+	}
+	
+}

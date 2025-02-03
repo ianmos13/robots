@@ -40,8 +40,7 @@
           line-height: 52.8px;
           max-width: 913px;
         }
-        @media (max-width: 1024px) { 
-         
+        @media (max-width: 1024px) {
         }
         @media (max-width: 640px) {
           font-size: 32px;
@@ -121,7 +120,7 @@
 
       .projectCard {
         border: none;
-        
+
         background-color: #fff;
         display: flex;
         flex-direction: column;
@@ -203,6 +202,17 @@
             }
           }
         }
+      }
+    }
+
+    .loadButtonContainer {
+      display: flex;
+      max-width: 285px;
+      width: 285px;
+      margin: 0 auto;
+
+      .loadButton {
+        width: 100%;
       }
     }
   }

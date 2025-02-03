@@ -162,7 +162,11 @@ export default function Projects() {
         </div>
 
         {itemsToShow < filteredProjects.length && (
-          <LoadMoreButton onClick={handleShowMore} />
+       <div className={styles.loadButtonContainer}>
+       <div className={styles.loadButton}>
+         <LoadMoreButton onClick={handleShowMore} />
+       </div>
+     </div>
         )}
       </div>
     </section>

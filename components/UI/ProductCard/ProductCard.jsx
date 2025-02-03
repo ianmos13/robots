@@ -2,6 +2,9 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.scss";
 
+import FavoriteButton from "@/components/UI/FavoriteButton/FavoriteButton";
+import CompareButton from "@/components/UI/CompareButton/CompareButton";
+
 export default function ProductCard({ robot }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -9,8 +12,7 @@ export default function ProductCard({ robot }) {
     <div
       className={styles.card}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+      onMouseLeave={() => setIsHovered(false)}>
       <div className={styles.cardHeader}>
         <div className={styles.imageWrapper}>
           <img
@@ -29,15 +31,10 @@ export default function ProductCard({ robot }) {
           )}
         </div>
         <div className={styles.iconGroup}>
-          <button className={styles.iconBtn}>
-            <img src="/images/icons/favorite.svg" alt="Избранное" />
-          </button>
-          <button className={styles.iconBtn}>
-            <img src="/images/icons/compare.svg" alt="Сравнить" />
-          </button>
+          <FavoriteButton robot={robot} isHovered={isHovered} />
+          <CompareButton robot={robot} isHovered={isHovered} />
         </div>
       </div>
-
       <div className={styles.infoContainer}>
         <div className={styles.title}>{robot.title}</div>
         <div className={styles.specsContainer}>
@@ -49,7 +46,7 @@ export default function ProductCard({ robot }) {
             </div>
           </div>
           <div className={styles.specsItem}>
-            <img src="/images/icons/weight.svg" />{" "}
+            <img src="/images/icons/weight.svg" />
             <div className={styles.textContainer}>
               <div className={styles.text}>Грузоподъемность</div>
               <div className={styles.value}>{robot.payloadRange}</div>
@@ -57,10 +54,11 @@ export default function ProductCard({ robot }) {
           </div>
         </div>
       </div>
-
       {isHovered && (
         <div className={styles.buttonContainer}>
-          <a href={`/products/${robot.id}`} className={styles.detailsBtn}>Подробнее</a>
+          <a href={`/products/${robot.id}`} className={styles.detailsBtn}>
+            Подробнее
+          </a>
         </div>
       )}
     </div>

@@ -61,18 +61,26 @@
     line-height: 19.2px;
     letter-spacing: -0.02em;
     color: #2e333d4d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    a {
-      font-family: "DIN Pro", sans-serif;
-      color: #2e333d;
+    .agreement {
+      display: flex;
+      a {
+        font-family: "DIN Pro", sans-serif;
+        color: #2e333d;
+      }
     }
+
+   
   }
 
   .shareContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 96px;
     .titel {
       font-family: "DIN Pro medium", sans-serif;
       font-size: 28px;
@@ -85,6 +93,9 @@
     .icons {
       display: flex;
       gap: 10px;
+      img{
+        cursor: pointer;
+      }
     }
   }
  
