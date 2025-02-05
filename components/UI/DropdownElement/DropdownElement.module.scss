@@ -1,0 +1,235 @@
+@import '/styles/variables';
+
+.container {
+
+    .headerLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        .iconContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 500ms ease;
+
+            .icon {
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 27px;
+                height: 15px;
+                @media (max-width: 640px) {
+                    width: 19px;
+                    height: 10px;
+                }
+            }
+        }
+
+        &.active {
+            .iconContainer {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .dropdownMenuWrapper {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition:
+            padding-top 0.5s ease-out,
+            grid-template-rows 0.5s ease-out,
+            visibility 0.5s linear,
+            opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+        opacity: 0;
+        visibility: hidden;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+
+        .dropdownMenu {
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .lastElement {
+                display: none;
+            }
+
+            .dropdownElement {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .link {
+                    text-decoration: none;
+
+                    &:hover {
+                        span {
+                        }
+                    }
+                }
+            }
+
+            .allLinkElement {
+                justify-content: flex-start;
+                gap: 8px;
+
+                .imageContainer {
+                    .icon {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            padding-top: 24px;
+            grid-template-rows: 1fr;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.blueContainer {
+    .headerLink {
+        padding: 3px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: "DIN Pro сondensedblack", sans-serif;
+        text-align: left;
+        color: $white;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        @media (max-width: 1024px) {
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 110%;
+            letter-spacing: -0.02em;
+        }
+        @media (max-width: 640px) {
+            font-size: 24px;
+        }
+
+        .iconContainer {
+            .icon {
+                background-image: url("/images/icons/dropdown-arrow-white.svg");
+            }
+        }
+    }
+
+    .dropdownMenuWrapper {
+        padding-top: 20px;
+        @media (max-width: 640px) {
+            padding-top: 24px;
+        }
+        .dropdownMenu {
+            gap: 26px;
+            @media (max-width: 640px) {
+                gap: 17.2px;
+            }
+            .lastElement {
+                @media (max-width: 640px) {
+                    display: block;
+                    height: 14px;
+                }
+            }
+            .dropdownElement {
+                .link {
+                    font-family: "DIN Pro medium", sans-serif;
+                    font-style: normal;
+                    letter-spacing: -0.02em;
+                    color: $white;
+                    @each $property, $value in $b20-medium {
+                        #{$property}: #{$value};
+                    }
+                    @media (max-width: 640px) {
+                        font-size: 14px;
+                        line-height: 16.8px;
+                    }
+                }
+            }
+        }
+        &.active {
+            padding-top: 24px;
+        }
+    }
+}
+
+.whiteContainer {
+    .headerLink {
+        opacity: 1;
+        color: $dark-gray;
+        font-family: "DIN Pro condensedbold", sans-serif;
+        letter-spacing: -0.02em;
+        height: 24px;
+        transition: opacity 0.5s ease-out;
+        @each $property, $value in $b22-medium {
+            #{$property}: #{$value};
+        }
+
+        .iconContainer {
+            .icon {
+                background-image: url("/images/icons/dropdown-arrow-dark-grey.svg");
+            }
+        }
+
+        &.active {
+            opacity: 0.3;
+
+            .iconContainer {
+                transform: rotate(180deg);
+
+                .icon {
+                    background-image: url("/images/icons/dropdown-arrow-dark-grey.svg");
+                }
+            }
+        }
+    }
+
+    .dropdownMenuWrapper {
+        .dropdownMenu {
+            gap: 24px;
+            .lastElement {
+                display: block;
+                height: 26px;
+            }
+            .dropdownElement {
+                height: 24px;
+                .link {
+                    font-family: "DIN Pro medium", sans-serif;
+                    letter-spacing: -0.03em;
+                    color: $dark-gray;
+                    @each $property, $value in $b17-medium {
+                        #{$property}: #{$value};
+                    }
+                }
+            }
+            .allLinkElement {
+                height: 26px;
+                .link {
+                    color: $main-blue;
+                }
+                .imageContainer {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+
+        &.active {
+            padding-top: 22px;
+        }
+    }
+}

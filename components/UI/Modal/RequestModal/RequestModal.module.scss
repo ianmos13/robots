@@ -125,6 +125,7 @@
     padding: 20px;
     border: 1px $blue-light solid;
     border-radius: 7px;
+    display: flex;
     @media (max-width: 640px) {
       top: 20px;
       right: 20px;

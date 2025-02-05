@@ -1,16 +1,15 @@
-'use client'
-import { useSelector } from "react-redux";
+import CompareProducts from "@/components/CompareProducts/CompareProducts";
+import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
 export default function page() {
-  const comparisons = useSelector((state) => state.compare);
-  console.log(comparisons)
+  const breadcrumbItems = [
+    { label: "Главная", link: "/" },
+    { label: "Сравнение товаров", link: "" },
+  ];
   return (
-    <div>
-    <h2>Сравнение</h2>
-    <ul>
-      {comparisons.map((item) => (
-        <li key={item.id}>{item.title}</li>
-      ))}
-    </ul>
-  </div>
+    <>
+      {" "}
+      <Breadcrumbs items={breadcrumbItems} />
+      <CompareProducts />
+    </>
   );
 }

@@ -1,9 +1,11 @@
 'use client'
 import styles from './SwitchButtons.module.scss'
-import React from 'react'
 
-export default function SwitchButtons({handlePrev, handleNext}) {
-	const [activeButton, setActiveButton] = React.useState("");
+export default function SwitchButtons({
+	activeButton,
+	handlePrev,
+	handleNext,
+}) {
 	return (
 		<div className={styles.containerButton}>
 			<button

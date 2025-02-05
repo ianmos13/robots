@@ -23,11 +23,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -57,22 +53,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -80,30 +75,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -120,7 +115,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -136,15 +131,13 @@
         "image": "/images/products/singleProduct/image 223.png"
       }
     }
-  }
-  ,
-  
+  },
   {
     "id": 2,
     "title": "Промышленный робот манипулятор CRP-RH14-101",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product2.svg",
+    "mainImage": "/images/products/product2.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "welding",
     "application": "Сварка",
@@ -164,11 +157,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -198,53 +187,38 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
+          },
+          {
+            "label": "Ось 3",
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
-            "values": [null, null]
+            "values": ["10"]
           },
-          {
-            "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
-          },
-          {
-            "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
-          },
-          {
-            "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
-          },
-          {
-            "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
-          },
-          {
-            "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
-          },
+         
+
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -261,7 +235,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -283,7 +257,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-102",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product3.svg",
+    "mainImage": "/images/products/product3.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "collaborative",
     "application": "Обслуживание станков",
@@ -303,11 +277,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -337,22 +307,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -360,30 +329,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -400,7 +369,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -419,10 +388,10 @@
   },
   {
     "id": 4,
-    "title": "Промышленный робот манипулятор CRP-RH14-103",
+    "title": "ID 4",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "scara",
     "application": "Обслуживание станков",
@@ -442,11 +411,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -476,22 +441,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -499,30 +463,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -539,7 +503,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -561,7 +525,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-104",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Контактная сварка",
@@ -581,11 +545,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -615,22 +575,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -638,30 +597,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -678,7 +637,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -700,7 +659,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-105",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "welding",
     "application": "Плазменная резка",
@@ -720,11 +679,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -754,22 +709,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -777,30 +731,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -817,7 +771,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -839,7 +793,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "welding",
     "application": "Фрезеровка",
@@ -859,11 +813,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -893,22 +843,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -916,30 +865,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -956,7 +905,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -978,7 +927,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "welding",
     "application": "Полировка",
@@ -998,11 +947,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1032,22 +977,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1055,30 +999,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1095,7 +1039,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1117,7 +1061,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "polishing",
     "application": "Плазменная и гидроабразивная резка",
@@ -1137,11 +1081,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1171,22 +1111,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1194,30 +1133,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1234,7 +1173,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1256,7 +1195,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Обслуживание станков с ЧПУ",
@@ -1276,11 +1215,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1310,22 +1245,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1333,30 +1267,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1373,7 +1307,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1395,7 +1329,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "polishing",
     "application": "Обслуживание ТПА",
@@ -1415,11 +1349,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1449,22 +1379,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1472,30 +1401,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1512,7 +1441,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1534,7 +1463,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "maintenance",
     "application": "Обслуживание гибочного и штамповочного пресса",
@@ -1554,11 +1483,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1588,22 +1513,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1611,30 +1535,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1651,7 +1575,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1673,7 +1597,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "maintenance",
     "application": "Обслуживание конвейерной линии",
@@ -1693,11 +1617,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1727,22 +1647,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1750,30 +1669,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1790,7 +1709,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1812,7 +1731,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "maintenance",
     "application": "SCARA",
@@ -1832,11 +1751,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -1866,22 +1781,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -1889,30 +1803,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -1929,7 +1843,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -1951,7 +1865,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "maintenance",
     "application": "Гибка металла",
@@ -1971,11 +1885,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2005,22 +1915,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2028,30 +1937,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2068,7 +1977,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2090,7 +1999,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Контактная сварка",
@@ -2110,11 +2019,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2144,22 +2049,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2167,30 +2071,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2207,7 +2111,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2229,7 +2133,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Сварка",
@@ -2249,11 +2153,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2283,22 +2183,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2306,30 +2205,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2346,7 +2245,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2368,7 +2267,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Плазменная резка",
@@ -2388,11 +2287,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2422,22 +2317,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2445,30 +2339,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2485,7 +2379,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2507,7 +2401,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Контактная сварка",
@@ -2527,11 +2421,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2561,22 +2451,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2584,30 +2473,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2624,7 +2513,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2646,7 +2535,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "palletizing",
     "application": "Обслуживание станков",
@@ -2666,11 +2555,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2700,22 +2585,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2723,30 +2607,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2763,7 +2647,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2785,7 +2669,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "scara",
     "application": "Контактная сварка",
@@ -2805,11 +2689,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2839,22 +2719,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -2862,30 +2741,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -2902,7 +2781,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -2924,7 +2803,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "scara",
     "application": "Обслуживание станков",
@@ -2944,11 +2823,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -2978,22 +2853,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3001,30 +2875,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3041,7 +2915,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3063,7 +2937,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "scara",
     "application": "Лазерная резка",
@@ -3083,11 +2957,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3117,22 +2987,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3140,30 +3009,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3180,7 +3049,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3202,7 +3071,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "scara",
     "application": "Сварка",
@@ -3222,11 +3091,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3256,22 +3121,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3279,30 +3143,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3319,7 +3183,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3341,7 +3205,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "collaborative",
     "application": "Паллетирование",
@@ -3361,11 +3225,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3395,22 +3255,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3418,30 +3277,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3458,7 +3317,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3480,7 +3339,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "collaborative",
     "application": "Контактная сварка",
@@ -3500,11 +3359,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3534,22 +3389,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3557,30 +3411,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3597,7 +3451,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3619,7 +3473,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "collaborative",
     "application": "Плазменная резка",
@@ -3639,11 +3493,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3673,22 +3523,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3696,30 +3545,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3736,7 +3585,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3758,7 +3607,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "milling",
     "application": "Паллетирование",
@@ -3778,11 +3627,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3812,22 +3657,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3835,30 +3679,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -3875,7 +3719,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -3897,7 +3741,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "milling",
     "application": "Плазменная резка",
@@ -3917,11 +3761,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -3951,22 +3791,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -3974,30 +3813,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4014,7 +3853,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4036,7 +3875,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "milling",
     "application": "Плазменная резка",
@@ -4056,11 +3895,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4090,22 +3925,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4113,30 +3947,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4153,7 +3987,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4175,7 +4009,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Обслуживание станков",
@@ -4195,11 +4029,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4229,22 +4059,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4252,30 +4081,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4292,7 +4121,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4314,7 +4143,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Контактная сварка",
@@ -4334,11 +4163,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4368,22 +4193,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4391,30 +4215,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4431,7 +4255,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4453,7 +4277,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Паллетирование",
@@ -4473,11 +4297,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4507,22 +4327,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4530,30 +4349,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4570,7 +4389,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4592,7 +4411,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Плазменная резка",
@@ -4612,11 +4431,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4646,22 +4461,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4669,30 +4483,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4709,7 +4523,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4731,7 +4545,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Контактная сварка",
@@ -4751,11 +4565,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4785,22 +4595,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4808,30 +4617,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4848,7 +4657,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [
@@ -4870,7 +4679,7 @@
     "title": "Промышленный робот манипулятор CRP-RH14-106",
     "armLength": "1530",
 
-   "mainImage": "/images/products/product4.svg",
+    "mainImage": "/images/products/product4.svg",
     "hoverImage": "/images/products/product-hover.png",
     "category": "manipulator",
     "application": "Плазменная резка",
@@ -4890,11 +4699,7 @@
       "Высокая мощность",
       "Кабели с повышенным уровнем гибкости"
     ],
-    "assignment": [
-      "Паллетирование",
-      "Укладка",
-      "Сортировка"
-    ],
+    "assignment": ["Паллетирование", "Укладка", "Сортировка"],
     "source": [
       "MEGMEET EHAVE 2 CM350R",
       "MEGMEET ARTSEN PLUS 350DR",
@@ -4924,22 +4729,21 @@
         "table": [
           {
             "label": "Модель",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Степень подвижности",
-            "values": ["Вертикальный угловой шарнир", "Вертикальный угловой шарнир"]
+            "values": ["Вертикальный угловой шарнир"]
           },
           {
             "label": "Ось 1",
             "values": [
-              "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°",
               "Крепление к полу или потолку-167°~167°, настенное крепление-30°~30°"
             ]
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Максимальная скорость движения по Осям",
@@ -4947,30 +4751,30 @@
           },
           {
             "label": "Ось 2",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 3",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           },
           {
             "label": "Ось 4",
-            "values": ["CRP-RH14-10", "CRP-RH14-10-W"]
+            "values": ["CRP-RH14-10"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "bases": {
         "table": [
@@ -4987,7 +4791,7 @@
             "values": ["1114 мм"]
           }
         ],
-         "image": "/images/products/singleProduct/image 223.png"
+        "image": "/images/products/singleProduct/image 223.png"
       },
       "flange": {
         "table": [

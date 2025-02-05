@@ -1,14 +1,43 @@
 'use client'
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import ContactUsButtons from "@/components/UI/ContactUsButtons/ContactUsButtons";
 import DefaultButton from "@/components/UI/Buttons/DefaultButton/DefaultButton";
+import DropdownElement from "@/components/UI/DropdownElement/DropdownElement";
+import {usePathname} from "next/navigation";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
 const Footer = () => {
-  return (
-      <footer className={styles.container}>
+    const pathname = usePathname();
+    const [oldLink, setOldLink] = useState(null);
+
+    const refs = footerFilterElements.reduce((acc, el) => {
+        acc[el.ref] = false
+        return acc
+    }, {})
+    const [isOpen, setIsOpen] = useState(refs)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (pathname !== oldLink) {
+            setOldLink(pathname);
+            setIsOpen(refs)
+        }
+    }, [pathname]);
+
+    const handleClickDropdown = async (refName) =>{
+        setIsOpen({ ...refs, [refName]: !isOpen[refName] })
+    }
+
+    const handleClickModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
+    return (
+      <>
+        <footer className={`${styles.container} ${isModalOpen ? "blurred" : ""}`}>
           <div className={styles.footerBody}>
               <div className={styles.footerLogo}>
                   <Link href="/" className={styles.logoContainer}>
@@ -23,21 +52,32 @@ const Footer = () => {
                   <div className={styles.filterElements}>
                       {footerFilterElements.map((element, idx) => (
                           <div key={idx} className={styles.filterElement} >
-                              <div className={styles.headerLink}>
-                                  {element.title}
+                              <div className={styles.desktopElement} >
+                                  <div className={styles.headerLink}>
+                                      {element.title}
+                                  </div>
+                                  <div key={idx} className={styles.filterChildrenElements} >
+                                      {element.children.map((link, idx) => (
+                                          <div key={idx} className={styles.linkElement} >
+                                              <Link
+                                                  href={link.link}
+                                                  className={styles.link}
+                                              >
+                                                  {link.title}
+                                              </Link>
+                                          </div>
+                                      ))}
+                                  </div>
                               </div>
-                              <div key={idx} className={styles.filterChildrenElements} >
-                                  {element.children.map((link, idx) => (
-                                      <div key={idx} className={styles.linkElement} >
-                                          <Link
-                                              href={link.link}
-                                              className={styles.link}
-                                          >
-                                              {link.title}
-                                          </Link>
-                                      </div>
-                                  ))}
+                              <div className={styles.mobileElement}>
+                                  <DropdownElement
+                                      theme='blue'
+                                      element={element}
+                                      isOpen={isOpen[element.ref]}
+                                      handleClick={handleClickDropdown}
+                                  />
                               </div>
+
                           </div>
                       ))}
                   </div>
@@ -65,7 +105,7 @@ const Footer = () => {
                       <div className={styles.footerContactsButton}>
                         <DefaultButton
                             theme={'white'}
-                            onClick={()=>{}}
+                            onClick={handleClickModal}
                             text={'Оставить заявку'} />
                       </div>
                   </div>
@@ -98,10 +138,39 @@ const Footer = () => {
                           </div>
                       </div>
                   </div>
+                  <div className={styles.footerContactsLinksTablet}>
+                      <Link
+                          href="/privacy-policy"
+                          className={styles.link}
+                      >
+                          Политика конфиденциальности
+                      </Link>
+                      <Link
+                          href="/return-policy"
+                          className={styles.link}
+                      >
+                          Политика возврата товаров и возврата средств
+                      </Link>
+                      <div className={styles.companyInfoText}>
+                          ИНН: 7751180991
+                      </div>
+                      <div className={styles.companyInfoText}>
+                          ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «СМТ»
+                      </div>
+                      <div className={styles.companyInfoText}>
+                          Все права защищены
+                      </div>
+                  </div>
               </div>
           </div>
-      </footer>
-  );
+        </footer>
+        <RequestModal
+          isOpen={isModalOpen}
+          text={"Оставьте заявку"}
+          onClose={handleClickModal}
+        />
+      </>
+    );
 };
 
 export default Footer;
@@ -110,6 +179,7 @@ const footerFilterElements = [
     {
         id: 1,
         title: "Промышленные роботы",
+        ref: 'industrial',
         children: [
             {
                 id: 10,
@@ -161,6 +231,7 @@ const footerFilterElements = [
     {
         id: 2,
         title: "Позиционеры",
+        ref: 'positioners',
         children: [
             {
                 id: 20,
@@ -202,6 +273,7 @@ const footerFilterElements = [
     {
         id: 3,
         title: "Комплексные решения",
+        ref: 'integrated',
         children: [
 
             {
@@ -259,6 +331,7 @@ const footerFilterElements = [
     {
         id: 4,
         title: "Проекты автоматизации",
+        ref: 'automation',
         children: [
             {
                 id: 40,

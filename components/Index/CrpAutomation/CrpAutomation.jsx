@@ -1,8 +1,21 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./CrpAutomation.module.scss";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
 const CrpAutomation = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
+    <>
     <section className={styles.container}>
       <div className={styles.titleContainer}>
         <div className={styles.title}>CRP AUTOMATION RUSSIA</div>
@@ -72,10 +85,16 @@ const CrpAutomation = () => {
         </div>
       </div>
 
-      <button className={styles.ctaButton}>
+      <button onClick={handleOpenModal} className={styles.ctaButton}>
         Получить бесплатную консультацию
       </button>
     </section>
+       <RequestModal
+       isOpen={isModalOpen}
+       text={"Оставьте заявку"}
+       onClose={handleCloseModal}
+     />
+     </>
   );
 };
 
