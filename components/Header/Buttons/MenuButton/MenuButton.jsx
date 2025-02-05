@@ -8,10 +8,10 @@ import {useMediaQuery} from "react-responsive";
 export default function MenuButton({ isOpen, setOpen }) {
     const [isMouseLeaved, setIsMouseLeaved] = useState(true);
     const [isMobileScreen, setIsMobileScreen] = useState(false);
-    const isMobile = useMediaQuery({ query: '(max-width: 730px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
     useEffect(() => {
-        setIsMobileScreen(true)
+        setIsMobileScreen(isMobile)
     }, [isMobile]);
 
     return (
@@ -23,13 +23,15 @@ export default function MenuButton({ isOpen, setOpen }) {
             <div className={styles.buttonContainer}>
                 <div className={styles.buttonBody}>
                     <div className={styles.imageContainer}>
-                        <Hamburger
-                            color={isMouseLeaved ? '#0149bf' : '#FFFFFF'}
-                            toggled={isOpen}
-                            distance={isMobileScreen ? 'md' : 'lg'}
-                            size={isMobileScreen ? 10 : 14}
-                            toggle={setOpen}
-                        />
+                        <div className={styles.imageHamburger}>
+                            <Hamburger
+                                color={isMouseLeaved ? '#0149bf' : '#FFFFFF'}
+                                toggled={isOpen}
+                                distance={isMobileScreen ? 'md' : 'lg'}
+                                size={isMobileScreen ? 10 : 14}
+                                toggle={setOpen}
+                            />
+                        </div>
                     </div>
                     <span className={styles.text}>
                         Меню

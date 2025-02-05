@@ -1,0 +1,58 @@
+@import '/styles/variables';
+
+.swiperContainer {
+	display: none;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	.categoryContainer {
+		max-height: 40px;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		font-family: 'DIN Pro medium', sans-serif;
+		padding: 10px 16px;
+		border: 1px solid #3232324d;
+		@each $property, $value in $b18-medium {
+			#{$property}: #{$value};
+		}
+		color: $dark-gray;
+		border-radius: 7px;
+		.removeButton {
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.container {
+		display: none;
+	}
+	.swiperContainer {
+		display: block;
+		width: 100%;
+		.swiperSlide {
+			width: auto !important;
+			.categoryContainer {
+				max-height: 40px;
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				font-family: 'DIN Pro medium', sans-serif;
+				padding: 10px 16px;
+				border: 1px solid #3232324d;
+				@each $property, $value in $b18-medium {
+					#{$property}: #{$value};
+				}
+				color: $dark-gray;
+				border-radius: 7px;
+				.removeButton {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

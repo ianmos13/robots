@@ -1,20 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const compareSlice = createSlice({
-  name: 'compare',
+  name: "compare",
   initialState: [],
   reducers: {
     addToCompare: (state, action) => {
       const product = action.payload;
-      if (!state.some(item => item.id === product.id)) {
+      if (!state.some((item) => item.id === product.id)) {
         state.push(product);
       }
     },
     removeFromCompare: (state, action) => {
-      return state.filter(item => item.id !== action.payload);
+      return state.filter((item) => item.id !== action.payload);
+    },
+    clearComparison: () => {
+      return []; 
     },
   },
 });
 
-export const { addToCompare, removeFromCompare } = compareSlice.actions;
+export const { addToCompare, removeFromCompare, clearComparison } = compareSlice.actions;
 export default compareSlice.reducer;

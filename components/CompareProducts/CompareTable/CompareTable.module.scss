@@ -1,0 +1,51 @@
+@import "/styles/variables";
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.techTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.techTable tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.techTable td {
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "DIN Pro medium", sans-serif;
+  vertical-align: bottom;
+  @each $property, $value in $b24-medium {
+    #{$property}: #{$value};
+  }
+}
+
+.techTable td:first-child {
+  min-width: 200px;
+}
+
+.fieldLabel {
+  min-width: 200px;
+}
+
+.grayText {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "DIN Pro medium", sans-serif;
+  color: #32323280;
+  @each $property, $value in $b24-medium {
+    #{$property}: #{$value};
+  }
+}
+
+.bottomAlign {
+  vertical-align: bottom;
+}

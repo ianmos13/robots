@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./RequestModal.module.scss";
 
-const RequestModal = ({ isOpen, onClose }) => {
+const RequestModal = ({ isOpen, onClose, text }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -75,7 +75,7 @@ const RequestModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             <div className={styles.header}>
-              <div className={styles.title}>Оставьте заявку</div>
+              <div className={styles.title}>{text}</div>
               <div className={styles.desciption}>Заполните поля данных</div>
             </div>
 

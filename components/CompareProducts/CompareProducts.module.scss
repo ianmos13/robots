@@ -1,0 +1,302 @@
+@import "/styles/variables";
+
+.container {
+  padding: 0 30px 40px 30px;
+
+  @media (max-width: 1600px) {
+    padding: 0px 30px 36px 30px;
+  }
+  @media (max-width: 1024px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 0px 10px 24px 10px;
+  }
+
+  .compareWrapper {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .leftConainer {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        h3 {
+          color: $dark-gray;
+        }
+        .tagContainer {
+          display: flex;
+          gap: 10px;
+        }
+        .removeCategoryButton {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          font-family: "DIN Pro medium", sans-serif;
+          padding: 10px 16px;
+          border: 1px solid #3232324d;
+          @each $property, $value in $b18-medium {
+            #{$property}: #{$value};
+          }
+          color: $dark-gray;
+          border-radius: 7px;
+          .removeButton {
+            cursor: pointer;
+          }
+        }
+      }
+      .rightContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: end;
+        .btnContaier {
+          display: flex;
+          flex-direction: row;
+          gap: 32px;
+          .downloadButton,
+          .addButton,
+          .clearButton {
+            background: unset;
+          }
+        }
+      }
+    }
+    .compareContainer {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      justify-content: center;
+    }
+    .productsSlider {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: 100%;
+      justify-content: flex-start;
+      transition: transform 0.3s ease-in-out;
+      margin: 48px 0;
+    }
+    .productsSlider::-webkit-scrollbar {
+      display: none;
+    }
+    .productCard {
+      border-radius: 20px;
+      background: $white;
+      text-align: center;
+      position: relative;
+      padding: 40px;
+      justify-content: space-between;
+      max-width: 450px;
+      width: 100%;
+      max-height: 463px;
+      display: flex;
+      flex-direction: column;
+
+      .cardIcons {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: flex;
+        gap: 16px;
+      }
+      .favoriteIcon,
+      .trashIcon {
+        cursor: pointer;
+        width: 33px;
+        height: 33px;
+        transition: transform 0.2s ease;
+      }
+      .favoriteIcon:hover {
+        transform: scale(1.2);
+      }
+      .trashIcon:hover {
+        transform: scale(1.2);
+      }
+      .productImage {
+        max-width: 314px;
+        max-height: 280px;
+        margin-bottom: 30px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .productTitle {
+        font-family: "DIN Pro condensedbold", sans-serif;
+
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 36.4px;
+        letter-spacing: -0.02em;
+      }
+    }
+  }
+
+  .compareWrapperScroll.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: $white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+  &.unfixed {
+    position: relative;
+    top: auto;
+    box-shadow: none;
+  }
+    .topControls {
+      display: flex;
+      flex-direction: column;
+      background: $white;
+      width: 100%;
+      padding: 30px 32px;
+      margin-bottom: 15px;
+      .leftContainer {
+        display: flex;
+        gap: 48px;
+      }
+      .navButton {
+        background: $white;
+      }
+      .buttonContainer {
+        display: flex;
+        justify-content: space-between;
+      }
+      .separator {
+        margin: 24px 0;
+        height: 1px;
+        background-color: #3232321a;
+        width: 100%;
+        margin-bottom: 56px;
+      }
+      .compareContainer {
+        display: flex;
+        width: 100%;
+        position: relative;
+      }
+      .productsSlider {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: space-around;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .productsSlider::-webkit-scrollbar {
+        display: none;
+      }
+      .productCard {
+        flex: 0 0 25%;
+        gap: 20px;
+        background: white;
+        text-align: center;
+        display: flex;
+        max-height: 126px;
+        .cardImg {
+          width: 114px;
+          height: 126px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .infoContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .productTitle {
+            font-family: "DIN Pro condensedbold", sans-serif;
+            font-size: 22px;
+            text-align: left;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: -0.44px;
+            color: $dark-gray;
+            max-width: 218px;
+          }
+          .cardIcons {
+            display: flex;
+            gap: 10px;
+            .btn {
+              border: 1px solid $blue-light;
+              padding: 10px 20px;
+              border-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              img {
+                height: 24px;
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+      .cardIcons {
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 8px;
+      }
+      .favoriteIcon,
+      .trashIcon {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        transition: transform 0.2s ease;
+      }
+      .favoriteIcon:hover {
+        transform: scale(1.2);
+      }
+      .trashIcon:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .downloadButton,
+  .addButton,
+  .clearButton {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: $white;
+    color: $main-blue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.03em;
+    font-family: "DIN Pro medium", sans-serif;
+    cursor: pointer;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .clearButton {
+    color: $dark-gray;
+  }
+  .navControls {
+    .containerButton {
+      gap: 10px;
+      display: flex;
+    }
+    .navButton {
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

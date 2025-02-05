@@ -4,7 +4,7 @@
     width: 100%;
     height: 66px;
 
-    @media (max-width: 730px) {
+    @media (max-width: 640px) {
         height: 52px;
     }
 
@@ -20,25 +20,35 @@
         cursor: pointer;
         transition: background-color 0.3s;
 
-        @media (max-width: 730px) {
+        @media (max-width: 640px) {
             padding: 1px;
         }
 
         .buttonBody {
             position: relative;
-            width: 75px;
+            width: 89px;
             height: 48px;
+            gap: 8px;
             display: inline-flex;
             align-items: center;
-            justify-content: flex-end;
-            @media (max-width: 730px) {
+            justify-content: flex-start;
+            @media (max-width: 640px) {
                 width: 57px;
             }
         }
 
         .imageContainer {
+            width: 24px;
+            height: 48px;
+            position: relative;
+        }
+        .imageHamburger {
             position: absolute;
             left: -12px;
+            @media (max-width: 640px) {
+                width: 57px;
+                left: -14px;
+            }
             & > div > div > div {
                 height: 2px !important;
             }
@@ -51,7 +61,7 @@
             @each $property, $value in $b22-medium {
                 #{$property}: #{$value};
             }
-            @media (max-width: 730px) {
+            @media (max-width: 640px) {
                 font-size: 16px;
                 font-weight: 700;
                 line-height: 16px;

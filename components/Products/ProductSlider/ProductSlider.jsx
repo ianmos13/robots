@@ -7,9 +7,12 @@ import {
 } from "@/redux/features/favoriteSlice";
 import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice";
 import styles from "./ProductSlider.module.scss";
-
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
 export default function ProductSlider({ images, productInfo }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const dispatch = useDispatch();
 
@@ -38,9 +41,15 @@ export default function ProductSlider({ images, productInfo }) {
       dispatch(addToFavorite(productInfo));
     }
   };
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
-    
+    <>
     <div className={styles.productSlider}>
       <div className={styles.imageContainer}>
         <img
@@ -108,7 +117,7 @@ export default function ProductSlider({ images, productInfo }) {
         </div>
 
         <div className={styles.btnContainer}>
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleOpenModal}>
             Получить коммерческое предложение
           </button>
 
@@ -167,5 +176,11 @@ export default function ProductSlider({ images, productInfo }) {
         </div>
       </div>
     </div>
+      <RequestModal
+      isOpen={isModalOpen}
+      text={"Оставьте заявку"}
+      onClose={handleCloseModal}
+    />
+    </>
   );
 }

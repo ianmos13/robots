@@ -15,6 +15,15 @@
             gap: 96px;
             padding: 50px 50px 56px 30px;
         }
+        @media (max-width: 1024px) {
+            gap: 40px;
+            padding: 47px 20px 30px 20px;
+        }
+
+        @media (max-width: 640px) {
+            gap: 32px;
+            padding: 20px 10px 25px 10px;
+        }
 
         .footerLogo {
             margin-left: 6px;
@@ -24,6 +33,9 @@
             @media (max-width: 1600px) {
                 margin-left: 0;
             }
+            @media (max-width: 640px) {
+                width: 179px;
+            }
 
             .logoContainer {
                 img {
@@ -31,6 +43,10 @@
                     object-fit: cover;
                     width: 100%;
                     height: 100%;
+
+                    @media (max-width: 640px) {
+                        object-fit: contain;
+                    }
                 }
             }
         }
@@ -44,6 +60,15 @@
                 flex-direction: column;
                 gap: 100px;
             }
+            @media (max-width: 1024px) {
+                margin-top: 8px;
+                gap: 40px;
+            }
+
+            @media (max-width: 640px) {
+                margin-top: 0;
+                gap: 2px;
+            }
         }
 
         .footerInfo {
@@ -55,21 +80,41 @@
                 margin-top: 18px;
                 gap: 50px;
             }
-
+            @media (max-width: 1024px) {
+                margin-top: 0;
+                gap: 40px;
+            }
+            @media (max-width: 640px) {
+                margin-top: 30px;
+                gap: 47px;
+            }
             .footerContacts {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-
+                @media (max-width: 1024px) {
+                    flex-direction: column;
+                    gap: 40px;
+                }
+                @media (max-width: 640px) {
+                    gap: 21px;
+                }
                 .footerContactsInfo {
                     display: flex;
                     flex-direction: row;
                     gap: 132px;
+                    min-width: 1130px;
 
                     @media (max-width: 1600px) {
                         gap: 37px;
                         flex-direction: column;
+                        min-width: 510px;
+                    }
+                    @media (max-width: 1024px) {
+                        gap: 0;
+                        min-width: unset;
+                        width: 100%;
                     }
                 }
 
@@ -84,9 +129,16 @@
                     line-height: 150%;
                     font-weight: 900;
 
+                    @media (max-width: 640px) {
+                        font-size: 24px;
+                    }
+
                     span {
                         font-family: "RobotoMono medium", sans-serif;
                         font-weight: 500;
+                        @media (max-width: 640px) {
+                            margin: 0 2px;
+                        }
                     }
                 }
 
@@ -94,6 +146,12 @@
                     max-width: 458px;
                     height: 64px;
                     width: 100%;
+                    @media (max-width: 1024px) {
+                        max-width: unset;
+                    }
+                    @media (max-width: 640px) {
+                        height: 56px;
+                    }
                 }
             }
 
@@ -101,19 +159,14 @@
                 display: flex;
                 flex-direction: row;
                 gap: 210px;
+                @media (max-width: 1024px) {
+                    display: none;
+                }
 
                 .companyInfo {
                     display: flex;
                     flex-direction: column;
                     gap: 39px;
-                }
-
-                .companyInfoText {
-                    font-family: "DIN Pro Medium", sans-serif;
-                    color: $white;
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 24px;
                 }
 
                 .linksInfo {
@@ -128,6 +181,29 @@
                     gap: 35px;
                 }
             }
+
+            .footerContactsLinksTablet {
+                display: none;
+                @media (max-width: 1024px) {
+                    display: grid;
+                    grid-template-columns: 38% 59.45%;
+                    grid-template-rows: repeat(3, 0.5fr);
+                    gap: 20px;
+                }
+                @media (max-width: 640px) {
+                    gap: 24px;
+                    grid-template-columns: 100%;
+                    grid-template-rows: repeat(5, 0.5fr);
+                }
+            }
+
+            .companyInfoText {
+                font-family: "DIN Pro Medium", sans-serif;
+                color: $white;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+            }
         }
     }
 }
@@ -135,12 +211,37 @@
 .filterElements {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 120px;
 
-    .filterElement {
-        display: flex;
-        flex-direction: column;
+    @media (max-width: 1280px) {
         gap: 40px;
+    }
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 640px) {
+        gap: 2px;
+    }
+
+    .filterElement {
+        .desktopElement {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        .mobileElement {
+            display: none;
+            @media (max-width: 1024px) {
+                display: block;
+            }
+        }
 
         .filterChildrenElements {
             display: flex;
@@ -159,7 +260,13 @@
         flex-direction: row;
         justify-content: space-between;
     }
-
+    @media (max-width: 1024px) {
+        gap: 60px;
+        flex-direction: column;
+    }
+    @media (max-width: 640px) {
+        gap: 24px;
+    }
     .linkElement {
         max-width: 250px;
         width: 100%;
@@ -179,6 +286,15 @@
     color: $white;
     @each $property, $value in $b20-bold {
         #{$property}: #{$value};
+    }
+    @media (max-width: 1024px) {
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+    }
+    @media (max-width: 640px) {
+        font-size: 24px;
     }
 }
 

@@ -19,6 +19,7 @@
     @media (max-width: 1024px) {
         width: 100vw;
         border-radius: 0;
+        gap: 10px;
         height: calc(100vh - 96px);
         justify-content: flex-start;
     }
@@ -42,6 +43,7 @@
 
     @media (max-width: 1024px) {
         width: 100%;
+        gap: 10px;
     }
 
     .buttonContainer {

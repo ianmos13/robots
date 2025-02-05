@@ -30,7 +30,6 @@ const MainBanner = () => {
                 Упрощаем и ускоряем производственные процессы в самых разных
                 сферах, от электроники для пищевой промышленности.
               </div>
-            
             </div>
           </div>
         </div>
@@ -42,12 +41,10 @@ const MainBanner = () => {
               соседних странах.
             </div>
             <div className={styles.requestMobile}>
-                <button
-                  className={styles.submitButton}
-                  onClick={handleOpenModal}>
-                  Оставить заявку
-                </button>
-              </div>
+              <button className={styles.submitButton} onClick={handleOpenModal}>
+                Оставить заявку
+              </button>
+            </div>
           </div>
 
           <div className={styles.imageContainer}>
@@ -65,7 +62,11 @@ const MainBanner = () => {
         </div>
       </section>
 
-      <RequestModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <RequestModal
+        isOpen={isModalOpen}
+        text={"Оставьте заявку"}
+        onClose={handleCloseModal}
+      />
     </>
   );
 };

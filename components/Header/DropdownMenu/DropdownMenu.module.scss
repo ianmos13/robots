@@ -7,15 +7,41 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 100px;
     overflow: hidden;
+    @media (max-width: 640px) {
+        padding: 20px 10px 10px 10px;
+        gap: 44px;
+    }
 
-    .menuContainer, .childrenContainer {
+    .menuContainer, .menuElements, .childrenContainer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 40px;
+
+        @media (max-width: 640px) {
+            gap: 24px;
+        }
+    }
+
+    .menuContainer {
+        @media (max-width: 1024px) {
+            margin-top: 28px;
+        }
+        @media (max-width: 640px) {
+            margin-top: 0;
+            gap: 24px;
+        }
+    }
+
+
+    .catalogElements {
+        display: none;
+        @media (max-width: 640px) {
+            display: block;
+            margin-top: 10px;
+        }
     }
 
     .elementContainer {
@@ -38,6 +64,14 @@
         letter-spacing: -0.02em;
         @each $property, $value in $b32-medium {
             #{$property}: #{$value};
+        }
+        @media (max-width: 640px) {
+            display: block;
+            height: 24px;
+            font-family: "DIN Pro condensedbold", sans-serif;
+            @each $property, $value in $b22-medium {
+                #{$property}: #{$value};
+            }
         }
     }
 }

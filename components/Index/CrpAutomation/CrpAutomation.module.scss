@@ -252,6 +252,7 @@
     background-color: $main-blue;
     border-radius: 7px;
     border: none;
+    cursor: pointer;
     @each $property, $value in $b22-medium {
       #{$property}: #{$value};
     }

@@ -1,4 +1,7 @@
 .containerButton {
+	height: 64px;
+	display: flex;
+	gap: 10px;
 	.prevButton,
 	.nextButton {
 		z-index: 10;
@@ -7,12 +10,8 @@
 		cursor: pointer;
 
 		img {
-			width: 48px;
-			height: 48px;
+			width: 64px;
+			height: 64px;
 		}
-	}
-
-	.nextButton {
-		margin-left: 10px;
 	}
 }
