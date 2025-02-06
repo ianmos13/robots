@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Filters.module.scss";
-
+import Slider from '@mui/material/Slider'
+import { useEffect, useState } from "react"
+import styles from "./Filters.module.scss"
 
 const DEFAULT_PAYLOAD_MIN = 0;
 const DEFAULT_PAYLOAD_MAX = 2500;
@@ -35,7 +35,15 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
 
 
   const [payloadRange, setPayloadRange] = useState([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX]);
+  const handlePayloadRangeChange = (e,newValue) => {
+    setPayloadRange(newValue);
+    updatePayloadFilter(newValue[0], newValue[1]);
+  };
   const [reachRange, setReachRange] = useState([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX]);
+  const handleReachRangeChange = (e,newValue) => {
+    setReachRange(newValue);
+    updateReachFilter(newValue[0], newValue[1])
+  };
   const [robotWeight, setRobotWeight] = useState("");
 
 
@@ -188,7 +196,6 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
 
   return (
     <div className={styles.filters}>
-   
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
@@ -269,23 +276,45 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
         </div>
         {isPayloadOpen && (
           <div className={styles.filterOptions}>
-        
-            <input
-              type="range"
+            <Slider
+              value={payloadRange}
+              onChange={handlePayloadRangeChange}
               min={DEFAULT_PAYLOAD_MIN}
               max={DEFAULT_PAYLOAD_MAX}
-              value={payloadRange[0]}
-              onChange={handlePayloadMinChange}
+              className={styles.customSlider}
+              sx={{
+                // Цвет активной части (track)
+                color: '#C6DFF5', // меняем цвет «заполненной» части трека
+                height: 6,      // высота активного трека
+            
+                // Стили для самого ползунка (thumb)
+                '& .MuiSlider-thumb': {
+                  width: 24,               // ширина кружочка
+                  height: 24,              // высота кружочка
+                  backgroundColor: '#0149BF',  // цвет кружочка
+                  boxShadow: 'none',       // убираем тень (эффекты при нажатии)
+                  '&:hover': {
+                    boxShadow: 'none',
+                  },
+                  '&.Mui-active': {
+                    boxShadow: 'none',
+                  },
+                  '&:focus': {
+                    boxShadow: 'none',
+                  },
+                },
+                // Стили для трека, по которому движется ползунок
+                '& .MuiSlider-track': {
+                  border: 'none', // убираем возможную границу
+                },
+                // Стили для rail – неактивная линия
+                '& .MuiSlider-rail': {
+                  opacity: 0.5,
+                  height: 6,
+                  backgroundColor: '#3232321A', // задаём нужный цвет для неактивной линии
+                },
+              }}
             />
-            <input
-              type="range"
-              min={DEFAULT_PAYLOAD_MIN}
-              max={DEFAULT_PAYLOAD_MAX}
-              value={payloadRange[1]}
-              onChange={handlePayloadMaxChange}
-            />
-
- 
             <div className={styles.rangeInputs}>
               <div className={styles.inputWrapper} data-unit="кг">
                 <input
@@ -328,19 +357,44 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
         </div>
         {isReachOpen && (
           <div className={styles.filterOptions}>
-            <input
-              type="range"
+            <Slider
+              value={reachRange}
+              onChange={handleReachRangeChange}
               min={DEFAULT_REACH_MIN}
               max={DEFAULT_REACH_MAX}
-              value={reachRange[0]}
-              onChange={handleReachMinChange}
-            />
-            <input
-              type="range"
-              min={DEFAULT_REACH_MIN}
-              max={DEFAULT_REACH_MAX}
-              value={reachRange[1]}
-              onChange={handleReachMaxChange}
+              className={styles.customSlider}
+              sx={{
+                // Цвет активной части (track)
+                color: '#C6DFF5', // меняем цвет «заполненной» части трека
+                height: 6,      // высота активного трека
+            
+                // Стили для самого ползунка (thumb)
+                '& .MuiSlider-thumb': {
+                  width: 24,               // ширина кружочка
+                  height: 24,              // высота кружочка
+                  backgroundColor: '#0149BF',  // цвет кружочка
+                  boxShadow: 'none',       // убираем тень (эффекты при нажатии)
+                  '&:hover': {
+                    boxShadow: 'none',
+                  },
+                  '&.Mui-active': {
+                    boxShadow: 'none',
+                  },
+                  '&:focus': {
+                    boxShadow: 'none',
+                  },
+                },
+                // Стили для трека, по которому движется ползунок
+                '& .MuiSlider-track': {
+                  border: 'none', // убираем возможную границу
+                },
+                // Стили для rail – неактивная линия
+                '& .MuiSlider-rail': {
+                  opacity: 0.5,
+                  height: 6,
+                  backgroundColor: '#3232321A', // задаём нужный цвет для неактивной линии
+                },
+              }}
             />
 
             <div className={styles.rangeInputs}>
@@ -393,6 +447,11 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
           </div>
         )}
       </div>
+      <button className={styles.applyButton} onClick={() => {
+        onChangeFilters(selectedFilters);
+      }}>
+            Показать
+      </button>
     </div>
   );
 }

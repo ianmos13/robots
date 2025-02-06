@@ -6,7 +6,7 @@ import Link from "next/link";
 import {useState} from "react";
 import AllRobotsButton from "@/components/Header/Buttons/AllRobotsButton/AllRobotsButton";
 
-export default function CatalogPopup({ catalogElements }) {
+export default function CatalogPopup({ catalogElements, openCatalog }) {
   const router = useRouter();
   const [imageUrl, setImageUrl] = useState(null);
 
@@ -15,24 +15,25 @@ export default function CatalogPopup({ catalogElements }) {
   };
 
   return (
-    <div className={styles.container} >
+    <div
+        className={styles.container}
+    >
       <AllRobotsButton onClick={goToCatalogPage}/>
       <div className={styles.catalogBox} >
         <div className={styles.buttonsContainer} >
           {catalogElements.map((element, idx) => (
-            <div
+            <Link
                 key={idx}
+                href={element.link}
                 className={styles.buttonContainer}
                 onMouseEnter={() => setImageUrl(element.imageUrl)}
                 onMouseLeave={() => setImageUrl(null)}
+                onClick={openCatalog}
             >
-              <Link
-                  className={styles.link}
-                  href={element.link}
-              >
+              <div className={styles.link}>
                 {element.title}
-              </Link>
-             </div>
+              </div>
+             </Link>
           ))}
         </div>
         <div className={styles.imageContainer} >

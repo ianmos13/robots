@@ -5,7 +5,6 @@
   flex-direction: column;
   background-color: $background;
   width: 100%;
-
   overflow: hidden;
 
   .headerWrapper {
@@ -14,19 +13,28 @@
     align-items: flex-start;
     width: 100%;
     margin-bottom: 30px;
+    @media (max-width: 1600px) {
+      margin-top: 3px;
+    }
+    @media (max-width: 1024px) {
+      margin-top: 32px;
+      margin-bottom: 0;
+    }
 
     .headerMainText {
+      margin-top: -11px;
       padding-left: 18px;
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 220px;
       letter-spacing: -0.02em;
-      font-weight: 900;
       line-height: 220px;
       text-transform: uppercase;
       color: $main-blue;
       @media (max-width: 1600px) {
+        margin-top: unset;
         font-size: 160px;
         line-height: 160px;
+        padding-left: 31px;
       }
       @media (max-width: 1024px) {
         font-size: 122px;
@@ -43,20 +51,25 @@
     .headerSubText {
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 200px;
-      font-weight: 900;
       line-height: 175px;
       letter-spacing: -0.02em;
       text-transform: uppercase;
       color: $dark-gray;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
+      margin-bottom: 13px;
+      margin-right: 25px;
+      margin-top: -13px;
       @media (max-width: 1600px) {
+        margin-top: 0;
         font-size: 160px;
         line-height: 160px;
+        margin-right: 31px;
+        margin-bottom: 2px;
       }
       @media (max-width: 1024px) {
+        margin-top: -10px;
         font-size: 122px;
         line-height: 122px;
+        margin-bottom: 0;
       }
       @media (max-width: 640px) {
         font-size: 52px;
@@ -69,7 +82,7 @@
       justify-content: end;
       @media (max-width: 1024px) {
         justify-content: unset;
-        padding-left: 20px;
+        padding-left: 24px;
       }
       @media (max-width: 640px) {
         padding-left: 10px;
@@ -80,6 +93,14 @@
       flex-direction: column;
       max-width: 937px;
       gap: 30px;
+
+      @media (max-width: 1170px) {
+        max-width: 50%;
+      }
+      @media (max-width: 1024px) {
+        max-width: 100%;
+        gap: 22px;
+      }
     }
     .headerDescription {
       font-family: "DIN Pro medium", sans-serif;
@@ -87,8 +108,6 @@
       line-height: 36px;
       color: $semi-dark-gray;
       max-width: 601px;
-
-      font-weight: 500;
 
       @media (max-width: 1600px) {
         max-width: 492px;
@@ -99,21 +118,50 @@
         max-width: 580px;
       }
     }
+    .requestDesktop {
+      margin-top: 194px;
+      @media (max-width: 1600px) {
+        margin-top: 26px;
+      }
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
   }
 
   .containerInfo {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-start;
+    flex-direction: row;
     width: 100%;
-    max-width: 1250px;
-    margin-top: -265px;
+    max-width: 50%;
+    height: 696px;
+    margin-top: -577px;
+    @media (max-width: 1700px) {
+      max-width: 47%;
+    }
     @media (max-width: 1600px) {
-      max-width: 1071px;
-      margin-top: -200px;
+      flex-direction: column;
+      gap: 20px;
+      height: 624px;
+      margin-top: -406px;
+      max-width: 45%;
+      justify-content: flex-start;
+    }
+    @media (max-width: 1280px) {
+      max-width: 40%;
+    }
+    @media (max-width: 1170px) {
+      max-width: 50%;
+      margin-top: -566px;
     }
     @media (max-width: 1024px) {
-      margin-top: 40px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 52px;
+      height: 528px;
       max-width: unset;
     }
     @media (max-width: 640px) {
@@ -123,31 +171,42 @@
     }
 
     .leftColumn {
+      position: absolute;
+      left: 0;
       display: flex;
       flex-direction: column;
-
       max-width: 398px;
-      margin-top: 400px;
+      margin-top: 457px;
       margin-left: 24px;
       @media (max-width: 1600px) {
-        margin-top: -70px;
+        position: relative;
+        margin-top: 0;
+        margin-left: 30px;
       }
       @media (max-width: 1024px) {
-        margin-top: 150px;
+        margin-top: 195px;
+        margin-left: 20px;
       }
       @media (max-width: 640px) {
         margin-top: 100px;
-        margin-left: 0px;
+        margin-left: 0;
         max-width: unset;
         padding: 10px;
       }
 
       .description {
-        font-weight: 500;
         font-family: "DIN Pro medium", sans-serif;
         font-size: 24px;
         line-height: 31px;
         color: $semi-dark-gray;
+        @media (max-width: 1600px) {
+          max-width: 306px;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        @media (max-width: 1024px) {
+          max-width: 258px;
+        }
       }
       .requestMobile {
         display: none;
@@ -161,14 +220,21 @@
 
     .imageContainer {
       width: 562px;
-      aspect-ratio: 0.88;
+      min-width: 562px;
+      aspect-ratio: 0.7424;
       height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       @media (max-width: 1600px) {
-        width: 430px;
+        width: 429px;
+        align-self: flex-end;
+        min-width: unset;
+        aspect-ratio: 0.746;
+      }
+      @media (max-width: 1024px) {
+        align-self: unset;
       }
 
       img {
@@ -192,18 +258,18 @@
   .submitButton {
     font-family: "DIN Pro condensedbold", sans-serif;
     font-size: 26px;
-    font-weight: 700;
+    //font-weight: 700;
     line-height: 26px;
     color: $main-blue;
     background: none;
     border: 1px solid $main-blue;
     border-radius: 7px;
-    padding: 32px 48px;
+    padding: 31px 48px;
     cursor: pointer;
     letter-spacing: -0.02em;
     transition: all 0.3s ease;
     @media (max-width: 1600px) {
-      padding: 25px 45px;
+      padding: 24px 45px;
       font-size: 22px;
       line-height: 22px;
     }
@@ -224,11 +290,6 @@
     &:hover {
       background-color: $main-blue;
       color: $white;
-    }
-  }
-  .requestDesctop {
-    @media (max-width: 1024px) {
-      display: none;
     }
   }
 }

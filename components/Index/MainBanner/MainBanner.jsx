@@ -30,6 +30,12 @@ const MainBanner = () => {
                 Упрощаем и ускоряем производственные процессы в самых разных
                 сферах, от электроники для пищевой промышленности.
               </div>
+              <div className={styles.requestDesktop}>
+                {" "}
+                <button className={styles.submitButton} onClick={handleOpenModal}>
+                  Оставить заявку
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -49,15 +55,6 @@ const MainBanner = () => {
 
           <div className={styles.imageContainer}>
             <Image src={robotImg} alt="Промышленный робот CRP" />
-          </div>
-
-          <div className={styles.rightColumn}>
-            <div className={styles.requestDesctop}>
-              {" "}
-              <button className={styles.submitButton} onClick={handleOpenModal}>
-                Оставить заявку
-              </button>
-            </div>
           </div>
         </div>
       </section>

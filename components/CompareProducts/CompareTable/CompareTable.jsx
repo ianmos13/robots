@@ -1,7 +1,13 @@
 import styles from "./CompareTable.module.scss";
+import ProductCategory from "@/public/data/products-catgories.json";
 
 const CompareTable = ({ data, tableRef }) => {
   if (!data.length) return null;
+
+  const getCategoryName = (categoryKey) => {
+    const category = ProductCategory.find((cat) => cat.key === categoryKey);
+    return category ? category.name : categoryKey;
+  };
 
   const extractValues = (category, label) => {
     return data.map((product) =>
@@ -12,7 +18,9 @@ const CompareTable = ({ data, tableRef }) => {
   const techSpecs = {
     "ID": data.map((product) => product.id || "-"),
     "Название": data.map((product) => product.title || "-"),
-    "Категория": data.map((product) => product.category || "-"),
+    "Категория": data.map((product) =>
+      product.category ? getCategoryName(product.category) : "-"
+    ),
     "Применение": data.map((product) => product.application || "-"),
     "Количество осей": data.map((product) => product.axes || "-"),
     "Длина руки": data.map((product) =>

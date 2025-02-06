@@ -1,10 +1,19 @@
-import { useState } from "react";
+"use client"
+
+import {useEffect, useState} from "react";
 import styles from "./SubscribeAndShare.module.scss";
 
 export default function SubscribeAndShare() {
   const [copied, setCopied] = useState(false);
   const currentUrl =
     typeof window !== "undefined" ? window.location.href : "";
+  const [mounted, setMounted] = useState(false);
+
+  if (!mounted) return null;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleCopyLink = () => {
     navigator.clipboard

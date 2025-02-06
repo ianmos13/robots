@@ -40,51 +40,53 @@ const Header = () => {
   }
 
   return (
-      <header className={`${styles.container} ${openCatalog || openMobileMenu ? styles.whiteContainer : ''}`}>
-          <div className={styles.headerBody}>
-              <Link href="/" className={styles.logoContainer}>
-                  <img
-                      className={styles.image}
-                      src="/images/logo.svg"
-                      alt="Logo"
-                  />
-              </Link>
-              <div className={`${styles.catalogButton} ${openMobileMenu ? styles.hiddenElement : ''}`}>
-                  <CatalogButton
-                      isOpenCatalog={openCatalog}
-                      openCatalog={openCatalogPopup}
-                  />
-              </div>
-              <div className={`${styles.downloadButton} ${openMobileMenu ? styles.hiddenElement : ''}`}>
-                  <DownloadButton />
-              </div>
-              <Menu menuElements={menuElements} />
-              <div className={`${styles.mobileMenu} ${openCatalog ? styles.hiddenElement : ''}`}>
-                  <MenuButton isOpen={openMobileMenu} setOpen={openMenuPopup} />
-                  <div
-                      className={`${styles.dropdownMenu} ${
-                          openMobileMenu ? styles.active : ""
-                      }`}>
-                      <DropdownMenu
-                          menuElements={menuElements}
-                          catalogElements={catalogElements}
+      <header className={styles.header}>
+          <div className={`${styles.container} ${openCatalog || openMobileMenu ? styles.whiteContainer : ''}`}>
+              <div className={styles.headerBody}>
+                  <Link href="/" className={styles.logoContainer}>
+                      <img
+                          className={styles.image}
+                          src="/images/logo.svg"
+                          alt="Logo"
+                      />
+                  </Link>
+                  <div className={`${styles.catalogButton} ${openMobileMenu ? styles.hiddenElement : ''}`}>
+                      <CatalogButton
+                          isOpenCatalog={openCatalog}
+                          openCatalog={openCatalogPopup}
                       />
                   </div>
+                  <div className={`${styles.downloadButton} ${openMobileMenu ? styles.hiddenElement : ''}`}>
+                      <DownloadButton />
+                  </div>
+                  <Menu menuElements={menuElements} />
+                  <div className={`${styles.mobileMenu} ${openCatalog ? styles.hiddenElement : ''}`}>
+                      <MenuButton isOpen={openMobileMenu} setOpen={openMenuPopup} />
+                      <div
+                          className={`${styles.dropdownMenu} ${
+                              openMobileMenu ? styles.active : ""
+                          }`}>
+                          <DropdownMenu
+                              menuElements={menuElements}
+                              catalogElements={catalogElements}
+                          />
+                      </div>
+                  </div>
+                  <div className={`${styles.contactUsButtons} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
+                    <ContactUsButtons theme="header" />
+                  </div>
               </div>
-              <div className={`${styles.contactUsButtons} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
-                <ContactUsButtons theme="header" />
+              <div className={`${styles.location} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
+                <Location />
               </div>
+              <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }`}>
+                <CatalogPopup catalogElements={catalogElements} openCatalog={openCatalogPopup} />
+              </div>
+              {openCatalog && (<div
+                    className={styles.closeArea}
+                    onClick={openCatalogPopup}
+              ></div>)}
           </div>
-          <div className={`${styles.location} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
-            <Location />
-          </div>
-          <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }`}>
-            <CatalogPopup catalogElements={catalogElements} />
-          </div>
-          {openCatalog && (<div
-                className={styles.closeArea}
-                onClick={openCatalogPopup}
-          ></div>)}
       </header>
   );
 };
@@ -110,7 +112,7 @@ const menuElements = [
         id: 3,
         title: "Реализованные\u00A0проекты",
         ref: "completedProjects",
-        link: "/",
+        link: "/news",
         order: 5,
     },
     {
@@ -130,7 +132,7 @@ const menuElements = [
             {
                 id: 50,
                 title: "Блог",
-                link: "/",
+                link: "/news",
             },
             {
                 id: 51,
@@ -140,7 +142,7 @@ const menuElements = [
             {
                 id: 52,
                 title: "О компании",
-                link: "/",
+                link: "/contacts",
             },
         ],
     },
@@ -165,7 +167,7 @@ const catalogElements = [
         id: 1,
         title: "Сварочные роботы, серия RH",
         imageUrl: "/images/ventilation.webp",
-        link: "/catalog?category=polishing",
+        link: "/catalog?category=welding",
     },
     {
         id: 2,

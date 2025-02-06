@@ -54,28 +54,37 @@ body {
 	margin: 0;
 }
 
-container {
-	margin: 0 auto;
+.container {
+	margin: 130px auto 0 auto;
 	max-width: 1920px;
 	display: block;
+	@media (max-width: 1600px) {
+		margin: 135px auto 0 auto;
+	}
+	@media (max-width: 1024px) {
+		margin: 124px auto 0 auto;
+	}
+	@media (max-width: 640px) {
+		margin: 72px auto 0 auto;
+	}
 }
 
 h1 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 64px;
-	font-weight: 900;
+	//font-weight: 900;
 	line-height: 70px;
 }
 h2 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 56px;
-	font-weight: 900;
+	//font-weight: 900;
 	line-height: 61.6px;
 }
 h3 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 48px;
-	font-weight: 900;
+	//font-weight: 900;
 	line-height: 52.8px;
 	text-transform: uppercase;
 }
@@ -83,7 +92,7 @@ h4 {
 	font-family: 'DIN Pro bold', sans-serif;
 	font-size: 30px;
 	font-style: normal;
-	font-weight: 700;
+	//font-weight: 700;
 	line-height: 130%;
 	text-transform: uppercase;
 }
@@ -109,7 +118,7 @@ h4 {
   border: 1px solid #0149bf;
   border-radius: 7px;
   font-family: 'DIN Pro Medium';
-  font-weight: 500;
+  //font-weight: 500;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.03em;
