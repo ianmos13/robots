@@ -189,7 +189,7 @@ const footerFilterElements = [
             {
                 id: 11,
                 title: "Сварочные роботы",
-                link: "/catalog?category=polishing",
+                link: "/catalog?category=welding",
             },
             {
                 id: 12,
@@ -241,17 +241,17 @@ const footerFilterElements = [
             {
                 id: 21,
                 title: "Одноосевые",
-                link: "/catalog",
+                link: "/catalog?axes=1",
             },
             {
                 id: 22,
                 title: "Двухосевые",
-                link: "/catalog",
+                link: "/catalog?axes=2",
             },
             {
                 id: 23,
                 title: "Трёхосевые",
-                link: "/catalog",
+                link: "/catalog?axes=3",
             },
             {
                 id: 24,
@@ -279,52 +279,52 @@ const footerFilterElements = [
             {
                 id: 30,
                 title: "Сварочные решения",
-                link: "/catalog",
+                link: "/catalog?scopes=welding",
             },
             {
                 id: 31,
                 title: "Обслуживание станков",
-                link: "/catalog",
+                link: "/catalog?scopes=cnc",
             },
             {
                 id: 32,
                 title: "Шлифовка и полировка",
-                link: "/catalog",
+                link: "/catalog?scopes=polishing",
             },
             {
                 id: 33,
                 title: "Лазерная и плазменная резка",
-                link: "/catalog",
+                link: "/catalog?scopes=laserCutting",
             },
             {
                 id: 34,
                 title: "Обслуживание конвейерных систем",
-                link: "/catalog",
+                link: "/catalog?scopes=conveyorLine",
             },
             {
                 id: 35,
                 title: "Паллетирование",
-                link: "/catalog",
+                link: "/catalog?scopes=palletizing",
             },
             {
                 id: 36,
                 title: "Маркировка",
-                link: "/catalog",
+                link: "/catalog?scopes=bendingStampingPress",
             },
             {
                 id: 37,
                 title: "Фрезеровка",
-                link: "/catalog",
+                link: "/catalog?scopes=milling",
             },
             {
                 id: 38,
                 title: "Укладка и паллетирование",
-                link: "/catalog",
+                link: "/catalog?scopes=palletizing",
             },
             {
                 id: 39,
                 title: "Производство поддонов",
-                link: "/catalog",
+                link: "/catalog?scopes=metalBending",
             }
         ],
     },
@@ -336,22 +336,22 @@ const footerFilterElements = [
             {
                 id: 40,
                 title: "Машиностроение и металлообработка",
-                link: "/catalog",
+                link: "/",
             },
             {
                 id: 41,
                 title: "Пищевая промышленность",
-                link: "/catalog",
+                link: "/",
             },
             {
                 id: 42,
                 title: "Деревообрабатывающая промышленность",
-                link: "/catalog",
+                link: "/",
             },
             {
                 id: 43,
                 title: "Пластиковая промышленность",
-                link: "/catalog",
+                link: "/",
             },
         ],
     },
@@ -360,17 +360,17 @@ const footerLinks = [
     {
         id: 1,
         title: "Периферийное оборудование",
-        link: "/",
+        link: "/catalog",
     },
     {
         id: 2,
         title: "О компании",
-        link: "/",
+        link: "/contacts",
     },
     {
         id: 3,
         title: "Блог",
-        link: "/",
+        link: "/news",
     },
     {
         id: 4,

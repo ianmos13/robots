@@ -21,9 +21,8 @@ export default function Home() {
       <LeaveRequestBanner theme="white" />
       <ProductCategoryGridSlider />
       <div className={styles.productPaginationGridContaner}>
-      <ProductCategoryGridPagination />
+        <ProductCategoryGridPagination />
       </div>
-     
       <LeaveRequestBanner />
       <LeasingPartners />
       <NewsIndex />

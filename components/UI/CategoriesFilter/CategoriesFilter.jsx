@@ -12,14 +12,12 @@ export default function CategoriesFilter({ categories, onDelete }) {
 	const [categoryToRemove, setCategoryToRemove] = React.useState(null)
 	const [categoryName, setCategoryName] = React.useState('')
 
-	// Открытие модального окна для подтверждения удаления категории
 	const handleCategoryDeleteClick = (key, name) => {
 		setCategoryToRemove(key)
 		setCategoryName(name)
 		setIsCategoryModalOpen(true)
 	}
 
-	// Подтверждение удаления категории
 	const confirmCategoryDelete = () => {
 		onDelete(categoryToRemove)
 		setIsCategoryModalOpen(false)
@@ -27,7 +25,6 @@ export default function CategoriesFilter({ categories, onDelete }) {
 		setCategoryName('')
 	}
 
-	// Отмена удаления категории
 	const cancelCategoryDelete = () => {
 		setIsCategoryModalOpen(false)
 		setCategoryToRemove(null)

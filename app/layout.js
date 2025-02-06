@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <body>
           <Header />
           <FloatingIcons />
-            <container>{children}</container>
+            <section className="container">{children}</section>
           <Footer />
         </body>
       </StoreProvider>

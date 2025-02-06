@@ -226,8 +226,8 @@ export default function CompareProducts() {
       if (!headerRef.current || !stopStickyRef.current) return;
       const headerBottom = headerRef.current.getBoundingClientRect().bottom;
       const stopStickyTop = stopStickyRef.current.getBoundingClientRect().top;
-      setIsSticky(headerBottom <= 0);
-      setHideSticky(stopStickyTop <= 50);
+      setIsSticky(headerBottom <= 130);
+      setHideSticky(stopStickyTop <= 180);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

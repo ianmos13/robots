@@ -1,199 +1,322 @@
-@import "/styles/variables";
+@import '/styles/variables';
 
 .container {
-  padding: 0 30px 40px 30px;
+	padding: 0 30px 40px 30px;
 
-  @media (max-width: 1600px) {
-    padding: 0px 30px 36px 30px;
-  }
-  @media (max-width: 1024px) {
-    padding: 0px 20px;
-  }
-  @media (max-width: 640px) {
-    padding: 0px 10px 24px 10px;
-  }
-  .categoryContainer {
-    .tagsConainer {
-      max-width: 1700px;
-      margin-bottom: 78px;
+	@media (max-width: 1600px) {
+		padding: 0px 30px 36px 30px;
+	}
+	@media (max-width: 1024px) {
+		padding: 0px 20px;
+	}
+	@media (max-width: 640px) {
+		padding: 0px 10px 24px 10px;
+	}
+	.categoryContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		@media (max-width: 640px) {
+			gap: 16px;
+		}
+		.tagsConainer {
+			max-width: 1700px;
+			margin-bottom: 64px;
+			@media (max-width: 1024px) {
+				margin-bottom: 40px;
+			}
+		}
+		.swiperCategoryContainer {
+			display: none;
+		}
+
+		@media (max-width: 640px) {
+			.tagsConainer {
+				display: none;
+			}
+			.swiperCategoryContainer {
+				display: block;
+				width: 100%;
+				margin-bottom: 32px;
+				.swiperSlide {
+					width: auto !important;
+					button {
+						padding: 10px 20px;
+						background-color: $white;
+						color: $dark-gray;
+						border: 1px solid $blue-light;
+						cursor: pointer;
+						border-radius: 7px;
+						transition: background-color 0.2s;
+						font-family: 'DIN Pro medium', sans-serif;
+						@each $property, $value in $b18-medium {
+							#{$property}: #{$value};
+						}
+
+						&:hover {
+							background-color: #c6dff566;
+						}
+					}
+
+					.activeTag {
+						background-color: $main-blue;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.productContainer {
+		width: 100%;
+		margin-bottom: 145px;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 24px;
+			@media (max-width: 640px) {
+				margin-bottom: 16px;
+			}
+
+			.selectViewContainer {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				justify-content: center;
+				.cardView,
+				.rowView {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 64px;
+					height: 64px;
+					position: relative;
+					border-radius: 100px;
+					border: 1.396px solid rgba(50, 50, 50, 0.1);
+					padding: 13px;
+					cursor: pointer;
+					overflow: hidden;
+					transition: background 0.3s ease;
+
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 0;
+						height: 0;
+						background: $main-blue;
+						border-radius: 50%;
+						transform: translate(-50%, -50%);
+						transition: width 0.3s ease, height 0.3s ease;
+						z-index: -1;
+					}
+
+					&:hover::before {
+						width: 150%;
+						height: 150%;
+					}
+
+					&.active {
+						background: $main-blue;
+						border-color: $main-blue;
+					}
+				}
+				@media (max-width: 1600px) {
+					display: none;
+				}
+			}
+		}
+		.selectedFillterContainer {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-bottom: 40px;
+			@media (max-width: 1024px) {
+				margin-bottom: 55px;
+			}
+
+			.filterButton{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.active {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 30px;
+				padding: 9px 16px;
+				background-color: $white;
+				color: $main-blue;
+				border: 1px solid $main-blue;
+				color: $main-blue;
+				cursor: default;
+				border-radius: 7px;
+				transition: background-color 0.2s;
+				font-family: 'DIN Pro medium', sans-serif;
+				@each $property, $value in $b18-medium {
+					#{$property}: #{$value};
+				}
+				img {
+					cursor: pointer;
+				}
+			}
+
+			.default {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 30px;
+				padding: 9px 16px;
+				border: none;
+				border-radius: 7px;
+				background: rgba(50, 50, 50, 0.1);
+				cursor: default;
+				transition: background-color 0.2s;
+				font-family: 'DIN Pro medium', sans-serif;
+				@each $property, $value in $b18-medium {
+					#{$property}: #{$value};
+				}
+				img {
+					cursor: pointer;
+				}
+			}
+		}
+    .selectedFilterSwiperContainer{
+      display: none;
     }
-  }
-  .productContainer {
-    width: 100%;
-    margin-bottom: 145px;
-    .header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 19px;
 
-      .selectViewContainer {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        .cardView,
-        .rowView {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 64px;
-          height: 64px;
-          position: relative;
-          border-radius: 100px;
-          border: 1.396px solid rgba(50, 50, 50, 0.1);
-          padding: 13px;
-          cursor: pointer;
-          overflow: hidden;
-          transition: background 0.3s ease;
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: $main-blue;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease;
-            z-index: -1;
-          }
-
-          &:hover::before {
-            width: 150%;
-            height: 150%;
-          }
-
-          &.active {
-            background: $main-blue;
-            border-color: $main-blue;
-          }
-        }
-        @media (max-width: 1600px) {
-          display: none;
-        }
-      }
-    }
-    .selectedFillterContainer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 62px;
-
-      .active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 9px 16px;
-        background-color: $white;
-        color: $main-blue;
-        border: 1px solid $main-blue;
-        color: $main-blue;
-        cursor: default;
-        border-radius: 7px;
-        transition: background-color 0.2s;
-        font-family: "DIN Pro medium", sans-serif;
-        @each $property, $value in $b18-medium {
-          #{$property}: #{$value};
-        }
-        img {
-          cursor: pointer;
-        }
-      }
-      .default {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 9px 16px;
-        border: none;
-        border-radius: 7px;
-        background: rgba(50, 50, 50, 0.1);
-        cursor: default;
-        transition: background-color 0.2s;
-        font-family: "DIN Pro medium", sans-serif;
-        @each $property, $value in $b18-medium {
-          #{$property}: #{$value};
-        }
-        img {
-          cursor: pointer;
-        }
-      }
-    }
-    .productContainer {
-      display: flex;
-
-      gap: 20px;
-      width: 100%;
-      .productContainerInner {
-        display: flex;
-        flex-direction: column;
-       max-width: 1390px;
-        .products {
-          width: 100%;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-
-          @media (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          @media (max-width: 640px) {
-            grid-template-columns: repeat(1, 1fr);
-          }
-          &.rowView {
+		@media (max-width: 640px) {
+			.selectedFillterContainer {
+				display: none;
+			}
+			.selectedFilterSwiperContainer {
+				display: block;
+				width: 100%;
+        margin-bottom: 32px;
+				.swiperSlide {
+					width: auto !important;
+          .active {
             display: flex;
-            flex-direction: column;
-          }
-          .bannerContainer {
-            grid-column: 1 / -1;
-            width: 100%;
-            margin: 20px 0;
-          }
-        }
-        .addInfoContainer {
-          margin-top: 72px;
-          font-family: "DIN Pro", sans-serif;
-          letter-spacing: -0.48px;
-          color: #2e363d;
-          @each $property, $value in $b24-regular {
-            #{$property}: #{$value};
-          }
-          .addInfo {
-            margin-bottom: 55px;
-          }
-          .addInfoList {
-            margin-bottom: 64px;
-            ul {
-              list-style-type: none;
-              padding-left: 0;
-
-              li {
-                position: relative;
-                padding-left: 25px;
-                margin-bottom: 15px;
-
-                &::before {
-                  content: "•";
-                  position: absolute;
-                  left: 0;
-                  color: #000;
-                  font-size: 16px;
-                }
-              }
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 9px 16px;
+            background-color: $white;
+            color: $main-blue;
+            border: 1px solid $main-blue;
+            color: $main-blue;
+            cursor: default;
+            border-radius: 7px;
+            transition: background-color 0.2s;
+            font-family: 'DIN Pro medium', sans-serif;
+            @each $property, $value in $b18-medium {
+              #{$property}: #{$value};
+            }
+            img {
+              cursor: pointer;
             }
           }
-          .addInfoСonclusion {
-            padding-left: 37px;
-            font-weight: bold;
-            color: $dark-gray;
-            border-left: 1px #004985 solid;
+    
+          .default {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 9px 16px;
+            border: none;
+            border-radius: 7px;
+            background: rgba(50, 50, 50, 0.1);
+            cursor: default;
+            transition: background-color 0.2s;
+            font-family: 'DIN Pro medium', sans-serif;
+            @each $property, $value in $b18-medium {
+              #{$property}: #{$value};
+            }
+            img {
+              cursor: pointer;
+            }
           }
-        }
-      }
-    }
-  }
+				}
+			}
+		}
+
+		.productContainer {
+			display: flex;
+
+			gap: 20px;
+			width: 100%;
+			.productContainerInner {
+				display: flex;
+				flex-direction: column;
+				max-width: 1390px;
+				.products {
+					width: 100%;
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					gap: 20px;
+
+					@media (max-width: 1024px) {
+						grid-template-columns: repeat(2, 1fr);
+					}
+
+					@media (max-width: 640px) {
+						grid-template-columns: repeat(1, 1fr);
+					}
+					&.rowView {
+						display: flex;
+						flex-direction: column;
+					}
+					.bannerContainer {
+						grid-column: 1 / -1;
+						width: 100%;
+						margin: 20px 0;
+					}
+				}
+				.addInfoContainer {
+					margin-top: 72px;
+					font-family: 'DIN Pro', sans-serif;
+					letter-spacing: -0.48px;
+					color: #2e363d;
+					@each $property, $value in $b24-regular {
+						#{$property}: #{$value};
+					}
+					.addInfo {
+						margin-bottom: 55px;
+					}
+					.addInfoList {
+						margin-bottom: 64px;
+						ul {
+							list-style-type: none;
+							padding-left: 0;
+
+							li {
+								position: relative;
+								padding-left: 25px;
+								margin-bottom: 15px;
+
+								&::before {
+									content: '•';
+									position: absolute;
+									left: 0;
+									color: #000;
+									font-size: 16px;
+								}
+							}
+						}
+					}
+					.addInfoСonclusion {
+						padding-left: 37px;
+						font-weight: bold;
+						color: $dark-gray;
+						border-left: 1px #004985 solid;
+					}
+				}
+			}
+		}
+	}
 }
