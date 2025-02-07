@@ -59,8 +59,8 @@ const ProductCategories = () => {
 
       <div className={styles.slider}>
         <Swiper
-          spaceBetween={20}
-          slidesPerView={1.2}
+          spaceBetween={0}
+          slidesPerView={"auto"}
           navigation={{
             nextEl: `.${styles.nextButton}`,
             prevEl: `.${styles.prevButton}`,
@@ -68,7 +68,7 @@ const ProductCategories = () => {
           modules={[Navigation]}
         >
           {categories.map((category, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className={styles.swiperSlide}>
               <div
                 className={styles.card}
                 onClick={() => handleCategoryClick(category.key)}

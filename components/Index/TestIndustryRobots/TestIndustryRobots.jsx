@@ -25,10 +25,8 @@ const TestIndustryRobots = () => {
               {" "}
               <h1>
                 Испытайте
-                <br />
                 промышленных
-                <br />
-                роботов в действии
+                роботов&nbsp;в&nbsp;действии
               </h1>
             </div>
             <div className={styles.description}>
@@ -43,7 +41,7 @@ const TestIndustryRobots = () => {
                 практике!
               </p>
             </div>
-            <div>
+            <div className={styles.testDriveButton}>
               {" "}
               <button onClick={handleOpenModal}>Взять на тест-драйв</button>
             </div>

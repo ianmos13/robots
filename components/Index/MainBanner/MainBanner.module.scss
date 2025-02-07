@@ -20,6 +20,9 @@
       margin-top: 32px;
       margin-bottom: 0;
     }
+    @media (max-width: 640px) {
+      margin-top: 16px;
+    }
 
     .headerMainText {
       margin-top: -11px;
@@ -41,10 +44,15 @@
         line-height: 122px;
         padding-left: 20px;
       }
+      @media (max-width: 820px) {
+        font-size: calc(95px + (100vw - 640px) * 3 / 20);
+        line-height: calc(95px + (100vw - 640px) * 3 / 20);
+      }
       @media (max-width: 640px) {
         font-size: 52px;
         line-height: 52px;
-        padding-left: 10px;
+        padding: 0 10px;
+        width: 100%;
       }
     }
 
@@ -70,8 +78,14 @@
         font-size: 122px;
         line-height: 122px;
         margin-bottom: 0;
+        margin-right: 0;
+      }
+      @media (max-width: 820px) {
+        font-size: calc(95px + (100vw - 640px) * 3 / 20);
+        line-height: calc(95px + (100vw - 640px) * 3 / 20);
       }
       @media (max-width: 640px) {
+        margin-top: 0;
         font-size: 52px;
         line-height: 52px;
       }
@@ -85,7 +99,7 @@
         padding-left: 24px;
       }
       @media (max-width: 640px) {
-        padding-left: 10px;
+        padding: 0 10px;
       }
     }
     .inner {
@@ -101,11 +115,15 @@
         max-width: 100%;
         gap: 22px;
       }
+      @media (max-width: 640px) {
+        gap: 16px;
+      }
     }
     .headerDescription {
       font-family: "DIN Pro medium", sans-serif;
       font-size: 28px;
       line-height: 36px;
+      letter-spacing: -0.02em;
       color: $semi-dark-gray;
       max-width: 601px;
 
@@ -116,6 +134,10 @@
       }
       @media (max-width: 1024px) {
         max-width: 580px;
+      }
+      @media (max-width: 640px) {
+        font-size: 16px;
+        line-height: 19.2px;
       }
     }
     .requestDesktop {
@@ -165,8 +187,10 @@
       max-width: unset;
     }
     @media (max-width: 640px) {
+      margin-top: 31px;
+      gap: 25px;
       flex-direction: column-reverse;
-      margin-top: -190px;
+      height: unset;
       align-items: center;
     }
 
@@ -188,10 +212,10 @@
         margin-left: 20px;
       }
       @media (max-width: 640px) {
-        margin-top: 100px;
+        margin-top: 0;
         margin-left: 0;
         max-width: unset;
-        padding: 10px;
+        padding: 10px 10px 40px 10px;
       }
 
       .description {
@@ -206,6 +230,13 @@
         }
         @media (max-width: 1024px) {
           max-width: 258px;
+          width: 258px;
+        }
+        @media (max-width: 640px) {
+          max-width: unset;
+          width: unset;
+          font-size: 16px;
+          line-height: 19.2px;
         }
       }
       .requestMobile {
@@ -214,6 +245,10 @@
         @media (max-width: 1024px) {
           display: block;
           margin-top: 86px;
+        }
+        @media (max-width: 640px) {
+          display: block;
+          margin-top: 24px;
         }
       }
     }
@@ -235,8 +270,15 @@
       }
       @media (max-width: 1024px) {
         align-self: unset;
+        margin-right: 5%;
       }
-
+      @media (max-width: 730px) {
+        margin-right: unset;
+      }
+      @media (max-width: 640px) {
+        width: 65.56%;
+        aspect-ratio: 0.7352;
+      }
       img {
         position: absolute;
         object-fit: cover;
@@ -281,7 +323,7 @@
     }
     @media (max-width: 640px) {
       width: 100%;
-      padding: 19px;
+      padding: 18px;
       font-size: 22px;
 
       line-height: 26px;

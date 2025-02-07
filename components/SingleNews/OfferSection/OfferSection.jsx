@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./OfferSection.module.scss";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 export default function OfferSection({ text }) {

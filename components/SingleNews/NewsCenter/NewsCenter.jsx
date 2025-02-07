@@ -17,19 +17,19 @@ import SubscribeAndShare from "@/components/UI/SubscribeAndShare/SubscribeAndSha
 export default function NewsCenter({ data }) {
   return (
     <div className={styles.centerContainer}>
-      <NewsInfo date={data.date} author={data.author} />
+      <NewsInfo date={data?.date} author={data?.author} />
       <div className={styles.newsContent}>
-        <h2>{data.title}</h2>
-        <Banner videoUrl={data.videoUrl} />
-        <Substance substance={data.substance} />
-        <OfferSection text={data.takeOfferText} />
-        <ImageSection imgSrc={data.imgBeforeH2} />
-        <DetailsH3 details={data.detailsH3} />
+        <h2>{data?.title}</h2>
+        { data?.videoUrl && (<Banner videoUrl={data.videoUrl} />) }
+        { data?.substance && (<Substance substance={data.substance} />) }
+        { data?.takeOfferText && (<OfferSection text={data.takeOfferText} />) }
+        { data?.imgBeforeH2 && (<ImageSection imgSrc={data.imgBeforeH2} />) }
+        { data?.detailsH3 && (<DetailsH3 details={data.detailsH3} />) }
       </div>
       <Quotation />
       <SameRobotSlider />
       <div className={styles.newsContent}>
-        <DetailsH4 details={data.detailsH4} />
+          { data?.detailsH4 && (<DetailsH4 details={data?.detailsH4} />) }
       </div>
       <LeaveRequestBanner />
       <VideoSection />

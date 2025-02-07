@@ -1,12 +1,15 @@
 @import "/styles/variables";
 
 .container {
-  padding: 30px;
+  padding: 30px 30px 40px 30px;
+  @media (max-width: 1600px) {
+    padding: 30px;
+  }
   @media (max-width: 1024px) {
-    padding: 20px;
+    padding: 33px 20px 20px 20px;
   }
   @media (max-width: 640px) {
-    padding: 10px;
+    padding: 18px 10px 20px 10px;
   }
   background-color: $white;
   .titleContainer {
@@ -19,8 +22,8 @@
     .title {
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 90px;
-      font-weight: 900;
       line-height: 90px;
+      letter-spacing: -0.02em;
       text-transform: uppercase;
       color: $dark-gray;
       @media (max-width: 1600px) {
@@ -63,6 +66,7 @@
     margin-top: 32px;
     margin-bottom: 64px;
     max-width: 945px;
+    letter-spacing: -0.02em;
     font-family: "DIN Pro", sans-serif;
     color: $dark-gray;
     @each $property, $value in $b24-medium {
@@ -99,46 +103,44 @@
     @media (max-width: 1024px) {
       margin-bottom: 24px;
       flex-direction: column;
+      gap: unset;
     }
     @media (max-width: 640px) {
       margin-bottom: 16px;
     }
     .leftColumn {
- 
-      width: 29%;
-   
+      width: 100%;
+      max-width: 512px;
       display: flex;
       position: relative;
       @media (max-width: 1600px) {
-      
-       
+        max-width: 337px;
       }
       @media (max-width: 1024px) {
         display: none;
       }
       .image {
-       
-        object-fit: contain;
+        object-fit: cover;
+        width: 100%;
       }
     }
   }
 
   .centerBlock {
-    display: flex;
- 
-    width: 47.3%;
-   
+    width: 100%;
+    max-width: 871px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     @media (max-width: 1600px) {
       width: 100%;
-      
+      max-width: 845px;
     }
     @media (max-width: 1024px) {
       max-width: unset;
       height: auto;
+      aspect-ratio: 1.9319;
     }
     .videoWrapper {
       position: relative;
@@ -167,8 +169,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    width: 24.8%;
+    width: 100%;
+    max-width: 457px;
     @media (max-width: 1600px) {
       max-width: 337px;
       gap: 7px;
@@ -181,7 +183,6 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: 640px) {
-      margin-bottom: 16px;
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -200,14 +201,20 @@
       padding: 20px 18px;
     }
     @media (max-width: 1024px) {
-        gap: 38px;
-        padding: 27px 24px;
-      }
-      @media (max-width: 640px) {
-        gap: 20px;
-        padding: 20px;
-      }
+      gap: 38px;
+      justify-content: center;
+      padding: 27px 24px;
+    }
+    @media (max-width: 740px) {
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      justify-content: unset;
+      gap: 20px;
+      padding: 20px;
+    }
     .featureDescription {
+      letter-spacing: -0.02em;
       font-family: "DIN Pro medium", sans-serif;
       color: $dark-gray;
       @each $property, $value in $b18-medium {
@@ -247,10 +254,11 @@
   .ctaButton {
     transition: background-color 0.3s;
     padding: 19px 95px;
-    font-family: "DIN Pro medium", sans-serif;
+    font-family: "DIN Pro condensedbold", sans-serif;
     color: $white;
     background-color: $main-blue;
     border-radius: 7px;
+    letter-spacing: -0.02em;
     border: none;
     cursor: pointer;
     @each $property, $value in $b22-medium {
@@ -261,7 +269,12 @@
     }
     @media (max-width: 1024px) {
        width: 100%;
-      }
+    }
+    @media (max-width: 640px) {
+      padding: 19px 60px;
+      font-size: 18px;
+      line-height: 18px;
+    }
 
     &:hover {
       background-color: $blue-hover;
