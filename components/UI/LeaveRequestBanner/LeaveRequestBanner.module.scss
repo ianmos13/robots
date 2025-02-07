@@ -1,25 +1,45 @@
 @import "/styles/variables";
 
 .container {
-  padding: 30px;
+  padding: 32px 30px 40px 30px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 
+  @media (max-width: 1600px) {
+    padding: 40px 30px 40px 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
   @media (max-width: 1024px) {
-    padding: 20px;
+    padding: 32px 20px 30px 20px;
   }
   @media (max-width: 640px) {
-    padding: 10px;
+    padding: 18px 10px 20px 10px;
   }
 
   .banner {
     position: relative;
     width: 100%;
+    aspect-ratio: 3.274;
     display: flex;
     overflow: hidden;
     border-radius: 20px;
     justify-content: flex-end;
-
+    @media (max-width: 1600px) {
+      aspect-ratio: 3.06;
+    }
+    @media (max-width: 1024px) {
+      aspect-ratio: unset;
+      height: 918px;
+      border-radius: 10px;
+      justify-content: unset;
+      align-items: flex-end;
+    }
+    @media (max-width: 640px) {
+      height: 521px;
+      border-radius: 10px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -34,6 +54,14 @@
         #0149bf 58.53%
       );
       z-index: 1;
+      @media (max-width: 1024px) {
+        background: linear-gradient(
+                -8.73deg,
+                rgba(1, 73, 191, 0.1) 7.6%,
+                rgba(1, 73, 191, 0.44) 31.54%,
+                #0149bf 58.53%
+        );
+      }
     }
   }
 
@@ -41,17 +69,49 @@
     z-index: 2;
     color: $gray;
     padding: 90px 0 0 90px;
-    max-width: 796px;
     margin: 0 auto;
     left: 0;
     position: absolute;
-    width: 42%;
+    width: 50%;
     background: unset;
-
+    @media (max-width: 1750px) {
+      padding: 60px 0 0 60px;
+    }
+    @media (max-width: 1600px) {
+      padding: 50px 0 0 50px;
+    }
+    @media (max-width: 1290px) {
+      width: 70%;
+    }
+    @media (max-width: 1280px) {
+      padding: 40px 0 0 40px;
+    }
+    @media (max-width: 1200px) {
+      padding: 30px 0 0 30px;
+    }
+    @media (max-width: 1024px) {
+      padding: 40px 35px 0 38px;
+      top: 0;
+      width: 90%;
+    }
+    @media (max-width: 640px) {
+      padding: 20px 25px 0 22px;
+      width: 100%;
+    }
+    .desktopTablet {
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+    .tabletTitle {
+      display: none;
+      @media (max-width: 1024px) {
+        display: block;
+      }
+    }
     .title {
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 60px;
-      font-weight: 900;
       line-height: 72px;
       text-transform: uppercase;
       width: 100%;
@@ -63,33 +123,79 @@
         letter-spacing: -0.02em;
         font-size: 48px;
       }
+      @media (max-width: 1200px) {
+        margin-bottom: 20px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 56px;
+        line-height: 61.6px;
+        margin-bottom: 32px;
+      }
+      @media (max-width: 640px) {
+        font-size: 32px;
+        line-height: 35.2px;
+        margin-bottom: 24px;
+      }
     }
 
     .description {
       margin-bottom: 81px;
+      max-width: 578px;
       font-family: "DIN Pro medium", sans-serif;
       font-size: 26px;
-      font-weight: 500;
       line-height: 33.8px;
       letter-spacing: -0.04em;
       text-align: start;
+      @media (max-width: 1750px) {
+        margin-bottom: 60px;
+      }
       @media (max-width: 1600px) {
-        margin-bottom: 100px;
+        margin-bottom: 81px;
+      }
+      @media (max-width: 1380px) {
+        margin-bottom: 50px;
+      }
+      @media (max-width: 1200px) {
+        margin-bottom: 20px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 26px;
+        line-height: 33.8px;
+        margin-bottom: 81px;
+      }
+      @media (max-width: 640px) {
+        max-width: unset;
+        font-size: 16px;
+        line-height: 19.2px;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
       }
     }
 
+    .buttonContainer {
+      max-width: 458px;
+      width: 100%;
+      @media (max-width: 640px) {
+        max-width: 180px;
+        width: 100%;
+      }
+    }
     button {
+      width: 100%;
       background-color:$white;
-      
       color: $dark-gray;
       border: none;
-      padding: 19px 169px;
-      font-family: "DIN Pro сondensedblack", sans-serif;
+      padding: 19px;
+      font-family: "DIN Pro condensedbold", sans-serif;
       @each $property, $value in $b22-medium {
         #{$property}: #{$value};
       }
       cursor: pointer;
       border-radius: 7px;
+      letter-spacing: -0.02em;
+      @media (max-width: 640px) {
+        padding: 17px 30px;
+      }
 
       &:hover {
         color: $main-blue;
@@ -97,8 +203,26 @@
     }
   }
 
+  .videoContainer {
+    width: 72%;
+    overflow: hidden;
+    @media (max-width: 1600px) {
+      width: 77%;
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: 70%;
+      position: relative;
+    }
+  }
   .videoBackground {
-    width: 70%;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+      position: absolute;
+      object-fit: cover;
+    }
   }
 }
 

@@ -6,6 +6,12 @@
 
   .title {
     color: $dark-gray;
+
+    @media (max-width: 640px) {
+      font-size: 18px;
+      line-height: 23.4px;
+      letter-spacing: -0.02em;
+    }
   }
 
   .addButton {
@@ -57,4 +63,11 @@
   height: 1px;
   background-color: #3232321a;
   width: 100%;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0 40px 0;
+  }
+  @media (max-width: 640px) {
+    margin: 8px 0 24px 0;
+  }
 }

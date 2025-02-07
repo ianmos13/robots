@@ -29,6 +29,23 @@
 	}
 }
 
+@media (max-width: 640px) {
+	.contactsContainer {
+		.phone {
+			padding: 14px 51px;
+		}
+		.social {
+			max-height: 48px;
+			padding: 14px 21px;
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
 .headerContainer {
 	gap: 5px;
 	height: 66px;
@@ -220,6 +237,10 @@
 
 .contactsContainer {
 	gap: 10px;
+	@media (max-width: 640px) {
+		width: 100%;
+		justify-content: space-between;
+	}
 	.phone {
 		min-width: 200px;
 		font-family: 'DIN Pro Condensedmedium', sans-serif;
@@ -231,28 +252,37 @@
 		background: $dark-gray;
 		color: #f5f5f5;
 		height: max-content;
+		@media (max-width: 640px) {
+			padding: 14px 50px;
+		}
 	}
 
 	.social {
 		height: max-content;	
 		border: 1px solid $blue-light;
 		border-radius: 8px;
-	}
-}
-
-@media (max-width: 640px) {
-	.contactsContainer {
-		.phone {
-			padding: 14px 51px;
-		}
-		.social {
+		@media (max-width: 640px) {
 			max-height: 48px;
-			padding: 14px 21px;
-			a {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+			max-width: 117px;
+			padding: 0;
+		}
+		.telegram {
+			padding: 20px 18px 20px 21px;
+			@media (max-width: 640px) {
+				padding: 15px 18px 15px 21px;
 			}
+		}
+		.whatsapp {
+			padding: 20px 21px 20px 18px;
+			@media (max-width: 640px) {
+				padding: 14px 20px 14px 17px;
+			}
+		}
+
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 }

@@ -23,6 +23,7 @@ export default function Home() {
       <div className={styles.productPaginationGridContaner}>
         <ProductCategoryGridPagination />
       </div>
+
       <LeaveRequestBanner />
       <LeasingPartners />
       <NewsIndex />
