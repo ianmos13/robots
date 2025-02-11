@@ -10,7 +10,7 @@
     padding: 0px 20px;
   }
   @media (max-width: 640px) {
-    padding: 0px 10px 24px 10px;
+    padding: 0px 0px 24px 10px;
   }
 
   .compareWrapper {
@@ -22,6 +22,11 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+        @media (max-width: 640px) {
+          display: flex;
+          gap: 24px;
+          width: 100%;
+        }
         h3 {
           color: $dark-gray;
         }
@@ -46,12 +51,26 @@
             cursor: pointer;
           }
         }
+        .btnContaierMobile {
+          display: none;
+          @media (max-width: 1024px) {
+            display: flex;
+            gap: 24px;
+          }
+        }
       }
       .rightContainer {
         display: flex;
         flex-direction: column;
         gap: 40px;
         align-items: end;
+        min-width: 590px;
+        @media (max-width: 1024px) {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          gap: 24px;
+        }
         .btnContaier {
           display: flex;
           flex-direction: row;
@@ -60,6 +79,9 @@
           .addButton,
           .clearButton {
             background: unset;
+          }
+          @media (max-width: 640px) {
+            display: none;
           }
         }
       }
@@ -76,9 +98,12 @@
       flex-wrap: nowrap;
       gap: 20px;
       width: 100%;
-      justify-content: flex-start;
-      transition: transform 0.3s ease-in-out;
+      max-width: 100%;
       margin: 48px 0;
+      overflow: auto;
+
+      scroll-behavior: smooth;
+      transition: transform 0.3s ease;
     }
     .productsSlider::-webkit-scrollbar {
       display: none;
@@ -86,16 +111,24 @@
     .productCard {
       border-radius: 20px;
       background: $white;
-      text-align: center;
+      align-items: center;
       position: relative;
       padding: 40px;
       justify-content: space-between;
-      max-width: 450px;
-      width: 100%;
-      max-height: 463px;
+      flex: 0 0 24%;
       display: flex;
       flex-direction: column;
-
+      @media (max-width: 1400px) {
+        flex: 0 0 32.5%;
+        padding: 30px;
+      }
+      @media (max-width: 1024px) {
+        flex: 0 0 49%;
+      }
+      @media (max-width: 640px) {
+        flex: 0 0 90%;
+        padding: 20px;
+      }
       .cardIcons {
         position: absolute;
         top: 30px;
@@ -108,32 +141,47 @@
         cursor: pointer;
         width: 33px;
         height: 33px;
-        transition: transform 0.2s ease;
-      }
-      .favoriteIcon:hover {
-        transform: scale(1.2);
-      }
-      .trashIcon:hover {
-        transform: scale(1.2);
       }
       .productImage {
-        max-width: 314px;
-        max-height: 280px;
+        width: 314px;
+        height: 280px;
         margin-bottom: 30px;
+        @media (max-width: 1600px) {
+          margin-bottom: 40px;
+          width: 245px;
+          height: 218px;
+        }
+        @media (max-width: 1024px) {
+          width: 290px;
+          height: 258px;
+        }
+        @media (max-width: 640px) {
+          margin-bottom: 38px;
+          width: 140px;
+          height: 150px;
+        }
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-
       .productTitle {
         font-family: "DIN Pro condensedbold", sans-serif;
-
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 22px;
+        text-align: left;
+        width: 100%;
         line-height: 36.4px;
         letter-spacing: -0.02em;
+        @media (max-width: 1600px) {
+          font-size: 20px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 22px;
+        }
+        @media (max-width: 640px) {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -156,36 +204,54 @@
     @media (max-width: 640px) {
       top: 72px;
     }
-
-  &.unfixed {
-    position: relative;
-    top: auto;
-    box-shadow: none;
-  }
+    &.unfixed {
+      position: relative;
+      top: auto;
+      box-shadow: none;
+    }
     .topControls {
       display: flex;
       flex-direction: column;
       background: $white;
       width: 100%;
-      padding: 30px 32px;
+
       margin-bottom: 15px;
+      align-items: center;
       .leftContainer {
         display: flex;
         gap: 48px;
+        @media (max-width: 1024px) {
+          gap: 24px;
+          padding: unset;
+        }
+        @media (max-width: 640px) {
+          gap: 24px;
+        }
       }
       .navButton {
         background: $white;
+        @media (max-width: 1024px) {
+          display: none;
+        }
       }
       .buttonContainer {
         display: flex;
         justify-content: space-between;
+        max-width: 1830px;
+        width: 100%;
+        padding: 20px 30px;
+        @media (max-width: 1024px) {
+          padding: 20px 20px;
+        }
       }
       .separator {
-        margin: 24px 0;
+        margin-bottom: 46px;
         height: 1px;
         background-color: #3232321a;
         width: 100%;
-        margin-bottom: 56px;
+        @media (max-width: 640px) {
+          margin-bottom: 27px;
+        }
       }
       .compareContainer {
         display: flex;
@@ -196,23 +262,55 @@
         display: flex;
         flex-wrap: nowrap;
         width: 100%;
-        justify-content: space-around;
-        overflow-x: auto;
+        justify-content: center;
+        overflow-x: hidden;
         overflow-y: hidden;
+        max-width: 1830px;
+        margin: 0 auto;
+        @media (max-width: 1400px) {
+          justify-content: unset;
+        }
       }
       .productsSlider::-webkit-scrollbar {
         display: none;
       }
       .productCard {
-        flex: 0 0 25%;
-        gap: 20px;
-        background: white;
-        text-align: center;
+        border-radius: 20px;
+        background: $white;
+        text-align: left;
+        position: relative;
+        margin-bottom: 61px;
+        justify-content: center;
+        flex: 0 0 24%;
         display: flex;
-        max-height: 126px;
+        gap: 19px;
+        @media (max-width: 1400px) {
+          flex: 0 0 32.5%;
+          margin-bottom: 56px;
+        }
+        @media (max-width: 1024px) {
+          flex: 0 0 49%;
+        }
+        @media (max-width: 640px) {
+          flex: 0 0 65%;
+          flex-direction: column;
+          margin-bottom: 20px;
+          padding-left: 27px;
+          justify-content: center;
+          align-items: center;
+        }
         .cardImg {
           width: 114px;
           height: 126px;
+          @media (max-width: 1600px) {
+            width: 132px;
+            height: 146px;
+          }
+          @media (max-width: 640px) {
+            width: 114px;
+            height: 126px;
+          }
+
           img {
             width: 100%;
             height: 100%;
@@ -223,22 +321,42 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          gap: 28px;
+          @media (max-width: 1600px) {
+            gap: 52px;
+          }
+          @media (max-width: 1024px) {
+            gap: 28px;
+          }
+          @media (max-width: 640px) {
+            gap: 24px;
+          }
           .productTitle {
             font-family: "DIN Pro condensedbold", sans-serif;
-            font-size: 22px;
+            font-size: 28px;
             text-align: left;
-            font-weight: 700;
+
             line-height: 120%;
             letter-spacing: -0.44px;
             color: $dark-gray;
             max-width: 218px;
+            @media (max-width: 1600px) {
+              font-size: 22px;
+            }
+            @media (max-width: 1024px) {
+              font-size: 28px;
+            }
+            @media (max-width: 640px) {
+              font-size: 18px;
+            }
           }
           .cardIcons {
             display: flex;
             gap: 10px;
             .btn {
               border: 1px solid $blue-light;
-              padding: 10px 20px;
+              width: 64px;
+              height: 46px;
               border-radius: 7px;
               display: flex;
               align-items: center;
@@ -251,25 +369,6 @@
             }
           }
         }
-      }
-      .cardIcons {
-        top: 10px;
-        right: 10px;
-        display: flex;
-        gap: 8px;
-      }
-      .favoriteIcon,
-      .trashIcon {
-        cursor: pointer;
-        width: 18px;
-        height: 18px;
-        transition: transform 0.2s ease;
-      }
-      .favoriteIcon:hover {
-        transform: scale(1.2);
-      }
-      .trashIcon:hover {
-        transform: scale(1.2);
       }
     }
   }
@@ -290,6 +389,14 @@
     letter-spacing: -0.03em;
     font-family: "DIN Pro medium", sans-serif;
     cursor: pointer;
+    @media (max-width: 1024px) {
+      background: unset;
+    }
+    @media (max-width: 640px) {
+      span {
+        display: none;
+      }
+    }
     img {
       width: 24px;
       height: 24px;

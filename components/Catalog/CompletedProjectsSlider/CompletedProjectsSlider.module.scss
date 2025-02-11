@@ -1,122 +1,334 @@
-@import "/styles/variables";
+@import '/styles/variables';
 .sliderContainer {
-  margin: 0 auto;
-  padding: 16px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  width: 100%;
-  margin-bottom: 105px;
+	padding: 0 0 100px 0;
+	width: 100%;
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		font-family: 'DIN Pro bold', sans-serif;
+		gap: 400px;
+		h4 {
+			font-size: 30px;
+			line-height: 39px;
+			letter-spacing: -0.02em;
+			color: #323232;
+		}
+	}
+	.separator {
+		margin: 24px 0 32px 0;
+		height: 1px;
+		background-color: #3232321a;
+		width: 100%;
+	}
+	.slider {
+		display: block;
+		position: relative;
+		.swiperSlide {
+			height: auto;
+		}
+		.card {
+			max-height: 487px;
+			background: white;
+			height: 100%;
+			border-radius: 20px;
+			display: flex;
+			gap: 40px;
+			.imageContainer {
+				width: 35%;
+				.image {
+					height: 100%;
+					width: 100%;
+					border-top-left-radius: 20px;
+					border-bottom-left-radius: 20px;
+					object-fit: cover;
+				}
+			}
+
+			.descriptionContainer {
+				width: 65%;
+				padding: 40px 110px 58px 0;
+				display: flex;
+				flex-direction: column;
+				gap: 32px;
+				.titleContainer {
+					display: flex;
+					flex-direction: column;
+					gap: 24px;
+					.data {
+						font-family: 'DIN Pro condensedbold', sans-serif;
+						color: #32323280;
+						opacity: 0.5;
+						text-transform: uppercase;
+						font-size: 20px;
+						line-height: 24px;
+						letter-spacing: 0.2em;
+					}
+					.tag {
+						padding: 10px 20px 12px 20px;
+						width: max-content;
+						background-color: $main-blue;
+						color: #fff;
+						border-radius: 10px;
+						transition: background-color 0.2s;
+						font-family: 'DIN Pro', sans-serif;
+						letter-spacing: -0.05em;
+						font-size: 18px;
+						line-height: 18px;
+					}
+					.title {
+						max-width: 468px;
+						font-size: 32px;
+						line-height: 38.4px;
+						letter-spacing: -0.02em;
+						font-family: 'DIN Pro medium', sans-serif;
+						color: #323232;
+					}
+				}
+				.description {
+					color: #323232;
+					font-family: 'DIN Pro', sans-serif;
+					font-size: 20px;
+					line-height: 28px;
+					letter-spacing: -0.01em;
+				}
+				.mobileRead{
+					display: none;
+				}
+			}
+		}
+	}
+	.mobileButtons{
+		display: none;
+	}
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  font-family: "DIN Pro bold", sans-serif;
+@media (max-width: 1440px) {
+	.sliderContainer {
+		padding: 0 0 100px 0;
+		width: 100%;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+			font-family: 'DIN Pro bold', sans-serif;
+			gap: 400px;
+			h4 {
+				font-size: 30px;
+				line-height: 39px;
+				letter-spacing: -0.02em;
+				color: #323232;
+			}
+		}
+		.separator {
+			margin: 24px 0 32px 0;
+			height: 1px;
+			background-color: #3232321a;
+			width: 100%;
+		}
+		.slider {
+			display: block;
+			position: relative;
+			.card {
+				max-height: 451px;
+				// max-width: 1148px;
+				background: white;
+				height: 100%;
+				border-radius: 20px;
+				display: flex;
+				gap: 40px;
+				.imageContainer {
+					width: 38%;
+					.image {
+						height: 100%;
+						width: 100%;
+						border-top-left-radius: 20px;
+						border-bottom-left-radius: 20px;
+						object-fit: cover;
+					}
+				}
 
+				.descriptionContainer {
+					width: 62%;
+					padding: 40px 25px 60px 0;
+					display: flex;
+					flex-direction: column;
+					gap: 32px;
+					.titleContainer {
+						.title {
+							max-width: 468px;
+							font-size: 28px;
+							line-height: 36.4px;
+							color: #323232;
+						}
+					}
+					.description {
+						font-size: 18px;
+						line-height: 27px;
+						letter-spacing: -0.02em;
+					}
+				}
+			}
+		}
+	}
 }
-.separator {
-    margin: 24px 0;
-    height: 1px;
-    background-color: #3232321a;
-    width: 100%;
-    margin-bottom: 56px;
-  }
-.prevButton,
-.nextButton {
-  z-index: 10;
-  background: none;
-  border: none;
-  cursor: pointer;
 
-  img {
-    width: 48px;
-    height: 48px;
-  }
+@media (max-width: 1024px) {
+	.sliderContainer {
+		padding: 0 0 100px 0;
+		width: 100%;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+			font-family: 'DIN Pro bold', sans-serif;
+			gap: 120px;
+		}
+		.separator {
+			margin: 34px 0 32px 0;
+		}
+		.slider {
+			display: block;
+			position: relative;
+			.card {
+				max-height: 343px;
+				// max-width: 768px;
+				border-radius: 10px;
+				gap: 30px;
+				.imageContainer {
+					width: 40%;
+					.image {
+						height: 100%;
+						width: 100%;
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+						object-fit: cover;
+					}
+				}
+
+				.descriptionContainer {
+					width: 60%;
+					padding: 30px 30px 30px 0;
+					gap: 16px;
+					.titleContainer {
+						gap: 16px;
+						.data {
+							font-size: 16px;
+							line-height: 19.2px;
+							letter-spacing: 0.2em;
+						}
+						.tag {
+							padding: 10px 20px 12px 20px;
+							border-radius: 7px;
+						}
+						.title {
+							max-width: 401px;
+							font-size: 24px;
+							line-height: 31.2px;
+							letter-spacing: -0.02em;
+						}
+					}
+					.description {
+						position: relative;
+						font-size: 16px;
+						line-height: 19.2px;
+						letter-spacing: -0.02em;
+						display: -webkit-box; /* Включаем режим flexbox для старых Webkit-браузеров */
+						-webkit-box-orient: vertical; /* Задаём вертикальную ориентацию */
+						-webkit-line-clamp: 6; /* Ограничиваем вывод тремя строками */
+						overflow: hidden; /* Скрываем лишний текст */
+					}
+				}
+			}
+		}
+	}
 }
 
-.nextButton {
-  margin-left: 10px;
-}
+@media (max-width: 640px) {
+	.sliderContainer {
+		padding: 0 0 100px 0;
+		width: 100%;
+		.header {
+			h4 {
+				font-size: 20px;
+				line-height: 26px;
+				letter-spacing: -0.02em;
+			}
+			.desktopButtonContainer{
+				display: none;
+			}
+		}
+		.separator {
+			margin: 16px 0 24px 0;
+		}
+		.slider {
+			display: block;
+			position: relative;
+			.card {
+				max-height: 593px;
+				// max-width: 330px;
+				border-radius: 10px;
+				gap: 20px;
+				flex-direction: column;
+				.imageContainer {
+					max-height: 242px;
+					height: 242px;
+					width: 100%;
+					.image {
+						height: 100%;
+						width: 100%;
+						border-bottom-left-radius: unset;
+						border-top-left-radius: 10px;
+						border-top-right-radius: 10px;
+						object-fit: cover;
+					}
+				}
 
-.slider {
-  display: block;
-  position: relative;
-}
-
-.card {
-  box-sizing: border-box;
-
-  background: white;
-
-  margin-right: 20px;
-  border-radius: 20px;
-  display: flex;
-  max-height: 1233px;
-
-  gap: 40px;
-}
-.imageContainer {
-  max-width: 437px;
-  max-height: 489px;
-  .image {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    object-fit: cover;
-  }
-}
-
-.descriptionContainer {
-  margin: 40px 15px 58px 40px;
-  max-width: 653px;
-  .titleContainer {
-    display: flex;
-    gap: 24px;
-    flex-direction: column;
-    margin-bottom: 32px;
-    .data {
-      font-family: "DIN Pro condensedbold", sans-serif;
-      color: $dark-gray;
-      opacity: 0.5;
-
-      text-transform: uppercase;
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      @media (max-width: 640px) {
-        font-size: 18px;
-        line-height: 21.6px;
-      }
-    }
-    .tag {
-      padding: 10px 20px;
-      width: max-content;
-      background-color: $main-blue;
-      color: #fff;
-
-      border-radius: 10px;
-      transition: background-color 0.2s;
-      font-family: "DIN Pro medium", sans-serif;
-      letter-spacing: -0.9px;
-      @each $property, $value in $b18-medium {
-        #{$property}: #{$value};
-      }
-    }
-    .title {
-        max-width: 468px;
-        @each $property, $value in $b32-medium {
-            #{$property}: #{$value};
-          }
-          letter-spacing: -0.64px;
-          font-family: "DIN Pro medium", sans-serif;
-    }
-  }
-  .description {
-    @each $property, $value in $b20-regular {
-        #{$property}: #{$value};
-      }
-      color: $dark-gray;
-      font-family: "DIN Pro", sans-serif;  }
+				.descriptionContainer {
+					width: 100%;
+					padding: 0 20px 32px 20px;
+					display: flex;
+					flex-direction: column;
+					gap: 8px;
+					.titleContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 16px;
+						.data {
+							font-size: 16px;
+							line-height: 19.2px;
+						}
+						.tag {
+							border-radius: 7px;
+							font-size: 14px;
+							line-height: 14px;
+						}
+						.title {
+							max-width: 100%;
+							font-size: 20px;
+							line-height: 26px;
+						}
+					}
+					.description {
+						font-size: 16px;
+						line-height: 19.2px;
+						letter-spacing: -0.02em;
+					}
+					.mobileRead{
+						display: block;
+						margin-top: 20px;
+						font-size: 16px;
+						line-height: 19.2px;
+						letter-spacing: -0.02em;
+						text-decoration: underline;
+						color: #0149BF;
+					}
+				}
+			}
+		}
+		.mobileButtons{
+			margin-top: 24px;
+			display: block;
+		}
+	}
 }

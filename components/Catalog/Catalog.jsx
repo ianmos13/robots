@@ -158,33 +158,11 @@ export default function Catalog() {
 		<section className={styles.container}>
 			<div className={styles.categoryContainer}>
 				<h3>Категории роботов</h3>
-				<Swiper
-					className={styles.swiperCategoryContainer}
-					direction='horizontal'
-					slidesPerView='auto'
-					spaceBetween={10}
-				>
-					{categories.map(category => (
-						<SwiperSlide key={category.key} className={styles.swiperSlide}>
-							<button
-								key={category.key}
-								className={
-									selectedCategory === category.key ? styles.activeTag : ''
-								}
-								onClick={() => setSelectedCategory(category.key)}
-							>
-								{category.name}
-							</button>
-						</SwiperSlide>
-					))}
-				</Swiper>
-				<div className={styles.tagsConainer}>
-					<CategoryTags
-						categories={allCategories}
-						selectedCategory={selectedCategory}
-						onSelectCategory={setSelectedCategory}
-					/>
-				</div>
+				<CategoryTags
+					categories={allCategories}
+					selectedCategory={selectedCategory}
+					onSelectCategory={setSelectedCategory}
+				/>
 			</div>
 
 			<div className={styles.productContainer}>

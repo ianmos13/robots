@@ -2,38 +2,50 @@
 
 .container {
 	padding: 30px 30px 100px 30px;
+	@media (max-width: 1600px) {
+		padding: 30px 30px 106px 30px;
+	}
 	.contactUs {
 		min-height: 482px;
 		display: flex;
 		flex-direction: row;
 		gap: 100px;
 		justify-content: space-between;
+		@media (max-width: 1600px) {
+			gap: 40px;
+		}
 		.addInfo {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			gap: 40px;
+			@media (max-width: 1600px) {
+				width: 100%;
+				max-width: 613px;
+			}
 			.title {
 				max-width: 450px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				gap: 40px;
+				gap: 34px;
 				h4 {
 					font-family: 'DIN Pro Bold', sans-serif;
-					font-weight: 700;
 					font-size: 30px;
-					line-height: 36px;
+					line-height: 39px;
 					letter-spacing: -0.03em;
 				}
 			}
 			.text {
 				max-width: 633px;
 				font-family: 'DIN Pro Medium', sans-serif;
-				font-weight: 500;
 				font-size: 24px;
 				line-height: 31.2px;
-				letter-spacing: -0.04em;
+				letter-spacing: -0.02em;
+				@media (max-width: 1600px) {
+					font-size: 18px;
+					line-height: 21.6px;
+				}
 			}
 		}
 
@@ -41,7 +53,7 @@
 			width: 100%;
 			max-width: 920px;
 			@media (max-width: 1600px) {
-				max-width: 685px;
+				max-width: 761px;
 			}
 			form {
 				display: flex;
@@ -51,13 +63,22 @@
 					display: flex;
 					flex-direction: column;
 					gap: 20px;
+					@media (max-width: 1600px) {
+						gap: 40px;
+					}
 					.rowContainer {
 						display: flex;
 						flex-direction: column;
 						gap: 20px;
+						@media (max-width: 1600px) {
+							gap: 10px;
+						}
 						.formRow {
 							display: flex;
 							gap: 20px;
+							@media (max-width: 1600px) {
+								gap: 10px;
+							}
 							input,
 							textarea {
 								width: 100%;
@@ -65,7 +86,6 @@
 								border: none;
 								border-radius: 15px;
 								font-family: 'DIN Pro', sans-serif;
-								font-weight: 400px;
 								font-size: 20px;
 								line-height: 26px;
 								letter-spacing: -0.03em;
@@ -73,6 +93,9 @@
 								outline: none;
 								&::placeholder {
 									color: #9ea8af;
+								}
+								@media (max-width: 1600px) {
+									border-radius: 10px;
 								}
 							}
 							textarea {
@@ -101,7 +124,6 @@
 						user-select: none;
 						font-family: 'DIN Pro', sans-serif;
 						font-size: 14px;
-						font-weight: 400;
 						line-height: 18.2px;
 						letter-spacing: -0.04em;
 					}
@@ -132,7 +154,6 @@
 					label {
 						font-family: 'DIN Pro', sans-serif;
 						font-size: 14px;
-						font-weight: 400;
 						line-height: 18.2px;
 						letter-spacing: -0.04em;
 					}
@@ -162,7 +183,7 @@
 
 @media (max-width: 1024px) {
 	.container {
-		padding: 20px;
+		padding: 20px 20px 48px 20px;
 		.contactUs {
 			min-height: unset;
 			display: flex;
@@ -170,6 +191,7 @@
 			justify-content: start;
 			gap: 42px;
 			.addInfo {
+				max-width: unset;
 				display: flex;
 				flex-direction: column;
 				justify-content: start;
@@ -184,7 +206,6 @@
 
 					h4 {
 						max-width: 450px;
-						font-weight: 700;
 						font-size: 30px;
 						line-height: 39px;
 						letter-spacing: -0.02em;
@@ -192,7 +213,6 @@
 				}
 				.text {
 					max-width: unset;
-					font-weight: 500;
 					font-size: 24px;
 					line-height: 31.2px;
 					letter-spacing: -0.04em;
@@ -222,7 +242,6 @@
 									padding: 23px 24px;
 									border: none;
 									border-radius: 7px;
-									font-weight: 400px;
 									font-size: 20px;
 									line-height: 26px;
 									letter-spacing: -0.03em;
@@ -257,7 +276,6 @@
 							cursor: pointer;
 							user-select: none;
 							font-size: 16px;
-							font-weight: 400;
 							line-height: 19.2px;
 							letter-spacing: -0.02em;
 						}
@@ -288,7 +306,6 @@
 						label {
 							font-family: 'DIN Pro', sans-serif;
 							font-size: 16px;
-							font-weight: 400;
 							line-height: 19.2px;
 							letter-spacing: -0.02em;
 						}
@@ -302,8 +319,8 @@
 						padding: 21px 0 17px 0;
 						cursor: pointer;
 						transition: background-color 0.3s;
-						line-height: 20px;
-						font-size: 20px;
+						line-height: 26.4px;
+						font-size: 22px;
 						letter-spacing: normal;
 						&:hover {
 							background-color: $blue-hover;
@@ -317,7 +334,7 @@
 
 @media (max-width: 640px) {
 	.container {
-		padding: 10px;
+		padding: 10px 10px 48px 10px;
 		.contactUs {
 			min-height: unset;
 			display: flex;
@@ -337,7 +354,6 @@
 					gap: 16px;
 					h4 {
 						max-width: 266px;
-						font-weight: 700;
 						font-size: 20px;
 						line-height: 26px;
 						letter-spacing: -0.02em;
@@ -345,7 +361,6 @@
 				}
 				.text {
 					max-width: 633px;
-					font-weight: 500;
 					font-size: 14px;
 					line-height: 18.2px;
 					letter-spacing: -0.04em;
@@ -376,7 +391,6 @@
 									padding: 18px 20px 17px 20px;
 									border: none;
 									border-radius: 7px;
-									font-weight: 400px;
 									font-size: 16px;
 									line-height: 20.8px;
 									letter-spacing: -0.03em;
@@ -411,7 +425,6 @@
 							cursor: pointer;
 							user-select: none;
 							font-size: 16px;
-							font-weight: 400;
 							line-height: 19.2px;
 							letter-spacing: -0.02em;
 						}
@@ -441,7 +454,6 @@
 
 						label {
 							font-size: 16px;
-							font-weight: 400;
 							line-height: 19.2px;
 							letter-spacing: -0.02em;
 						}
@@ -459,7 +471,6 @@
 						line-height: 20px;
 						font-size: 20px;
 						letter-spacing: -0.02em;
-						letter-spacing: normal;
 						&:hover {
 							background-color: $blue-hover;
 						}

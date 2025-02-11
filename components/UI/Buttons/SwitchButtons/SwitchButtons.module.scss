@@ -1,17 +1,64 @@
+@import "/styles/variables";
+
 .containerButton {
 	height: 64px;
 	display: flex;
 	gap: 10px;
-	.prevButton,
-	.nextButton {
-		z-index: 10;
-		background: none;
-		border: none;
-		cursor: pointer;
 
-		img {
-			width: 64px;
-			height: 64px;
+	@media (max-width: 640px) {
+		height: 48px;
+	}
+	.arrowLeft,
+	.arrowRight {
+		background: unset;
+		padding: 10px;
+		cursor: pointer;
+		border: 1px solid #3232321A;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		@media (max-width: 640px) {
+			width: 48px;
+			height: 48px;
+		}
+		&:hover:not(:disabled) {
+			border: 0;
+			background-color: $main-blue;
+		}
+
+		.icon {
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 12px;
+			height: 16px;
+			@media (max-width: 640px) {
+				width: 10px;
+				height: 12px;
+			}
+		}
+	}
+	.arrowLeft {
+		.icon {
+			background-image: url("/images/icons/arrow-left-filled.svg");
+		}
+		&:hover:not(:disabled) {
+			.icon {
+				background-image: url("/images/icons/arrow-left-white.svg");
+			}
+		}
+	}
+	.arrowRight {
+		.icon {
+			background-image: url("/images/icons/arrow-rightfilled.svg");
+		}
+		&:hover:not(:disabled) {
+			.icon {
+				background-image: url("/images/icons/arrow-right-white.svg");
+			}
 		}
 	}
 }

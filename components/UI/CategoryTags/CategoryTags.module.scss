@@ -1,30 +1,118 @@
 @import "/styles/variables";
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-   
 
-    button {
-        padding: 10px 20px;
-        background-color: $white;
-        color: $dark-gray;
-        border: 1px solid $blue-light;
-        cursor: pointer;
-        border-radius: 7px;
-        transition: background-color 0.2s;
-        font-family: "DIN Pro medium", sans-serif;
-        @each $property, $value in $b18-medium {
-          #{$property}: #{$value};
-        }
+.swiperCategoryContainer {
+    display: none;
+    width: 100vw;
+    height: 40px;
+    margin: 0 -20px 32px -20px;
 
-        &:hover {
-          background-color: #c6dff566;
-        }
-      }
-
-    .activeTag {
-      background-color: $main-blue;
-      color: #fff;
+    @media (max-width: 640px) {
+        display: block;
+        margin: 0 -10px 32px -10px;
     }
-  }
+
+    .swiperSlide {
+        width: auto !important;
+        margin-left: 10px;
+
+        &:first-child {
+            margin-left: 20px;
+            @media (max-width: 640px) {
+                margin-left: 10px;
+            }
+        }
+        &:last-child {
+            margin-right: 20px;
+            @media (max-width: 640px) {
+                margin-right: 10px;
+            }
+        }
+
+        button {
+            padding: 8px 20px;
+            background-color: $white;
+            color: $dark-gray;
+            border: 1px solid $blue-light;
+            cursor: pointer;
+            border-radius: 7px;
+            transition: background-color 0.2s;
+            font-family: 'DIN Pro medium', sans-serif;
+            @each $property, $value in $b18-medium {
+                #{$property}: #{$value};
+            }
+
+            &:hover {
+                background-color: #c6dff566;
+            }
+        }
+
+        .activeTag {
+            background-color: $main-blue;
+            color: #fff;
+        }
+    }
+}
+
+.indexSwiperContainer {
+    @media (max-width: 1024px) {
+        display: block;
+        margin: 0 -20px;
+    }
+    @media (max-width: 640px) {
+        margin: 0 -10px;
+    }
+}
+
+.tagsContainer {
+    max-width: 1700px;
+    margin-bottom: 64px;
+    @media (max-width: 1024px) {
+        margin-bottom: 40px;
+    }
+    @media (max-width: 640px) {
+        display: none;
+    }
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        button {
+            padding: 10px 20px;
+            background-color: $white;
+            color: $dark-gray;
+            border: 1px solid $blue-light;
+            cursor: pointer;
+            border-radius: 7px;
+            transition: background-color 0.2s;
+            font-family: "DIN Pro medium", sans-serif;
+            @each $property, $value in $b18-medium {
+              #{$property}: #{$value};
+            }
+
+            &:hover {
+              background-color: #c6dff566;
+            }
+        }
+
+        .activeTag {
+          background-color: $main-blue;
+          color: #fff;
+        }
+    }
+}
+
+.indexContainer {
+    max-width: 1270px;
+    @media (max-width: 1600px) {
+        max-width: 845px;
+    }
+    @media (max-width: 1024px) {
+        display: none;
+    }
+    .tags {
+        button {
+            padding: 7px 20px 9px 20px;
+        }
+    }
+}

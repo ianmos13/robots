@@ -1,7 +1,11 @@
 "use client";
 import styles from "./Pagination.module.scss";
+import useDeviceType from "@/hooks/useDeviceType";
+import React from "react";
 
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
+  const { isTabletView, isMobileView } = useDeviceType();
+
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       onPageChange(page);
@@ -12,32 +16,22 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
     if (totalPages <= 1) return null;
 
     const pageNumbers = [];
-    const delta = 1;
+    const delta = isMobileView ? 0 : 1;
     const start = Math.max(2, currentPage - delta);
     const end = Math.min(totalPages - 1, currentPage + delta);
-
-  
     pageNumbers.push(1);
-
-
     if (start > 2) {
       pageNumbers.push("ellipsis-start");
     }
-
-   
     for (let i = start; i <= end; i++) {
       pageNumbers.push(i);
     }
-
     if (end < totalPages - 1) {
       pageNumbers.push("ellipsis-end");
     }
-
-    
     if (totalPages > 1) {
       pageNumbers.push(totalPages);
     }
-
     return pageNumbers.map((item, index) => {
       if (typeof item === "string") {
         return (
@@ -61,21 +55,19 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   return (
     <div className={styles.pagination}>
       <button
-        onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className={styles.arrowButton}
+          className={styles.arrowLeft}
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
       >
-        <img src={"/images/icons/prev.svg"} alt="Previous" />
+        <svg className={styles.icon} />
       </button>
-
       {renderPageNumbers()}
-
       <button
-        onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className={styles.arrowButton}
+          className={styles.arrowRight}
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
       >
-        <img src={"/images/icons/next.svg"} alt="Next" />
+        <svg className={styles.icon} />
       </button>
     </div>
   );

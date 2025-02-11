@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './Slider.module.scss'
 
-export default function Slider({ swiperRef, items }) {
+export default function Slider({ type, swiperRef, items }) {
 	return (
 		<Swiper
 			onSwiper={swiper => (swiperRef.current = swiper)}
@@ -18,7 +18,7 @@ export default function Slider({ swiperRef, items }) {
 			modules={[Navigation]}
 			breakpoints={{
 				1720: {
-					slidesPerView: 4.05,
+					slidesPerView: type === 'grid' ? 4 : 4.05,
 					spaceBetween: 20,
 				},
 				1440: {
@@ -41,13 +41,9 @@ export default function Slider({ swiperRef, items }) {
 					slidesPerView: 1.5,
 					spaceBetween: 10,
 				},
-				450: {
-					slidesPerView: 1.05,
-					spaceBetween: 10,
-				},
 				150: {
-					slidesPerView: 1.05,
-					spaceBetween: 10,
+					slidesPerView: 'auto',
+					spaceBetween: 0,
 				},
 			}}
 		>
