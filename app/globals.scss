@@ -72,19 +72,19 @@ body {
 h1 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 64px;
-	//font-weight: 900;
 	line-height: 70px;
+	font-weight: unset;
 }
 h2 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 56px;
-	//font-weight: 900;
 	line-height: 61.6px;
+	font-weight: unset;
 }
 h3 {
 	font-family: 'DIN Pro сondensedblack', sans-serif;
 	font-size: 48px;
-	//font-weight: 900;
+	font-weight: unset;
 	line-height: 52.8px;
 	text-transform: uppercase;
 }
@@ -92,7 +92,7 @@ h4 {
 	font-family: 'DIN Pro bold', sans-serif;
 	font-size: 30px;
 	font-style: normal;
-	//font-weight: 700;
+	font-weight: unset;
 	line-height: 130%;
 	text-transform: uppercase;
 }
@@ -118,7 +118,6 @@ h4 {
   border: 1px solid #0149bf;
   border-radius: 7px;
   font-family: 'DIN Pro Medium';
-  //font-weight: 500;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.03em;

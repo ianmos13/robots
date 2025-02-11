@@ -39,6 +39,10 @@
         line-height: 160px;
         padding-left: 31px;
       }
+      @media (max-width: 1090px) {
+        font-size: calc(150px + (100vw - 1024px) * 10 / 66);
+        line-height: calc(150px + (100vw - 1024px) * 10 / 66);
+      }
       @media (max-width: 1024px) {
         font-size: 122px;
         line-height: 122px;
@@ -72,6 +76,10 @@
         line-height: 160px;
         margin-right: 31px;
         margin-bottom: 2px;
+      }
+      @media (max-width: 1090px) {
+        font-size: calc(150px + (100vw - 1024px) * 10 / 66);
+        line-height: calc(150px + (100vw - 1024px) * 10 / 66);
       }
       @media (max-width: 1024px) {
         margin-top: -10px;

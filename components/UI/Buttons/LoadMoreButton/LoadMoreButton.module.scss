@@ -2,8 +2,6 @@
 
 .buttonContainer {
   width: 100%;
-  /* Если требуется, чтобы кнопка была привязана слева, используйте flex-start.
-     Если кнопка должна быть центрирована, её левая граница сместится, но текст внутри останется на месте */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -20,21 +18,20 @@
   border-radius: 7px;
   background-color: $white;
   color: $main-blue;
-  font-family: "DIN Pro сondensedblack", sans-serif;
+  font-family: "DIN Pro condensedbold", sans-serif;
   @each $property, $value in $b22-medium {
     #{$property}: #{$value};
   }
   transition: width 1s ease, background-color 1s ease, border 1s  ease;
 
   &:hover {
-    background-color: #c6dff566;
     width: 265px;
     border: 1px solid $main-blue;
   }
 
   @media (max-width: 640px) {
     width: 100%;
-    padding: 22px 18px;
+    padding: 18px 22px;
     justify-content: space-between;
   }
 }

@@ -39,7 +39,7 @@ export default function LeasingPartners() {
     <>
       <section className={styles.container}>
         <div className={styles.header}>
-          <h4 className={styles.title}>Партнеры по лизингу</h4>
+          <h4 className={styles.title}>Партнеры&nbsp;по&nbsp;лизингу</h4>
 
           <div className={styles.text}>
             Мы сотрудничаем с ведущими лизинговыми компаниями, чтобы сделать
@@ -63,11 +63,12 @@ export default function LeasingPartners() {
         </div>
         <div className={styles.slider}>
           <Swiper
-            spaceBetween={5}
-            slidesPerView={isTabletView ? 2.5 : 1.2}
-            modules={[Navigation]}>
+            spaceBetween={0}
+            slidesPerView={"auto"}
+            modules={[Navigation]}
+          >
             {partnersLogos.map((logo, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide className={styles.swiperSlide} key={index}>
                 <div className={styles.card}>
                   <div className={styles.partnerLogoContainer}>
                     <img

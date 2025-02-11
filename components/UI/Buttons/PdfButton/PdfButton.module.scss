@@ -3,11 +3,11 @@
 .pdfBtn {
     display: inline-flex;
     align-items: center;
-    gap: 40px;
+    gap: 16px;
     text-decoration: none;
     background-color: $white;
     height: max-content;
-    padding: 8px 11px;
+    padding: 8px 8px 10px 20px;
     border-radius: 7px;
     color: $main-blue;
     font-family: "DIN Pro medium", sans-serif;
@@ -20,18 +20,16 @@
     &:hover {
      background-color: #C6DFF566;
 
-
-  
-      .pdfIcon {
+    .pdfIcon {
         animation: moveIcon 0.5s ease forwards;
-      }
     }
   }
-  
+}
+
   .pdfIcon {
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
   }
   
   @keyframes moveIcon {

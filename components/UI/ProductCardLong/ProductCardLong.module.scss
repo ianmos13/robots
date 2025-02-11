@@ -1,98 +1,106 @@
-@import "/styles/variables";
+@import '/styles/variables';
 
 .card {
-  display: flex;
-  align-items: center;
-  background: $white;
-  border-radius: 20px;
-
-  padding: 32px 30px;
+	display: flex;
+	align-items: center;
+	background: $white;
+	border-radius: 20px;
+	padding: 32px 30px;
+	width: 100%;
 }
 
 .cardContent {
-  display: flex;
-  width: 100%;
-  align-items: center;
+	padding-right: 144px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	position: relative;
+	text-decoration: none;
+	gap: 57px;
+}
 
-  align-items: center;
-  position: relative;
-   text-decoration: none;
-  a {
-    text-decoration: none;
-  }
+.titleContainer {
+	flex: 1 1;
+	display: flex;
+	gap: 35px;
+	align-items: center;
 }
 
 .imageWrapper {
-  width: 136px;
-  height: 122px;
+	min-width: 136px;
+	height: 122px;
+  max-width: 136px;
   object-fit: contain;
-  margin-right: 35px;
-  .robotImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+	.robotImage {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
 }
 
 .title {
-  font-size: 28px;
-  font-weight: bold;
-  color: $dark-gray;
-  max-width: 414px;
-  font-weight: 700;
-  line-height: 120%;
-  letter-spacing: -0.56px;
-  margin-right: 57px;
+	font-family: 'Din Pro Condensedbold';
+	font-size: 28px;
+	color: #323232;
+	max-width: 414px;
+	line-height: 33.6px;
+	letter-spacing: -0.02em;
 }
 
 .specsContainer {
-  display: flex;
-  gap: 20px;
-  margin-right: 144px;
+	flex: 1 1;
+	display: flex;
+	gap: 20px;
 }
 
 .specsItem {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	gap: 30px;
 }
 
 .textContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .text {
-  font-size: 14px;
-  color: #777;
+	font-family: 'Din Pro';
+	font-size: 16px;
+	line-height: 20.8px;
+	letter-spacing: -0.03em;
+	color: #323232;
+	opacity: 0.6;
 }
 
 .value {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
+	font-size: 18px;
+	line-height: 21.6px;
+	letter-spacing: -0.01em;
+	color: #323232;
 }
 
 .iconGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
 }
 
 .iconBtn {
-  background-color: unset;
-  border: none;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+	background-color: unset;
+	border: none;
+	border-radius: 50%;
+	width: 33px;
+	height: 33px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 
-  img {
-    width: 33px;
-    height: 33px;
-  }
+	img {
+		width: 33px;
+		height: 33px;
+	}
 }

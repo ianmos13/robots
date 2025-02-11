@@ -1,25 +1,32 @@
 @import "/styles/variables";
 
 .quotation {
-    border-radius: 10px;
-    min-height: 338px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-self: center;
-    color: $white;
-    padding: 30px;
-    background-color: $main-blue;
-    justify-content: space-between;
-    .quotationText {
-      max-width: 784px;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      font-family: "DIN Pro meduim", sans-serif;
-      @each $property, $value in $b24-medium {
-        #{$property}: #{$value};
-      }
-    }
+  position: relative;
+  border-radius: 10px;
+  min-height: 338px;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background-color: $main-blue;
+  color: $white;
+}
+
+.quotation img {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.quotationText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 75%;
+  text-align: left;
+  font-family: "DIN Pro meduim", sans-serif;
+  @each $property, $value in $b24-medium {
+    #{$property}: #{$value};
   }
+}

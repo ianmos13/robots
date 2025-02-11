@@ -30,6 +30,7 @@ export default function NewsIndex() {
   return (
     <section className={styles.container}>
       <TitleWithSeparator
+        theme={'news'}
         title="Новости"
         addButton="Все новости"
         onClick={handleShowAll}

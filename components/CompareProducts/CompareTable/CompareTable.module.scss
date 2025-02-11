@@ -1,9 +1,13 @@
 @import "/styles/variables";
+
 .tableWrapper {
   width: 100%;
   overflow-x: auto;
   border-radius: 10px;
   padding: 15px;
+  @media (max-width: 640px) {
+    padding: 15px 0px 15px 15px;
+  }
 }
 
 .techTable {
@@ -22,30 +26,67 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: "DIN Pro medium", sans-serif;
-  vertical-align: bottom;
+  vertical-align: top;
+  
   @each $property, $value in $b24-medium {
     #{$property}: #{$value};
   }
-}
-
-.techTable td:first-child {
-  min-width: 200px;
+  
+  @media (max-width: 1600px) {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 24px;
+    font-size: 24px;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 16px;
+    white-space: nowrap; // предотвращаем перенос текста в ячейках на мобильном
+  }
 }
 
 .fieldLabel {
   min-width: 200px;
 }
 
-.grayText {
-  display: block;
-  margin-bottom: 5px;
-  font-family: "DIN Pro medium", sans-serif;
-  color: #32323280;
-  @each $property, $value in $b24-medium {
-    #{$property}: #{$value};
+.cellContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 32px;
+  
+  @media (max-width: 1024px) {
+    gap: 28px;
+  }
+  
+  @media (max-width: 640px) {
+    gap: 16px;
+    white-space: nowrap; 
   }
 }
 
-.bottomAlign {
-  vertical-align: bottom;
+.grayText {
+  display: block;
+  font-family: "DIN Pro medium", sans-serif;
+  color: #32323280;
+  
+  @each $property, $value in $b24-medium {
+    #{$property}: #{$value};
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 18px;
+    white-space: nowrap; 
+  }
+}
+
+.valueText {
+  display: block;
+  font-family: "DIN Pro medium", sans-serif;
+  
+  @media (max-width: 640px) {
+    white-space: nowrap; 
+  }
 }

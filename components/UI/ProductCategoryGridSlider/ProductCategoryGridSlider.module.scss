@@ -1,15 +1,30 @@
 @import '/styles/variables';
 
 .container {
-	padding: 30px 30px 50px 30px;
-	.tagsConainer {
+	padding: 64px 30px 30px 30px;
+	@media (max-width: 1600px) {
+		padding: 48px 30px 14px 30px;
+	}
+	@media (max-width: 1024px) {
+		padding: 64px 20px 30px 20px;
+	}
+	@media (max-width: 640px) {
+		padding: 40px 10px 35px 10px;
+	}
+	.tagsContainer {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 48px;
-		.tag {
-			max-width: 1270px;
-			@media (max-width: 1600px) {
-				max-width: 845px;
+		@media (max-width: 1600px) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: 640px) {
+			margin-bottom: 28px;
+		}
+		.pdfButton {
+			width: 166px;
+			@media (max-width: 1024px) {
+				display: none;
 			}
 		}
 	}
@@ -17,7 +32,14 @@
 		width: 100%;
 		overflow: hidden;
 		position: relative;
-		margin-bottom: 20px;
+		margin-bottom: 48px;
+		@media (max-width: 1600px) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: 640px) {
+			width: 100vw;
+			margin: 0 -10px;
+		}
 	}
 	.slider {
 		display: flex;
@@ -26,7 +48,14 @@
 	}
 	.footer {
 		display: flex;
-		justify-content: end;
+		justify-content: flex-end;
+		@media (max-width: 1024px) {
+			justify-content: flex-start;
+		}
+		@media (max-width: 640px) {
+			margin-top: 24px;
+			justify-content: flex-start;
+		}
 		.prevButton,
 		.nextButton {
 			z-index: 10;
@@ -45,14 +74,4 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	.container {
-		padding: 20px 20px 50px 20px;
-	}
-}
 
-@media (max-width: 640px) {
-	.container {
-		padding: 10px 10px 50px 10px;
-	}
-}

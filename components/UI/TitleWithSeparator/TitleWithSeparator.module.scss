@@ -6,7 +6,7 @@
 
   .title {
     color: $dark-gray;
-
+    letter-spacing: -0.02em;
     @media (max-width: 640px) {
       font-size: 18px;
       line-height: 23.4px;
@@ -14,7 +14,35 @@
     }
   }
 
+  .buttonsArea{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
   .addButton {
+    @media (max-width: 640px) {
+      display: flex;
+      align-items: center;
+    }
+    .mobileArrow {
+      display: none;
+
+      @media (max-width: 640px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .icon {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 14px;
+        width: 8px;
+        background-image: url("/images/icons/next-arrow.svg");
+      }
+    }
+
     button {
       padding: 10px 20px;
       background-color: $white;
@@ -25,6 +53,9 @@
       transition: background-color 0.2s, padding-right 0.2s;
       font-family: "DIN Pro medium", sans-serif;
       position: relative;
+      @media (max-width: 640px) {
+        display: none;
+      }
 
       @each $property, $value in $b18-medium {
         #{$property}: #{$value};
@@ -57,6 +88,49 @@
     }
   }
 }
+.indexWithButtonHeader {
+  .addButton {
+    button {
+      @media (max-width: 1024px) {
+        padding: 8px 12px 10px 12px;
+      }
+    }
+  }
+
+  .title {
+    @media (max-width: 640px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  .pdfButton {
+    display: none;
+    width: 166px;
+    @media (max-width: 1024px) {
+      display: block;
+    }
+    @media (max-width: 640px) {
+      display: none
+    }
+  }
+}
+
+.uniqHeader, .newsHeader {
+  .addButton {
+    button {
+      @media (max-width: 1024px) {
+        padding: 8px 12px 10px 12px;
+      }
+    }
+  }
+  .title {
+    @media (max-width: 640px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
 
 .separator {
   margin: 32px 0;
@@ -69,5 +143,38 @@
   }
   @media (max-width: 640px) {
     margin: 8px 0 24px 0;
+  }
+}
+
+.indexWithButtonSeparator {
+  margin: 24px 0;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0 32px 0;
+  }
+  @media (max-width: 640px) {
+    margin: 8px 0 16px 0;
+  }
+}
+
+.newsSeparator {
+  margin: 24px 0 32px 0;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0 40px 0;
+  }
+  @media (max-width: 640px) {
+    margin: 8px 0 16px 0;
+  }
+}
+
+.uniqSeparator {
+  margin: 24px 0 48px 0;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0 32px 0;
+  }
+  @media (max-width: 640px) {
+    margin: 8px 0 16px 0;
   }
 }

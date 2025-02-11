@@ -20,7 +20,7 @@ export default function Home() {
       <Projects />
       <LeaveRequestBanner theme="white" />
       <ProductCategoryGridSlider />
-      <div className={styles.productPaginationGridContaner}>
+      <div className={styles.productPaginationGridContainer}>
         <ProductCategoryGridPagination />
       </div>
 

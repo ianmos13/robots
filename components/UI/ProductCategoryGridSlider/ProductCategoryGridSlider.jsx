@@ -49,25 +49,26 @@ export default function ProductCategoryGridSlider() {
 	return (
 		<section className={styles.container}>
 			<TitleWithSeparator
+				theme='indexWithButton'
 				title='Категории продукции'
 				addButton='Посмотреть все модели'
 				onClick={handleShowAll}
 			/>
 
-			<div className={styles.tagsConainer}>
-				<div className={styles.tag}>
-					<CategoryTags
-						categories={allCategories}
-						selectedCategory={selectedCategory}
-						onSelectCategory={setSelectedCategory}
-					/>
+			<div className={styles.tagsContainer}>
+				<CategoryTags
+					theme="index"
+					categories={allCategories}
+					selectedCategory={selectedCategory}
+					onSelectCategory={setSelectedCategory}
+				/>
+				<div className={styles.pdfButton}>
+					<PdfButton theme="index" pdfName={'pdfName'} />
 				</div>
-
-				<PdfButton pdfName={'pdfName'} />
 			</div>
 
 			<div className={styles.sliderWrapper}>
-				<Slider items={filteredRobots} swiperRef={swiperRef} />
+				<Slider type="grid" items={filteredRobots} swiperRef={swiperRef} />
 			</div>
 
 			{totalFiltered > 4 && (

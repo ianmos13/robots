@@ -1,5 +1,6 @@
 'use client'
 import styles from './SwitchButtons.module.scss'
+import React from "react";
 
 export default function SwitchButtons({
 	activeButton,
@@ -9,34 +10,16 @@ export default function SwitchButtons({
 	return (
 		<div className={styles.containerButton}>
 			<button
-				className={`${styles.prevButton} ${styles.navButton} ${
-					activeButton === 'prev' ? styles.active : ''
-				}`}
+				className={styles.arrowLeft}
 				onClick={handlePrev}
 			>
-				<img
-					src={
-						activeButton === 'prev'
-							? '/images/icons/active-prev.svg'
-							: '/images/icons/prev.svg'
-					}
-					alt='Previous'
-				/>
+				<svg className={styles.icon} />
 			</button>
 			<button
-				className={`${styles.nextButton} ${styles.navButton} ${
-					activeButton === 'next' ? styles.active : ''
-				}`}
+				className={styles.arrowRight}
 				onClick={handleNext}
 			>
-				<img
-					src={
-						activeButton === 'next'
-							? '/images/icons/active-next.svg'
-							: '/images/icons/next.svg'
-					}
-					alt='Next'
-				/>
+				<svg className={styles.icon} />
 			</button>
 		</div>
 	)

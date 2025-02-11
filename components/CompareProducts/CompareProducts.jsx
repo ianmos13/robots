@@ -1,6 +1,7 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useRef, useEffect } from "react";
+import useDeviceType from "@/hooks/useDeviceType";
 import CompareTable from "./CompareTable/CompareTable";
 import CompareHeader from "./CompareHeader";
 import CompareSticky from "./CompareSticky";
@@ -17,7 +18,6 @@ export default function CompareProducts() {
   const dispatch = useDispatch();
   const comparisons = useSelector((state) => state.compare);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const MAX_VISIBLE_ITEMS = 4;
   const sliderRef = useRef(null);
   const tableRef = useRef(null);
   const stopStickyRef = useRef(null);
@@ -26,13 +26,38 @@ export default function CompareProducts() {
   const [hideSticky, setHideSticky] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
+  const { isMobileView, isTabletView } = useDeviceType();
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  let maxVisibleItems;
+  if (windowWidth <= 640) {
+    maxVisibleItems = 2;
+  } else if (windowWidth <= 1024) {
+    maxVisibleItems = 2;
+  } else if (windowWidth <= 1400) {
+    maxVisibleItems = 3;
+  } else {
+    maxVisibleItems = 4;
+  }
+
   const scrollLeft = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   const scrollRight = () => {
     setCurrentIndex((prev) =>
-      Math.min(prev + 1, comparisons.length - MAX_VISIBLE_ITEMS)
+      Math.min(
+        prev + 1,
+        comparisons.length - (windowWidth <= 640 ? 1 : maxVisibleItems)
+      )
     );
   };
 
@@ -88,7 +113,7 @@ export default function CompareProducts() {
 
     const exportData = comparisons.slice(
       currentIndex,
-      currentIndex + MAX_VISIBLE_ITEMS
+      currentIndex + maxVisibleItems
     );
 
     const extractValues = (category, label) => {
@@ -207,19 +232,14 @@ export default function CompareProducts() {
   };
 
   useEffect(() => {
-    if (sliderRef.current) {
+    if (sliderRef.current && sliderRef.current.children.length > currentIndex) {
+      const activeCard = sliderRef.current.children[currentIndex];
       sliderRef.current.scrollTo({
-        left: currentIndex * 265,
+        left: activeCard.offsetLeft,
         behavior: "smooth",
       });
     }
-    if (tableRef.current) {
-      tableRef.current.scrollTo({
-        left: currentIndex * 265,
-        behavior: "smooth",
-      });
-    }
-  }, [currentIndex]);
+  }, [currentIndex, windowWidth]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -233,7 +253,6 @@ export default function CompareProducts() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   const openConfirmModal = () => {
     setIsConfirmModalOpen(true);
   };
@@ -242,19 +261,18 @@ export default function CompareProducts() {
     setIsConfirmModalOpen(false);
   };
 
-
   const confirmClear = () => {
     handleClearComparison();
     setIsConfirmModalOpen(false);
   };
 
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <div ref={headerRef}>
         <CompareHeader
           comparisons={comparisons}
           currentIndex={currentIndex}
-          maxVisibleItems={MAX_VISIBLE_ITEMS}
+          maxVisibleItems={maxVisibleItems}
           onScrollLeft={scrollLeft}
           onScrollRight={scrollRight}
           onClearComparison={openConfirmModal}
@@ -270,7 +288,7 @@ export default function CompareProducts() {
         <CompareSticky
           comparisons={comparisons}
           currentIndex={currentIndex}
-          maxVisibleItems={MAX_VISIBLE_ITEMS}
+          maxVisibleItems={maxVisibleItems}
           onScrollLeft={scrollLeft}
           onScrollRight={scrollRight}
           onClearComparison={openConfirmModal}
@@ -281,7 +299,7 @@ export default function CompareProducts() {
       )}
 
       <CompareTable
-        data={comparisons.slice(currentIndex, currentIndex + MAX_VISIBLE_ITEMS)}
+        data={comparisons.slice(currentIndex, currentIndex + maxVisibleItems)}
         tableRef={tableRef}
       />
       <div ref={stopStickyRef} className={styles.stopSticky}></div>

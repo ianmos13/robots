@@ -20,7 +20,7 @@
   max-height: 296px;
   overflow: hidden;
 
-  // Исходный градиент поверх видео
+
   &::before {
     content: "";
     position: absolute;
@@ -29,14 +29,14 @@
     z-index: 1;
   }
 
-  // Дополнительный градиент для плавного перехода от контента ($main-blue) к видео
+
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px; // регулируйте высоту по необходимости
+    height: 80px; 
     background: linear-gradient(to bottom, $main-blue, transparent);
     z-index: 2;
   }
