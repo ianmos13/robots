@@ -7,7 +7,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: $background;
     @media (max-width: 1600px) {
         height: 135px;
     }
@@ -19,6 +18,19 @@
     }
 }
 
+.scrolled {
+  .container {
+    padding-top: 0;
+    box-shadow: 0 3px 40px 0 #0000001A;
+    @media (max-width: 1024px) {
+      height: 104px;
+    }
+    @media (max-width: 640px) {
+      height: 62px;
+    }
+  }
+}
+
 .container {
     margin: 0 auto;
     max-width: 1920px;
@@ -27,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: unset;
+    background-color: $background;
     transition: all 0.3s ease;
     gap: 16px;
 
@@ -151,6 +163,13 @@
                     opacity: 1;
                     visibility: visible;
                 }
+
+                &.scrolledDropdownMenu {
+                    top: 104px;
+                    @media (max-width: 640px) {
+                        top: 62px;
+                    }
+                }
             }
 
         }
@@ -165,7 +184,9 @@
     .catalogPopup {
         opacity: 0;
         visibility: hidden;
-        transition: visibility 0.5s linear, opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
+        transition: top 0.3s linear,
+                    visibility 0.5s linear,
+                    opacity 0.5s cubic-bezier(0.5, 0.12, 0.46, 0.88);
         position: absolute;
         z-index: 1001;
         top: 96px;
@@ -175,6 +196,10 @@
         &.active {
             opacity: 1;
             visibility: visible;
+        }
+
+        &.activeScrolled {
+            top: 76px;
         }
     }
 

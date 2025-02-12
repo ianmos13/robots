@@ -18,6 +18,13 @@ const Header = () => {
   const [oldLink, setOldLink] = useState(null);
   const [openCatalog, setIsOpenCatalog] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (pathname !== oldLink) {
@@ -40,7 +47,7 @@ const Header = () => {
   }
 
   return (
-      <header className={styles.header}>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
           <div className={`${styles.container} ${openCatalog || openMobileMenu ? styles.whiteContainer : ''}`}>
               <div className={styles.headerBody}>
                   <Link href="/" className={styles.logoContainer}>
@@ -59,13 +66,13 @@ const Header = () => {
                   <div className={`${styles.downloadButton} ${openMobileMenu ? styles.hiddenElement : ''}`}>
                       <DownloadButton />
                   </div>
-                  <Menu menuElements={menuElements} />
+                  <Menu scrolled={scrolled} menuElements={menuElements} />
                   <div className={`${styles.mobileMenu} ${openCatalog ? styles.hiddenElement : ''}`}>
                       <MenuButton isOpen={openMobileMenu} setOpen={openMenuPopup} />
                       <div
                           className={`${styles.dropdownMenu} ${
                               openMobileMenu ? styles.active : ""
-                          }`}>
+                          } ${scrolled ? styles.scrolledDropdownMenu : ''}`}>
                           <DropdownMenu
                               menuElements={menuElements}
                               catalogElements={catalogElements}
@@ -79,7 +86,7 @@ const Header = () => {
               <div className={`${styles.location} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
                 <Location />
               </div>
-              <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }`}>
+              <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }  ${scrolled ? styles.activeScrolled : ''}`}>
                 <CatalogPopup catalogElements={catalogElements} openCatalog={openCatalogPopup} />
               </div>
               {openCatalog && (<div

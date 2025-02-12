@@ -57,7 +57,9 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-
+        @media (max-width: 1600px) {
+            height: 86px;
+        }
         @media (max-width: 1024px) {
             height: 100px;
         }
@@ -70,7 +72,10 @@
             @each $property, $value in $b28-bold {
                 #{$property}: #{$value};
             }
-            @media (max-width: 640px) {
+            @media (max-width: 1600px) {
+                @each $property, $value in $b22-medium {
+                    #{$property}: #{$value};
+                }
             }
         }
 
@@ -89,6 +94,10 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+
+    @media (max-width: 1600px) {
+        height: 404px;
+    }
 
     @media (max-width: 1024px) {
         display: none;

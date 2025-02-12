@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import RequestModal from "../Modal/RequestModal/RequestModal";
 import styles from "./LeaveRequestBanner.module.scss";
 
-const LeaveRequestBanner = ({ theme }) => {
+const LeaveRequestBanner = ({ size }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,7 +18,7 @@ const LeaveRequestBanner = ({ theme }) => {
     <>
 
       <section
-        className={`${styles.container} ${styles[`${theme}Container`]} ${isModalOpen ? "blurred" : ""}`}
+        className={`${styles.container} ${styles[`${size}Container`]} ${isModalOpen ? "blurred" : ""}`}
       >
         <div className={styles.banner}>
           <div className={styles.bannerContent}>

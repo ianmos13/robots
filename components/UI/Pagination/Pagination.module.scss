@@ -107,3 +107,12 @@
   color: $dark-gray;
   padding: 0 8px;
 }
+
+.catalogPageTheme{
+  justify-content: start;
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+  width: 100%;
+  padding: 0;
+}

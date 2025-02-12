@@ -7,7 +7,7 @@ import {useMediaQuery} from "react-responsive";
 import Link from "next/link";
 
 export default function Menu(props) {
-  const { menuElements } = props
+  const { scrolled, menuElements } = props
   const menuContainerRef = useRef(null)
   const hiddenMenuContainerRef = useRef(null)
   const isRemoveLastElements = useMediaQuery({ query: '(max-width: 1200px)' });
@@ -92,6 +92,7 @@ export default function Menu(props) {
       >
         {visibleLinks.map((element, idx) => (
           <MenuElement
+            scrolled={scrolled}
             key={idx}
             element={element}
             isOpen={isOpen[element.ref]}

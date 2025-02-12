@@ -39,7 +39,7 @@
     @media (max-width: 1600px) {
       margin-right: 0;
       max-width: 890px;
-      @each $property, $value in $b22-medium {
+      @each $property, $value in $b18-medium {
         #{$property}: #{$value};
       }
     }

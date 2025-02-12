@@ -1,15 +1,15 @@
 'use client'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import styles from './ProductCard.module.scss'
-import { useRouter } from 'next/navigation'
 
 import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
-import useDeviceType from '../../../hooks/useDeviceType';
+import useDeviceType from '../../../hooks/useDeviceType'
 
 export default function ProductCard({ robot }) {
 	const router = useRouter()
-	const {isMobileView} = useDeviceType()
+	const { isMobileView } = useDeviceType()
 	const [isHovered, setIsHovered] = useState(false)
 
 	return (
@@ -18,7 +18,7 @@ export default function ProductCard({ robot }) {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			onClick={() => {
-				if(isMobileView) router.push(`/products/${robot.id}`)
+				if (isMobileView) router.push(`/products/${robot.id}`)
 			}}
 		>
 			<div className={styles.cardHeader}>
@@ -65,9 +65,17 @@ export default function ProductCard({ robot }) {
 						</div>
 					</div>
 				</div>
+				<div className={styles.buttonContainer}>
+					{isHovered ? (
+						<a href={`/products/${robot.id}`} className={styles.detailsBtn}>
+							Подробнее
+						</a>
+					) : (
+						<div className={styles.emptyButton}></div>
+					)}
+				</div>
 			</div>
-
-			<div className={styles.buttonContainer}>
+			{/* <div className={styles.buttonContainer}>
 				{isHovered ? (
 					<a href={`/products/${robot.id}`} className={styles.detailsBtn}>
 						Подробнее
@@ -75,7 +83,7 @@ export default function ProductCard({ robot }) {
 				) : (
 					<div className={styles.emptyButton}></div>
 				)}
-			</div>
+			</div> */}
 		</div>
 	)
 }

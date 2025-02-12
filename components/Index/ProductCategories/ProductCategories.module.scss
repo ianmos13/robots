@@ -22,14 +22,12 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 
-    @media (max-width: 1600px) {
+    @media (max-width: 1280px) {
       grid-template-columns: repeat(3, 1fr);
     }
-
     @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
     }
-
     @media (max-width: 640px) {
       display: none;
     }
@@ -77,9 +75,10 @@
   }
 
   .card {
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 10px;
     background-color: $background;
     width: 100%;
@@ -88,6 +87,10 @@
     gap: 30px;
     overflow: hidden;
     cursor: pointer;
+    @media (max-width: 1600px) {
+      height: 280px;
+      padding: 30px 10px 30px 30px;
+    }
     @media (max-width: 640px) {
       padding: 33px 20px 20px 20px;
       height: unset;
@@ -129,10 +132,12 @@
       width: 152px;
       height: 195px;
       display: flex;
-      margin: 0 auto;
+      margin: 35px auto 0 auto;
       position: relative;
       transition: opacity 0.5s ease;
-
+      @media (max-width: 1600px) {
+        margin: 0 auto;
+      }
       @media (max-width: 640px) {
         width: 49.4%;
         aspect-ratio: 0.781;
@@ -150,12 +155,21 @@
     }
 
     .name {
-      padding: 0 30px;
       font-family: "DIN Pro medium", sans-serif;
       color: $dark-gray;
       letter-spacing: -0.02em;
       @each $property, $value in $b24-medium {
         #{$property}: #{$value};
+      }
+      @media (max-width: 1600px) {
+        @each $property, $value in $b20-medium {
+          #{$property}: #{$value};
+        }
+      }
+      @media (max-width: 1024px) {
+        @each $property, $value in $b24-medium {
+          #{$property}: #{$value};
+        }
       }
       @media (max-width: 640px) {
         padding: 0;
