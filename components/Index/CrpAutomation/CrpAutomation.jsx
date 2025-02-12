@@ -55,21 +55,28 @@ const CrpAutomation = () => {
 
         <div className={styles.rightColumn}>
           <div className={styles.feature}>
-            <img src="/images/icons/garanty.svg" alt="Гарантия" />
+            <div className={styles.imgContainer}> 
+            <img src="/images/icons/garanty1.svg" alt="Гарантия" />
+            </div>
+          
             <div className={styles.featureDescription}>
               Гарантия 2 года с момента запуска у вас на производстве
             </div>
           </div>
 
           <div className={styles.feature}>
-            <img src="/images/icons/garanty24_7.png" alt="Сервис" />
+          <div className={styles.imgContainer}> 
+            <img src="/images/icons/garanty24_7.svg" alt="Сервис" />
+            </div>
             <div className={styles.featureDescription}>
               Гарантийное и постгарантийное обслуживание 24/7
             </div>
           </div>
 
           <div className={styles.feature}>
-            <img src="/images/icons/best_price.svg" alt="Цена-качество" />
+          <div className={styles.imgContainer}> 
+            <img src="/images/icons/best_price1.svg" alt="Цена-качество" />
+            </div>
             <div className={styles.featureDescription}>
               Оптимальное соотношение «цена-качество». Короткий период
               окупаемости
@@ -77,7 +84,9 @@ const CrpAutomation = () => {
           </div>
 
           <div className={styles.feature}>
-            <img src="/images/icons/high-speed.svg" alt="Скорость" />
+          <div className={styles.imgContainer}> 
+            <img src="/images/icons/high-speed1.svg" alt="Скорость" />
+            </div>
             <div className={styles.featureDescription}>
               Высокая скорость обработки заказов
             </div>

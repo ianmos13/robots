@@ -3,7 +3,7 @@ import styles from "./Pagination.module.scss";
 import useDeviceType from "@/hooks/useDeviceType";
 import React from "react";
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
+export default function Pagination({ currentPage, totalPages, onPageChange, catalogPageTheme }) {
   const { isTabletView, isMobileView } = useDeviceType();
 
   const handlePageChange = (page) => {
@@ -53,7 +53,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   };
 
   return (
-    <div className={styles.pagination}>
+    <div className={`${styles.pagination} ${catalogPageTheme && styles.catalogPageTheme}`}>
       <button
           className={styles.arrowLeft}
           onClick={() => handlePageChange(currentPage - 1)}

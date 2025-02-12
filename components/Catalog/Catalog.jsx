@@ -37,19 +37,24 @@ export default function Catalog() {
 		if (categoryParam) {
 			setSelectedCategory(categoryParam)
 		}
-        let filterParams = []
-        const axesParam = searchParams.get("axes");
-        if(axesParam) {
-            filterParams = [...filterParams, `Кол-во осей: ${axesParam}`];
-        }
-        const scopeParam = searchParams.get("scopes");
-        if(scopeParam) {
-            filterParams = [...filterParams, `Область применения: ${applicationFilters[scopeParam]}`];
-        }
+		let filterParams = []
+		const axesParam = searchParams.get('axes')
+		if (axesParam) {
+			filterParams = [...filterParams, `Кол-во осей: ${axesParam}`]
+		}
+		const scopeParam = searchParams.get('scopes')
+		if (scopeParam) {
+			filterParams = [
+				...filterParams,
+				`Область применения: ${applicationFilters[scopeParam]}`,
+			]
+		}
 
-        const uniqueFilterParams = Array.from(new Set([...selectedFilters, ...filterParams]));
+		const uniqueFilterParams = Array.from(
+			new Set([...selectedFilters, ...filterParams])
+		)
 
-        setSelectedFilters(uniqueFilterParams)
+		setSelectedFilters(uniqueFilterParams)
 	}, [searchParams])
 
 	const allCategories = [{ key: 'all', name: 'Все роботы' }, ...categories]
@@ -147,7 +152,7 @@ export default function Catalog() {
 						(index === 5 ||
 							(index === currentProducts.length - 1 && index < 5)))) && (
 					<div className={styles.bannerContainer}>
-						<LeaveRequestBanner />
+						<LeaveRequestBanner size={"medium"} />
 					</div>
 				)}
 			</React.Fragment>
@@ -241,7 +246,9 @@ export default function Catalog() {
 					<SwiperSlide className={styles.swiperSlide}>
 						<div
 							className={styles.filterButton}
-							onClick={() => setFiltersModalOpen(true)}
+							onClick={() => {
+								setFiltersModalOpen(true)
+							}}
 						>
 							<img src='/images/icons/mobile-filters.svg' alt='Фильтры' />
 						</div>
@@ -276,25 +283,26 @@ export default function Catalog() {
 				</Swiper>
 
 				<div className={styles.productContainer}>
-					{isDesktopView && (
-						<Filters
-							selectedFilters={selectedFilters}
-							onChangeFilters={setSelectedFilters}
-						/>
-					)}
+					<div className={styles.filterContainer}>
+						{isDesktopView && (
+							<Filters
+								selectedFilters={selectedFilters}
+								onChangeFilters={setSelectedFilters}
+							/>
+						)}
 
-					{!isDesktopView && (
-						<FiltersModal
-							isOpen={isFiltersModalOpen}
-							onClose={() => setFiltersModalOpen(false)}
-							selectedFilters={selectedFilters}
-							onApply={newFilters => {
-								setSelectedFilters(newFilters)
-								setFiltersModalOpen(false)
-							}}
-						/>
-					)}
-
+						{!isDesktopView && (
+							<FiltersModal
+								isOpen={isFiltersModalOpen}
+								onClose={() => setFiltersModalOpen(false)}
+								selectedFilters={selectedFilters}
+								onApply={newFilters => {
+									setSelectedFilters(newFilters)
+									setFiltersModalOpen(false)
+								}}
+							/>
+						)}
+					</div>
 					<div className={styles.productContainerInner}>
 						<div
 							className={`${styles.products} ${
@@ -312,6 +320,7 @@ export default function Catalog() {
 								currentPage={currentPage}
 								totalPages={totalPages}
 								onPageChange={handlePageChange}
+								catalogPageTheme={true}
 							/>
 						)}
 
@@ -379,17 +388,17 @@ const faqData = [
 ]
 
 const applicationFilters = {
-  welding: "Сварка",
-  laserCutting: "Лазерная резка",
-  plasmaWaterjet: "Плазменная и гидроабразивная резка",
-  contactWelding: "Контактная сварка",
-  palletizing: "Паллетирование",
-  cnc: "Обслуживание станков с ЧПУ",
-  injection: "Обслуживание ТПА",
-  bendingStampingPress: "Обслуживание гибочного и штамповочного пресса",
-  conveyorLine: "Обслуживание конвейерной линии",
-  milling: "Фрезеровка",
-  polishing: "Полировка",
-  metalBending: "Гибка металла",
-  scara: "SCARA",
-};
+	welding: 'Сварка',
+	laserCutting: 'Лазерная резка',
+	plasmaWaterjet: 'Плазменная и гидроабразивная резка',
+	contactWelding: 'Контактная сварка',
+	palletizing: 'Паллетирование',
+	cnc: 'Обслуживание станков с ЧПУ',
+	injection: 'Обслуживание ТПА',
+	bendingStampingPress: 'Обслуживание гибочного и штамповочного пресса',
+	conveyorLine: 'Обслуживание конвейерной линии',
+	milling: 'Фрезеровка',
+	polishing: 'Полировка',
+	metalBending: 'Гибка металла',
+	scara: 'SCARA',
+}

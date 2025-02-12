@@ -64,7 +64,7 @@
         }
 
         button {
-          padding: 10px 20px;
+          padding: 9px 19px;
           background-color: $white;
           color: $dark-gray;
           border: 1px solid $blue-light;
@@ -77,13 +77,21 @@
           }
 
           &:hover {
+            border: 0;
+            padding: 10px 20px;
             background-color: #c6dff566;
           }
         }
 
         .activeTag {
           background-color: $main-blue;
+          border: 0;
+          padding: 10px 20px;
           color: #fff;
+
+          &:hover {
+            background: $blue-hover;
+          }
         }
       }
       .dropdown {

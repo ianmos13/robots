@@ -18,13 +18,16 @@ export default function Home() {
       <TestIndustryRobots />
       <CrpAutomation />
       <Projects />
-      <LeaveRequestBanner theme="white" />
+      <div className={`${styles.leaveRequestBannerContainer} ${styles.leaveWhiteRequestBannerContainer}`}>
+        <LeaveRequestBanner />
+      </div>
       <ProductCategoryGridSlider />
       <div className={styles.productPaginationGridContainer}>
         <ProductCategoryGridPagination />
       </div>
-
-      <LeaveRequestBanner />
+      <div className={styles.leaveRequestBannerContainer}>
+        <LeaveRequestBanner />
+      </div>
       <LeasingPartners />
       <NewsIndex />
       <ContactUs />

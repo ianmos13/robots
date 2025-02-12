@@ -8,12 +8,12 @@
         max-width: 1920px;
         display: flex;
         flex-direction: column;
-        gap: 99px;
-        padding: 50px 60px 22px 30px;
+        gap: 43px;
+        padding: 47px 60px 22px 30px;
 
         @media (max-width: 1600px) {
-            gap: 96px;
-            padding: 50px 50px 56px 30px;
+            gap: 46px;
+            padding: 50px 50px 36px 30px;
         }
         @media (max-width: 1024px) {
             gap: 40px;
@@ -55,14 +55,16 @@
             display: flex;
             flex-direction: row;
             gap: 120px;
+            margin-top: 7px;
 
             @media (max-width: 1600px) {
+                margin-top: 0;
                 flex-direction: column;
-                gap: 100px;
+                gap: 69px;
             }
             @media (max-width: 1024px) {
                 margin-top: 8px;
-                gap: 40px;
+                gap: 18px;
             }
 
             @media (max-width: 640px) {
@@ -72,13 +74,12 @@
         }
 
         .footerInfo {
-            margin-top: 38px;
             display: flex;
             flex-direction: column;
-            gap: 90px;
+            gap: 30px;
             @media (max-width: 1600px) {
-                margin-top: 18px;
-                gap: 50px;
+                margin-top: 0;
+                gap: 23px;
             }
             @media (max-width: 1024px) {
                 margin-top: 0;
@@ -107,7 +108,7 @@
                     min-width: 1130px;
 
                     @media (max-width: 1600px) {
-                        gap: 37px;
+                        gap: 10px;
                         flex-direction: column;
                         min-width: 510px;
                     }
@@ -146,8 +147,13 @@
                     max-width: 458px;
                     height: 64px;
                     width: 100%;
+                    @media (max-width: 1600px) {
+                        align-self: start;
+                        margin-top: 13px;
+                    }
                     @media (max-width: 1024px) {
                         max-width: unset;
+                        margin-top: 0;
                     }
                     @media (max-width: 640px) {
                         height: 56px;
@@ -166,13 +172,19 @@
                 .companyInfo {
                     display: flex;
                     flex-direction: column;
-                    gap: 39px;
+                    gap: 17px;
+                    @media (max-width: 1600px) {
+                        gap: 13px;
+                    }
                 }
 
                 .linksInfo {
                     display: flex;
                     flex-direction: column;
-                    gap: 39px;
+                    gap: 17px;
+                    @media (max-width: 1600px) {
+                        gap: 13px;
+                    }
                 }
 
                 .linksBlock {
@@ -219,6 +231,7 @@
     }
     @media (max-width: 1024px) {
         flex-direction: column;
+        gap: 13px;
     }
 
     @media (max-width: 640px) {
@@ -229,7 +242,7 @@
         .desktopElement {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 22px;
 
             @media (max-width: 1024px) {
                 display: none;
@@ -246,7 +259,7 @@
         .filterChildrenElements {
             display: flex;
             flex-direction: column;
-            gap: 21.4px;
+            gap: 15.6px;
         }
     }
 }
@@ -258,10 +271,11 @@
 
     @media (max-width: 1600px) {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 70px;
     }
     @media (max-width: 1024px) {
-        gap: 60px;
+        gap: 40px;
         flex-direction: column;
     }
     @media (max-width: 640px) {

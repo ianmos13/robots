@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./LeasingPartners.module.scss";
-import useDeviceType from "@/hooks/useDeviceType";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -24,7 +23,6 @@ const partnersLogos = [
 ];
 
 export default function LeasingPartners() {
-  const { isTabletView, isMobileView } = useDeviceType();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {

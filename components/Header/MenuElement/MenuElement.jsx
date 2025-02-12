@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import Link from "next/link";
 
 export default function MenuElement(props) {
-    const { element, isOpen, handleClickMenu } = props
+    const { element, isOpen, handleClickMenu, scrolled } = props
 
     const [ready, setReady] = useState(false);
 
@@ -24,7 +24,7 @@ export default function MenuElement(props) {
                         <span>{element.title}</span>
                     </div>
                     {ready && (
-                        <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.active : '' }`}>
+                        <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.active : '' } ${scrolled ? styles.scrolled : '' }`}>
                             <ul className={`${styles.dropdownMenu} ${isOpen ? styles.active : '' }`}>
                                 { element.children.map((child, idx) => (
                                     <li key={idx} className={styles.dropdownElement} >

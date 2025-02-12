@@ -1,3 +1,5 @@
+@import "/styles/variables";
+
 .productPaginationGridContainer {
     padding: 34px 30px 12px 30px;
 
@@ -6,5 +8,29 @@
   }
   @media (max-width: 640px) {
     padding: 10px 10px 20px 10px;
+  }
+}
+
+.leaveWhiteRequestBannerContainer {
+  background-color: $white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  @media (max-width: 1600px) {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.leaveRequestBannerContainer {
+  padding: 32px 30px 40px 30px;
+  @media (max-width: 1600px) {
+    padding: 40px 30px 40px 30px;
+  }
+  @media (max-width: 1024px) {
+    padding: 32px 20px 30px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 18px 10px 15px 10px;
   }
 }

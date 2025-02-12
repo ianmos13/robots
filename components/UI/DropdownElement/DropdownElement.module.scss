@@ -140,6 +140,10 @@
                 gap: 17.2px;
             }
             .lastElement {
+                @media (max-width: 1024px) {
+                    display: block;
+                    height: 0;
+                }
                 @media (max-width: 640px) {
                     display: block;
                     height: 14px;

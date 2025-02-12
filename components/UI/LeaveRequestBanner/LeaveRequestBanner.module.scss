@@ -1,21 +1,6 @@
 @import "/styles/variables";
 
 .container {
-  padding: 32px 30px 40px 30px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-
-  @media (max-width: 1600px) {
-    padding: 40px 30px 40px 30px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  @media (max-width: 1024px) {
-    padding: 32px 20px 30px 20px;
-  }
-  @media (max-width: 640px) {
-    padding: 18px 10px 15px 10px;
-  }
 
   .banner {
     position: relative;
@@ -111,16 +96,16 @@
     .title {
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 60px;
-      line-height: 72px;
+      line-height: 120%;
       text-transform: uppercase;
       width: 100%;
       text-align: start;
       letter-spacing: -0.03em;
       margin-bottom: 32px;
       @media (max-width: 1600px) {
-        line-height: 52.8px;
+        line-height: 110%;
         letter-spacing: -0.02em;
-        font-size: 48px;
+        font-size: 40px;
       }
       @media (max-width: 1200px) {
         margin-bottom: 20px;
@@ -142,7 +127,7 @@
       max-width: 578px;
       font-family: "DIN Pro medium", sans-serif;
       font-size: 26px;
-      line-height: 33.8px;
+      line-height: 130%;
       letter-spacing: -0.04em;
       text-align: start;
       @media (max-width: 1750px) {
@@ -150,6 +135,7 @@
       }
       @media (max-width: 1600px) {
         margin-bottom: 81px;
+        font-size: 20px
       }
       @media (max-width: 1380px) {
         margin-bottom: 50px;
@@ -159,7 +145,6 @@
       }
       @media (max-width: 1024px) {
         font-size: 26px;
-        line-height: 33.8px;
         margin-bottom: 81px;
       }
       @media (max-width: 640px) {
@@ -224,9 +209,3 @@
     }
   }
 }
-
-.whiteContainer {
-  background-color: $white;
-}
-
-
