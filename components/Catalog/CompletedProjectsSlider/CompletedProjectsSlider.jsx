@@ -1,7 +1,7 @@
 'use client'
 
 import SwitchButtons from '@/components/UI/Buttons/SwitchButtons/SwitchButtons'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
@@ -12,7 +12,7 @@ const projects = [
 	{
 		title: 'Замена роботов и оптимизация линии упаковки сахара',
 		description:
-			'Клиенту потребовалась замена вышедших из строя роботов другого производителя и модернизация линии упаковки сахара. Мы демонтировали неисправное оборудование, пересобрали системы управления, устранили предыдущие ошибки и установили два робота CRP-RA18-25. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.',
+			'Клиенту потребовалась замена вышедших из строя роботов другого производителя и модернизация линии упаковки сахара. Мы демонтировали неисправное оборудование, пересобрали системы управления, устранили предыдущие ошибки и установили два робота CRP-RA18-25. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.',
 		image: 'images/completed-project-catalog.svg',
 		tag: 'Металлоконструкции',
 		data: 'Cентябрь 2024',
@@ -50,6 +50,65 @@ const projects = [
 		data: 'Cентябрь 2024',
 	},
 ]
+const TruncatedText = ({ prj }) => {
+	const textRef = useRef(null)
+	const [isTruncated, setIsTruncated] = useState(false)
+	const [displayText, setDisplayText] = useState(prj.description)
+
+	useEffect(() => {
+		// Функция для обрезания текста по предложениям
+		const truncateText = () => {
+			const linkHTML = `<a href="/news" class="${styles.mobileRead}">Читать далее</a>`
+			
+			const element = textRef.current
+			if (!element) return
+			element.innerText = prj.description
+
+			if (element.scrollHeight <= element.clientHeight) {
+				setDisplayText(prj.description)
+				setIsTruncated(false)
+				return
+			}
+
+			const sentences = prj.description.match(/[^\.!\?]+[\.!\?]+[\s]*/g)
+			if (!sentences) {
+				setIsTruncated(false)
+				setDisplayText(prj.description)
+				return
+			}
+
+			let truncatedText = prj.description
+
+			for (let i = sentences.length; i >= 0; i--) {
+				truncatedText = sentences.slice(0, i).join('').trim()
+				element.innerHTML = truncatedText + linkHTML
+				if (element.scrollHeight <= element.clientHeight) {
+					setDisplayText(truncatedText)
+					setIsTruncated(true)
+					break
+				}
+			}
+		}
+		setTimeout(truncateText, 0)
+	}, [prj.description])
+
+	return (
+		<div>
+			<div ref={textRef} className={styles.description}>
+				{isTruncated ? (
+					<>
+						{displayText}{' '}
+						<a href='/news' className={styles.mobileRead}>
+							Читать далее
+						</a>
+					</>
+				) : (
+					displayText
+				)}
+			</div>
+		</div>
+	)
+}
 
 export default function CompletedProjectsSlider() {
 	const swiperRef = useRef()
@@ -142,10 +201,7 @@ export default function CompletedProjectsSlider() {
 										<div className={styles.tag}>{prj.tag}</div>
 										<div className={styles.title}>{prj.title}</div>
 									</div>
-									<div className={styles.description}>{prj.description}</div>
-									<a className={styles.mobileRead} href={`/news`}>
-										Читать далее
-									</a>
+									<TruncatedText prj={prj} />
 								</div>
 							</div>
 						</SwiperSlide>

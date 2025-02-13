@@ -11,7 +11,9 @@ import {useMediaQuery} from "react-responsive";
 
 export default function ProductCategoryGridPagination() {
   const [currentPage, setCurrentPage] = useState(1);
-  const isThreeElements = useMediaQuery({ query: '(max-width: 1280px)' });
+  const isThreeElements = useMediaQuery({ query: '(max-width: 1440px)' });
+  const isTwoElements = useMediaQuery({ query: '(max-width: 1099px)' });
+  const isOneElement = useMediaQuery({ query: '(max-width: 799px)' });
   const { isTabletView, isMobileView } = useDeviceType();
   const [productsPerPage, setIsProductsPerPage] = useState(4);
 
@@ -22,7 +24,8 @@ export default function ProductCategoryGridPagination() {
   const router = useRouter();
 
   useEffect(() => {
-    if(isMobileView) return setIsProductsPerPage(1)
+    if(isOneElement) return setIsProductsPerPage(1)
+    if(isTwoElements) return setIsProductsPerPage(2)
     if(isTabletView) return setIsProductsPerPage(2)
     if(isThreeElements) return setIsProductsPerPage(3)
     return setIsProductsPerPage(4)
