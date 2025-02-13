@@ -1,40 +1,71 @@
-@import "/styles/variables";
+@import '/styles/variables';
 .container {
-  padding: 0 30px 40px 30px;
+	padding: 0 30px 100px 30px;
+	@media (max-width: 1440px) {
+		padding: 0px 30px 100px 30px;
+	}
+	@media (max-width: 1024px) {
+		padding: 0px 20px 88px 20px;
+	}
+	@media (max-width: 640px) {
+		padding: 0px 10px 48px 10px;
+	}
+	.newsContainer {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 100px;
+		h3 {
+			font-size: 48px;
+			line-height: 52.8px;
+			letter-spacing: -0.02em;
+			color: #323232;
+			margin-bottom: 40px;
+		}
+		.newsList {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 10px;
+			row-gap: 64px;
+			width: 100%;
+			margin-bottom: 72px;
+		}
+	}
+	@media (max-width: 1440px) {
+		.newsContainer {
+			margin-bottom: 100px;
+			.newsList {
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 10px;
+				row-gap: 64px;
+				margin-bottom: 72px;
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		.newsContainer {
+			margin-bottom: 72px;
+			.newsList {
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 10px;
+				row-gap: 64px;
+				margin-bottom: 72px;
+			}
+		}
+	}
 
-  @media (max-width: 1600px) {
-    padding: 0px 30px 36px 30px;
-  }
-  @media (max-width: 1024px) {
-    padding: 0px 20px;
-  }
-  @media (max-width: 640px) {
-    padding: 0px 10px 24px 10px;
-  }
-  .newsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 100px;
-    h3 {
-      color: $dark-gray;
-
-      letter-spacing: -0.02em;
-    }
-
-    .newsList {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      width: 100%;
-      @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @media (max-width: 640px) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 25px;
-        margin-bottom: 56px;
-      }
-    }
-  }
+	@media (max-width: 640px) {
+		.newsContainer {
+			margin-bottom: 72px;
+			h3 {
+				font-size: 32px;
+				line-height: 35.2px;
+				margin-bottom: 24px;
+			}
+			.newsList {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 24px;
+				margin-bottom: 56px;
+			}
+		}
+	}
 }

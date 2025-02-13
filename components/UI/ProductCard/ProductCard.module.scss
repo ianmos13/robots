@@ -327,6 +327,9 @@
 }
 
 @media (max-width: 640px) {
+	.card:hover {
+		border-radius: 7px;
+	}
 	.card {
 		gap: 30px;
 		border-radius: 7px;

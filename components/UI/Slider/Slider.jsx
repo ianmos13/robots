@@ -22,23 +22,15 @@ export default function Slider({ type, swiperRef, items }) {
 					spaceBetween: 20,
 				},
 				1440: {
-					slidesPerView: 4.0,
+					slidesPerView: items.length > 3 ? 4.0 : 3.0,
 					spaceBetween: 10,
 				},
-				1200: {
-					slidesPerView: 4.0,
+				1100: {
+					slidesPerView: 3.0,
 					spaceBetween: 10,
 				},
-				1024: {
+				1025: {
 					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-				915: {
-					slidesPerView: 1.85,
-					spaceBetween: 10,
-				},
-				640: {
-					slidesPerView: 1.5,
 					spaceBetween: 10,
 				},
 				150: {

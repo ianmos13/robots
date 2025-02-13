@@ -161,7 +161,6 @@
       width: 100%;
       @media (max-width: 640px) {
         max-width: 180px;
-        width: 100%;
       }
     }
     button {
@@ -204,6 +203,111 @@
     height: 100%;
 
     @media (max-width: 1024px) {
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+}
+.mediumContainer {
+  .banner {
+    aspect-ratio: unset;
+    height: 489px;
+    @media (max-width: 1600px) {
+      aspect-ratio: unset;
+      height: 398px;
+    }
+    @media (max-width: 1024px) {
+      height: 918px;
+    }
+    @media (max-width: 640px) {
+      height: 521px;
+    }
+  }
+
+  .bannerContent {
+    width: 64.5%;
+    padding: 60px 0 0 60px;
+    @media (max-width: 1600px) {
+      padding: 40px 0 0 40px;
+      width: 73.5%;
+    }
+    @media (max-width: 1024px) {
+      padding: 40px 35px 0 38px;
+      top: 0;
+      width: 90%;
+    }
+    .desktopTablet {
+      display: none;
+    }
+    .tabletTitle {
+      display: block;
+    }
+    .title {
+      font-size: 56px;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      @media (max-width: 1600px) {
+        font-size: 40px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 56px;
+        line-height: 61.6px;
+        margin-bottom: 32px;
+      }
+      @media (max-width: 640px) {
+        font-size: 32px;
+        line-height: 35.2px;
+        margin-bottom: 24px;
+      }
+    }
+    .description {
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      @media (max-width: 1600px) {
+        font-size: 20px
+      }
+      @media (max-width: 1380px) {
+        margin-bottom: 81px;
+      }
+      @media (max-width: 1200px) {
+        margin-bottom: 40px;
+      }
+      @media (max-width: 1024px) {
+        font-size: 26px;
+        margin-bottom: 81px;
+      }
+      @media (max-width: 640px) {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+    }
+    .buttonContainer {
+      max-width: 169px;
+      @media (max-width: 640px) {
+        max-width: 180px;
+      }
+    }
+  }
+
+  .videoContainer {
+    width: unset;
+    height: 489px;
+    @media (max-width: 1600px) {
+      height: 398px;
+    }
+    @media (max-width: 1320px) {
+      width: 100%;
+      position: relative;
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: 70%;
+      position: relative;
+    }
+  }
+
+  .videoBackground {
+    @media (max-width: 1320px) {
       position: absolute;
       object-fit: cover;
     }

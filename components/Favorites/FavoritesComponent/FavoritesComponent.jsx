@@ -12,8 +12,10 @@ import CategoriesFilter from '@/components/UI/CategoriesFilter/CategoriesFilter'
 import Slider from '@/components/UI/Slider/Slider'
 import SwitchButtons from '@/components/UI/Buttons/SwitchButtons/SwitchButtons'
 import styles from './FavoritesComponent.module.scss'
+import useDeviceType from '@/hooks/useDeviceType'
 
 export default function FavoritesComponent() {
+	const {isTabletView} = useDeviceType()
 	const swiperRef = React.useRef(null)
 	const dispatch = useDispatch()
 	const favorites = useSelector(state => state.favorite)
@@ -84,7 +86,7 @@ export default function FavoritesComponent() {
 						onDelete={handleRemoveCategory}
 					/>
 					<div className={styles.buttonsWrapper}>
-						{favorites.length > 4 && (
+						{(favorites.length > 2 && isTabletView) && (
 							<SwitchButtons
 								activeButton={activeButton}
 								handleNext={handleNext}
