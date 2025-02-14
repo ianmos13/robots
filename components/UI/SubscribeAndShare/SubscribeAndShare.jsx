@@ -6,14 +6,7 @@ import styles from "./SubscribeAndShare.module.scss";
 export default function SubscribeAndShare() {
   const [copied, setCopied] = useState(false);
   const currentUrl =
-    typeof window !== "undefined" ? window.location.href : "";
-  const [mounted, setMounted] = useState(false);
-
-  if (!mounted) return null;
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  typeof window !== "undefined" ? window.location.href : "";
 
   const handleCopyLink = () => {
     navigator.clipboard
@@ -52,7 +45,7 @@ export default function SubscribeAndShare() {
           </a>
         </div>
         <div className={styles.shareContainer}>
-          <div className={styles.titel}>Поделиться статьей:</div>
+          <div className={styles.title}>Поделиться статьей:</div>
           <div className={styles.icons}>
             <a
               href={`https://t.me/share/url?url=${encodeURIComponent(

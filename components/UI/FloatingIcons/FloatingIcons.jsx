@@ -11,6 +11,14 @@ export default function FloatingIcons() {
     setMounted(true);
   }, []);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const favorites = useSelector((state) => state.favorite || []);
   const comparisons = useSelector((state) => state.compare || []);
 
@@ -20,30 +28,36 @@ export default function FloatingIcons() {
   if (!mounted) return null;
 
   return (
-    <div className={styles.floatingIconsContainer}>
+    <div
+      className={`${styles.floatingIconsContainer} ${
+        scrolled ? styles.scrolled : ""
+      }`}>
       {favoritesCount > 0 && (
-        <Link href="/favorites">
+        <a href="/favorites">
           <div className={styles.iconWrapper}>
-            <img
+            {/* <img
               src="/images/icons/favorite-blue.svg"
               alt="Favorites"
               className={styles.icon}
-            />
+            /> */}
             <span className={styles.badge}>{favoritesCount}</span>
+            <span className={styles.text}>Избранное</span>
           </div>
-        </Link>
+        </a>
       )}
       {comparisonsCount > 0 && (
-        <Link href="/compare-products">
+        <a href="/compare-products">
           <div className={styles.iconWrapper}>
-            <img
+            {/* <img
               src="/images/icons/compare-blue.svg"
               alt="Compare"
               className={styles.icon}
-            />
+            /> */}
+
             <span className={styles.badge}>{comparisonsCount}</span>
+            <span className={styles.text}>Сравнение товаров</span>
           </div>
-        </Link>
+        </a>
       )}
     </div>
   );

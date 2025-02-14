@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import styles from "./SingleNews.module.scss";
 import BackButton from "./BackButton/BackButton";
 import NewsCenter from "./NewsCenter/NewsCenter";
-import Sidebar from "./Sidebar/Sidebar";
-import ContactUsContainer from "./ContactUsContainer/ContactUsContainer";
+
+import CollaborationCard from "@/components/SingleNews/CollaborationCard/CollaborationCard";
 
 export default function SingleNews({ data }) {
   const router = useRouter();
@@ -16,11 +16,16 @@ export default function SingleNews({ data }) {
   return (
     <section className={styles.container}>
       <div className={styles.containerInner}>
-        <BackButton onBack={handleBack} />
-        <NewsCenter data={data} />
-        <Sidebar />
+        <div className={styles.buttonContainer}>
+            <BackButton onBack={handleBack} />
+        </div>
+        <div className={styles.newsContainer}>
+            <NewsCenter data={data} />
+        </div>
+        <div className={styles.sidebarContainer}>
+            <CollaborationCard />
+        </div>
       </div>
-      <ContactUsContainer />
     </section>
   );
 }

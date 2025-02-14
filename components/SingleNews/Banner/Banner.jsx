@@ -10,15 +10,16 @@ export default function Banner({ videoUrl }) {
           Повышение эффективности и точности: Роль роботов в промышленной автоматизации
         </div>
       </div>
-      <video
-        className={styles.videoBackground}
-        src={videoUrl}
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ width: "100%" }}
-      />
+      <div className={styles.videoContainer}>
+          <video
+            className={styles.videoBackground}
+            src={videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+      </div>
     </div>
   );
 }

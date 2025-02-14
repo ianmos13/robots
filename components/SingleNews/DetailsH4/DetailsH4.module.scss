@@ -7,26 +7,48 @@
 
 .h4Container h4 {
   margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  @media (max-width: 1600px) {
+    font-size: 26px;
+    line-height: 33.8px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 30px;
+    line-height: 39px;
+  }
+  @media (max-width: 640px) {
+    font-size: 24px;
+    line-height: 31.2px;
+  }
 }
 
 .h4Content {
   font-family: "DIN Pro", sans-serif;
   font-size: 24px;
-  font-weight: 400;
   line-height: 31.2px;
   letter-spacing: -0.02em;
   color: $dark-gray;
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
 }
 
 .h4Content ul {
   padding-left: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
+  @media (max-width: 1600px) {
+    padding-left: 20px;
+  }
+  @media (max-width: 640px) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .h4Content ul li {
   font-size: 24px;
-  font-weight: 400;
   line-height: 31.2px;
   letter-spacing: -0.02em;
   position: relative;
@@ -35,11 +57,46 @@
   cursor: pointer;
   margin-bottom: 15px;
   font-family: "DIN Pro", sans-serif;
+  @media (max-width: 1600px) {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    padding-left: 10px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 24px;
+    line-height: 31.2px;
+    letter-spacing: -0.02em;
+  }
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
 }
 
 .conclusion {
-  padding-left: 37px;
-  font-weight: bold;
+  padding: 8px 7px 8px 37px;
   color: $dark-gray;
   border-left: 1px #004985 solid;
+  font-family: "DIN Pro medium", sans-serif;
+  @each $property, $value in $b28-bold {
+    #{$property}: #{$value};
+  }
+  @media (max-width: 1600px) {
+    font-size: 24px;
+    line-height: 31.2px;
+    letter-spacing: -0.02em;
+
+  }
+  @media (max-width: 1024px) {
+    padding: 8px 0 8px 37px;
+    font-size: 28px;
+    line-height: 36.4px;
+    letter-spacing: -2%;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
 }

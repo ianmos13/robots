@@ -3,9 +3,10 @@ import styles from "./BackButton.module.scss";
 
 export default function BackButton({ onBack }) {
   return (
-    <div className={styles.leftContainer} onClick={onBack}>
+    <div className={styles.buttonContainer} onClick={onBack}>
       <img src="/images/icons/back-arrow.svg" alt="" />
-      Вернуться к новостям
+        <span className={styles.titleLarge}>Вернуться&nbsp;к&nbsp;новостям</span>
+        <span className={styles.titleMedium}>К&nbsp;новостям</span>
     </div>
   );
 }

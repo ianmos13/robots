@@ -4,17 +4,42 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  @media (max-width: 1024px) {
+    margin-top: 64px;
+    margin-bottom: 104px;
+  }
+  @media (max-width: 640px) {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+
   .title {
     font-family: "DIN Pro medium", sans-serif;
     color: $dark-gray;
     font-size: 28px;
-    font-weight: 500;
     line-height: 36.4px;
     letter-spacing: -0.02em;
+    @media (max-width: 1600px) {
+      font-size: 24px;
+      line-height: 31.2px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 28px;
+      line-height: 36.4px;
+      width: 63%;
+    }
+    @media (max-width: 640px) {
+      font-size: 24px;
+      line-height: 31.2px;
+      width: 100%;
+    }
   }
   .mailCOntainer {
     display: flex;
     gap: 24px;
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
   }
   .subscribe {
     font-family: "DIN Pro medium", sans-serif;
@@ -26,6 +51,9 @@
     @each $property, $value in $b18-medium {
       #{$property}: #{$value};
     }
+    @media (max-width: 640px) {
+      width: 169px;
+    }
     &:hover {
       background-color: $blue-hover;
     }
@@ -36,7 +64,7 @@
       #{$property}: #{$value};
     }
     padding: 16px;
-    font-size: 16px;
+    letter-spacing: -0.02em;
     font-family: "DIN Pro medium", sans-serif;
     color: #2e363d;
     background-color: #efefef;
@@ -67,21 +95,35 @@
 
     .agreement {
       display: flex;
+      gap: 5px;
+      @media (max-width: 1600px) {
+        justify-content: center;
+      }
+      @media (max-width: 640px) {
+        justify-content: unset;
+        display: block;
+      }
       a {
+        text-decoration: unset;
         font-family: "DIN Pro", sans-serif;
         color: #2e333d;
       }
     }
-
-   
   }
 
   .shareContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 96px;
-    .titel {
+    @media (max-width: 1024px) {
+      margin-top: 64px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .title {
       font-family: "DIN Pro medium", sans-serif;
       font-size: 28px;
       font-weight: 500;
@@ -89,12 +131,24 @@
       letter-spacing: -0.02em;
       margin-right: 56px;
       color: $dark-gray;
+      @media (max-width: 640px) {
+        font-size: 24px;
+        line-height: 31.2px;
+      }
     }
     .icons {
       display: flex;
       gap: 10px;
+      @media (max-width: 640px) {
+        justify-content: center;
+        width: 100%;
+      }
       img{
         cursor: pointer;
+        @media (max-width: 640px) {
+          width: 77px;
+          height: 77px;
+        }
       }
     }
   }

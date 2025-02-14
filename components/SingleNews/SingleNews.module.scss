@@ -2,21 +2,77 @@
 
 .container {
   display: flex;
-  padding: 0 30px 40px 30px;
+  padding: 32px 30px 460px 30px;
   flex-direction: column;
 
   @media (max-width: 1600px) {
-    padding: 0px 30px 36px 30px;
+    padding: 0 30px 36px 30px;
   }
   @media (max-width: 1024px) {
-    padding: 0px 20px;
+    padding: 0 20px;
   }
   @media (max-width: 640px) {
-    padding: 0px 10px 24px 10px;
+    padding: 0 10px 24px 10px;
   }
 }
 
 .containerInner {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  gap: 52px;
+  @media (max-width: 1600px) {
+    justify-content: flex-start;
+    gap: 68px;
+  }
+  @media (max-width: 1094px) {
+    gap: 40px;
+  }
+}
+
+.buttonContainer {
+  max-width: 249px;
+  min-width: 220px;
+  width: 100%;
+  @media (max-width: 1600px) {
+    max-width: 164px;
+    min-width: 164px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.newsContainer {
+  max-width: 1085px;
+  width: 100%;
+  margin-left: 7px;
+  @media (max-width: 1810px) {
+    margin-left: 0;
+    max-width: 982px;
+  }
+  @media (max-width: 1710px) {
+    max-width: 882px;
+  }
+  @media (max-width: 1600px) {
+    max-width: 802px;
+  }
+  @media (max-width: 1066px) {
+    max-width: 761px;
+  }
+  @media (max-width: 1024px) {
+    max-width: unset;
+  }
+}
+
+.sidebarContainer {
+  min-width: 335px;
+  width: 100%;
+  position: sticky;
+  top: 130px;
+  align-self: flex-start;
+  max-width: 414px;
+  @media (max-width: 1600px) {
+    display: none;
+  }
 }
