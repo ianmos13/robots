@@ -2,30 +2,43 @@
 
 .takeOfferContainer {
   margin-top: 32px;
+  @media (max-width: 1600px) {
+    margin-top: 24px;
+  }
 }
 
 .takeOfferText {
   font-family: "DIN Pro", sans-serif;
   font-size: 24px;
-  font-weight: 400;
   line-height: 31.2px;
   letter-spacing: -0.02em;
   margin-bottom: 32px;
+
+  @media (max-width: 1600px) {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 24px;
+  }
 }
 
 .ctaButton {
   transition: background-color 0.3s;
-  padding: 22px 30px;
+  padding: 19px 46px;
   font-family: "DIN Pro condensedbold", sans-serif;
   color: $white;
   background-color: $main-blue;
   border-radius: 7px;
   border: none;
   font-size: 22px;
-  font-weight: 700;
   line-height: 22px;
   letter-spacing: -0.02em;
-  
+
+  @media (max-width: 640px) {
+    padding: 21px 30px;
+  }
   &:hover {
     background-color: $blue-hover;
   }

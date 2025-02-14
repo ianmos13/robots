@@ -191,13 +191,8 @@ export default function MoreInfo({ productInfo }) {
               </div>
             </div>
 
-            
             <div className={styles.btnContainerMobile}>
-              <Swiper
-                slidesPerView={1.5}
-                spaceBetween={10}
-                freeMode={true}
-              >
+              <Swiper slidesPerView={1.5} spaceBetween={10} freeMode={true}>
                 <SwiperSlide className={styles.swiperSlide}>
                   <div
                     className={`${styles.btn} ${
@@ -246,7 +241,12 @@ export default function MoreInfo({ productInfo }) {
           <div className={styles.downloadContainer}>
             <div className={styles.downladCharacter}>
               <img src="/images/icons/Union.svg" alt="download-icon" />
-              Скачать технические характеристики
+              <span className={styles.longText}>
+                Скачать технические характеристики
+              </span>
+              <span className={styles.shortText}>
+                Тех.характеристики
+              </span>
             </div>
 
             <div className={styles.downloadIcon}>

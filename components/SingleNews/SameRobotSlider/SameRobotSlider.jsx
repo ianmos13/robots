@@ -26,7 +26,7 @@ export default function SameRobotSlider() {
       <div className={styles.slider}>
         <Swiper
           spaceBetween={20}
-          slidesPerView={2.3}
+          slidesPerView={"auto"}
           navigation={{
             nextEl: `.${styles.nextButton}`,
             prevEl: `.${styles.prevButton}`,

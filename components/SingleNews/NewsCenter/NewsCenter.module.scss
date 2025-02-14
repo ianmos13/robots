@@ -1,7 +1,6 @@
 @import "/styles/variables";
 
 .centerContainer {
-  margin-right: 52px;
   max-width: 1085px;
   width: 100%;
   display: flex;
@@ -10,10 +9,29 @@
 
 /* Дополнительный класс для вложенного контента */
 .newsContent {
+  margin-bottom: 64px;
+  @media (max-width: 1600px) {
+    margin-bottom: 48px;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 64px;
+  }
+  @media (max-width: 640px) {
+    margin-bottom: 48px;
+  }
     h2 {
       text-transform: uppercase;
       letter-spacing: -0.02em;
       margin-bottom: 48px;
+      @media (max-width: 1600px) {
+        font-size: 48px;
+        line-height: 110%;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 640px) {
+        font-size: 32px;
+        line-height: 35.2px;
+      }
     }
     .banner {
       position: relative;

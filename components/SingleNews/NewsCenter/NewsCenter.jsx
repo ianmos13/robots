@@ -31,7 +31,7 @@ export default function NewsCenter({ data }) {
       <div className={styles.newsContent}>
           { data?.detailsH4 && (<DetailsH4 details={data?.detailsH4} />) }
       </div>
-      <LeaveRequestBanner />
+      <LeaveRequestBanner size={'news'}/>
       <VideoSection />
       <ScrollableTable />
       <SubscribeAndShare />

@@ -34,7 +34,9 @@
   @each $property, $value in $b16-regular {
     #{$property}: #{$value};
   }
-
+  @media (max-width: 640px) {
+    margin-right: 0;
+  }
   &:hover:not(:disabled) {
     border-color: $main-blue;
     transition: background-color 0.3s ease, color 0.3s ease;

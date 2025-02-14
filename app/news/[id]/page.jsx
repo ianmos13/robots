@@ -3,6 +3,8 @@ import SingleNews from "@/components/SingleNews/SingleNews";
 import { useParams } from "next/navigation";
 import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
 import newsData from "@/public/data/news.json";
+import React from "react";
+import ContactUs from "@/components/UI/ContactUs/ContactUs";
 
 export default function page() {
   const { id } = useParams();
@@ -18,6 +20,7 @@ export default function page() {
    <>
      <Breadcrumbs items={breadcrumbItems} />
      <SingleNews data={singleNewsData} />
+     <ContactUs />
    </>
      
   

@@ -20,6 +20,7 @@ import styles from './Catalog.module.scss'
 import CompletedProjectsSlider from './CompletedProjectsSlider/CompletedProjectsSlider'
 import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
+import useApi from "@/hooks/useApi";
 
 export default function Catalog() {
 	const [selectedCategory, setSelectedCategory] = useState('all')
@@ -29,7 +30,8 @@ export default function Catalog() {
 	const [currentPage, setCurrentPage] = useState(1)
 	const { isTabletView, isMobileView, isDesktopView } = useDeviceType()
 	const [isFiltersModalOpen, setFiltersModalOpen] = useState(false)
-
+	// const { data, error, loading } = useApi("categories", "GET");
+	// const categories = data && data.data ? data.data : [];
 	const searchParams = useSearchParams()
 
 	useEffect(() => {

@@ -31,6 +31,9 @@
 			width: 328px;
 			min-height: 506px;
 			margin-left: 10px;
+			&:first-child {
+				margin-left: 10px;
+			}
 			&:last-child {
 				margin-right: 10px;
 			}
