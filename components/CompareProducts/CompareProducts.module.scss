@@ -188,21 +188,17 @@
 
   .compareWrapperScroll.fixed {
     position: fixed;
-    top: 130px;
+    top: 104px;
     left: 0;
     width: 100%;
     z-index: 1000;
     background: $white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    @media (max-width: 1600px) {
-      top: 135px;
-    }
-    @media (max-width: 1024px) {
-      top: 124px;
-    }
+   
+   
     @media (max-width: 640px) {
-      top: 72px;
+      top: 62px;
     }
     &.unfixed {
       position: relative;

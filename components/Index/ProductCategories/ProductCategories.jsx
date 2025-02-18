@@ -4,15 +4,15 @@ import { useRouter } from "next/navigation";
 import styles from "./ProductCategories.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import categories from "@/public/data/products-catgories.json";
 import "swiper/css";
 import "swiper/css/navigation";
 import TitleWithSeparator from "@/components/UI/TitleWithSeparator/TitleWithSeparator";
+import useCategories from '@/hooks/useCategories';
 
 const ProductCategories = () => {
   const [activeButton, setActiveButton] = useState("");
   const router = useRouter();
-
+	const { categories, error, loading } = useCategories();
   const handlePrevClick = () => {
     setActiveButton("prev");
     setTimeout(() => setActiveButton(""), 300);

@@ -56,7 +56,6 @@ const TruncatedText = ({ prj }) => {
 	const [displayText, setDisplayText] = useState(prj.description)
 
 	useEffect(() => {
-		// Функция для обрезания текста по предложениям
 		const truncateText = () => {
 			const linkHTML = `<a href="/news" class="${styles.mobileRead}">Читать далее</a>`
 			
@@ -155,13 +154,13 @@ export default function CompletedProjectsSlider() {
 						swiperRef.current = swiper
 					}}
 					breakpoints={{
-						1600: {
+						1601: {
 							slidesPerView: 1.5,
-							spaceBetween: 16,
+							spaceBetween: 20,
 						},
 						1440: {
 							slidesPerView: 1.3,
-							spaceBetween: 20,
+							spaceBetween: 10,
 						},
 						1024: {
 							slidesPerView: 1.1,

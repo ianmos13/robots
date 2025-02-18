@@ -7,16 +7,26 @@ import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
 import useDeviceType from '../../../hooks/useDeviceType'
 
-export default function ProductCard({ robot }) {
+export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
 	const router = useRouter()
 	const { isMobileView } = useDeviceType()
 	const [isHovered, setIsHovered] = useState(false)
 
+	const onHover = () => {
+		hoverCard(true)
+		setIsHovered(true)
+	}
+
+	const onLeave = () => {
+		hoverCard(false)
+		setIsHovered(false)
+	}
+
 	return (
 		<div
-			className={styles.card}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
+			className={`${styles.card} ${styles[`${theme}Card`]}`}
+			onMouseEnter={onHover}
+			onMouseLeave={onLeave}
 			onClick={() => {
 				if (isMobileView) router.push(`/products/${robot.id}`)
 			}}

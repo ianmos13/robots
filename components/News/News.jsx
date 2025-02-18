@@ -4,21 +4,19 @@ import { useState } from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import styles from "./News.module.scss";
 import Pagination from "@/components/UI/Pagination/Pagination";
-import useApi from "@/hooks/useApi";
-// import newsData from "@/public/data/news.json"; //static data
+import useNews from "@/hooks/useNews";
 
 export default function News() {
   const { isTabletView, isMobileView } = useDeviceType();
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = isMobileView ? 3 : isTabletView ? 6 : 9;
 
-  const { data, error, loading } = useApi("news", "GET");
-  const newsData = data && data.data ? data.data : [];
+  const { news, error, loading } = useNews();
 
-  const totalPages = Math.ceil(newsData.length / productsPerPage);
+  const totalPages = Math.ceil(news.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
-  const visibleNews = newsData.slice(startIndex, endIndex);
+  const visibleNews = news.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

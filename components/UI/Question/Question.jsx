@@ -14,7 +14,7 @@ export default function Question({faqData}) {
 
   return (
     <div className={styles.container}>
-      <TitleWithSeparator title="Ответы на вопросы" />
+      <TitleWithSeparator title="Ответы на вопросы" theme='catalog'/>
       <div className={styles.questionsList}>
         {faqData.map((item, index) => (
           <div key={index} className={styles.questionItem}>

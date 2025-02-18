@@ -1,5 +1,18 @@
 @import "/styles/variables";
 
+.container{
+  padding-bottom: 420px;
+  @media (max-width: 1440px) {
+    padding-bottom: 170px;
+  }
+  @media (max-width: 1024px) {
+    padding-bottom: 80px;
+  }
+  @media (max-width: 640px) {
+    padding-bottom: 62px;
+  }
+}
+
 .questionsList {
   display: flex;
   flex-direction: column;
@@ -15,9 +28,11 @@
   flex-direction: column;
   @media (max-width: 1024px) {
     margin-bottom: 10px;
+    padding: 18px 20px;
   }
   @media (max-width: 640px) {
     margin-bottom: 8px;
+    padding: 19px 20px;
   }
 }
 

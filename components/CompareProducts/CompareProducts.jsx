@@ -11,7 +11,7 @@ import {
   removeFromCompare,
 } from "@/redux/features/compareSlice";
 import styles from "./CompareProducts.module.scss";
-import categoryList from "@/public/data/products-catgories.json";
+import useCategories from '@/hooks/useCategories';
 import ContactUs from "../UI/ContactUs/ContactUs";
 
 export default function CompareProducts() {
@@ -25,7 +25,7 @@ export default function CompareProducts() {
   const [isSticky, setIsSticky] = useState(false);
   const [hideSticky, setHideSticky] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-
+  const { categories, error, loading } = useCategories();
   const { isMobileView, isTabletView } = useDeviceType();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -279,7 +279,7 @@ export default function CompareProducts() {
           sliderRef={sliderRef}
           onRemoveItem={handleRemoveFromCompare}
           onRemoveCategory={handleRemoveCategory}
-          categoryList={categoryList}
+          categoryList={categories}
           onDownloadExcel={handleDownloadExcel}
         />
       </div>

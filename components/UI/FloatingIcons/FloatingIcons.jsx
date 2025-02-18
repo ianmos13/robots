@@ -31,33 +31,37 @@ export default function FloatingIcons() {
     <div
       className={`${styles.floatingIconsContainer} ${
         scrolled ? styles.scrolled : ""
-      }`}>
+      }`}
+    >
       {favoritesCount > 0 && (
-        <a href="/favorites">
-          <div className={styles.iconWrapper}>
-            {/* <img
-              src="/images/icons/favorite-blue.svg"
-              alt="Favorites"
-              className={styles.icon}
-            /> */}
-            <span className={styles.badge}>{favoritesCount}</span>
-            <span className={styles.text}>Избранное</span>
-          </div>
-        </a>
+       
+          <a  href="/favorites">
+            <div className={styles.iconWrapper}>
+              <img
+                src="/images/icons/favorite-blue.svg"
+                alt="Favorites"
+                className={styles.icon}
+              />
+              <span className={styles.badge}>{favoritesCount}</span>
+              <span className={styles.text}>Избранное</span>
+            </div>
+          </a>
+     
       )}
       {comparisonsCount > 0 && (
-        <a href="/compare-products">
-          <div className={styles.iconWrapper}>
-            {/* <img
-              src="/images/icons/compare-blue.svg"
-              alt="Compare"
-              className={styles.icon}
-            /> */}
-
-            <span className={styles.badge}>{comparisonsCount}</span>
-            <span className={styles.text}>Сравнение товаров</span>
-          </div>
-        </a>
+       
+          <a href="/compare-products">
+            <div className={styles.iconWrapper}>
+              <img
+                src="/images/icons/compare-blue.svg"
+                alt="Compare"
+                className={styles.icon}
+              />
+              <span className={styles.badge}>{comparisonsCount}</span>
+              <span className={styles.text}>Сравнение товаров</span>
+            </div>
+          </a>
+        
       )}
     </div>
   );

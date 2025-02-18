@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, {useRef, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import styles from "./SameRobotSlider.module.scss";
 import ProductCard from "@/components/UI/ProductCard/ProductCard";
-import product from "@/public/data/products.json";
 import "swiper/css";
 import "swiper/css/navigation";
+import useProducts from '@/hooks/useProducts';
+import SwitchButtons from "@/components/UI/Buttons/SwitchButtons/SwitchButtons";
 
 export default function SameRobotSlider() {
+  const swiperRef = useRef()
   const [activeButton, setActiveButton] = useState("");
+  const [isHoveredCard, setIsHoveredCard] = useState(false);
+  const { products, error, loading } = useProducts();
 
-  const handlePrevClick = () => {
+  const handlePrev = () => {
+    swiperRef.current?.slidePrev();
     setActiveButton("prev");
     setTimeout(() => setActiveButton(""), 300);
   };
 
-  const handleNextClick = () => {
+  const hoverCard = (value) => {
+      setIsHoveredCard(value)
+  }
+
+  const handleNext = () => {
+    swiperRef.current?.slideNext();
     setActiveButton("next");
     setTimeout(() => setActiveButton(""), 300);
   };
@@ -25,52 +35,36 @@ export default function SameRobotSlider() {
       <h4>Какие роботы для этого подойдут:</h4>
       <div className={styles.slider}>
         <Swiper
-          spaceBetween={20}
+          onSwiper={swiper => (swiperRef.current = swiper)}
+          spaceBetween={0}
           slidesPerView={"auto"}
-          navigation={{
-            nextEl: `.${styles.nextButton}`,
-            prevEl: `.${styles.prevButton}`,
-          }}
           modules={[Navigation]}
+          breakpoints={{
+            1601: {
+              spaceBetween: 20,
+            },
+            1025: {
+              spaceBetween: 10,
+            },
+          }}
         >
-          {product.map((robot, index) => (
-            <SwiperSlide key={index}>
-              <ProductCard robot={robot} />
+          {products.map((robot, index) => (
+            <SwiperSlide key={index} className={styles.swiperSlide}>
+              <ProductCard theme={'news'} robot={robot} hoverCard={hoverCard} />
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className={styles.containerButton}>
-          <button
-            className={`${styles.prevButton} ${styles.navButton} ${
-              activeButton === "prev" ? styles.active : ""
-            }`}
-            onClick={handlePrevClick}
-          >
-            <img
-              src={
-                activeButton === "prev"
-                  ? "/images/icons/active-prev.svg"
-                  : "/images/icons/prev.svg"
-              }
-              alt="Previous"
-            />
-          </button>
-          <button
-            className={`${styles.nextButton} ${styles.navButton} ${
-              activeButton === "next" ? styles.active : ""
-            }`}
-            onClick={handleNextClick}
-          >
-            <img
-              src={
-                activeButton === "next"
-                  ? "/images/icons/active-next.svg"
-                  : "/images/icons/next.svg"
-              }
-              alt="Next"
-            />
-          </button>
-        </div>
+        {products.length > 4 && (
+            <div
+                className={`${styles.containerButton} ${isHoveredCard ? styles.containerButtonInactive : '' }`}
+            >
+              <SwitchButtons
+                  activeButton={activeButton}
+                  handlePrev={handlePrev}
+                  handleNext={handleNext}
+              />
+            </div>
+        )}
       </div>
     </div>
   );

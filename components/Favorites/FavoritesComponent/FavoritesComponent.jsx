@@ -1,7 +1,6 @@
 'use client'
 import DeleteAllButton from '@/components/UI/Buttons/DeleteAllButton/DeleteAllButton'
 import ConfirmModal from '@/components/UI/ConfirmModal/ConfirmModal'
-import { default as categoryList } from '@/public/data/products-catgories.json'
 import {
 	clearFavorites,
 	removeFromFavorite,
@@ -13,6 +12,7 @@ import Slider from '@/components/UI/Slider/Slider'
 import SwitchButtons from '@/components/UI/Buttons/SwitchButtons/SwitchButtons'
 import styles from './FavoritesComponent.module.scss'
 import useDeviceType from '@/hooks/useDeviceType'
+import useCategories from '@/hooks/useCategories';
 
 export default function FavoritesComponent() {
 	const {isTabletView} = useDeviceType()
@@ -23,7 +23,7 @@ export default function FavoritesComponent() {
 	const [currentIndex, setCurrentIndex] = React.useState(0)
 	const [activeButton, setActiveButton] = React.useState('')
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = React.useState(false)
-
+	const { categories, error, loading } = useCategories();
 	const filteredRobots =
 		selectedCategory === 'all'
 			? favorites
@@ -67,7 +67,7 @@ export default function FavoritesComponent() {
 	}
 
 	const categoryKeys = new Set(favorites.map(item => item.category))
-	const uniqueCategories = categoryList.filter(category =>
+	const uniqueCategories = categories.filter(category =>
 		categoryKeys.has(category.key)
 	)
 

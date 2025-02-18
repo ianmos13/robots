@@ -4,11 +4,10 @@ import styles from "./ProductCategoryGridPagination.module.scss";
 import TitleWithSeparator from "../TitleWithSeparator/TitleWithSeparator";
 import ProductCard from "@/components/UI/ProductCard/ProductCard";
 import Pagination from "@/components/UI/Pagination/Pagination";
-import robotsList from "@/public/data/products.json";
 import useDeviceType from "@/hooks/useDeviceType";
 import { useRouter } from "next/navigation";
 import {useMediaQuery} from "react-responsive";
-
+import useProducts from '@/hooks/useProducts';
 export default function ProductCategoryGridPagination() {
   const [currentPage, setCurrentPage] = useState(1);
   const isThreeElements = useMediaQuery({ query: '(max-width: 1440px)' });
@@ -16,11 +15,11 @@ export default function ProductCategoryGridPagination() {
   const isOneElement = useMediaQuery({ query: '(max-width: 799px)' });
   const { isTabletView, isMobileView } = useDeviceType();
   const [productsPerPage, setIsProductsPerPage] = useState(4);
-
-  const totalPages = Math.ceil(robotsList.length / productsPerPage);
+  const { products, error, loading } = useProducts();
+  const totalPages = Math.ceil(products.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = robotsList.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
   const router = useRouter();
 
   useEffect(() => {
