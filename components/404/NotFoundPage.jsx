@@ -12,7 +12,7 @@ export default function NotFoundPage() {
       <div className={styles.NotFoundPageContainer}>
         <div className={styles.NotFoundPageContainerInner}>
           <div className={styles.titleBlue}>404</div>
-          <div className={styles.titleBlack}>Страница не найдена</div>
+          <div className={styles.titleBlack}>Страница&nbsp;не&nbsp;найдена</div>
           <div className={styles.description}>
             Возможно, она устарела, была удалена, или был введен неверный адрес
             в адресной строке.
