@@ -321,17 +321,17 @@ const footerLinks = [
     {
         id: 1,
         name: "Периферийное оборудование",
-        link: "/catalog",
+        link: "/peripheral-equipment",
     },
     {
         id: 2,
         name: "О компании",
-        link: "/contacts",
+        link: "/about",
     },
     {
         id: 3,
         name: "Блог",
-        link: "/news",
+        link: "/blog",
     },
     {
         id: 4,
