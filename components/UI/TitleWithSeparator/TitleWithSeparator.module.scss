@@ -178,3 +178,13 @@
     margin: 8px 0 16px 0;
   }
 }
+
+.catalogSeparator{
+  margin: 24px 0 32px;
+  @media (max-width: 1024px) {
+    margin: 32px 0 24px;
+  }
+  @media (max-width: 640px) {
+    margin: 16px 0 26px;
+  }
+}

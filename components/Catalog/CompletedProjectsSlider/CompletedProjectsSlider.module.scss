@@ -108,9 +108,9 @@
 	}
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
 	.sliderContainer {
-		padding: 0 0 100px 0;
+		padding: 0 0 128px 0;
 		width: 100%;
 		.header {
 			display: flex;
@@ -186,7 +186,7 @@
 
 @media (max-width: 1024px) {
 	.sliderContainer {
-		padding: 0 0 100px 0;
+		padding: 0 0 64px 0;
 		width: 100%;
 		.header {
 			display: flex;
@@ -245,10 +245,6 @@
 						font-size: 16px;
 						line-height: 19.2px;
 						letter-spacing: -0.02em;
-						// display: -webkit-box; /* Включаем режим flexbox для старых Webkit-браузеров */
-						// -webkit-box-orient: vertical; /* Задаём вертикальную ориентацию */
-						// -webkit-line-clamp: 6; /* Ограничиваем вывод тремя строками */
-						// overflow: hidden; /* Скрываем лишний текст */
 					}
 					.mobileRead {
 						text-decoration: underline;
@@ -263,7 +259,7 @@
 
 @media (max-width: 640px) {
 	.sliderContainer {
-		padding: 0 0 100px 0;
+		padding: 0 0 80px 0;
 		width: 100%;
 		.header {
 			h4 {

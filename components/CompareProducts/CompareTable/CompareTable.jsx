@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CompareTable.module.scss";
-import ProductCategory from "@/public/data/products-catgories.json";
 import useDeviceType from "@/hooks/useDeviceType";
+import useCategories from '@/hooks/useCategories';
 
 const CompareTable = ({ data, tableRef }) => {
   const { isTabletView, isMobileView } = useDeviceType();
-
+  const { categories, error, loading } = useCategories();
   if (!data.length) return null;
 
   const [windowWidth, setWindowWidth] = useState(
@@ -36,7 +36,7 @@ const CompareTable = ({ data, tableRef }) => {
     data.length > chunkSize ? data.slice(0, chunkSize) : data;
 
   const getCategoryName = (categoryKey) => {
-    const category = ProductCategory.find((cat) => cat.key === categoryKey);
+    const category = categories.find((cat) => cat.key === categoryKey);
     return category ? category.name : categoryKey;
   };
 

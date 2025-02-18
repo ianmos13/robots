@@ -39,32 +39,63 @@
 .slider {
   display: block;
   position: relative;
-}
-
-.prevButton,
-.nextButton {
-  position: absolute;
-  z-index: 10;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.prevButton img,
-.nextButton img {
-  width: 48px;
-  height: 48px;
-}
-
-.containerButton {
-  margin-top: 40px;
+  @media (max-width: 1024px) {
+    width: 100vw;
+    margin: 0 -20px;
+  }
   @media (max-width: 640px) {
-    margin-top: 24px;
+    margin: 0 -10px;
+  }
+
+  .swiperSlide {
+    max-width: 450px;
+    min-height: 720px;
+    @media (max-width: 1600px) {
+      min-height: 654px;
+      max-width: 338px;
+    }
+    @media (max-width: 1024px) {
+      min-height: 715px;
+      max-width: 392px;
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 20px;
+      }
+      &:last-child {
+        margin-right: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      min-height: 477px;
+      max-width: 328px;
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 10px;
+      }
+      &:last-child {
+        margin-right: 10px;
+      }
+    }
   }
 }
 
-.nextButton {
-  margin-left: 58px;
+.containerButton {
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+  @media (max-width: 1600px) {
+    margin-top: -64px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: -56px;
+    margin-left: 20px;
+  }
+  @media (max-width: 640px) {
+    margin-top: 24px;
+    margin-left: 10px;
+  }
 }
 
-
+.containerButtonInactive {
+  z-index: -1;
+}

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import styles from "./MoreInfo.module.scss";
 import DownloadRobotInfoButton from "@/components/UI/Buttons/DownloadRobotInfoButton/DownloadRobotInfoButton";
@@ -11,10 +12,15 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function MoreInfo({ productInfo }) {
+  const product = Array.isArray(productInfo) ? productInfo[0] : productInfo;
+
+  if (!product) return null;
+
   const [activeInfoTab, setActiveInfoTab] = useState("description");
   const [activeTechincalTab, setActiveTechincalTab] = useState("axes");
   const [showAllRows, setShowAllRows] = useState(false);
   const MAX_VISIBLE_ROWS = 9;
+
 
   const buttonsData = [
     {
@@ -40,41 +46,53 @@ export default function MoreInfo({ productInfo }) {
     },
   ];
 
+
   const getCurrentImage = () => {
     switch (activeTechincalTab) {
       case "axes":
-        return productInfo?.technicalInfo?.axes?.image;
+        return product?.technicalInfo?.axes?.image;
       case "bases":
-        return productInfo?.technicalInfo?.bases?.image;
+        return product?.bases?.image; 
       case "flange":
-        return productInfo?.technicalInfo?.flange?.image;
+        return product?.flange?.image; 
       default:
         return null;
     }
   };
 
+ 
+  const normalizeTableData = (data) => {
+    if (!data) return [];
+   
+    if (Array.isArray(data) && data.length && Array.isArray(data[0])) {
+      return data[0];
+    }
+    
+    return data;
+  };
+
+
   const renderTable = (data) => {
-    if (!data) return null;
-    const visibleRows = showAllRows ? data : data.slice(0, MAX_VISIBLE_ROWS);
+    const rows = normalizeTableData(data);
+    if (!rows || rows.length === 0) return null;
+    const visibleRows = showAllRows ? rows : rows.slice(0, MAX_VISIBLE_ROWS);
+
     return (
       <div className={styles.tableWrapper}>
         <table className={styles.techTable}>
           <tbody>
             {visibleRows.map((row, idx) => (
               <tr key={idx}>
-                <td>{row.label}</td>
-                {row.values.map((val, i) => (
-                  <td key={i}>{val || ""}</td>
-                ))}
+                <td>{row.label || ""}</td>
+                <td>{row.value || "-"}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        {data.length > MAX_VISIBLE_ROWS && (
+        {rows.length > MAX_VISIBLE_ROWS && (
           <div
             className={styles.showMore}
-            onClick={() => setShowAllRows(!showAllRows)}
-          >
+            onClick={() => setShowAllRows(!showAllRows)}>
             {showAllRows ? "Скрыть ▲" : "Раскрыть таблицу ▼"}
           </div>
         )}
@@ -82,9 +100,12 @@ export default function MoreInfo({ productInfo }) {
     );
   };
 
+  const addInfo = product.addInfo?.[0] || { description: [], equipment: [] };
+
   return (
     <div className={styles.moreInfo}>
       <div className={styles.moreInfoContainer}>
+      
         <div className={styles.sidebar}>
           <div className={styles.title}>Файлы робота:</div>
 
@@ -93,6 +114,7 @@ export default function MoreInfo({ productInfo }) {
               <DownloadRobotInfoButton key={index} {...btn} />
             ))}
           </div>
+
           <div className={styles.swiper}>
             <Swiper
               className={styles.btnContainerTablet}
@@ -112,8 +134,7 @@ export default function MoreInfo({ productInfo }) {
                 840: {
                   slidesPerView: 2.3,
                 },
-              }}
-            >
+              }}>
               {buttonsData.map((btn, index) => (
                 <SwiperSlide key={index} className={styles.swiperSlide}>
                   <DownloadRobotInfoButton {...btn} />
@@ -123,7 +144,10 @@ export default function MoreInfo({ productInfo }) {
           </div>
           <div className={styles.requestButton}>Оставить заявку</div>
         </div>
+
+       
         <div className={styles.rightSection}>
+        
           <div className={styles.info}>
             <h4>Информация</h4>
             <div className={styles.btnContainer}>
@@ -131,62 +155,69 @@ export default function MoreInfo({ productInfo }) {
                 className={`${styles.btn} ${
                   activeInfoTab === "description" ? styles.active : ""
                 }`}
-                onClick={() => setActiveInfoTab("description")}
-              >
+                onClick={() => setActiveInfoTab("description")}>
                 Описание
               </div>
               <div
                 className={`${styles.btn} ${
                   activeInfoTab === "equipment" ? styles.active : ""
                 }`}
-                onClick={() => setActiveInfoTab("equipment")}
-              >
+                onClick={() => setActiveInfoTab("equipment")}>
                 Комплектация
               </div>
             </div>
+
             <div className={styles.addInfoList}>
-              {activeInfoTab === "description" && (
-                <ul>
-                  {productInfo.addInfo[0].description.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
-              {activeInfoTab === "equipment" && (
-                <ul>
-                  {productInfo.addInfo[0].equipment.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
+              {activeInfoTab === "description" &&
+                addInfo.description?.length > 0 && (
+                  <>
+                    {addInfo.description.map((htmlStr, i) => (
+                      <div
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: htmlStr }}
+                      />
+                    ))}
+                  </>
+                )}
+
+              {activeInfoTab === "equipment" &&
+                addInfo.equipment?.length > 0 && (
+                  <>
+                    {addInfo.equipment.map((htmlStr, i) => (
+                      <div
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: htmlStr }}
+                      />
+                    ))}
+                  </>
+                )}
             </div>
           </div>
 
+      
           <div className={styles.technicalInfo}>
-            <h4>Технические характеристики {productInfo.title}</h4>
+            <h4>Технические характеристики {product.title}</h4>
+
             <div className={styles.btnContainer}>
               <div
                 className={`${styles.btn} ${
                   activeTechincalTab === "axes" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("axes")}
-              >
+                onClick={() => setActiveTechincalTab("axes")}>
                 Диапазон движения по осям
               </div>
               <div
                 className={`${styles.btn} ${
                   activeTechincalTab === "bases" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("bases")}
-              >
+                onClick={() => setActiveTechincalTab("bases")}>
                 Размеры основания
               </div>
               <div
                 className={`${styles.btn} ${
                   activeTechincalTab === "flange" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("flange")}
-              >
+                onClick={() => setActiveTechincalTab("flange")}>
                 Размеры фланца
               </div>
             </div>
@@ -198,8 +229,7 @@ export default function MoreInfo({ productInfo }) {
                     className={`${styles.btn} ${
                       activeTechincalTab === "axes" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("axes")}
-                  >
+                    onClick={() => setActiveTechincalTab("axes")}>
                     Диапазон движения по осям
                   </div>
                 </SwiperSlide>
@@ -208,8 +238,7 @@ export default function MoreInfo({ productInfo }) {
                     className={`${styles.btn} ${
                       activeTechincalTab === "bases" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("bases")}
-                  >
+                    onClick={() => setActiveTechincalTab("bases")}>
                     Размеры основания
                   </div>
                 </SwiperSlide>
@@ -218,8 +247,7 @@ export default function MoreInfo({ productInfo }) {
                     className={`${styles.btn} ${
                       activeTechincalTab === "flange" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("flange")}
-                  >
+                    onClick={() => setActiveTechincalTab("flange")}>
                     Размеры фланца
                   </div>
                 </SwiperSlide>
@@ -231,22 +259,24 @@ export default function MoreInfo({ productInfo }) {
                 <img src={getCurrentImage()} alt={activeTechincalTab} />
               </div>
             )}
+
             {activeTechincalTab === "axes" &&
-              renderTable(productInfo?.technicalInfo?.axes?.table)}
+              renderTable(product?.technicalInfo?.axes?.table)}
+
             {activeTechincalTab === "bases" &&
-              renderTable(productInfo?.technicalInfo?.bases?.table)}
+              renderTable(product?.bases?.table)}
+
             {activeTechincalTab === "flange" &&
-              renderTable(productInfo?.technicalInfo?.flange?.table)}
+              renderTable(product?.flange?.table)}
           </div>
+
           <div className={styles.downloadContainer}>
             <div className={styles.downladCharacter}>
               <img src="/images/icons/Union.svg" alt="download-icon" />
               <span className={styles.longText}>
                 Скачать технические характеристики
               </span>
-              <span className={styles.shortText}>
-                Тех.характеристики
-              </span>
+              <span className={styles.shortText}>Тех.характеристики</span>
             </div>
 
             <div className={styles.downloadIcon}>
@@ -265,16 +295,15 @@ export default function MoreInfo({ productInfo }) {
                 muted
                 loop
                 controls={false}
-                style={{ width: "100%" }}
-              >
+                style={{ width: "100%" }}>
                 <source
-                  src="https://s3-figma-videos-production-sig.figma.com/video/1026790075068458266/TEAM/a4c9/e0ac/-db43-44cb-830e-b496539a502f?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o2QmQh1iCp-t7~rWg6ar3BW~eQhkMZHp7nPq5g7mO69zyYdB~Mjc8mWJejLMN5qXL1baSM-f~cG08b1hnBvFPHxaIA8AOhUgG7Y6KGdHIkwrXat8GpiTVdKXFJsbBhP-ezf5lKRLbCDLo8Sh36TOPkdNzLiKMd~HDwYIgtsuRF2yxvR1UNspMmwPYfnxBenLPvpAzIT0EJkjxrZNDzWnOA~9bwBOBKUfnM65LyzZbwHkVJ-baQtKtKA3W~~BcYe6zRVEq~vF1eMyFfvb55uVvxa7zKLoJFysjs401zL14FUlj77aM4cujrJE0wCCPHRspVRGFctJPe7AgewJY1-P0w__"
+                  src="/test_video_2.webm"
                   type="video/mp4"
                 />
               </video>
-              <div className={styles.playIcon}>
-                <img src="/images/icons/play.svg" alt="play" />
-              </div>
+              {/*<div className={styles.playIcon}>*/}
+              {/*  <img src="/images/icons/play.svg" alt="play" />*/}
+              {/*</div>*/}
             </div>
           </div>
 
@@ -286,9 +315,11 @@ export default function MoreInfo({ productInfo }) {
           </div>
         </div>
       </div>
+
       <div className={styles.gridContainer}>
         <ProductCategoryGridPagination />
       </div>
+
       <ContactUs />
     </div>
   );

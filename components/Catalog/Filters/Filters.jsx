@@ -1,6 +1,6 @@
-import Slider from '@mui/material/Slider'
-import { useEffect, useState } from "react"
-import styles from "./Filters.module.scss"
+import Slider from "@mui/material/Slider";
+import { useEffect, useState } from "react";
+import styles from "./Filters.module.scss";
 
 const DEFAULT_PAYLOAD_MIN = 0;
 const DEFAULT_PAYLOAD_MAX = 2500;
@@ -8,7 +8,6 @@ const DEFAULT_REACH_MIN = 0;
 const DEFAULT_REACH_MAX = 1000;
 
 export default function Filters({ selectedFilters, onChangeFilters }) {
-
   const [isApplicationOpen, setIsApplicationOpen] = useState(true);
   const [isAxesOpen, setIsAxesOpen] = useState(false);
   const [isPayloadOpen, setIsPayloadOpen] = useState(false);
@@ -33,36 +32,33 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
   ];
   const axesOptions = [1, 2, 3, 4];
 
-
-  const [payloadRange, setPayloadRange] = useState([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX]);
-  const handlePayloadRangeChange = (e,newValue) => {
-    setPayloadRange(newValue);
-    updatePayloadFilter(newValue[0], newValue[1]);
-  };
-  const [reachRange, setReachRange] = useState([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX]);
-  const handleReachRangeChange = (e,newValue) => {
-    setReachRange(newValue);
-    updateReachFilter(newValue[0], newValue[1])
-  };
+  const [payloadRange, setPayloadRange] = useState([
+    DEFAULT_PAYLOAD_MIN,
+    DEFAULT_PAYLOAD_MAX,
+  ]);
+  const [reachRange, setReachRange] = useState([
+    DEFAULT_REACH_MIN,
+    DEFAULT_REACH_MAX,
+  ]);
   const [robotWeight, setRobotWeight] = useState("");
 
 
   useEffect(() => {
- 
-    const payloadFilter = selectedFilters.find((f) => f.startsWith("Грузоподъёмность: "));
+    const payloadFilter = selectedFilters.find((f) =>
+      f.startsWith("Грузоподъёмность: ")
+    );
     if (payloadFilter) {
-
-      const rangeStr = payloadFilter.replace("Грузоподъёмность: ", "").replace(" кг", "");
+      const rangeStr = payloadFilter
+        .replace("Грузоподъёмность: ", "")
+        .replace(" кг", "");
       const [minStr, maxStr] = rangeStr.split("-");
       setPayloadRange([parseInt(minStr, 10), parseInt(maxStr, 10)]);
     } else {
       setPayloadRange([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX]);
     }
 
-
     const reachFilter = selectedFilters.find((f) => f.startsWith("Охват: "));
     if (reachFilter) {
-     
       const rangeStr = reachFilter.replace("Охват: ", "").replace(" мм", "");
       const [minStr, maxStr] = rangeStr.split("-");
       setReachRange([parseInt(minStr, 10), parseInt(maxStr, 10)]);
@@ -70,10 +66,8 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
       setReachRange([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX]);
     }
 
-  
     const weightFilter = selectedFilters.find((f) => f.startsWith("Вес: "));
     if (weightFilter) {
-     
       const val = weightFilter.replace("Вес: ", "").replace(" кг", "");
       setRobotWeight(val);
     } else {
@@ -81,24 +75,19 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     }
   }, [selectedFilters]);
 
-
   const isAppSelected = (app) =>
     selectedFilters.includes(`Область применения: ${app}`);
   const isAxisSelected = (axis) =>
     selectedFilters.includes(`Кол-во осей: ${axis}`);
 
-
   const toggleApplication = (app) => {
     const label = `Область применения: ${app}`;
     if (isAppSelected(app)) {
- 
       onChangeFilters(selectedFilters.filter((f) => f !== label));
     } else {
-  
       onChangeFilters([...selectedFilters, label]);
     }
   };
-
 
   const toggleAxis = (axis) => {
     const label = `Кол-во осей: ${axis}`;
@@ -109,17 +98,13 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     }
   };
 
-
   const updatePayloadFilter = (minVal, maxVal) => {
     const label = `Грузоподъёмность: ${minVal}-${maxVal} кг`;
-
-
     const isDefault =
       minVal === DEFAULT_PAYLOAD_MIN && maxVal === DEFAULT_PAYLOAD_MAX;
-
-
-    const withoutOld = selectedFilters.filter((f) => !f.startsWith("Грузоподъёмность: "));
-
+    const withoutOld = selectedFilters.filter(
+      (f) => !f.startsWith("Грузоподъёмность: ")
+    );
     if (!isDefault) {
       onChangeFilters([...withoutOld, label]);
     } else {
@@ -127,13 +112,11 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     }
   };
 
-
   const updateReachFilter = (minVal, maxVal) => {
     const label = `Охват: ${minVal}-${maxVal} мм`;
-
-    const isDefault = minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX;
+    const isDefault =
+      minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX;
     const withoutOld = selectedFilters.filter((f) => !f.startsWith("Охват: "));
-
     if (!isDefault) {
       onChangeFilters([...withoutOld, label]);
     } else {
@@ -144,7 +127,6 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
   const updateWeightFilter = (val) => {
     const label = `Вес: ${val} кг`;
     const withoutOld = selectedFilters.filter((f) => !f.startsWith("Вес: "));
-
     if (!val) {
       onChangeFilters(withoutOld);
       return;
@@ -152,11 +134,19 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     onChangeFilters([...withoutOld, label]);
   };
 
+  const handlePayloadRangeChange = (e, newValue) => {
+    setPayloadRange(newValue);
+    updatePayloadFilter(newValue[0], newValue[1]);
+  };
+
+  const handleReachRangeChange = (e, newValue) => {
+    setReachRange(newValue);
+    updateReachFilter(newValue[0], newValue[1]);
+  };
 
   const handlePayloadMinChange = (e) => {
     const newMin = parseInt(e.target.value, 10);
     if (Number.isNaN(newMin)) return;
-
     const safeMin = Math.min(newMin, payloadRange[1]);
     setPayloadRange([safeMin, payloadRange[1]]);
     updatePayloadFilter(safeMin, payloadRange[1]);
@@ -165,7 +155,6 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
   const handlePayloadMaxChange = (e) => {
     const newMax = parseInt(e.target.value, 10);
     if (Number.isNaN(newMax)) return;
-
     const safeMax = Math.max(newMax, payloadRange[0]);
     setPayloadRange([payloadRange[0], safeMax]);
     updatePayloadFilter(payloadRange[0], safeMax);
@@ -190,7 +179,6 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
   const handleWeightChange = (e) => {
     const val = e.target.value.trim();
     setRobotWeight(val);
-
     updateWeightFilter(val);
   };
 
@@ -199,8 +187,7 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsApplicationOpen(!isApplicationOpen)}
-        >
+          onClick={() => setIsApplicationOpen(!isApplicationOpen)}>
           Область применения
           <img
             src={
@@ -230,8 +217,7 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsAxesOpen(!isAxesOpen)}
-        >
+          onClick={() => setIsAxesOpen(!isAxesOpen)}>
           Кол-во осей
           <img
             src={
@@ -258,12 +244,10 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
         )}
       </div>
 
-     
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsPayloadOpen(!isPayloadOpen)}
-        >
+          onClick={() => setIsPayloadOpen(!isPayloadOpen)}>
           Максимальная грузоподъёмность
           <img
             src={
@@ -283,35 +267,22 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
               max={DEFAULT_PAYLOAD_MAX}
               className={styles.customSlider}
               sx={{
-                // Цвет активной части (track)
-                color: '#C6DFF5', // меняем цвет «заполненной» части трека
-                height: 6,      // высота активного трека
-            
-                // Стили для самого ползунка (thumb)
-                '& .MuiSlider-thumb': {
-                  width: 24,               // ширина кружочка
-                  height: 24,              // высота кружочка
-                  backgroundColor: '#0149BF',  // цвет кружочка
-                  boxShadow: 'none',       // убираем тень (эффекты при нажатии)
-                  '&:hover': {
-                    boxShadow: 'none',
-                  },
-                  '&.Mui-active': {
-                    boxShadow: 'none',
-                  },
-                  '&:focus': {
-                    boxShadow: 'none',
-                  },
+                color: "#C6DFF5",
+                height: 6,
+                "& .MuiSlider-thumb": {
+                  width: 24,
+                  height: 24,
+                  backgroundColor: "#0149BF",
+                  boxShadow: "none",
+                  "&:hover": { boxShadow: "none" },
+                  "&.Mui-active": { boxShadow: "none" },
+                  "&:focus": { boxShadow: "none" },
                 },
-                // Стили для трека, по которому движется ползунок
-                '& .MuiSlider-track': {
-                  border: 'none', // убираем возможную границу
-                },
-                // Стили для rail – неактивная линия
-                '& .MuiSlider-rail': {
+                "& .MuiSlider-track": { border: "none" },
+                "& .MuiSlider-rail": {
                   opacity: 0.5,
                   height: 6,
-                  backgroundColor: '#3232321A', // задаём нужный цвет для неактивной линии
+                  backgroundColor: "#3232321A",
                 },
               }}
             />
@@ -339,12 +310,10 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
         )}
       </div>
 
-  
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsReachOpen(!isReachOpen)}
-        >
+          onClick={() => setIsReachOpen(!isReachOpen)}>
           Максимальный охват
           <img
             src={
@@ -364,39 +333,25 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
               max={DEFAULT_REACH_MAX}
               className={styles.customSlider}
               sx={{
-                // Цвет активной части (track)
-                color: '#C6DFF5', // меняем цвет «заполненной» части трека
-                height: 6,      // высота активного трека
-            
-                // Стили для самого ползунка (thumb)
-                '& .MuiSlider-thumb': {
-                  width: 24,               // ширина кружочка
-                  height: 24,              // высота кружочка
-                  backgroundColor: '#0149BF',  // цвет кружочка
-                  boxShadow: 'none',       // убираем тень (эффекты при нажатии)
-                  '&:hover': {
-                    boxShadow: 'none',
-                  },
-                  '&.Mui-active': {
-                    boxShadow: 'none',
-                  },
-                  '&:focus': {
-                    boxShadow: 'none',
-                  },
+                color: "#C6DFF5",
+                height: 6,
+                "& .MuiSlider-thumb": {
+                  width: 24,
+                  height: 24,
+                  backgroundColor: "#0149BF",
+                  boxShadow: "none",
+                  "&:hover": { boxShadow: "none" },
+                  "&.Mui-active": { boxShadow: "none" },
+                  "&:focus": { boxShadow: "none" },
                 },
-                // Стили для трека, по которому движется ползунок
-                '& .MuiSlider-track': {
-                  border: 'none', // убираем возможную границу
-                },
-                // Стили для rail – неактивная линия
-                '& .MuiSlider-rail': {
+                "& .MuiSlider-track": { border: "none" },
+                "& .MuiSlider-rail": {
                   opacity: 0.5,
                   height: 6,
-                  backgroundColor: '#3232321A', // задаём нужный цвет для неактивной линии
+                  backgroundColor: "#3232321A",
                 },
               }}
             />
-
             <div className={styles.rangeInputs}>
               <div className={styles.inputWrapper} data-unit="мм">
                 <input
@@ -424,8 +379,7 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsWeightOpen(!isWeightOpen)}
-        >
+          onClick={() => setIsWeightOpen(!isWeightOpen)}>
           Вес робота
           <img
             src={
@@ -447,10 +401,12 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
           </div>
         )}
       </div>
-      <button className={styles.applyButton} onClick={() => {
-        onChangeFilters(selectedFilters);
-      }}>
-            Показать
+      <button
+        className={styles.applyButton}
+        onClick={() => {
+          onChangeFilters(selectedFilters);
+        }}>
+        Показать
       </button>
     </div>
   );

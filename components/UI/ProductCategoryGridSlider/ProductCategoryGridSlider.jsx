@@ -1,35 +1,43 @@
 'use client'
 
 import Slider from '@/components/UI/Slider/Slider'
-import categories from '@/public/data/products-catgories.json'
-import robotsList from '@/public/data/products.json'
+// import categories from '@/public/data/products-catgories.json'
+// import robotsList from '@/public/data/products.json'
+import SwitchButtons from '@/components/UI/Buttons/SwitchButtons/SwitchButtons'
+import useCategories from '@/hooks/useCategories'
+import useProducts from '@/hooks/useProducts'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import PdfButton from '../Buttons/PdfButton/PdfButton'
 import CategoryTags from '../CategoryTags/CategoryTags'
 import TitleWithSeparator from '../TitleWithSeparator/TitleWithSeparator'
 import styles from './ProductCategoryGridSlider.module.scss'
-import SwitchButtons from "@/components/UI/Buttons/SwitchButtons/SwitchButtons";
-
 export default function ProductCategoryGridSlider() {
 	const swiperRef = useRef()
 	const [selectedCategory, setSelectedCategory] = useState('all')
+	 const [isHoveredCard, setIsHoveredCard] = useState(false);
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [activeButton, setActiveButton] = useState(null)
-	
+	const { categories } = useCategories()
+	const { products } = useProducts()
 	const router = useRouter()
 	const allCategories = [{ key: 'all', name: 'Все роботы' }, ...categories]
 
 	const filteredRobots =
 		selectedCategory === 'all'
-			? robotsList
-			: robotsList.filter(robot => robot.category === selectedCategory)
+			? products
+			: products.filter(robot => robot.category === selectedCategory)
 
 	const totalFiltered = filteredRobots.length
 
 	useEffect(() => {
 		setCurrentIndex(0)
 	}, [selectedCategory])
+
+	const hoverCard = (value) => {
+		setIsHoveredCard(value)
+}
+
 
 	const handleNext = () => {
 		swiperRef.current?.slideNext()
@@ -57,22 +65,26 @@ export default function ProductCategoryGridSlider() {
 
 			<div className={styles.tagsContainer}>
 				<CategoryTags
-					theme="index"
+					theme='index'
 					categories={allCategories}
 					selectedCategory={selectedCategory}
 					onSelectCategory={setSelectedCategory}
 				/>
 				<div className={styles.pdfButton}>
-					<PdfButton theme="index" pdfName={'pdfName'} />
+					<PdfButton theme='index' pdfName={'pdfName'} />
 				</div>
 			</div>
 
 			<div className={styles.sliderWrapper}>
-				<Slider type="grid" items={filteredRobots} swiperRef={swiperRef} />
+				<Slider type='grid' items={filteredRobots} swiperRef={swiperRef} hoverCard={hoverCard}/>
 			</div>
 
 			{totalFiltered > 4 && (
-				<div className={styles.footer}>
+				<div
+					className={`${styles.footer} ${
+						isHoveredCard ? styles.footerInactive : ''
+					}`}
+				>
 					<SwitchButtons
 						activeButton={activeButton}
 						handlePrev={handlePrev}

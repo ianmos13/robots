@@ -7,7 +7,7 @@ export default function DetailsH4({ details }) {
       <h4>{details.title}</h4>
       <div className={styles.h4Content}>
         <ul>
-          {details.points.map((point, index) => (
+          {details.pointse?.map((point, index) => (
             <li key={index}>{point}</li>
           ))}
         </ul>

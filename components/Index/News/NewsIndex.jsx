@@ -5,19 +5,18 @@ import TitleWithSeparator from "@/components/UI/TitleWithSeparator/TitleWithSepa
 import LoadMoreButton from "@/components/UI/Buttons/LoadMoreButton/LoadMoreButton";
 import NewsCard from "@/components/UI/NewsCard/NewsCard";
 import useDeviceType from "@/hooks/useDeviceType";
-import newsData from "@/public/data/news.json";
 import { useRouter } from "next/navigation";
-
+import useNews from "@/hooks/useNews";
 export default function NewsIndex() {
   const [itemsToShow, setItemsToShow] = useState(3);
   const { isTabletView, isMobileView } = useDeviceType();
   const router = useRouter();
-
+  const { news, error, loading } = useNews();
   useEffect(() => {
     setItemsToShow(isMobileView ? 2 : isTabletView ? 2 : 3);
   }, [isTabletView, isMobileView]);
 
-  const visibleNews = newsData.slice(0, itemsToShow);
+  const visibleNews = news.slice(0, itemsToShow);
 
   const handleShowMore = () => {
     setItemsToShow((prev) => prev + (isMobileView ? 1 : isTabletView ? 2 : 3));
@@ -47,7 +46,7 @@ export default function NewsIndex() {
           />
         ))}
       </div>
-      {itemsToShow < newsData.length && (
+      {itemsToShow < news.length && (
         <div className={styles.loadButtonContainer}>
           <div className={styles.loadButton}>
             <LoadMoreButton onClick={handleShowMore} />
