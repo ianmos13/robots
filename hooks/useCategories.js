@@ -3,7 +3,10 @@ import useApi from '@/hooks/useApi';
 
 export default function useCategories() {
     const { data, error, loading } = useApi("categories", "GET");
-    const categories = data && data.data ? data.data : [];
+    const initialCategories = data && data.data ? data.data : [];
+    const categories = initialCategories.map((category) => {
+        return {...category, link: `/catalog?category=${category.key}`}
+    })
     return { categories, error, loading };
     // return { categories, error: null, loading: false };
 }
