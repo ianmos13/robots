@@ -8,11 +8,12 @@ import DefaultButton from "@/components/UI/Buttons/DefaultButton/DefaultButton";
 import DropdownElement from "@/components/UI/DropdownElement/DropdownElement";
 import {usePathname} from "next/navigation";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
+import useCategories from "@/hooks/useCategories";
 
 const Footer = () => {
     const pathname = usePathname();
     const [oldLink, setOldLink] = useState(null);
-
+    const { categories } = useCategories();
     const refs = footerFilterElements.reduce((acc, el) => {
         acc[el.ref] = false
         return acc
@@ -35,6 +36,38 @@ const Footer = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    const renderFilterElement = (el, idx) => {
+        const element = el.ref === 'industrial' ? { ...el, children: categories } : el
+        return (
+            <>
+                <div className={styles.desktopElement} >
+                    <div className={styles.headerLink}>
+                        {element.name}
+                    </div>
+                    <div key={idx} className={styles.filterChildrenElements} >
+                        {element.children.map((link, idx) => (
+                            <div key={idx} className={styles.linkElement} >
+                                <Link
+                                    href={link.link}
+                                    className={styles.link}
+                                >
+                                    {link.name}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className={styles.mobileElement}>
+                    <DropdownElement
+                        theme='blue'
+                        element={element}
+                        isOpen={isOpen[element.ref]}
+                        handleClick={handleClickDropdown}
+                    />
+                </div>
+            </>
+        )
+    }
     return (
       <>
         <footer className={`${styles.container} ${isModalOpen ? "blurred" : ""}`}>
@@ -52,32 +85,7 @@ const Footer = () => {
                   <div className={styles.filterElements}>
                       {footerFilterElements.map((element, idx) => (
                           <div key={idx} className={styles.filterElement} >
-                              <div className={styles.desktopElement} >
-                                  <div className={styles.headerLink}>
-                                      {element.title}
-                                  </div>
-                                  <div key={idx} className={styles.filterChildrenElements} >
-                                      {element.children.map((link, idx) => (
-                                          <div key={idx} className={styles.linkElement} >
-                                              <Link
-                                                  href={link.link}
-                                                  className={styles.link}
-                                              >
-                                                  {link.title}
-                                              </Link>
-                                          </div>
-                                      ))}
-                                  </div>
-                              </div>
-                              <div className={styles.mobileElement}>
-                                  <DropdownElement
-                                      theme='blue'
-                                      element={element}
-                                      isOpen={isOpen[element.ref]}
-                                      handleClick={handleClickDropdown}
-                                  />
-                              </div>
-
+                              {renderFilterElement(element, idx)}
                           </div>
                       ))}
                   </div>
@@ -88,7 +96,7 @@ const Footer = () => {
                                   href={link.link}
                                   className={styles.headerLink}
                               >
-                                  {link.title}
+                                  {link.name}
                               </Link>
                           </div>
                       ))}
@@ -178,179 +186,132 @@ export default Footer;
 const footerFilterElements = [
     {
         id: 1,
-        title: "Промышленные роботы",
+        name: "Промышленные роботы",
         ref: 'industrial',
-        children: [
-            {
-                id: 10,
-                title: "Все промышленные роботы",
-                link: "/catalog",
-            },
-            {
-                id: 11,
-                title: "Сварочные роботы",
-                link: "/catalog?category=welding",
-            },
-            {
-                id: 12,
-                title: "Роботы для обслуживания станков",
-                link: "/catalog?category=maintenance",
-            },
-            {
-                id: 13,
-                title: "Роботы для палетирования",
-                link: "/catalog?category=palletizing",
-            },
-            {
-              id: 14,
-              title: "Полировочные роботы",
-              link: "/catalog?category=polishing",
-            },
-            {
-                id: 15,
-                title: "Фрезерные роботы",
-                link: "/catalog?category=milling",
-            },
-            {
-                id: 16,
-                title: "Scara",
-                link: "/catalog?category=scara",
-            },
-            {
-                id: 17,
-                title: "Коллаборативные роботы",
-                link: "/catalog?category=collaborative",
-            },
-            {
-                id: 18,
-                title: "Роботы манипуляторы",
-                link: "/catalog?category=manipulator",
-            },
-        ],
     },
     {
         id: 2,
-        title: "Позиционеры",
+        name: "Позиционеры",
         ref: 'positioners',
         children: [
             {
                 id: 20,
-                title: "Все позиционеры",
+                name: "Все позиционеры",
                 link: "/catalog",
             },
             {
                 id: 21,
-                title: "Одноосевые",
+                name: "Одноосевые",
                 link: "/catalog?axes=1",
             },
             {
                 id: 22,
-                title: "Двухосевые",
+                name: "Двухосевые",
                 link: "/catalog?axes=2",
             },
             {
                 id: 23,
-                title: "Трёхосевые",
+                name: "Трёхосевые",
                 link: "/catalog?axes=3",
             },
             {
                 id: 24,
-                title: "Поворотные",
+                name: "Поворотные",
                 link: "/catalog",
             },
             {
                 id: 25,
-                title: "Трек для робота",
+                name: "Трек для робота",
                 link: "/catalog",
             },
             {
                 id: 26,
-                title: "Портал для робота",
+                name: "Портал для робота",
                 link: "/catalog",
             }
         ],
     },
     {
         id: 3,
-        title: "Комплексные решения",
+        name: "Комплексные решения",
         ref: 'integrated',
         children: [
 
             {
                 id: 30,
-                title: "Сварочные решения",
+                name: "Сварочные решения",
                 link: "/catalog?scopes=welding",
             },
             {
                 id: 31,
-                title: "Обслуживание станков",
+                name: "Обслуживание станков",
                 link: "/catalog?scopes=cnc",
             },
             {
                 id: 32,
-                title: "Шлифовка и полировка",
+                name: "Шлифовка и полировка",
                 link: "/catalog?scopes=polishing",
             },
             {
                 id: 33,
-                title: "Лазерная и плазменная резка",
+                name: "Лазерная и плазменная резка",
                 link: "/catalog?scopes=laserCutting",
             },
             {
                 id: 34,
-                title: "Обслуживание конвейерных систем",
+                name: "Обслуживание конвейерных систем",
                 link: "/catalog?scopes=conveyorLine",
             },
             {
                 id: 35,
-                title: "Паллетирование",
+                name: "Паллетирование",
                 link: "/catalog?scopes=palletizing",
             },
             {
                 id: 36,
-                title: "Маркировка",
+                name: "Маркировка",
                 link: "/catalog?scopes=bendingStampingPress",
             },
             {
                 id: 37,
-                title: "Фрезеровка",
+                name: "Фрезеровка",
                 link: "/catalog?scopes=milling",
             },
             {
                 id: 38,
-                title: "Укладка и паллетирование",
+                name: "Укладка и паллетирование",
                 link: "/catalog?scopes=palletizing",
             },
             {
                 id: 39,
-                title: "Производство поддонов",
+                name: "Производство поддонов",
                 link: "/catalog?scopes=metalBending",
             }
         ],
     },
     {
         id: 4,
-        title: "Проекты автоматизации",
+        name: "Проекты автоматизации",
         ref: 'automation',
         children: [
             {
                 id: 40,
-                title: "Машиностроение и металлообработка",
+                name: "Машиностроение и металлообработка",
                 link: "/",
             },
             {
                 id: 41,
-                title: "Пищевая промышленность",
+                name: "Пищевая промышленность",
                 link: "/",
             },
             {
                 id: 42,
-                title: "Деревообрабатывающая промышленность",
+                name: "Деревообрабатывающая промышленность",
                 link: "/",
             },
             {
                 id: 43,
-                title: "Пластиковая промышленность",
+                name: "Пластиковая промышленность",
                 link: "/",
             },
         ],
@@ -359,27 +320,27 @@ const footerFilterElements = [
 const footerLinks = [
     {
         id: 1,
-        title: "Периферийное оборудование",
+        name: "Периферийное оборудование",
         link: "/catalog",
     },
     {
         id: 2,
-        title: "О компании",
+        name: "О компании",
         link: "/contacts",
     },
     {
         id: 3,
-        title: "Блог",
+        name: "Блог",
         link: "/news",
     },
     {
         id: 4,
-        title: "Новости",
+        name: "Новости",
         link: "/news",
     },
     {
         id: 5,
-        title: "Контакты",
+        name: "Контакты",
         link: "/contacts",
     },
 ];

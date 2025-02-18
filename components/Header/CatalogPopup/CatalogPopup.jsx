@@ -26,12 +26,12 @@ export default function CatalogPopup({ catalogElements, openCatalog }) {
                 key={idx}
                 href={element.link}
                 className={styles.buttonContainer}
-                onMouseEnter={() => setImageUrl(element.imageUrl)}
+                onMouseEnter={() => setImageUrl(element.image)}
                 onMouseLeave={() => setImageUrl(null)}
                 onClick={openCatalog}
             >
               <div className={styles.link}>
-                {element.title}
+                {element.name}
               </div>
              </Link>
           ))}

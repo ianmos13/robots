@@ -10,13 +10,13 @@ import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 export default function DropdownMenu(props) {
   const { menuElements, catalogElements } = props
   const catalogElement = {
-    title: "Каталог роботов",
+    name: "Каталог роботов",
     ref: 'catalog',
     children: [...catalogElements, {
         allLink: true,
-        title: "Все промышленные роботы",
+        name: "Все промышленные роботы",
         link: "/catalog",
-        imageUrl: "/images/icons/menu-blue.svg"
+        image: "/images/icons/menu-blue.svg"
     }]
   }
   const [isOpen, setIsOpen] = useState(false)

@@ -12,6 +12,7 @@ import CatalogPopup from "@/components/Header/CatalogPopup/CatalogPopup";
 import MenuButton from "@/components/Header/Buttons/MenuButton/MenuButton";
 import DropdownMenu from "@/components/Header/DropdownMenu/DropdownMenu";
 import Location from "@/components/Header/Location/Location";
+import useCategories from "@/hooks/useCategories";
 
 const Header = () => {
   const pathname = usePathname();
@@ -19,6 +20,7 @@ const Header = () => {
   const [openCatalog, setIsOpenCatalog] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { categories } = useCategories();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -75,7 +77,7 @@ const Header = () => {
                           } ${scrolled ? styles.scrolledDropdownMenu : ''}`}>
                           <DropdownMenu
                               menuElements={menuElements}
-                              catalogElements={catalogElements}
+                              catalogElements={categories}
                           />
                       </div>
                   </div>
@@ -87,7 +89,7 @@ const Header = () => {
                 <Location />
               </div>
               <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }  ${scrolled ? styles.activeScrolled : ''}`}>
-                <CatalogPopup catalogElements={catalogElements} openCatalog={openCatalogPopup} />
+                <CatalogPopup catalogElements={categories} openCatalog={openCatalogPopup} />
               </div>
               {openCatalog && (<div
                     className={styles.closeArea}
@@ -169,53 +171,53 @@ const menuElements = [
     },
 ]
 
-const catalogElements = [
-    {
-        id: 1,
-        title: "Сварочные роботы, серия RH",
-        imageUrl: "/images/ventilation.webp",
-        link: "/catalog?category=welding",
-    },
-    {
-        id: 2,
-        title: "Фрезерные роботы",
-        imageUrl: "/images/projects.svg",
-        link: "/catalog?category=milling",
-    },
-    {
-        id: 3,
-        title: "Роботы для обслуживания станков",
-        imageUrl: "/images/ventilation.webp",
-        link: "/catalog?category=maintenance",
-    },
-    {
-        id: 4,
-        title: "Полировочные роботы",
-        imageUrl: "/images/projects.svg",
-        link: "/catalog?category=polishing",
-    },
-    {
-        id: 5,
-        title: "Роботы манипуляторы",
-        imageUrl: "/images/ventilation.webp",
-        link: "/catalog?category=manipulator",
-    },
-    {
-        id: 6,
-        title: "Scara",
-        imageUrl: "/images/projects.svg",
-        link: "/catalog?category=scara",
-    },
-    {
-        id: 7,
-        title: "Коллаборативные роботы",
-        imageUrl: "/images/ventilation.webp",
-        link: "/catalog?category=collaborative",
-    },
-    {
-        id: 8,
-        title: "Роботы для паллетирования",
-        imageUrl: "/images/projects.svg",
-        link: "/catalog?category=palletizing",
-    },
-]
+// const catalogElements = [
+//     {
+//         id: 1,
+//         name: "Сварочные роботы, серия RH",
+//         image: "/images/ventilation.webp",
+//         link: "/catalog?category=welding",
+//     },
+//     {
+//         id: 2,
+//         name: "Фрезерные роботы",
+//         image: "/images/projects.svg",
+//         link: "/catalog?category=milling",
+//     },
+//     {
+//         id: 3,
+//         name: "Роботы для обслуживания станков",
+//         image: "/images/ventilation.webp",
+//         link: "/catalog?category=maintenance",
+//     },
+//     {
+//         id: 4,
+//         name: "Полировочные роботы",
+//         image: "/images/projects.svg",
+//         link: "/catalog?category=polishing",
+//     },
+//     {
+//         id: 5,
+//         name: "Роботы манипуляторы",
+//         image: "/images/ventilation.webp",
+//         link: "/catalog?category=manipulator",
+//     },
+//     {
+//         id: 6,
+//         name: "Scara",
+//         image: "/images/projects.svg",
+//         link: "/catalog?category=scara",
+//     },
+//     {
+//         id: 7,
+//         name: "Коллаборативные роботы",
+//         image: "/images/ventilation.webp",
+//         link: "/catalog?category=collaborative",
+//     },
+//     {
+//         id: 8,
+//         name: "Роботы для паллетирования",
+//         image: "/images/projects.svg",
+//         link: "/catalog?category=palletizing",
+//     },
+// ]

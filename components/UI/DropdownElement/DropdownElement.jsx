@@ -19,7 +19,7 @@ export default function DropdownElement(props) {
 			onClick={() => handleClick(element.ref) }
 		>
 			<div className={`${styles.headerLink} ${isOpen ? styles.active : '' }`}>
-				<span>{element.title}</span>
+				<span>{element.name}</span>
 				<div className={styles.iconContainer}>
 					<svg className={styles.icon} />
 				</div>
@@ -32,8 +32,8 @@ export default function DropdownElement(props) {
 								{child.allLink && (
 									<div className={styles.imageContainer} >
 										<img
-											src={child.imageUrl}
-											alt={child.title}
+											src={child.image}
+											alt={child.name}
 											className={styles.icon}
 										/>
 									</div>
@@ -42,7 +42,7 @@ export default function DropdownElement(props) {
 									href={child.link}
 									className={styles.link}
 								>
-									<span>{child.title}</span>
+									<span>{child.name}</span>
 								</Link>
 							</li>
 						))}
