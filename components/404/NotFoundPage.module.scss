@@ -14,9 +14,11 @@
     gap: 16px;
     max-width: 605px;
     align-items: center;
+    @media (max-width: 640px) {
+      width: 90%;
+    }
     .titleBlue {
       font-family: "DIN Pro сondensedblack", sans-serif;
-      font-weight: 900;
       font-size: 40px;
       line-height: 44px;
       letter-spacing: -2%;
@@ -24,7 +26,6 @@
     }
     .titleBlack {
       font-family: "DIN Pro сondensedblack", sans-serif;
-      font-weight: 900;
       font-size: 40px;
       line-height: 44px;
       letter-spacing: -2%;
@@ -41,6 +42,7 @@
     }
   }
   .btn {
+    width: 246px;
     gap: 24px;
     border-radius: 7px;
     padding: 16px 20px;
