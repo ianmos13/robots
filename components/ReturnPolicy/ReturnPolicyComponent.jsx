@@ -9,8 +9,8 @@ export default function ReturnPolicyComponent() {
 				</div>
 				<div className={styles.content}>
 					{data.length > 0 &&
-						data.map(element => (
-							<div className={styles.item} key={element.header}>
+						data.map((element, idx) => (
+							<div className={styles.item} key={idx}>
 								{element.header && (
 									<h2 className={styles.header}>{element.header}</h2>
 								)}

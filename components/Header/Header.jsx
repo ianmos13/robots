@@ -107,28 +107,28 @@ const menuElements = [
         id: 1,
         title: "Позиционеры",
         ref: "positioners",
-        link: "/catalog",
+        link: "/positioners",
         order: 1,
     },
     {
         id: 2,
         title: "Комплексные\u00A0решения",
         ref: "integratedSolutions",
-        link: "/catalog",
+        link: "/integrated-solutions",
         order: 4,
     },
     {
         id: 3,
         title: "Реализованные\u00A0проекты",
         ref: "completedProjects",
-        link: "/news",
+        link: "/completed-projects",
         order: 5,
     },
     {
         id: 4,
         title: "Периферийное\u00A0оборудование",
         ref: "peripheralEquipment",
-        link: "/catalog",
+        link: "/peripheral-equipment",
         order: 6,
     },
     {
@@ -141,7 +141,7 @@ const menuElements = [
             {
                 id: 50,
                 title: "Блог",
-                link: "/news",
+                link: "/blog",
             },
             {
                 id: 51,
@@ -151,7 +151,7 @@ const menuElements = [
             {
                 id: 52,
                 title: "О компании",
-                link: "/contacts",
+                link: "/about",
             },
         ],
     },
@@ -159,7 +159,7 @@ const menuElements = [
         id: 6,
         title: "Лизинг\u00A0и\u00A0рассрочка",
         ref: "leasingInstallments",
-        link: "/",
+        link: "/leasing-installments",
         order: 7,
     },
     {
