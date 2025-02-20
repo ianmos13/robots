@@ -14,12 +14,12 @@
   transition: background-color 0.4s ease, min-width 0.4s ease;
   @media (max-width: 1600px) {
     padding: 19px 22px;
-    max-width: 280px;
+    // max-width: 280px;
     gap: 24px;
   }
   @media (max-width: 640px) {
     max-width: unset;
-    justify-content: center;
+    justify-content: unset;
   }
 
 

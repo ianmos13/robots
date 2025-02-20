@@ -158,16 +158,16 @@ export default function CompletedProjectsSlider() {
 							slidesPerView: 1.5,
 							spaceBetween: 20,
 						},
-						1440: {
+						1441: {
 							slidesPerView: 1.3,
 							spaceBetween: 10,
 						},
-						1024: {
-							slidesPerView: 1.1,
-							spaceBetween: 16,
+						1025: {
+							slidesPerView: 1.2,
+							spaceBetween: 10,
 						},
 						639: {
-							slidesPerView: 1.05,
+							slidesPerView: 1.03,
 							spaceBetween: 16,
 						},
 						600: {

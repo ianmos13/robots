@@ -4,10 +4,12 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+
   @media (max-width: 1024px) {
     margin-top: 64px;
     margin-bottom: 104px;
   }
+
   @media (max-width: 640px) {
     margin-top: 24px;
     margin-bottom: 14px;
@@ -19,28 +21,34 @@
     font-size: 28px;
     line-height: 36.4px;
     letter-spacing: -0.02em;
+
     @media (max-width: 1600px) {
       font-size: 24px;
       line-height: 31.2px;
     }
+
     @media (max-width: 1024px) {
       font-size: 28px;
       line-height: 36.4px;
       width: 63%;
     }
+
     @media (max-width: 640px) {
       font-size: 24px;
       line-height: 31.2px;
       width: 100%;
     }
   }
+
   .mailCOntainer {
     display: flex;
     gap: 24px;
+
     @media (max-width: 640px) {
       flex-direction: column;
     }
   }
+
   .subscribe {
     font-family: "DIN Pro medium", sans-serif;
     padding: 21px 32px;
@@ -48,16 +56,20 @@
     background-color: $main-blue;
     cursor: pointer;
     border-radius: 10px;
+
     @each $property, $value in $b18-medium {
       #{$property}: #{$value};
     }
+
     @media (max-width: 640px) {
       width: 169px;
     }
+
     &:hover {
       background-color: $blue-hover;
     }
   }
+
   .input {
     width: 100%;
     @each $property, $value in $b18-medium {
@@ -79,9 +91,10 @@
     }
 
     &:focus {
-      box-shadow: 0 0 4px 2px rgba(0, 112, 243, 0.4); // Голубая тень при фокусе
+      box-shadow: 0 0 4px 2px rgba(0, 112, 243, 0.4);
     }
   }
+
   .info {
     font-family: "DIN Pro", sans-serif;
     font-size: 16px;
@@ -96,13 +109,16 @@
     .agreement {
       display: flex;
       gap: 5px;
+
       @media (max-width: 1600px) {
         justify-content: center;
       }
+
       @media (max-width: 640px) {
         justify-content: unset;
         display: block;
       }
+
       a {
         text-decoration: unset;
         font-family: "DIN Pro", sans-serif;
@@ -116,6 +132,7 @@
     align-items: center;
     justify-content: flex-start;
     margin-top: 96px;
+
     @media (max-width: 1024px) {
       margin-top: 64px;
       flex-direction: column;
@@ -131,20 +148,25 @@
       letter-spacing: -0.02em;
       margin-right: 56px;
       color: $dark-gray;
+
       @media (max-width: 640px) {
         font-size: 24px;
         line-height: 31.2px;
       }
     }
+
     .icons {
       display: flex;
       gap: 10px;
+
       @media (max-width: 640px) {
         justify-content: center;
         width: 100%;
       }
-      img{
+
+      img {
         cursor: pointer;
+
         @media (max-width: 640px) {
           width: 77px;
           height: 77px;
@@ -152,5 +174,31 @@
       }
     }
   }
- 
+
+  .copyMessage {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background-color: #e0f7e9;
+    color: #2e7d32;
+    font-family: "DIN Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
+
+.copyNotification {
+  position: fixed;
+  background-color: #e0f7e9;
+  color: #2e7d32;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: "DIN Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  pointer-events: none;
 }

@@ -6,30 +6,7 @@ import "swiper/css";
 import styles from "./RobotContainSlider.module.scss";
 import SwitchButtons from "@/components/UI/Buttons/SwitchButtons/SwitchButtons";
 
-const slides = [
-  {
-    id: 1,
-    image: "/images/RobotContaSlider.svg",
-    title: "Шкаф электроавтоматики",
-    description:
-      "Современная система дистанционного управления позволяет роботу оптимизировать ускорение и замедление исходя из фактической нагрузки, насколько это возможно, чтобы сократить продолжительность рабочего хода.",
-  },
-  {
-    id: 2,
-    image: "/images/RobotContaSlider.svg",
-    title: "Гибкий промышленный робот для мелких производств",
-    description:
-      "Промышленный робот для мелких производств и прототипирования",
-  },
-  {
-    id: 3,
-    image: "/images/RobotContaSlider.svg",
-    title: "Системы автоматизации для разных отраслей",
-    description: "Автоматизация процессов для различных отраслей промышленности",
-  },
-];
-
-const RobotContainSlider = () => {
+const RobotContainSlider = ({info}) => {
     const swiperRef = useRef(null)
     const [currentSwiper, setCurrentSwiper] = useState(swiperRef.current)
 
@@ -53,7 +30,7 @@ const RobotContainSlider = () => {
         spaceBetween={0}
         slidesPerView={"auto"}
       >
-        {slides.map((slide, index) => (
+        {info.map((slide, index) => (
           <SwiperSlide className={styles.swiperSlide} key={index}>
             <div className={styles.slide}>
               <div className={styles.robotInfo}>

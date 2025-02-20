@@ -23,7 +23,9 @@ export default function Home() {
       </div>
       <ProductCategoryGridSlider />
       <div className={styles.productPaginationGridContainer}>
-        <ProductCategoryGridPagination />
+        <ProductCategoryGridPagination
+            title="Категории продукции"
+        />
       </div>
       <div className={styles.leaveRequestBannerContainer}>
         <LeaveRequestBanner />

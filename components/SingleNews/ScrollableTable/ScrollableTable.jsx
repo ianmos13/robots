@@ -1,21 +1,30 @@
+import React, { useEffect, useRef } from "react";
 import styles from "./ScrollableTable.module.scss";
-import { useEffect, useRef } from "react";
 
-const ScrollableTable = () => {
+const ScrollableTable = ({ data }) => {
+
+  const productSet = new Set();
+  data?.sections?.forEach((section) => {
+    section.fields.forEach((field) => {
+      Object.keys(field.values).forEach((key) => productSet.add(key));
+    });
+  });
+  const productKeys = Array.from(productSet);
+
   const tableContainerRef = useRef(null);
 
   useEffect(() => {
     const tableContainer = tableContainerRef.current;
     if (!tableContainer) return;
     const table = tableContainer.querySelector("table");
-    const columnCount = table.querySelector("thead tr").children.length;
+    if (!table) return;
 
+    const columnCount = table.querySelector("thead tr").children.length;
     if (columnCount >= 3) {
       tableContainer.style.overflowX = "auto";
-  
       tableContainer.scrollLeft = tableContainer.scrollWidth;
     }
-  }, []);
+  }, [data]);
 
   return (
     <>
@@ -25,103 +34,34 @@ const ScrollableTable = () => {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Модель</th>
-                <th>CRP-RH14-10</th>
-                <th>CRP-RH14-10-W</th>
-                <th>Дополнительный столбец</th>
-                <th>Дополнительный столбец</th>
-                <th>Дополнительный столбец</th>
+                <th></th>
+                {productKeys.map((productKey, index) => (
+                  <th key={index}>{productKey}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Степень подвижности</td>
-                <td>Вертикальный узловой шарнир</td>
-                <td>Вертикальный узловой шарнир</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 1</td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 2</td>
-                <td>CRP-RH14-10</td>
-                <td>CRP-RH14-10-W</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 1</td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 2</td>
-                <td>CRP-RH14-10</td>
-                <td>CRP-RH14-10-W</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 1</td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 2</td>
-                <td>CRP-RH14-10</td>
-                <td>CRP-RH14-10-W</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 1</td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>
-                  Крепление к полу или потолку -167°~167°, настенное крепление -30°~30°
-                </td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
-              <tr>
-                <td>Ось 2</td>
-                <td>CRP-RH14-10</td>
-                <td>CRP-RH14-10-W</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-                <td>Пример данных</td>
-              </tr>
+              {data?.sections?.map((section, sectionIndex) => (
+                <React.Fragment key={sectionIndex}>
+               
+                  <tr className={styles.sectionRow}>
+                    <td colSpan={productKeys.length + 1} className={styles.sectionTitle}>
+                      {section.title}
+                    </td>
+                  </tr>
+               
+                  {section.fields.map((field, fieldIndex) => (
+                    <tr key={fieldIndex}>
+                      <td className={styles.fieldLabel}>{field.label}</td>
+                      {productKeys.map((productKey, colIndex) => (
+                        <td key={colIndex} className={styles.fieldValue}>
+                          {field.values[productKey] ?? "—"}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </React.Fragment>
+              ))}
             </tbody>
           </table>
         </div>

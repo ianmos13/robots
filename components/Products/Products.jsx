@@ -4,11 +4,11 @@ import styles from "./Products.module.scss";
 
 export default function Products({ productData }) {
 
-
+  if(!productData) return null;
 
   return (
     <section className={styles.container}>
-      <ProductSlider images={productData.images} productInfo={productData} />
+      <ProductSlider productInfo={productData} />
       <MoreInfo productInfo={productData} />
     </section>
   );

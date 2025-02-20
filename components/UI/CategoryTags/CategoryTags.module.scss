@@ -78,14 +78,14 @@
         gap: 10px;
 
         button {
-            padding: 10px 20px;
-            background-color: $white;
+            padding: 10px 20px 12px 20px;
+            background-color: #f9f9f9;
             color: $dark-gray;
             border: 1px solid $blue-light;
             cursor: pointer;
             border-radius: 7px;
             transition: background-color 0.2s;
-            font-family: "DIN Pro medium", sans-serif;
+            font-family: "DIN Pro Medium", sans-serif;
             @each $property, $value in $b18-medium {
               #{$property}: #{$value};
             }
@@ -96,6 +96,7 @@
         }
 
         .activeTag {
+        font-family: "DIN Pro", sans-serif;
           background-color: $main-blue;
           color: #fff;
         }

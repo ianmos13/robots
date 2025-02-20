@@ -8,18 +8,23 @@ import useDeviceType from "@/hooks/useDeviceType";
 import { useRouter } from "next/navigation";
 import {useMediaQuery} from "react-responsive";
 import useProducts from '@/hooks/useProducts';
-export default function ProductCategoryGridPagination() {
+
+export default function ProductCategoryGridPagination({ title, ids }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const isThreeElements = useMediaQuery({ query: '(max-width: 1440px)' });
+  const isThreeElements = useMediaQuery({ query: '(max-width: 1280px)' });
   const isTwoElements = useMediaQuery({ query: '(max-width: 1099px)' });
   const isOneElement = useMediaQuery({ query: '(max-width: 799px)' });
   const { isTabletView, isMobileView } = useDeviceType();
   const [productsPerPage, setIsProductsPerPage] = useState(4);
   const { products, error, loading } = useProducts();
-  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const selectedProducts = ids && ids.length > 0 ? products.filter((p) =>
+    ids.some(e => e.toString() === p.id.toString())
+  ) : products
+  const totalPages = Math.ceil(selectedProducts.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = selectedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   const router = useRouter();
 
   useEffect(() => {
@@ -42,14 +47,16 @@ export default function ProductCategoryGridPagination() {
     <section className={styles.container}>
       <TitleWithSeparator
         theme="uniq"
-        title="Категории продукции"
+        title={title}
         addButton="Посмотреть все модели"
         onClick={handleShowAll}
       />
 
       <div className={styles.grid}>
         {currentProducts.map((robot, index) => (
-          <ProductCard key={index} robot={robot} />
+          <div key={index} className={styles.productCard}>
+            <ProductCard robot={robot} />
+          </div>
         ))}
       </div>
 

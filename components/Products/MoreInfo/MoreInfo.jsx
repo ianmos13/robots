@@ -12,49 +12,21 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function MoreInfo({ productInfo }) {
-  const product = Array.isArray(productInfo) ? productInfo[0] : productInfo;
-
-  if (!product) return null;
+  if (!productInfo) return null;
 
   const [activeInfoTab, setActiveInfoTab] = useState("description");
-  const [activeTechincalTab, setActiveTechincalTab] = useState("axes");
+  const [activeTechnicalTab, setActiveTechnicalTab] = useState("axes");
   const [showAllRows, setShowAllRows] = useState(false);
   const MAX_VISIBLE_ROWS = 9;
 
-
-  const buttonsData = [
-    {
-      defaultText: "3D модель RH14-10",
-      activeText: "Скачать",
-      defaultIcon: "/images/icons/Union.svg",
-      activeIcon: "/images/icons/download-white.svg",
-      url: "/files/RH14-10_3d_model_one.stp",
-    },
-    {
-      defaultText: "3D модель RH14-10",
-      activeText: "Скачать",
-      defaultIcon: "/images/icons/Union.svg",
-      activeIcon: "/images/icons/download-white.svg",
-      url: "/files/RH14-10_3d_model_two.stp",
-    },
-    {
-      defaultText: "3D модель RH14-10",
-      activeText: "Скачать",
-      defaultIcon: "/images/icons/Union.svg",
-      activeIcon: "/images/icons/download-white.svg",
-      url: "/files/RH14-10_specs.pdf",
-    },
-  ];
-
-
   const getCurrentImage = () => {
-    switch (activeTechincalTab) {
+    switch (activeTechnicalTab) {
       case "axes":
-        return product?.technicalInfo?.axes?.image;
+        return productInfo?.technicalTabs?.axesImage;
       case "bases":
-        return product?.bases?.image; 
+        return productInfo?.technicalTabs?.basesImage;
       case "flange":
-        return product?.flange?.image; 
+        return productInfo?.technicalTabs?.flangeImage;
       default:
         return null;
     }
@@ -70,7 +42,6 @@ export default function MoreInfo({ productInfo }) {
     
     return data;
   };
-
 
   const renderTable = (data) => {
     const rows = normalizeTableData(data);
@@ -91,16 +62,16 @@ export default function MoreInfo({ productInfo }) {
         </table>
         {rows.length > MAX_VISIBLE_ROWS && (
           <div
-            className={styles.showMore}
+            className={`${!showAllRows ? styles.showMoreDown : styles.showMoreUp}`}
             onClick={() => setShowAllRows(!showAllRows)}>
-            {showAllRows ? "Скрыть ▲" : "Раскрыть таблицу ▼"}
+            {showAllRows ? "Скрыть" : "Раскрыть таблицу"}
           </div>
         )}
       </div>
     );
   };
 
-  const addInfo = product.addInfo?.[0] || { description: [], equipment: [] };
+  const addInfo = productInfo.addInfo?.[0] || { description: [], equipment: [] };
 
   return (
     <div className={styles.moreInfo}>
@@ -110,7 +81,7 @@ export default function MoreInfo({ productInfo }) {
           <div className={styles.title}>Файлы робота:</div>
 
           <div className={styles.btnContainer}>
-            {buttonsData.map((btn, index) => (
+            {(productInfo?.files || []).map((btn, index) => (
               <DownloadRobotInfoButton key={index} {...btn} />
             ))}
           </div>
@@ -135,7 +106,7 @@ export default function MoreInfo({ productInfo }) {
                   slidesPerView: 2.3,
                 },
               }}>
-              {buttonsData.map((btn, index) => (
+              {(productInfo?.files || []).map((btn, index) => (
                 <SwiperSlide key={index} className={styles.swiperSlide}>
                   <DownloadRobotInfoButton {...btn} />
                 </SwiperSlide>
@@ -144,10 +115,7 @@ export default function MoreInfo({ productInfo }) {
           </div>
           <div className={styles.requestButton}>Оставить заявку</div>
         </div>
-
-       
         <div className={styles.rightSection}>
-        
           <div className={styles.info}>
             <h4>Информация</h4>
             <div className={styles.btnContainer}>
@@ -166,7 +134,6 @@ export default function MoreInfo({ productInfo }) {
                 Комплектация
               </div>
             </div>
-
             <div className={styles.addInfoList}>
               {activeInfoTab === "description" &&
                 addInfo.description?.length > 0 && (
@@ -179,7 +146,6 @@ export default function MoreInfo({ productInfo }) {
                     ))}
                   </>
                 )}
-
               {activeInfoTab === "equipment" &&
                 addInfo.equipment?.length > 0 && (
                   <>
@@ -193,31 +159,28 @@ export default function MoreInfo({ productInfo }) {
                 )}
             </div>
           </div>
-
-      
           <div className={styles.technicalInfo}>
-            <h4>Технические характеристики {product.title}</h4>
-
+            <h4>Технические характеристики {productInfo.title}</h4>
             <div className={styles.btnContainer}>
               <div
                 className={`${styles.btn} ${
-                  activeTechincalTab === "axes" ? styles.active : ""
+                  activeTechnicalTab === "axes" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("axes")}>
+                onClick={() => setActiveTechnicalTab("axes")}>
                 Диапазон движения по осям
               </div>
               <div
                 className={`${styles.btn} ${
-                  activeTechincalTab === "bases" ? styles.active : ""
+                  activeTechnicalTab === "bases" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("bases")}>
+                onClick={() => setActiveTechnicalTab("bases")}>
                 Размеры основания
               </div>
               <div
                 className={`${styles.btn} ${
-                  activeTechincalTab === "flange" ? styles.active : ""
+                  activeTechnicalTab === "flange" ? styles.active : ""
                 }`}
-                onClick={() => setActiveTechincalTab("flange")}>
+                onClick={() => setActiveTechnicalTab("flange")}>
                 Размеры фланца
               </div>
             </div>
@@ -227,50 +190,43 @@ export default function MoreInfo({ productInfo }) {
                 <SwiperSlide className={styles.swiperSlide}>
                   <div
                     className={`${styles.btn} ${
-                      activeTechincalTab === "axes" ? styles.active : ""
+                      activeTechnicalTab === "axes" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("axes")}>
+                    onClick={() => setActiveTechnicalTab("axes")}>
                     Диапазон движения по осям
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className={styles.swiperSlide}>
                   <div
                     className={`${styles.btn} ${
-                      activeTechincalTab === "bases" ? styles.active : ""
+                      activeTechnicalTab === "bases" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("bases")}>
+                    onClick={() => setActiveTechnicalTab("bases")}>
                     Размеры основания
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className={styles.swiperSlide}>
                   <div
                     className={`${styles.btn} ${
-                      activeTechincalTab === "flange" ? styles.active : ""
+                      activeTechnicalTab === "flange" ? styles.active : ""
                     }`}
-                    onClick={() => setActiveTechincalTab("flange")}>
+                    onClick={() => setActiveTechnicalTab("flange")}>
                     Размеры фланца
                   </div>
                 </SwiperSlide>
               </Swiper>
             </div>
-
             {getCurrentImage() && (
               <div className={styles.imageContainer}>
-                <img src={getCurrentImage()} alt={activeTechincalTab} />
+                <img src={getCurrentImage()} alt={activeTechnicalTab} />
               </div>
             )}
-
-            {activeTechincalTab === "axes" &&
-              renderTable(product?.technicalInfo?.axes?.table)}
-
-            {activeTechincalTab === "bases" &&
-              renderTable(product?.bases?.table)}
-
-            {activeTechincalTab === "flange" &&
-              renderTable(product?.flange?.table)}
+            {renderTable(productInfo?.technicalTable)}
           </div>
 
-          <div className={styles.downloadContainer}>
+          <div className={styles.downloadContainer}
+              onClick={()=> window.open(productInfo?.technicalInfoFile)}
+          >
             <div className={styles.downladCharacter}>
               <img src="/images/icons/Union.svg" alt="download-icon" />
               <span className={styles.longText}>
@@ -278,7 +234,6 @@ export default function MoreInfo({ productInfo }) {
               </span>
               <span className={styles.shortText}>Тех.характеристики</span>
             </div>
-
             <div className={styles.downloadIcon}>
               <img
                 src="/images/icons/download-icon-blue.svg"
@@ -286,7 +241,6 @@ export default function MoreInfo({ productInfo }) {
               />
             </div>
           </div>
-
           <div className={styles.howItWorks}>
             <h4>Посмотрите как это работает</h4>
             <div className={styles.videoWrapper}>
@@ -306,21 +260,21 @@ export default function MoreInfo({ productInfo }) {
               {/*</div>*/}
             </div>
           </div>
-
           <div className={styles.robotContains}>
             <h4>Из чего состоит наш робот:</h4>
             <div className={styles.robotContainsSlider}>
-              <RobotContainSlider />
+              <RobotContainSlider info={productInfo?.containInfo || []} />
             </div>
           </div>
         </div>
       </div>
-
       <div className={styles.gridContainer}>
-        <ProductCategoryGridPagination />
+        <ProductCategoryGridPagination
+            title="Дополнительное оборудование"
+            ids={productInfo?.sameProductsIds || []} />
       </div>
 
-      <ContactUs />
+      <ContactUs theme={'products'}/>
     </div>
   );
 }

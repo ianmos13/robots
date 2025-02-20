@@ -1,9 +1,9 @@
 import ContactUsButtons from '@/components/UI/ContactUsButtons/ContactUsButtons'
 import styles from './ContactUs.module.scss'
 
-export default function ContactUs() {
+export default function ContactUs({theme}) {
 	return (
-		<section className={styles.container}>
+		<section className={`${styles.container} ${styles[`${theme}Container`]}`}>
 			<div className={styles.contactUs}>
 				<div className={styles.addInfo}>
 					<div className={styles.title}>

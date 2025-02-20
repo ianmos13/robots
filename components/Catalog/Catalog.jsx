@@ -21,6 +21,7 @@ import FiltersModal from './FiltersModal/FiltersModal'
 import useCategories from '@/hooks/useCategories'
 import useProducts from '@/hooks/useProducts'
 
+
 export default function Catalog() {
   const { categories } = useCategories();
   const { products } = useProducts();
@@ -363,7 +364,7 @@ export default function Catalog() {
       </div>
       <CompletedProjectsSlider />
       <Question faqData={faqData} />
-      <ContactUs />
+      <ContactUs theme={'catalog'}/>
     </section>
   )
 }
