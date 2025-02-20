@@ -8,12 +8,14 @@ import "swiper/css/navigation";
 import useProducts from '@/hooks/useProducts';
 import SwitchButtons from "@/components/UI/Buttons/SwitchButtons/SwitchButtons";
 
-export default function SameRobotSlider() {
+export default function SameRobotSlider({robots}) {
   const swiperRef = useRef()
   const [activeButton, setActiveButton] = useState("");
   const [isHoveredCard, setIsHoveredCard] = useState(false);
   const { products, error, loading } = useProducts();
-
+    const selectedProducts = robots && robots.length > 0 ? products.filter((p) =>
+        robots.some(e => e.toString() === p.id.toString())
+    ) : products
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
     setActiveButton("prev");
@@ -48,13 +50,13 @@ export default function SameRobotSlider() {
             },
           }}
         >
-          {products.map((robot, index) => (
+          {selectedProducts.map((robot, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <ProductCard theme={'news'} robot={robot} hoverCard={hoverCard} />
             </SwiperSlide>
           ))}
         </Swiper>
-        {products.length > 4 && (
+        {selectedProducts.length > 4 && (
             <div
                 className={`${styles.containerButton} ${isHoveredCard ? styles.containerButtonInactive : '' }`}
             >

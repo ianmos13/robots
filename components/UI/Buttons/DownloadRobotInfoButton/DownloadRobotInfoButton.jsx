@@ -1,11 +1,16 @@
 import { useState } from "react";
 import styles from "./DownloadRobotInfoButton.module.scss";
 
-export default function DownloadRobotInfoButton({ defaultText, activeText, defaultIcon, activeIcon, url }) {
+export default function DownloadRobotInfoButton({ text, url }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(!isActive);
+    if(isActive) {
+      if (typeof window !== "undefined"){
+        window.open(url);
+      }
+    }
   };
 
   return (
@@ -13,8 +18,14 @@ export default function DownloadRobotInfoButton({ defaultText, activeText, defau
       className={`${styles.btnDownload} ${isActive ? styles.active : ""}`}
       onClick={handleClick}
     >
-      <img src={isActive ? activeIcon : defaultIcon} alt="icon" className={styles.icon} />
-      <span className={styles.buttonText}>{isActive ? activeText : defaultText}</span>
+      <img
+          src={isActive ? "/images/icons/download-white.svg" : "/images/icons/Union.svg"}
+          alt="icon"
+          className={styles.icon}
+      />
+      <span className={styles.buttonText}>
+        {isActive ? "Скачать" : text}
+      </span>
     </div>
   );
 }

@@ -31,4 +31,21 @@
       margin-bottom: 22px;
     }
   }
+
+  .productCard {
+    max-width: 450px;
+    aspect-ratio: 0.6923;
+    @media (max-width: 1600px) {
+      max-width: 338px;
+      gap: 36px;
+    }
+    @media (max-width: 1024px) {
+      max-width: 392px;
+      aspect-ratio: 0.6447;
+    }
+    @media (max-width: 640px) {
+      max-width: 328px;
+      aspect-ratio: 0.687631;
+    }
+  }
 }

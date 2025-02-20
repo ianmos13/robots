@@ -116,10 +116,10 @@ export default function CompareProducts() {
       currentIndex + maxVisibleItems
     );
 
-    const extractValues = (category, label) => {
+    const extractValues = ( label) => {
       return exportData.map((product) => {
         const cellValue =
-          product.technicalInfo[category]?.table.find(
+          product?.technicalTable?.find(
             (row) => row.label === label
           )?.values || "-";
         return fixExcelValue(cellValue);
@@ -152,21 +152,20 @@ export default function CompareProducts() {
       Вес: exportData.map((product) =>
         product.weight ? fixExcelValue(`${product.weight} кг`) : "-"
       ),
-      Модель: extractValues("axes", "Модель"),
-      "Степень подвижности": extractValues("axes", "Степень подвижности"),
-      "Ось 1": extractValues("axes", "Ось 1"),
-      "Ось 2": extractValues("axes", "Ось 2"),
-      "Ось 3": extractValues("axes", "Ось 3"),
-      "Ось 4": extractValues("axes", "Ось 4"),
+      Модель: extractValues("Модель"),
+      "Степень подвижности": extractValues("Степень подвижности"),
+      "Ось 1": extractValues("Ось 1"),
+      "Ось 2": extractValues("Ось 2"),
+      "Ось 3": extractValues("Ось 3"),
+      "Ось 4": extractValues("Ось 4"),
       "Макс. скорость движения по осям": extractValues(
-        "axes",
         "Максимальная скорость движения по Осям"
       ),
-      "Ширина базы": extractValues("bases", "Ширина"),
-      "Длина базы": extractValues("bases", "Длина"),
-      "Высота базы": extractValues("bases", "Высота"),
-      "Диаметр фланца": extractValues("flange", "Диаметр фланца"),
-      "Количество отверстий": extractValues("flange", "Количество отверстий"),
+      "Ширина базы": extractValues("Ширина"),
+      "Длина базы": extractValues( "Длина"),
+      "Высота базы": extractValues("Высота"),
+      "Диаметр фланца": extractValues("Диаметр фланца"),
+      "Количество отверстий": extractValues("Количество отверстий"),
     };
 
     const productImages = [];

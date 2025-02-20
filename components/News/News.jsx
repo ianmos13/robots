@@ -29,9 +29,9 @@ export default function News() {
         {/* {loading && <p>Загрузка...</p>}
         {error && <p>Ошибка: {error.message}</p>} */}
         <div className={styles.newsList}>
-          {visibleNews.map((news) => (
+          {visibleNews.map((news, index) => (
             <NewsCard
-              key={news.id}
+              key={index}
               id={news.id}
               image={news.image}
               title={news.title}

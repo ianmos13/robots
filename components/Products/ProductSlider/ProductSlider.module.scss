@@ -15,7 +15,10 @@
   }
   @media (max-width: 1024px) {
     flex-direction: column;
-    gap: 0px;
+    gap: 0;
+  }
+  @media (max-width: 640px) {
+    margin-bottom: 40px;
   }
   .titleMobile,
   .advantagesContainerMoblie {

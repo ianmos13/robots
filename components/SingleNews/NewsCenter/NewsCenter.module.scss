@@ -19,18 +19,32 @@
   @media (max-width: 640px) {
     margin-bottom: 48px;
   }
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      font-size: 56px;
+      line-height: 110%;
+      @media (max-width: 1600px) {
+        font-size: 48px;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 640px) {
+        font-size: 32px;
+      }
+    }
     h2 {
       text-transform: uppercase;
       letter-spacing: -0.02em;
       margin-bottom: 48px;
       @media (max-width: 1600px) {
-        font-size: 48px;
+        font-size: 40px;
         line-height: 110%;
         margin-bottom: 24px;
       }
       @media (max-width: 640px) {
-        font-size: 32px;
-        line-height: 35.2px;
+        font-size: 24px;
+        line-height: 26.4px;
       }
     }
     .banner {
@@ -110,8 +124,6 @@
         list-style: none;
         padding-left: 0;
         li {
-          font-size: 18px;
-          line-height: 24px;
           margin-bottom: 20px;
           position: relative;
           padding-left: 20px;

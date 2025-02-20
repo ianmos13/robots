@@ -35,9 +35,9 @@ export default function NewsIndex() {
         onClick={handleShowAll}
       />
       <div className={styles.newsList}>
-        {visibleNews.map((news) => (
+        {visibleNews.map((news, index) => (
           <NewsCard
-            key={news.id}
+            key={index}
             id={news.id}
             image={news.image}
             title={news.title}
@@ -49,7 +49,7 @@ export default function NewsIndex() {
       {itemsToShow < news.length && (
         <div className={styles.loadButtonContainer}>
           <div className={styles.loadButton}>
-            <LoadMoreButton onClick={handleShowMore} />
+            <LoadMoreButton onClick={handleShowMore} theme={'gray'}/>
           </div>
         </div>
       )}

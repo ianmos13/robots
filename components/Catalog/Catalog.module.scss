@@ -16,6 +16,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
+		h3{
+			color: #323232
+		}
 		@media (max-width: 640px) {
 			gap: 16px;
 		}
@@ -25,6 +28,9 @@
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 24px;
+			h3{
+				color: #323232;
+			}
 			@media (max-width: 640px) {
 				margin-bottom: 16px;
 			}
@@ -274,9 +280,7 @@
 						font-size: 24px;
 						line-height: 31.2px;
 						letter-spacing: -0.02em;
-						color: #323232;
 						padding-left: 37px;
-						font-weight: bold;
 						color: #2e363d;
 						border-left: 1px #004985 solid;
 					}

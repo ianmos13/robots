@@ -1,41 +1,34 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal"
+import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice"
 import {
   addToFavorite,
   removeFromFavorite,
-} from "@/redux/features/favoriteSlice";
-import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice";
-import styles from "./ProductSlider.module.scss";
-import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import { Swiper, SwiperSlide } from "swiper/react";
+} from "@/redux/features/favoriteSlice"
+import { useEffect, useRef, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import { Swiper, SwiperSlide } from "swiper/react"
+import ImageSlider from '../ImageSlider/ImageSlider'
+import styles from "./ProductSlider.module.scss"
 
-export default function ProductSlider({ images, productInfo }) {
-  const product =
-    Array.isArray(productInfo)
-      ? productInfo[0]
-      : productInfo?.data
-      ? productInfo.data[0]
-      : productInfo;
-
+export default function ProductSlider({ productInfo }) {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isImageSliderOpen, setIsImageSliderOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const comparisons = useSelector((state) => state.compare || []);
   const favorites = useSelector((state) => state.favorite || []);
   const thumbnailRefs = useRef([]);
 
   const safeImages =
-    images && images.length > 0
-      ? images
-      : product?.images && product.images.length > 0
-      ? product.images
-      : product?.mainImage
-      ? [product.mainImage]
+      productInfo?.images && productInfo.images.length > 0
+      ? productInfo.images
+      : productInfo?.mainImage
+      ? [productInfo.mainImage]
       : [];
 
   useEffect(() => {
@@ -64,29 +57,29 @@ export default function ProductSlider({ images, productInfo }) {
     );
   };
 
-  const isCompared = product
-    ? comparisons.some((item) => item.id === product.id)
+  const isCompared = productInfo
+    ? comparisons.some((item) => item.id === productInfo.id)
     : false;
-  const isFavorited = product
-    ? favorites.some((item) => item.id === product.id)
+  const isFavorited = productInfo
+    ? favorites.some((item) => item.id === productInfo.id)
     : false;
 
   const handleComparisonClick = () => {
-    if (product) {
+    if (productInfo) {
       if (isCompared) {
-        dispatch(removeFromCompare(product.id));
+        dispatch(removeFromCompare(productInfo.id));
       } else {
-        dispatch(addToCompare(product));
+        dispatch(addToCompare(productInfo));
       }
     }
   };
 
   const handleFavoriteClick = () => {
-    if (product) {
+    if (productInfo) {
       if (isFavorited) {
-        dispatch(removeFromFavorite(product.id));
+        dispatch(removeFromFavorite(productInfo.id));
       } else {
-        dispatch(addToFavorite(product));
+        dispatch(addToFavorite(productInfo));
       }
     }
   };
@@ -94,20 +87,26 @@ export default function ProductSlider({ images, productInfo }) {
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
+  const handleOpenImageSlider = () => {
+    setIsImageSliderOpen(true)
+  }
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  const handleCloseImageSlider = () => {
+    setIsImageSliderOpen(false)
+  }
 
-  return product ? (
+  return productInfo ? (
     <>
       <div className={styles.productSlider}>
-        {product.title && (
+        {productInfo.title && (
           <div className={styles.titleMobile}>
-            <h3>{product.title}</h3>
+            <h3>{productInfo.title}</h3>
           </div>
         )}
-        {product.advantages && product.advantages.length > 0 && (
+        {productInfo.advantages && productInfo.advantages.length > 0 && (
           <div className={styles.swiper}>
             <Swiper
               className={styles.swiperContainer}
@@ -115,7 +114,7 @@ export default function ProductSlider({ images, productInfo }) {
               slidesPerView="1.5"
               spaceBetween={10}
             >
-              {product.advantages.map((advantage, index) => (
+              {productInfo.advantages.map((advantage, index) => (
                 <SwiperSlide key={index} className={styles.swiperSlide}>
                   <div className={styles.advantage}>{advantage}</div>
                 </SwiperSlide>
@@ -129,6 +128,7 @@ export default function ProductSlider({ images, productInfo }) {
               src={safeImages[currentImageIndex]}
               alt="Product"
               className={styles.mainImage}
+              onClick={handleOpenImageSlider}
             />
             <button className={styles.arrowLeft} onClick={handlePrevImage}>
               <img src="/images/icons/arrow-left-filled.svg" alt="Предыдущий" />
@@ -153,26 +153,26 @@ export default function ProductSlider({ images, productInfo }) {
           </div>
         )}
         <div className={styles.productInfo}>
-          {product.title && <h3>{product.title}</h3>}
-          {product.advantages && product.advantages.length > 0 && (
+          {productInfo.title && <h3>{productInfo.title}</h3>}
+          {productInfo.advantages && productInfo.advantages.length > 0 && (
             <div className={styles.advantagesContainer}>
-              {product.advantages.map((advantage, index) => (
+              {productInfo.advantages.map((advantage, index) => (
                 <div className={styles.advantage} key={index}>
                   {advantage}
                 </div>
               ))}
             </div>
           )}
-          {((product.assignment && product.assignment.length > 0) ||
-            product.armLength ||
-            product.payloadRange ||
-            (product.source && product.source.length > 0)) && (
+          {((productInfo.assignment && productInfo.assignment.length > 0) ||
+              productInfo.armLength ||
+              productInfo.payloadRange ||
+            (productInfo.source && productInfo.source.length > 0)) && (
             <div className={styles.infoContainer}>
-              {product.assignment && product.assignment.length > 0 && (
+              {productInfo.assignment && productInfo.assignment.length > 0 && (
                 <div className={styles.assignmentContainer}>
                   <div className={styles.assignmentTitle}>Назначение:</div>
                   <div className={styles.assignmentItem}>
-                    {product.assignment.map((item, index) => (
+                    {productInfo.assignment.map((item, index) => (
                       <div className={styles.assignment} key={index}>
                         {item}
                       </div>
@@ -180,27 +180,27 @@ export default function ProductSlider({ images, productInfo }) {
                   </div>
                 </div>
               )}
-              {product.armLength && (
+              {productInfo.armLength && (
                 <div className={styles.specContainer}>
                   <div className={styles.specTitle}>Длина рук (мм):</div>
-                  <div className={styles.specValue}>{product.armLength}</div>
+                  <div className={styles.specValue}>{productInfo.armLength}</div>
                 </div>
               )}
-              {product.payloadRange && (
+              {productInfo.payloadRange && (
                 <div className={styles.capabilityContainer}>
                   <div className={styles.capabilityTitle}>
                     Грузоподъемность (кг):
                   </div>
                   <div className={styles.capabilityValue}>
-                    {product.payloadRange}
+                    {productInfo.payloadRange}
                   </div>
                 </div>
               )}
-              {product.source && product.source.length > 0 && (
+              {productInfo.source && productInfo.source.length > 0 && (
                 <div className={styles.sourceContainer}>
                   <div className={styles.sourceTitle}>Источник:</div>
                   <div className={styles.sourceGrid}>
-                    {product.source.map((src, index) => (
+                    {productInfo.source.map((src, index) => (
                       <div className={styles.source} key={index}>
                         {src}
                       </div>
@@ -308,6 +308,11 @@ export default function ProductSlider({ images, productInfo }) {
         isOpen={isModalOpen}
         text={"Оставьте заявку"}
         onClose={handleCloseModal}
+      />
+      <ImageSlider 
+        isOpen={isImageSliderOpen} 
+        onClose={handleCloseImageSlider} 
+        images={safeImages}
       />
     </>
   ) : null;

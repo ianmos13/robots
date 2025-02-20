@@ -40,9 +40,9 @@ const CompareTable = ({ data, tableRef }) => {
     return category ? category.name : categoryKey;
   };
 
-  const extractValues = (category, label) => {
+  const extractValues = (label) => {
     return displayedData.map((product) => {
-      const row = product.technicalInfo[category]?.table.find(
+      const row = product?.technicalTable?.find(
         (row) => row.label === label
       );
       if (!row || !Array.isArray(row.values) || row.values.length === 0) {
@@ -78,21 +78,20 @@ const CompareTable = ({ data, tableRef }) => {
     Вес: displayedData.map((product) =>
       product.weight ? `${product.weight} кг` : "-"
     ),
-    Модель: extractValues("axes", "Модель"),
-    "Степень подвижности": extractValues("axes", "Степень подвижности"),
-    "Ось 1": extractValues("axes", "Ось 1"),
-    "Ось 2": extractValues("axes", "Ось 2"),
-    "Ось 3": extractValues("axes", "Ось 3"),
-    "Ось 4": extractValues("axes", "Ось 4"),
+    Модель: extractValues("Модель"),
+    "Степень подвижности": extractValues("Степень подвижности"),
+    "Ось 1": extractValues("Ось 1"),
+    "Ось 2": extractValues("Ось 2"),
+    "Ось 3": extractValues("Ось 3"),
+    "Ось 4": extractValues("Ось 4"),
     "Макс. скорость движения по осям": extractValues(
-      "axes",
-      "Максимальная скорость движения по Осям"
+        "Максимальная скорость движения по Осям"
     ),
-    "Ширина базы": extractValues("bases", "Ширина"),
-    "Длина базы": extractValues("bases", "Длина"),
-    "Высота базы": extractValues("bases", "Высота"),
-    "Диаметр фланца": extractValues("flange", "Диаметр фланца"),
-    "Количество отверстий": extractValues("flange", "Количество отверстий"),
+    "Ширина базы": extractValues("Ширина"),
+    "Длина базы": extractValues( "Длина"),
+    "Высота базы": extractValues("Высота"),
+    "Диаметр фланца": extractValues("Диаметр фланца"),
+    "Количество отверстий": extractValues("Количество отверстий"),
   };
 
   const chunkArray = (array, size) => {

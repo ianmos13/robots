@@ -1,129 +1,130 @@
-import React, { useState } from "react";
-import styles from "./RequestModal.module.scss";
+import { useState } from 'react'
+import CheckBox from './CustomCheckBox/CheckBox'
+import CustomInput from './CustomInput/CustomInput'
+import styles from './RequestModal.module.scss'
 
 const RequestModal = ({ isOpen, onClose, text }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [agreement, setAgreement] = useState(false);
+	const [name, setName] = useState('')
+	const [phone, setPhone] = useState('')
+	const [email, setEmail] = useState('')
+	const [agreement, setAgreement] = useState(false)
+	const [formReady, setFormReady] = useState(false)
 
+	const [formSubmitted, setFormSubmitted] = useState(false)
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
+	if (!isOpen) return null
 
-  if (!isOpen) return null;
+	const stopPropagation = e => e.stopPropagation()
 
-  
-  const stopPropagation = (e) => e.stopPropagation();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-  
-    if (!name.trim()) {
-      alert("Пожалуйста, введите ваше имя");
-      return;
-    }
-    if (!phone.trim()) {
-      alert("Пожалуйста, введите номер телефона");
-      return;
-    }
-    if (!email.trim()) {
-      alert("Пожалуйста, введите электронную почту");
-      return;
-    }
-    if (!agreement) {
-      alert("Необходимо согласиться с политикой");
-      return;
-    }
-
-  
-    console.log("Форма отправлена:", {
-      name,
-      phone,
-      email,
-      agreement,
-    });
-
+	const handleSubmit = e => {
+		e.preventDefault()
+		setFormReady(status => !status)
+		if (!validateName(name)) return
+		if (!validateEmail(email)) return
+		if (!validatePhone(phone)) return
+    if(!agreement) return
     
-    setFormSubmitted(true);
-  };
+		console.log('Форма отправлена:', {
+			name,
+			phone,
+			email,
+			agreement,
+		})
 
- 
-  const handleClose = () => {
-   
-    setName("");
-    setPhone("");
-    setEmail("");
-    setAgreement(false);
-    setFormSubmitted(false);
+		setFormSubmitted(true)
+	}
 
-    onClose();
-  };
+	const handleClose = () => {
+		setName('')
+		setPhone('')
+		setEmail('')
+		setAgreement(false)
+		setFormSubmitted(false)
 
-  return (
-    <div className={styles.modalOverlay} onClick={handleClose}>
-      <div className={styles.modalContent} onClick={stopPropagation}>
-        <button className={styles.closeBtn} onClick={handleClose}>
-          <img src="/images/icons/x.svg" alt="Close" />
-        </button>
+		onClose()
+	}
 
-        {formSubmitted ? (
-          <div className={styles.header}>
-             <div className={styles.title}>ВАША ЗАЯВКА ОТПРАВЛЕНА</div>
-             <div className={styles.desciption}>В ближайшее время наш<br></br> специалист свяжется с вами</div>
-          </div>
-        ) : (
-          <>
-            <div className={styles.header}>
-              <div className={styles.title}>{text}</div>
-              <div className={styles.desciption}>Заполните поля данных</div>
-            </div>
+	return (
+		<div className={styles.modalOverlay} onClick={handleClose}>
+			<div className={styles.modalContent} onClick={stopPropagation}>
+				<button className={styles.closeBtn} onClick={handleClose}>
+					<img src='/images/icons/x.svg' alt='Close' />
+				</button>
 
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Ваше имя*"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Номер телефона"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Электронная почта"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <label className={styles.agreement}>
-                <input
-                  type="checkbox"
-                  checked={agreement}
-                  onChange={(e) => setAgreement(e.target.checked)}
-                  required
-                />
-                <div className={styles.info}>
-                  Заполняя форму, вы соглашаетесь на{" "}
-                  <a href="#" target="_blank" rel="noreferrer">
-                    обработку персональных данных
-                  </a>
-                </div>
-              </label>
-              <button type="submit" className={styles.submitBtn}>
-                Отправить
-              </button>
-            </form>
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
+				{formSubmitted ? (
+					<div className={styles.header}>
+						<div className={styles.title}>ВАША ЗАЯВКА ОТПРАВЛЕНА</div>
+						<div className={styles.desciption}>
+							В ближайшее время наш<br></br> специалист свяжется с вами
+						</div>
+					</div>
+				) : (
+					<>
+						<div className={styles.header}>
+							<div className={styles.title}>{text}</div>
+							<div className={styles.desciption}>Заполните поля данных</div>
+						</div>
 
-export default RequestModal;
+						<form onSubmit={handleSubmit} noValidate>
+							<CustomInput
+								type='text'
+								placeholder='Ваше имя*'
+								value={name}
+								onChange={e => setName(e.target.value)}
+								required
+								errorMessage={'Пожалуйста, введите ваше имя'}
+								validate={validateName}
+								checkForm={formReady}
+							/>
+							<CustomInput
+								type='tel'
+								placeholder='Номер телефона*'
+								value={phone}
+								onChange={e => setPhone(e.target.value)}
+								required
+								errorMessage={'Пожалуйста, корректно заполните поле!'}
+								validate={validatePhone}
+								checkForm={formReady}
+							/>
+							<CustomInput
+								type='email'
+								placeholder='Электронная почта*'
+								value={email}
+								onChange={e => setEmail(e.target.value)}
+								required
+								errorMessage={'Пожалуйста, корректно заполните поле!'}
+								validate={validateEmail}
+								checkForm={formReady}
+							/>
+							<CheckBox
+								value={agreement}
+								onChange={setAgreement}
+								checkForm={formReady}
+							/>
+							<button type='submit' className={styles.submitBtn}>
+								Отправить
+							</button>
+						</form>
+					</>
+				)}
+			</div>
+		</div>
+	)
+}
+
+export default RequestModal
+
+function validateName(name) {
+	if (name.length < 1) return false
+	return true
+}
+
+function validatePhone(phone) {
+	const regex = /^(?:\+7\d{10}|\+375\d{9})$/
+	return regex.test(phone)
+}
+
+function validateEmail(email) {
+	const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+	return regex.test(email)
+}

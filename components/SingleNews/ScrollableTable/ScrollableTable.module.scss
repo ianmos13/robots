@@ -67,6 +67,7 @@
 .table {
   transform: rotate(180deg);
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 
   border-radius: 20px;
@@ -78,7 +79,7 @@
 
   th,
   td {
-    padding: 28px 8px 12px 8px;
+    padding: 28px 40px 12px 8px;
     text-align: left;
 
     white-space: nowrap;
@@ -91,6 +92,13 @@
     letter-spacing: -0.36px;
     font-family: "DIN Pro", sans-serif;
     opacity: 0.5;
+    width: 465px;  
+    white-space: normal;
+    overflow-wrap: break-word;
+    @media (max-width: 1600px) {
+      padding-right: 35px;
+      width: 378px;
+    }  
   }
   tr:first-child {
     th {
@@ -122,5 +130,13 @@
 
   th:first-child {
       color: $dark-gray;
+  }
+  tr{
+    th:first-child, td:first-child{
+      width: 300px;
+      @media (max-width:1600px) {
+        width: 192px;
+      }
+    }
   }
 }
