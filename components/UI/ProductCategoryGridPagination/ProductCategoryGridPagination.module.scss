@@ -10,35 +10,38 @@
       gap: 10px;
     }
     @media (max-width: 1600px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1280px) {
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
     }
-    @media (max-width: 1099px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 36px;
+      display: none;
     }
-    @media (max-width: 799px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    @media (max-width: 640px) {
-      grid-template-columns: repeat(1, 1fr);
-      margin-bottom: 22px;
+  }
+  .slider {
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
     }
   }
 
-  .productCard {
-    max-width: 450px;
-    aspect-ratio: 0.6923;
-    @media (max-width: 1600px) {
-      max-width: 338px;
-      gap: 36px;
+  .pagination {
+    @media (max-width: 1024px) {
+      position: relative;
+      margin-top: -60px;
+      z-index: 10;
     }
+    @media (max-width: 640px) {
+      margin-top: 22px;
+    }
+  }
+
+  .paginationInactive {
+    z-index: -1;
+  }
+
+  .productCard {
     @media (max-width: 1024px) {
       max-width: 392px;
       aspect-ratio: 0.6447;

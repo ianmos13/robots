@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./CompareProducts.module.scss";
 import StickyProductCard from "./StickyProductCard";
 import { useRouter } from "next/navigation";
@@ -89,20 +89,22 @@ export default function CompareSticky({
           </div>
           {comparisons.length > maxVisibleItems && (
             <div className={styles.navControls}>
-              <div className={styles.containerButton}>
+              <div className={`${styles.containerButton} ${styles.containerButtonSticky}`}>
                 <button
-                  className={`${styles.prevButton} ${styles.navButton}`}
-                  onClick={onScrollLeft}
-                  disabled={currentIndex === 0}
+                    className={styles.arrowLeft}
+                    onClick={onScrollLeft}
+                    disabled={currentIndex === 0}
                 >
-                  <img src="/images/icons/prev.svg" alt="Previous" />
+                  <svg className={styles.icon} />
                 </button>
                 <button
-                  className={`${styles.nextButton} ${styles.navButton}`}
-                  onClick={onScrollRight}
-                  disabled={currentIndex + maxVisibleItems >= comparisons.length}
+                    className={styles.arrowRight}
+                    onClick={onScrollRight}
+                    disabled={
+                        currentIndex + maxVisibleItems >= comparisons.length
+                    }
                 >
-                  <img src="/images/icons/next.svg" alt="Next" />
+                  <svg className={styles.icon} />
                 </button>
               </div>
             </div>

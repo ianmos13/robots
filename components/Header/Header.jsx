@@ -13,6 +13,7 @@ import MenuButton from "@/components/Header/Buttons/MenuButton/MenuButton";
 import DropdownMenu from "@/components/Header/DropdownMenu/DropdownMenu";
 import Location from "@/components/Header/Location/Location";
 import useCategories from "@/hooks/useCategories";
+import FloatingIcons from "@/components/UI/FloatingIcons/FloatingIcons";
 
 const Header = () => {
   const pathname = usePathname();
@@ -85,8 +86,13 @@ const Header = () => {
                     <ContactUsButtons theme="header" />
                   </div>
               </div>
-              <div className={`${styles.location} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
-                <Location />
+              <div className={`${styles.locationWithIcons} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
+                <div className={styles.location}>
+                  <Location />
+                </div>
+                <div className={styles.floatingIcons}>
+                  <FloatingIcons />
+                </div>
               </div>
               <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }  ${scrolled ? styles.activeScrolled : ''}`}>
                 <CatalogPopup catalogElements={categories} openCatalog={openCatalogPopup} />
