@@ -17,71 +17,62 @@
     .header {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
       width: 100%;
-      .leftConainer {
+      gap: 16px;
+      @media (max-width: 1024px){
+        gap: 24px;
+      }
+      .topContainer {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 40px;
+
         @media (max-width: 640px) {
           display: flex;
           gap: 24px;
           width: 100%;
         }
+
         h3 {
           color: $dark-gray;
         }
-        .tagContainer {
+        .btnContainer {
           display: flex;
-          gap: 10px;
+          flex-direction: row;
+          gap: 32px;
+          height: 26px;
+          .downloadButton,
+          .addButton,
+          .clearButton {
+            background: unset;
+          }
+          @media (max-width: 1024px) {
+            display: none;
+          }
         }
-        .removeCategoryButton {
+      }
+      .bottomContainer {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 1024px) {
+          gap: 48px;
+        }
+        @media (max-width: 640px) {
+          gap: 24px;
+        }
+        .categoriesFilter {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 30px;
-          font-family: "DIN Pro medium", sans-serif;
-          padding: 10px 16px;
-          border: 1px solid #3232324d;
-          @each $property, $value in $b18-medium {
-            #{$property}: #{$value};
-          }
-          color: $dark-gray;
-          border-radius: 7px;
-          .removeButton {
-            cursor: pointer;
-          }
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 20px;
         }
         .btnContainerMobile {
           display: none;
           @media (max-width: 1024px) {
             display: flex;
             gap: 24px;
-          }
-        }
-      }
-      .rightContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        align-items: end;
-        min-width: 590px;
-        @media (max-width: 1024px) {
-          display: none;
-        }
-        @media (max-width: 640px) {
-          gap: 24px;
-        }
-        .btnContainer {
-          display: flex;
-          flex-direction: row;
-          gap: 32px;
-          .downloadButton,
-          .addButton,
-          .clearButton {
-            background: unset;
-          }
-          @media (max-width: 640px) {
-            display: none;
           }
         }
       }
@@ -399,20 +390,15 @@
   .clearButton {
     color: $dark-gray;
   }
-  .categoriesFilter {
-    display: flex;
-    flex-direction: row;
 
-  }
-
-  .navControls, .navControlsMobile {
+  .navControls {
     .containerButton {
       height: 64px;
       display: flex;
       gap: 10px;
 
       @media (max-width: 640px) {
-        height: 48px;
+        display: none;
       }
     }
     .containerButtonSticky {
@@ -482,16 +468,6 @@
           background-image: url("/images/icons/arrow-right-white.svg");
         }
       }
-    }
-  }
-
-  .navControlsMobile {
-    display: none;
-    @media (max-width: 1024px) {
-      display: block;
-    }
-    @media (max-width: 640px) {
-      display: none;
     }
   }
 }

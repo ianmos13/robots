@@ -12,7 +12,6 @@ import {
 } from "@/redux/features/compareSlice";
 import styles from "./CompareProducts.module.scss";
 import useCategories from '@/hooks/useCategories';
-import ContactUs from "../UI/ContactUs/ContactUs";
 
 export default function CompareProducts() {
   const dispatch = useDispatch();
@@ -302,7 +301,6 @@ export default function CompareProducts() {
         tableRef={tableRef}
       />
       <div ref={stopStickyRef} className={styles.stopSticky}></div>
-      <ContactUs />
       <ConfirmModal
         isOpen={isConfirmModalOpen}
         message="ВЫ действительно хотите удалить товары?"
