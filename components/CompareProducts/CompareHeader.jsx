@@ -49,15 +49,40 @@ export default function CompareHeader({
   return (
     <div className={styles.compareWrapper}>
       <div className={styles.header}>
-        <div className={styles.leftConainer}>
+        <div className={styles.topContainer}>
           <h3>Сравнение товаров</h3>
+          <div className={styles.btnContainer}>
+            <button className={styles.downloadButton} onClick={onDownloadExcel}>
+              <img src="/images/icons/download.svg" alt="download" />
+              <span>Скачать таблицу</span>
+            </button>
+            <button className={styles.addButton}>
+              <img
+                  src="/images/icons/plus.svg"
+                  alt="add"
+                  onClick={goToCatalogPage}
+              />{" "}
+              <span>Добавить товар</span>
+            </button>
+            {comparisons.length > 0 && (
+                <button
+                    className={styles.clearButton}
+                    onClick={onClearComparison}
+                >
+                  <img src="/images/icons/trash.svg" alt="trash" />
+                  <span>Удалить все </span>
+                </button>
+            )}
+          </div>
+        </div>
+        <div className={styles.bottomContainer}>
           <div className={styles.categoriesFilter}>
             <CategoriesFilter
-              categories={uniqueCategories}
-              onDelete={onRemoveCategory}
+                categories={uniqueCategories}
+                onDelete={onRemoveCategory}
             />
             {comparisons.length > maxVisibleItems && (
-                <div className={styles.navControlsMobile}>
+                <div className={styles.navControls}>
                   <div className={styles.containerButton}>
                     <button
                         className={styles.arrowLeft}
@@ -86,69 +111,20 @@ export default function CompareHeader({
             </button>
             <button className={styles.addButton}>
               <img
-                src="/images/icons/plus.svg"
-                alt="add"
-                onClick={goToCatalogPage}
+                  src="/images/icons/plus.svg"
+                  alt="add"
+                  onClick={goToCatalogPage}
               />{" "}
               <span>Добавить товар</span>
             </button>
             {comparisons.length > 0 && (
-              <button
-                className={styles.clearButton}
-                onClick={onClearComparison}
-              >
-                <img src="/images/icons/trash.svg" alt="trash" />
-                <span>Удалить все </span>
-              </button>
-            )}
-          </div>
-        </div>
-        <div>
-          <div className={styles.rightContainer}>
-            <div className={styles.btnContainer}>
-              <button className={styles.downloadButton} onClick={onDownloadExcel}>
-                <img src="/images/icons/download.svg" alt="download" />
-                <span>Скачать таблицу</span>
-              </button>
-              <button className={styles.addButton}>
-                <img
-                  src="/images/icons/plus.svg"
-                  alt="add"
-                  onClick={goToCatalogPage}
-                />{" "}
-                <span>Добавить товар</span>
-              </button>
-              {comparisons.length > 0 && (
                 <button
-                  className={styles.clearButton}
-                  onClick={onClearComparison}
+                    className={styles.clearButton}
+                    onClick={onClearComparison}
                 >
                   <img src="/images/icons/trash.svg" alt="trash" />
                   <span>Удалить все </span>
                 </button>
-              )}
-            </div>
-            {comparisons.length > maxVisibleItems && (
-              <div className={styles.navControls}>
-                <div className={styles.containerButton}>
-                  <button
-                      className={styles.arrowLeft}
-                      onClick={onScrollLeft}
-                      disabled={currentIndex === 0}
-                  >
-                    <svg className={styles.icon} />
-                  </button>
-                  <button
-                      className={styles.arrowRight}
-                      onClick={onScrollRight}
-                      disabled={
-                          currentIndex + maxVisibleItems >= comparisons.length
-                      }
-                  >
-                    <svg className={styles.icon} />
-                  </button>
-                </div>
-              </div>
             )}
           </div>
         </div>
