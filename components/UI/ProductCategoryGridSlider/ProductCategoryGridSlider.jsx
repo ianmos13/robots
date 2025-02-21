@@ -1,8 +1,6 @@
 'use client'
 
 import Slider from '@/components/UI/Slider/Slider'
-// import categories from '@/public/data/products-catgories.json'
-// import robotsList from '@/public/data/products.json'
 import SwitchButtons from '@/components/UI/Buttons/SwitchButtons/SwitchButtons'
 import useCategories from '@/hooks/useCategories'
 import useProducts from '@/hooks/useProducts'
@@ -12,6 +10,7 @@ import PdfButton from '../Buttons/PdfButton/PdfButton'
 import CategoryTags from '../CategoryTags/CategoryTags'
 import TitleWithSeparator from '../TitleWithSeparator/TitleWithSeparator'
 import styles from './ProductCategoryGridSlider.module.scss'
+
 export default function ProductCategoryGridSlider() {
 	const swiperRef = useRef()
 	const [selectedCategory, setSelectedCategory] = useState('all')
@@ -76,7 +75,11 @@ export default function ProductCategoryGridSlider() {
 			</div>
 
 			<div className={styles.sliderWrapper}>
-				<Slider type='grid' items={filteredRobots} swiperRef={swiperRef} hoverCard={hoverCard}/>
+				<Slider
+					items={filteredRobots}
+					swiperRef={swiperRef}
+					hoverCard={hoverCard}
+				/>
 			</div>
 
 			{totalFiltered > 4 && (

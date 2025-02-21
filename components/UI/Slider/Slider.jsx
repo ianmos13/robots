@@ -7,10 +7,11 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './Slider.module.scss'
 
-export default function Slider({ type, swiperRef, items, hoverCard }) {
+export default function Slider({ swiperRef, items, hoverCard, onChangeSlider = () => {} }) {
 	return (
 		<Swiper
 			onSwiper={swiper => (swiperRef.current = swiper)}
+			onRealIndexChange={onChangeSlider}
 			className={styles.swiperContainer}
 			direction='horizontal'
 			slidesPerView={'auto'}

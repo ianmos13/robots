@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import CategoriesFilter from "@/components/UI/CategoriesFilter/CategoriesFilter";
 import styles from "./CompareProducts.module.scss";
 import ProductCard from "./ProductCard";
@@ -51,11 +51,35 @@ export default function CompareHeader({
       <div className={styles.header}>
         <div className={styles.leftConainer}>
           <h3>Сравнение товаров</h3>
-          <CategoriesFilter
-            categories={uniqueCategories}
-            onDelete={onRemoveCategory}
-          />
-          <div className={styles.btnContaierMobile}>
+          <div className={styles.categoriesFilter}>
+            <CategoriesFilter
+              categories={uniqueCategories}
+              onDelete={onRemoveCategory}
+            />
+            {comparisons.length > maxVisibleItems && (
+                <div className={styles.navControlsMobile}>
+                  <div className={styles.containerButton}>
+                    <button
+                        className={styles.arrowLeft}
+                        onClick={onScrollLeft}
+                        disabled={currentIndex === 0}
+                    >
+                      <svg className={styles.icon} />
+                    </button>
+                    <button
+                        className={styles.arrowRight}
+                        onClick={onScrollRight}
+                        disabled={
+                            currentIndex + maxVisibleItems >= comparisons.length
+                        }
+                    >
+                      <svg className={styles.icon} />
+                    </button>
+                  </div>
+                </div>
+            )}
+          </div>
+          <div className={styles.btnContainerMobile}>
             <button className={styles.downloadButton} onClick={onDownloadExcel}>
               <img src="/images/icons/download.svg" alt="download" />
               <span>Скачать таблицу</span>
@@ -81,7 +105,7 @@ export default function CompareHeader({
         </div>
         <div>
           <div className={styles.rightContainer}>
-            <div className={styles.btnContaier}>
+            <div className={styles.btnContainer}>
               <button className={styles.downloadButton} onClick={onDownloadExcel}>
                 <img src="/images/icons/download.svg" alt="download" />
                 <span>Скачать таблицу</span>
@@ -108,20 +132,20 @@ export default function CompareHeader({
               <div className={styles.navControls}>
                 <div className={styles.containerButton}>
                   <button
-                    className={`${styles.prevButton} ${styles.navButton}`}
-                    onClick={onScrollLeft}
-                    disabled={currentIndex === 0}
+                      className={styles.arrowLeft}
+                      onClick={onScrollLeft}
+                      disabled={currentIndex === 0}
                   >
-                    <img src="/images/icons/prev.svg" alt="Previous" />
+                    <svg className={styles.icon} />
                   </button>
                   <button
-                    className={`${styles.nextButton} ${styles.navButton}`}
-                    onClick={onScrollRight}
-                    disabled={
-                      currentIndex + maxVisibleItems >= comparisons.length
-                    }
+                      className={styles.arrowRight}
+                      onClick={onScrollRight}
+                      disabled={
+                          currentIndex + maxVisibleItems >= comparisons.length
+                      }
                   >
-                    <img src="/images/icons/next.svg" alt="Next" />
+                    <svg className={styles.icon} />
                   </button>
                 </div>
               </div>

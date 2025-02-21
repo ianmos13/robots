@@ -175,6 +175,14 @@
         }
     }
 
+    .locationWithIcons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .floatingIcons {}
+
     .location {
         @media (max-width: 640px) {
             display: none;
