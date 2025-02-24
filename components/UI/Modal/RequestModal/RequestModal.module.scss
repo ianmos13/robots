@@ -23,19 +23,23 @@
   border-radius: 20px;
   @media (max-width: 640px) {
     padding: 20px;
+    margin: 0 10px;
   }
 
   .header {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     color: #000000;
     margin-bottom: 63px;
+    @media (max-width:640px) {
+      margin-bottom: 24px;
+    }
 
     .title {
       font-family: "DIN Pro сondensedblack", sans-serif;
       font-size: 32px;
-      font-weight: 900;
+      text-transform: uppercase;
       line-height: 35.2px;
       letter-spacing: -0.02em;
       @media (max-width: 640px) {
@@ -60,6 +64,14 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    .checkBoxWrapper{
+      margin-top: 27px;
+      margin-bottom: 24px;
+      @media (max-width: 640px) {
+        margin-top: 16px;
+        margin-bottom: 26px;
+      }
+    }
   }
   .closeBtn {
     position: absolute;
@@ -104,19 +116,22 @@
   }
 
   .submitBtn {
-    padding: 12px 0;
+    height: 64px;
+    padding: 19px 0;
+    border-radius: 7px;
     background-color: $main-blue;
     color: $white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "DIN Pro сondensedblack", sans-serif;
+    font-family: "DIN Pro Condensedmedium", sans-serif;
     @each $property, $value in $b22-medium {
       #{$property}: #{$value};
     }
     @media (max-width: 640px) {
+      height: 48px;
+      padding: 15px 0;
       font-size: 18px;
-
       line-height: 18px;
     }
 

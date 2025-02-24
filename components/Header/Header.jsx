@@ -56,7 +56,7 @@ const Header = () => {
                   <Link href="/" className={styles.logoContainer}>
                       <img
                           className={styles.image}
-                          src="/images/logo.svg"
+                          src="/images/Logo.svg"
                           alt="Logo"
                       />
                   </Link>

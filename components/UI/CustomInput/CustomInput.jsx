@@ -11,6 +11,7 @@ export default function CustomInput({
 	errorMessage,
 	validate,
 	checkForm,
+	theme,
 	...props
 }) {
 	const [error, setError] = React.useState('')
@@ -49,7 +50,7 @@ export default function CustomInput({
 					onBlur={handleBlur}
 					required={required}
 					pattern={pattern}
-					className={`${styles.input} ${error && styles.errorInput}`}
+					className={`${styles.input} ${error && styles.errorInput} ${styles[`${theme}Theme`]}`}
 					{...props}
 				/>
 				{error && <span className={styles.errorMessage}>{error}</span>}

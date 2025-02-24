@@ -27,15 +27,15 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
 			className={`${styles.card} ${styles[`${theme}Card`]}`}
 			onMouseEnter={onHover}
 			onMouseLeave={onLeave}
-			onClick={() => {
-				if (isMobileView) router.push(`/products/${robot.id}`)
-			}}
 		>
 			<div className={styles.cardHeader}>
 				<div
 					className={`${styles.imageWrapper} ${
 						isHovered && styles.hoveredImageWrapper
 					}`}
+					onClick={() => {
+						router.push(`/products/${robot.id}`)
+					}}
 				>
 					<img
 						className={`${styles.robotImage} ${styles.mainImage}`}
@@ -57,7 +57,10 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
 					<CompareButton robot={robot} isHovered={isHovered} />
 				</div>
 			</div>
-			<div className={styles.infoContainer}>
+			<div className={styles.infoContainer}
+						onClick={() => {
+							router.push(`/products/${robot.id}`)
+						}}>
 				<div className={styles.title}>{robot.title}</div>
 				<div className={styles.specsContainer}>
 					<div className={styles.specsItem}>
@@ -85,15 +88,6 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
 					)}
 				</div>
 			</div>
-			{/* <div className={styles.buttonContainer}>
-				{isHovered ? (
-					<a href={`/products/${robot.id}`} className={styles.detailsBtn}>
-						Подробнее
-					</a>
-				) : (
-					<div className={styles.emptyButton}></div>
-				)}
-			</div> */}
 		</div>
 	)
 }

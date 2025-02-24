@@ -82,19 +82,18 @@ export default function ProductCategoryGridSlider() {
 				/>
 			</div>
 
-			{totalFiltered > 4 && (
-				<div
-					className={`${styles.footer} ${
-						isHoveredCard ? styles.footerInactive : ''
-					}`}
-				>
-					<SwitchButtons
-						activeButton={activeButton}
-						handlePrev={handlePrev}
-						handleNext={handleNext}
-					/>
-				</div>
-			)}
+			<div
+				className={`${styles.footer} ${
+					isHoveredCard ? styles.footerInactive : ''
+				}`}
+			>
+				<SwitchButtons
+					activeButton={activeButton}
+					handlePrev={handlePrev}
+					handleNext={handleNext}
+				/>
+			</div>
+			
 		</section>
 	)
 }

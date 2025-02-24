@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import CheckBox from './CustomCheckBox/CheckBox'
-import CustomInput from './CustomInput/CustomInput'
+import CheckBox from '@/components/UI/CustomCheckBox/CheckBox'
+import CustomInput from '@/components/UI/CustomInput/CustomInput'
 import styles from './RequestModal.module.scss'
 
 const RequestModal = ({ isOpen, onClose, text }) => {
@@ -22,8 +22,8 @@ const RequestModal = ({ isOpen, onClose, text }) => {
 		if (!validateName(name)) return
 		if (!validateEmail(email)) return
 		if (!validatePhone(phone)) return
-    if(!agreement) return
-    
+		if (!agreement) return
+
 		console.log('Форма отправлена:', {
 			name,
 			phone,
@@ -96,11 +96,13 @@ const RequestModal = ({ isOpen, onClose, text }) => {
 								validate={validateEmail}
 								checkForm={formReady}
 							/>
-							<CheckBox
-								value={agreement}
-								onChange={setAgreement}
-								checkForm={formReady}
-							/>
+							<div className={styles.checkBoxWrapper}>
+								<CheckBox
+									value={agreement}
+									onChange={setAgreement}
+									checkForm={formReady}
+								/>
+							</div>
 							<button type='submit' className={styles.submitBtn}>
 								Отправить
 							</button>
