@@ -14,7 +14,7 @@ export default function Loader() {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <motion.img
-        src="/images/logo.svg"
+        src="/images/Logo.svg"
         alt="logo"
         animate={{ scale: [1, 1.5, 1] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

@@ -86,13 +86,11 @@ export default function FavoritesComponent() {
 						onDelete={handleRemoveCategory}
 					/>
 					<div className={styles.buttonsWrapper}>
-						{(favorites.length > 2 && isTabletView) && (
-							<SwitchButtons
-								activeButton={activeButton}
-								handleNext={handleNext}
-								handlePrev={handlePrev}
-							/>
-						)}
+						<SwitchButtons
+							activeButton={activeButton}
+							handleNext={handleNext}
+							handlePrev={handlePrev}
+						/>
 					</div>
 				</div>
 				<div className={styles.deleteContainer}>

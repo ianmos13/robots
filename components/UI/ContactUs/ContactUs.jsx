@@ -1,7 +1,40 @@
+'use client'
 import ContactUsButtons from '@/components/UI/ContactUsButtons/ContactUsButtons'
+import CustomInput from '@/components/UI/CustomInput/CustomInput'
+import React from 'react'
 import styles from './ContactUs.module.scss'
 
-export default function ContactUs({theme}) {
+export default function ContactUs({ theme }) {
+	const [name, setName] = React.useState('')
+	const [phone, setPhone] = React.useState('')
+	const [city, setCity] = React.useState('')
+	const [email, setEmail] = React.useState('')
+	const [comment, setComment] = React.useState('')
+
+	const [agreement, setAgreement] = React.useState(false)
+	const [formReady, setFormReady] = React.useState(false)
+
+	const [formSubmitted, setFormSubmitted] = React.useState(false)
+
+	const handleSubmit = e => {
+		e.preventDefault()
+		setFormReady(status => !status)
+		if (!validateName(name)) return
+		if (!validateEmail(email)) return
+		if (!validateCity(city)) return
+		if (!validatePhone(phone)) return
+		if (!agreement) return
+
+		console.log('Форма отправлена:', {
+			name,
+			phone,
+			email,
+			agreement,
+		})
+
+		setFormSubmitted(true)
+	}
+
 	return (
 		<section className={`${styles.container} ${styles[`${theme}Container`]}`}>
 			<div className={styles.contactUs}>
@@ -18,19 +51,65 @@ export default function ContactUs({theme}) {
 					</div>
 				</div>
 				<div className={styles.contactForm}>
-					<form>
+					<form onSubmit={handleSubmit} noValidate>
 						<div className={styles.inputContainer}>
 							<div className={styles.rowContainer}>
 								<div className={styles.formRow}>
-									<input type='text' placeholder='Ваше имя*' required />
-									<input type='tel' placeholder='Номер телефона*' required />
+									<CustomInput
+										type='text'
+										placeholder='Ваше имя*'
+										value={name}
+										onChange={e => setName(e.target.value)}
+										required
+										errorMessage={'Пожалуйста, введите ваше имя'}
+										validate={validateName}
+										checkForm={formReady}
+										theme={'white'}
+									/>
+									<CustomInput
+										type='tel'
+										placeholder='Номер телефона*'
+										value={phone}
+										onChange={e => setPhone(e.target.value)}
+										required
+										errorMessage={'Пожалуйста, корректно заполните поле!'}
+										validate={validatePhone}
+										checkForm={formReady}
+										theme={'white'}
+									/>
 								</div>
 								<div className={styles.formRow}>
-									<input type='text' placeholder='Город*' required />
-									<input type='email' placeholder='Email*' required />
+									<CustomInput
+										type='text'
+										placeholder='Город*'
+										value={city}
+										onChange={e => setCity(e.target.value)}
+										required
+										errorMessage={'Пожалуйста, корректно заполните поле!'}
+										validate={validateCity}
+										checkForm={formReady}
+										theme={'white'}
+									/>
+									<CustomInput
+										type='email'
+										placeholder='Электронная почта*'
+										value={email}
+										onChange={e => setEmail(e.target.value)}
+										required
+										errorMessage={'Пожалуйста, корректно заполните поле!'}
+										validate={validateEmail}
+										checkForm={formReady}
+										theme={'white'}
+									/>
 								</div>
 								<div className={styles.formRow}>
-									<textarea placeholder='Комментарий' rows='6'></textarea>
+									<textarea
+										onChange={e => {
+											setComment(e.target.value)
+										}}
+										placeholder='Комментарий'
+										rows='6'
+									></textarea>
 								</div>
 							</div>
 
@@ -70,4 +149,23 @@ export default function ContactUs({theme}) {
 			</div>
 		</section>
 	)
+}
+
+function validateName(name) {
+	if (name.length < 1) return false
+	return true
+}
+function validateCity(city) {
+	if (city.length < 1) return false
+	return true
+}
+
+function validatePhone(phone) {
+	const regex = /^(?:\+7\d{10}|\+375\d{9})$/
+	return regex.test(phone)
+}
+
+function validateEmail(email) {
+	const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+	return regex.test(email)
 }

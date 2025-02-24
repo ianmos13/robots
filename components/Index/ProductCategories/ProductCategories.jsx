@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./ProductCategories.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,15 +10,18 @@ import TitleWithSeparator from "@/components/UI/TitleWithSeparator/TitleWithSepa
 import useCategories from '@/hooks/useCategories';
 
 const ProductCategories = () => {
+  const swiperRef = useRef(null)
   const [activeButton, setActiveButton] = useState("");
   const router = useRouter();
 	const { categories, error, loading } = useCategories();
   const handlePrevClick = () => {
+    swiperRef.current?.slidePrev()
     setActiveButton("prev");
     setTimeout(() => setActiveButton(""), 300);
   };
 
   const handleNextClick = () => {
+    swiperRef.current?.slideNext()
     setActiveButton("next");
     setTimeout(() => setActiveButton(""), 300); 
   };
@@ -61,10 +64,7 @@ const ProductCategories = () => {
         <Swiper
           spaceBetween={0}
           slidesPerView={"auto"}
-          navigation={{
-            nextEl: `.${styles.nextButton}`,
-            prevEl: `.${styles.prevButton}`,
-          }}
+          onSwiper={swiper => (swiperRef.current = swiper)}
           modules={[Navigation]}
         >
           {categories.map((category, index) => (

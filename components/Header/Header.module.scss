@@ -82,17 +82,12 @@
         }
 
         .logoContainer {
-            width: 208px;
-            min-width: 208px;
-            padding: 23px 15px;
-            background: #0149BF05;
-            border-radius: 8px;
+            width: 200px;
+            min-width: 200px;
             @media (max-width: 640px) {
                 order: 1;
-                padding: 18px 12px;
                 width: 165px;
                 min-width: 165px;
-                border-radius: 6.35px;
             }
             img {
                 width: 100%;

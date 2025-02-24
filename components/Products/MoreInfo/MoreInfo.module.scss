@@ -349,10 +349,13 @@
   align-items: center;
   border-radius: 10px;
   border: 1px solid #c6dff5b2;
-  padding: 27px 34px;
+  padding: 27px 23px 27px 34px;
+  @media (max-width:1440px) {
+    padding: 27px 15px 27px 34px;
+  }
   width: 100%;
   @media (max-width: 640px) {
-    padding: 21px;
+    padding: 21px 5px 21px 21px;
   }
 
   .downladCharacter {
@@ -392,7 +395,7 @@
     position: relative;
     border-radius: 100px;
 
-    padding: 13px;
+    // padding: 13px;
     cursor: pointer;
     overflow: hidden;
     transition: background 0.3s ease;
