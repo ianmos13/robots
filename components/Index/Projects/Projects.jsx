@@ -4,68 +4,9 @@ import { useState, useEffect } from "react";
 import styles from "./Projects.module.scss";
 import LoadMoreButton from "@/components/UI/Buttons/LoadMoreButton/LoadMoreButton";
 import useDeviceType from "@/hooks/useDeviceType";
-const projectData = [
-  {
-    id: 1,
-    image: "/images/projects.svg",
-    title:
-      "На мебельное производство в г. Казань был установлен роботизированный сварочный комплекс CROBOTR",
-    date: "Сентябрь 2024",
-    tags: ["Предприятия по производству мебели"],
-  },
-  {
-    id: 2,
-    image: "/images/projects.svg",
-    title:
-      "Роботизированный сварочный комплекс для электроснабжения и освещения",
-    date: "Март 2024",
-    tags: ["Электроснабжение и освещение"],
-  },
-  {
-    id: 3,
-    image: "/images/projects.svg",
-    title: "Роботизированная ячейка для транспортных и спец. техник",
-    date: "Июнь 2024",
-    tags: ["Транспорт и спец. техника"],
-  },
-  {
-    id: 4,
-    image: "/images/projects.svg",
-    title: "Автоматизация сварки в нефтегазовой отрасли",
-    date: "Август 2024",
-    tags: ["Нефтегазовая отрасль"],
-  },
-  {
-    id: 5,
-    image: "/images/projects.svg",
-    title:
-      "Установка робота для объектов отопления, водоснабжения и вентиляции",
-    date: "Январь 2025",
-    tags: ["Отопление, водоснабжение, вентиляция"],
-  },
-  {
-    id: 6,
-    image: "/images/projects.svg",
-    title: "Автоматизация производства металлоконструкций",
-    date: "Апрель 2025",
-    tags: ["Металлоконструкции"],
-  },
-  {
-    id: 7,
-    image: "/images/projects.svg",
-    title:
-      "Роботизированная сварка для благоустройства городов и спортивного инвентаря",
-    date: "Май 2025",
-    tags: ["Благоустройство городской среды и спорт инвентарь"],
-  },
-  {
-    id: 8,
-    image: "/images/projects.svg",
-    title: "Сварочный пост для строительных конструкций и элементов",
-    date: "Июль 2025",
-    tags: ["Строительные конструкции и элементы"],
-  },
-];
+import ProjectCard from "@/components/UI/ProjectCard/ProjectCard";
+import useCompletedProjects from "@/hooks/useCompletedProjects";
+import useConvertedDate from "@/hooks/useConvertedDate";
 
 const allTags = [
   "Все",
@@ -82,7 +23,7 @@ const allTags = [
 export default function Projects() {
   const [selectedTag, setSelectedTag] = useState("Все");
   const [itemsToShow, setItemsToShow] = useState(3);
-
+  const { projects, error, loading } = useCompletedProjects();
   const { isTabletView, isMobileView } = useDeviceType();
 
 
@@ -92,8 +33,8 @@ export default function Projects() {
 
   const filteredProjects =
     selectedTag === "Все"
-      ? projectData
-      : projectData.filter((proj) => proj.tags.includes(selectedTag));
+      ? projects
+      : projects.filter((proj) => proj.tags.includes(selectedTag));
 
   const visibleProjects = filteredProjects.slice(0, itemsToShow);
 
@@ -106,7 +47,7 @@ export default function Projects() {
     setItemsToShow((prev) => prev + (isMobileView ? 1 : isTabletView ? 2 : 3));
   };
 
-  return (
+  if (projects.length > 0) return (
     <section className={styles.container}>
       <div className={styles.projectsContainer}>
         <div className={styles.header}>
@@ -143,22 +84,16 @@ export default function Projects() {
        
 
         <div className={styles.projectsList}>
-          {visibleProjects.map((project) => {
-            const cardTag = project.tags[0] || "";
-            return (
-              <div className={styles.projectCard} key={project.id}>
-                <div className={styles.imageContainer}>
-                  <img src={project.image} alt={project.title} />
-                  {cardTag && <div className={styles.tagBadge}>{cardTag}</div>}
-                </div>
-
-                <div className={styles.projectInfo}>
-                  <p className={styles.projectDate}>{project.date}</p>
-                  <div>{project.title}</div>
-                </div>
-              </div>
-            );
-          })}
+          {visibleProjects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                image={project.image}
+                date={useConvertedDate(project.date)}
+                tags={project.tags}
+                slug={project.slug}
+            />
+          ))}
         </div>
 
         {itemsToShow < filteredProjects.length && (

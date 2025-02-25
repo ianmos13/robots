@@ -83,7 +83,6 @@
     margin-top 0.3s ease-in-out;
   opacity: 0;
   font-family: "DIN Pro ", sans-serif;
-  font-weight: normal;
   @each $property, $value in $b18-medium {
     #{$property}: #{$value};
   }

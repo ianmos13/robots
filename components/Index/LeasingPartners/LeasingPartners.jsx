@@ -33,7 +33,7 @@ export default function LeasingPartners() {
     setIsModalOpen(false);
   };
 
-  return (
+  if (partnersLogos.length > 0) return (
     <>
       <section className={styles.container}>
         <div className={styles.header}>

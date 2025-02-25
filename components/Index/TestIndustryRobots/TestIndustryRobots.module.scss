@@ -52,6 +52,7 @@
       max-width: 537px;
       width: 100%;
       h1 {
+        font-family: 'DIN Pro condensedbold';
         text-transform: uppercase;
         letter-spacing: -0.02em;
         @media (max-width: 1600px) {
@@ -93,7 +94,7 @@
 
       p {
         letter-spacing: -0.02em;
-        font-family: "DIN Pro medium", sans-serif;
+        font-family: "DIN Pro", sans-serif;
         @each $property, $value in $b24-medium {
           #{$property}: #{$value};
         }
@@ -129,7 +130,7 @@
       padding: 19px 30px;
       cursor: pointer;
       transition: background-color 0.3s;
-      font-family: "DIN Pro condensedbold", sans-serif;
+      font-family: "DIN Pro condensedmedium", sans-serif;
       letter-spacing: -0.02em;
       @each $property, $value in $b22-medium {
         #{$property}: #{$value};

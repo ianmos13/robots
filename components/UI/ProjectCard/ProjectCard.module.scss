@@ -1,0 +1,88 @@
+@import '/styles/variables';
+
+.projectCard {
+    border: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+
+    .imageContainer {
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 40px;
+        @media (max-width: 1024px) {
+            margin-bottom: 24px;
+            height: unset;
+            aspect-ratio: 1.21;
+        }
+        @media (max-width: 640px) {
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tagBadge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: $main-blue;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 7px;
+            font-family: "DIN Pro", sans-serif;
+            @each $property, $value in $b18-medium {
+                #{$property}: #{$value};
+            }
+            max-width: calc(100% - 20px);
+            @media (max-width: 640px) {
+                font-size: 14px;
+                line-height: 16.8px;
+                padding: 7px 17px;
+            }
+        }
+    }
+
+    .projectInfo {
+        font-family: "DIN Pro medium", sans-serif;
+        color: $dark-gray;
+        margin-bottom: 72px;
+        @each $property, $value in $b24-medium {
+            #{$property}: #{$value};
+        }
+        @media (max-width: 1600px) {
+            margin-bottom: 100px;
+            font-size: 20px;
+            line-height: 26px;
+        }
+        @media (max-width: 1024px) {
+            margin-bottom: 72px;
+        }
+        @media (max-width: 640px) {
+            font-size: 16px;
+            line-height: 20.8px;
+            margin-bottom: 0;
+        }
+
+        .projectDate {
+            font-family: "DIN Pro condensedbold", sans-serif;
+            color: $dark-gray;
+            opacity: 0.5;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.2em;
+            @media (max-width: 640px) {
+                font-size: 18px;
+                line-height: 21.6px;
+            }
+        }
+    }
+}

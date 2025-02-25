@@ -152,7 +152,7 @@ const menuElements = [
             {
                 id: 51,
                 title: "Новости",
-                link: "/news",
+                link: "/articles",
             },
             {
                 id: 52,

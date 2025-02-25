@@ -70,7 +70,7 @@ export default function ProductCategoryGridPagination({ title, ids }) {
     router.push('/catalog');
   };
 
-  return (
+  if (products.length > 0) return (
     <section className={styles.container}>
       <TitleWithSeparator
         theme="uniq"

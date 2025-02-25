@@ -160,7 +160,9 @@
 
 .newsSeparator {
   margin: 24px 0 32px 0;
-
+  @media (max-width: 1600px) {
+    margin: 24px 0 32px 0;
+  }
   @media (max-width: 1024px) {
     margin: 24px 0 40px 0;
   }
@@ -171,7 +173,9 @@
 
 .uniqSeparator {
   margin: 24px 0 48px 0;
-
+  @media (max-width:1600px) {
+    margin: 24px 0 32px 0;
+  }
   @media (max-width: 1024px) {
     margin: 24px 0 32px 0;
   }

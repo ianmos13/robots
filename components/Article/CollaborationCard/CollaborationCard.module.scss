@@ -1,0 +1,89 @@
+@import "/styles/variables";
+
+.cardContainer {
+  width: 100%;
+  max-width: 414px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $main-blue;
+}
+
+.content {
+  padding: 40px;
+  color: white;
+  height: 100%;
+}
+
+.videoWrapper {
+  position: relative;
+  max-height: 296px;
+  overflow: hidden;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(185.7deg, #0149bf 4.25%, rgba(25, 120, 238, 0.15) 106.83%);
+    z-index: 1;
+  }
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px; 
+    background: linear-gradient(to bottom, $main-blue, transparent);
+    z-index: 2;
+  }
+}
+
+.videoBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.title {
+  font-family: "DIN Pro сondensedblack", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #f4f4f4;
+  margin-bottom: 24px;
+}
+
+.description {
+  color: $white;
+  font-family: "DIN Pro medium", sans-serif;
+  margin-bottom: 40px;
+  @each $property, $value in $b18-medium {
+    #{$property}: #{$value};
+  }
+}
+
+.button {
+  padding: 22px 30px;
+  background: $white;
+  color: $dark-gray;
+  margin-bottom: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  font-family: "DIN Pro condensedbold", sans-serif;
+
+  &:hover {
+    background: #ddd;
+  }
+}

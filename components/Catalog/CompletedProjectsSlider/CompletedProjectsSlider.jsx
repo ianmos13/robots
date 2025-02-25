@@ -57,7 +57,7 @@ const TruncatedText = ({ prj }) => {
 
 	useEffect(() => {
 		const truncateText = () => {
-			const linkHTML = `<a href="/news" class="${styles.mobileRead}">Читать далее</a>`
+			const linkHTML = `<a href="/articles" class="${styles.mobileRead}">Читать далее</a>`
 			
 			const element = textRef.current
 			if (!element) return
@@ -97,7 +97,7 @@ const TruncatedText = ({ prj }) => {
 				{isTruncated ? (
 					<>
 						{displayText}{' '}
-						<a href='/news' className={styles.mobileRead}>
+						<a href='/articles' className={styles.mobileRead}>
 							Читать далее
 						</a>
 					</>
@@ -127,7 +127,7 @@ export default function CompletedProjectsSlider() {
 		setTimeout(() => setActiveButton(''), 300)
 	}
 
-	return (
+	if (projects.length > 0) return (
 		<div className={styles.sliderContainer}>
 			<div className={styles.header}>
 				<h4>Проекты внедрения промышленного робота манипулятора CRP-RH14-10</h4>

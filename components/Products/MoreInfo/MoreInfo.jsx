@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
+import VideoPlayer from '@/components/UI/VideoPlayer/VideoPlayer'
 
 export default function MoreInfo({ productInfo }) {
   if (!productInfo) return null;
@@ -71,12 +72,13 @@ export default function MoreInfo({ productInfo }) {
     );
   };
 
-  const addInfo = productInfo.addInfo?.[0] || { description: [], equipment: [] };
+  const addInfo = productInfo?.addInfo?.[0] || { description: [], equipment: [] };
 
   return (
     <div className={styles.moreInfo}>
       <div className={styles.moreInfoContainer}>
       
+      { productInfo?.files?.length > 0 && (
         <div className={styles.sidebar}>
           <div className={styles.title}>Файлы робота:</div>
 
@@ -115,157 +117,159 @@ export default function MoreInfo({ productInfo }) {
           </div>
           <div className={styles.requestButton}>Оставить заявку</div>
         </div>
+      )}
         <div className={styles.rightSection}>
-          <div className={styles.info}>
-            <h4>Информация</h4>
-            <div className={styles.btnContainer}>
-              <div
-                className={`${styles.btn} ${
-                  activeInfoTab === "description" ? styles.active : ""
-                }`}
-                onClick={() => setActiveInfoTab("description")}>
-                Описание
-              </div>
-              <div
-                className={`${styles.btn} ${
-                  activeInfoTab === "equipment" ? styles.active : ""
-                }`}
-                onClick={() => setActiveInfoTab("equipment")}>
-                Комплектация
-              </div>
-            </div>
-            <div className={styles.addInfoList}>
-              {activeInfoTab === "description" &&
-                addInfo.description?.length > 0 && (
-                  <>
-                    {addInfo.description.map((htmlStr, i) => (
-                      <div
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: htmlStr }}
-                      />
-                    ))}
-                  </>
+          {(addInfo.description?.length > 0 && addInfo.equipment?.length > 0) && (
+            <div className={styles.info}>
+              <h4>Информация</h4>
+              
+              <div className={styles.btnContainer}>
+                {addInfo.description?.length > 0 && (
+                  <div
+                    className={`${styles.btn} ${
+                      activeInfoTab === "description" ? styles.active : ""
+                    }`}
+                    onClick={() => setActiveInfoTab("description")}>
+                    Описание
+                  </div>
                 )}
-              {activeInfoTab === "equipment" &&
-                addInfo.equipment?.length > 0 && (
-                  <>
-                    {addInfo.equipment.map((htmlStr, i) => (
-                      <div
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: htmlStr }}
-                      />
-                    ))}
-                  </>
+                {addInfo.equipment?.length > 0 && (
+                  <div
+                    className={`${styles.btn} ${
+                      activeInfoTab === "equipment" ? styles.active : ""
+                    }`}
+                    onClick={() => setActiveInfoTab("equipment")}>
+                    Комплектация
+                  </div>
                 )}
+              </div>
+              <div className={styles.addInfoList}>
+                {activeInfoTab === "description" &&
+                  addInfo.description?.length > 0 && (
+                    <>
+                      {addInfo.description.map((htmlStr, i) => (
+                        <div
+                          key={i}
+                          dangerouslySetInnerHTML={{ __html: htmlStr }}
+                        />
+                      ))}
+                    </>
+                  )}
+                {activeInfoTab === "equipment" &&
+                  addInfo.equipment?.length > 0 && (
+                    <>
+                      {addInfo.equipment.map((htmlStr, i) => (
+                        <div
+                          key={i}
+                          dangerouslySetInnerHTML={{ __html: htmlStr }}
+                        />
+                      ))}
+                    </>
+                  )}
+              </div>
             </div>
-          </div>
-          <div className={styles.technicalInfo}>
-            <h4>Технические характеристики {productInfo.title}</h4>
-            <div className={styles.btnContainer}>
-              <div
-                className={`${styles.btn} ${
-                  activeTechnicalTab === "axes" ? styles.active : ""
-                }`}
-                onClick={() => setActiveTechnicalTab("axes")}>
-                Диапазон движения по осям
+          )}
+          {productInfo?.technicalTabs && (
+            <div className={styles.technicalInfo}>
+              <h4>Технические характеристики {productInfo?.title}</h4>
+              <div className={styles.btnContainer}>
+                <div
+                  className={`${styles.btn} ${
+                    activeTechnicalTab === "axes" ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveTechnicalTab("axes")}>
+                  Диапазон движения по осям
+                </div>
+                <div
+                  className={`${styles.btn} ${
+                    activeTechnicalTab === "bases" ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveTechnicalTab("bases")}>
+                  Размеры основания
+                </div>
+                <div
+                  className={`${styles.btn} ${
+                    activeTechnicalTab === "flange" ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveTechnicalTab("flange")}>
+                  Размеры фланца
+                </div>
               </div>
-              <div
-                className={`${styles.btn} ${
-                  activeTechnicalTab === "bases" ? styles.active : ""
-                }`}
-                onClick={() => setActiveTechnicalTab("bases")}>
-                Размеры основания
-              </div>
-              <div
-                className={`${styles.btn} ${
-                  activeTechnicalTab === "flange" ? styles.active : ""
-                }`}
-                onClick={() => setActiveTechnicalTab("flange")}>
-                Размеры фланца
-              </div>
-            </div>
 
-            <div className={styles.btnContainerMobile}>
-              <Swiper slidesPerView={1.5} spaceBetween={10} freeMode={true}>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <div
-                    className={`${styles.btn} ${
-                      activeTechnicalTab === "axes" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveTechnicalTab("axes")}>
-                    Диапазон движения по осям
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <div
-                    className={`${styles.btn} ${
-                      activeTechnicalTab === "bases" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveTechnicalTab("bases")}>
-                    Размеры основания
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
-                  <div
-                    className={`${styles.btn} ${
-                      activeTechnicalTab === "flange" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveTechnicalTab("flange")}>
-                    Размеры фланца
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-            {getCurrentImage() && (
-              <div className={styles.imageContainer}>
-                <img src={getCurrentImage()} alt={activeTechnicalTab} />
+              <div className={styles.btnContainerMobile}>
+                <Swiper slidesPerView={1.5} spaceBetween={10} freeMode={true}>
+                  <SwiperSlide className={styles.swiperSlide}>
+                    <div
+                      className={`${styles.btn} ${
+                        activeTechnicalTab === "axes" ? styles.active : ""
+                      }`}
+                      onClick={() => setActiveTechnicalTab("axes")}>
+                      Диапазон движения по осям
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={styles.swiperSlide}>
+                    <div
+                      className={`${styles.btn} ${
+                        activeTechnicalTab === "bases" ? styles.active : ""
+                      }`}
+                      onClick={() => setActiveTechnicalTab("bases")}>
+                      Размеры основания
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={styles.swiperSlide}>
+                    <div
+                      className={`${styles.btn} ${
+                        activeTechnicalTab === "flange" ? styles.active : ""
+                      }`}
+                      onClick={() => setActiveTechnicalTab("flange")}>
+                      Размеры фланца
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
-            )}
-            {renderTable(productInfo?.technicalTable)}
-          </div>
+              {getCurrentImage() && (
+                <div className={styles.imageContainer}>
+                  <img src={getCurrentImage()} alt={activeTechnicalTab} />
+                </div>
+              )}
+              {renderTable(productInfo?.technicalTable)}
+            </div>
+          )}
+          
 
-          <div className={styles.downloadContainer}
+          {productInfo?.technicalTable && (
+            <div className={styles.downloadContainer}
               onClick={()=> window.open(productInfo?.technicalInfoFile)}
-          >
-            <div className={styles.downladCharacter}>
-              <img src="/images/icons/Union.svg" alt="download-icon" />
-              <span className={styles.longText}>
-                Скачать технические характеристики
-              </span>
-              <span className={styles.shortText}>Тех.характеристики</span>
+            >
+              <div className={styles.downladCharacter}>
+                <img src="/images/icons/Union.svg" alt="download-icon" />
+                <span className={styles.longText}>
+                  Скачать технические характеристики
+                </span>
+                <span className={styles.shortText}>Тех.характеристики</span>
+              </div>
+              <div className={styles.downloadIcon}>
+                <img
+                  src="/images/icons/download-icon-blue.svg"
+                  alt="download-icon-blue"
+                />
+              </div>
             </div>
-            <div className={styles.downloadIcon}>
-              <img
-                src="/images/icons/download-icon-blue.svg"
-                alt="download-icon-blue"
-              />
-            </div>
-          </div>
+          )}
+          
           <div className={styles.howItWorks}>
             <h4>Посмотрите как это работает</h4>
-            <div className={styles.videoWrapper}>
-              <video
-                autoPlay
-                muted
-                loop
-                controls={false}
-                style={{ width: "100%" }}>
-                <source
-                  src="/test_video_2.webm"
-                  type="video/mp4"
-                />
-              </video>
-              {/*<div className={styles.playIcon}>*/}
-              {/*  <img src="/images/icons/play.svg" alt="play" />*/}
-              {/*</div>*/}
-            </div>
+            <VideoPlayer videoPath='/test_video_2.webm'/>
           </div>
-          <div className={styles.robotContains}>
-            <h4>Из чего состоит наш робот:</h4>
-            <div className={styles.robotContainsSlider}>
-              <RobotContainSlider info={productInfo?.containInfo || []} />
+          {productInfo?.containInfo && (
+            <div className={styles.robotContains}>
+              <h4>Из чего состоит наш робот:</h4>
+              <div className={styles.robotContainsSlider}>
+                <RobotContainSlider info={productInfo?.containInfo || []} />
+              </div>
             </div>
-          </div>
+          )}
+          
         </div>
       </div>
       <div className={styles.gridContainer}>

@@ -7,7 +7,7 @@ export default function DownloadButton() {
     const [isMouseLeaved, setIsMouseLeaved] = useState(false);
 
   return (
-    <a href="/"
+    <a href="/data/katalog_сентябрь_вэб.pdf"
        className={`${styles.container} ${isMouseLeaved ? styles.unhovered : ""}`}
        onMouseEnter={() => setIsMouseLeaved(false)}
        onMouseLeave={() => setIsMouseLeaved(true)}

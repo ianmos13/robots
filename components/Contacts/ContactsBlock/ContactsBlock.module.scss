@@ -1,6 +1,5 @@
 .pageHeader {
 	padding: 40px 30px;
-	font-weight: 900;
 	font-size: 48px;
 	line-height: 52.8px;
 	font-family: 'DIN Pro сondensedblack';
@@ -16,7 +15,6 @@
 @media (max-width: 640px) {
 	.pageHeader {
 		padding: 24px 10px 24px 10px;
-		font-weight: 900;
 		font-size: 32px;
 		line-height: 35.2px;
 	}
@@ -41,7 +39,6 @@
 
 			.header {
 				color: #0149bf;
-				font-weight: 500;
 				font-size: 20px;
 				line-height: 26px;
 				font-family: 'DIN Pro medium', sans-serif;
@@ -92,7 +89,6 @@
 
 				.text {
 					color: #323232;
-					font-weight: 500;
 					font-size: 24px;
 					line-height: 31.2px;
 					font-family: 'DIN Pro medium', sans-serif;
@@ -129,7 +125,6 @@
 				padding: 20px;
 				.header {
 					color: #0149bf;
-					font-weight: 500;
 					font-size: 18px;
 					line-height: 21.6px;
 				}
@@ -146,7 +141,6 @@
 					}
 					.text {
 						color: #323232;
-						font-weight: 500;
 						font-size: 18px;
 						line-height: 21.6px;
 					}

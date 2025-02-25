@@ -1,507 +1,543 @@
-@import "/styles/variables";
+@import '/styles/variables';
 
 .productSlider {
-  display: flex;
-  gap: 80px;
-  margin-bottom: 72px;
-  max-width: 1705px;
-  @media (max-width: 1440px) {
-    gap: 50px;
-    margin-bottom: 93px;
-    max-width: 1380px;
-  }
-  @media (max-width: 1100px) {
-    gap: 20px;
-  }
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    gap: 0;
-  }
-  @media (max-width: 640px) {
-    margin-bottom: 40px;
-  }
-  .titleMobile,
-  .advantagesContainerMoblie {
-    display: none;
-    @media (max-width: 1024px) {
-      display: block;
-      margin-bottom: 24px;
+	display: flex;
+	gap: 80px;
+	margin-bottom: 72px;
+	max-width: 1705px;
+	@media (max-width: 1440px) {
+		gap: 50px;
+		margin-bottom: 93px;
+		max-width: 1380px;
+	}
+	@media (max-width: 1100px) {
+		gap: 20px;
+	}
+	@media (max-width: 1024px) {
+		flex-direction: column;
+		gap: 0;
+	}
+	@media (max-width: 640px) {
+		margin-bottom: 40px;
+	}
+	.titleMobile,
+	.advantagesContainerMoblie {
+		display: none;
+		@media (max-width: 1024px) {
+			display: block;
+			margin-bottom: 24px;
+      h3{
+        font-size: 48px;
+        line-height: 52.8px;
+        letter-spacing: -0.02em;
+        color: #323232;
+      }
+		}
+    @media (max-width:640px) {
+      h3{
+        font-size: 32px;
+        line-height: 35.2px;
+
+      }
     }
-  }
-  .advantagesContainerMoblie {
-    @media (max-width: 1024px) {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 31px;
-    }
-  }
+	}
+	.advantagesContainerMoblie {
+		@media (max-width: 1024px) {
+			display: flex;
+			gap: 10px;
+			margin-bottom: 31px;
+		}
+	}
 }
 
 .imageContainer {
-  position: relative;
-  max-width: 920px;
-  width: 100%;
-  @media (max-width: 1440px) {
-    max-width: 646px;
-  }
-  @media (max-width: 1024px) {
-    max-width: unset;
-  }
+	position: relative;
+	max-width: 920px;
+	width: 100%;
+	@media (max-width: 1440px) {
+		max-width: 646px;
+	}
+	@media (max-width: 1024px) {
+		max-width: unset;
+	}
 }
 
 .mainImage {
-  width: 100%;
-  max-width: 920px;
-  aspect-ratio: 1.5673;
-  background-color: $white;
-  border-radius: 20px;
-  @media (max-width: 1024px) {
-    max-width: unset;
-    border-radius: 10px;
-  }
+	width: 100%;
+	max-width: 920px;
+	aspect-ratio: 1.5673;
+	background-color: $white;
+	border-radius: 20px;
+	@media (max-width: 1024px) {
+		max-width: unset;
+		border-radius: 10px;
+	}
 }
 
 .thumbnailContainer {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  @media (max-width: 1440px) {
-    gap: 15px;
-    margin-top: 15px;
-    overflow-x: auto;
-    -ms-overflow-style: none; /* IE и Edge */
-    scrollbar-width: none; /* Firefox */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
+	display: flex;
+	gap: 20px;
+	margin-top: 20px;
+	@media (max-width: 1440px) {
+		gap: 15px;
+		margin-top: 15px;
+		overflow-x: auto;
+		-ms-overflow-style: none; /* IE и Edge */
+		scrollbar-width: none; /* Firefox */
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 }
 
 .thumbnail {
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  background-color: $white;
-  max-width: 169px;
-  max-height: 133px;
-  @media (max-width: 1440px) {
-    border-radius: 6px;
-    max-width: 111px;
-    max-height: 92px;
-  }
-  img {
-    max-width: 105px;
-    max-height: 95px;
-    object-fit: cover;
-    aspect-ratio: 21/19;
-    @media (max-width: 1440px) {
-      max-width: 71px;
-      max-height: 67px;
-    }
-  }
-  &.active {
-    border-color: $main-blue;
-  }
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid transparent;
+	transition: border-color 0.3s;
+	background-color: $white;
+	max-width: 169px;
+	max-height: 133px;
+	@media (max-width: 1440px) {
+		border-radius: 6px;
+		max-width: 111px;
+		max-height: 92px;
+	}
+	img {
+		max-width: 105px;
+		max-height: 95px;
+		object-fit: cover;
+		aspect-ratio: 21/19;
+		@media (max-width: 1440px) {
+			max-width: 71px;
+			max-height: 67px;
+		}
+	}
+	&.active {
+		border-color: $main-blue;
+	}
 }
 
 .advantage,
 .assignment,
 .specValue,
 .capabilityValue {
-  font-family: "DIN Pro", sans-serif;
-  @each $property, $value in $b16-regular {
-    #{$property}: #{$value};
-  }
-  letter-spacing: -0.32px;
+	font-family: 'DIN Pro', sans-serif;
+	@each $property, $value in $b16-regular {
+		#{$property}: #{$value};
+	}
+	letter-spacing: -0.32px;
 }
 
 .advantage {
-  padding: 10px 20px 12px 20px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 7px;
-  background: rgba(50, 50, 50, 0.1);
-  @media (max-width: 1440px) {
-    width: max-content;
-  }
+	padding: 10px 20px 12px 20px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 7px;
+	background: rgba(50, 50, 50, 0.1);
+	@media (max-width: 1440px) {
+		width: max-content;
+	}
 }
 
 .productInfo {
-  display: flex;
-  flex-direction: column;
-  max-width: 860px;
-  width: 100%;
-  @media (max-width: 1440px) {
-    max-width: unset;
-  }
-  @media (max-width: 1024px) {
-    width: 100%;
-    margin-top: 56px;
-  }
-  h3 {
-    letter-spacing: -0.96px;
-    @media (max-width: 1024px) {
-      display: none;
-    }
-  }
-  .infoContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 78px;
-    @media (max-width: 1440px) {
-      margin-bottom: 48px;
-    }
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 24px;
-    }
-  }
-  .assignmentTitle,
-  .sourceTitle,
-  .capabilityTitle,
-  .specTitle,
-  .sourceTitle {
-    color: #000;
-    font-family: "DIN Pro", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    line-height: 100%;
-    letter-spacing: -0.54px;
-    margin-right: 24px;
-    display: flex;
-    align-items: center;
-  }
-  .advantagesContainer {
-    display: flex;
-    gap: 10px;
-    margin-top: 32px;
-    margin-bottom: 48px;
-    @media (max-width: 1440px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 32px;
-      max-width: 372px;
-      .advantage:nth-child(3) {
-        grid-column: 1 / -1;
-      }
-      @media (max-width: 1024px) {
-        display: none;
-      }
-    }
-  }
-  .assignmentContainer {
-    display: flex;
-    gap: 10px;
-    @media (max-width: 1105px) {
-      flex-direction: column;
-    }
-    @media (max-width: 1024px) {
-      flex-direction: row;
-    }
-    @media (max-width: 640px) {
-      flex-direction: column;
-      gap: 16px;
-    }
-    .assignmentItem {
-      display: flex;
-      gap: 10px;
-      @media (max-width: 640px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    .assignment {
-      padding: 10px 20px 12px 20px;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #c6dff5b2;
-      border-radius: 7px;
-    }
-  }
-  .specContainer,
-  .capabilityContainer,
-  .sourceContainer {
-    display: flex;
-    @media (max-width: 640px) {
-      flex-direction: column;
-      gap: 16px;
-    }
-  }
-  .specValue,
-  .capabilityValue,
-  .source {
-    padding: 10px 20px 12px 20px;
-    border-radius: 7px;
-    border: 1px solid #c6dff5b2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @media (max-width: 640px) {
-      width: max-content;
-    }
-  }
-  .sourceGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    @media (max-width: 1105px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    @media (max-width: 1024px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: 640px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-  .btnContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    @media (max-width: 640px) {
-      gap: 10px;
-    }
-    .ctaButton {
-      transition: background-color 0.3s;
-      padding: 20px;
-      font-family: "DIN Pro medium", sans-serif;
-      color: $white;
-      background-color: $main-blue;
-      border-radius: 7px;
-      border: none;
-      width: 100%;
-      @each $property, $value in $b18-medium {
-        #{$property}: #{$value};
-      }
-      &:hover {
-        background-color: $blue-hover;
-      }
-    }
-    .btnContainerInner {
-      height: 64px;
-      @media (max-width:1600px) {
-        height: 56px;
-      }
-      @media (max-width:1024px) {
-        height: 64px;
-      }
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-      @media (max-width: 1440px) {
-        gap: 10px;
-      }
-      @media (max-width: 1265px) {
-       flex-wrap: wrap;
-      }
-      @media (max-width: 1024px) {
-        flex-direction: row;
-        flex-wrap: nowrap;
-      }
-      @media (max-width: 640px) {
-        flex-direction: column;
-      }
-      .compereBtn {
-        width: 47%;
-        padding: 20px 30px;
-        border-radius: 7px;
-        border: 1px solid #c6dff5b2;
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        justify-content: center;
-        font-family: "DIN Pro medium", sans-serif;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-        @each $property, $value in $b18-medium {
-          #{$property}: #{$value};
-        }
-        @media (max-width: 1440px) {
-          gap: 10px;
-          padding: 20px 5px;
-        }
-        @media (max-width: 1265px) {
-          width: 60%;
-          padding: 20px ;
-        }
-        @media (max-width: 640px) {
-          width: 100%;
-        }
-        img {
-          width: 24px;
-          height: 24px;
-        }
-      }
-    }
-    .mobilebtnContainer {
-      display: none;
-      @media (max-width: 640px) {
-        gap: 10px;
-        display: flex;
-        width: 100%;
-        .favoriteBtnMobile {
-          width: 80%;
-          padding: 20px auto;
-          border-radius: 7px;
-          border: 1px solid #c6dff5b2;
-          display: flex;
-          gap: 24px;
-          align-items: center;
-          justify-content: center;
-          font-family: "DIN Pro medium", sans-serif;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-          @each $property, $value in $b18-medium {
-            #{$property}: #{$value};
-          }
-          img {
-            width: 24px;
-            height: 24px;
-          }
-        }
-        .socialMobile {
-          height: max-content;
-          padding: 22px 20px;
-          border: 1px solid $blue-light;
-          border-radius: 8px;
-          gap: 18px;
-          display: flex;
-          justify-content: space-between;
-          a{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-      }
-    }
-  }
+	display: flex;
+	flex-direction: column;
+	max-width: 860px;
+	width: 100%;
+	@media (max-width: 1440px) {
+		max-width: unset;
+	}
+	@media (max-width: 1024px) {
+		width: 100%;
+		margin-top: 56px;
+	}
+	h3 {
+		letter-spacing: -0.96px;
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+	.infoContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		margin-bottom: 78px;
+		@media (max-width: 1440px) {
+			margin-bottom: 48px;
+		}
+		@media (max-width: 1024px) {
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+	.assignmentTitle,
+	.sourceTitle,
+	.capabilityTitle,
+	.specTitle,
+	.sourceTitle {
+		color: #000;
+		font-family: 'DIN Pro', sans-serif;
+		font-size: 18px;
+		font-style: normal;
+		line-height: 100%;
+		letter-spacing: -0.54px;
+		margin-right: 24px;
+		display: flex;
+		align-items: center;
+	}
+	.advantagesContainer {
+		display: flex;
+		gap: 10px;
+		margin-top: 32px;
+		margin-bottom: 48px;
+		@media (max-width: 1440px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: 32px;
+			max-width: 372px;
+			.advantage:nth-child(3) {
+				grid-column: 1 / -1;
+			}
+			@media (max-width: 1024px) {
+				display: none;
+			}
+		}
+	}
+	.assignmentContainer {
+		display: flex;
+		gap: 10px;
+		@media (max-width: 1105px) {
+			flex-direction: column;
+		}
+		@media (max-width: 1024px) {
+			flex-direction: row;
+		}
+		@media (max-width: 640px) {
+			flex-direction: column;
+			gap: 16px;
+		}
+		.assignmentItem {
+			display: flex;
+			gap: 10px;
+			@media (max-width: 640px) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		.assignment {
+			padding: 10px 20px 12px 20px;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #c6dff5b2;
+			border-radius: 7px;
+		}
+	}
+	.specContainer,
+	.capabilityContainer,
+	.sourceContainer {
+		display: flex;
+		@media (max-width: 640px) {
+			flex-direction: column;
+			gap: 16px;
+		}
+	}
+	.specValue,
+	.capabilityValue,
+	.source {
+		padding: 10px 20px 12px 20px;
+		border-radius: 7px;
+		border: 1px solid #c6dff5b2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: 640px) {
+			width: max-content;
+		}
+	}
+	.sourceGrid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		@media (max-width: 1105px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 640px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.btnContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		@media (max-width: 640px) {
+			gap: 10px;
+		}
+		.ctaButton {
+			transition: background-color 0.3s;
+			padding: 20px;
+			font-family: 'DIN Pro medium', sans-serif;
+			color: $white;
+			background-color: $main-blue;
+			border-radius: 7px;
+			border: none;
+			width: 100%;
+			@each $property, $value in $b18-medium {
+				#{$property}: #{$value};
+			}
+			&:hover {
+				background-color: $blue-hover;
+			}
+		}
+		.btnContainerInner {
+			height: 64px;
+			@media (max-width: 1600px) {
+				height: 56px;
+			}
+			@media (max-width: 1024px) {
+				height: 64px;
+			}
+			display: flex;
+			gap: 20px;
+			justify-content: space-between;
+			@media (max-width: 1440px) {
+				gap: 10px;
+			}
+			@media (max-width: 1265px) {
+				flex-wrap: wrap;
+			}
+			@media (max-width: 1024px) {
+				flex-direction: row;
+				flex-wrap: nowrap;
+			}
+			@media (max-width: 640px) {
+				flex-direction: column;
+			}
+			.compereBtn {
+				width: 47%;
+				padding: 20px 30px;
+				border-radius: 7px;
+				border: 1px solid #c6dff5b2;
+				display: flex;
+				gap: 24px;
+				align-items: center;
+				justify-content: center;
+				font-family: 'DIN Pro medium', sans-serif;
+				cursor: pointer;
+				transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+				@each $property, $value in $b18-medium {
+					#{$property}: #{$value};
+				}
+				@media (max-width: 1440px) {
+					gap: 10px;
+					padding: 20px 5px;
+				}
+				@media (max-width: 1265px) {
+					width: 60%;
+					padding: 20px;
+				}
+				@media (max-width: 640px) {
+					width: 100%;
+				}
+				img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+		.mobilebtnContainer {
+			display: none;
+			@media (max-width: 640px) {
+				gap: 10px;
+				display: flex;
+				width: 100%;
+				.favoriteBtnMobile {
+					width: 80%;
+					padding: 20px auto;
+					border-radius: 7px;
+					border: 1px solid #c6dff5b2;
+					display: flex;
+					gap: 24px;
+					align-items: center;
+					justify-content: center;
+					font-family: 'DIN Pro medium', sans-serif;
+					cursor: pointer;
+					transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+					@each $property, $value in $b18-medium {
+						#{$property}: #{$value};
+					}
+					img {
+						width: 24px;
+						height: 24px;
+					}
+				}
+				.socialMobile {
+					height: max-content;
+					padding: 22px 20px;
+					border: 1px solid $blue-light;
+					border-radius: 8px;
+					gap: 18px;
+					display: flex;
+					justify-content: space-between;
+					a {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
 }
 
 .social {
-  height: 100%;
-  max-height: 64px;
-  padding: 22px 18px;
-  border: 1px solid $blue-light;
-  border-radius: 8px;
-  gap: 10px;
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  width: max-content;
-  @media (max-width:1600px) {
-    padding: 18px 20px;
-  }
-  @media (max-width:1024px) {
-    padding: 22px 18px;
-  }
-  @media (max-width: 640px) {
-    display: none;
-  }
-  a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	height: 100%;
+	max-height: 64px;
+	padding: 22px 18px;
+	border: 1px solid $blue-light;
+	border-radius: 8px;
+	gap: 10px;
+	display: flex;
+	justify-content: space-between;
+	gap: 18px;
+	width: max-content;
+	@media (max-width: 1600px) {
+		padding: 18px 20px;
+	}
+	@media (max-width: 1024px) {
+		padding: 22px 18px;
+	}
+	@media (max-width: 640px) {
+		display: none;
+	}
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .favoriteBtn {
-  width: 30.6%;
-  padding: 20px auto;
-  border-radius: 7px;
-  border: 1px solid #c6dff5b2;
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: center;
-  font-family: "DIN Pro medium", sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  @each $property, $value in $b18-medium {
-    #{$property}: #{$value};
-  }
-  @media (max-width: 1440px) {
-    gap: 10px;
-    padding: 20px 5px;
-  }
-  @media (max-width: 1265px) {
-    width: 35%;
-    padding: 20px ;
-  }
-  @media (max-width: 1024px) {
-     width: 30.6%;
-    padding: 20px ;
-  }
-  @media (max-width: 640px) {
-    display: none;
-  }
-  img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-@media (max-width: 640px) {
-  .swiperContainer {
-    display: block;
-    width: 100%;
-    margin-bottom: 24px;
-    .swiperSlide {
-      width: auto !important;
-    }
-  }
+	width: 30.6%;
+	padding: 20px auto;
+	border-radius: 7px;
+	border: 1px solid #c6dff5b2;
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	justify-content: center;
+	font-family: 'DIN Pro medium', sans-serif;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	@each $property, $value in $b18-medium {
+		#{$property}: #{$value};
+	}
+	@media (max-width: 1440px) {
+		gap: 10px;
+		padding: 20px 5px;
+	}
+	@media (max-width: 1265px) {
+		width: 35%;
+		padding: 20px;
+	}
+	@media (max-width: 1024px) {
+		width: 30.6%;
+		padding: 20px;
+	}
+	@media (max-width: 640px) {
+		display: none;
+	}
+	img {
+		width: 24px;
+		height: 24px;
+	}
 }
 
 .activeBtn {
-  background-color: #c6dff5;
-  color: $main-blue;
-  border-color: $main-blue !important;
+	background-color: #c6dff5;
+	color: $main-blue;
+	border-color: $main-blue !important;
 }
 
 .swiper {
-  display: none;
+	display: none;
+	@media (max-width: 1024px) {
+		display: block;
+		width: 100vw;
+		.swiperContainer {
+			display: block;
+			margin-left: -20px;
+			margin-right: -20px;
+			width: 100%;
+			margin-bottom: 24px;
+			.swiperSlide {
+				width: auto !important;
+				&:first-child {
+					margin-left: 20px;
+				}
+				&:last-child {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+	@media (max-width: 640px) {
+		.swiperContainer {
+      margin-left: -10px;
+			margin-right: -10px;
+			.swiperSlide {
+				&:first-child {
+					margin-left: 10px;
+				}
+				&:last-child {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 640px) {
-  .arrowLeft,
-  .arrowRight {
-    display: block;
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background: unset;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-  }
-  .arrowLeft {
-    left: 10px;
-  }
-  .arrowRight {
-    right: 10px;
-  }
+	.arrowLeft,
+	.arrowRight {
+		display: block;
+		position: absolute;
+		top: 40%;
+		transform: translateY(-50%);
+		background: unset;
+		border: none;
+		padding: 10px;
+		cursor: pointer;
+		z-index: 10;
+		border-radius: 50%;
+	}
+	.arrowLeft {
+		left: 10px;
+	}
+	.arrowRight {
+		right: 10px;
+	}
 }
 
 @media (min-width: 641px) {
-  .arrowLeft,
-  .arrowRight {
-    display: none;
-  }
+	.arrowLeft,
+	.arrowRight {
+		display: none;
+	}
 }
 
 .thumbnailContainer {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  @media (max-width: 1440px) {
-    gap: 15px;
-    margin-top: 15px;
-  }
+	display: flex;
+	gap: 20px;
+	margin-top: 20px;
+	@media (max-width: 1440px) {
+		gap: 15px;
+		margin-top: 15px;
+	}
 }

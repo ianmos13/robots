@@ -336,7 +336,7 @@ const footerLinks = [
     {
         id: 4,
         name: "Новости",
-        link: "/news",
+        link: "/articles",
     },
     {
         id: 5,

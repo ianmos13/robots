@@ -1,6 +1,8 @@
 'use client'
 import Pagination from '@/components/UI/Pagination/Pagination'
+import useCategories from '@/hooks/useCategories'
 import useDeviceType from '@/hooks/useDeviceType'
+import useProducts from '@/hooks/useProducts'
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import 'swiper/css'
@@ -18,8 +20,6 @@ import styles from './Catalog.module.scss'
 import CompletedProjectsSlider from './CompletedProjectsSlider/CompletedProjectsSlider'
 import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
-import useCategories from '@/hooks/useCategories'
-import useProducts from '@/hooks/useProducts'
 
 
 export default function Catalog() {
@@ -166,7 +166,8 @@ export default function Catalog() {
 
   return (
     <section className={styles.container}>
-      <div className={styles.categoryContainer}>
+      {(allCategories.length > 0 && products.length > 0) && (
+        <div className={styles.categoryContainer}>
         <h3>Категории роботов</h3>
         <CategoryTags
           categories={allCategories}
@@ -174,8 +175,9 @@ export default function Catalog() {
           onSelectCategory={setSelectedCategory}
         />
       </div>
-
-      <div className={styles.productContainer}>
+      )}
+      {products.length > 0 && (
+        <div className={styles.productContainer}>
         <div className={styles.header}>
           <h3>Каталог роботов</h3>
           <div className={styles.selectViewContainer}>
@@ -362,6 +364,7 @@ export default function Catalog() {
           </div>
         </div>
       </div>
+      )}
       <CompletedProjectsSlider />
       <Question faqData={faqData} />
       <ContactUs theme={'catalog'}/>
