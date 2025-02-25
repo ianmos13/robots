@@ -12,7 +12,7 @@ export default function Question({faqData}) {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
+  if (faqData.length > 0) return (
     <div className={styles.container}>
       <TitleWithSeparator title="Ответы на вопросы" theme='catalog'/>
       <div className={styles.questionsList}>

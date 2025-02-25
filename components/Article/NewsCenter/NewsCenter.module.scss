@@ -1,0 +1,169 @@
+@import "/styles/variables";
+
+.centerContainer {
+  max-width: 1085px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Дополнительный класс для вложенного контента */
+.newsContent {
+  margin-bottom: 64px;
+  @media (max-width: 1600px) {
+    margin-bottom: 48px;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 64px;
+  }
+  @media (max-width: 640px) {
+    margin-bottom: 48px;
+  }
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      font-size: 56px;
+      line-height: 110%;
+      @media (max-width: 1600px) {
+        font-size: 48px;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 640px) {
+        font-size: 32px;
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      @media (max-width: 1600px) {
+        font-size: 40px;
+        line-height: 110%;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 640px) {
+        font-size: 24px;
+        line-height: 26.4px;
+      }
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      border-radius: 10px;
+      justify-content: flex-end;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          -83.57deg,
+          rgba(43, 117, 209, 0.21) 10.65%,
+          rgba(39, 84, 141, 0.44) 37.04%,
+          #1a3250 74.83%
+        );
+        z-index: 1;
+      }
+    }
+
+    .bannerContent {
+      z-index: 2;
+      color: $gray;
+      padding: 48px 50px;
+      max-height: 316px;
+      margin: 0 auto;
+      left: 0;
+      position: absolute;
+      background: unset;
+      .tag {
+        padding: 10px;
+        background-color: $main-blue;
+        color: $white;
+        border-radius: 7px;
+        width: max-content;
+        font-family: "DIN Pro medium", sans-serif;
+        @each $property, $value in $b18-medium {
+          #{$property}: #{$value};
+        }
+      }
+      .title {
+        font-family: "DIN Pro medium", sans-serif;
+        max-width: 551px;
+        font-size: 28px;
+        line-height: 36.4px;
+        letter-spacing: -0.02em;
+        margin-top: 30px;
+      }
+    }
+
+    .videoBackground {
+      width: 70%;
+    }
+    .substance {
+      border-radius: 10px;
+      padding: 30px;
+      background-color: $white;
+      margin-top: 32px;
+      .title {
+        font-family: "DIN Pro medium", sans-serif;
+        font-size: 28px;
+        line-height: 36.4px;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+        color: $dark-gray;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 20px;
+          position: relative;
+          padding-left: 20px;
+          color: $main-blue;
+          cursor: pointer;
+          font-family: "DIN Pro", sans-serif;
+          font-size: 18px;
+          line-height: 27px;
+          letter-spacing: -0.02em;
+        }
+        li::before {
+          content: "⬥";
+          position: absolute;
+          left: 0;
+          color: $main-blue;
+          font-size: 20px;
+        }
+      }
+    }
+    .takeOfferContainer {
+      margin-top: 32px;
+      .takeOfferText {
+        font-family: "DIN Pro", sans-serif;
+        font-size: 24px;
+        line-height: 31.2px;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+      }
+      .ctaButton {
+        transition: background-color 0.3s;
+        padding: 22px 30px;
+        font-family: "DIN Pro condensedbold", sans-serif;
+        color: $white;
+        background-color: $main-blue;
+        border-radius: 7px;
+        border: none;
+        font-size: 22px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+        &:hover {
+          background-color: $blue-hover;
+        }
+      }
+    }
+  }

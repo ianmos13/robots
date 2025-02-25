@@ -2,7 +2,7 @@ import styles from "./NewsCard.module.scss";
 
 export default function NewsCard({ id, image, title, date, slug }) {
   return (
-    <a href={`/news/${slug}`} className={styles.newsCard} key={id}>
+    <a href={`/articles/${slug}`} className={styles.newsCard} key={id}>
       <div className={styles.imageContainer}>
         <div className={styles.tag}>Тег</div>
         {image ? <img src={image} alt={title} /> : null}

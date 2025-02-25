@@ -27,7 +27,6 @@ export default function ProductCategoryGridSlider() {
 			? products
 			: products.filter(robot => robot.category === selectedCategory)
 
-	const totalFiltered = filteredRobots.length
 
 	useEffect(() => {
 		setCurrentIndex(0)
@@ -53,7 +52,7 @@ export default function ProductCategoryGridSlider() {
 	const handleShowAll = () => {
 		router.push('/catalog')
 	}
-	return (
+	if (products.length > 0) return (
 		<section className={styles.container}>
 			<TitleWithSeparator
 				theme='indexWithButton'

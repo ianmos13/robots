@@ -7,6 +7,7 @@ import NewsCard from "@/components/UI/NewsCard/NewsCard";
 import useDeviceType from "@/hooks/useDeviceType";
 import { useRouter } from "next/navigation";
 import useNews from "@/hooks/useNews";
+import useConvertedDate from "@/hooks/useConvertedDate";
 export default function NewsIndex() {
   const [itemsToShow, setItemsToShow] = useState(3);
   const { isTabletView, isMobileView } = useDeviceType();
@@ -23,10 +24,10 @@ export default function NewsIndex() {
   };
 
   const handleShowAll = () => {
-    router.push("/news");
+    router.push("/articles");
   };
 
-  return (
+  if (news.length > 0) return (
     <section className={styles.container}>
       <TitleWithSeparator
         theme={'news'}
@@ -41,7 +42,7 @@ export default function NewsIndex() {
             id={news.id}
             image={news.image}
             title={news.title}
-            date={news.date}
+            date={useConvertedDate(news.date)}
             slug={news.slug}
           />
         ))}

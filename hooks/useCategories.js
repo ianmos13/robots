@@ -8,5 +8,8 @@ export default function useCategories() {
         return {...category, link: `/catalog?category=${category.key}`}
     })
     return { categories, error, loading };
+    // const categories = productsCategories.map((category) => {
+    //     return {...category, link: `/catalog?category=${category.key}`}
+    // })
     // return { categories, error: null, loading: false };
 }

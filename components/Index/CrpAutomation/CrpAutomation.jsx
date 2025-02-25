@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import styles from "./CrpAutomation.module.scss";
-import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal"
+import { useState } from "react"
+import styles from "./CrpAutomation.module.scss"
+import VideoPlayer from '@/components/UI/VideoPlayer/VideoPlayer';
 
 const CrpAutomation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,17 +41,7 @@ const CrpAutomation = () => {
         </div>
 
         <div className={styles.centerBlock}>
-          <div className={styles.videoWrapper}>
-            <video autoPlay muted loop controls={false} style={{ width: "100%" }}>
-              <source
-                src="/test_video_2.webm"
-                type="video/mp4"
-              />
-            </video>
-            {/* <div className={styles.playIcon}>
-              <img src="/images/icons/play.svg" alt="play" />
-            </div> */}
-          </div>
+          <VideoPlayer videoPath='/test_video_2.webm'/>
         </div>
 
         <div className={styles.rightColumn}>

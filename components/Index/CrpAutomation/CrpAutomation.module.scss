@@ -6,7 +6,7 @@
     padding: 30px;
   }
   @media (max-width: 1024px) {
-    padding: 33px 20px 20px 20px;
+    padding: 33px 20px 52px 20px;
   }
   @media (max-width: 640px) {
     padding: 18px 10px 20px 10px;
@@ -99,7 +99,7 @@
     margin-bottom: 64px;
     width: 100%;
     @media (max-width: 1600px) {
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
     @media (max-width: 1024px) {
       margin-bottom: 24px;
@@ -121,6 +121,7 @@
         display: none;
       }
       .image {
+        border-radius: 10px;
         object-fit: cover;
         width: 100%;
       }
@@ -142,6 +143,9 @@
       max-width: unset;
       height: auto;
       aspect-ratio: 1.9319;
+    }
+    @media (max-width:640px) {
+      height: 237px;
     }
     .videoWrapper {
       position: relative;
@@ -289,7 +293,7 @@
   .ctaButton {
     transition: background-color 0.3s;
     padding: 19px 95px;
-    font-family: "DIN Pro condensedbold", sans-serif;
+    font-family: "DIN Pro condensedmedium", sans-serif;
     color: $white;
     background-color: $main-blue;
     border-radius: 7px;

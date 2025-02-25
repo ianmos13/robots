@@ -1,0 +1,141 @@
+@import "/styles/variables";
+
+.tableWrapper {
+    padding: 20px 20px 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid #0000001A;
+    margin-bottom: 96px;
+
+  @media (max-width: 1600px) {
+    padding: 20px 20px 30px 20px;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    display: block;
+    padding: 0;
+    border: 0;
+    margin-bottom: 24px;
+  }
+}
+.title {
+  margin-bottom: 40px;
+  margin-top: 64px;
+  letter-spacing: -2%;
+  @media (max-width: 1600px) {
+    margin-top: 48px;
+    font-size: 26px;
+    line-height: 33.8px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    display: block;
+    font-size: 24px;
+    line-height: 31.2px;
+    margin-bottom: 16px;
+  }
+}
+
+.tableContainer {
+  position: relative;
+  transform: rotate(180deg);
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    transform: rotate(180deg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $main-blue;
+    border-radius: 4px;
+
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+}
+
+.table {
+  transform: rotate(180deg);
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  border-radius: 20px;
+  font-family: "DIN Pro", sans-serif;
+
+  tr {
+      border-bottom: 1px solid #eee;
+  }
+
+  th,
+  td {
+    padding: 28px 40px 12px 8px;
+    text-align: left;
+
+    white-space: nowrap;
+    vertical-align: middle;
+    height: 64px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: -0.36px;
+    font-family: "DIN Pro", sans-serif;
+    opacity: 0.5;
+    width: 465px;  
+    white-space: normal;
+    overflow-wrap: break-word;
+    @media (max-width: 1600px) {
+      padding-right: 35px;
+      width: 378px;
+    }  
+  }
+  tr:first-child {
+    th {
+      padding-top: 64px;
+      @media (max-width: 1600px) {
+        padding-top: 46px;
+      }
+      @media (max-width: 640px) {
+        padding-top: 16px;
+      }
+    }
+  }
+  th:first-child {
+      opacity: 1;
+      font-family: "DIN Pro medium", sans-serif;
+      @each $property, $value in $b18-medium {
+          #{$property}: #{$value};
+        }
+  }
+  td:first-child {
+    color: $dark-gray;
+    opacity: 1;
+    @each $property, $value in $b18-medium {
+      #{$property}: #{$value};
+    }
+    font-family: "DIN Pro medium", sans-serif;
+    letter-spacing: -0.36px;
+  }
+
+  th:first-child {
+      color: $dark-gray;
+  }
+  tr{
+    th:first-child, td:first-child{
+      width: 300px;
+      @media (max-width:1600px) {
+        width: 192px;
+      }
+    }
+  }
+}

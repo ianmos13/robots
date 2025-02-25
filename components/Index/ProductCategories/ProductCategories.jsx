@@ -30,7 +30,7 @@ const ProductCategories = () => {
     router.push(`/catalog?category=${categoryKey}`);
   };
 
-  return (
+  if (categories.length > 0) return (
     <section className={styles.container}>
       <TitleWithSeparator title={"Категории продукции"} />
 

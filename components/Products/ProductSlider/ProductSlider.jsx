@@ -106,12 +106,12 @@ export default function ProductSlider({ productInfo }) {
             <h3>{productInfo.title}</h3>
           </div>
         )}
-        {productInfo.advantages && productInfo.advantages.length > 0 && (
+        {productInfo.advantages?.length > 0 && (
           <div className={styles.swiper}>
             <Swiper
               className={styles.swiperContainer}
               direction="horizontal"
-              slidesPerView="1.5"
+              slidesPerView={'auto'}
               spaceBetween={10}
             >
               {productInfo.advantages.map((advantage, index) => (
@@ -154,7 +154,7 @@ export default function ProductSlider({ productInfo }) {
         )}
         <div className={styles.productInfo}>
           {productInfo.title && <h3>{productInfo.title}</h3>}
-          {productInfo.advantages && productInfo.advantages.length > 0 && (
+          {productInfo.advantages?.length > 0 && (
             <div className={styles.advantagesContainer}>
               {productInfo.advantages.map((advantage, index) => (
                 <div className={styles.advantage} key={index}>
@@ -163,7 +163,7 @@ export default function ProductSlider({ productInfo }) {
               ))}
             </div>
           )}
-          {((productInfo.assignment && productInfo.assignment.length > 0) ||
+          {((productInfo.assignment?.length > 0) ||
               productInfo.armLength ||
               productInfo.payloadRange ||
             (productInfo.source && productInfo.source.length > 0)) && (
