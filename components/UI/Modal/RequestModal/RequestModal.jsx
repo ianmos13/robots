@@ -122,8 +122,8 @@ function validateName(name) {
 }
 
 function validatePhone(phone) {
-	const regex = /^(?:\+7\d{10}|\+375\d{9})$/
-	return regex.test(phone)
+  const regex = /^(?:\+7\d{10}|\+375\d{9}|\+374\d{8}|\+994\d{9}|\+996\d{9}|\+373\d{8}|\+992\d{9}|\+993\d{8}|\+998\d{9})$/;
+  return regex.test(phone);
 }
 
 function validateEmail(email) {

@@ -20,14 +20,14 @@
 
 .scrolled {
   .container {
-    padding-top: 0;
+    //padding-top: 0;
     box-shadow: 0 3px 40px 0 #0000001A;
-    @media (max-width: 1024px) {
-      height: 104px;
-    }
-    @media (max-width: 640px) {
-      height: 62px;
-    }
+    //@media (max-width: 1024px) {
+    //  height: 104px;
+    //}
+    //@media (max-width: 640px) {
+    //  height: 62px;
+    //}
   }
 }
 
@@ -159,12 +159,12 @@
                     visibility: visible;
                 }
 
-                &.scrolledDropdownMenu {
-                    top: 104px;
-                    @media (max-width: 640px) {
-                        top: 62px;
-                    }
-                }
+                //&.scrolledDropdownMenu {
+                //    top: 104px;
+                //    @media (max-width: 640px) {
+                //        top: 62px;
+                //    }
+                //}
             }
 
         }
@@ -201,9 +201,9 @@
             visibility: visible;
         }
 
-        &.activeScrolled {
-            top: 76px;
-        }
+        //&.activeScrolled {
+        //    top: 76px;
+        //}
     }
 
     .closeArea {

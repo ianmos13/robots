@@ -5,6 +5,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1600px) {
+    max-width: 900px;
+  }
 }
 
 /* Дополнительный класс для вложенного контента */
@@ -36,15 +39,34 @@
     h2 {
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      margin-bottom: 48px;
+      font-size: 48px;
+      line-height: 110%;
+      margin: 24px 0;
       @media (max-width: 1600px) {
         font-size: 40px;
-        line-height: 110%;
-        margin-bottom: 24px;
+        margin: 16px 0;
       }
       @media (max-width: 640px) {
         font-size: 24px;
-        line-height: 26.4px;
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-size: 30px;
+      line-height: 130%;
+      margin: 24px 0;
+      @media (max-width: 1600px) {
+        font-size: 26px;
+        margin: 16px 0;
+      }
+      @media (max-width: 1024px) {
+        font-size: 30px;
+        margin: 24px 0;
+      }
+      @media (max-width: 640px) {
+        font-size: 24px;
+        margin: 12px 0;
       }
     }
     .banner {

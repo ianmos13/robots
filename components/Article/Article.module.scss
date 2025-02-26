@@ -23,7 +23,10 @@
   gap: 52px;
   @media (max-width: 1600px) {
     justify-content: flex-start;
-    gap: 68px;
+    gap: 37px;
+  }
+  @media (max-width: 1380px) {
+    gap: 52px;
   }
   @media (max-width: 1094px) {
     gap: 40px;
@@ -37,6 +40,10 @@
   @media (max-width: 1600px) {
     max-width: 164px;
     min-width: 164px;
+    margin-right: 31px;
+  }
+  @media (max-width: 1380px) {
+    margin-right: 0;
   }
   @media (max-width: 1024px) {
     display: none;
@@ -55,6 +62,13 @@
     max-width: 882px;
   }
   @media (max-width: 1600px) {
+    max-width: unset;
+    min-width: 802px;
+  }
+  @media (max-width: 1380px) {
+    min-width: unset;
+  }
+  @media (max-width: 1180px) {
     max-width: 802px;
   }
   @media (max-width: 1066px) {
@@ -73,6 +87,10 @@
   align-self: flex-start;
   max-width: 414px;
   @media (max-width: 1600px) {
+    min-width: 250px;
+    max-width: 309px;
+  }
+  @media (max-width: 1380px) {
     display: none;
   }
 }

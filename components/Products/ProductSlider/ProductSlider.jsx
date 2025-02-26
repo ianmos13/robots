@@ -196,7 +196,7 @@ export default function ProductSlider({ productInfo }) {
                   </div>
                 </div>
               )}
-              {productInfo.source && productInfo.source.length > 0 && (
+              {/* {productInfo.source && productInfo.source.length > 0 && (
                 <div className={styles.sourceContainer}>
                   <div className={styles.sourceTitle}>Источник:</div>
                   <div className={styles.sourceGrid}>
@@ -207,7 +207,7 @@ export default function ProductSlider({ productInfo }) {
                     ))}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           )}
           <div className={styles.btnContainer}>

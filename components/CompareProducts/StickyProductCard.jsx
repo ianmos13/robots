@@ -14,7 +14,7 @@ export default function StickyProductCard({ item, onRemove }) {
       </div>
       <div className={styles.infoContainer}>
         <div className={styles.productTitle}>{item.title}</div>
-        <div className={styles.cardIcons}>
+        {/* <div className={styles.cardIcons}>
           <div className={styles.btn}>
             <FavoriteButton robot={item} />
           </div>
@@ -26,7 +26,7 @@ export default function StickyProductCard({ item, onRemove }) {
               onClick={onRemove}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

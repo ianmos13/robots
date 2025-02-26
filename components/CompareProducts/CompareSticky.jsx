@@ -72,10 +72,12 @@ export default function CompareSticky({
       <div className={styles.topControls}>
         <div className={styles.buttonContainer}>
           <div className={styles.leftContainer}>
-            <button className={styles.downloadButton} onClick={onDownloadExcel}>
+            {comparisons?.length > 0 && (
+              <button className={styles.downloadButton} onClick={onDownloadExcel}>
               <img src="/images/icons/download.svg" alt="download" />
               <span>Скачать таблицу</span>
             </button>
+            )}
             <button className={styles.addButton} onClick={goToCatalogPage}>
               <img src="/images/icons/plus.svg" alt="add" />
               <span>Добавить товар</span>
@@ -87,7 +89,7 @@ export default function CompareSticky({
               </button>
             )}
           </div>
-          {comparisons.length > maxVisibleItems && (
+          {comparisons?.length > maxVisibleItems && (
             <div className={styles.navControls}>
               <div className={`${styles.containerButton} ${styles.containerButtonSticky}`}>
                 <button

@@ -52,10 +52,12 @@ export default function CompareHeader({
         <div className={styles.topContainer}>
           <h3>Сравнение товаров</h3>
           <div className={styles.btnContainer}>
-            <button className={styles.downloadButton} onClick={onDownloadExcel}>
-              <img src="/images/icons/download.svg" alt="download" />
-              <span>Скачать таблицу</span>
-            </button>
+            {comparisons?.length > 0 && (
+              <button className={styles.downloadButton} onClick={onDownloadExcel}>
+                <img src="/images/icons/download.svg" alt="download" />
+                <span>Скачать таблицу</span>
+              </button>
+            )}
             <button className={styles.addButton}>
               <img
                   src="/images/icons/plus.svg"
