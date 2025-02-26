@@ -17,7 +17,6 @@ export default function ImageSlider({ images, isOpen, onClose }) {
 		swiperRef.current?.slideNext()
 	}
 	const handlePrev = () => {
-		console.log('Сработало')
 		swiperRef.current?.slidePrev()
 	}
 	return (
