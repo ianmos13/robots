@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./SubscribeAndShare.module.scss";
 
 export default function SubscribeAndShare() {
   const [copied, setCopied] = useState(false);
   const [notificationPosition, setNotificationPosition] = useState({ x: 0, y: 0 });
-  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  const [currentUrl, setCurrentUrl] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+    setMounted(true);
+  }, []);
 
   const handleCopyLink = (event) => {
     const { clientX, clientY } = event;
@@ -44,35 +50,37 @@ export default function SubscribeAndShare() {
               пользовательского соглашения
             </a>
           </div>
-          <div className={styles.shareContainer}>
-            <div className={styles.title}>Поделиться статьей:</div>
-            <div className={styles.icons}>
-              <a
-                href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/images/icons/tg.svg" alt="Поделиться через Telegram" />
-              </a>
-              <a
-                href={`https://vk.com/share.php?url=${encodeURIComponent(currentUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/images/icons/vk.svg" alt="Поделиться через VK" />
-              </a>
-              <a
-                href={`https://connect.ok.ru/offer?url=${encodeURIComponent(currentUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/images/icons/ok.svg" alt="Поделиться через Одноклассники" />
-              </a>
-              <div onClick={handleCopyLink} style={{ cursor: "pointer" }}>
-                <img src="/images/icons/share.svg" alt="Скопировать ссылку" />
+          {mounted && (
+            <div className={styles.shareContainer}>
+              <div className={styles.title}>Поделиться статьей:</div>
+              <div className={styles.icons}>
+                <a
+                  href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/images/icons/tg.svg" alt="Поделиться через Telegram" />
+                </a>
+                <a
+                  href={`https://vk.com/share.php?url=${encodeURIComponent(currentUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/images/icons/vk.svg" alt="Поделиться через VK" />
+                </a>
+                <a
+                  href={`https://connect.ok.ru/offer?url=${encodeURIComponent(currentUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/images/icons/ok.svg" alt="Поделиться через Одноклассники" />
+                </a>
+                <div onClick={handleCopyLink} style={{ cursor: "pointer" }}>
+                  <img src="/images/icons/share.svg" alt="Скопировать ссылку" />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       {copied && (
