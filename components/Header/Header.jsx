@@ -88,7 +88,7 @@ const Header = () => {
               </div>
               <div className={`${styles.locationWithIcons} ${openCatalog || openMobileMenu ? styles.hiddenElement : ''}`}>
                 <div className={styles.location}>
-                  <Location />
+                  {/*<Location />*/}
                 </div>
                 <div className={styles.floatingIcons}>
                   <FloatingIcons />

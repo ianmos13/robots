@@ -1,7 +1,7 @@
 @import "/styles/variables";
 
 .h3Container {
-  margin-bottom: 64px;
+  //margin-bottom: 64px;
   color: $dark-gray;
   @media (max-width: 1600px) {
     margin-bottom: 0;
@@ -9,6 +9,7 @@
 }
 
 .h3Container h3 {
+  margin-top: 0;
   margin-bottom: 40px;
   @media (max-width: 1600px) {
     font-size: 40px;

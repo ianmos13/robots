@@ -6,7 +6,7 @@ import useCategories from '@/hooks/useCategories';
 const CompareTable = ({ data, tableRef }) => {
   const { isTabletView, isMobileView } = useDeviceType();
   const { categories, error, loading } = useCategories();
-  if (!data.length) return null;
+  if (!data?.length) return null;
 
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0

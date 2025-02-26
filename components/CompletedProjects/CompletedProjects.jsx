@@ -28,25 +28,29 @@ export default function CompletedProjects({ title }) {
     <section className={styles.container}>
       <div className={styles.projectsContainer}>
         <h3>{title}</h3>
-        <div className={styles.projectsList}>
-          {visibleProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              image={project.image}
-              title={project.title}
-              tags={project.tags}
-              date={useConvertedDate(project.date)}
-              slug={project.slug}
-            />
-          ))}
-        </div>
-        {totalPages > 1 && (
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-            newsPageTheme={true}
-          />
+        {projects?.length > 0 && (
+          <>
+            <div className={styles.projectsList}>
+              {visibleProjects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  image={project.image}
+                  title={project.title}
+                  tags={project.tags}
+                  date={useConvertedDate(project.date)}
+                  slug={project.slug}
+                />
+              ))}
+            </div>
+            {totalPages > 1 && (
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+                newsPageTheme={true}
+              />
+            )}
+          </>
         )}
       </div>
     </section>

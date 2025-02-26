@@ -223,6 +223,7 @@
 		.assignmentItem {
 			display: flex;
 			gap: 10px;
+			flex-wrap: wrap;
 			@media (max-width: 640px) {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
