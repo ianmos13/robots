@@ -14,12 +14,12 @@ export default function Contacts() {
 							<div className={styles.buttonsContainer}>
 								<div className={styles.button}>
 									<a
-										href='https://t.me/your_telegram_link'
+										href='https://t.me/@crprobot_manager'
 										target='_blank'
 										rel='noopener noreferrer'
 										className={styles.telegram}
 									>
-										<img src='images/icons/tg-icon-blue.svg' alt='Telegram' />
+										<img src='/images/icons/tg-icon-blue.svg' alt='Telegram' />
 									</a>
 								</div>
 								<div className={styles.button}>
@@ -30,7 +30,7 @@ export default function Contacts() {
 										className={styles.whatsapp}
 									>
 										<img
-											src='images/icons/whatsapp-icon-blue.svg'
+											src='/images/icons/whatsapp-icon-blue.svg'
 											alt='WhatsApp'
 										/>
 									</a>
@@ -47,12 +47,12 @@ export default function Contacts() {
 							<div className={styles.buttonsContainer}>
 								<div className={styles.button}>
 									<a
-										href='https://t.me/your_telegram_link'
+										href='https://t.me/@crprobot_manager'
 										target='_blank'
 										rel='noopener noreferrer'
 										className={styles.telegram}
 									>
-										<img src='images/icons/tg-icon-blue.svg' alt='Telegram' />
+										<img src='/images/icons/tg-icon-blue.svg' alt='Telegram' />
 									</a>
 								</div>
 								<div className={styles.button}>
@@ -63,7 +63,7 @@ export default function Contacts() {
 										className={styles.whatsapp}
 									>
 										<img
-											src='images/icons/whatsapp-icon-blue.svg'
+											src='/images/icons/whatsapp-icon-blue.svg'
 											alt='WhatsApp'
 										/>
 									</a>
@@ -80,12 +80,12 @@ export default function Contacts() {
 							<div className={styles.buttonsContainer}>
 								<div className={styles.button}>
 									<a
-										href='https://t.me/your_telegram_link'
+										href='https://t.me/@crprobot_manager'
 										target='_blank'
 										rel='noopener noreferrer'
 										className={styles.telegram}
 									>
-										<img src='images/icons/tg-icon-blue.svg' alt='Telegram' />
+										<img src='/images/icons/tg-icon-blue.svg' alt='Telegram' />
 									</a>
 								</div>
 								<div className={styles.button}>
@@ -96,7 +96,7 @@ export default function Contacts() {
 										className={styles.whatsapp}
 									>
 										<img
-											src='images/icons/whatsapp-icon-blue.svg'
+											src='/images/icons/whatsapp-icon-blue.svg'
 											alt='WhatsApp'
 										/>
 									</a>

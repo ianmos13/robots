@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import styles from "./ImageSection.module.scss";
+import {normalizeUrl} from "@/utils/normalizeUrl";
 
-export default function ImageSection({ imgSrc, imgSrcs }) {
+export default function ImageSection({ imgSrc }) {
   let images = [];
   if (Array.isArray(imgSrc)) {
     images = imgSrc;
-  } else if (Array.isArray(imgSrcs)) {
-    images = imgSrcs;
   } else if (imgSrc) {
     images = [imgSrc];
   }
@@ -29,7 +28,7 @@ export default function ImageSection({ imgSrc, imgSrcs }) {
 
   return (
     <div className={styles.imgContainer}>
-      <img className={styles.sliderItem} src={images[currentIndex]} alt="" />
+      <img className={styles.sliderItem} src={normalizeUrl(images[currentIndex])} alt="" />
       {images.length > 1 && (
         <>
           <button

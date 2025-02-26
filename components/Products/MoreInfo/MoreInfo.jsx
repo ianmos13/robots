@@ -119,56 +119,53 @@ export default function MoreInfo({ productInfo }) {
         </div>
       )}
         <div className={styles.rightSection}>
-          {(addInfo.description?.length > 0 && addInfo.equipment?.length > 0) && (
-            <div className={styles.info}>
-              <h4>Информация</h4>
-              
-              <div className={styles.btnContainer}>
-                {addInfo.description?.length > 0 && (
-                  <div
-                    className={`${styles.btn} ${
-                      activeInfoTab === "description" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveInfoTab("description")}>
-                    Описание
-                  </div>
-                )}
-                {addInfo.equipment?.length > 0 && (
-                  <div
-                    className={`${styles.btn} ${
-                      activeInfoTab === "equipment" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveInfoTab("equipment")}>
-                    Комплектация
-                  </div>
-                )}
-              </div>
-              <div className={styles.addInfoList}>
-                {activeInfoTab === "description" &&
-                  addInfo.description?.length > 0 && (
-                    <>
-                      {addInfo.description.map((htmlStr, i) => (
-                        <div
-                          key={i}
-                          dangerouslySetInnerHTML={{ __html: htmlStr }}
-                        />
-                      ))}
-                    </>
-                  )}
-                {activeInfoTab === "equipment" &&
-                  addInfo.equipment?.length > 0 && (
-                    <>
-                      {addInfo.equipment.map((htmlStr, i) => (
-                        <div
-                          key={i}
-                          dangerouslySetInnerHTML={{ __html: htmlStr }}
-                        />
-                      ))}
-                    </>
-                  )}
-              </div>
+          <div className={styles.info}>
+            <h4>Информация</h4>
+            <div className={styles.btnContainer}>
+              {addInfo.description?.length > 0 && (
+                <div
+                  className={`${styles.btn} ${
+                    activeInfoTab === "description" ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveInfoTab("description")}>
+                  Описание
+                </div>
+              )}
+              {addInfo.equipment?.length > 0 && (
+                <div
+                  className={`${styles.btn} ${
+                    activeInfoTab === "equipment" ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveInfoTab("equipment")}>
+                  Комплектация
+                </div>
+              )}
             </div>
-          )}
+            <div className={styles.addInfoList}>
+              {activeInfoTab === "description" &&
+                addInfo.description?.length > 0 && (
+                  <>
+                    {addInfo.description.map((htmlStr, i) => (
+                      <div
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: htmlStr }}
+                      />
+                    ))}
+                  </>
+                )}
+              {activeInfoTab === "equipment" &&
+                addInfo.equipment?.length > 0 && (
+                  <>
+                    {addInfo.equipment.map((htmlStr, i) => (
+                      <div
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: htmlStr }}
+                      />
+                    ))}
+                  </>
+                )}
+            </div>
+          </div>
           {productInfo?.technicalTabs && (
             <div className={styles.technicalInfo}>
               <h4>Технические характеристики {productInfo?.title}</h4>

@@ -124,12 +124,14 @@ export default function ProductSlider({ productInfo }) {
         )}
         {safeImages.length > 0 && (
           <div className={styles.imageContainer}>
+            <div className={styles.mainImageContainer}>
             <img
               src={safeImages[currentImageIndex]}
               alt="Product"
               className={styles.mainImage}
               onClick={handleOpenImageSlider}
             />
+            </div>
             <button className={styles.arrowLeft} onClick={handlePrevImage}>
               <img src="/images/icons/arrow-left-filled.svg" alt="Предыдущий" />
             </button>
@@ -250,7 +252,7 @@ export default function ProductSlider({ productInfo }) {
               </div>
               <div className={styles.social}>
                 <a
-                  href="https://t.me/your_telegram_link"
+                  href="https://t.me/@crprobot_manager"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -284,7 +286,7 @@ export default function ProductSlider({ productInfo }) {
                 </div>
                 <div className={styles.socialMobile}>
                   <a
-                    href="https://t.me/your_telegram_link"
+                    href="https://t.me/@crprobot_manager"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
