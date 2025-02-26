@@ -93,7 +93,7 @@
 								font-size: 20px;
 								line-height: 26px;
 								letter-spacing: -0.03em;
-								color: #9ea8af;
+								color: #323232;
 								outline: none;
 								&::placeholder {
 									color: #9ea8af;
@@ -130,6 +130,13 @@
 						font-size: 14px;
 						line-height: 18.2px;
 						letter-spacing: -0.04em;
+						a {
+							color: #0149BF;
+							&:visited{
+								color: #0149BF;
+							}
+							text-decoration: underline;
+						}
 					}
 
 					.checkBox + label .customMarker {

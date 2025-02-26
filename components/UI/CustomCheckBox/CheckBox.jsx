@@ -37,7 +37,7 @@ export default function CheckBox({ value, onChange, checkForm }) {
 					</svg>
 				</span>
 				Заполняя форму, вы соглашаетесь на{' '}
-				<a href='#' target='_blank' rel='noreferrer'>
+				<a href='/privacy-policy' target='_blank' rel='noreferrer'>
 					обработку персональных данных
 				</a>
 			</label>

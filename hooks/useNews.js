@@ -1,4 +1,3 @@
-
 import useApi from '@/hooks/useApi';
 // import newsData from "@/public/data/news.json";
 
