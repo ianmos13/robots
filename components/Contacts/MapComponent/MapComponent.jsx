@@ -46,12 +46,12 @@ function CustomMarker({ position }) {
 function MapComponent() {
   return (
     <div className={styles.container}>
-      <MapContainer center={[55.255829, 37.427627]} zoom={10} className={styles.map}>
+      <MapContainer center={[55.889385, 37.444845]} zoom={10} className={styles.map}>
       <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
         />
-        <CustomMarker position={[55.159640, 37.421847]} />
+        <CustomMarker position={[55.948215, 37.339023]} />
       </MapContainer>
     </div>
   );

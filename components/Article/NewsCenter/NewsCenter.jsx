@@ -16,22 +16,24 @@ import LeaveRequestBanner from "@/components/UI/LeaveRequestBanner/LeaveRequestB
 import ScrollableTable from "../ScrollableTable/ScrollableTable";
 import SubscribeAndShare from "@/components/UI/SubscribeAndShare/SubscribeAndShare";
 import useConvertedDate from "@/hooks/useConvertedDate";
+import {isValidSubData} from "@/utils/validation";
 
 export default function NewsCenter({ data }) {
+
   return (
     <div className={styles.centerContainer}>
       <NewsInfo date={useConvertedDate(data?.date)} author={data?.author} />
       <div className={styles.newsContent}>
         <h1>{data?.title}</h1>
         { data?.videoUrl && (<Banner videoUrl={data.videoUrl} />) }
-        { data?.substance && (<Substance substance={data.substance} />) }
+        { data?.substance && isValidSubData(data?.substance) && (<Substance substance={data.substance} />) }
         { data?.takeOfferText && (<OfferSection text={data.takeOfferText} />) }
         { data?.imgBeforeH2 && (<ImageSection imgSrc={data.imgBeforeH2} />) }
-        { data?.detailsH3 && (<DetailsH3 details={data.detailsH3} />) }
+        { data?.detailsH3 && isValidSubData(data?.detailsH3) && (<DetailsH3 details={data.detailsH3} />) }
       </div>
       { data?.quotationText && (<Quotation text={data.quotationText} />) }
       { data?.sameRobots && (<SameRobotSlider robots={data.sameRobots}/>) }
-      { data?.detailsH4 && (
+      { data?.detailsH4 && isValidSubData(data?.detailsH4) && (
           <div className={styles.newsContent}>
             <DetailsH4 details={data.detailsH4} />
           </div>

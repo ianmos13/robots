@@ -136,8 +136,10 @@ export default function ContactUs({ theme }) {
 											/>
 										</svg>
 									</span>
-									Заполняя форму, вы соглашаетесь на обработку персональных
-									данных
+									Заполняя форму, вы соглашаетесь на {' '}
+									<a href='/privacy-policy' target='_blank' rel='noreferrer'>
+										обработку персональных данных
+									</a>
 								</label>
 							</div>
 						</div>
