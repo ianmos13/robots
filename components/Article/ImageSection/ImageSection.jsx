@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ImageSection.module.scss";
 
-export default function ImageSection({ imgSrc }) {
+export default function ImageSection({ imgSrc, imgSrcs }) {
+  let images = [];
+  if (Array.isArray(imgSrc)) {
+    images = imgSrc;
+  } else if (Array.isArray(imgSrcs)) {
+    images = imgSrcs;
+  } else if (imgSrc) {
+    images = [imgSrc];
+  }
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (images.length === 0) return null;
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className={styles.imgContainer}>
-      <img src={imgSrc} alt="" />
+      <img className={styles.sliderItem} src={images[currentIndex]} alt="" />
+      {images.length > 1 && (
+        <>
+          <button
+            className={`${styles.navButton} ${styles.left}`}
+            onClick={prevSlide}
+          >
+            <img src="/images/icons/prev-arrow-white.svg" alt="prev" />
+          </button>
+          <button
+            className={`${styles.navButton} ${styles.right}`}
+            onClick={nextSlide}
+          >
+            <img src="/images/icons/next-arrow-white.svg" alt="next" />
+          </button>
+        </>
+      )}
     </div>
   );
 }

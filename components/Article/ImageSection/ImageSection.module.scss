@@ -5,6 +5,9 @@
   margin: 64px 0;
   width: 100%;
   max-width: 1085px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.7287;
   @media (max-width: 1600px) {
     margin: 48px 0;
   }
@@ -12,18 +15,43 @@
     margin: 48px 0 80px 0;
   }
   @media (max-width: 640px) {
-    position: relative;
-    overflow: hidden;
+  
     aspect-ratio: 0.8586;
     margin: 48px 0 40px 0;
   }
 }
 
-.imgContainer img {
+.imgContainer .sliderItem {
   width: 100%;
   height: 100%;
-  @media (max-width: 640px) {
-    position: absolute;
-    object-fit: cover;
-  }
+  position: absolute;
+  object-fit: cover;
+
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
 }
