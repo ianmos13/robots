@@ -142,7 +142,7 @@ export default function Catalog() {
     return currentProducts.map((robot, index) => (
       <React.Fragment key={robot.id}>
         {activeView === 'cardView' ? (
-          <ProductCard robot={robot} />
+          <ProductCard robot={robot} theme={'catalog'}/>
         ) : (
           <ProductCardLong robot={robot} />
         )}
