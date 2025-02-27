@@ -13,6 +13,9 @@
     padding: 0px 0px 24px 10px;
   }
 
+ 
+  
+
   .compareWrapper {
     .header {
       display: flex;
@@ -470,4 +473,14 @@
       }
     }
   }
+}
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px; 
+  font-size: 24px;
+  color: $dark-gray;
+  text-align: center;
+  padding: 20px;
 }

@@ -2,41 +2,85 @@
   {
     "key": "welding",
     "name": "Сварочные роботы",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "polishing",
     "name": "Роботы для полировки",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "maintenance",
     "name": "Обслуживание станков",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "palletizing",
     "name": "Роботы для паллетирования",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "scara",
     "name": "Роботы SCARA",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "collaborative",
     "name": "Коллаборативные роботы",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "milling",
     "name": "Робот для фрезеровки",
+    "type": "robots",
     "image": "/images/welding-robot.svg"
   },
   {
     "key": "manipulator",
     "name": "Роботы манипуляторы",
+    "type": "robots",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_one",
+    "name": "Одноосевые",
+    "type": "positioners",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_two",
+    "name": "Двухосевые",
+    "type": "positioners",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_three",
+    "name": "Трёхосевые",
+    "type": "positioners",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_rotary",
+    "name": "Поворотные",
+    "type": "positioners",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_track",
+    "name": "Трек для робота",
+    "type": "positioners",
+    "image": "/images/welding-robot.svg"
+  },
+  {
+    "key": "axes_portal",
+    "name": "Портал для робота",
+    "type": "positioners",
     "image": "/images/welding-robot.svg"
   }
 ]

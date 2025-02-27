@@ -7,49 +7,50 @@ import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './CompletedProjectsSlider.module.scss'
+import useCompletedProjects from "@/hooks/useCompletedProjects";
 
-const projects = [
-	{
-		title: 'Замена роботов и оптимизация линии упаковки сахара',
-		description:
-			'Клиенту потребовалась замена вышедших из строя роботов другого производителя и модернизация линии упаковки сахара. Мы демонтировали неисправное оборудование, пересобрали системы управления, устранили предыдущие ошибки и установили два робота CRP-RA18-25. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.',
-		image: 'images/completed-project-catalog.svg',
-		tag: 'Металлоконструкции',
-		data: 'Cентябрь 2024',
-	},
-	{
-		title: 'Оптимизация производственного процесса',
-		description:
-			'Полная модернизация линии автоматизированной упаковки на основе манипуляторов CRP-RH14-10. Внедрение новых алгоритмов снизило потери на 15% и увеличило скорость упаковки на 20%.',
-		image: 'images/completed-project-catalog.svg',
-		tag: 'Металлоконструкции',
-		data: 'Cентябрь 2024',
-	},
-	{
-		title: 'Автоматизация сборочного процесса',
-		description:
-			'Внедрение автоматизированной сборочной линии с использованием роботов CRP-XYZ12. Увеличение производительности на 25% и снижение ошибок сборки на 5%.',
-		image: 'images/completed-project-catalog.svg',
-		tag: 'Металлоконструкции',
-		data: 'Cентябрь 2024',
-	},
-	{
-		title: 'Интеграция роботов в существующую систему',
-		description:
-			'Интеграция роботов CRP-ABC34 в существующую производственную линию. Обеспечена совместимость систем и повышение общей эффективности на 18%.',
-		image: 'images/completed-project-catalog.svg',
-		tag: 'Металлоконструкции',
-		data: 'Cентябрь 2024',
-	},
-	{
-		title: 'Оптимизация производственного процесса',
-		description:
-			'Полная модернизация линии автоматизированной упаковки на основе манипуляторов CRP-RH14-10. Внедрение новых алгоритмов снизило потери на 15% и увеличило скорость упаковки на 20%.',
-		image: 'images/completed-project-catalog.svg',
-		tag: 'Металлоконструкции',
-		data: 'Cентябрь 2024',
-	},
-]
+// const projects = [
+// 	{
+// 		title: 'Замена роботов и оптимизация линии упаковки сахара',
+// 		description:
+// 			'Клиенту потребовалась замена вышедших из строя роботов другого производителя и модернизация линии упаковки сахара. Мы демонтировали неисправное оборудование, пересобрали системы управления, устранили предыдущие ошибки и установили два робота CRP-RA18-25. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников. Работа линии восстановлена в рекордные сроки, сэкономив затраты на 10 сотрудников.',
+// 		image: 'images/completed-project-catalog.svg',
+// 		tag: 'Металлоконструкции',
+// 		data: 'Cентябрь 2024',
+// 	},
+// 	{
+// 		title: 'Оптимизация производственного процесса',
+// 		description:
+// 			'Полная модернизация линии автоматизированной упаковки на основе манипуляторов CRP-RH14-10. Внедрение новых алгоритмов снизило потери на 15% и увеличило скорость упаковки на 20%.',
+// 		image: 'images/completed-project-catalog.svg',
+// 		tag: 'Металлоконструкции',
+// 		data: 'Cентябрь 2024',
+// 	},
+// 	{
+// 		title: 'Автоматизация сборочного процесса',
+// 		description:
+// 			'Внедрение автоматизированной сборочной линии с использованием роботов CRP-XYZ12. Увеличение производительности на 25% и снижение ошибок сборки на 5%.',
+// 		image: 'images/completed-project-catalog.svg',
+// 		tag: 'Металлоконструкции',
+// 		data: 'Cентябрь 2024',
+// 	},
+// 	{
+// 		title: 'Интеграция роботов в существующую систему',
+// 		description:
+// 			'Интеграция роботов CRP-ABC34 в существующую производственную линию. Обеспечена совместимость систем и повышение общей эффективности на 18%.',
+// 		image: 'images/completed-project-catalog.svg',
+// 		tag: 'Металлоконструкции',
+// 		data: 'Cентябрь 2024',
+// 	},
+// 	{
+// 		title: 'Оптимизация производственного процесса',
+// 		description:
+// 			'Полная модернизация линии автоматизированной упаковки на основе манипуляторов CRP-RH14-10. Внедрение новых алгоритмов снизило потери на 15% и увеличило скорость упаковки на 20%.',
+// 		image: 'images/completed-project-catalog.svg',
+// 		tag: 'Металлоконструкции',
+// 		data: 'Cентябрь 2024',
+// 	},
+// ]
 const TruncatedText = ({ prj }) => {
 	const textRef = useRef(null)
 	const [isTruncated, setIsTruncated] = useState(false)
@@ -57,7 +58,7 @@ const TruncatedText = ({ prj }) => {
 
 	useEffect(() => {
 		const truncateText = () => {
-			const linkHTML = `<a href="/articles" class="${styles.mobileRead}">Читать далее</a>`
+			const linkHTML = `<a href="/completed-projects/${prj.slug}" class="${styles.mobileRead}">Читать далее</a>`
 			
 			const element = textRef.current
 			if (!element) return
@@ -97,7 +98,7 @@ const TruncatedText = ({ prj }) => {
 				{isTruncated ? (
 					<>
 						{displayText}{' '}
-						<a href='/articles' className={styles.mobileRead}>
+						<a href={`/completed-projects/${prj.slug}`} className={styles.mobileRead}>
 							Читать далее
 						</a>
 					</>
@@ -111,6 +112,7 @@ const TruncatedText = ({ prj }) => {
 
 export default function CompletedProjectsSlider() {
 	const swiperRef = useRef()
+	const { projects, error, loading } = useCompletedProjects();
 	const [activeButton, setActiveButton] = useState('')
 	const prevRef = useRef(null)
 	const nextRef = useRef(null)

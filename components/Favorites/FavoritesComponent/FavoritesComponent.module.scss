@@ -1,3 +1,4 @@
+@import "/styles/variables";
 .container {
 	padding: 0 30px 344px 30px;
 	@media (max-width:1600px) {
@@ -50,7 +51,16 @@
 		}
 	}
 }
-
+.emptyState {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px; 
+	font-size: 24px;
+	color: $dark-gray;
+	text-align: center;
+	padding: 20px;
+  }
 @media (max-width: 1024px) {
 	.container {
 		padding: 24px 20px 527px 20px;

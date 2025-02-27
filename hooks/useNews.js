@@ -4,6 +4,7 @@ import useApi from '@/hooks/useApi';
 export default function useNews() {
     const { data, error, loading } = useApi("news", "GET");
     const news = data && data.data ? data.data : [];
-    return { news, error, loading };
+    const filteredNews = news.filter((item) => item.type === "news")
+    return { news: filteredNews, error, loading };
     // return { news: newsData , error: null, loading: false };
 }

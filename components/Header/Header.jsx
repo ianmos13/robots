@@ -11,7 +11,7 @@ import ContactUsButtons from "@/components/UI/ContactUsButtons/ContactUsButtons"
 import CatalogPopup from "@/components/Header/CatalogPopup/CatalogPopup";
 import MenuButton from "@/components/Header/Buttons/MenuButton/MenuButton";
 import DropdownMenu from "@/components/Header/DropdownMenu/DropdownMenu";
-import Location from "@/components/Header/Location/Location";
+// import Location from "@/components/Header/Location/Location";
 import useCategories from "@/hooks/useCategories";
 import FloatingIcons from "@/components/UI/FloatingIcons/FloatingIcons";
 
@@ -113,16 +113,16 @@ const menuElements = [
         id: 1,
         title: "Позиционеры",
         ref: "positioners",
-        link: "/positioners",
+        link: "/catalog?type=positioners",
         order: 1,
     },
-    {
-        id: 2,
-        title: "Комплексные\u00A0решения",
-        ref: "integratedSolutions",
-        link: "/integrated-solutions",
-        order: 4,
-    },
+    // {
+    //     id: 2,
+    //     title: "Комплексные\u00A0решения",
+    //     ref: "integratedSolutions",
+    //     link: "/integrated-solutions",
+    //     order: 4,
+    // },
     {
         id: 3,
         title: "Реализованные\u00A0проекты",
@@ -130,13 +130,13 @@ const menuElements = [
         link: "/completed-projects",
         order: 5,
     },
-    {
-        id: 4,
-        title: "Периферийное\u00A0оборудование",
-        ref: "peripheralEquipment",
-        link: "/peripheral-equipment",
-        order: 6,
-    },
+    // {
+    //     id: 4,
+    //     title: "Периферийное\u00A0оборудование",
+    //     ref: "peripheralEquipment",
+    //     link: "/peripheral-equipment",
+    //     order: 6,
+    // },
     {
         id: 5,
         title: "О\u00A0компании",
@@ -154,20 +154,20 @@ const menuElements = [
                 title: "Новости",
                 link: "/articles",
             },
-            {
-                id: 52,
-                title: "О компании",
-                link: "/about",
-            },
+            // {
+            //     id: 52,
+            //     title: "О компании",
+            //     link: "/about",
+            // },
         ],
     },
-    {
-        id: 6,
-        title: "Лизинг\u00A0и\u00A0рассрочка",
-        ref: "leasingInstallments",
-        link: "/leasing-installments",
-        order: 7,
-    },
+    // {
+    //     id: 6,
+    //     title: "Лизинг\u00A0и\u00A0рассрочка",
+    //     ref: "leasingInstallments",
+    //     link: "/leasing-installments",
+    //     order: 7,
+    // },
     {
         id: 7,
         title: "Контакты",
@@ -176,54 +176,3 @@ const menuElements = [
         order: 3,
     },
 ]
-
-// const catalogElements = [
-//     {
-//         id: 1,
-//         name: "Сварочные роботы, серия RH",
-//         image: "/images/ventilation.webp",
-//         link: "/catalog?category=welding",
-//     },
-//     {
-//         id: 2,
-//         name: "Фрезерные роботы",
-//         image: "/images/projects.svg",
-//         link: "/catalog?category=milling",
-//     },
-//     {
-//         id: 3,
-//         name: "Роботы для обслуживания станков",
-//         image: "/images/ventilation.webp",
-//         link: "/catalog?category=maintenance",
-//     },
-//     {
-//         id: 4,
-//         name: "Полировочные роботы",
-//         image: "/images/projects.svg",
-//         link: "/catalog?category=polishing",
-//     },
-//     {
-//         id: 5,
-//         name: "Роботы манипуляторы",
-//         image: "/images/ventilation.webp",
-//         link: "/catalog?category=manipulator",
-//     },
-//     {
-//         id: 6,
-//         name: "Scara",
-//         image: "/images/projects.svg",
-//         link: "/catalog?category=scara",
-//     },
-//     {
-//         id: 7,
-//         name: "Коллаборативные роботы",
-//         image: "/images/ventilation.webp",
-//         link: "/catalog?category=collaborative",
-//     },
-//     {
-//         id: 8,
-//         name: "Роботы для паллетирования",
-//         image: "/images/projects.svg",
-//         link: "/catalog?category=palletizing",
-//     },
-// ]

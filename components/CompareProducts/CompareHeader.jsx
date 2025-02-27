@@ -58,11 +58,11 @@ export default function CompareHeader({
                 <span>Скачать таблицу</span>
               </button>
             )}
-            <button className={styles.addButton}>
+            <button className={styles.addButton} onClick={goToCatalogPage}>
               <img
                   src="/images/icons/plus.svg"
                   alt="add"
-                  onClick={goToCatalogPage}
+                  
               />{" "}
               <span>Добавить товар</span>
             </button>
