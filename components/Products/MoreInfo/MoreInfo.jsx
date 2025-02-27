@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./MoreInfo.module.scss";
+import {isValidSubData} from "@/utils/validation";
 
 export default function MoreInfo({ productInfo }) {
   if (!productInfo) return null;
@@ -300,11 +301,13 @@ export default function MoreInfo({ productInfo }) {
             </div>
           )}
 
-          <div className={styles.howItWorks}>
-            <h4>Посмотрите как это работает</h4>
-            <VideoPlayer videoPath="/test_video_2.webm" />
-          </div>
-          {productInfo?.containInfo && (
+          {productInfo?.howItWorksVideo && (
+              <div className={styles.howItWorks}>
+                <h4>Посмотрите как это работает</h4>
+                <VideoPlayer videoPath={productInfo.howItWorksVideo} />
+              </div>
+          )}
+          {productInfo?.containInfo && isValidSubData(productInfo?.containInfo) && (
             <div className={styles.robotContains}>
               <h4>Из чего состоит наш робот:</h4>
               <div className={styles.robotContainsSlider}>
@@ -314,13 +317,14 @@ export default function MoreInfo({ productInfo }) {
           )}
         </div>
       </div>
-      <div className={styles.gridContainer}>
-        <ProductCategoryGridPagination
-          title="Дополнительное оборудование"
-          ids={productInfo?.sameProductsIds || []}
-        />
-      </div>
-
+      {productInfo?.rows && isValidSubData(productInfo?.rows) && (
+        <div className={styles.gridContainer}>
+          <ProductCategoryGridPagination
+            title="Дополнительное оборудование"
+            ids={productInfo.rows || []}
+          />
+        </div>
+      )}
       <ContactUs theme={"products"} />
     </div>
   );

@@ -22,11 +22,11 @@ export default function Home() {
         <LeaveRequestBanner />
       </div>
       <ProductCategoryGridSlider />
-      <div className={styles.productPaginationGridContainer}>
-        <ProductCategoryGridPagination
-            title="Категории продукции"
-        />
-      </div>
+      {/*<div className={styles.productPaginationGridContainer}>*/}
+      {/*  <ProductCategoryGridPagination*/}
+      {/*      title="Категории продукции"*/}
+      {/*  />*/}
+      {/*</div>*/}
       <div className={styles.leaveRequestBannerContainer}>
         <LeaveRequestBanner />
       </div>

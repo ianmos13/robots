@@ -245,45 +245,51 @@
 					flex-direction: column;
 					gap: 55px;
 					padding-bottom: 140px;
-					.addInfo {
-						font-family: 'Din Pro', sans-serif;
-						font-size: 24px;
-						line-height: 31.2px;
-						letter-spacing: -0.02em;
-						color: #323232;
-					}
-					.addInfoList {
-						font-family: 'Din Pro', sans-serif;
-						font-size: 24px;
-						line-height: 31.2px;
-						letter-spacing: -0.02em;
-						color: #323232;
-						ul {
-							list-style-type: none;
-							padding-left: 0;
-							li {
-								position: relative;
-								padding-left: 25px;
-								margin-bottom: 14px;
-								&::before {
-									content: '•';
-									position: absolute;
-									left: 0;
-									color: #000;
-									font-size: 16px;
-								}
+					font-family: 'Din Pro', sans-serif;
+					font-size: 24px;
+					line-height: 31.2px;
+					letter-spacing: -0.02em;
+					color: #323232;
+					ul {
+						list-style-type: none;
+						padding-left: 0;
+						li {
+							position: relative;
+							padding-left: 25px;
+							margin-bottom: 14px;
+							&::before {
+								content: '•';
+								position: absolute;
+								left: 0;
+								color: #000;
+								font-size: 16px;
 							}
 						}
 					}
-					.addInfoСonclusion {
-						font-family: 'Din Pro Medium', sans-serif;
-						font-size: 24px;
-						line-height: 31.2px;
-						letter-spacing: -0.02em;
-						padding-left: 37px;
-						color: #2e363d;
-						border-left: 1px #004985 solid;
-					}
+
+					//.addInfo {
+					//	font-family: 'Din Pro', sans-serif;
+					//	font-size: 24px;
+					//	line-height: 31.2px;
+					//	letter-spacing: -0.02em;
+					//	color: #323232;
+					//}
+					//.addInfoList {
+					//	font-family: 'Din Pro', sans-serif;
+					//	font-size: 24px;
+					//	line-height: 31.2px;
+					//	letter-spacing: -0.02em;
+					//	color: #323232;
+					//}
+					//.addInfoСonclusion {
+					//	font-family: 'Din Pro Medium', sans-serif;
+					//	font-size: 24px;
+					//	line-height: 31.2px;
+					//	letter-spacing: -0.02em;
+					//	padding-left: 37px;
+					//	color: #2e363d;
+					//	border-left: 1px #004985 solid;
+					//}
 				}
 			}
 		}
@@ -456,46 +462,52 @@
 						flex-direction: column;
 						gap: 55px;
 						padding-bottom: 140px;
-						.addInfo {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-						}
-						.addInfoList {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							ul {
-								list-style-type: none;
-								padding-left: 0;
-								li {
-									position: relative;
-									padding-left: 25px;
-									margin-bottom: 14px;
-									&::before {
-										content: '•';
-										position: absolute;
-										left: 0;
-										color: #000;
-										font-size: 16px;
-									}
+						font-family: 'Din Pro', sans-serif;
+						font-size: 18px;
+						line-height: 31.2px;
+						letter-spacing: -0.02em;
+						color: #323232;
+						ul {
+							list-style-type: none;
+							padding-left: 0;
+							li {
+								position: relative;
+								padding-left: 25px;
+								margin-bottom: 14px;
+								&::before {
+									content: '•';
+									position: absolute;
+									left: 0;
+									color: #000;
+									font-size: 16px;
 								}
 							}
 						}
-						.addInfoСonclusion {
-							font-family: 'Din Pro Medium', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							padding-left: 37px;
-							color: #2e363d;
-							border-left: 1px #004985 solid;
-						}
+
+						//.addInfo {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoList {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoСonclusion {
+						//	font-family: 'Din Pro Medium', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//	padding-left: 37px;
+						//	color: #2e363d;
+						//	border-left: 1px #004985 solid;
+						//}
 					}
 				}
 				@media (max-width: 1200px) {
@@ -635,46 +647,51 @@
 						gap: 55px;
 						padding-top: 21px;
 						padding-bottom: 72px;
-						.addInfo {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-						}
-						.addInfoList {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							ul {
-								list-style-type: none;
-								padding-left: 0;
-								li {
-									position: relative;
-									padding-left: 25px;
-									margin-bottom: 14px;
-									&::before {
-										content: '•';
-										position: absolute;
-										left: 0;
-										color: #000;
-										font-size: 16px;
-									}
+						font-family: 'Din Pro', sans-serif;
+						font-size: 18px;
+						line-height: 31.2px;
+						letter-spacing: -0.02em;
+						color: #323232;
+						ul {
+							list-style-type: none;
+							padding-left: 0;
+							li {
+								position: relative;
+								padding-left: 25px;
+								margin-bottom: 14px;
+								&::before {
+									content: '•';
+									position: absolute;
+									left: 0;
+									color: #000;
+									font-size: 16px;
 								}
 							}
 						}
-						.addInfoСonclusion {
-							font-family: 'Din Pro Medium', sans-serif;
-							font-size: 18px;
-							line-height: 31.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							padding-left: 37px;
-							color: #2e363d;
-							border-left: 1px #004985 solid;
-						}
+						//.addInfo {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoList {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoСonclusion {
+						//	font-family: 'Din Pro Medium', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 31.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//	padding-left: 37px;
+						//	color: #2e363d;
+						//	border-left: 1px #004985 solid;
+						//}
 					}
 				}
 			}
@@ -904,46 +921,51 @@
 						flex-direction: column;
 						gap: 32px;
 						padding-bottom: 64px;
-						.addInfo {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 16px;
-							line-height: 19.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-						}
-						.addInfoList {
-							font-family: 'Din Pro', sans-serif;
-							font-size: 16px;
-							line-height: 19.2px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							ul {
-								list-style-type: none;
-								padding-left: 0;
-								li {
-									position: relative;
-									padding-left: 25px;
-									margin-bottom: 14px;
-									&::before {
-										content: '•';
-										position: absolute;
-										left: 0;
-										color: #000;
-										font-size: 16px;
-									}
+						font-family: 'Din Pro', sans-serif;
+						font-size: 16px;
+						line-height: 19.2px;
+						letter-spacing: -0.02em;
+						color: #323232;
+						ul {
+							list-style-type: none;
+							padding-left: 0;
+							li {
+								position: relative;
+								padding-left: 25px;
+								margin-bottom: 14px;
+								&::before {
+									content: '•';
+									position: absolute;
+									left: 0;
+									color: #000;
+									font-size: 16px;
 								}
 							}
 						}
-						.addInfoСonclusion {
-							font-family: 'Din Pro Medium', sans-serif;
-							font-size: 18px;
-							line-height: 21.6px;
-							letter-spacing: -0.02em;
-							color: #323232;
-							padding-left: 37px;
-							color: #2e363d;
-							border-left: 1px #004985 solid;
-						}
+						//.addInfo {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 16px;
+						//	line-height: 19.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoList {
+						//	font-family: 'Din Pro', sans-serif;
+						//	font-size: 16px;
+						//	line-height: 19.2px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//}
+						//.addInfoСonclusion {
+						//	font-family: 'Din Pro Medium', sans-serif;
+						//	font-size: 18px;
+						//	line-height: 21.6px;
+						//	letter-spacing: -0.02em;
+						//	color: #323232;
+						//	padding-left: 37px;
+						//	color: #2e363d;
+						//	border-left: 1px #004985 solid;
+						//}
 					}
 				}
 			}

@@ -49,6 +49,9 @@
 				display: flex;
 				flex-direction: column;
 				gap: 24px;
+				a{
+					text-decoration: none;
+				}
 
 				.buttonsContainer {
 					display: flex;

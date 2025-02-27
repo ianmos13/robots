@@ -87,7 +87,7 @@ const RequestModal = ({ isOpen, onClose, text }) => {
           <div className={styles.header}>
             <div className={styles.title}>ВАША ЗАЯВКА ОТПРАВЛЕНА</div>
             <div className={styles.desciption}>
-              В ближайшее время наш специалист свяжется с вами
+              В ближайшее время <br /> наш специалист свяжется с вами
             </div>
           </div>
         ) : (
