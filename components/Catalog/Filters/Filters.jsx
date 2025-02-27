@@ -5,15 +5,14 @@ import styles from "./Filters.module.scss";
 const DEFAULT_PAYLOAD_MIN = 0;
 const DEFAULT_PAYLOAD_MAX = 2500;
 const DEFAULT_REACH_MIN = 0;
-const DEFAULT_REACH_MAX = 1000;
 
-export default function Filters({ selectedFilters, onChangeFilters }) {
+export default function Filters({ selectedFilters, onChangeFilters, maxReach }) {
+  const DEFAULT_REACH_MAX = maxReach || 1000;
   const [isApplicationOpen, setIsApplicationOpen] = useState(true);
   const [isAxesOpen, setIsAxesOpen] = useState(false);
   const [isPayloadOpen, setIsPayloadOpen] = useState(false);
   const [isReachOpen, setIsReachOpen] = useState(false);
   const [isWeightOpen, setIsWeightOpen] = useState(false);
-
 
   const applications = [
     "Сварка",
@@ -41,7 +40,6 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     DEFAULT_REACH_MAX,
   ]);
   const [robotWeight, setRobotWeight] = useState("");
-
 
   useEffect(() => {
     const payloadFilter = selectedFilters.find((f) =>
@@ -73,7 +71,7 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
     } else {
       setRobotWeight("");
     }
-  }, [selectedFilters]);
+  }, [selectedFilters, DEFAULT_REACH_MAX]);
 
   const isAppSelected = (app) =>
     selectedFilters.includes(`Область применения: ${app}`);
@@ -114,8 +112,7 @@ export default function Filters({ selectedFilters, onChangeFilters }) {
 
   const updateReachFilter = (minVal, maxVal) => {
     const label = `Охват: ${minVal}-${maxVal} мм`;
-    const isDefault =
-      minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX;
+    const isDefault = minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX;
     const withoutOld = selectedFilters.filter((f) => !f.startsWith("Охват: "));
     if (!isDefault) {
       onChangeFilters([...withoutOld, label]);

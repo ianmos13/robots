@@ -26,13 +26,13 @@ export default function NewsCenter({ data }) {
       <div className={styles.newsContent}>
         <h1>{data?.title}</h1>
         { data?.videoUrl && (<Banner videoUrl={data.videoUrl} />) }
-        { data?.substance && isValidSubData(data?.substance) && (<Substance substance={data.substance} />) }
-        { data?.takeOfferText && (<OfferSection text={data.takeOfferText} />) }
-        { data?.imgBeforeH2 && (<ImageSection imgSrc={data.imgBeforeH2} />) }
+        { data?.detailsH2?.substance && isValidSubData(data?.detailsH2?.substance) && (<Substance substance={data?.detailsH2?.substance} />) }
+        { data?.detailsH2?.takeOfferText && (<OfferSection text={data.detailsH2.takeOfferText} />) }
+        { data?.imagesSlider && isValidSubData(data?.imagesSlider) && (<ImageSection imgSrc={data.imagesSlider} />) }
         { data?.detailsH3 && isValidSubData(data?.detailsH3) && (<DetailsH3 details={data.detailsH3} />) }
       </div>
       { data?.quotationText && (<Quotation text={data.quotationText} />) }
-      { data?.sameRobots && (<SameRobotSlider robots={data.sameRobots}/>) }
+      { data?.rows && (<SameRobotSlider robots={data.rows}/>) }
       { data?.detailsH4 && isValidSubData(data?.detailsH4) && (
           <div className={styles.newsContent}>
             <DetailsH4 details={data.detailsH4} />

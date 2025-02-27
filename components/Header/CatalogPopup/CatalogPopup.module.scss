@@ -41,10 +41,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
+    overflow-y: auto;
+    height: 516px;
+    @media (max-width: 1600px) {
+        height: 404px;
+    }
     @media (max-width: 1024px) {
         width: 100%;
         gap: 10px;
+        height: calc(100vh - 246px);
     }
 
     .buttonContainer {

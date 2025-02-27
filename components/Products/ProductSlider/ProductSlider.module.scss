@@ -204,6 +204,7 @@
 		display: flex;
 		gap: 10px;
 		margin-top: 32px;
+		flex-wrap: wrap;
 		@media (max-width: 1440px) {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);

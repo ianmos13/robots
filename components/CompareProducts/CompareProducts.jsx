@@ -11,7 +11,7 @@ import {
   removeFromCompare,
 } from "@/redux/features/compareSlice";
 import styles from "./CompareProducts.module.scss";
-import useCategories from '@/hooks/useCategories';
+import useCategories from "@/hooks/useCategories";
 
 export default function CompareProducts() {
   const dispatch = useDispatch();
@@ -24,13 +24,16 @@ export default function CompareProducts() {
   const [isSticky, setIsSticky] = useState(false);
   const [hideSticky, setHideSticky] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-  const { categories, error, loading } = useCategories();
+  const { categories } = useCategories();
   const { isMobileView, isTabletView } = useDeviceType();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
+  // Флаг для контроля монтирования на клиенте
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -47,6 +50,7 @@ export default function CompareProducts() {
     maxVisibleItems = 4;
   }
 
+  // Функции прокрутки
   const scrollLeft = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
@@ -115,12 +119,11 @@ export default function CompareProducts() {
       currentIndex + maxVisibleItems
     );
 
-    const extractValues = ( label) => {
+    const extractValues = (label) => {
       return exportData.map((product) => {
         const cellValue =
-          product?.technicalTable?.find(
-            (row) => row.label === label
-          )?.values || "-";
+          product?.technicalTable?.find((row) => row.label === label)?.values ||
+          "-";
         return fixExcelValue(cellValue);
       });
     };
@@ -161,7 +164,7 @@ export default function CompareProducts() {
         "Максимальная скорость движения по Осям"
       ),
       "Ширина базы": extractValues("Ширина"),
-      "Длина базы": extractValues( "Длина"),
+      "Длина базы": extractValues("Длина"),
       "Высота базы": extractValues("Высота"),
       "Диаметр фланца": extractValues("Диаметр фланца"),
       "Количество отверстий": extractValues("Количество отверстий"),
@@ -212,7 +215,6 @@ export default function CompareProducts() {
           maxLength = Math.max(maxLength, cellValue.length);
         }
       });
-
       worksheet.getColumn(i).width = maxLength + 2;
     }
 
@@ -230,7 +232,10 @@ export default function CompareProducts() {
   };
 
   useEffect(() => {
-    if (sliderRef.current && sliderRef.current.children.length > currentIndex) {
+    if (
+      sliderRef.current &&
+      sliderRef.current.children.length > currentIndex
+    ) {
       const activeCard = sliderRef.current.children[currentIndex];
       sliderRef.current.scrollTo({
         left: activeCard.offsetLeft,
@@ -266,47 +271,58 @@ export default function CompareProducts() {
 
   return (
     <div className={styles.container}>
-      <div ref={headerRef}>
-        <CompareHeader
-          comparisons={comparisons}
-          currentIndex={currentIndex}
-          maxVisibleItems={maxVisibleItems}
-          onScrollLeft={scrollLeft}
-          onScrollRight={scrollRight}
-          onClearComparison={openConfirmModal}
-          sliderRef={sliderRef}
-          onRemoveItem={handleRemoveFromCompare}
-          onRemoveCategory={handleRemoveCategory}
-          categoryList={categories}
-          onDownloadExcel={handleDownloadExcel}
-        />
-      </div>
+      {(!hasMounted || comparisons.length === 0) ? (
+        <div className={styles.emptyState}>
+          {hasMounted && <p>Нет товаров для сравнения</p>}
+        </div>
+      ) : (
+        <>
+          <div ref={headerRef}>
+            <CompareHeader
+              comparisons={comparisons}
+              currentIndex={currentIndex}
+              maxVisibleItems={maxVisibleItems}
+              onScrollLeft={scrollLeft}
+              onScrollRight={scrollRight}
+              onClearComparison={openConfirmModal}
+              sliderRef={sliderRef}
+              onRemoveItem={handleRemoveFromCompare}
+              onRemoveCategory={handleRemoveCategory}
+              categoryList={categories}
+              onDownloadExcel={handleDownloadExcel}
+            />
+          </div>
 
-      {isSticky && !hideSticky && (
-        <CompareSticky
-          comparisons={comparisons}
-          currentIndex={currentIndex}
-          maxVisibleItems={maxVisibleItems}
-          onScrollLeft={scrollLeft}
-          onScrollRight={scrollRight}
-          onClearComparison={openConfirmModal}
-          sliderRef={sliderRef}
-          onRemoveItem={handleRemoveFromCompare}
-          onDownloadExcel={handleDownloadExcel}
-        />
+          {isSticky && !hideSticky && (
+            <CompareSticky
+              comparisons={comparisons}
+              currentIndex={currentIndex}
+              maxVisibleItems={maxVisibleItems}
+              onScrollLeft={scrollLeft}
+              onScrollRight={scrollRight}
+              onClearComparison={openConfirmModal}
+              sliderRef={sliderRef}
+              onRemoveItem={handleRemoveFromCompare}
+              onDownloadExcel={handleDownloadExcel}
+            />
+          )}
+
+          <CompareTable
+            data={comparisons.slice(
+              currentIndex,
+              currentIndex + maxVisibleItems
+            )}
+            tableRef={tableRef}
+          />
+          <div ref={stopStickyRef} className={styles.stopSticky}></div>
+          <ConfirmModal
+            isOpen={isConfirmModalOpen}
+            message="ВЫ действительно хотите удалить товары?"
+            onConfirm={confirmClear}
+            onCancel={cancelClear}
+          />
+        </>
       )}
-
-      <CompareTable
-        data={comparisons.slice(currentIndex, currentIndex + maxVisibleItems)}
-        tableRef={tableRef}
-      />
-      <div ref={stopStickyRef} className={styles.stopSticky}></div>
-      <ConfirmModal
-        isOpen={isConfirmModalOpen}
-        message="ВЫ действительно хотите удалить товары?"
-        onConfirm={confirmClear}
-        onCancel={cancelClear}
-      />
     </div>
   );
 }
