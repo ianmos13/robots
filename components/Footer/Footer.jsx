@@ -231,64 +231,64 @@ const footerFilterElements = [
             }
         ],
     },
-    {
-        id: 3,
-        name: "Комплексные решения",
-        ref: 'integrated',
-        children: [
-
-            {
-                id: 30,
-                name: "Сварочные решения",
-                link: "/catalog?scopes=welding",
-            },
-            {
-                id: 31,
-                name: "Обслуживание станков",
-                link: "/catalog?scopes=cnc",
-            },
-            {
-                id: 32,
-                name: "Шлифовка и полировка",
-                link: "/catalog?scopes=polishing",
-            },
-            {
-                id: 33,
-                name: "Лазерная и плазменная резка",
-                link: "/catalog?scopes=laserCutting",
-            },
-            {
-                id: 34,
-                name: "Обслуживание конвейерных систем",
-                link: "/catalog?scopes=conveyorLine",
-            },
-            {
-                id: 35,
-                name: "Паллетирование",
-                link: "/catalog?scopes=palletizing",
-            },
-            {
-                id: 36,
-                name: "Маркировка",
-                link: "/catalog?scopes=bendingStampingPress",
-            },
-            {
-                id: 37,
-                name: "Фрезеровка",
-                link: "/catalog?scopes=milling",
-            },
-            {
-                id: 38,
-                name: "Укладка и паллетирование",
-                link: "/catalog?scopes=palletizing",
-            },
-            {
-                id: 39,
-                name: "Производство поддонов",
-                link: "/catalog?scopes=metalBending",
-            }
-        ],
-    },
+    // {
+    //     id: 3,
+    //     name: "Комплексные решения",
+    //     ref: 'integrated',
+    //     children: [
+    //
+    //         {
+    //             id: 30,
+    //             name: "Сварочные решения",
+    //             link: "/catalog?scopes=welding",
+    //         },
+    //         {
+    //             id: 31,
+    //             name: "Обслуживание станков",
+    //             link: "/catalog?scopes=cnc",
+    //         },
+    //         {
+    //             id: 32,
+    //             name: "Шлифовка и полировка",
+    //             link: "/catalog?scopes=polishing",
+    //         },
+    //         {
+    //             id: 33,
+    //             name: "Лазерная и плазменная резка",
+    //             link: "/catalog?scopes=laserCutting",
+    //         },
+    //         {
+    //             id: 34,
+    //             name: "Обслуживание конвейерных систем",
+    //             link: "/catalog?scopes=conveyorLine",
+    //         },
+    //         {
+    //             id: 35,
+    //             name: "Паллетирование",
+    //             link: "/catalog?scopes=palletizing",
+    //         },
+    //         {
+    //             id: 36,
+    //             name: "Маркировка",
+    //             link: "/catalog?scopes=bendingStampingPress",
+    //         },
+    //         {
+    //             id: 37,
+    //             name: "Фрезеровка",
+    //             link: "/catalog?scopes=milling",
+    //         },
+    //         {
+    //             id: 38,
+    //             name: "Укладка и паллетирование",
+    //             link: "/catalog?scopes=palletizing",
+    //         },
+    //         {
+    //             id: 39,
+    //             name: "Производство поддонов",
+    //             link: "/catalog?scopes=metalBending",
+    //         }
+    //     ],
+    // },
     {
         id: 4,
         name: "Проекты автоматизации",
@@ -318,16 +318,16 @@ const footerFilterElements = [
     },
 ];
 const footerLinks = [
-    {
-        id: 1,
-        name: "Периферийное оборудование",
-        link: "/peripheral-equipment",
-    },
-    {
-        id: 2,
-        name: "О компании",
-        link: "/about",
-    },
+    // {
+    //     id: 1,
+    //     name: "Периферийное оборудование",
+    //     link: "/peripheral-equipment",
+    // },
+    // {
+    //     id: 2,
+    //     name: "О компании",
+    //     link: "/about",
+    // },
     {
         id: 3,
         name: "Блог",

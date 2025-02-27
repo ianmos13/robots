@@ -48,7 +48,6 @@
     #{$property}: #{$value};
     @media (max-width: 640px) {
       font-size: 16px;
-
       line-height: 130%;
       letter-spacing: -0.32px;
     }
@@ -86,10 +85,30 @@
   @each $property, $value in $b18-medium {
     #{$property}: #{$value};
   }
+
+  ul {
+    margin-top: 14px;
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 14px;
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #000;
+        font-size: 16px;
+      }
+    }
+  }
+
+
 }
 
 .show {
-  max-height: 100px;
+  max-height: 1000px;
   opacity: 1;
   margin-top: 70px;
 }

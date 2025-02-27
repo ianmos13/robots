@@ -1,9 +1,7 @@
 import styles from "./Question.module.scss";
 import TitleWithSeparator from "../TitleWithSeparator/TitleWithSeparator";
-import { useState } from "react";
-
-
-
+import React, { useState } from "react";
+import {sanitizeData} from "@/utils/sanitizeHtmlText";
 
 export default function Question({faqData}) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -28,11 +26,9 @@ export default function Question({faqData}) {
                 />
               </button>
             </div>
-            <div
-              className={`${styles.answer} ${openIndex === index ? styles.show : ""}`}
-            >
-              {item.answer}
-            </div>
+            <div className={`${styles.answer} ${openIndex === index ? styles.show : ""}`}
+                 dangerouslySetInnerHTML={{ __html: sanitizeData(item.answer) }}
+            />
           </div>
         ))}
       </div>

@@ -20,6 +20,8 @@ import styles from './Catalog.module.scss'
 import CompletedProjectsSlider from './CompletedProjectsSlider/CompletedProjectsSlider'
 import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
+import catalogData from '@/public/data/catalogData.json'
+import {sanitizeData} from "@/utils/sanitizeHtmlText";
 
 export default function Catalog() {
   const { categories } = useCategories();
@@ -30,10 +32,15 @@ export default function Catalog() {
   const [currentPage, setCurrentPage] = useState(1);
   const { isTabletView, isMobileView, isDesktopView } = useDeviceType();
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
+  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.allPositioners);
 
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    const catalogTypeParam = searchParams.get('type');
+    if (catalogTypeParam) {
+      setCurrentCatalogData(catalogData[catalogTypeParam])
+    }
     const categoryParam = searchParams.get('category');
     if (categoryParam) {
       setSelectedCategory(categoryParam);
@@ -326,69 +333,22 @@ export default function Catalog() {
                   catalogPageTheme={true}
                 />
               )}
-              <div className={styles.addInfoContainer}>
-                <div className={styles.addInfo}>
-                  Функция мгновенной коррекции сварочных параметров может
-                  использоваться для сварки сложных изделий, где требуется
-                  мгновенное изменение тока и напряжения непосредственно во время
-                  сварочного процесса. Необходимо лишь задать новые сварочные
-                  параметры в требуемой точке и во время сварочного процесса
-                  именно в этом месте произойдет мгновенное изменение тока и
-                  напряжения.
-                </div>
-                <div className={styles.addInfoList}>
-                  <ul>
-                    <li>Высокое качество и эстетику лицевых сварочных швов;</li>
-                    <li>Высокую производительность и скорость сварки;</li>
-                    <li>На устранение дефектов сварочных швов;</li>
-                    <li>Сварка листов 1,0 мм проволокой диаметром 1,2 мм;</li>
-                    <li>
-                      Улучшенная ремонтопригодность позволяет смазывать оси робота
-                      без съема горелки;
-                    </li>
-                    <li>Быстрый, легкий в обслуживании дизайн;</li>
-                  </ul>
-                </div>
-                <div className={styles.addInfoСonclusion}>
-                  Бескомпромиссное качество роботизированной сварки и разработки
-                  компании в области робототехники, сварочных технологий и
-                  оборудования привели к появлению новейших технологий, которые
-                  перевели роботизированную сварку на качественно новый уровень и
-                  обеспечили:
-                </div>
-              </div>
+              { currentCatalogData.about && (
+                  <div
+                      className={styles.addInfoContainer}
+                      dangerouslySetInnerHTML={{ __html: sanitizeData(currentCatalogData?.about) }}
+                  />
+              )}
             </div>
           </div>
         </div>
       )}
       <CompletedProjectsSlider />
-      <Question faqData={faqData} />
+      {currentCatalogData?.questions && (<Question faqData={currentCatalogData?.questions} />)}
       <ContactUs theme={'catalog'} />
     </section>
   );
 }
-
-const faqData = [
-  {
-    question: 'Почему промышленная автоматизация важна',
-    answer:
-      'Промышленная автоматизация позволяет повысить производительность...',
-  },
-  {
-    question: 'Область применения систем автоматизации',
-    answer: 'Системы автоматизации используются в автомобилестроении...',
-  },
-  {
-    question: 'Развитие сферы роботизации',
-    answer:
-      'Роботизация активно развивается благодаря внедрению искусственного интеллекта...',
-  },
-  {
-    question: 'Какие преимущества даёт автоматизация?',
-    answer:
-      'Снижение затрат, повышение качества продукции, ускорение процессов...',
-  },
-];
 
 const applicationFilters = {
   welding: 'Сварка',

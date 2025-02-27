@@ -12,7 +12,7 @@ export default function ContactUsButtons(props) {
       <div className={styles.social}>
         <a
           className={styles.telegram}
-          href="https://t.me/@crprobot_manager"
+          href="https://t.me/crprobot_manager"
           target="_blank"
           rel="noopener noreferrer"
         >
