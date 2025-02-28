@@ -13,7 +13,9 @@ const ProductCategories = () => {
   const swiperRef = useRef(null)
   const [activeButton, setActiveButton] = useState("");
   const router = useRouter();
-	const { categories, error, loading } = useCategories();
+  const { categories, error, loading } = useCategories();
+  const selectedCategories = categories?.promyshlennyeRoboty?.children || []
+
   const handlePrevClick = () => {
     swiperRef.current?.slidePrev()
     setActiveButton("prev");
@@ -26,20 +28,20 @@ const ProductCategories = () => {
     setTimeout(() => setActiveButton(""), 300); 
   };
 
-  const handleCategoryClick = (categoryKey) => {
-    router.push(`/catalog?category=${categoryKey}`);
+  const handleCategoryClick = (categoryLink) => {
+    router.push(categoryLink);
   };
 
-  if (categories.length > 0) return (
+  if (selectedCategories.length > 0) return (
     <section className={styles.container}>
-      <TitleWithSeparator title={"Категории продукции"} />
+      <TitleWithSeparator title={"Категории промышленных роботов"} />
 
       <div className={styles.grid}>
-        {categories.map((category, index) => (
+        {selectedCategories.map((category, index) => (
           <div
             key={index}
             className={styles.card}
-            onClick={() => handleCategoryClick(category.key)}
+            onClick={() => handleCategoryClick(category.link)}
           >
             <div className={styles.imageContainer}>
               <img
@@ -67,11 +69,11 @@ const ProductCategories = () => {
           onSwiper={swiper => (swiperRef.current = swiper)}
           modules={[Navigation]}
         >
-          {categories.map((category, index) => (
+          {selectedCategories.map((category, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <div
                 className={styles.card}
-                onClick={() => handleCategoryClick(category.key)}
+                onClick={() => handleCategoryClick(category.link)}
               >
                 <div className={styles.imageContainer}>
                   <img

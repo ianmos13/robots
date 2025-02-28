@@ -10,6 +10,7 @@ import PdfButton from '../Buttons/PdfButton/PdfButton'
 import CategoryTags from '../CategoryTags/CategoryTags'
 import TitleWithSeparator from '../TitleWithSeparator/TitleWithSeparator'
 import styles from './ProductCategoryGridSlider.module.scss'
+import {makeAllCategories} from "@/utils/makeAllCategories";
 
 export default function ProductCategoryGridSlider() {
 	const swiperRef = useRef()
@@ -20,7 +21,7 @@ export default function ProductCategoryGridSlider() {
 	const { categories } = useCategories()
 	const { products } = useProducts()
 	const router = useRouter()
-	const allCategories = [{ key: 'all', name: 'Все роботы' }, ...categories]
+	const allCategories = makeAllCategories(categories?.pozitsionery)
 
 	const filteredRobots =
 		selectedCategory === 'all'
@@ -36,7 +37,6 @@ export default function ProductCategoryGridSlider() {
 		setIsHoveredCard(value)
 }
 
-
 	const handleNext = () => {
 		swiperRef.current?.slideNext()
 		setActiveButton('next')
@@ -50,13 +50,13 @@ export default function ProductCategoryGridSlider() {
 	}
 
 	const handleShowAll = () => {
-		router.push('/catalog')
+		router.push("/catalog?type=pozitsionery")
 	}
 	if (products.length > 0) return (
 		<section className={styles.container}>
 			<TitleWithSeparator
 				theme='indexWithButton'
-				title='Категории продукции'
+				title='Категории позиционеров'
 				addButton='Посмотреть все модели'
 				onClick={handleShowAll}
 			/>

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CompareTable.module.scss";
-import useDeviceType from "@/hooks/useDeviceType";
-import useCategories from '@/hooks/useCategories';
 
-const CompareTable = ({ data, tableRef }) => {
-  const { isTabletView, isMobileView } = useDeviceType();
-  const { categories, error, loading } = useCategories();
+const CompareTable = ({ data, categories, tableRef }) => {
   if (!data?.length) return null;
 
   const [windowWidth, setWindowWidth] = useState(

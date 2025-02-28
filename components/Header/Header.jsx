@@ -22,6 +22,7 @@ const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { categories } = useCategories();
+  const robotsCategories = categories?.promyshlennyeRoboty?.children || []
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -78,7 +79,7 @@ const Header = () => {
                           } ${scrolled ? styles.scrolledDropdownMenu : ''}`}>
                           <DropdownMenu
                               menuElements={menuElements}
-                              catalogElements={categories}
+                              catalogElements={robotsCategories}
                           />
                       </div>
                   </div>
@@ -95,7 +96,7 @@ const Header = () => {
                 </div>
               </div>
               <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }  ${scrolled ? styles.activeScrolled : ''}`}>
-                <CatalogPopup catalogElements={categories} openCatalog={openCatalogPopup} />
+                <CatalogPopup catalogElements={robotsCategories} openCatalog={openCatalogPopup} />
               </div>
               {openCatalog && (<div
                     className={styles.closeArea}
@@ -113,7 +114,7 @@ const menuElements = [
         id: 1,
         title: "Позиционеры",
         ref: "positioners",
-        link: "/catalog?type=positioners",
+        link: "/catalog?type=pozitsionery",
         order: 1,
     },
     // {

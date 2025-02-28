@@ -22,25 +22,28 @@ import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
 import catalogData from '@/public/data/catalogData.json'
 import {sanitizeData} from "@/utils/sanitizeHtmlText";
+import {makeAllCategories} from "@/utils/makeAllCategories";
 
 export default function Catalog() {
-  const { categories } = useCategories();
+  const { categories, loading } = useCategories();
   const { products } = useProducts();
+  const [selectedType, setSelectedType] = useState('promyshlennyeRoboty');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [filteredCategories, setFilteredCategories] = useState([]);
   const [activeView, setActiveView] = useState('cardView');
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { isTabletView, isMobileView, isDesktopView } = useDeviceType();
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
-  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.allPositioners);
-
+  const [title, setTitle] = useState("Категории роботов");
+  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty);
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const catalogTypeParam = searchParams.get('type');
     if (catalogTypeParam) {
-      setCurrentCatalogData(catalogData[catalogTypeParam])
-    }
+      setSelectedType(catalogTypeParam)
+   }
     const categoryParam = searchParams.get('category');
     if (categoryParam) {
       setSelectedCategory(categoryParam);
@@ -57,12 +60,15 @@ export default function Catalog() {
         `Область применения: ${applicationFilters[scopeParam]}`,
       ];
     }
-    
     const uniqueFilterParams = Array.from(new Set(filterParams));
     setSelectedFilters(uniqueFilterParams);
   }, [searchParams]);
 
-  const allCategories = [{ key: 'all', name: 'Все роботы' }, ...categories];
+  useEffect(() => {
+    setFilteredCategories(makeAllCategories(categories[selectedType]))
+    setTitle(selectedType === 'promyshlennyeRoboty' ? "Категории промышленных роботов" : selectedType ==='pozitsionery' ? "Категории позиционеров" : "Категории роботов")
+    setCurrentCatalogData(catalogData[`${selectedType}${selectedCategory}`])
+  },[loading, selectedCategory, selectedType])
 
   const filteredRobots = useMemo(() => {
     let filtered = products || [];
@@ -173,11 +179,11 @@ export default function Catalog() {
 
   return (
     <section className={styles.container}>
-      {allCategories.length > 0 && products.length > 0 && (
+      {filteredCategories.length > 0 && products.length > 0 && (
         <div className={styles.categoryContainer}>
-          <h3>Категории роботов</h3>
+          <h3>{title}</h3>
           <CategoryTags
-            categories={allCategories}
+            categories={filteredCategories}
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
@@ -333,10 +339,10 @@ export default function Catalog() {
                   catalogPageTheme={true}
                 />
               )}
-              { currentCatalogData.about && (
+              { currentCatalogData?.about && (
                   <div
                       className={styles.addInfoContainer}
-                      dangerouslySetInnerHTML={{ __html: sanitizeData(currentCatalogData?.about) }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeData(currentCatalogData.about) }}
                   />
               )}
             </div>

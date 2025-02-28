@@ -9,6 +9,7 @@ import DropdownElement from "@/components/UI/DropdownElement/DropdownElement";
 import {usePathname} from "next/navigation";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 import useCategories from "@/hooks/useCategories";
+import {makeAllCategories} from "@/utils/makeAllCategories";
 
 const Footer = () => {
     const pathname = usePathname();
@@ -37,7 +38,10 @@ const Footer = () => {
     };
 
     const renderFilterElement = (el, idx) => {
-        const element = el.ref === 'industrial' ? { ...el, children: categories } : el
+        const categoriesNames = ['promyshlennyeRoboty', 'pozitsionery']
+        const element = (categoriesNames.includes(el.ref)) ?
+            { ...el, children: makeAllCategories(categories[el.ref]) } :
+            el
         return (
             <>
                 <div className={styles.desktopElement} >
@@ -106,9 +110,9 @@ const Footer = () => {
                   <div className={styles.footerContacts}>
                       <div className={styles.footerContactsInfo}>
                           <ContactUsButtons theme="footer" />
-                          <div className={styles.footerContactsEmail}>
+                          <a href="mailto:info@crp-robot.ru" className={styles.footerContactsEmail}>
                               info<span>@</span>crp-robot.ru
-                          </div>
+                          </a>
                       </div>
                       <div className={styles.footerContactsButton}>
                         <DefaultButton
@@ -187,49 +191,12 @@ const footerFilterElements = [
     {
         id: 1,
         name: "Промышленные роботы",
-        ref: 'industrial',
+        ref: 'promyshlennyeRoboty',
     },
     {
         id: 2,
         name: "Позиционеры",
-        ref: 'positioners',
-        children: [
-            {
-                id: 20,
-                name: "Все позиционеры",
-                link: "/catalog",
-            },
-            {
-                id: 21,
-                name: "Одноосевые",
-                link: "/catalog?axes=1",
-            },
-            {
-                id: 22,
-                name: "Двухосевые",
-                link: "/catalog?axes=2",
-            },
-            {
-                id: 23,
-                name: "Трёхосевые",
-                link: "/catalog?axes=3",
-            },
-            {
-                id: 24,
-                name: "Поворотные",
-                link: "/catalog",
-            },
-            {
-                id: 25,
-                name: "Трек для робота",
-                link: "/catalog",
-            },
-            {
-                id: 26,
-                name: "Портал для робота",
-                link: "/catalog",
-            }
-        ],
+        ref: 'pozitsionery',
     },
     // {
     //     id: 3,
