@@ -5,17 +5,15 @@ export default function Substance({ substance }) {
   return (
     <div className={styles.substance}>
       <div className={styles.title}>Содержание</div>
-      <ul>
-        {Array.isArray(substance) ? (
-            <>
+      {Array.isArray(substance) ? (
+        <ul>
             { substance.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li className={styles.substanceItem} key={index}>{item}</li>
             ))}
-            </>
-        ) : (
-            <li>{substance}</li>
-        )}
-      </ul>
+        </ul>
+      ) : (
+          <div className={styles.substanceItem}>{substance}</div>
+      )}
     </div>
   );
 }

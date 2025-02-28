@@ -23,22 +23,31 @@ export default function NewsCenter({ data }) {
   return (
     <div className={styles.centerContainer}>
       <NewsInfo date={useConvertedDate(data?.date)} author={data?.author} />
-      <div className={styles.newsContent}>
-        <h1>{data?.title}</h1>
-        { data?.videoUrl && (<Banner videoUrl={data.videoUrl} />) }
-        { data?.detailsH2?.substance && isValidSubData(data?.detailsH2?.substance) && (<Substance substance={data?.detailsH2?.substance} />) }
-        { data?.detailsH2?.takeOfferText && (<OfferSection text={data.detailsH2.takeOfferText} />) }
-        { data?.imagesSlider && isValidSubData(data?.imagesSlider) && (<ImageSection imgSrc={data.imagesSlider} />) }
-        { data?.detailsH3 && isValidSubData(data?.detailsH3) && (<DetailsH3 details={data.detailsH3} />) }
-      </div>
+      <h1>{data?.title}</h1>
+      { data?.videoUrl && (<Banner videoUrl={data.videoUrl} />) }
+
+      { data?.detailsH2 && isValidSubData(data.detailsH2) && (
+          <div className={styles.newsContent} style={{order: data.detailsH2.sort}}>
+              { data.detailsH2?.substance && isValidSubData(data.detailsH2?.substance) && (<Substance substance={data?.detailsH2?.substance} />) }
+              { data.detailsH2?.takeOfferText && (<OfferSection text={data.detailsH2.takeOfferText} />) }
+              { data.imagesSlider && isValidSubData(data?.imagesSlider) && (<ImageSection imgSrc={data.imagesSlider} />) }
+          </div>
+      )}
+      { data?.detailsH3 && isValidSubData(data?.detailsH3) && (
+          <div className={styles.newsContent} style={{order: data.detailsH3.sort}}>
+            <DetailsH3 details={data.detailsH3} />
+          </div>
+      )}
       { data?.quotationText && (<Quotation text={data.quotationText} />) }
       { data?.rows && (<SameRobotSlider robots={data.rows}/>) }
       { data?.detailsH4 && isValidSubData(data?.detailsH4) && (
-          <div className={styles.newsContent}>
+          <div className={styles.newsContent} style={{order: data.detailsH4.sort}}>
             <DetailsH4 details={data.detailsH4} />
           </div>
       ) }
-      <LeaveRequestBanner size={'news'}/>
+      <div className={styles.newsContent}>
+        <LeaveRequestBanner size={'news'}/>
+      </div>
       { data?.technicalVideoUrl && (<VideoSection src={data.technicalVideoUrl}/> )}
       { data?.technicalTable && (<ScrollableTable data={data.technicalTable} /> )}
       <SubscribeAndShare />

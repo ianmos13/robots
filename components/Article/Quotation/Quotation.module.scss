@@ -12,11 +12,17 @@
   display: flex;
   flex-direction: row;
   gap: 112px;
+  margin-top: 64px;
   @media (max-width: 1600px) {
+    margin-top: 48px;
     gap: 33px;
     min-height: 250px;
   }
+  @media (max-width: 1024px) {
+    margin-top: 64px;
+  }
   @media (max-width: 640px) {
+    margin-top: 48px;
     flex-direction: column;
     gap: 64px;
     padding: 30px 30px 38px 30px;

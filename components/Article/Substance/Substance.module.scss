@@ -4,10 +4,17 @@
   border-radius: 10px;
   padding: 30px;
   background-color: $white;
-  margin-top: 32px;
+  margin-top: -32px;
   @media (max-width: 1600px) {
-    margin-top: 24px;
+    margin-top: -24px;
   }
+  @media (max-width: 1024px) {
+    margin-top: -32px;
+  }
+  @media (max-width: 640px) {
+    margin-top: -24px;
+  }
+
   ul {
     list-style: none;
     padding-left: 0;
@@ -20,7 +27,6 @@
     position: relative;
     padding-left: 20px;
     color: $main-blue;
-    cursor: pointer;
     font-family: "DIN Pro", sans-serif;
     letter-spacing: -0.02em;
 
@@ -36,7 +42,29 @@
     color: $main-blue;
     font-size: 20px;
   }
+}
 
+.substanceItem {
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+  color: $main-blue;
+  font-family: "DIN Pro", sans-serif;
+  letter-spacing: -0.02em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "⬥";
+    position: absolute;
+    left: 0;
+    color: $main-blue;
+    font-size: 20px;
+  }
 }
 
 .title {

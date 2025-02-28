@@ -13,6 +13,7 @@
 .moreInfoContainer {
   display: flex;
   gap: 110px;
+  margin-bottom: 100px;
   @media (max-width: 1325px) {
     gap: 50px;
   }
@@ -22,6 +23,10 @@
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 48px;
+  }
+
+  @media (max-width: 640px) {
+    margin-bottom: 48px;
   }
 
   .sidebar {
@@ -91,6 +96,7 @@
       justify-content: center;
       align-items: center;
       min-width: 340px;
+      cursor: pointer;
       transition: background-color 0.3s;
       padding: 20px;
       font-family: "DIN Pro medium", sans-serif;
@@ -183,6 +189,53 @@
       @media (max-width: 640px) {
         line-height: 27px;
         gap: 28px;
+      }
+      h2 {
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        font-size: 48px;
+        line-height: 110%;
+        margin: 24px 0;
+        @media (max-width: 1600px) {
+          font-size: 40px;
+          margin: 16px 0;
+        }
+        @media (max-width: 640px) {
+          font-size: 24px;
+        }
+      }
+      h3 {
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        font-size: 30px;
+        line-height: 130%;
+        margin: 24px 0;
+        @media (max-width: 1600px) {
+          font-size: 26px;
+          margin: 16px 0;
+        }
+        @media (max-width: 1024px) {
+          font-size: 30px;
+          margin: 24px 0;
+        }
+        @media (max-width: 640px) {
+          font-size: 24px;
+          margin: 12px 0;
+        }
+      }
+      h4 {
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        font-size: 24px;
+        line-height: 130%;
+        margin: 12px 0;
+        @media (max-width: 640px) {
+          font-size: 20px;
+          margin: 12px 0;
+        }
+      }
+      a {
+        color: #0149BF;
       }
       ul {
         list-style-type: none;
@@ -484,10 +537,10 @@
 
 .gridContainer {
   margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   @media (max-width: 640px) {
     margin-top: 48px;
-    margin-bottom: 57px;
+    margin-bottom: 27px;
   }
 }
 

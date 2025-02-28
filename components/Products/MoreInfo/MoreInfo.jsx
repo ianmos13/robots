@@ -1,7 +1,6 @@
 "use client";
 import RobotContainSlider from "@/components/Products/RobotContainSlider/RobotContainSlider";
 import DownloadRobotInfoButton from "@/components/UI/Buttons/DownloadRobotInfoButton/DownloadRobotInfoButton";
-import ContactUs from "@/components/UI/ContactUs/ContactUs";
 import ProductCategoryGridPagination from "@/components/UI/ProductCategoryGridPagination/ProductCategoryGridPagination";
 import VideoPlayer from "@/components/UI/VideoPlayer/VideoPlayer";
 import { useState } from "react";
@@ -12,12 +11,13 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./MoreInfo.module.scss";
 import {isValidSubData} from "@/utils/validation";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
 export default function MoreInfo({ productInfo }) {
   if (!productInfo) return null;
 
   const [activeInfoTab, setActiveInfoTab] = useState("description");
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTechnicalTab, setActiveTechnicalTab] = useState("axes");
   const [showAllRows, setShowAllRows] = useState(false);
   const MAX_VISIBLE_ROWS = 9;
@@ -35,6 +35,12 @@ export default function MoreInfo({ productInfo }) {
     }
   };
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const mergeTechnicalRows = (data) => {
     if (!data) return [];
@@ -131,7 +137,12 @@ export default function MoreInfo({ productInfo }) {
                 ))}
               </Swiper>
             </div>
-            <div className={styles.requestButton}>Оставить заявку</div>
+            <div
+                className={styles.requestButton}
+                onClick={handleOpenModal}
+            >
+              Оставить заявку
+            </div>
           </div>
         )}
         <div className={styles.rightSection}>
@@ -278,7 +289,7 @@ export default function MoreInfo({ productInfo }) {
             </div>
           )}
 
-          {technicalInfo.technicalInfoFile && (
+          {productInfo.technicalInfoFile && (
             <div
               className={styles.downloadContainer}
               onClick={() => window.open(productInfo?.technicalInfoFile)}
@@ -325,7 +336,11 @@ export default function MoreInfo({ productInfo }) {
           />
         </div>
       )}
-      <ContactUs theme={"products"} />
+      <RequestModal
+          isOpen={isModalOpen}
+          text={"Оставьте заявку"}
+          onClose={handleCloseModal}
+      />
     </div>
   );
 }

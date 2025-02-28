@@ -1,18 +1,19 @@
-import Slider from "@mui/material/Slider";
-import { useEffect, useState } from "react";
-import styles from "./Filters.module.scss";
+import Slider from "@mui/material/Slider"
+import { useEffect, useState } from "react"
+import styles from "./Filters.module.scss"
 
-const DEFAULT_PAYLOAD_MIN = 0;
-const DEFAULT_PAYLOAD_MAX = 2500;
-const DEFAULT_REACH_MIN = 0;
+const DEFAULT_PAYLOAD_MIN = 0
+const DEFAULT_REACH_MIN = 0
 
-export default function Filters({ selectedFilters, onChangeFilters, maxReach }) {
-  const DEFAULT_REACH_MAX = maxReach || 1000;
-  const [isApplicationOpen, setIsApplicationOpen] = useState(true);
-  const [isAxesOpen, setIsAxesOpen] = useState(false);
-  const [isPayloadOpen, setIsPayloadOpen] = useState(false);
-  const [isReachOpen, setIsReachOpen] = useState(false);
-  const [isWeightOpen, setIsWeightOpen] = useState(false);
+export default function Filters({ selectedFilters, onChangeFilters, maxReach, maxPayload }) {
+  const DEFAULT_PAYLOAD_MAX = maxPayload || 2500
+  const DEFAULT_REACH_MAX = maxReach || 1000
+
+  const [isApplicationOpen, setIsApplicationOpen] = useState(true)
+  const [isAxesOpen, setIsAxesOpen] = useState(false)
+  const [isPayloadOpen, setIsPayloadOpen] = useState(false)
+  const [isReachOpen, setIsReachOpen] = useState(false)
+  const [isWeightOpen, setIsWeightOpen] = useState(false)
 
   const applications = [
     "Сварка",
@@ -28,163 +29,151 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
     "Полировка",
     "Гибка металла",
     "SCARA",
-  ];
-  const axesOptions = [1, 2, 3, 4];
+  ]
+  const axesOptions = [1, 2, 3, 4]
 
-  const [payloadRange, setPayloadRange] = useState([
-    DEFAULT_PAYLOAD_MIN,
-    DEFAULT_PAYLOAD_MAX,
-  ]);
-  const [reachRange, setReachRange] = useState([
-    DEFAULT_REACH_MIN,
-    DEFAULT_REACH_MAX,
-  ]);
-  const [robotWeight, setRobotWeight] = useState("");
+  const [payloadRange, setPayloadRange] = useState([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX])
+  const [reachRange, setReachRange] = useState([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX])
+  const [robotWeight, setRobotWeight] = useState("")
 
   useEffect(() => {
-    const payloadFilter = selectedFilters.find((f) =>
+    const payloadFilter = selectedFilters.find(f =>
       f.startsWith("Грузоподъёмность: ")
-    );
+    )
     if (payloadFilter) {
-      const rangeStr = payloadFilter
-        .replace("Грузоподъёмность: ", "")
-        .replace(" кг", "");
-      const [minStr, maxStr] = rangeStr.split("-");
-      setPayloadRange([parseInt(minStr, 10), parseInt(maxStr, 10)]);
+      const rangeStr = payloadFilter.replace("Грузоподъёмность: ", "").replace(" кг", "")
+      const [minStr, maxStr] = rangeStr.split("-")
+      setPayloadRange([parseInt(minStr, 10), parseInt(maxStr, 10)])
     } else {
-      setPayloadRange([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX]);
+      setPayloadRange([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX])
     }
 
-    const reachFilter = selectedFilters.find((f) => f.startsWith("Охват: "));
+    const reachFilter = selectedFilters.find(f => f.startsWith("Охват: "))
     if (reachFilter) {
-      const rangeStr = reachFilter.replace("Охват: ", "").replace(" мм", "");
-      const [minStr, maxStr] = rangeStr.split("-");
-      setReachRange([parseInt(minStr, 10), parseInt(maxStr, 10)]);
+      const rangeStr = reachFilter.replace("Охват: ", "").replace(" мм", "")
+      const [minStr, maxStr] = rangeStr.split("-")
+      setReachRange([parseInt(minStr, 10), parseInt(maxStr, 10)])
     } else {
-      setReachRange([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX]);
+      setReachRange([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX])
     }
 
-    const weightFilter = selectedFilters.find((f) => f.startsWith("Вес: "));
+    const weightFilter = selectedFilters.find(f => f.startsWith("Вес: "))
     if (weightFilter) {
-      const val = weightFilter.replace("Вес: ", "").replace(" кг", "");
-      setRobotWeight(val);
+      const val = weightFilter.replace("Вес: ", "").replace(" кг", "")
+      setRobotWeight(val)
     } else {
-      setRobotWeight("");
+      setRobotWeight("")
     }
-  }, [selectedFilters, DEFAULT_REACH_MAX]);
+  }, [selectedFilters, DEFAULT_PAYLOAD_MAX, DEFAULT_REACH_MAX])
 
-  const isAppSelected = (app) =>
-    selectedFilters.includes(`Область применения: ${app}`);
-  const isAxisSelected = (axis) =>
-    selectedFilters.includes(`Кол-во осей: ${axis}`);
+  const isAppSelected = (app) => selectedFilters.includes(`Область применения: ${app}`)
+  const isAxisSelected = (axis) => selectedFilters.includes(`Кол-во осей: ${axis}`)
 
   const toggleApplication = (app) => {
-    const label = `Область применения: ${app}`;
+    const label = `Область применения: ${app}`
     if (isAppSelected(app)) {
-      onChangeFilters(selectedFilters.filter((f) => f !== label));
+      onChangeFilters(selectedFilters.filter(f => f !== label))
     } else {
-      onChangeFilters([...selectedFilters, label]);
+      onChangeFilters([...selectedFilters, label])
     }
-  };
+  }
 
   const toggleAxis = (axis) => {
-    const label = `Кол-во осей: ${axis}`;
+    const label = `Кол-во осей: ${axis}`
     if (isAxisSelected(axis)) {
-      onChangeFilters(selectedFilters.filter((f) => f !== label));
+      onChangeFilters(selectedFilters.filter(f => f !== label))
     } else {
-      onChangeFilters([...selectedFilters, label]);
+      onChangeFilters([...selectedFilters, label])
     }
-  };
+  }
 
   const updatePayloadFilter = (minVal, maxVal) => {
-    const label = `Грузоподъёмность: ${minVal}-${maxVal} кг`;
-    const isDefault =
-      minVal === DEFAULT_PAYLOAD_MIN && maxVal === DEFAULT_PAYLOAD_MAX;
-    const withoutOld = selectedFilters.filter(
-      (f) => !f.startsWith("Грузоподъёмность: ")
-    );
+    const label = `Грузоподъёмность: ${minVal}-${maxVal} кг`
+    const isDefault = minVal === DEFAULT_PAYLOAD_MIN && maxVal === DEFAULT_PAYLOAD_MAX
+    const withoutOld = selectedFilters.filter(f => !f.startsWith("Грузоподъёмность: "))
     if (!isDefault) {
-      onChangeFilters([...withoutOld, label]);
+      onChangeFilters([...withoutOld, label])
     } else {
-      onChangeFilters(withoutOld);
+      onChangeFilters(withoutOld)
     }
-  };
+  }
 
   const updateReachFilter = (minVal, maxVal) => {
-    const label = `Охват: ${minVal}-${maxVal} мм`;
-    const isDefault = minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX;
-    const withoutOld = selectedFilters.filter((f) => !f.startsWith("Охват: "));
+    const label = `Охват: ${minVal}-${maxVal} мм`
+    const isDefault = minVal === DEFAULT_REACH_MIN && maxVal === DEFAULT_REACH_MAX
+    const withoutOld = selectedFilters.filter(f => !f.startsWith("Охват: "))
     if (!isDefault) {
-      onChangeFilters([...withoutOld, label]);
+      onChangeFilters([...withoutOld, label])
     } else {
-      onChangeFilters(withoutOld);
+      onChangeFilters(withoutOld)
     }
-  };
+  }
 
   const updateWeightFilter = (val) => {
-    const label = `Вес: ${val} кг`;
-    const withoutOld = selectedFilters.filter((f) => !f.startsWith("Вес: "));
+    const label = `Вес: ${val} кг`
+    const withoutOld = selectedFilters.filter(f => !f.startsWith("Вес: "))
     if (!val) {
-      onChangeFilters(withoutOld);
-      return;
+      onChangeFilters(withoutOld)
+      return
     }
-    onChangeFilters([...withoutOld, label]);
-  };
+    onChangeFilters([...withoutOld, label])
+  }
 
   const handlePayloadRangeChange = (e, newValue) => {
-    setPayloadRange(newValue);
-    updatePayloadFilter(newValue[0], newValue[1]);
-  };
+    setPayloadRange(newValue)
+    updatePayloadFilter(newValue[0], newValue[1])
+  }
 
   const handleReachRangeChange = (e, newValue) => {
-    setReachRange(newValue);
-    updateReachFilter(newValue[0], newValue[1]);
-  };
+    setReachRange(newValue)
+    updateReachFilter(newValue[0], newValue[1])
+  }
 
   const handlePayloadMinChange = (e) => {
-    const newMin = parseInt(e.target.value, 10);
-    if (Number.isNaN(newMin)) return;
-    const safeMin = Math.min(newMin, payloadRange[1]);
-    setPayloadRange([safeMin, payloadRange[1]]);
-    updatePayloadFilter(safeMin, payloadRange[1]);
-  };
+    const newMin = parseInt(e.target.value, 10)
+    if (Number.isNaN(newMin)) return
+    const safeMin = Math.min(newMin, payloadRange[1])
+    setPayloadRange([safeMin, payloadRange[1]])
+    updatePayloadFilter(safeMin, payloadRange[1])
+  }
 
   const handlePayloadMaxChange = (e) => {
-    const newMax = parseInt(e.target.value, 10);
-    if (Number.isNaN(newMax)) return;
-    const safeMax = Math.max(newMax, payloadRange[0]);
-    setPayloadRange([payloadRange[0], safeMax]);
-    updatePayloadFilter(payloadRange[0], safeMax);
-  };
+    const newMax = parseInt(e.target.value, 10)
+    if (Number.isNaN(newMax)) return
+    const safeMax = Math.max(newMax, payloadRange[0])
+    setPayloadRange([payloadRange[0], safeMax])
+    updatePayloadFilter(payloadRange[0], safeMax)
+  }
 
   const handleReachMinChange = (e) => {
-    const newMin = parseInt(e.target.value, 10);
-    if (Number.isNaN(newMin)) return;
-    const safeMin = Math.min(newMin, reachRange[1]);
-    setReachRange([safeMin, reachRange[1]]);
-    updateReachFilter(safeMin, reachRange[1]);
-  };
+    const newMin = parseInt(e.target.value, 10)
+    if (Number.isNaN(newMin)) return
+    const safeMin = Math.min(newMin, reachRange[1])
+    setReachRange([safeMin, reachRange[1]])
+    updateReachFilter(safeMin, reachRange[1])
+  }
 
   const handleReachMaxChange = (e) => {
-    const newMax = parseInt(e.target.value, 10);
-    if (Number.isNaN(newMax)) return;
-    const safeMax = Math.max(newMax, reachRange[0]);
-    setReachRange([reachRange[0], safeMax]);
-    updateReachFilter(reachRange[0], safeMax);
-  };
+    const newMax = parseInt(e.target.value, 10)
+    if (Number.isNaN(newMax)) return
+    const safeMax = Math.max(newMax, reachRange[0])
+    setReachRange([reachRange[0], safeMax])
+    updateReachFilter(reachRange[0], safeMax)
+  }
 
   const handleWeightChange = (e) => {
-    const val = e.target.value.trim();
-    setRobotWeight(val);
-    updateWeightFilter(val);
-  };
+    const val = e.target.value.trim()
+    setRobotWeight(val)
+    updateWeightFilter(val)
+  }
 
   return (
     <div className={styles.filters}>
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsApplicationOpen(!isApplicationOpen)}>
+          onClick={() => setIsApplicationOpen(!isApplicationOpen)}
+        >
           Область применения
           <img
             src={
@@ -197,7 +186,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
         </div>
         {isApplicationOpen && (
           <div className={styles.filterOptions}>
-            {applications.map((app) => (
+            {applications.map(app => (
               <label key={app}>
                 <input
                   type="checkbox"
@@ -214,7 +203,8 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsAxesOpen(!isAxesOpen)}>
+          onClick={() => setIsAxesOpen(!isAxesOpen)}
+        >
           Кол-во осей
           <img
             src={
@@ -227,7 +217,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
         </div>
         {isAxesOpen && (
           <div className={styles.filterOptions}>
-            {axesOptions.map((axis) => (
+            {axesOptions.map(axis => (
               <label key={axis}>
                 <input
                   type="checkbox"
@@ -244,7 +234,8 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsPayloadOpen(!isPayloadOpen)}>
+          onClick={() => setIsPayloadOpen(!isPayloadOpen)}
+        >
           Максимальная грузоподъёмность
           <img
             src={
@@ -310,7 +301,8 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsReachOpen(!isReachOpen)}>
+          onClick={() => setIsReachOpen(!isReachOpen)}
+        >
           Максимальный охват
           <img
             src={
@@ -376,7 +368,8 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
       <div className={styles.filterSection}>
         <div
           className={styles.filterHeader}
-          onClick={() => setIsWeightOpen(!isWeightOpen)}>
+          onClick={() => setIsWeightOpen(!isWeightOpen)}
+        >
           Вес робота
           <img
             src={
@@ -401,10 +394,11 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach }) 
       <button
         className={styles.applyButton}
         onClick={() => {
-          onChangeFilters(selectedFilters);
-        }}>
+          onChangeFilters(selectedFilters)
+        }}
+      >
         Показать
       </button>
     </div>
-  );
+  )
 }

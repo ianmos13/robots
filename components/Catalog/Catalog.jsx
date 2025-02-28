@@ -21,127 +21,123 @@ import CompletedProjectsSlider from './CompletedProjectsSlider/CompletedProjects
 import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
 import catalogData from '@/public/data/catalogData.json'
-import {sanitizeData} from "@/utils/sanitizeHtmlText";
-import {makeAllCategories} from "@/utils/makeAllCategories";
+import { sanitizeData } from '@/utils/sanitizeHtmlText'
+import { makeAllCategories } from '@/utils/makeAllCategories'
 
 export default function Catalog() {
-  const { categories, loading } = useCategories();
-  const { products } = useProducts();
-  const [selectedType, setSelectedType] = useState('promyshlennyeRoboty');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [filteredCategories, setFilteredCategories] = useState([]);
-  const [activeView, setActiveView] = useState('cardView');
-  const [selectedFilters, setSelectedFilters] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const { isTabletView, isMobileView, isDesktopView } = useDeviceType();
-  const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
-  const [title, setTitle] = useState("Категории роботов");
-  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty);
-  const searchParams = useSearchParams();
+  const { categories, loading } = useCategories()
+  const { products } = useProducts()
+  const [selectedType, setSelectedType] = useState('promyshlennyeRoboty')
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [filteredCategories, setFilteredCategories] = useState([])
+  const [activeView, setActiveView] = useState('cardView')
+  const [selectedFilters, setSelectedFilters] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const { isTabletView, isMobileView, isDesktopView } = useDeviceType()
+  const [isFiltersModalOpen, setFiltersModalOpen] = useState(false)
+  const [title, setTitle] = useState("Категории роботов")
+  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty)
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    const catalogTypeParam = searchParams.get('type');
-    if (catalogTypeParam) setSelectedType(catalogTypeParam);
-    const categoryParam = searchParams.get('category');
-    setSelectedCategory(categoryParam ? categoryParam : 'all');
+    const catalogTypeParam = searchParams.get('type')
+    if (catalogTypeParam) setSelectedType(catalogTypeParam)
+    const categoryParam = searchParams.get('category')
+    setSelectedCategory(categoryParam ? categoryParam : 'all')
 
-    let filterParams = [];
-    const axesParam = searchParams.get('axes');
+    let filterParams = []
+    const axesParam = searchParams.get('axes')
     if (axesParam) {
-      filterParams = [...filterParams, `Кол-во осей: ${axesParam}`];
+      filterParams = [...filterParams, `Кол-во осей: ${axesParam}`]
     }
-    const scopeParam = searchParams.get('scopes');
+    const scopeParam = searchParams.get('scopes')
     if (scopeParam) {
       filterParams = [
         ...filterParams,
         `Область применения: ${applicationFilters[scopeParam]}`,
-      ];
+      ]
     }
-    const uniqueFilterParams = Array.from(new Set(filterParams));
-    setSelectedFilters(uniqueFilterParams);
-  }, [searchParams]);
+    const uniqueFilterParams = Array.from(new Set(filterParams))
+    setSelectedFilters(uniqueFilterParams)
+  }, [searchParams])
 
   useEffect(() => {
     setFilteredCategories(makeAllCategories(categories[selectedType]))
-    setTitle(selectedType === 'promyshlennyeRoboty' ? "Категории промышленных роботов" : selectedType ==='pozitsionery' ? "Категории позиционеров" : "Категории роботов")
+    setTitle(
+      selectedType === 'promyshlennyeRoboty'
+        ? "Категории промышленных роботов"
+        : selectedType === 'pozitsionery'
+        ? "Категории позиционеров"
+        : "Категории роботов"
+    )
     setCurrentCatalogData(catalogData[`${selectedType}${selectedCategory}`])
-  },[loading, selectedCategory, selectedType])
+  }, [loading, selectedCategory, selectedType])
 
   const filteredRobots = useMemo(() => {
-    let filtered = products || [];
+    let filtered = products || []
 
     if (selectedCategory && selectedCategory !== 'all') {
-      filtered = filtered.filter(robot => robot.category === selectedCategory);
+      filtered = filtered.filter(robot => robot.category === selectedCategory)
     }
 
     selectedFilters.forEach(filter => {
       if (filter.startsWith('Область применения: ')) {
-        const application = filter.replace('Область применения: ', '');
-        filtered = filtered.filter(r => r.application === application);
+        const application = filter.replace('Область применения: ', '')
+        filtered = filtered.filter(r => r.application === application)
       }
       if (filter.startsWith('Кол-во осей: ')) {
-        const axes = parseInt(filter.replace('Кол-во осей: ', ''), 10);
-        filtered = filtered.filter(r => r.axes === axes);
+        const axes = parseInt(filter.replace('Кол-во осей: ', ''), 10)
+        filtered = filtered.filter(r => r.axes === axes)
       }
       if (filter.startsWith('Грузоподъёмность: ')) {
         const [min, max] = filter
           .replace('Грузоподъёмность: ', '')
           .replace(' кг', '')
           .split('-')
-          .map(Number);
-        filtered = filtered.filter(
-          r => r.payloadRange >= min && r.payloadRange <= max
-        );
+          .map(Number)
+        filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max)
       }
       if (filter.startsWith('Охват: ')) {
         const [min, max] = filter
           .replace('Охват: ', '')
           .replace(' мм', '')
           .split('-')
-          .map(Number);
-        filtered = filtered.filter(
-          r => r.reachRange >= min && r.reachRange <= max
-        );
+          .map(Number)
+        filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max)
       }
       if (filter.startsWith('Вес: ')) {
-        const weight = parseInt(
-          filter.replace('Вес: ', '').replace(' кг', ''),
-          10
-        );
-        filtered = filtered.filter(r => r.weight === weight);
+        const weight = parseInt(filter.replace('Вес: ', '').replace(' кг', ''), 10)
+        filtered = filtered.filter(r => r.weight === weight)
       }
-    });
-    return filtered;
-  }, [selectedCategory, selectedFilters, products]);
+    })
+    return filtered
+  }, [selectedCategory, selectedFilters, products])
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [filteredRobots]);
+    setCurrentPage(1)
+  }, [filteredRobots])
 
-  const productsPerPage = isMobileView ? 6 : isTabletView ? 8 : 12;
-  const totalPages = Math.ceil(filteredRobots.length / productsPerPage);
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredRobots.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const productsPerPage = isMobileView ? 6 : isTabletView ? 8 : 12
+  const totalPages = Math.ceil(filteredRobots.length / productsPerPage)
+  const indexOfLastProduct = currentPage * productsPerPage
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+  const currentProducts = filteredRobots.slice(indexOfFirstProduct, indexOfLastProduct)
 
   const handleViewChange = view => {
-    setActiveView(view);
-  };
+    setActiveView(view)
+  }
 
   const removeFilter = filter => {
-    setSelectedFilters(prev => prev.filter(item => item !== filter));
-  };
+    setSelectedFilters(prev => prev.filter(item => item !== filter))
+  }
 
   const clearFilters = () => {
-    setSelectedFilters([]);
-  };
+    setSelectedFilters([])
+  }
 
   const handlePageChange = page => {
-    setCurrentPage(page);
-  };
+    setCurrentPage(page)
+  }
 
   const renderProducts = () => {
     return currentProducts.map((robot, index) => (
@@ -165,14 +161,20 @@ export default function Catalog() {
           </div>
         )}
       </React.Fragment>
-    ));
-  };
+    ))
+  }
 
-  // Вычисление максимального охвата среди всех продуктов
+
   const maxReach = useMemo(() => {
-    if (!products || products.length === 0) return 1000;
-    return Math.max(...products.map(product => product.reachRange));
-  }, [products]);
+    if (!products || products.length === 0) return 1000
+    return Math.max(...products.map(product => product.reachRange))
+  }, [products])
+
+
+  const maxPayload = useMemo(() => {
+    if (!products || products.length === 0) return 2500
+    return Math.max(...products.map(product => product.payloadRange))
+  }, [products])
 
   return (
     <section className={styles.container}>
@@ -192,9 +194,7 @@ export default function Catalog() {
             <h3>Каталог роботов</h3>
             <div className={styles.selectViewContainer}>
               <div
-                className={`${styles.cardView} ${
-                  activeView === 'cardView' ? styles.active : ''
-                }`}
+                className={`${styles.cardView} ${activeView === 'cardView' ? styles.active : ''}`}
                 onClick={() => handleViewChange('cardView')}
               >
                 <img
@@ -207,9 +207,7 @@ export default function Catalog() {
                 />
               </div>
               <div
-                className={`${styles.rowView} ${
-                  activeView === 'rowView' ? styles.active : ''
-                }`}
+                className={`${styles.rowView} ${activeView === 'rowView' ? styles.active : ''}`}
                 onClick={() => handleViewChange('rowView')}
               >
                 <img
@@ -236,11 +234,7 @@ export default function Catalog() {
             {selectedFilters.length > 0 ? (
               <>
                 {selectedFilters.map((filter, index) => (
-                  <div
-                    key={index}
-                    className={styles.active}
-                    onClick={() => removeFilter(filter)}
-                  >
+                  <div key={index} className={styles.active} onClick={() => removeFilter(filter)}>
                     {filter}
                     <img src='/images/icons/x-blue.svg' alt='Удалить' />
                   </div>
@@ -261,10 +255,7 @@ export default function Catalog() {
             spaceBetween={10}
           >
             <SwiperSlide className={styles.swiperSlide}>
-              <div
-                className={styles.filterButton}
-                onClick={() => setFiltersModalOpen(true)}
-              >
+              <div className={styles.filterButton} onClick={() => setFiltersModalOpen(true)}>
                 <img src='/images/icons/mobile-filters.svg' alt='Фильтры' />
               </div>
             </SwiperSlide>
@@ -272,10 +263,7 @@ export default function Catalog() {
               <>
                 {selectedFilters.map((filter, index) => (
                   <SwiperSlide className={styles.swiperSlide} key={index}>
-                    <div
-                      className={styles.active}
-                      onClick={() => removeFilter(filter)}
-                    >
+                    <div className={styles.active} onClick={() => removeFilter(filter)}>
                       {filter}
                       <img src='/images/icons/x-blue.svg' alt='Удалить' />
                     </div>
@@ -297,36 +285,32 @@ export default function Catalog() {
 
           <div className={styles.productContainer}>
             <div className={styles.filterContainer}>
-              {isDesktopView && (
+              {isDesktopView ? (
                 <Filters
                   selectedFilters={selectedFilters}
                   onChangeFilters={setSelectedFilters}
                   maxReach={maxReach}
+                  maxPayload={maxPayload}
                 />
-              )}
-              {!isDesktopView && (
+              ) : (
                 <FiltersModal
                   isOpen={isFiltersModalOpen}
                   onClose={() => setFiltersModalOpen(false)}
                   selectedFilters={selectedFilters}
                   onApply={newFilters => {
-                    setSelectedFilters(newFilters);
-                    setFiltersModalOpen(false);
+                    setSelectedFilters(newFilters)
+                    setFiltersModalOpen(false)
                   }}
+                  maxReach={maxReach}
+                  maxPayload={maxPayload}
                 />
               )}
             </div>
             <div className={styles.productContainerInner}>
               <div
-                className={`${styles.products} ${
-                  activeView === 'rowView' ? styles.rowView : ''
-                }`}
+                className={`${styles.products} ${activeView === 'rowView' ? styles.rowView : ''}`}
               >
-                {currentProducts.length > 0 ? (
-                  renderProducts()
-                ) : (
-                  <p className={styles.noProducts}>Продукты не найдены</p>
-                )}
+                {currentProducts.length > 0 ? renderProducts() : <p className={styles.noProducts}>Продукты не найдены</p>}
               </div>
               {totalPages > 1 && (
                 <Pagination
@@ -336,21 +320,21 @@ export default function Catalog() {
                   catalogPageTheme={true}
                 />
               )}
-              { currentCatalogData?.about && (
-                  <div
-                      className={styles.addInfoContainer}
-                      dangerouslySetInnerHTML={{ __html: sanitizeData(currentCatalogData.about) }}
-                  />
+              {currentCatalogData?.about && (
+                <div
+                  className={styles.addInfoContainer}
+                  dangerouslySetInnerHTML={{ __html: sanitizeData(currentCatalogData.about) }}
+                />
               )}
             </div>
           </div>
         </div>
       )}
       <CompletedProjectsSlider />
-      {currentCatalogData?.questions && (<Question faqData={currentCatalogData?.questions} />)}
+      {currentCatalogData?.questions && <Question faqData={currentCatalogData?.questions} />}
       <ContactUs theme={'catalog'} />
     </section>
-  );
+  )
 }
 
 const applicationFilters = {
@@ -367,4 +351,4 @@ const applicationFilters = {
   polishing: 'Полировка',
   metalBending: 'Гибка металла',
   scara: 'SCARA',
-};
+}

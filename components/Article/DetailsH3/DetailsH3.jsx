@@ -6,23 +6,22 @@ export default function DetailsH3({ details }) {
   return (
     <div className={styles.h3Container}>
       <h3>{details.title}</h3>
-        { details?.description && (
-          <div className={styles.h3Content}>
-              { details?.points && isValidSubData(details.points) && (
-                  <ul>
-                      {Array.isArray(details.points) ? (
-                          <>
-                              { details?.points?.length > 0 && details.points.map((point, index) => (
-                                  <li key={index}>{point}</li>
-                              ))}
-                          </>
-                      ) : (
-                          <li>{details.points}</li>
-                      )}
-                  </ul>
-              )}
-          </div>
-        )}
+      <div className={styles.h3Content}>
+          {details.description }
+          {details?.points && isValidSubData(details.points) && (
+              <ul>
+                  {Array.isArray(details.points) ? (
+                      <>
+                          { details?.points?.length > 0 && details.points.map((point, index) => (
+                              <li key={index}>{point}</li>
+                          ))}
+                      </>
+                  ) : (
+                      <li>{details.points}</li>
+                  )}
+              </ul>
+          )}
+      </div>
     </div>
   );
 }
