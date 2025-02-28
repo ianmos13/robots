@@ -31,6 +31,15 @@ export function buildTree(data) {
     return tree;
 }
 
+export function buildSimpleTree(data) {
+    return data.map(item => {
+        return {...item,
+            uniqName: toCamelCaseLatin(item.name),
+            link: `/catalog?category=${item.key}&?type=${toCamelCaseLatin(item.name)}`
+        };
+    });
+}
+
 function toCamelCaseLatin(str) {
     const translitMap = {
         А: "A", Б: "B", В: "V", Г: "G", Д: "D", Е: "E", Ё: "E", Ж: "Zh", З: "Z",
