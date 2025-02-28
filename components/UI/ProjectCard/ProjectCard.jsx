@@ -1,7 +1,7 @@
 import styles from "./ProjectCard.module.scss";
 
 export default function ProjectCard({ image, title, date, tags, slug }) {
-  const cardTag = tags[0] || "";
+  const cardTag = tags && isValidSubData(tags) ? tags[0] : ""
   return (
     <a href={`/completed-projects/${slug}`} className={styles.projectCard} >
       <div className={styles.imageContainer}>
