@@ -11,7 +11,7 @@ export default function CatalogPopup({ catalogElements, openCatalog }) {
   const [imageUrl, setImageUrl] = useState(null);
 
   const goToCatalogPage = () => {
-    router.push("/catalog?type=promyshlennyeRoboty");
+    router.push("/catalog?category=all&type=promyshlennyeRoboty");
   };
 
   return (

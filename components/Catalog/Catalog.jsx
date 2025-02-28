@@ -41,13 +41,10 @@ export default function Catalog() {
 
   useEffect(() => {
     const catalogTypeParam = searchParams.get('type');
-    if (catalogTypeParam) {
-      setSelectedType(catalogTypeParam)
-   }
+    if (catalogTypeParam) setSelectedType(catalogTypeParam);
     const categoryParam = searchParams.get('category');
-    if (categoryParam) {
-      setSelectedCategory(categoryParam);
-    }
+    setSelectedCategory(categoryParam ? categoryParam : 'all');
+
     let filterParams = [];
     const axesParam = searchParams.get('axes');
     if (axesParam) {

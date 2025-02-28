@@ -129,10 +129,10 @@
     }
 
     .imageContainer {
-      width: 152px;
-      height: 195px;
+      width: 180px;
+      height: 230px;
       display: flex;
-      margin: 35px auto 0 auto;
+      margin: 0 auto;
       position: relative;
       transition: opacity 0.5s ease;
       @media (max-width: 1600px) {

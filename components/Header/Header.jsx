@@ -114,7 +114,7 @@ const menuElements = [
         id: 1,
         title: "Позиционеры",
         ref: "positioners",
-        link: "/catalog?type=pozitsionery",
+        link: "/catalog?category=all&type=pozitsionery",
         order: 1,
     },
     // {
