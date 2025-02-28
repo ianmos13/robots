@@ -50,8 +50,8 @@ import useCompletedProjects from "@/hooks/useCompletedProjects";
 const TruncatedText = ({ prj }) => {
   const textRef = useRef(null);
 
-  const sanitizeText = (text) => text.replace(/&lt;[^&]+&gt;/g, "");
-  const sanitizedText = sanitizeText(prj["detailsH2.takeOfferText"]);
+  const sanitizeText = (text) => text?.replace(/&lt;[^&]+&gt;/g, "");
+  const sanitizedText = sanitizeText(prj?.detailsH2?.takeOfferText);
 
   const [isTruncated, setIsTruncated] = useState(false);
   const [displayText, setDisplayText] = useState(sanitizedText);
