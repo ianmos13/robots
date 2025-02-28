@@ -268,7 +268,7 @@
     }
     .btnContainerMobile {
       display: none;
-      @media (max-width: 640px) {
+      @media (max-width: 1024px) {
         display: block;
       }
       .swiperSlide {
@@ -276,7 +276,7 @@
         min-height: 46px;
       }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 1024px) {
       .btnContainer {
         display: none;
       }
@@ -288,27 +288,24 @@
   margin: 20px 0;
   text-align: center;
   width: 100%;
-  @media (max-width: 640px) {
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  @media (max-width: 1024px) {
     margin: 0;
-    aspect-ratio: 1.05;
-    position: relative;
-    border-radius: 10px;
+    height: unset;
+    aspect-ratio: 2.05;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
   img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    @media (max-width: 640px) {
-      border-radius: 0;
-      border: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      object-fit: contain;
-      left: 0;
-    }
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    left: 0;
   }
 }
 

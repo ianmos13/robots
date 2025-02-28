@@ -238,7 +238,7 @@ export default function MoreInfo({ productInfo }) {
               </div>
 
               <div className={styles.btnContainerMobile}>
-                <Swiper slidesPerView={1.5} spaceBetween={10} freeMode={true}>
+                <Swiper slidesPerView={"auto"} spaceBetween={10} freeMode={true}>
                   {technicalInfo.axes && (
                     <SwiperSlide className={styles.swiperSlide}>
                       <div

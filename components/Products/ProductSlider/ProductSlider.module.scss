@@ -205,17 +205,6 @@
 		gap: 10px;
 		margin-top: 32px;
 		flex-wrap: wrap;
-		@media (max-width: 1440px) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			max-width: 372px;
-			.advantage:nth-child(3) {
-				grid-column: 1 / -1;
-			}
-			@media (max-width: 1024px) {
-				display: none;
-			}
-		}
 	}
 	.assignmentContainer {
 		display: flex;
@@ -485,10 +474,10 @@
 	@media (max-width: 1024px) {
 		display: block;
 		width: 100vw;
+		margin-left: -20px;
+		margin-right: -20px;
 		.swiperContainer {
 			display: block;
-			margin-left: -20px;
-			margin-right: -20px;
 			width: 100%;
 			margin-bottom: 24px;
 			.swiperSlide {
