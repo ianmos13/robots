@@ -23,7 +23,7 @@ function FavoritesComponentContent() {
   const [currentIndex, setCurrentIndex] = React.useState(0)
   const [activeButton, setActiveButton] = React.useState('')
   const [isConfirmModalOpen, setIsConfirmModalOpen] = React.useState(false)
-  const { categories, error, loading } = useCategories()
+  const { categories, error, loading } = useCategories(true)
 
   const filteredRobots =
     selectedCategory === 'all'

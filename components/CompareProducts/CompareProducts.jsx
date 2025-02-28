@@ -24,7 +24,7 @@ export default function CompareProducts() {
   const [isSticky, setIsSticky] = useState(false);
   const [hideSticky, setHideSticky] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-  const { categories } = useCategories();
+  const { categories } = useCategories(true);
   const { isMobileView, isTabletView } = useDeviceType();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -312,6 +312,7 @@ export default function CompareProducts() {
               currentIndex,
               currentIndex + maxVisibleItems
             )}
+            categories={categories}
             tableRef={tableRef}
           />
           <div ref={stopStickyRef} className={styles.stopSticky}></div>
