@@ -34,9 +34,13 @@ const RobotContainSlider = ({info}) => {
           <SwiperSlide className={styles.swiperSlide} key={index}>
             <div className={styles.slide}>
               <div className={styles.robotInfo}>
+                {slide.slideInfo && (<div
+                  className={styles.slideContent}
+                  dangerouslySetInnerHTML={{ __html: slide?.slideInfo }}
+                />)}
                 <div className={styles.slideContent}>
-                    <div className={styles.title}>{slide.title}</div>
-                    <div className={styles.description}>{slide.description}</div>
+                    <h3>{slide.title}</h3>
+                    {slide.description}
                 </div>
                 <div className={styles.containerButton}>
                   <SwitchButtons

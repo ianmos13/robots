@@ -8,34 +8,34 @@
   @media (max-width: 1600px) {
     max-width: 900px;
   }
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 56px;
+    line-height: 110%;
+    @media (max-width: 1600px) {
+      font-size: 48px;
+    }
+    @media (max-width: 640px) {
+      font-size: 32px;
+    }
+  }
 }
 
 /* Дополнительный класс для вложенного контента */
 .newsContent {
-  margin-bottom: 64px;
+  margin-top: 64px;
   @media (max-width: 1600px) {
-    margin-bottom: 48px;
+    margin-top: 48px;
   }
   @media (max-width: 1024px) {
-    margin-bottom: 64px;
+    margin-top: 64px;
   }
   @media (max-width: 640px) {
-    margin-bottom: 48px;
+    margin-top: 48px;
   }
-    h1 {
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      margin-bottom: 48px;
-      font-size: 56px;
-      line-height: 110%;
-      @media (max-width: 1600px) {
-        font-size: 48px;
-        margin-bottom: 24px;
-      }
-      @media (max-width: 640px) {
-        font-size: 32px;
-      }
-    }
+
+
     h2 {
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -69,9 +69,21 @@
         margin: 12px 0;
       }
     }
+    h4 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-size: 24px;
+      line-height: 130%;
+      margin: 12px 0;
+      @media (max-width: 640px) {
+        font-size: 20px;
+        margin: 12px 0;
+      }
+    }
     a {
       color: #0149BF;
     }
+
     .banner {
       position: relative;
       width: 100%;
