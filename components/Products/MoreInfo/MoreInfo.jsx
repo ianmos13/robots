@@ -328,11 +328,11 @@ export default function MoreInfo({ productInfo }) {
           )}
         </div>
       </div>
-      {productInfo?.rows && isValidSubData(productInfo?.rows) && (
+      {productInfo?.sameRobots && isValidSubData(productInfo?.sameRobots) && (
         <div className={styles.gridContainer}>
           <ProductCategoryGridPagination
             title="Дополнительное оборудование"
-            ids={productInfo.rows || []}
+            ids={productInfo.sameRobots || []}
           />
         </div>
       )}
