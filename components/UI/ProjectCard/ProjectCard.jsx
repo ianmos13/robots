@@ -1,4 +1,5 @@
 import styles from "./ProjectCard.module.scss";
+import {isValidSubData} from "@/utils/validation";
 
 export default function ProjectCard({ image, title, date, tags, slug }) {
   const cardTag = tags && isValidSubData(tags) ? tags[0] : ""

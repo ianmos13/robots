@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Substance.module.scss";
+import {sanitizeData} from "@/utils/sanitizeHtmlText";
 
 export default function Substance({ substance }) {
   return (
@@ -12,7 +13,10 @@ export default function Substance({ substance }) {
             ))}
         </ul>
       ) : (
-          <div className={styles.substanceItem}>{substance}</div>
+          <div
+              className={styles.substanceItem}
+              dangerouslySetInnerHTML={{ __html: sanitizeData(substance) }}
+          />
       )}
     </div>
   );
