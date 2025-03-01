@@ -1,5 +1,4 @@
 @import '/styles/variables';
-
 .container {
 	padding: 0 30px 100px 30px;
 	@media (max-width: 1600px) {
@@ -11,7 +10,7 @@
 	@media (max-width: 640px) {
 		padding: 0 10px 48px 10px;
 	}
-	.projectsContainer {
+	.blogContainer {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 100px;
@@ -23,7 +22,7 @@
 			color: #323232;
 			margin-bottom: 40px;
 		}
-		.projectsList {
+		.blogList {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			column-gap: 10px;
@@ -33,9 +32,9 @@
 		}
 	}
 	@media (max-width: 1600px) {
-		.projectsContainer {
+		.blogContainer {
 			margin-bottom: 100px;
-			.projectsList {
+			.blogList {
 				grid-template-columns: repeat(3, 1fr);
 				column-gap: 10px;
 				row-gap: 64px;
@@ -44,9 +43,9 @@
 		}
 	}
 	@media (max-width: 1024px) {
-		.projectsContainer {
+		.blogContainer {
 			margin-bottom: 72px;
-			.projectsList {
+			.blogList {
 				grid-template-columns: repeat(2, 1fr);
 				column-gap: 10px;
 				row-gap: 64px;
@@ -56,14 +55,14 @@
 	}
 
 	@media (max-width: 640px) {
-		.projectsContainer {
+		.blogContainer {
 			margin-bottom: 72px;
 			h1 {
 				font-size: 32px;
 				line-height: 35.2px;
 				margin-bottom: 24px;
 			}
-			.projectsList {
+			.blogList {
 				grid-template-columns: repeat(1, 1fr);
 				row-gap: 24px;
 				margin-bottom: 56px;
