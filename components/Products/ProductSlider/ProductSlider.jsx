@@ -103,7 +103,7 @@ export default function ProductSlider({ productInfo }) {
       <div className={styles.productSlider}>
         {productInfo.title && (
           <div className={styles.titleMobile}>
-            <h3>{productInfo.title}</h3>
+            <h1>{productInfo.title}</h1>
           </div>
         )}
         {productInfo.advantages?.length > 0 && (
@@ -155,7 +155,7 @@ export default function ProductSlider({ productInfo }) {
           </div>
         )}
         <div className={styles.productInfo}>
-          {productInfo.title && <h3>{productInfo.title}</h3>}
+          {productInfo.title && <h1>{productInfo.title}</h1>}
           {productInfo.advantages?.length > 0 && (
             <div className={styles.advantagesContainer}>
               {productInfo.advantages.map((advantage, index) => (

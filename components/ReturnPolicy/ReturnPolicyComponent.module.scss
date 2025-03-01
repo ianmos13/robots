@@ -11,6 +11,10 @@
 			letter-spacing: -0.02em;
 			color: #323232;
 		}
+		@media (max-width: 640px) {
+			font-size: 32px;
+			line-height: 35.2px;
+		}
 	}
 	.content {
 		display: flex;
@@ -54,15 +58,6 @@
 	.container {
 		padding: 24px 10px 123px 10px;
 		gap: 32px;
-		.pageHeader {
-			h1 {
-				font-family: 'DIN Pro Condensedbold', sans-serif;
-				font-size: 32px;
-				line-height: 35.2px;
-				letter-spacing: -0.02em;
-				color: #323232;
-			}
-		}
 		.content {
 			display: flex;
 			flex-direction: column;

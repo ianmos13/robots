@@ -60,18 +60,15 @@ const applicationFilters = {
   scara: 'SCARA',
 }
 
-export default function Catalog() {
-  const { categories } = useCategories(true)
+export default function Catalog({ categories, title }) {
   const { products } = useProducts()
   const [selectedType, setSelectedType] = useState('promyshlennyeRoboty')
-  // По умолчанию при /catalog активна категория "all" (то есть "Все роботы")
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [activeView, setActiveView] = useState('cardView')
   const [selectedFilters, setSelectedFilters] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const { isTabletView, isMobileView, isDesktopView } = useDeviceType()
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false)
-  const [title, setTitle] = useState("Все категории роботов")
   const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty)
   const searchParams = useSearchParams()
   const pathname = usePathname()
@@ -133,11 +130,6 @@ export default function Catalog() {
   }, [searchParams, pathname, categories, selectedType, selectedCategory])
 
   useEffect(() => {
-    if (selectedCategory === "all") {
-      setTitle("Все роботы")
-    } else {
-      setTitle("Все категории роботов")
-    }
     setCurrentCatalogData(catalogData[`${selectedType}${selectedCategory}`])
   }, [selectedCategory, selectedType])
 
@@ -253,7 +245,7 @@ export default function Catalog() {
     <section className={styles.container}>
       {categories && categories.length > 0 && products.length > 0 && (
         <div className={styles.categoryContainer}>
-          <h3>{title}</h3>
+          <h1>{title}</h1>
           <CategoryTags
             categories={visibleCategories}
             selectedCategory={selectedCategory}

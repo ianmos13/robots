@@ -13,7 +13,7 @@ import styles from "./MoreInfo.module.scss";
 import {isValidSubData} from "@/utils/validation";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
-export default function MoreInfo({ productInfo }) {
+export default function MoreInfo({ productInfo, parentCategory }) {
   if (!productInfo) return null;
 
   const [activeInfoTab, setActiveInfoTab] = useState("description");
@@ -334,6 +334,7 @@ export default function MoreInfo({ productInfo }) {
         <div className={styles.gridContainer}>
           <ProductCategoryGridPagination
             title="Дополнительное оборудование"
+            typeLink={parentCategory.link}
             ids={productInfo.sameRobots || []}
           />
         </div>

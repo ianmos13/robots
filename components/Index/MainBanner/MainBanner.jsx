@@ -22,6 +22,7 @@ const MainBanner = () => {
       <section
         className={`${styles.container} ${isModalOpen ? "blurred" : ""}`}>
         <div className={styles.headerWrapper}>
+          <h1 className={styles.hiddenHeaderMainText}>Промышленные Роботы CRP</h1>
           <div className={styles.headerMainText}>Промышленные</div>
           <div className={styles.headerSubTextContainer}>
             <div className={styles.inner}>

@@ -24,6 +24,12 @@
       margin-top: 16px;
     }
 
+    .hiddenHeaderMainText {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+    }
+
     .headerMainText {
       margin-top: -11px;
       padding-left: 18px;
