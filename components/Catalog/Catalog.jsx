@@ -3,7 +3,7 @@ import Pagination from '@/components/UI/Pagination/Pagination'
 import useCategories from '@/hooks/useCategories'
 import useDeviceType from '@/hooks/useDeviceType'
 import useProducts from '@/hooks/useProducts'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, usePathname } from 'next/navigation'
 import React, { useEffect, useMemo, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -22,64 +22,138 @@ import Filters from './Filters/Filters'
 import FiltersModal from './FiltersModal/FiltersModal'
 import catalogData from '@/public/data/catalogData.json'
 import { sanitizeData } from '@/utils/sanitizeHtmlText'
-import { makeAllCategories } from '@/utils/makeAllCategories'
+
+
+const buildRootCategoryMapping = (categories) => {
+  const mapping = {}
+  categories.forEach(cat => {
+    if (cat.parent) {
+      let current = cat
+      while (current.parent) {
+        const parent = categories.find(c => c.key === current.parent)
+        if (!parent) break
+        current = parent
+      }
+      const rootKey = current.key
+      if (!mapping[rootKey]) mapping[rootKey] = []
+      if (cat.key !== rootKey) {
+        mapping[rootKey].push(cat.key)
+      }
+    }
+  })
+  return mapping
+}
+
+const applicationFilters = {
+  welding: 'Сварка',
+  laserCutting: 'Лазерная резка',
+  plasmaWaterjet: 'Плазменная и гидроабразивная резка',
+  contactWelding: 'Контактная сварка',
+  palletizing: 'Паллетирование',
+  cnc: 'Обслуживание станков с ЧПУ',
+  injection: 'Обслуживание ТПА',
+  bendingStampingPress: 'Обслуживание гибочного и штамповочного пресса',
+  conveyorLine: 'Обслуживание конвейерной линии',
+  milling: 'Фрезеровка',
+  polishing: 'Полировка',
+  metalBending: 'Гибка металла',
+  scara: 'SCARA',
+}
 
 export default function Catalog() {
-  const { categories, loading } = useCategories()
+  const { categories } = useCategories(true)
   const { products } = useProducts()
   const [selectedType, setSelectedType] = useState('promyshlennyeRoboty')
+  // По умолчанию при /catalog активна категория "all" (то есть "Все роботы")
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [filteredCategories, setFilteredCategories] = useState([])
   const [activeView, setActiveView] = useState('cardView')
   const [selectedFilters, setSelectedFilters] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const { isTabletView, isMobileView, isDesktopView } = useDeviceType()
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false)
-  const [title, setTitle] = useState("Категории роботов")
+  const [title, setTitle] = useState("Все категории роботов")
   const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty)
   const searchParams = useSearchParams()
+  const pathname = usePathname()
+
+
+  const rootCategoryMapping = useMemo(() => buildRootCategoryMapping(categories), [categories])
+
+
+  const visibleCategories = useMemo(() => {
+    const lowerPath = pathname.toLowerCase()
+    if (lowerPath.includes('pozicionery') || lowerPath.includes('pozitsionery')) {
+      return categories.filter(cat => cat.parent === "2")
+    }
+    if (lowerPath.includes('promyshlennye-roboty')) {
+      return categories.filter(cat => cat.parent === "1")
+    }
+    return categories.filter(cat => !["15", "16", "19", "18", "17"].includes(cat.key))
+  }, [categories, pathname])
 
   useEffect(() => {
     const catalogTypeParam = searchParams.get('type')
-    if (catalogTypeParam) setSelectedType(catalogTypeParam)
-    const categoryParam = searchParams.get('category')
-    setSelectedCategory(categoryParam ? categoryParam : 'all')
+    if (catalogTypeParam && catalogTypeParam !== selectedType) {
+      setSelectedType(catalogTypeParam)
+    }
 
+    let newCategory = "all"
+    if (pathname !== "/catalog" && categories && categories.length > 0) {
+      const segments = pathname.split('/').filter(Boolean)
+      const slug = segments[segments.length - 1].toLowerCase()
+      const foundCategory = categories.find(cat => {
+        if (cat.link) {
+          const linkSegments = cat.link.split('/').filter(Boolean)
+          const linkSlug = linkSegments[linkSegments.length - 1].toLowerCase()
+          return linkSlug === slug
+        }
+        return false
+      })
+      if (foundCategory) {
+        newCategory = foundCategory.key
+      }
+    }
+    if (newCategory !== selectedCategory) {
+      setSelectedCategory(newCategory)
+    }
+
+  
     let filterParams = []
     const axesParam = searchParams.get('axes')
     if (axesParam) {
-      filterParams = [...filterParams, `Кол-во осей: ${axesParam}`]
+      filterParams.push(`Кол-во осей: ${axesParam}`)
     }
     const scopeParam = searchParams.get('scopes')
     if (scopeParam) {
-      filterParams = [
-        ...filterParams,
-        `Область применения: ${applicationFilters[scopeParam]}`,
-      ]
+      filterParams.push(`Область применения: ${applicationFilters[scopeParam]}`)
     }
-    const uniqueFilterParams = Array.from(new Set(filterParams))
-    setSelectedFilters(uniqueFilterParams)
-  }, [searchParams])
+    if (filterParams.length > 0) {
+      setSelectedFilters(Array.from(new Set(filterParams)))
+    }
+  }, [searchParams, pathname, categories, selectedType, selectedCategory])
 
   useEffect(() => {
-    setFilteredCategories(makeAllCategories(categories[selectedType]))
-    setTitle(
-      selectedType === 'promyshlennyeRoboty'
-        ? "Категории промышленных роботов"
-        : selectedType === 'pozitsionery'
-        ? "Категории позиционеров"
-        : "Категории роботов"
-    )
+    if (selectedCategory === "all") {
+      setTitle("Все роботы")
+    } else {
+      setTitle("Все категории роботов")
+    }
     setCurrentCatalogData(catalogData[`${selectedType}${selectedCategory}`])
-  }, [loading, selectedCategory, selectedType])
+  }, [selectedCategory, selectedType])
 
   const filteredRobots = useMemo(() => {
     let filtered = products || []
-
     if (selectedCategory && selectedCategory !== 'all') {
-      filtered = filtered.filter(robot => robot.category === selectedCategory)
+   
+      if (selectedCategory === "1" || selectedCategory === "2") {
+        const allowed = rootCategoryMapping[selectedCategory] || []
+        filtered = filtered.filter(robot => allowed.includes(robot.category))
+      } else {
+        filtered = filtered.filter(robot => robot.category === selectedCategory)
+      }
+     
     }
-
+   
     selectedFilters.forEach(filter => {
       if (filter.startsWith('Область применения: ')) {
         const application = filter.replace('Область применения: ', '')
@@ -111,10 +185,11 @@ export default function Catalog() {
       }
     })
     return filtered
-  }, [selectedCategory, selectedFilters, products])
+  }, [selectedCategory, selectedFilters, products, rootCategoryMapping])
 
   useEffect(() => {
     setCurrentPage(1)
+    console.log(filteredRobots)
   }, [filteredRobots])
 
   const productsPerPage = isMobileView ? 6 : isTabletView ? 8 : 12
@@ -164,12 +239,10 @@ export default function Catalog() {
     ))
   }
 
-
   const maxReach = useMemo(() => {
     if (!products || products.length === 0) return 1000
     return Math.max(...products.map(product => product.reachRange))
   }, [products])
-
 
   const maxPayload = useMemo(() => {
     if (!products || products.length === 0) return 2500
@@ -178,13 +251,12 @@ export default function Catalog() {
 
   return (
     <section className={styles.container}>
-      {filteredCategories.length > 0 && products.length > 0 && (
+      {categories && categories.length > 0 && products.length > 0 && (
         <div className={styles.categoryContainer}>
           <h3>{title}</h3>
           <CategoryTags
-            categories={filteredCategories}
+            categories={visibleCategories}
             selectedCategory={selectedCategory}
-            onSelectCategory={setSelectedCategory}
           />
         </div>
       )}
@@ -307,9 +379,7 @@ export default function Catalog() {
               )}
             </div>
             <div className={styles.productContainerInner}>
-              <div
-                className={`${styles.products} ${activeView === 'rowView' ? styles.rowView : ''}`}
-              >
+              <div className={`${styles.products} ${activeView === 'rowView' ? styles.rowView : ''}`}>
                 {currentProducts.length > 0 ? renderProducts() : <p className={styles.noProducts}>Продукты не найдены</p>}
               </div>
               {totalPages > 1 && (
@@ -335,20 +405,4 @@ export default function Catalog() {
       <ContactUs theme={'catalog'} />
     </section>
   )
-}
-
-const applicationFilters = {
-  welding: 'Сварка',
-  laserCutting: 'Лазерная резка',
-  plasmaWaterjet: 'Плазменная и гидроабразивная резка',
-  contactWelding: 'Контактная сварка',
-  palletizing: 'Паллетирование',
-  cnc: 'Обслуживание станков с ЧПУ',
-  injection: 'Обслуживание ТПА',
-  bendingStampingPress: 'Обслуживание гибочного и штамповочного пресса',
-  conveyorLine: 'Обслуживание конвейерной линии',
-  milling: 'Фрезеровка',
-  polishing: 'Полировка',
-  metalBending: 'Гибка металла',
-  scara: 'SCARA',
 }

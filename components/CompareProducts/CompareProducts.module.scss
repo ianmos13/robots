@@ -103,6 +103,7 @@
       display: none;
     }
     .productCard {
+      text-decoration: none;
       border-radius: 20px;
       background: $white;
       align-items: center;
@@ -164,7 +165,9 @@
         font-family: "DIN Pro condensedbold", sans-serif;
         font-size: 22px;
         text-align: left;
+        text-decoration: none;
         width: 100%;
+        color: $dark-gray;
         line-height: 36.4px;
         letter-spacing: -0.02em;
         @media (max-width: 1600px) {
@@ -271,6 +274,7 @@
         display: none;
       }
       .productCard {
+        text-decoration: none;
         border-radius: 20px;
         background: $white;
         text-align: left;
@@ -324,7 +328,7 @@
             font-family: "DIN Pro condensedbold", sans-serif;
             font-size: 22px;
             text-align: left;
-
+            text-decoration: none;
             line-height: 120%;
             letter-spacing: -0.44px;
             color: $dark-gray;

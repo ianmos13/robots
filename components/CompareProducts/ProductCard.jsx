@@ -4,7 +4,10 @@ import FavoriteButton from "../UI/FavoriteButton/FavoriteButton";
 
 export default function ProductCard({ item, onRemove }) {
   return (
-    <div className={styles.productCard}>
+    <a
+        className={styles.productCard}
+        href={`/products/${item.id}`}
+    >
       <div className={styles.cardIcons}>
         <div className={styles.favoriteIcon}>
           <FavoriteButton robot={item} small={true}/>
@@ -24,6 +27,6 @@ export default function ProductCard({ item, onRemove }) {
       />
      </div>
       <div className={styles.productTitle}>{item.title}</div>
-    </div>
+    </a>
   );
 }

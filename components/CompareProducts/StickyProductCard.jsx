@@ -4,7 +4,10 @@ import FavoriteButton from "../UI/FavoriteButton/FavoriteButton";
 
 export default function StickyProductCard({ item, onRemove }) {
   return (
-    <div className={styles.productCard}>
+      <a
+          className={styles.productCard}
+          href={`/products/${item.id}`}
+      >
       <div className={styles.cardImg}>
         <img
           src={item.mainImage}
@@ -28,6 +31,6 @@ export default function StickyProductCard({ item, onRemove }) {
           </div>
         </div> */}
       </div>
-    </div>
+    </a>
   );
 }
