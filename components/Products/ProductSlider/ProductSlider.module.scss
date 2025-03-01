@@ -26,20 +26,21 @@
 		@media (max-width: 1024px) {
 			display: block;
 			margin-bottom: 24px;
-      h3{
-        font-size: 48px;
-        line-height: 52.8px;
-        letter-spacing: -0.02em;
-        color: #323232;
-      }
+		  h1{
+			font-size: 48px;
+			text-transform: uppercase;
+			line-height: 52.8px;
+			letter-spacing: -0.02em;
+			color: #323232;
+		  }
 		}
-    @media (max-width:640px) {
-      h3{
-        font-size: 32px;
-        line-height: 35.2px;
+		@media (max-width:640px) {
+		  h1{
+			font-size: 32px;
+			line-height: 35.2px;
 
-      }
-    }
+		  }
+		}
 	}
 	.advantagesContainerMoblie {
 		@media (max-width: 1024px) {
@@ -166,8 +167,11 @@
 		width: 100%;
 		margin-top: 56px;
 	}
-	h3 {
-		letter-spacing: -0.96px;
+	h1 {
+		font-size: 56px;
+		line-height: 110%;
+		letter-spacing: -2%;
+		text-transform: uppercase;
 		@media (max-width: 1024px) {
 			display: none;
 		}
@@ -205,6 +209,9 @@
 		gap: 10px;
 		margin-top: 32px;
 		flex-wrap: wrap;
+		@media (max-width: 1024px) {
+			display: none;
+		}
 	}
 	.assignmentContainer {
 		display: flex;
@@ -322,6 +329,7 @@
 			}
 			@media (max-width: 640px) {
 				flex-direction: column;
+				height: unset;
 			}
 			.compereBtn {
 				width: 47%;
@@ -492,9 +500,9 @@
 		}
 	}
 	@media (max-width: 640px) {
+		margin-left: -10px;
+		margin-right: -10px;
 		.swiperContainer {
-      margin-left: -10px;
-			margin-right: -10px;
 			.swiperSlide {
 				&:first-child {
 					margin-left: 10px;

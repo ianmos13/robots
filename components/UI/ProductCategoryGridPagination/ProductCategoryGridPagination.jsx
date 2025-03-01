@@ -10,7 +10,7 @@ import {useMediaQuery} from "react-responsive";
 import useProducts from '@/hooks/useProducts';
 import Slider from "@/components/UI/Slider/Slider";
 
-export default function ProductCategoryGridPagination({ title, ids }) {
+export default function ProductCategoryGridPagination({ title, ids, typeLink }) {
   const [currentPage, setCurrentPage] = useState(1);
   const isThreeElements = useMediaQuery({ query: '(max-width: 1280px)' });
   const isTwoElements = useMediaQuery({ query: '(max-width: 1024px)' });
@@ -67,7 +67,7 @@ export default function ProductCategoryGridPagination({ title, ids }) {
   }
 
   const handleShowAll = () => {
-    router.push('/catalog');
+    router.push(typeLink);
   };
 
   if (products.length > 0) return (

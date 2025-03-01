@@ -17,7 +17,7 @@ export default function CompareSticky({
 }) {
   const router = useRouter();
   const goToCatalogPage = () => {
-    router.push("/catalog");
+    router.push("/promyshlennye-roboty");
   };
 
 

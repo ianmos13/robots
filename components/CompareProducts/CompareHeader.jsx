@@ -24,7 +24,7 @@ export default function CompareHeader({
     categoryKeys.has(category.key)
   );
   const goToCatalogPage = () => {
-    router.push("/catalog");
+    router.push("/promyshlennye-roboty");
   };
 
   const touchStartXRef = useRef(null);
@@ -50,7 +50,7 @@ export default function CompareHeader({
     <div className={styles.compareWrapper}>
       <div className={styles.header}>
         <div className={styles.topContainer}>
-          <h3>Сравнение товаров</h3>
+          <h1>Сравнение товаров</h1>
           <div className={styles.btnContainer}>
             {comparisons?.length > 0 && (
               <button className={styles.downloadButton} onClick={onDownloadExcel}>

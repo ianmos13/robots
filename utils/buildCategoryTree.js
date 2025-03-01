@@ -2,8 +2,6 @@ export function buildTree(data) {
     const map = {};
     data.forEach(item => {
         item.uniqName = toCamelCaseLatin(item.name);
-        
-       
         item.link = linkMap[item.key] || `/catalog?category=${item.key}&?type=${item.uniqName}`;
         map[item.key] = { ...item, children: [] };
     });

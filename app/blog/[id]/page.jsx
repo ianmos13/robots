@@ -14,7 +14,7 @@ export default function page() {
    const itemTitle = itemData?.title;
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: "Новости", link: "/articles" },
+    { label: "Блог", link: "/blog" },
     { label: itemTitle, link: "" },
   ];
   const backButtonOptions = {

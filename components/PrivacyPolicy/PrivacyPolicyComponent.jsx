@@ -3,7 +3,7 @@ import styles from './PrivacyPolicyComponent.module.scss'
 export default function PrivacyPolicyComponent() {
 	return (
 		<section className={styles.container}>
-			<div className={styles.pageHeader}>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</div>
+			<h1>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
 			<div className={styles.policyContainer}>
 				{data.map((chapter, chapterIndex) => (
 					<div key={chapterIndex} className={styles.chapter}>
