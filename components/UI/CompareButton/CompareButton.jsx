@@ -17,7 +17,8 @@ export default function CompareButton({ robot }) {
 
   if (!mounted) return null;
 
-  const handleCompareClick = () => {
+  const handleCompareClick = (e) => {
+    e.preventDefault();
     if (isCompared) {
       dispatch(removeFromCompare(robot.id));
     } else {

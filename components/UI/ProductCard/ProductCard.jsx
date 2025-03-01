@@ -7,6 +7,7 @@ import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
 import useDeviceType from '../../../hooks/useDeviceType'
 import useCategories from '@/hooks/useCategories'
+import {getProductUrl} from "@/utils/getProductUrl";
 
 
 export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
@@ -20,36 +21,13 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
     setIsHovered(true)
   }
 
-
   const onLeave = () => {
     hoverCard(false)
     setIsHovered(false)
   }
 
   const hoverImage = robot?.images && robot.images.length > 1 ? robot.images[1] : robot?.hoverImage
-  const currentCategoryObj = categories.find(
-    (category) => category.key === robot.category
-  )
-
-  let productUrl = ''
-  if (currentCategoryObj) {
-
-    if (currentCategoryObj.parent) {
-      const parentCategoryObj = categories.find(
-        (category) => category.key === currentCategoryObj.parent
-      )
-      if (parentCategoryObj) {
-        productUrl = `/${parentCategoryObj.slug}/${currentCategoryObj.slug}/${robot.slug}`
-      } else {
-        productUrl = `/${currentCategoryObj.slug}/${robot.slug}`
-      }
-    } else {
-      productUrl = `/${currentCategoryObj.slug}/${robot.slug}`
-    }
-  } else {
-
-    productUrl = `/${robot.slug}`
-  }
+  const productUrl = getProductUrl(robot, categories)
 
   return (
     <div
@@ -60,11 +38,9 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
       <div className={styles.cardHeader}>
         <div
           className={`${styles.imageWrapper} ${isHovered && styles.hoveredImageWrapper}`}
-          onClick={() => {
-            router.push(productUrl)
-          }}
         >
           <img
+            onClick={() => { router.push(productUrl) }}
             className={`${styles.robotImage} ${styles.mainImage}`}
             src={robot.mainImage}
             alt={robot.title}

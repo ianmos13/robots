@@ -14,6 +14,7 @@ export default function CompareSticky({
   sliderRef,
   onRemoveItem,
   onDownloadExcel,
+  categoryList
 }) {
   const router = useRouter();
   const goToCatalogPage = () => {
@@ -124,7 +125,7 @@ export default function CompareSticky({
               <StickyProductCard
                 key={item.id}
                 item={item}
-                onRemove={() => onRemoveItem(item.id)}
+                categories={categoryList}
               />
             ))}
           </div>

@@ -34,7 +34,7 @@ export default function Projects() {
   const filteredProjects =
     selectedTag === "Все"
       ? projects
-      : projects.filter((proj) => proj.tags.includes(selectedTag));
+      : projects.filter((proj) => proj?.tags && proj?.tags.includes(selectedTag));
 
   const visibleProjects = filteredProjects.slice(0, itemsToShow);
 

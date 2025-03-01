@@ -302,6 +302,7 @@ export default function CompareProducts() {
               onScrollRight={scrollRight}
               onClearComparison={openConfirmModal}
               sliderRef={sliderRef}
+              categoryList={categories}
               onRemoveItem={handleRemoveFromCompare}
               onDownloadExcel={handleDownloadExcel}
             />
