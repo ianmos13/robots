@@ -50,7 +50,7 @@ export default function ProductCategoryGridSlider() {
 	}
 
 	const handleShowAll = () => {
-		router.push("/catalog?category=all&type=pozitsionery")
+		router.push("/pozicionery")
 	}
 	if (products.length > 0) return (
 		<section className={styles.container}>

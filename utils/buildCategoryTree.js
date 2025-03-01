@@ -1,9 +1,10 @@
-
 export function buildTree(data) {
     const map = {};
     data.forEach(item => {
         item.uniqName = toCamelCaseLatin(item.name);
-        item.link = `/catalog?category=${item.key}&?type=${item.uniqName}`;
+        
+       
+        item.link = linkMap[item.key] || `/catalog?category=${item.key}&?type=${item.uniqName}`;
         map[item.key] = { ...item, children: [] };
     });
 
@@ -18,7 +19,11 @@ export function buildTree(data) {
         } else {
             const parent = map[item.parent];
             if (parent) {
-                parent.children.push({...map[item.key], link: `/catalog?category=${item.key}&type=${parent.uniqName}`});
+          
+                parent.children.push({
+                    ...map[item.key],
+                    link: linkMap[item.key] || `/catalog?category=${item.key}&type=${parent.uniqName}`
+                });
             }
         }
     });
@@ -33,9 +38,10 @@ export function buildTree(data) {
 
 export function buildSimpleTree(data) {
     return data.map(item => {
-        return {...item,
+        return {
+            ...item,
             uniqName: toCamelCaseLatin(item.name),
-            link: `/catalog?category=${item.key}&?type=${toCamelCaseLatin(item.name)}`
+            link: linkMap[item.key] || `/catalog?category=${item.key}&?type=${toCamelCaseLatin(item.name)}`
         };
     });
 }
@@ -61,3 +67,32 @@ function toCamelCaseLatin(str) {
         .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase())
         .replace(/^./, str => str.toLowerCase());
 }
+
+
+const linkMap = {
+    // Ветка "Промышленные роботы" (корневой элемент с key "1")
+    "1": "/promyshlennye-roboty/",
+    "10": "/promyshlennye-roboty/roboty-dlya-obsluzhivaniya-stankov/",
+    "20": "/promyshlennye-roboty/koboty/",
+    "14": "/promyshlennye-roboty/scara/",
+    "13": "/promyshlennye-roboty/roboty-manipulyatory/",
+    "12": "/promyshlennye-roboty/roboty-dlya-paletirovaniya/",
+    "9": "/promyshlennye-roboty/frezernye-roboty/",
+    "8": "/promyshlennye-roboty/polirovochnye-roboty/",
+    "7": "/promyshlennye-roboty/svarochnye-roboty/",
+    
+
+    // "15": "/pozicionery/",
+    // "16": "/pozicionery/gorelki-dlya-svarochnyh-rabot/",
+    // "19": "/pozicionery/gorelki-dlya-svarochnyh-rabot/Apolo",
+    // "18": "/pozicionery/gorelki-dlya-svarochnyh-rabot/Loyee",
+    // "17": "/pozicionery/gorelki-dlya-svarochnyh-rabot/ARCTEC",
+    
+ 
+    "2": "/pozicionery/",
+    "6": "/pozicionery/povorotnye/",
+    "5": "/pozicionery/tryohosevye/",
+    "4": "/pozicionery/dvuhosevye/",
+    "3": "/pozicionery/odnoosevye/"
+  };
+  

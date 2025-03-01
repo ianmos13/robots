@@ -15,7 +15,7 @@ export default function DropdownMenu(props) {
     children: [...catalogElements, {
         allLink: true,
         name: "Все промышленные роботы",
-        link: "/catalog",
+        link: "/promyshlennye-roboty",
         image: "/images/icons/menu-blue.svg"
     }]
   }
