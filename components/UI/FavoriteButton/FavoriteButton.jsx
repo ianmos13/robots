@@ -17,7 +17,8 @@ export default function FavoriteButton({ robot, small }) {
 
   if (!mounted) return null;
 
-  const handleFavoriteClick = () => {
+  const handleFavoriteClick = (e) => {
+    e.preventDefault();
     if (isFavorited) {
       dispatch(removeFromFavorite(robot.id));
     } else {

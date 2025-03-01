@@ -1,12 +1,14 @@
 "use client";
 import styles from "./CompareProducts.module.scss";
 import FavoriteButton from "../UI/FavoriteButton/FavoriteButton";
+import {getProductUrl} from "@/utils/getProductUrl";
 
-export default function StickyProductCard({ item, onRemove }) {
+export default function StickyProductCard({ item, categories }) {
+  const productUrl = getProductUrl(item, categories)
   return (
       <a
           className={styles.productCard}
-          href={`/products/${item.id}`}
+          href={productUrl}
       >
       <div className={styles.cardImg}>
         <img

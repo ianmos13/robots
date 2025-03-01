@@ -110,7 +110,6 @@
       display: none;
     }
     .productCard {
-      text-decoration: none;
       border-radius: 20px;
       background: $white;
       align-items: center;
@@ -131,6 +130,9 @@
         flex: 0 0 90%;
         padding: 20px;
       }
+      a {
+        text-decoration: none;
+      }
       .cardIcons {
         position: absolute;
         top: 30px;
@@ -141,8 +143,21 @@
       .favoriteIcon,
       .trashIcon {
         cursor: pointer;
-        width: 33px;
-        height: 33px;
+        width: 56px;
+        height: 56px;
+      }
+      .trashIcon {
+        background-color: $white;
+        border: 1px solid #3232321A;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 33px;
+          height: 33px;
+        }
       }
       .productImage {
         width: 314px;

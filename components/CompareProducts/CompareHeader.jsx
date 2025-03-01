@@ -143,6 +143,7 @@ export default function CompareHeader({
             .map((item) => (
               <ProductCard
                 key={item.id}
+                categories={categoryList}
                 item={item}
                 onRemove={() => onRemoveItem(item.id)}
               />
