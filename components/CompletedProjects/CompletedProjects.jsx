@@ -27,7 +27,7 @@ export default function CompletedProjects({ title }) {
   return (
     <section className={styles.container}>
       <div className={styles.projectsContainer}>
-        <h3>{title}</h3>
+        <h1>{title}</h1>
         {projects?.length > 0 && (
           <>
             <div className={styles.projectsList}>
@@ -36,6 +36,7 @@ export default function CompletedProjects({ title }) {
                   key={index}
                   image={project.image}
                   title={project.title}
+                  description={project.description}
                   tags={project.tags}
                   date={useConvertedDate(project.date)}
                   slug={project.slug}

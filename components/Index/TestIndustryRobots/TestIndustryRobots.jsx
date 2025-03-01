@@ -50,7 +50,7 @@ const TestIndustryRobots = () => {
       </section>
       <RequestModal
         isOpen={isModalOpen}
-        text={"Оставьте заявку на тест-драйв"}
+        text={"Взять на тест-драйв"}
         onClose={handleCloseModal}
       />
     </>

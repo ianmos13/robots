@@ -252,7 +252,7 @@ export default function ProductSlider({ productInfo }) {
               </div>
               <div className={styles.social}>
                 <a
-                  href="https://t.me/@crprobot_manager"
+                  href="https://t.me/crprobot_manager"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -286,7 +286,7 @@ export default function ProductSlider({ productInfo }) {
                 </div>
                 <div className={styles.socialMobile}>
                   <a
-                    href="https://t.me/@crprobot_manager"
+                    href="https://t.me/crprobot_manager"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -308,7 +308,7 @@ export default function ProductSlider({ productInfo }) {
       </div>
       <RequestModal
         isOpen={isModalOpen}
-        text={"Оставьте заявку"}
+        text={"Получить коммерческое предложение"}
         onClose={handleCloseModal}
       />
       <ImageSlider 

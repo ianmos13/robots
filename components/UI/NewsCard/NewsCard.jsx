@@ -1,6 +1,6 @@
 import styles from "./NewsCard.module.scss";
 
-export default function NewsCard({ id, image, title, date, slug }) {
+export default function NewsCard({ id, image, title, description, date, slug }) {
   return (
     <a href={`/articles/${slug}`} className={styles.newsCard} key={id}>
       <div className={styles.imageContainer}>
@@ -10,6 +10,7 @@ export default function NewsCard({ id, image, title, date, slug }) {
       <div className={styles.newsInfo}>
         <p className={styles.date}>{date}</p>
         <div className={styles.title}>{title}</div>
+        { description && (<div className={styles.description}>{description}</div>)}
       </div>
     </a>
   );

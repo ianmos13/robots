@@ -61,7 +61,7 @@ const MainBanner = () => {
 
       <RequestModal
         isOpen={isModalOpen}
-        text={"Оставьте заявку"}
+        text={"Оставить заявку"}
         onClose={handleCloseModal}
       />
     </>

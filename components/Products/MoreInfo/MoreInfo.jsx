@@ -315,7 +315,9 @@ export default function MoreInfo({ productInfo }) {
           {productInfo?.howItWorksVideo && (
               <div className={styles.howItWorks}>
                 <h4>Посмотрите как это работает</h4>
-                <VideoPlayer videoPath={productInfo.howItWorksVideo} />
+                <VideoPlayer
+                    theme={"products"}
+                    videoPath={productInfo.howItWorksVideo} />
               </div>
           )}
           {productInfo?.containInfo && isValidSubData(productInfo?.containInfo) && (
@@ -338,7 +340,7 @@ export default function MoreInfo({ productInfo }) {
       )}
       <RequestModal
           isOpen={isModalOpen}
-          text={"Оставьте заявку"}
+          text={"Оставить заявку"}
           onClose={handleCloseModal}
       />
     </div>

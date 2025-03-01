@@ -129,7 +129,7 @@ const menuElements = [
         title: "Реализованные\u00A0проекты",
         ref: "completedProjects",
         link: "/completed-projects",
-        order: 5,
+        order: 4,
     },
     // {
     //     id: 4,
@@ -139,29 +139,43 @@ const menuElements = [
     //     order: 6,
     // },
     {
+        id: 4,
+        title: "Новости",
+        ref: "articles",
+        link: "/articles",
+        order: 3,
+    },
+    {
         id: 5,
-        title: "О\u00A0компании",
-        ref: "aboutCompany",
-        link: "",
-        order: 2,
-        children: [
-            {
-                id: 50,
-                title: "Блог",
-                link: "/blog",
-            },
-            {
-                id: 51,
-                title: "Новости",
-                link: "/articles",
-            },
+        title: "Блог",
+        ref: "blog",
+        link: "/blog",
+        order: 5,
+    },
+    // {
+    //     id: 5,
+    //     title: "О\u00A0компании",
+    //     ref: "aboutCompany",
+    //     link: "",
+    //     order: 2,
+    //     children: [
+    //         {
+    //             id: 50,
+    //             title: "Блог",
+    //             link: "/blog",
+    //         },
+    //         {
+    //             id: 51,
+    //             title: "Новости",
+    //             link: "/articles",
+    //         },
             // {
             //     id: 52,
             //     title: "О компании",
             //     link: "/about",
             // },
-        ],
-    },
+        // ],
+    // },
     // {
     //     id: 6,
     //     title: "Лизинг\u00A0и\u00A0рассрочка",
@@ -174,6 +188,6 @@ const menuElements = [
         title: "Контакты",
         ref: "contacts",
         link: "/contacts",
-        order: 3,
+        order: 2,
     },
 ]

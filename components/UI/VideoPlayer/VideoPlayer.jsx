@@ -5,7 +5,8 @@ import { normalizeUrl } from "@/utils/normalizeUrl";
 
 const VideoPlayer = ({
   videoPath = '/test_video_2.webm',
-  previewImage = '/images/preview.svg'
+  previewImage = '/images/preview.svg',
+  theme
 }) => {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -40,7 +41,7 @@ const VideoPlayer = ({
   }
 
   return (
-    <div className={`${styles.container} ${isPlaying ? styles.playing : ''}`}>
+    <div className={`${styles.container} ${styles[`${theme}Container`]} ${isPlaying ? styles.playing : ''}`}>
       <video
         ref={videoRef}
         className={styles.videoPlayer}

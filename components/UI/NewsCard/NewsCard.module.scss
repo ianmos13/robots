@@ -40,6 +40,13 @@
 			letter-spacing: -0.02em;
 			color: #323232;
 		}
+		.description {
+			font-family: 'DIN Pro medium', sans-serif;
+			font-size: 20px;
+			line-height: 130%;
+			letter-spacing: -0.02em;
+			color: #323232;
+		}
 	}
 }
 
@@ -55,6 +62,9 @@
 			.title {
 				font-size: 20px;
 				line-height: 26px;
+			}
+			.description {
+				font-size: 18px;
 			}
 		}
 	}
@@ -119,6 +129,9 @@
 			.title {
 				font-size: 16px;
 				line-height: 20.8px;
+			}
+			.description {
+				font-size: 14px;
 			}
 		}
 	}
