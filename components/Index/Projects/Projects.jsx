@@ -88,6 +88,7 @@ export default function Projects() {
               <ProjectCard
                 key={index}
                 title={project.title}
+                description={project.description}
                 image={project.image}
                 date={useConvertedDate(project.date)}
                 tags={project.tags}

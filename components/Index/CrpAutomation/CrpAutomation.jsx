@@ -91,7 +91,7 @@ const CrpAutomation = () => {
     </section>
        <RequestModal
        isOpen={isModalOpen}
-       text={"Оставьте заявку"}
+       text={"Получить бесплатную консультацию"}
        onClose={handleCloseModal}
      />
      </>

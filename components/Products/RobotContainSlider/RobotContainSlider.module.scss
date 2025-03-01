@@ -12,6 +12,9 @@
   @media (max-width: 1050px) {
     max-width: 575px;
   }
+  @media (max-width: 1024px) {
+    max-width: unset;
+  }
 }
 
 .swiperSlide {

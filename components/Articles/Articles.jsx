@@ -26,7 +26,7 @@ export default function Articles({ title }) {
   return (
     <section className={styles.container}>
       <div className={styles.newsContainer}>
-        <h3>{title}</h3>
+        <h1>{title}</h1>
         {/* {loading && <p>Загрузка...</p>}
         {error && <p>Ошибка: {error.message}</p>} */}
         {news?.length > 0 && (
@@ -38,6 +38,7 @@ export default function Articles({ title }) {
                   id={news.id}
                   image={news.image}
                   title={news.title}
+                  description={news.description}
                   date={useConvertedDate(news.date)}
                   slug={news.slug}
                 />

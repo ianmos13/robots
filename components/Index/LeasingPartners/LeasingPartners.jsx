@@ -88,7 +88,7 @@ export default function LeasingPartners() {
       </section>
       <RequestModal
         isOpen={isModalOpen}
-        text={"Оставьте заявку"}
+        text={"Оформить лизинг"}
         onClose={handleCloseModal}
       />
     </>

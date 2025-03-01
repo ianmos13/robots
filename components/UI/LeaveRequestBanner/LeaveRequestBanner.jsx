@@ -50,7 +50,7 @@ const LeaveRequestBanner = ({ size }) => {
       </section>
 
      
-      <RequestModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <RequestModal isOpen={isModalOpen} text={"Оставить заявку"} onClose={handleCloseModal} />
     </>
   );
 };

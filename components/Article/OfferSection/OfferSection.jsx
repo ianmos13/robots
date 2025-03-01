@@ -26,7 +26,7 @@ export default function OfferSection({ text }) {
     </div>
     <RequestModal
         isOpen={isModalOpen}
-        text={"Оставьте заявку"}
+        text={"Получить предложение"}
         onClose={handleCloseModal}
       />
     </>
