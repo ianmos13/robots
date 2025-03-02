@@ -76,14 +76,11 @@ export default function ContactUs({ theme }) {
       <div className={styles.contactUs}>
         <div className={styles.addInfo}>
           <div className={styles.title}>
-            <h4>Остались вопросы по сварочным роботам?</h4>
+            <h4>Разработаем решение для вашего производства</h4>
             <ContactUsButtons theme="contacts" />
           </div>
           <div className={styles.text}>
-            Если у вас есть вопросы о сварочных роботах, комплексах,
-            манипуляторах или позиционерах, или вы хотите получить коммерческое
-            предложение — заполните поля, и наш менеджер свяжется с вами в
-            течение 24 часов.
+            Бесплатно разработаем роботизированную производственную ячейку под ваши задачи. Оставьте заявку и руководитель проектов свяжется с вами.
           </div>
         </div>
         <div className={styles.contactForm}>

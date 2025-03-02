@@ -56,7 +56,7 @@
     margin: 0 auto;
     left: 0;
     position: absolute;
-    width: 50%;
+    width: 51%;
     background: unset;
     @media (max-width: 1750px) {
       padding: 60px 0 0 60px;
@@ -124,7 +124,7 @@
 
     .description {
       margin-bottom: 81px;
-      max-width: 578px;
+      //max-width: 578px;
       font-family: "DIN Pro", sans-serif;
       font-size: 26px;
       line-height: 130%;
@@ -160,7 +160,7 @@
       max-width: 458px;
       width: 100%;
       @media (max-width: 640px) {
-        max-width: 180px;
+        max-width: unset;
       }
     }
     button {

@@ -6,24 +6,27 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-
+    @media (max-width: 1024px) {
+        gap: 24px;
+        margin-bottom: 24px;
+        height: unset;
+        aspect-ratio: 1.21;
+    }
+    @media (max-width: 640px) {
+        gap: 16px;
+    }
     .imageContainer {
         border-radius: 10px;
         position: relative;
         width: 100%;
         height: 419px;
         overflow: hidden;
-        margin-bottom: 40px;
         @media (max-width: 1600px) {
             height: 311px;
         }
         @media (max-width: 1024px) {
-            margin-bottom: 24px;
             height: unset;
             aspect-ratio: 1.21;
-        }
-        @media (max-width: 640px) {
-            margin-bottom: 16px;
         }
 
         img {

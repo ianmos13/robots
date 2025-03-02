@@ -4,7 +4,7 @@ export function makeAllCategories(mainCategory) {
         id: categoryTab?.id,
         key: 'all',
         name: `Все ${categoryTab?.name?.toLowerCase()}`,
-        link: `/${categoryTab?.uniqName}`,
+        link: categoryTab?.link || `/${categoryTab?.uniqName}` ,
     }
     return [allTab].concat(mainCategory?.children || [])
 }

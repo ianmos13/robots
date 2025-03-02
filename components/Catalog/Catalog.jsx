@@ -1,6 +1,5 @@
 'use client'
 import Pagination from '@/components/UI/Pagination/Pagination'
-import useCategories from '@/hooks/useCategories'
 import useDeviceType from '@/hooks/useDeviceType'
 import useProducts from '@/hooks/useProducts'
 import { useSearchParams, usePathname } from 'next/navigation'
@@ -62,20 +61,16 @@ const applicationFilters = {
 
 export default function Catalog({ categories, title }) {
   const { products } = useProducts()
-  const [selectedType, setSelectedType] = useState('promyshlennyeRoboty')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [activeView, setActiveView] = useState('cardView')
   const [selectedFilters, setSelectedFilters] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const { isTabletView, isMobileView, isDesktopView } = useDeviceType()
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false)
-  const [currentCatalogData, setCurrentCatalogData] = useState(catalogData.promyshlennyeRoboty)
   const searchParams = useSearchParams()
   const pathname = usePathname()
-
-
   const rootCategoryMapping = useMemo(() => buildRootCategoryMapping(categories), [categories])
-
+  const currentCatalogData = catalogData[pathname]
 
   const visibleCategories = useMemo(() => {
     const lowerPath = pathname.toLowerCase()
@@ -89,13 +84,8 @@ export default function Catalog({ categories, title }) {
   }, [categories, pathname])
 
   useEffect(() => {
-    const catalogTypeParam = searchParams.get('type')
-    if (catalogTypeParam && catalogTypeParam !== selectedType) {
-      setSelectedType(catalogTypeParam)
-    }
-
     let newCategory = "all"
-    if (pathname !== "/catalog" && categories && categories.length > 0) {
+    if (categories && categories.length > 0) {
       const segments = pathname.split('/').filter(Boolean)
       const slug = segments[segments.length - 1].toLowerCase()
       const foundCategory = categories.find(cat => {
@@ -113,25 +103,7 @@ export default function Catalog({ categories, title }) {
     if (newCategory !== selectedCategory) {
       setSelectedCategory(newCategory)
     }
-
-  
-    let filterParams = []
-    const axesParam = searchParams.get('axes')
-    if (axesParam) {
-      filterParams.push(`Кол-во осей: ${axesParam}`)
-    }
-    const scopeParam = searchParams.get('scopes')
-    if (scopeParam) {
-      filterParams.push(`Область применения: ${applicationFilters[scopeParam]}`)
-    }
-    if (filterParams.length > 0) {
-      setSelectedFilters(Array.from(new Set(filterParams)))
-    }
-  }, [searchParams, pathname, categories, selectedType, selectedCategory])
-
-  useEffect(() => {
-    setCurrentCatalogData(catalogData[`${selectedType}${selectedCategory}`])
-  }, [selectedCategory, selectedType])
+  }, [searchParams, pathname, categories, selectedCategory])
 
   const filteredRobots = useMemo(() => {
     let filtered = products || []
@@ -149,7 +121,8 @@ export default function Catalog({ categories, title }) {
     selectedFilters.forEach(filter => {
       if (filter.startsWith('Область применения: ')) {
         const application = filter.replace('Область применения: ', '')
-        filtered = filtered.filter(r => r.application === application)
+        filtered = filtered.filter(r =>
+          Array.isArray(r.assignment) ? r.assignment.includes(application) : r.assignment === application )
       }
       if (filter.startsWith('Кол-во осей: ')) {
         const axes = parseInt(filter.replace('Кол-во осей: ', ''), 10)
@@ -240,10 +213,11 @@ export default function Catalog({ categories, title }) {
     if (!products || products.length === 0) return 2500
     return Math.max(...products.map(product => product.payloadRange))
   }, [products])
-
+  const isDisplayCategories = pathname.toLowerCase() === "/promyshlennye-roboty/roboty-manipulyatory"
+  const subTitle = subtitles[pathname.toLowerCase()]
   return (
     <section className={styles.container}>
-      {categories && categories.length > 0 && products.length > 0 && (
+      {isDisplayCategories && categories && categories.length > 0 && products.length > 0 && (
         <div className={styles.categoryContainer}>
           <h1>{title}</h1>
           <CategoryTags
@@ -255,7 +229,7 @@ export default function Catalog({ categories, title }) {
       {products.length > 0 && (
         <div className={styles.productContainer}>
           <div className={styles.header}>
-            <h3>Каталог роботов</h3>
+            {subTitle && (<h3>{subTitle}</h3>)}
             <div className={styles.selectViewContainer}>
               <div
                 className={`${styles.cardView} ${activeView === 'cardView' ? styles.active : ''}`}
@@ -397,4 +371,21 @@ export default function Catalog({ categories, title }) {
       <ContactUs theme={'catalog'} />
     </section>
   )
+}
+
+const subtitles = {
+  "/promyshlennye-roboty": "Каталог промышленных роботов",
+  "/promyshlennye-roboty/roboty-dlya-obsluzhivaniya-stankov": "Каталог роботов для обслуживания станков",
+  "/promyshlennye-roboty/koboty": "Каталог коллаборативных роботов",
+  "/promyshlennye-roboty/scara": "Каталог роботов SCARA",
+  "/promyshlennye-roboty/roboty-manipulyatory": "Каталог роботов манипуляторов",
+  "/promyshlennye-roboty/roboty-dlya-paletirovaniya": "Каталог роботов для паллетирования",
+  "/promyshlennye-roboty/frezernye-roboty": "Каталог роботов для фрезеровки",
+  "/promyshlennye-roboty/polirovochnye-roboty": "Каталог роботов для полировки",
+  "/promyshlennye-roboty/svarochnye-roboty": "Каталог сварочных роботов",
+  "/pozicionery": "Каталог позиционеров",
+  "/pozicionery/povorotnye": "Каталог поворотных позиционеров",
+  "/pozicionery/tryohosevye": "Каталог трёхосевых позиционеров",
+  "/pozicionery/dvuhosevye": "Каталог двухосевых позиционеров",
+  "/pozicionery/odnoosevye": "Каталог одноосевых позиционеров",
 }

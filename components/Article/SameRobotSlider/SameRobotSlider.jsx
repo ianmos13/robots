@@ -37,7 +37,7 @@ export default function SameRobotSlider({ robots }) {
 
   return (
     <div className={styles.sameRobotContainer}>
-      <h4>Какие роботы для этого подойдут:</h4>
+      {/*<h4>Какие роботы для этого подойдут:</h4>*/}
       {selectedProducts && isValidSubData(selectedProducts) && (
         <div className={styles.slider}>
           <Swiper

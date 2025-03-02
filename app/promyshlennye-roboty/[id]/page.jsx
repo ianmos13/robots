@@ -14,7 +14,7 @@ export default function page() {
 
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: "Категории промышленных роботов", link: "/promyshlennye-roboty" },
+    { label: "Промышленные роботы", link: "/promyshlennye-roboty" },
     { label: currentCategory?.name, link: currentCategory?.link },
   ];
   return (

@@ -8,7 +8,7 @@ export default function BlogCard({ id, image, title, description, date, slug }) 
         {image ? <img src={image} alt={title} /> : null}
       </div>
       <div className={styles.blogInfo}>
-        <p className={styles.date}>{date}</p>
+        {/*<p className={styles.date}>{date}</p>*/}
         <div className={styles.title}>{title}</div>
         { description && (<div className={styles.description}>{description}</div>)}
       </div>

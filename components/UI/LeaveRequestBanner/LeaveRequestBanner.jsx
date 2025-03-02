@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import RequestModal from "../Modal/RequestModal/RequestModal";
 import styles from "./LeaveRequestBanner.module.scss";
 
-const LeaveRequestBanner = ({ size }) => {
+const LeaveRequestBanner = ({ size, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -14,26 +14,33 @@ const LeaveRequestBanner = ({ size }) => {
     setIsModalOpen(false);
   };
 
+  const bannerData = {
+    title: data?.title ? data?.title : "Убедитесь в возможностях наших\u00A0роботов\u00A0на\u00A0ваших\u00A0задачах",
+    titleMobile: data?.title ? data?.title : "Убедитесь в возможностях наших роботов на\u00A0ваших задачах",
+    text: data?.text ? data?.text : "Проведем сварку ваших материалов роботами, чтобы вы оценили качество и точность до покупки.",
+    buttonText: data?.buttonText ? data?.buttonText : "Оставить заявку"
+  }
+
   return (
     <>
-
       <section
         className={`${styles.container} ${styles[`${size}Container`]} ${isModalOpen ? "blurred" : ""}`}
       >
         <div className={styles.banner}>
           <div className={styles.bannerContent}>
             <div className={`${styles.title} ${styles.desktopTablet}`}>
-              Убедитесь в возможностях наших&nbsp;роботов&nbsp;на&nbsp;ваших&nbsp;задачах
+              {bannerData.title}
             </div>
             <div className={`${styles.title} ${styles.tabletTitle}`}>
-              Убедитесь в возможностях наших роботов на&nbsp;ваших задачах
+              {bannerData.titleMobile}
             </div>
             <div className={styles.description}>
-              Проведем сварку ваших материалов роботами, чтобы вы оценили качество
-              и точность до покупки.
+              {bannerData.text}
             </div>
             <div className={styles.buttonContainer}>
-              <button onClick={handleOpenModal}>Оставить заявку</button>
+              <button onClick={handleOpenModal}>
+                {bannerData.buttonText}
+              </button>
             </div>
           </div>
           <div className={styles.videoContainer}>
@@ -48,9 +55,11 @@ const LeaveRequestBanner = ({ size }) => {
           </div>
         </div>
       </section>
-
-     
-      <RequestModal isOpen={isModalOpen} text={"Оставить заявку"} onClose={handleCloseModal} />
+      <RequestModal
+        isOpen={isModalOpen}
+        text={bannerData.buttonText}
+        onClose={handleCloseModal}
+      />
     </>
   );
 };

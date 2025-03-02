@@ -128,7 +128,7 @@ const menuElements = [
         id: 3,
         title: "Реализованные\u00A0проекты",
         ref: "completedProjects",
-        link: "/completed-projects",
+        link: "/our-projects",
         order: 4,
     },
     // {
