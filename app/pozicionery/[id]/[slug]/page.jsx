@@ -23,7 +23,7 @@ export default function Page() {
   console.log(id)
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: parentCategory?.name, link: parentCategory?.link },
+    { label: "Позиционеры", link: "/pozicionery" },
     { label: currentCategory?.name, link: currentCategory?.link },
     { label: productName, link: "" },
   ];

@@ -13,7 +13,7 @@ export default function page() {
   const currentCategory = categories.find((category) => category?.link?.toString() === `/pozicionery/${id?.toString()}/`);
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: "Категории позиционеров", link: "/pozicionery" },
+    { label: "Позиционеры", link: "/pozicionery" },
     { label: currentCategory?.name, link: currentCategory?.link },
   ];
   return (

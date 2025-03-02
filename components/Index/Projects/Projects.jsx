@@ -55,33 +55,33 @@ export default function Projects() {
             Реализованные проекты с&nbsp;применением промышленных роботов CRP
           </h2>
 
-          {!isMobileView ? (
-            <div className={styles.tags}>
-              {allTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => handleTagClick(tag)}
-                  className={tag === selectedTag ? styles.activeTag : ""}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          ) : (
-            <select
-              value={selectedTag}
-              onChange={(e) => handleTagClick(e.target.value)}
-              className={styles.dropdown}
-            >
-              {allTags.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))}
-            </select>
-          )}
+        {/*  {!isMobileView ? (*/}
+        {/*    <div className={styles.tags}>*/}
+        {/*      {allTags.map((tag) => (*/}
+        {/*        <button*/}
+        {/*          key={tag}*/}
+        {/*          onClick={() => handleTagClick(tag)}*/}
+        {/*          className={tag === selectedTag ? styles.activeTag : ""}*/}
+        {/*        >*/}
+        {/*          {tag}*/}
+        {/*        </button>*/}
+        {/*      ))}*/}
+        {/*    </div>*/}
+        {/*  ) : (*/}
+        {/*    <select*/}
+        {/*      value={selectedTag}*/}
+        {/*      onChange={(e) => handleTagClick(e.target.value)}*/}
+        {/*      className={styles.dropdown}*/}
+        {/*    >*/}
+        {/*      {allTags.map((tag) => (*/}
+        {/*        <option key={tag} value={tag}>*/}
+        {/*          {tag}*/}
+        {/*        </option>*/}
+        {/*      ))}*/}
+        {/*    </select>*/}
+        {/*  )}*/}
         </div>
-       
+        
 
         <div className={styles.projectsList}>
           {visibleProjects.map((project, index) => (
@@ -98,11 +98,11 @@ export default function Projects() {
         </div>
 
         {itemsToShow < filteredProjects.length && (
-       <div className={styles.loadButtonContainer}>
-       <div className={styles.loadButton}>
-         <LoadMoreButton onClick={handleShowMore} theme={'white'} />
-       </div>
-     </div>
+          <div className={styles.loadButtonContainer}>
+            <div className={styles.loadButton}>
+              <LoadMoreButton onClick={handleShowMore} theme={'white'} />
+            </div>
+          </div>
         )}
       </div>
     </section>

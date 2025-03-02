@@ -58,7 +58,7 @@ const TruncatedText = ({ prj }) => {
 
   useEffect(() => {
     const truncateText = () => {
-      const linkHTML = `<a href="/completed-projects/${prj.slug}" class="${styles.mobileRead}">Читать далее</a>`;
+      const linkHTML = `<a href="/our-projects/${prj.slug}" class="${styles.mobileRead}">Читать далее</a>`;
       const element = textRef.current;
       if (!element) return;
       element.innerText = sanitizedText;
@@ -98,7 +98,7 @@ const TruncatedText = ({ prj }) => {
           <>
             {displayText}{" "}
             <a
-              href={`/completed-projects/${prj.slug}`}
+              href={`/our-projects/${prj.slug}`}
               className={styles.mobileRead}
             >
               Читать далее
@@ -140,9 +140,7 @@ export default function CompletedProjectsSlider() {
     return (
       <div className={styles.sliderContainer}>
         <div className={styles.header}>
-          <h4>
-            Проекты внедрения промышленного робота манипулятора CRP-RH14-10
-          </h4>
+          <h4> Проекты внедрения </h4>
           <div className={styles.desktopButtonContainer}>
             <SwitchButtons
               activeButton={activeButton}

@@ -296,6 +296,11 @@ const footerLinks = [
     //     link: "/about",
     // },
     {
+        id: 2,
+        name: "Реализованные\u00A0проекты",
+        link: "/our-projects",
+    },
+    {
         id: 3,
         name: "Блог",
         link: "/blog",

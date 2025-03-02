@@ -19,7 +19,7 @@ export default function Home() {
       <CrpAutomation />
       <Projects />
       <div className={`${styles.leaveRequestBannerContainer} ${styles.leaveWhiteRequestBannerContainer}`}>
-        <LeaveRequestBanner />
+        <LeaveRequestBanner data={bannerData} />
       </div>
       <ProductCategoryGridSlider />
       {/*<div className={styles.productPaginationGridContainer}>*/}
@@ -28,11 +28,23 @@ export default function Home() {
       {/*  />*/}
       {/*</div>*/}
       <div className={styles.leaveRequestBannerContainer}>
-        <LeaveRequestBanner />
+        <LeaveRequestBanner data={secondBannerData} />
       </div>
       <LeasingPartners />
       <NewsIndex />
       <ContactUs />
     </>
   );
+}
+
+const bannerData = {
+    title: "Робот приедет на ваше предприятие бесплатно",
+    text: "Наш робот и технические специалисты приезжают на Вашу территорию и проводят выездную демонстрацию работы на Вашем предприятии",
+    buttonText: "Заказать выездную демонстрацию"
+}
+
+const secondBannerData = {
+    title: "Приглашаем на тестовую сварку ваших изделий нашим роботом",
+    text: "Тестовая сварка (MIG/MAG, TIG, лазер) и другие виды обработки (фрезеровка, резка) ваших деталей в нашем демо-зале",
+    buttonText: "Тестировать робота"
 }

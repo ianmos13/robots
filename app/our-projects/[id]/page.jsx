@@ -14,11 +14,11 @@ export default function page() {
    const projectTitle = projectData?.title;
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: "Реализованные проекты", link: "/completed-projects" },
+    { label: "Реализованные проекты", link: "/our-projects" },
     { label: projectTitle, link: "" },
   ];
   const backButtonOptions = {
-      link: "/completed-projects",
+      link: "/our-projects",
       title: {
         small: "К\u00A0проектам",
         large: "Вернуться\u00A0к\u00A0проектам"

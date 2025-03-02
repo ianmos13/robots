@@ -9,7 +9,7 @@ export default function page() {
   const { categories } = useCategories(true);
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
-    { label: "Категории промышленных роботов", link: "/promyshlennye-roboty" },
+    { label: "Промышленные роботы", link: "/promyshlennye-roboty" },
   ];
   return (
     <Suspense fallback={<div>Loading catalog...</div>}>
