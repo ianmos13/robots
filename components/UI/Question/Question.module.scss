@@ -103,12 +103,45 @@
       }
     }
   }
-
-
 }
 
 .show {
   max-height: 1000px;
   opacity: 1;
   margin-top: 70px;
+}
+
+.indexTheme{
+  padding: 0 30px 492px 30px;
+  @media (max-width:1600px) {
+    padding: 0 30px 200px 30px;
+  }
+  @media (max-width: 1024px) {
+    padding: 0 20px 100px 20px;
+  }
+  @media (max-width: 640px) {
+    padding: 0 10px 72px 10px;
+  }
+
+  .answer {
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-size: 30px;
+      line-height: 130%;
+      margin: 24px 0;
+      @media (max-width: 1600px) {
+        font-size: 26px;
+        margin: 16px 0;
+      }
+      @media (max-width: 1024px) {
+        font-size: 30px;
+        margin: 24px 0;
+      }
+      @media (max-width: 640px) {
+        font-size: 24px;
+        margin: 12px 0;
+      }
+    }
+  }
 }

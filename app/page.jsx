@@ -10,6 +10,9 @@ import LeasingPartners from "@/components/Index/LeasingPartners/LeasingPartners"
 import NewsIndex from "@/components/Index/News/NewsIndex";
 import ContactUs from "@/components/UI/ContactUs/ContactUs";
 import styles from "@/styles/Home.module.scss"
+import Question from '@/components/UI/Question/Question'
+import catalogData  from '@/public/data/catalogData.json';
+
 export default function Home() {
   return (
     <>
@@ -32,6 +35,7 @@ export default function Home() {
       </div>
       <LeasingPartners />
       <NewsIndex />
+      <Question faqData={catalogData['/index']?.questions} theme={'index'}/>
       <ContactUs />
     </>
   );

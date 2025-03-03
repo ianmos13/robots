@@ -12,6 +12,11 @@ export default function CategoryTags({ theme, categories, selectedCategory }) {
     router.push(category.link);
   };
 
+
+  const filteredCategories = categories.filter(
+    (cat) => !(cat.key === "6" && cat.link === "/pozicionery/povorotnye/")
+  );
+
   return (
     <>
       <div className={`${styles.swiperCategoryContainer} ${styles[`${theme}SwiperContainer`]}`}>
@@ -21,7 +26,7 @@ export default function CategoryTags({ theme, categories, selectedCategory }) {
           slidesPerView="auto"
           spaceBetween={0}
         >
-          {categories.map((category, index) => (
+          {filteredCategories.map((category, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <button
                 key={category.key}
@@ -36,7 +41,7 @@ export default function CategoryTags({ theme, categories, selectedCategory }) {
       </div>
       <div className={`${styles.tagsContainer} ${styles[`${theme}Container`]}`}>
         <nav className={styles.tags}>
-          {categories.map((cat, index) => (
+          {filteredCategories.map((cat, index) => (
             <Tag
               key={index}
               category={cat}

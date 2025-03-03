@@ -3,7 +3,7 @@ import CheckBox from "@/components/UI/CustomCheckBox/CheckBox";
 import CustomInput from "@/components/UI/CustomInput/CustomInput";
 import styles from "./RequestModal.module.scss";
 
-const RequestModal = ({ isOpen, onClose, text }) => {
+const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +47,13 @@ const RequestModal = ({ isOpen, onClose, text }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, phone, email, messageFormat: "modal" }),
+        body: JSON.stringify({ 
+          name, 
+          phone, 
+          email, 
+          messageFormat: "modal",
+          productSlug  
+        }),
       });
 
       const result = await response.json();

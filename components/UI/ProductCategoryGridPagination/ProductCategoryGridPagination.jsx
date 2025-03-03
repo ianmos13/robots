@@ -44,7 +44,6 @@ export default function ProductCategoryGridPagination({ title, ids, typeLink }) 
       const activeIndex = swiper.realIndex;
 
       const newIndex = (page - 1) * productsPerPage
-      console.log("handlePageChange", newIndex, activeIndex)
       if (activeIndex > newIndex) {
         for(let i = 0; i < activeIndex - newIndex ; i+=1)
           swiper.slidePrev();

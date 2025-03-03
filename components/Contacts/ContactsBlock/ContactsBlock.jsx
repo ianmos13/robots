@@ -40,7 +40,7 @@ export default function Contacts() {
               <a className={styles.text} href="mailto:info@crp-robot.ru">
                 info@crp-robot.ru
               </a>
-              <p className={styles.text}>Москва, ул.Комсомольская 12 б</p>
+              <p className={styles.text}>Одинцово, Можайское ш., 8</p>
             </div>
           </div>
           <div className={styles.tile}>
@@ -77,7 +77,7 @@ export default function Contacts() {
               <a className={styles.text} href="mailto:s.shershnev@crp-robot.ru">
                 s.shershnev@crp-robot.ru
               </a>
-              <p className={styles.text}>Москва, ул.Комсомольская 12 б</p>
+              <p className={styles.text}>Одинцово, Можайское ш., 8</p>
             </div>
           </div>
           <div className={styles.tile}>

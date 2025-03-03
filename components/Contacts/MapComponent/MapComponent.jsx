@@ -46,7 +46,11 @@ function CustomMarker({ position }) {
 function MapComponent() {
   return (
     <div className={styles.container}>
-      <MapContainer center={[55.671011, 37.271434]} zoom={11} className={styles.map}>
+      <MapContainer 
+        center={[55.671011, 37.271434]} 
+        zoom={11} className={styles.map} 
+        scrollWheelZoom={false}
+      >
       <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
