@@ -13,6 +13,7 @@ export default function ProductCardLong({ robot, categories }) {
 				<div className={styles.titleContainer}>
 					<div className={styles.imageWrapper}>
 						<img
+							loading="lazy"
 							className={styles.robotImage}
 							src={robot.mainImage}
 							alt={robot.title}

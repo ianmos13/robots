@@ -38,7 +38,7 @@ export default function CatalogPopup({ catalogElements, openCatalog }) {
         </div>
         <div className={styles.imageContainer} >
           { imageUrl && (
-              <img src={imageUrl} alt='Catalog image' />
+              <img  src={imageUrl} loading="lazy" alt='Catalog image' />
           )}
         </div>
       </div>

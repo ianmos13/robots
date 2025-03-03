@@ -199,6 +199,7 @@ export default function CompletedProjectsSlider() {
                 <div className={styles.card}>
                   <div className={styles.imageContainer}>
                     <img
+                      loading="lazy"
                       src={prj.image}
                       alt={prj.title}
                       className={styles.image}

@@ -280,6 +280,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
               {getCurrentImage() && (
                 <div className={styles.imageContainer}>
                   <img
+                    loading="lazy"
                     src={getCurrentImage()}
                     alt={activeTechnicalTab}
                   />

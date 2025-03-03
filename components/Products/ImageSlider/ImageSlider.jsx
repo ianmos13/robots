@@ -60,7 +60,7 @@ export default function ImageSlider({ images, isOpen, onClose }) {
 
 						{images.map((image, index) => (
 							<SwiperSlide key={index} className={styles.swiperSlide}>
-								<img src={image} alt='Роботы' />
+								<img loading="lazy" src={image} alt='Роботы' />
 							</SwiperSlide>
 						))}
 					</Swiper>
