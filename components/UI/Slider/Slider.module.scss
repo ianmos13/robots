@@ -2,10 +2,10 @@
 	width: 100%;
 	@media (max-width: 1024px) {
 		width: 100vw;
-		margin: 0 -20px;
+		margin: 0 -20px !important;
 	}
 	@media (max-width: 640px) {
-		margin: 0 -10px;
+		margin: 0 -10px !important;
 	}
 
 	.swiperSlide {
