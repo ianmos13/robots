@@ -43,7 +43,7 @@ const buildRootCategoryMapping = (categories) => {
 }
 
 const subtitles = {
-  "/promyshlennye-roboty": "Каталог промышленных роботов",
+  "/promyshlennye-roboty": null,
   "/promyshlennye-roboty/roboty-dlya-obsluzhivaniya-stankov": "Каталог роботов для обслуживания станков",
   "/promyshlennye-roboty/koboty": "Каталог коллаборативных роботов",
   "/promyshlennye-roboty/scara": "Каталог роботов SCARA",
@@ -52,7 +52,7 @@ const subtitles = {
   "/promyshlennye-roboty/frezernye-roboty": "Каталог роботов для фрезеровки",
   "/promyshlennye-roboty/polirovochnye-roboty": "Каталог роботов для полировки",
   "/promyshlennye-roboty/svarochnye-roboty": "Каталог сварочных роботов",
-  "/pozicionery": "Каталог позиционеров",
+  "/pozicionery": null,
   "/pozicionery/povorotnye": "Каталог поворотных позиционеров",
   "/pozicionery/tryohosevye": "Каталог трёхосевых позиционеров",
   "/pozicionery/dvuhosevye": "Каталог двухосевых позиционеров",
@@ -228,7 +228,7 @@ export default function Catalog({ categories, title }) {
     if (!products || products.length === 0) return 2500
     return Math.max(...products.map(product => product.payloadRange))
   }, [products])
-  const isDisplayCategories = pathname.toLowerCase() === "/promyshlennye-roboty"
+  const isDisplayCategories = ["/promyshlennye-roboty", "/pozicionery"].includes(pathname.toLowerCase())
   const subTitle = subtitles[pathname.toLowerCase()]
   return (
     <section className={styles.container}>
@@ -244,7 +244,7 @@ export default function Catalog({ categories, title }) {
       {products.length > 0 && (
         <div className={styles.productContainer}>
           <div className={styles.header}>
-            {subTitle && (<h3>{subTitle}</h3>)}
+            {subTitle && (<h1>{subTitle}</h1>)}
             <div className={styles.selectViewContainer}>
               <div
                 className={`${styles.cardView} ${activeView === 'cardView' ? styles.active : ''}`}
