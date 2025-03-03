@@ -7,10 +7,11 @@ export default function DownloadDetailsButton({ text }) {
 	const [isMouseLeaved, setIsMouseLeaved] = useState(false)
 
 	return (
-		<div
+		<a
 			className={`${styles.container} ${isMouseLeaved ? styles.unhovered : ''}`}
 			onMouseEnter={() => setIsMouseLeaved(false)}
 			onMouseLeave={() => setIsMouseLeaved(true)}
+			href="/data/Карточка Предприятия ООО СМТ.docx"
 		>
 			{text && <div className={styles.textContainer}>{text}</div>}
 			<div className={styles.imageContainer}>
@@ -20,6 +21,6 @@ export default function DownloadDetailsButton({ text }) {
 					className={styles.icon}
 				/>
 			</div>
-		</div>
+		</a>
 	)
 }

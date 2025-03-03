@@ -18,7 +18,7 @@ import styles from "./ProductSlider.module.scss"
 export default function ProductSlider({ productInfo }) {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isImageSliderOpen, setIsImageSliderOpen] = useState(false)
+  const [isImageSliderOpen, setIsImageSliderOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const comparisons = useSelector((state) => state.compare || []);
   const favorites = useSelector((state) => state.favorite || []);
@@ -125,12 +125,12 @@ export default function ProductSlider({ productInfo }) {
         {safeImages.length > 0 && (
           <div className={styles.imageContainer}>
             <div className={styles.mainImageContainer}>
-            <img
-              src={safeImages[currentImageIndex]}
-              alt="Product"
-              className={styles.mainImage}
-              onClick={handleOpenImageSlider}
-            />
+              <img
+                src={safeImages[currentImageIndex]}
+                alt="Product"
+                className={styles.mainImage}
+                onClick={handleOpenImageSlider}
+              />
             </div>
             <button className={styles.arrowLeft} onClick={handlePrevImage}>
               <img src="/images/icons/arrow-left-filled.svg" alt="Предыдущий" />
@@ -310,6 +310,7 @@ export default function ProductSlider({ productInfo }) {
         isOpen={isModalOpen}
         text={"Получить коммерческое предложение"}
         onClose={handleCloseModal}
+        productSlug={productInfo.slug}  
       />
       <ImageSlider 
         isOpen={isImageSliderOpen} 

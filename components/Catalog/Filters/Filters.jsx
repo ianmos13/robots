@@ -1,3 +1,4 @@
+import { usePathname } from 'next/navigation'
 import Slider from "@mui/material/Slider"
 import { useEffect, useState } from "react"
 import styles from "./Filters.module.scss"
@@ -6,6 +7,9 @@ const DEFAULT_PAYLOAD_MIN = 0
 const DEFAULT_REACH_MIN = 0
 
 export default function Filters({ selectedFilters, onChangeFilters, maxReach, maxPayload }) {
+  const pathname = usePathname();
+  const isPozicionery = pathname.toLowerCase().includes('pozicionery');
+
   const DEFAULT_PAYLOAD_MAX = maxPayload || 2500
   const DEFAULT_REACH_MAX = maxReach || 1000
 
@@ -30,7 +34,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
     "Гибка металла",
     "SCARA",
   ]
-  const axesOptions = [1, 2, 3, 4]
+  const axesOptions = [1, 2, 3, 4, 5, 6]
 
   const [payloadRange, setPayloadRange] = useState([DEFAULT_PAYLOAD_MIN, DEFAULT_PAYLOAD_MAX])
   const [reachRange, setReachRange] = useState([DEFAULT_REACH_MIN, DEFAULT_REACH_MAX])
@@ -169,36 +173,38 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
 
   return (
     <div className={styles.filters}>
-      <div className={styles.filterSection}>
-        <div
-          className={styles.filterHeader}
-          onClick={() => setIsApplicationOpen(!isApplicationOpen)}
-        >
-          Область применения
-          <img
-            src={
-              isApplicationOpen
-                ? "/images/icons/filters-dropdown-open.svg"
-                : "/images/icons/filters-dropdown-close.svg"
-            }
-            alt="toggle"
-          />
-        </div>
-        {isApplicationOpen && (
-          <div className={styles.filterOptions}>
-            {applications.map(app => (
-              <label key={app}>
-                <input
-                  type="checkbox"
-                  checked={isAppSelected(app)}
-                  onChange={() => toggleApplication(app)}
-                />
-                {app}
-              </label>
-            ))}
+      {!isPozicionery && (
+        <div className={styles.filterSection}>
+          <div
+            className={styles.filterHeader}
+            onClick={() => setIsApplicationOpen(!isApplicationOpen)}
+          >
+            Область применения
+            <img
+              src={
+                isApplicationOpen
+                  ? "/images/icons/filters-dropdown-open.svg"
+                  : "/images/icons/filters-dropdown-close.svg"
+              }
+              alt="toggle"
+            />
           </div>
-        )}
-      </div>
+          {isApplicationOpen && (
+            <div className={styles.filterOptions}>
+              {applications.map(app => (
+                <label key={app}>
+                  <input
+                    type="checkbox"
+                    checked={isAppSelected(app)}
+                    onChange={() => toggleApplication(app)}
+                  />
+                  {app}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       <div className={styles.filterSection}>
         <div
@@ -298,99 +304,104 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
         )}
       </div>
 
-      <div className={styles.filterSection}>
-        <div
-          className={styles.filterHeader}
-          onClick={() => setIsReachOpen(!isReachOpen)}
-        >
-          Максимальный охват
-          <img
-            src={
-              isReachOpen
-                ? "/images/icons/filters-dropdown-open.svg"
-                : "/images/icons/filters-dropdown-close.svg"
-            }
-            alt="toggle"
-          />
-        </div>
-        {isReachOpen && (
-          <div className={styles.filterOptions}>
-            <Slider
-              value={reachRange}
-              onChange={handleReachRangeChange}
-              min={DEFAULT_REACH_MIN}
-              max={DEFAULT_REACH_MAX}
-              className={styles.customSlider}
-              sx={{
-                color: "#C6DFF5",
-                height: 6,
-                "& .MuiSlider-thumb": {
-                  width: 24,
-                  height: 24,
-                  backgroundColor: "#0149BF",
-                  boxShadow: "none",
-                  "&:hover": { boxShadow: "none" },
-                  "&.Mui-active": { boxShadow: "none" },
-                  "&:focus": { boxShadow: "none" },
-                },
-                "& .MuiSlider-track": { border: "none" },
-                "& .MuiSlider-rail": {
-                  opacity: 0.5,
-                  height: 6,
-                  backgroundColor: "#3232321A",
-                },
-              }}
-            />
-            <div className={styles.rangeInputs}>
-              <div className={styles.inputWrapper} data-unit="мм">
-                <input
-                  type="number"
-                  min={DEFAULT_REACH_MIN}
-                  max={DEFAULT_REACH_MAX}
-                  value={reachRange[0]}
-                  onChange={handleReachMinChange}
-                />
-              </div>
-              <div className={styles.inputWrapper} data-unit="мм">
-                <input
-                  type="number"
-                  min={DEFAULT_REACH_MIN}
-                  max={DEFAULT_REACH_MAX}
-                  value={reachRange[1]}
-                  onChange={handleReachMaxChange}
-                />
-              </div>
+      {!isPozicionery && (
+        <>
+          <div className={styles.filterSection}>
+            <div
+              className={styles.filterHeader}
+              onClick={() => setIsReachOpen(!isReachOpen)}
+            >
+              Максимальный охват
+              <img
+                src={
+                  isReachOpen
+                    ? "/images/icons/filters-dropdown-open.svg"
+                    : "/images/icons/filters-dropdown-close.svg"
+                }
+                alt="toggle"
+              />
             </div>
+            {isReachOpen && (
+              <div className={styles.filterOptions}>
+                <Slider
+                  value={reachRange}
+                  onChange={handleReachRangeChange}
+                  min={DEFAULT_REACH_MIN}
+                  max={DEFAULT_REACH_MAX}
+                  className={styles.customSlider}
+                  sx={{
+                    color: "#C6DFF5",
+                    height: 6,
+                    "& .MuiSlider-thumb": {
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#0149BF",
+                      boxShadow: "none",
+                      "&:hover": { boxShadow: "none" },
+                      "&.Mui-active": { boxShadow: "none" },
+                      "&:focus": { boxShadow: "none" },
+                    },
+                    "& .MuiSlider-track": { border: "none" },
+                    "& .MuiSlider-rail": {
+                      opacity: 0.5,
+                      height: 6,
+                      backgroundColor: "#3232321A",
+                    },
+                  }}
+                />
+                <div className={styles.rangeInputs}>
+                  <div className={styles.inputWrapper} data-unit="мм">
+                    <input
+                      type="number"
+                      min={DEFAULT_REACH_MIN}
+                      max={DEFAULT_REACH_MAX}
+                      value={reachRange[0]}
+                      onChange={handleReachMinChange}
+                    />
+                  </div>
+                  <div className={styles.inputWrapper} data-unit="мм">
+                    <input
+                      type="number"
+                      min={DEFAULT_REACH_MIN}
+                      max={DEFAULT_REACH_MAX}
+                      value={reachRange[1]}
+                      onChange={handleReachMaxChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className={styles.filterSection}>
-        <div
-          className={styles.filterHeader}
-          onClick={() => setIsWeightOpen(!isWeightOpen)}
-        >
-          Вес робота
-          <img
-            src={
-              isWeightOpen
-                ? "/images/icons/filters-dropdown-open.svg"
-                : "/images/icons/filters-dropdown-close.svg"
-            }
-            alt="toggle"
-          />
-        </div>
-        {isWeightOpen && (
-          <div className={styles.filterOptions}>
-            <input
-              type="number"
-              placeholder="Введите вес"
-              value={robotWeight}
-              onChange={handleWeightChange}
-            />
+          <div className={styles.filterSection}>
+            <div
+              className={styles.filterHeader}
+              onClick={() => setIsWeightOpen(!isWeightOpen)}
+            >
+              Вес робота
+              <img
+                src={
+                  isWeightOpen
+                    ? "/images/icons/filters-dropdown-open.svg"
+                    : "/images/icons/filters-dropdown-close.svg"
+                }
+                alt="toggle"
+              />
+            </div>
+            {isWeightOpen && (
+              <div className={styles.filterOptions}>
+                <input
+                  type="number"
+                  placeholder="Введите вес"
+                  value={robotWeight}
+                  onChange={handleWeightChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
+
       <button
         className={styles.applyButton}
         onClick={() => {

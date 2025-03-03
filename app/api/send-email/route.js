@@ -5,7 +5,7 @@ export const runtime = "nodejs";
 
 export async function POST(req) {
   try {
-    const { name, phone, email, city, comment, messageFormat } = await req.json();
+    const { name, phone, email, city, comment, messageFormat, productSlug } = await req.json();
 
     let text, html;
     if (messageFormat === "modal") {
@@ -16,6 +16,10 @@ export async function POST(req) {
         <p><strong>Номер телефона:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email}</p>
       `;
+      if (productSlug) {
+        text += `\nПродукт: ${productSlug}`;
+        html += `<p><strong>Продукт:</strong> ${productSlug}</p>`;
+      }
     } else if (messageFormat === "contactForm") {
       text = `Новая заявка:\n\nИмя: ${name}\nГород: ${city}\nНомер телефона: ${phone}\nEmail: ${email}\nКомментарий: ${comment}`;
       html = `
@@ -27,10 +31,9 @@ export async function POST(req) {
         <p><strong>Комментарий:</strong> ${comment}</p>
       `;
     } else {
-      
       text = `Новая заявка:\n\nИмя: ${name}\nНомер телефона: ${phone}\nEmail: ${email}`;
       html = `
-        <h2>Новая заявка </h2>
+        <h2>Новая заявка</h2>
         <p><strong>Имя:</strong> ${name}</p>
         <p><strong>Номер телефона:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email}</p>

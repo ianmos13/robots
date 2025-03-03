@@ -20,7 +20,6 @@ export default function Page() {
   const parentCategory = categories.find(
     (category) => category?.key?.toString() === currentCategory?.parent?.toString()
   );
-  console.log(id)
   const breadcrumbItems = [
     { label: "Главная", link: "/" },
     { label: "Позиционеры", link: "/pozicionery" },

@@ -31,7 +31,6 @@ const ProductCategories = () => {
   const handleCategoryClick = (categoryLink) => {
     router.push(categoryLink);
   };
-  console.log(categories)
   if (selectedCategories.length > 0) return (
     <section className={styles.container}>
       <TitleWithSeparator title={"Категории промышленных роботов"} />

@@ -28,8 +28,7 @@ const MainBanner = () => {
             <div className={styles.inner}>
               <div className={styles.headerSubText}>Роботы CRP</div>
               <div className={styles.headerDescription}>
-                Упрощаем и ускоряем производственные процессы в самых разных
-                сферах, от электроники для пищевой промышленности.
+              Упрощаем и ускоряем производственные процессы в самых разных сферах, от электроники до пищевой промышленности
               </div>
               <div className={styles.requestDesktop}>
                 {" "}

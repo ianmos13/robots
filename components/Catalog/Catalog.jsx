@@ -22,7 +22,6 @@ import FiltersModal from './FiltersModal/FiltersModal'
 import catalogData from '@/public/data/catalogData.json'
 import { sanitizeData } from '@/utils/sanitizeHtmlText'
 
-
 const buildRootCategoryMapping = (categories) => {
   const mapping = {}
   categories.forEach(cat => {
@@ -43,20 +42,21 @@ const buildRootCategoryMapping = (categories) => {
   return mapping
 }
 
-const applicationFilters = {
-  welding: 'Сварка',
-  laserCutting: 'Лазерная резка',
-  plasmaWaterjet: 'Плазменная и гидроабразивная резка',
-  contactWelding: 'Контактная сварка',
-  palletizing: 'Паллетирование',
-  cnc: 'Обслуживание станков с ЧПУ',
-  injection: 'Обслуживание ТПА',
-  bendingStampingPress: 'Обслуживание гибочного и штамповочного пресса',
-  conveyorLine: 'Обслуживание конвейерной линии',
-  milling: 'Фрезеровка',
-  polishing: 'Полировка',
-  metalBending: 'Гибка металла',
-  scara: 'SCARA',
+const subtitles = {
+  "/promyshlennye-roboty": "Каталог промышленных роботов",
+  "/promyshlennye-roboty/roboty-dlya-obsluzhivaniya-stankov": "Каталог роботов для обслуживания станков",
+  "/promyshlennye-roboty/koboty": "Каталог коллаборативных роботов",
+  "/promyshlennye-roboty/scara": "Каталог роботов SCARA",
+  "/promyshlennye-roboty/roboty-manipulyatory": "Каталог роботов манипуляторов",
+  "/promyshlennye-roboty/roboty-dlya-paletirovaniya": "Каталог роботов для паллетирования",
+  "/promyshlennye-roboty/frezernye-roboty": "Каталог роботов для фрезеровки",
+  "/promyshlennye-roboty/polirovochnye-roboty": "Каталог роботов для полировки",
+  "/promyshlennye-roboty/svarochnye-roboty": "Каталог сварочных роботов",
+  "/pozicionery": "Каталог позиционеров",
+  "/pozicionery/povorotnye": "Каталог поворотных позиционеров",
+  "/pozicionery/tryohosevye": "Каталог трёхосевых позиционеров",
+  "/pozicionery/dvuhosevye": "Каталог двухосевых позиционеров",
+  "/pozicionery/odnoosevye": "Каталог одноосевых позиционеров",
 }
 
 export default function Catalog({ categories, title }) {
@@ -108,53 +108,68 @@ export default function Catalog({ categories, title }) {
   const filteredRobots = useMemo(() => {
     let filtered = products || []
     if (selectedCategory && selectedCategory !== 'all') {
-   
       if (selectedCategory === "1" || selectedCategory === "2") {
         const allowed = rootCategoryMapping[selectedCategory] || []
         filtered = filtered.filter(robot => allowed.includes(robot.category))
       } else {
         filtered = filtered.filter(robot => robot.category === selectedCategory)
       }
-     
     }
+
    
-    selectedFilters.forEach(filter => {
-      if (filter.startsWith('Область применения: ')) {
-        const application = filter.replace('Область применения: ', '')
-        filtered = filtered.filter(r =>
-          Array.isArray(r.assignment) ? r.assignment.includes(application) : r.assignment === application )
-      }
-      if (filter.startsWith('Кол-во осей: ')) {
-        const axes = parseInt(filter.replace('Кол-во осей: ', ''), 10)
-        filtered = filtered.filter(r => r.axes === axes)
-      }
-      if (filter.startsWith('Грузоподъёмность: ')) {
-        const [min, max] = filter
-          .replace('Грузоподъёмность: ', '')
-          .replace(' кг', '')
-          .split('-')
-          .map(Number)
-        filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max)
-      }
-      if (filter.startsWith('Охват: ')) {
-        const [min, max] = filter
-          .replace('Охват: ', '')
-          .replace(' мм', '')
-          .split('-')
-          .map(Number)
-        filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max)
-      }
-      if (filter.startsWith('Вес: ')) {
-        const weight = parseInt(filter.replace('Вес: ', '').replace(' кг', ''), 10)
-        filtered = filtered.filter(r => r.weight === weight)
-      }
-    })
+    const assignmentFilters = selectedFilters
+      .filter(f => f.startsWith('Область применения: '))
+      .map(f => f.replace('Область применения: ', ''))
+    if (assignmentFilters.length > 0) {
+      filtered = filtered.filter(robot => {
+        if (Array.isArray(robot.assignment)) {
+          return robot.assignment.some(app => assignmentFilters.includes(app))
+        }
+        return assignmentFilters.includes(robot.assignment)
+      })
+    }
+
+    
+    const axesFilters = selectedFilters
+      .filter(f => f.startsWith('Кол-во осей: '))
+      .map(f => parseInt(f.replace('Кол-во осей: ', ''), 10))
+    if (axesFilters.length > 0) {
+      filtered = filtered.filter(robot => axesFilters.includes(Number(robot.axes)))
+    }
+
+    
+    const payloadFilter = selectedFilters.find(f => f.startsWith('Грузоподъёмность: '))
+    if (payloadFilter) {
+      const [min, max] = payloadFilter
+        .replace('Грузоподъёмность: ', '')
+        .replace(' кг', '')
+        .split('-')
+        .map(Number)
+      filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max)
+    }
+
+   
+    const reachFilter = selectedFilters.find(f => f.startsWith('Охват: '))
+    if (reachFilter) {
+      const [min, max] = reachFilter
+        .replace('Охват: ', '')
+        .replace(' мм', '')
+        .split('-')
+        .map(Number)
+      filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max)
+    }
+
+   
+    const weightFilter = selectedFilters.find(f => f.startsWith('Вес: '))
+    if (weightFilter) {
+      const weight = parseInt(weightFilter.replace('Вес: ', '').replace(' кг', ''), 10)
+      filtered = filtered.filter(r => r.weight === weight)
+    }
     return filtered
   }, [selectedCategory, selectedFilters, products, rootCategoryMapping])
 
   useEffect(() => {
     setCurrentPage(1)
-    console.log(filteredRobots)
   }, [filteredRobots])
 
   const productsPerPage = isMobileView ? 6 : isTabletView ? 8 : 12
@@ -213,7 +228,7 @@ export default function Catalog({ categories, title }) {
     if (!products || products.length === 0) return 2500
     return Math.max(...products.map(product => product.payloadRange))
   }, [products])
-  const isDisplayCategories = pathname.toLowerCase() === "/promyshlennye-roboty/roboty-manipulyatory"
+  const isDisplayCategories = pathname.toLowerCase() === "/promyshlennye-roboty"
   const subTitle = subtitles[pathname.toLowerCase()]
   return (
     <section className={styles.container}>
@@ -371,21 +386,4 @@ export default function Catalog({ categories, title }) {
       <ContactUs theme={'catalog'} />
     </section>
   )
-}
-
-const subtitles = {
-  "/promyshlennye-roboty": "Каталог промышленных роботов",
-  "/promyshlennye-roboty/roboty-dlya-obsluzhivaniya-stankov": "Каталог роботов для обслуживания станков",
-  "/promyshlennye-roboty/koboty": "Каталог коллаборативных роботов",
-  "/promyshlennye-roboty/scara": "Каталог роботов SCARA",
-  "/promyshlennye-roboty/roboty-manipulyatory": "Каталог роботов манипуляторов",
-  "/promyshlennye-roboty/roboty-dlya-paletirovaniya": "Каталог роботов для паллетирования",
-  "/promyshlennye-roboty/frezernye-roboty": "Каталог роботов для фрезеровки",
-  "/promyshlennye-roboty/polirovochnye-roboty": "Каталог роботов для полировки",
-  "/promyshlennye-roboty/svarochnye-roboty": "Каталог сварочных роботов",
-  "/pozicionery": "Каталог позиционеров",
-  "/pozicionery/povorotnye": "Каталог поворотных позиционеров",
-  "/pozicionery/tryohosevye": "Каталог трёхосевых позиционеров",
-  "/pozicionery/dvuhosevye": "Каталог двухосевых позиционеров",
-  "/pozicionery/odnoosevye": "Каталог одноосевых позиционеров",
 }

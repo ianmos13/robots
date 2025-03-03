@@ -1,9 +1,10 @@
+'use client'
 import styles from "./Question.module.scss";
 import TitleWithSeparator from "../TitleWithSeparator/TitleWithSeparator";
 import React, { useState } from "react";
 import {sanitizeData} from "@/utils/sanitizeHtmlText";
 
-export default function Question({faqData}) {
+export default function Question({faqData, theme}) {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleQuestion = (index) => {
@@ -11,7 +12,7 @@ export default function Question({faqData}) {
   };
 
   if (faqData.length > 0) return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${ styles[`${theme}Theme`]}`}>
       <TitleWithSeparator title="Ответы на вопросы" theme='catalog'/>
       <div className={styles.questionsList}>
         {faqData.map((item, index) => (
