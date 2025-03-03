@@ -57,6 +57,7 @@ const VideoPlayer = ({
         <div className={styles.overlay} onClick={handlePlayPause}>
           {showPreview && (
             <img
+              loading="lazy"
               className={styles.previewImage}
               src={previewImage}
               alt="preview"

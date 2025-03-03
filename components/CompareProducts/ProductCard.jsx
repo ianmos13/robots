@@ -13,6 +13,7 @@ export default function ProductCard({ item, categories, onRemove }) {
         </div>
         <div className={styles.trashIcon}>
             <img
+              loading="lazy"
               src="/images/icons/trash.svg"
               alt="trash"
               onClick={onRemove}
@@ -22,9 +23,9 @@ export default function ProductCard({ item, categories, onRemove }) {
       <a href={productUrl}>
           <div className={styles.productImage}>
            <img
-            src={item.mainImage}
-            alt={item.title}
-
+               loading="lazy"
+               src={item.mainImage}
+               alt={item.title}
           />
           </div>
           <div className={styles.productTitle}>{item.title}</div>

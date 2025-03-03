@@ -12,6 +12,7 @@ export default function StickyProductCard({ item, categories }) {
       >
       <div className={styles.cardImg}>
         <img
+          loading="lazy"
           src={item.mainImage}
           alt={item.title}
           className={styles.productImage}

@@ -28,7 +28,7 @@ export default function ImageSection({ imgSrc }) {
 
   return (
     <div className={styles.imgContainer}>
-      <img className={styles.sliderItem} src={normalizeUrl(images[currentIndex])} alt="" />
+      <img loading="lazy" className={styles.sliderItem} src={normalizeUrl(images[currentIndex])} alt="" />
       {images.length > 1 && (
         <>
           <button

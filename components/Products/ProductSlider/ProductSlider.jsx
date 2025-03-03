@@ -126,6 +126,7 @@ export default function ProductSlider({ productInfo }) {
           <div className={styles.imageContainer}>
             <div className={styles.mainImageContainer}>
               <img
+                loading="lazy"
                 src={safeImages[currentImageIndex]}
                 alt="Product"
                 className={styles.mainImage}
@@ -148,7 +149,7 @@ export default function ProductSlider({ productInfo }) {
                   }`}
                   onClick={() => handleImageChange(index)}
                 >
-                  <img src={image} alt={`Thumbnail ${index + 1}`} />
+                  <img loading="lazy" src={image} alt={`Thumbnail ${index + 1}`} />
                 </div>
               ))}
             </div>

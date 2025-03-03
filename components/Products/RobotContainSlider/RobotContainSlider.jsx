@@ -50,7 +50,7 @@ const RobotContainSlider = ({info}) => {
                 </div>
               </div>
               <div className={styles.imageContainer}>
-                <img src={slide.image} alt={slide.title} />
+                <img loading="lazy" src={slide.image} alt={slide.title} />
               </div>
             </div>
           </SwiperSlide>

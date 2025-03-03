@@ -6,7 +6,7 @@ export default function ProjectCard({ image, title, description, date, tags, slu
   return (
     <a href={`/our-projects/${slug}`} className={styles.projectCard} >
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} />
+        <img loading="lazy" src={image} alt={title} />
         {cardTag && <div className={styles.tagBadge}>{cardTag}</div>}
       </div>
 

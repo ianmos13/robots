@@ -32,6 +32,7 @@ export default function DropdownElement(props) {
 								{child.allLink && (
 									<div className={styles.imageContainer} >
 										<img
+											loading="lazy"
 											src={child.image}
 											alt={child.name}
 											className={styles.icon}

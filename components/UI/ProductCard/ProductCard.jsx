@@ -40,6 +40,7 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
           <img
             onClick={() => { router.push(productUrl) }}
             className={`${styles.robotImage} ${styles.mainImage}`}
+            loading="lazy"
             src={robot.mainImage}
             alt={robot.title}
             style={{ opacity: isHovered && robot.hoverImage ? 0 : 1 }}
@@ -50,6 +51,7 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
 							className={`${styles.robotImage} ${styles.hoverImage}`}
 							src={hoverImage}
 							alt={robot.title}
+                            loading="lazy"
 							style={{ opacity: isHovered ? 1 : 0 }}
 						/>
 					)}

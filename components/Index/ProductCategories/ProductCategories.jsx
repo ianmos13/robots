@@ -44,6 +44,7 @@ const ProductCategories = () => {
           >
             <div className={styles.imageContainer}>
               <img
+                loading="lazy"
                 src={category.image}
                 alt={category.name}
                 className={styles.image}
@@ -76,6 +77,7 @@ const ProductCategories = () => {
               >
                 <div className={styles.imageContainer}>
                   <img
+                    loading="lazy"
                     src={category.image}
                     alt={category.name}
                     className={styles.image}

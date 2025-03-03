@@ -29,7 +29,7 @@ function CustomMarker({ position }) {
     className: styles.customMarker,
     html: `
       <div class="custom-marker">
-        <img src="${GeoIcon.src}" alt="Гео-иконка" width="30" height="40" />
+        <img loading="lazy" src="${GeoIcon.src}" alt="Гео-иконка" width="30" height="40" />
         <p>Офис и демозал г.Москва</p>
       </div>`,
     iconSize: [30, 40],

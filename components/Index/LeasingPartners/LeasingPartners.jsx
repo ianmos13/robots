@@ -52,6 +52,7 @@ export default function LeasingPartners() {
           {partnersLogos.map((logo, index) => (
             <div key={index} className={styles.partnerLogoContainer}>
               <img
+                loading="lazy"
                 src={logo}
                 alt={`Партнер ${index + 1}`}
                 className={styles.partnerLogo}
@@ -70,6 +71,7 @@ export default function LeasingPartners() {
                 <div className={styles.card}>
                   <div className={styles.partnerLogoContainer}>
                     <img
+                      loading="lazy"
                       src={logo}
                       alt={`Партнер ${index + 1}`}
                       className={styles.image}
