@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './Slider.module.scss'
 
-export default function Slider({ swiperRef, items, hoverCard, onChangeSlider = () => {} }) {
+export default function Slider({ swiperRef, items, categories, hoverCard, onChangeSlider = () => {} }) {
 	return (
 		<Swiper
 			onSwiper={swiper => (swiperRef.current = swiper)}
@@ -30,7 +30,7 @@ export default function Slider({ swiperRef, items, hoverCard, onChangeSlider = (
 		>
 			{items.map((robot, index) => (
 				<SwiperSlide key={index} className={styles.swiperSlide}>
-					<ProductCard key={robot.id} robot={robot} hoverCard={hoverCard}/>
+					<ProductCard key={robot.id} categories={categories} robot={robot} hoverCard={hoverCard}/>
 				</SwiperSlide>
 			))}
 		</Swiper>

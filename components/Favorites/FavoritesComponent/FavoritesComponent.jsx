@@ -103,7 +103,7 @@ function FavoritesComponentContent() {
           <p>В избранном пока ничего нет</p>
         </div>
       ) : (
-        <Slider swiperRef={swiperRef} items={filteredRobots} />
+        <Slider swiperRef={swiperRef} categories={categories} items={filteredRobots} />
       )}
       <ConfirmModal
         isOpen={isConfirmModalOpen}

@@ -6,15 +6,13 @@ import styles from './ProductCard.module.scss'
 import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
 import useDeviceType from '../../../hooks/useDeviceType'
-import useCategories from '@/hooks/useCategories'
 import {getProductUrl} from "@/utils/getProductUrl";
 
 
-export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
+export default function ProductCard({ robot, theme, categories, hoverCard = () => {} }) {
   const router = useRouter()
   const { isMobileView } = useDeviceType()
   const [isHovered, setIsHovered] = useState(false)
-  const { categories } = useCategories(true)
 
   const onHover = () => {
     hoverCard(true)
@@ -48,6 +46,7 @@ export default function ProductCard({ robot, theme, hoverCard = () => {} }) {
           />
         					{hoverImage && (
 						<img
+                            onClick={() => { router.push(productUrl) }}
 							className={`${styles.robotImage} ${styles.hoverImage}`}
 							src={hoverImage}
 							alt={robot.title}

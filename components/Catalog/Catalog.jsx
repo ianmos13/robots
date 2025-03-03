@@ -198,9 +198,9 @@ export default function Catalog({ categories, title }) {
     return currentProducts.map((robot, index) => (
       <React.Fragment key={robot.id}>
         {activeView === 'cardView' ? (
-          <ProductCard robot={robot} theme={'catalog'} />
+          <ProductCard robot={robot} categories={categories} theme={'catalog'} />
         ) : (
-          <ProductCardLong robot={robot} />
+          <ProductCardLong robot={robot} categories={categories} />
         )}
         {((isMobileView &&
           (index === 2 ||

@@ -4,11 +4,11 @@ import styles from "./ProductCategoryGridPagination.module.scss";
 import TitleWithSeparator from "../TitleWithSeparator/TitleWithSeparator";
 import ProductCard from "@/components/UI/ProductCard/ProductCard";
 import Pagination from "@/components/UI/Pagination/Pagination";
-import useDeviceType from "@/hooks/useDeviceType";
 import { useRouter } from "next/navigation";
 import {useMediaQuery} from "react-responsive";
 import useProducts from '@/hooks/useProducts';
 import Slider from "@/components/UI/Slider/Slider";
+import useCategories from "@/hooks/useCategories";
 
 export default function ProductCategoryGridPagination({ title, ids, typeLink }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,6 +17,7 @@ export default function ProductCategoryGridPagination({ title, ids, typeLink }) 
   const isOneElement = useMediaQuery({ query: '(max-width: 799px)' });
   const [productsPerPage, setIsProductsPerPage] = useState(4);
   const { products, error, loading } = useProducts();
+  const { categories } = useCategories(true);
   const swiperRef = useRef()
 
   const selectedProducts = ids && ids.length > 0 ? products.filter((p) =>
@@ -81,7 +82,7 @@ export default function ProductCategoryGridPagination({ title, ids, typeLink }) 
       <div className={styles.grid}>
         {currentProducts.map((robot, index) => (
           <div key={index} className={styles.productCard}>
-            <ProductCard robot={robot} />
+            <ProductCard robot={robot} categories={categories} />
           </div>
         ))}
       </div>
@@ -89,6 +90,7 @@ export default function ProductCategoryGridPagination({ title, ids, typeLink }) 
         <Slider
             swiperRef={swiperRef}
             items={selectedProducts}
+            categories={categories}
             hoverCard={hoverCard}
             onChangeSlider={handleSwiperChange}
         />
