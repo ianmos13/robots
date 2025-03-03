@@ -78,6 +78,7 @@ export default function ProductCategoryGridSlider() {
 					items={filteredRobots}
 					swiperRef={swiperRef}
 					hoverCard={hoverCard}
+					categories={allCategories}
 				/>
 			</div>
 

@@ -69,7 +69,7 @@ const TruncatedText = ({ prj }) => {
         return;
       }
 
-      const sentences = sanitizedText.match(/[^\.!\?]+[\.!\?]+[\s]*/g);
+      const sentences = sanitizedText?.match(/[^\.!\?]+[\.!\?]+[\s]*/g);
       if (!sentences) {
         setIsTruncated(false);
         setDisplayText(sanitizedText);

@@ -8,12 +8,14 @@ import "swiper/css/navigation";
 import useProducts from '@/hooks/useProducts';
 import SwitchButtons from "@/components/UI/Buttons/SwitchButtons/SwitchButtons";
 import {isValidSubData} from "@/utils/validation";
+import useCategories from "@/hooks/useCategories";
 
 export default function SameRobotSlider({ robots }) {
   const swiperRef = useRef()
   const [activeButton, setActiveButton] = useState("");
   const [isHoveredCard, setIsHoveredCard] = useState(false);
   const { products, error, loading } = useProducts();
+  const { categories } = useCategories(true);
 
   const selectedProducts = robots && isValidSubData(robots) ? products.filter((p) =>
     robots.some((e) => e?.toString() === p.id.toString())
@@ -56,7 +58,12 @@ export default function SameRobotSlider({ robots }) {
           >
             {selectedProducts.map((robot, index) => (
               <SwiperSlide key={index} className={styles.swiperSlide}>
-                <ProductCard theme={'news'} robot={robot} hoverCard={hoverCard} />
+                <ProductCard
+                    theme={'news'}
+                    robot={robot}
+                    categories={categories}
+                    hoverCard={hoverCard}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
