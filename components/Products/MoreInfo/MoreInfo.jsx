@@ -47,10 +47,15 @@ export default function MoreInfo({ productInfo, parentCategory }) {
     let rows = [];
     ["axes", "bases", "flange"].forEach((key) => {
       if (data[key] && Array.isArray(data[key].table)) {
-        rows.push(...data[key].table);
+      
+        data[key].table.forEach((tableArray) => {
+          if (Array.isArray(tableArray)) {
+            rows.push(...tableArray);
+          }
+        });
       }
     });
-
+  
     return rows.filter(
       (row) =>
         row.value !== undefined &&
@@ -59,12 +64,11 @@ export default function MoreInfo({ productInfo, parentCategory }) {
     );
   };
 
-
   const renderTable = (data) => {
     const rows = mergeTechnicalRows(data);
     if (!rows || rows.length === 0) return null;
     const visibleRows = showAllRows ? rows : rows.slice(0, MAX_VISIBLE_ROWS);
-
+  
     return (
       <div className={styles.tableWrapper}>
         <table className={styles.techTable}>
