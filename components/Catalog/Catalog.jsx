@@ -106,62 +106,84 @@ export default function Catalog({ categories, title }) {
   }, [searchParams, pathname, categories, selectedCategory])
 
   const filteredRobots = useMemo(() => {
-    let filtered = products || []
+    let filtered = products || [];
+  
+    // Фильтрация по категории
     if (selectedCategory && selectedCategory !== 'all') {
       if (selectedCategory === "1" || selectedCategory === "2") {
-        const allowed = rootCategoryMapping[selectedCategory] || []
-        filtered = filtered.filter(robot => allowed.includes(robot.category))
+        const allowed = rootCategoryMapping[selectedCategory] || [];
+        filtered = filtered.filter(robot => allowed.includes(robot.category));
       } else {
-        filtered = filtered.filter(robot => robot.category === selectedCategory)
+        filtered = filtered.filter(robot => robot.category === selectedCategory);
       }
     }
-
+  
+    // Фильтрация по области применения
     const assignmentFilters = selectedFilters
       .filter(f => f.startsWith('Область применения: '))
-      .map(f => f.replace('Область применения: ', ''))
+      .map(f => f.replace('Область применения: ', ''));
     if (assignmentFilters.length > 0) {
       filtered = filtered.filter(robot => {
         if (Array.isArray(robot.assignment)) {
-          return robot.assignment.some(app => assignmentFilters.includes(app))
+          return robot.assignment.some(app => assignmentFilters.includes(app));
         }
-        return assignmentFilters.includes(robot.assignment)
-      })
+        return assignmentFilters.includes(robot.assignment);
+      });
     }
-
+  
+    // Фильтрация по количеству осей
     const axesFilters = selectedFilters
       .filter(f => f.startsWith('Кол-во осей: '))
-      .map(f => parseInt(f.replace('Кол-во осей: ', ''), 10))
+      .map(f => parseInt(f.replace('Кол-во осей: ', ''), 10));
     if (axesFilters.length > 0) {
-      filtered = filtered.filter(robot => axesFilters.includes(Number(robot.axes)))
+      filtered = filtered.filter(robot => axesFilters.includes(Number(robot.axes)));
     }
-
-    const payloadFilter = selectedFilters.find(f => f.startsWith('Грузоподъёмность: '))
+  
+    // Фильтрация по грузоподъёмности
+    const payloadFilter = selectedFilters.find(f => f.startsWith('Грузоподъёмность: '));
     if (payloadFilter) {
       const [min, max] = payloadFilter
         .replace('Грузоподъёмность: ', '')
         .replace(' кг', '')
         .split('-')
-        .map(Number)
-      filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max)
+        .map(Number);
+      filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max);
     }
-
-    const reachFilter = selectedFilters.find(f => f.startsWith('Охват: '))
+  
+    // Фильтрация по охвату
+    const reachFilter = selectedFilters.find(f => f.startsWith('Охват: '));
     if (reachFilter) {
       const [min, max] = reachFilter
         .replace('Охват: ', '')
         .replace(' мм', '')
         .split('-')
-        .map(Number)
-      filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max)
+        .map(Number);
+      filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max);
+    }
+  
+    // Фильтрация по весу
+    const weightFilter = selectedFilters.find(f => f.startsWith('Вес: '));
+    if (weightFilter) {
+      const weight = parseInt(weightFilter.replace('Вес: ', '').replace(' кг', ''), 10);
+      filtered = filtered.filter(r => r.weight === weight);
     }
 
-    const weightFilter = selectedFilters.find(f => f.startsWith('Вес: '))
-    if (weightFilter) {
-      const weight = parseInt(weightFilter.replace('Вес: ', '').replace(' кг', ''), 10)
-      filtered = filtered.filter(r => r.weight === weight)
-    }
-    return filtered
-  }, [selectedCategory, selectedFilters, products, rootCategoryMapping])
+      // Фильтрация по напряжению
+  const voltageFilter = selectedFilters.find(f => f.startsWith('Напряжение: '));
+  if (voltageFilter) {
+    const voltage = voltageFilter.replace('Напряжение: ', '').replace(' В', '');
+    filtered = filtered.filter(r => r.voltage === voltage);
+  }
+  
+    
+    filtered.sort((a, b) => {
+      const sortA = parseInt(a.sort, 10);
+      const sortB = parseInt(b.sort, 10);
+      return sortA - sortB;
+    });
+  
+    return filtered;
+  }, [selectedCategory, selectedFilters, products, rootCategoryMapping]);
 
   useEffect(() => {
     setCurrentPage(1)
