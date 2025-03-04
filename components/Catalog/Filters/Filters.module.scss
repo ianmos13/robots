@@ -1,365 +1,297 @@
 @import '/styles/variables';
+
 .filters {
-	margin-bottom: 20px;
-	max-width: 450px;
-	width: 100%;
-	height: max-content;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-	border-radius: 20px;
-	background: $white;
-	@media (max-width: 1440px) {
-		border-radius: 10px;
-	}
-	@media (max-width: 1024px) {
-		max-width: unset;
-	}
-	.filterSection {
-		.filterHeader {
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			font-family: 'DIN Pro condensedbold', sans-serif;
-			color: $dark-gray;
+  margin-bottom: 20px;
+  max-width: 450px;
+  width: 100%;
+  height: max-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 20px;
+  background: $white;
 
-			font-size: 30px;
-			@media (max-width: 1600px) {
-				font-size: 26px;
-			}
-			font-style: normal;
-			line-height: 110%;
-			letter-spacing: -0.6px;
-		}
+  @media (max-width: 1440px) {
+    border-radius: 10px;
+  }
 
-		.filterOptions {
-			display: flex;
-			flex-direction: column;
-			gap: 24px;
-			margin-top: 32px;
-			label {
-				display: flex;
+  @media (max-width: 1024px) {
+    max-width: unset;
+  }
 
-				gap: 20px;
-				color: #323232;
+  .filterSection {
+    .filterHeader {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-				font-family: 'DIN Pro medium', sans-serif;
-				font-size: 20px;
-				font-style: normal;
-					@media (max-width: 1600px) {
-				font-size: 18px;
-			}
-				line-height: 130%;
-				letter-spacing: -0.4px;
-			}
-			input[type='checkbox'] {
-				width: 24px;
-				height: 24px;
-				border-radius: 4px;
-				border: 1px solid $blue-light;
-				appearance: none;
-				position: relative;
-				cursor: pointer;
-				min-width: 24px;
+      h2 {
+        font-family: 'DIN Pro condensedbold', sans-serif;
+        color: $dark-gray;
+        font-size: 30px;
+        font-style: normal;
+        line-height: 110%;
+        letter-spacing: -0.6px;
+        margin: 0; 
 
-				&:checked {
-					background-color: $main-blue;
-					border-color: $main-blue;
-					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(%23clip0_3131_4399)"><rect width="24" height="24" rx="4" fill="%230149BF"/><path d="M6 11.5L9.5 15L17.5 7" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_3131_4399"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>');
-					background-repeat: no-repeat;
-					background-position: center;
-				}
-			}
-			input[type='range'] {
-				width: 100%;
-			}
+        @media (max-width: 1600px) {
+          font-size: 26px;
+        }
+      }
 
-			input[type='text'],
-			input[type='number'] {
-				padding: 15px;
-				outline: none;
-				border-radius: 10px;
-				font-size: 22px;
-				line-height: 110%;
-				font-family: 'DIN Pro medium', sans-serif;
-				border: 1px solid rgba(50, 50, 50, 0.1);
-				&::placeholder {
-					font-size: 22px;
-					line-height: 110%;
-					letter-spacing: -0.66px;
-					color: rgba(50, 50, 50, 0.5);
-				}
-			}
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
 
-			.customSlider{
-				align-self: center;
-				width: calc(100% - 24px);
-			}
-			.slider {
-				width: 100%;
-				height: 25px;
-				position: relative;
-			}
+    .filterOptions {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
 
-			.thumb {
-				height: 25px;
-				width: 25px;
-				background-color: $main-blue;
-				border-radius: 50%;
-				cursor: pointer;
-				top: 50%;
-				transform: translateY(-50%);
-			}
+      label {
+        display: flex;
+        gap: 20px;
+        color: #323232;
+        font-family: 'DIN Pro medium', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        line-height: 130%;
+        letter-spacing: -0.4px;
 
-			.track {
-				top: 50%;
-				height: 5px;
-				background: rgba(50, 50, 50, 0.1);
-				border-radius: 100px;
-				transform: translateY(-50%);
-				border: none;
-			}
-			.rangeInputs {
-				display: flex;
-				gap: 10px;
+        @media (max-width: 1600px) {
+          font-size: 18px;
+        }
 
-				.inputWrapper {
-					position: relative;
-					display: flex;
-					align-items: center;
-					width: 100%;
+        h3 {
+          font-family: 'DIN Pro medium', sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          line-height: 130%;
+          letter-spacing: -0.4px;
+          margin: 0; 
+		  text-transform: none;
 
-					input {
-						width: 100%;
-						padding: 15px;
-						padding-right: 40px;
-						border-radius: 10px;
-						border: 1px solid rgba(50, 50, 50, 0.1);
-						outline: none;
-						font-size: 22px;
-						line-height: 110%;
-						letter-spacing: -0.66px;
-						color: $dark-gray;
-						font-family: 'DIN Pro medium', sans-serif;
-					}
+          @media (max-width: 1600px) {
+            font-size: 18px;
+          }
+        }
+      }
 
-					&::after {
-						content: attr(data-unit);
-						position: absolute;
-						right: 15px;
-						font-size: 16px;
-						color: #32323280;
-					}
-				}
-			}
-		}
-	}
+      input[type='checkbox'] {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid $blue-light;
+        appearance: none;
+        position: relative;
+        cursor: pointer;
+        min-width: 24px;
 
-	.applyButton {
-		margin-top: 60px;
-		height: 64px;
-		width: 100%;
-		background-color: $main-blue;
-		color: $white;
-		border: none;
-		border-radius: 7px;
-		cursor: pointer;
-		padding: 15px 0;
+        &:checked {
+          background-color: $main-blue;
+          border-color: $main-blue;
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(%23clip0_3131_4399)"><rect width="24" height="24" rx="4" fill="%230149BF"/><path d="M6 11.5L9.5 15L17.5 7" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_3131_4399"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>');
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
 
-		font-family: 'DIN Pro condensedbold', sans-serif;
-		font-style: normal;
-		font-size: 18px;
-		@media (max-width: 1600) {
-			font-size: 22px;
-		}
-		line-height: 100%;
-		letter-spacing: -0.36px;
+      input[type='range'] {
+        width: 100%;
+      }
 
-		&:hover {
-			background-color: $blue-hover;
-		}
-	}
+      input[type='text'],
+      input[type='number'] {
+        padding: 15px;
+        outline: none;
+        border-radius: 10px;
+        font-size: 22px;
+        line-height: 110%;
+        font-family: 'DIN Pro medium', sans-serif;
+        border: 1px solid rgba(50, 50, 50, 0.1);
 
-	@media (max-width: 1024px) {
-		.applyButton {
-			display: none;
-		}
-	}
+        &::placeholder {
+          font-size: 22px;
+          line-height: 110%;
+          letter-spacing: -0.66px;
+          color: rgba(50, 50, 50, 0.5);
+        }
+      }
+
+      .customSlider {
+        align-self: center;
+        width: calc(100% - 24px);
+      }
+
+      .slider {
+        width: 100%;
+        height: 25px;
+        position: relative;
+      }
+
+      .thumb {
+        height: 25px;
+        width: 25px;
+        background-color: $main-blue;
+        border-radius: 50%;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .track {
+        top: 50%;
+        height: 5px;
+        background: rgba(50, 50, 50, 0.1);
+        border-radius: 100px;
+        transform: translateY(-50%);
+        border: none;
+      }
+
+      .rangeInputs {
+        display: flex;
+        gap: 10px;
+
+        .inputWrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+
+          input {
+            width: 100%;
+            padding: 15px;
+            padding-right: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(50, 50, 50, 0.1);
+            outline: none;
+            font-size: 22px;
+            line-height: 110%;
+            letter-spacing: -0.66px;
+            color: $dark-gray;
+            font-family: 'DIN Pro medium', sans-serif;
+          }
+
+          &::after {
+            content: attr(data-unit);
+            position: absolute;
+            right: 15px;
+            font-size: 16px;
+            color: #32323280;
+          }
+        }
+      }
+    }
+  }
+
+  .applyButton {
+    margin-top: 60px;
+    height: 64px;
+    width: 100%;
+    background-color: $main-blue;
+    color: $white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 15px 0;
+
+    font-family: 'DIN Pro condensedbold', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -0.36px;
+
+    &:hover {
+      background-color: $blue-hover;
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .applyButton {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
-	.filters {
-		margin-bottom: unset;
-		max-width: unset;
-		width: 100%;
-		height: unset;
-		padding: 0 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 32px;
-		border-radius: 20px;
-		background: $white;
-		@media (max-width: 1440px) {
-			border-radius: 10px;
-		}
-		@media (max-width: 1024px) {
-			max-width: unset;
-		}
-		.filterSection {
-			.filterHeader {
-				cursor: pointer;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				font-family: 'DIN Pro condensedbold', sans-serif;
-				color: $dark-gray;
-				font-size: 22px;
-				font-style: normal;
-				line-height: 28.6px;
-				letter-spacing: -0.2px;
-			}
+  .filters {
+    margin-bottom: unset;
+    max-width: unset;
+    width: 100%;
+    height: unset;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 20px;
+    background: $white;
 
-			.filterOptions {
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-				margin-top: 24px;
-				label {
-					display: flex;
-					gap: 20px;
-					color: #323232;
-					font-family: 'DIN Pro medium', sans-serif;
-					font-size: 18px;
-					font-style: normal;
-					line-height: 21.6px;
-					letter-spacing: -0.2px;
-				}
-				input[type='checkbox'] {
-					width: 24px;
-					height: 24px;
-					border-radius: 4px;
-					border: 1px solid $blue-light;
-					appearance: none;
-					position: relative;
-					cursor: pointer;
-					min-width: 24px;
+    @media (max-width: 1440px) {
+      border-radius: 10px;
+    }
 
-					&:checked {
-						background-color: $main-blue;
-						border-color: $main-blue;
-						background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(%23clip0_3131_4399)"><rect width="24" height="24" rx="4" fill="%230149BF"/><path d="M6 11.5L9.5 15L17.5 7" stroke="white" stroke-width="2"/></g><defs><clipPath id="clip0_3131_4399"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>');
-						background-repeat: no-repeat;
-						background-position: center;
-					}
-				}
-				input[type='range'] {
-					width: 100%;
-				}
+    @media (max-width: 1024px) {
+      max-width: unset;
+    }
 
-				input[type='text'],
-				input[type='number'] {
-					padding: 15px;
-					outline: none;
-					border-radius: 10px;
-					font-size: 18px;
-					line-height: 110%;
-					font-family: 'DIN Pro medium', sans-serif;
-					border: 1px solid rgba(50, 50, 50, 0.1);
-					&::placeholder {
-						font-size: 18px;
-						line-height: 110%;
-						letter-spacing: -0.66px;
-						color: rgba(50, 50, 50, 0.5);
-					}
-				}
-				.slider {
-					width: 100%;
-					height: 25px;
-					position: relative;
-				}
+    .filterSection {
+      .filterHeader {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-				.thumb {
-					height: 25px;
-					width: 25px;
-					background-color: $main-blue;
-					border-radius: 50%;
-					cursor: pointer;
-					top: 50%;
-					transform: translateY(-50%);
-				}
+        h2 {
+          font-family: 'DIN Pro condensedbold', sans-serif;
+          color: $dark-gray;
+          font-size: 22px;
+          font-style: normal;
+          line-height: 28.6px;
+          letter-spacing: -0.2px;
+          margin: 0;
+        }
 
-				.track {
-					top: 50%;
-					height: 5px;
-					background: rgba(50, 50, 50, 0.1);
-					border-radius: 100px;
-					transform: translateY(-50%);
-					border: none;
-				}
-				.rangeInputs {
-					display: flex;
-					gap: 10px;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
 
-					.inputWrapper {
-						position: relative;
-						display: flex;
-						align-items: center;
-						width: 100%;
+      .filterOptions {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px;
 
-						input {
-							width: 100%;
-							padding: 15px;
-							padding-right: 40px;
-							border-radius: 10px;
-							border: 1px solid rgba(50, 50, 50, 0.1);
-							outline: none;
-							font-size: 22px;
-							line-height: 110%;
-							letter-spacing: -0.66px;
-							color: $dark-gray;
-							font-family: 'DIN Pro medium', sans-serif;
-						}
+        label {
+          display: flex;
+          gap: 20px;
+          color: #323232;
+          font-family: 'DIN Pro medium', sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          line-height: 21.6px;
+          letter-spacing: -0.2px;
 
-						&::after {
-							content: attr(data-unit);
-							position: absolute;
-							right: 15px;
-							font-size: 16px;
-							color: #32323280;
-						}
-					}
-				}
-			}
-		}
-
-		.applyButton {
-			margin-top: 60px;
-			height: 64px;
-			width: 100%;
-			background-color: $main-blue;
-			color: $white;
-			border: none;
-			border-radius: 7px;
-			cursor: pointer;
-			padding: 15px 130px;
-
-			font-family: 'DIN Pro condensedbold', sans-serif;
-			font-style: normal;
-			font-size: 18px;
-			line-height: 100%;
-			letter-spacing: -0.36px;
-
-			&:hover {
-				background-color: $blue-hover;
-			}
-		}
-
-		@media (max-width: 1024px) {
-			.applyButton {
-				display: none;
-			}
-		}
-	}
+          h3 {
+            font-family: 'DIN Pro medium', sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            line-height: 21.6px;
+            letter-spacing: -0.2px;
+            margin: 0; 
+          }
+        }
+      }
+    }
+  }
 }

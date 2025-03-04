@@ -19,7 +19,7 @@ export default function ProductCardLong({ robot, categories }) {
 							alt={robot.title}
 						/>
 					</div>
-					<div className={styles.title}>{robot.title}</div>
+					<div className={styles.title}><h2>{robot.title}</h2></div>
 				</div>
 
 				<div className={styles.specsContainer}>

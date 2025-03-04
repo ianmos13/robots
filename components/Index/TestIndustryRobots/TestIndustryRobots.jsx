@@ -23,11 +23,11 @@ const TestIndustryRobots = () => {
           <div className={styles.textContent}>
             <div className={styles.title}>
               {" "}
-              <h1>
+              <h2>
                 Испытайте
                 промышленных
                 роботов&nbsp;в&nbsp;действии
-              </h1>
+              </h2>
             </div>
             <div className={styles.description}>
               {" "}

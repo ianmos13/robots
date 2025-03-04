@@ -19,7 +19,7 @@ const CrpAutomation = () => {
     <>
     <section className={styles.container}>
       <div className={styles.titleContainer}>
-        <div className={styles.title}>CRP ROBOT</div>
+        <div className={styles.title}><h2>CRP ROBOT</h2></div>
         <div className={styles.category}>O Компании</div>
       </div>
 

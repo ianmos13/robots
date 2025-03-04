@@ -39,12 +39,15 @@
 }
 
 .title {
-	font-family: 'Din Pro Condensedbold';
-	font-size: 28px;
-	color: #323232;
-	max-width: 414px;
-	line-height: 33.6px;
-	letter-spacing: -0.02em;
+	h2{
+		font-family: 'Din Pro Condensedbold';
+		font-size: 28px;
+		color: #323232;
+		max-width: 414px;
+		line-height: 33.6px;
+		letter-spacing: -0.02em;
+	}
+	
 }
 
 .specsContainer {

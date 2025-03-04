@@ -57,7 +57,7 @@ const ProductCategories = () => {
                 className={styles.hoverImage}
               />
             </div>
-            <div className={styles.name}>{category.name}</div>
+            <div className={styles.name}><h3>{category.name}</h3></div>
           </div>
         ))}
       </div>
