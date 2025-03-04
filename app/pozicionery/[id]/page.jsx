@@ -1,27 +1,54 @@
-"use client";
 
-import React, { Suspense } from "react";
-import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import Catalog from "@/components/Catalog/Catalog";
-import useCategories from "@/hooks/useCategories";
-import {useParams} from "next/navigation";
 
-export default function page() {
-  const { id } = useParams();
-  const { categories } = useCategories(true);
 
-  const currentCategory = categories.find((category) => category?.link?.toString() === `/pozicionery/${id?.toString()}/`);
-  const breadcrumbItems = [
-    { label: "Главная", link: "/" },
-    { label: "Позиционеры", link: "/pozicionery" },
-    { label: currentCategory?.name, link: currentCategory?.link },
-  ];
-  return (
-    <Suspense fallback={<div>Loading catalog...</div>}>
-    <div>
-      <Breadcrumbs items={breadcrumbItems} />
-      <Catalog categories={categories} title={"Каталог позиционеров"} />
-    </div>
-    </Suspense>
-  );
+export async function generateMetadata({ params }) {
+  if (params.id === "odnoosevye") {
+    return {
+      title: "Одноосевой сварочный позиционер – купить позиционеры для роботов и сварки",
+      description:
+        "Одноосевой сварочный позиционер – идеальный выбор для автоматизации сварочных процессов. Купить одноосевой сварочный вращатель позиционер и робот позиционер по выгодной цене для точных сварочных операций. Смотрите, как это работает - покажем на нашем сайте.",
+      keywords: [
+        "одноосевой позиционер",
+        "одноосевой сварочный позиционер",
+        "одноосевой сварочный позиционер купить",
+        "одноосевой сварочный вращатель позиционер",
+        "одноосевой робот позиционер",
+        "одноосевой позиционеры для роботов",
+      ],
+    };
+  } else if (params.id === "dvuhosevye") {
+    return {
+      title: "Двухосевые сварочные позиционеры – купить позиционеры для эффективной сварки",
+      description:
+        "Двухосевые сварочные позиционеры – идеальное решение для автоматизации сварочных процессов с использованием роботов. Купить двухосевой сварочный позиционер по выгодной цене для точных сварочных операций. Позиционеры двухосевые  – надежное решение для точной сварки.",
+      keywords: [
+        "двухосевые позиционеры",
+        "двухосевые сварочный позиционер",
+        "двухосевые сварочный позиционер купить",
+        "двухосевые сварочный вращатель позиционер",
+        "двухосевые робот позиционер",
+        "двухосевые позиционеры для роботов",
+      ],
+    };
+  } else if (params.id === "tryohosevye") {
+    return {
+      title: "Трехосевые сварочные позиционеры – купить позиционеры для сварки на сайте",
+      description:
+        "Трехосевые сварочные позиционеры – идеальные устройства для повышения точности и эффективности сварки с использованием роботов. Купить трехосевой сварочный позиционер для оптимизации процесса - значит сделать производство более результативным и безопасным.",
+      keywords: [
+        "трёхосевые позиционеры",
+        "трёхосевые сварочный позиционер",
+        "трёхосевые сварочный позиционер купить",
+        "трёхосевые сварочный вращатель позиционер",
+        "трёхосевые робот позиционер",
+        "трёхосевые позиционеры для роботов",
+      ],
+    };
+  } 
+}
+
+import CategoryPage from "./CategoryPage";
+
+export default function Page(props) {
+  return <CategoryPage />;
 }

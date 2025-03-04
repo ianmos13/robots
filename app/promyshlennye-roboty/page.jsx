@@ -1,22 +1,19 @@
-"use client"
+export const metadata = {
+  title: "Промышленные роботы CRP – надежные и эффективные решения для роботизации.",
+  description:
+    "Промышленные роботы для автоматизации производства. Высокая точность, скорость и надежность. Купить промышленный робот по выгодной цене, заказать консультацию по промышленной роботизации. Самый большой склад промышленных роботов в России.",
+  keywords: [
+    "промышленные роботы",
+    "промышленные роботы купить",
+    "промышленный робот цена",
+    "промышленный робот стоимость",
+    "промышленный робот заказать",
+    "промышленный робот каталог",
+  ],
+};
 
-import React, { Suspense } from "react";
-import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import Catalog from "@/components/Catalog/Catalog";
-import useCategories from "@/hooks/useCategories";
+import PromRobotsPage from "./PromRobotsPage";
 
-export default function page() {
-  const { categories } = useCategories(true);
-  const breadcrumbItems = [
-    { label: "Главная", link: "/" },
-    { label: "Промышленные роботы", link: "/promyshlennye-roboty" },
-  ];
-  return (
-    <Suspense fallback={<div>Loading catalog...</div>}>
-    <div>
-      <Breadcrumbs items={breadcrumbItems} />
-      <Catalog categories={categories} title={"Каталог промышленных роботов"} />
-    </div>
-    </Suspense>
-  );
+export default function Page() {
+  return <PromRobotsPage />;
 }

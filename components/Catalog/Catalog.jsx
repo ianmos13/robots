@@ -116,7 +116,6 @@ export default function Catalog({ categories, title }) {
       }
     }
 
-   
     const assignmentFilters = selectedFilters
       .filter(f => f.startsWith('Область применения: '))
       .map(f => f.replace('Область применения: ', ''))
@@ -129,7 +128,6 @@ export default function Catalog({ categories, title }) {
       })
     }
 
-    
     const axesFilters = selectedFilters
       .filter(f => f.startsWith('Кол-во осей: '))
       .map(f => parseInt(f.replace('Кол-во осей: ', ''), 10))
@@ -137,7 +135,6 @@ export default function Catalog({ categories, title }) {
       filtered = filtered.filter(robot => axesFilters.includes(Number(robot.axes)))
     }
 
-    
     const payloadFilter = selectedFilters.find(f => f.startsWith('Грузоподъёмность: '))
     if (payloadFilter) {
       const [min, max] = payloadFilter
@@ -148,7 +145,6 @@ export default function Catalog({ categories, title }) {
       filtered = filtered.filter(r => r.payloadRange >= min && r.payloadRange <= max)
     }
 
-   
     const reachFilter = selectedFilters.find(f => f.startsWith('Охват: '))
     if (reachFilter) {
       const [min, max] = reachFilter
@@ -159,7 +155,6 @@ export default function Catalog({ categories, title }) {
       filtered = filtered.filter(r => r.reachRange >= min && r.reachRange <= max)
     }
 
-   
     const weightFilter = selectedFilters.find(f => f.startsWith('Вес: '))
     if (weightFilter) {
       const weight = parseInt(weightFilter.replace('Вес: ', '').replace(' кг', ''), 10)
@@ -228,8 +223,16 @@ export default function Catalog({ categories, title }) {
     if (!products || products.length === 0) return 2500
     return Math.max(...products.map(product => product.payloadRange))
   }, [products])
+  
   const isDisplayCategories = ["/promyshlennye-roboty", "/pozicionery"].includes(pathname.toLowerCase())
   const subTitle = subtitles[pathname.toLowerCase()]
+
+
+  const headerStyle = (pathname.toLowerCase() === "/promyshlennye-roboty" ||
+    pathname.toLowerCase() === "/pozicionery")
+    ? { justifyContent: 'flex-end' }
+    : {}
+
   return (
     <section className={styles.container}>
       {isDisplayCategories && categories && categories.length > 0 && products.length > 0 && (
@@ -243,7 +246,7 @@ export default function Catalog({ categories, title }) {
       )}
       {products.length > 0 && (
         <div className={styles.productContainer}>
-          <div className={styles.header}>
+          <div className={styles.header} style={headerStyle}>
             {subTitle && (<h1>{subTitle}</h1>)}
             <div className={styles.selectViewContainer}>
               <div
