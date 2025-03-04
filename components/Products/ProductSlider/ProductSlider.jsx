@@ -317,6 +317,7 @@ export default function ProductSlider({ productInfo }) {
         isOpen={isImageSliderOpen} 
         onClose={handleCloseImageSlider} 
         images={safeImages}
+        initialSlide={currentImageIndex}
       />
     </>
   ) : null;
