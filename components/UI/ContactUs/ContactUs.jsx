@@ -22,18 +22,18 @@ export default function ContactUs({ theme }) {
     setFormReady(true)
     setError('')
 
-    if (!validateName(name)) {
-      setError('Пожалуйста, введите ваше имя')
-      return
-    }
-    if (!validateEmail(email)) {
-      setError('Пожалуйста, корректно заполните поле Электронная почта')
-      return
-    }
-    if (!validateCity(city)) {
-      setError('Пожалуйста, введите ваш город')
-      return
-    }
+    // if (!validateName(name)) {
+    //   setError('Пожалуйста, введите ваше имя')
+    //   return
+    // }
+    // if (!validateEmail(email)) {
+    //   setError('Пожалуйста, корректно заполните поле Электронная почта')
+    //   return
+    // }
+    // if (!validateCity(city)) {
+    //   setError('Пожалуйста, введите ваш город')
+    //   return
+    // }
     if (!validatePhone(phone)) {
       setError('Пожалуйста, корректно заполните поле Номер телефона')
       return
@@ -96,13 +96,10 @@ export default function ContactUs({ theme }) {
                   <div className={styles.formRow}>
                     <CustomInput
                       type="text"
-                      placeholder="Ваше имя*"
+                      placeholder="Ваше имя"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      required
-                      errorMessage={'Пожалуйста, введите ваше имя'}
-                      validate={validateName}
-                      checkForm={formReady}
+                      validate={()=>{}}
                       theme="white"
                     />
                     <CustomInput
@@ -120,24 +117,19 @@ export default function ContactUs({ theme }) {
                   <div className={styles.formRow}>
                     <CustomInput
                       type="text"
-                      placeholder="Город*"
+                      placeholder="Город"
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      required
-                      errorMessage={'Пожалуйста, корректно заполните поле!'}
-                      validate={validateCity}
-                      checkForm={formReady}
+                      validate={()=>{}}
                       theme="white"
                     />
                     <CustomInput
                       type="email"
-                      placeholder="Электронная почта*"
+                      placeholder="Электронная почта"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      required
-                      errorMessage={'Пожалуйста, корректно заполните поле!'}
+                      errorMessage={"Пожалуйста, корректно заполните поле!"}
                       validate={validateEmail}
-                      checkForm={formReady}
                       theme="white"
                     />
                   </div>
@@ -206,7 +198,7 @@ function validateCity(city) {
 }
 function validatePhone(phone) {
   const regex =
-    /^(?:\+7\d{10}|\+375\d{9}|\+374\d{8}|\+994\d{9}|\+996\d{9}|\+373\d{8}|\+992\d{9}|\+993\d{8}|\+998\d{9})$/
+    /^(?:\+?\d{1,3})?[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/
   return regex.test(phone)
 }
 function validateEmail(email) {
