@@ -94,32 +94,35 @@
       }
     }
     .title {
-      font-family: "DIN Pro Condensedbold", sans-serif;
-      font-size: 60px;
-      line-height: 120%;
-      text-transform: uppercase;
-      width: 100%;
-      text-align: start;
-      letter-spacing: -0.03em;
-      margin-bottom: 32px;
-      @media (max-width: 1600px) {
-        line-height: 110%;
-        letter-spacing: -0.02em;
-        font-size: 40px;
-      }
-      @media (max-width: 1200px) {
-        margin-bottom: 20px;
-      }
-      @media (max-width: 1024px) {
-        font-size: 56px;
-        line-height: 61.6px;
+      h2{
+        font-family: "DIN Pro Condensedbold", sans-serif;
+        font-size: 60px;
+        line-height: 120%;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: start;
+        letter-spacing: -0.03em;
         margin-bottom: 32px;
+        @media (max-width: 1600px) {
+          line-height: 110%;
+          letter-spacing: -0.02em;
+          font-size: 40px;
+        }
+        @media (max-width: 1200px) {
+          margin-bottom: 20px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 56px;
+          line-height: 61.6px;
+          margin-bottom: 32px;
+        }
+        @media (max-width: 640px) {
+          font-size: 32px;
+          line-height: 35.2px;
+          margin-bottom: 24px;
+        }
       }
-      @media (max-width: 640px) {
-        font-size: 32px;
-        line-height: 35.2px;
-        margin-bottom: 24px;
-      }
+     
     }
 
     .description {
@@ -242,6 +245,7 @@
     .tabletTitle {
       display: block;
     }
+   h2 {
     .title {
       font-size: 56px;
       line-height: 110%;
@@ -260,6 +264,7 @@
         margin-bottom: 24px;
       }
     }
+   }
     .description {
       font-size: 24px;
       letter-spacing: -0.02em;

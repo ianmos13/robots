@@ -153,26 +153,29 @@
     }
 
     .name {
-      font-family: "DIN Pro medium", sans-serif;
-      color: $dark-gray;
-      letter-spacing: -0.02em;
-      @each $property, $value in $b24-medium {
-        #{$property}: #{$value};
-      }
-      @media (max-width: 1600px) {
-        @each $property, $value in $b20-medium {
-          #{$property}: #{$value};
-        }
-      }
-      @media (max-width: 1024px) {
+      h3 {
+        font-family: "DIN Pro medium", sans-serif;
+        color: $dark-gray;
+        letter-spacing: -0.02em;
+        text-transform: none;
         @each $property, $value in $b24-medium {
           #{$property}: #{$value};
         }
-      }
-      @media (max-width: 640px) {
-        padding: 0;
-        font-size: 18px;
-        line-height: 21.6px;
+        @media (max-width: 1600px) {
+          @each $property, $value in $b20-medium {
+            #{$property}: #{$value};
+          }
+        }
+        @media (max-width: 1024px) {
+          @each $property, $value in $b24-medium {
+            #{$property}: #{$value};
+          }
+        }
+        @media (max-width: 640px) {
+          padding: 0;
+          font-size: 18px;
+          line-height: 21.6px;
+        }
       }
     }
   }

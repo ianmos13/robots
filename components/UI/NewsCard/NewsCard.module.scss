@@ -34,11 +34,15 @@
 			letter-spacing: 0.2em;
 		}
 		.title {
-			font-family: 'DIN Pro medium', sans-serif;
-			font-size: 24px;
-			line-height: 31.2px;
-			letter-spacing: -0.02em;
-			color: #323232;
+			h2, h3{
+				font-family: 'DIN Pro medium', sans-serif;
+				font-size: 24px;
+				line-height: 31.2px;
+				letter-spacing: -0.02em;
+				color: #323232;
+				text-transform: none;
+			}
+			
 		}
 		.description {
 			font-family: 'DIN Pro medium', sans-serif;
@@ -60,8 +64,11 @@
 		.newsInfo {
 			gap: 20px;
 			.title {
-				font-size: 20px;
-				line-height: 26px;
+				h2, h3{
+					font-size: 20px;
+					line-height: 26px;
+				}
+			
 			}
 			.description {
 				font-size: 18px;
@@ -97,8 +104,11 @@
 		}
 		.newsInfo {
 			.title {
-				font-size: 20px;
-				line-height: 26px;
+				h2, h3{
+					font-size: 20px;
+					line-height: 26px;
+				}
+				
 			}
 		}
 	}
@@ -127,8 +137,11 @@
 				line-height: 21.6px;
 			}
 			.title {
-				font-size: 16px;
-				line-height: 20.8px;
+				h2, h3 {
+					font-size: 16px;
+					line-height: 20.8px;
+				}
+				
 			}
 			.description {
 				font-size: 14px;

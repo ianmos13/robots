@@ -5,7 +5,7 @@ export default function Details() {
 	return (
 		<section className={styles.container}>
 			<div className={styles.headerContainer}>
-				<div className={styles.header}>РЕКВИЗИТЫ</div>
+				<div className={styles.header}><h2>РЕКВИЗИТЫ</h2></div>
 				<div className={styles.buttonContainer}>
 					<DownloadDetailsButton text={'Скачать реквизиты'} />
 				</div>

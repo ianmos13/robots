@@ -149,7 +149,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           {(addInfo.description?.length > 0 ||
             addInfo.equipment?.length > 0) && (
             <div className={styles.info}>
-              <h4>Информация</h4>
+              <h2>Информация</h2>
               <div className={styles.btnContainer}>
                 {addInfo.description?.length > 0 && (
                   <div
@@ -201,9 +201,9 @@ export default function MoreInfo({ productInfo, parentCategory }) {
 
           {technicalInfo && (
             <div className={styles.technicalInfo}>
-              <h4>
+              <h2>
                 Технические характеристики {productInfo?.title}
-              </h4>
+              </h2>
               <div className={styles.btnContainer}>
                 {technicalInfo.axes && (
                   <div
@@ -315,7 +315,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
 
           {productInfo?.howItWorksVideo && (
               <div className={styles.howItWorks}>
-                <h4>Посмотрите как это работает</h4>
+                <h2>Посмотрите как это работает</h2>
                 <VideoPlayer
                     theme={"products"}
                     videoPath={productInfo.howItWorksVideo} />
@@ -323,7 +323,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           )}
           {productInfo?.containInfo && isValidSubData(productInfo?.containInfo) && (
             <div className={styles.robotContains}>
-              <h4>Из чего состоит наш робот:</h4>
+              <h2>Из чего состоит наш робот:</h2>
               <div className={styles.robotContainsSlider}>
                 <RobotContainSlider info={productInfo?.containInfo || []} />
               </div>

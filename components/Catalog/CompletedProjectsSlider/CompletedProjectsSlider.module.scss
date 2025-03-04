@@ -6,13 +6,15 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: end;
-		font-family: 'DIN Pro bold', sans-serif;
+		
 		gap: 400px;
-		h4 {
+		h2 {
 			font-size: 30px;
 			line-height: 39px;
 			letter-spacing: -0.02em;
 			color: #323232;
+			font-family: 'DIN Pro bold', sans-serif;
+			text-transform: uppercase;
 		}
 	}
 	.separator {
@@ -118,7 +120,7 @@
 			align-items: end;
 			font-family: 'DIN Pro bold', sans-serif;
 			gap: 400px;
-			h4 {
+			h2 {
 				font-size: 30px;
 				line-height: 39px;
 				letter-spacing: -0.02em;
@@ -262,7 +264,7 @@
 		padding: 0 0 80px 0;
 		width: 100%;
 		.header {
-			h4 {
+			h2 {
 				font-size: 20px;
 				line-height: 26px;
 				letter-spacing: -0.02em;

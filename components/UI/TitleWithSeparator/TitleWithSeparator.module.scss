@@ -3,10 +3,18 @@
 .header {
   display: flex;
   justify-content: space-between;
-
+  h2 {
+    font-family: 'DIN Pro bold', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: unset;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
   .title {
     color: $dark-gray;
     letter-spacing: -0.02em;
+ 
     @media (max-width: 640px) {
       font-size: 18px;
       line-height: 23.4px;
@@ -99,6 +107,7 @@
   }
 
   .title {
+ 
     @media (max-width: 640px) {
       font-size: 20px;
       line-height: 26px;

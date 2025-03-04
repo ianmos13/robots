@@ -10,10 +10,13 @@
 		justify-content: space-between;
 		align-items: center;
 		.header {
-			font-size: 30px;
-			line-height: 39px;
-			color: #323232;
-			font-family: 'DIN Pro bold', sans-serif;
+			h2 {
+				font-size: 30px;
+				line-height: 39px;
+				color: #323232;
+				font-family: 'DIN Pro bold', sans-serif;
+			}
+			
 		}
 		.buttonContainer {
 			display: flex;

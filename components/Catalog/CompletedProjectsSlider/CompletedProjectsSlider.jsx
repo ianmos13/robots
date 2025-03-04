@@ -140,7 +140,7 @@ export default function CompletedProjectsSlider() {
     return (
       <div className={styles.sliderContainer}>
         <div className={styles.header}>
-          <h4> Проекты внедрения </h4>
+          <h2> Проекты внедрения </h2>
           <div className={styles.desktopButtonContainer}>
             <SwitchButtons
               activeButton={activeButton}

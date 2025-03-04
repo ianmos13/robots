@@ -1,16 +1,16 @@
 'use client'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useState } from 'react'
 import styles from './ProductCard.module.scss'
 
 import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
 import useDeviceType from '../../../hooks/useDeviceType'
-import {getProductUrl} from "@/utils/getProductUrl";
-
+import { getProductUrl } from "@/utils/getProductUrl"
 
 export default function ProductCard({ robot, theme, categories, hoverCard = () => {} }) {
   const router = useRouter()
+  const pathname = usePathname()
   const { isMobileView } = useDeviceType()
   const [isHovered, setIsHovered] = useState(false)
 
@@ -26,6 +26,9 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
 
   const hoverImage = robot?.images && robot.images.length > 1 ? robot.images[1] : robot?.hoverImage
   const productUrl = getProductUrl(robot, categories)
+
+  
+  const isSpecialPath = pathname.startsWith('/pozicionery') || pathname.startsWith('/promyshlennye-roboty')
 
   return (
     <div
@@ -45,19 +48,19 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
             alt={robot.title}
             style={{ opacity: isHovered && robot.hoverImage ? 0 : 1 }}
           />
-        					{hoverImage && (
-						<img
-                            onClick={() => { router.push(productUrl) }}
-							className={`${styles.robotImage} ${styles.hoverImage}`}
-							src={hoverImage}
-							alt={robot.title}
-                            loading="lazy"
-							style={{ opacity: isHovered ? 1 : 0 }}
-						/>
-					)}
+          {hoverImage && (
+            <img
+              onClick={() => { router.push(productUrl) }}
+              className={`${styles.robotImage} ${styles.hoverImage}`}
+              src={hoverImage}
+              alt={robot.title}
+              loading="lazy"
+              style={{ opacity: isHovered ? 1 : 0 }}
+            />
+          )}
         </div>
         <div className={styles.iconGroup}>
-          <FavoriteButton robot={robot}/>
+          <FavoriteButton robot={robot} />
           <CompareButton robot={robot} />
         </div>
       </div>
@@ -67,7 +70,10 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
           router.push(productUrl)
         }}
       >
-        <div className={styles.title}>{robot.title}</div>
+        
+        <div className={styles.title}>
+          {isSpecialPath ? <h2>{robot.title}</h2> : <h3>{robot.title}</h3>}
+        </div>
         <div className={styles.specsContainer}>
           <div className={styles.specsItem}>
             <img src='/images/icons/lenght.svg' alt='Длина рук' />

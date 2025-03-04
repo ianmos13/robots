@@ -73,9 +73,13 @@
 		color: $dark-gray;
 		text-align: start;
 		.title {
-			font-family: 'DIN Pro сondensedblack', sans-serif;
-			font-size: 28px;
-			line-height: 36.4px;
+			h2, h3 {
+				font-family: 'DIN Pro сondensedblack', sans-serif;
+				font-size: 28px;
+				line-height: 36.4px;
+				text-transform: none;
+			}
+			
 		}
 
 		.specsContainer {
@@ -203,10 +207,14 @@
 			padding: 0 30px 30px 30px;
 			gap: 30px;
 			.title {
-				font-family: 'DIN Pro сondensedblack', sans-serif;
-				font-size: 22px;
-				line-height: 26.4px;
-				letter-spacing: -0.02em;
+				h2, h3 {
+					font-family: 'DIN Pro сondensedblack', sans-serif;
+					font-size: 22px;
+					line-height: 26.4px;
+					letter-spacing: -0.02em;
+					text-transform: none;
+				}
+			
 			}
 			.specsContainer {
 				.specsItem {
@@ -275,8 +283,11 @@
 			gap: 30px;
 			aspect-ratio: 1.46;
 			.title {
-				font-size: 28px;
-				line-height: 36.4px;
+				h2, h3 {
+					font-size: 28px;
+					line-height: 36.4px;
+				}
+				
 			}
 			.specsContainer {
 				gap: 20px;
@@ -360,9 +371,12 @@
 			gap: 24px;
 			aspect-ratio: 1.51852;
 			.title {
-				font-size: 22px;
-				line-height: 26.4px;
-				letter-spacing: -0.02em;
+				h2, h3 {
+					font-size: 22px;
+					line-height: 26.4px;
+					letter-spacing: -0.02em;
+				}
+				
 			}
 			.specsContainer {
 				gap: 16px;
@@ -494,19 +508,22 @@
 			padding: 0 30px 18px 30px;
 		}
 		.title {
-			@media (max-width: 1600px) {
-				font-size: 22px;
-				line-height: 26.4px;
-				letter-spacing: -0.02em;
+			h2, h3 {
+				@media (max-width: 1600px) {
+					font-size: 22px;
+					line-height: 26.4px;
+					letter-spacing: -0.02em;
+				}
+				@media (max-width: 1024px) {
+					font-size: 28px;
+					line-height: 36.4px;
+				}
+				@media (max-width: 640px) {
+					font-size: 22px;
+					line-height: 26.4px;
+				}
 			}
-			@media (max-width: 1024px) {
-				font-size: 28px;
-				line-height: 36.4px;
-			}
-			@media (max-width: 640px) {
-				font-size: 22px;
-				line-height: 26.4px;
-			}
+			
 		}
 		.specsContainer {
 			.specsItem {

@@ -76,7 +76,7 @@ export default function ContactUs({ theme }) {
       <div className={styles.contactUs}>
         <div className={styles.addInfo}>
           <div className={styles.title}>
-            <h4>Разработаем решение для вашего производства</h4>
+            <h2>Разработаем решение для вашего производства</h2>
             <ContactUsButtons theme="contacts" />
           </div>
           <div className={styles.text}>

@@ -29,10 +29,10 @@ const LeaveRequestBanner = ({ size, data }) => {
         <div className={styles.banner}>
           <div className={styles.bannerContent}>
             <div className={`${styles.title} ${styles.desktopTablet}`}>
-              {bannerData.title}
+              <h2>{bannerData.title}</h2>
             </div>
             <div className={`${styles.title} ${styles.tabletTitle}`}>
-              {bannerData.titleMobile}
+            <h2>{bannerData.titleMobile}</h2>
             </div>
             <div className={styles.description}>
               {bannerData.text}

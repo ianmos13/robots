@@ -6,7 +6,7 @@ export default function TitleWithSeparator({ theme, title, addButton, text, onCl
   return (
     <>
       <div className={`${styles.header} ${styles[`${theme}Header`]}`}>
-        <h4 className={styles.title}>{title}</h4>
+        <h2 className={styles.title}>{title}</h2>
         {addButton || theme === "indexWithButton" ? (
           <div className={styles.buttonsArea}>
             {theme === "indexWithButton" && (

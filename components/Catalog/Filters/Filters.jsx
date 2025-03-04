@@ -179,7 +179,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
             className={styles.filterHeader}
             onClick={() => setIsApplicationOpen(!isApplicationOpen)}
           >
-            Область применения
+            <h2>Область применения</h2>
             <img
               src={
                 isApplicationOpen
@@ -198,7 +198,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
                     checked={isAppSelected(app)}
                     onChange={() => toggleApplication(app)}
                   />
-                  {app}
+                  <h3>{app}</h3>
                 </label>
               ))}
             </div>
@@ -211,7 +211,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
           className={styles.filterHeader}
           onClick={() => setIsAxesOpen(!isAxesOpen)}
         >
-          Кол-во осей
+          <h2>Кол-во осей</h2>
           <img
             src={
               isAxesOpen
@@ -230,7 +230,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
                   checked={isAxisSelected(axis)}
                   onChange={() => toggleAxis(axis)}
                 />
-                {axis}
+                <h3>{axis}</h3>
               </label>
             ))}
           </div>
@@ -242,7 +242,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
           className={styles.filterHeader}
           onClick={() => setIsPayloadOpen(!isPayloadOpen)}
         >
-          Максимальная грузоподъёмность
+          <h2>Максимальная грузоподъёмность</h2>
           <img
             src={
               isPayloadOpen
@@ -311,7 +311,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
               className={styles.filterHeader}
               onClick={() => setIsReachOpen(!isReachOpen)}
             >
-              Максимальный охват
+              <h2>Максимальный охват</h2>
               <img
                 src={
                   isReachOpen
@@ -378,7 +378,7 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
               className={styles.filterHeader}
               onClick={() => setIsWeightOpen(!isWeightOpen)}
             >
-              Вес робота
+              <h2>Вес робота</h2>
               <img
                 src={
                   isWeightOpen
@@ -396,20 +396,12 @@ export default function Filters({ selectedFilters, onChangeFilters, maxReach, ma
                   value={robotWeight}
                   onChange={handleWeightChange}
                 />
+                <h3>{robotWeight} кг</h3>
               </div>
             )}
           </div>
         </>
       )}
-
-      <button
-        className={styles.applyButton}
-        onClick={() => {
-          onChangeFilters(selectedFilters)
-        }}
-      >
-        Показать
-      </button>
     </div>
   )
 }

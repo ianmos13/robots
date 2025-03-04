@@ -37,7 +37,7 @@ export default function LeasingPartners() {
     <>
       <section className={styles.container}>
         <div className={styles.header}>
-          <h4 className={styles.title}>Партнеры&nbsp;по&nbsp;лизингу</h4>
+          <div className={styles.title}><h2>Партнеры&nbsp;по&nbsp;лизингу</h2></div>
 
           <div className={styles.text}>
             Мы сотрудничаем с ведущими лизинговыми компаниями, чтобы сделать

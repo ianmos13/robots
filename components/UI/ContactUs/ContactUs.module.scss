@@ -29,7 +29,8 @@
 				flex-direction: column;
 				justify-content: center;
 				gap: 34px;
-				h4 {
+				text-transform: uppercase;
+				h2 {
 					font-family: 'DIN Pro Bold', sans-serif;
 					font-size: 30px;
 					line-height: 39px;
@@ -216,7 +217,7 @@
 					justify-content: space-between;
 					gap: 10px;
 
-					h4 {
+					h2 {
 						max-width: 450px;
 						font-size: 30px;
 						line-height: 39px;
@@ -364,7 +365,7 @@
 					flex-direction: column;
 					justify-content: center;
 					gap: 16px;
-					h4 {
+					h2 {
 						max-width: unset;
 						font-size: 20px;
 						line-height: 26px;

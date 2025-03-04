@@ -21,24 +21,27 @@
     }
 
     .title {
-      font-family: "DIN Pro сondensedblack", sans-serif;
-      font-size: 90px;
-      line-height: 90px;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      color: $dark-gray;
-      @media (max-width: 1600px) {
-        font-size: 64px;
-        line-height: 64px;
+      h2 {
+        font-family: "DIN Pro сondensedblack", sans-serif;
+        font-size: 90px;
+        line-height: 90px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $dark-gray;
+        @media (max-width: 1600px) {
+          font-size: 64px;
+          line-height: 64px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 56px;
+          line-height: 61px;
+        }
+        @media (max-width: 640px) {
+          font-size: 32px;
+          line-height: 35px;
+        }
       }
-      @media (max-width: 1024px) {
-        font-size: 56px;
-        line-height: 61px;
-      }
-      @media (max-width: 640px) {
-        font-size: 32px;
-        line-height: 35px;
-      }
+    
     }
     .category {
       padding: 19px 25px;
