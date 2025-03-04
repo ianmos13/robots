@@ -10,12 +10,12 @@ import PdfButton from '../Buttons/PdfButton/PdfButton'
 import CategoryTags from '../CategoryTags/CategoryTags'
 import TitleWithSeparator from '../TitleWithSeparator/TitleWithSeparator'
 import styles from './ProductCategoryGridSlider.module.scss'
-import {makeAllCategories} from "@/utils/makeAllCategories";
+import { makeAllCategories } from "@/utils/makeAllCategories";
 
 export default function ProductCategoryGridSlider() {
 	const swiperRef = useRef()
 	const [selectedCategory, setSelectedCategory] = useState('all')
-	 const [isHoveredCard, setIsHoveredCard] = useState(false);
+	const [isHoveredCard, setIsHoveredCard] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [activeButton, setActiveButton] = useState(null)
 	const { categories } = useCategories()
@@ -23,11 +23,18 @@ export default function ProductCategoryGridSlider() {
 	const router = useRouter()
 	const allCategories = makeAllCategories(categories?.pozitsionery)
 
+	
+	const filteredCategories =allCategories.map(category => {
+		if (category.key === 'all') {
+			return { ...category, key: '2', slug: 'pozicionery' };
+		}
+		return category;
+	});
+	console.log(filteredCategories)
 	const filteredRobots =
 		selectedCategory === 'all'
 			? products
 			: products.filter(robot => robot.category === selectedCategory)
-
 
 	useEffect(() => {
 		setCurrentIndex(0)
@@ -35,7 +42,7 @@ export default function ProductCategoryGridSlider() {
 
 	const hoverCard = (value) => {
 		setIsHoveredCard(value)
-}
+	}
 
 	const handleNext = () => {
 		swiperRef.current?.slideNext()
@@ -52,6 +59,7 @@ export default function ProductCategoryGridSlider() {
 	const handleShowAll = () => {
 		router.push("/pozicionery")
 	}
+
 	if (products.length > 0) return (
 		<section className={styles.container}>
 			<TitleWithSeparator
@@ -78,7 +86,7 @@ export default function ProductCategoryGridSlider() {
 					items={filteredRobots}
 					swiperRef={swiperRef}
 					hoverCard={hoverCard}
-					categories={allCategories}
+					categories={filteredCategories} 
 				/>
 			</div>
 
@@ -93,7 +101,6 @@ export default function ProductCategoryGridSlider() {
 					handleNext={handleNext}
 				/>
 			</div>
-			
 		</section>
 	)
 }
