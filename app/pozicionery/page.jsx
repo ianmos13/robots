@@ -1,22 +1,21 @@
-"use client"
 
-import React, { Suspense } from "react";
-import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import Catalog from "@/components/Catalog/Catalog";
-import useCategories from "@/hooks/useCategories";
 
-export default function page() {
-  const { categories } = useCategories(true);
-  const breadcrumbItems = [
-    { label: "Главная", link: "/" },
-    { label: "Позиционеры", link: "/pozicionery" },
-  ];
-  return (
-    <Suspense fallback={<div>Loading catalog...</div>}>
-    <div>
-      <Breadcrumbs items={breadcrumbItems} />
-      <Catalog categories={categories} title={"Каталог позиционеров"} />
-    </div>
-    </Suspense>
-  );
+export const metadata = {
+  title: "Сварочный позиционер – купить позиционеры для сварочных роботов и вращатели",
+  description:
+    "Сварочные позиционеры и вращатели для автоматизации сварочных процессов. Купить позиционеры для сварочных роботов по выгодным ценам. Обеспечьте точность и стабильность при выполнении сварочных операций. Покажем работу данного оборудования на нашем сайте.",
+  keywords: [
+    "сварочный позиционер",
+    "сварочный позиционер купить",
+    "сварочный вращатель позиционер",
+    "робот позиционер",
+    "позиционеры для роботов",
+    "позиционер для сварочного робота",
+  ],
+};
+
+import PozicioneryRobot from "./PozicioneryRobot";
+
+export default function Page() {
+  return <PozicioneryRobot />;
 }
