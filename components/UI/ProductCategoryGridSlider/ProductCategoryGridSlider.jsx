@@ -30,7 +30,6 @@ export default function ProductCategoryGridSlider() {
 		}
 		return category;
 	});
-	console.log(filteredCategories)
 	const filteredRobots =
 		selectedCategory === 'all'
 			? products
