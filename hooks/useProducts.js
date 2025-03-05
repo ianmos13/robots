@@ -1,24 +1,10 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import useApi from "@/hooks/useApi";
-import { setProducts } from '@/redux/features/productsSlice';
+// import robotsList from '@/public/data/products.json'
 
 export default function useProducts() {
-  const dispatch = useDispatch();
-  const products = useSelector(state => state.products?.products || []); 
   const { data, error, loading } = useApi("product", "GET");
+  const products = data && data.data ? data.data : [];
 
-  useEffect(() => {
-    if (data && !products.length) { 
-      dispatch(setProducts(data.data)); 
-    }
-  }, [data, dispatch, products.length]);
-
-  
-  if (products.length) {
-    return { products, error: null, loading: false };
-  }
-
-  
-  return { products: data?.data || [], error, loading };
+  return { products, error, loading };
+  // return { products: robotsList, error: null, loading: false };
 }

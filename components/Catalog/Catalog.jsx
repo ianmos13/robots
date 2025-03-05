@@ -406,7 +406,7 @@ export default function Catalog({ categories, title }) {
           </div>
         </div>
       )}
-      <CompletedProjectsSlider />
+      {/* <CompletedProjectsSlider /> */}
       {currentCatalogData?.questions && <Question faqData={currentCatalogData?.questions} />}
       <ContactUs theme={'catalog'} />
     </section>
