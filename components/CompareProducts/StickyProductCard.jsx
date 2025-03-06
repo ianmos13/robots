@@ -2,11 +2,11 @@
 import styles from "./CompareProducts.module.scss";
 import FavoriteButton from "../UI/FavoriteButton/FavoriteButton";
 import {getProductUrl} from "@/utils/getProductUrl";
-
+import Link from 'next/link';
 export default function StickyProductCard({ item, categories }) {
   const productUrl = getProductUrl(item, categories)
   return (
-      <a
+      <Link
           className={styles.productCard}
           href={productUrl}
       >
@@ -34,6 +34,6 @@ export default function StickyProductCard({ item, categories }) {
           </div>
         </div> */}
       </div>
-    </a>
+    </Link>
   );
 }

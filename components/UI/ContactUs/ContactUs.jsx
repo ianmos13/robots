@@ -3,6 +3,7 @@ import ContactUsButtons from '@/components/UI/ContactUsButtons/ContactUsButtons'
 import CustomInput from '@/components/UI/CustomInput/CustomInput'
 import React from 'react'
 import styles from './ContactUs.module.scss'
+import Link from 'next/link'
 
 export default function ContactUs({ theme }) {
   const [name, setName] = React.useState('')
@@ -168,9 +169,9 @@ export default function ContactUs({ theme }) {
                       </svg>
                     </span>
                     Заполняя форму, вы соглашаетесь на{' '}
-                    <a href="/privacy-policy" target="_blank" rel="noreferrer">
+                    <Link href="/privacy-policy" target="_blank" rel="noreferrer">
                       обработку персональных данных
-                    </a>
+                    </Link>
                   </label>
                 </div>
               </div>

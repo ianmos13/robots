@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import styles from "./SubscribeAndShare.module.scss";
+import Link from 'next/link'
 
 export default function SubscribeAndShare() {
   const [copied, setCopied] = useState(false);
@@ -46,9 +47,9 @@ export default function SubscribeAndShare() {
         <div className={styles.info}>
           <div className={styles.agreement}>
             Нажимая кнопку подписаться, вы соглашаетесь с условиями{" "}
-            <a href="/user-agreement" target="_blank" rel="noopener noreferrer">
+            <Link href="/user-agreement" target="_blank" rel="noopener noreferrer">
               пользовательского соглашения
-            </a>
+            </Link>
           </div>
           {mounted && (
             <div className={styles.shareContainer}>

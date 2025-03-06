@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './CheckBox.module.scss'
+import Link from 'next/link'
 
 export default function CheckBox({ value, onChange, checkForm }) {
 	const [error, setError] = React.useState(false)
@@ -37,9 +38,9 @@ export default function CheckBox({ value, onChange, checkForm }) {
 					</svg>
 				</span>
 				Заполняя форму, вы соглашаетесь на{' '}
-				<a href='/privacy-policy' target='_blank' rel='noreferrer'>
+				<Link href='/privacy-policy' target='_blank' rel='noreferrer'>
 					обработку персональных данных
-				</a>
+				</Link>
 			</label>
 		</div>
 	)

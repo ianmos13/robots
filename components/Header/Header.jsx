@@ -92,7 +92,7 @@ const Header = () => {
                   {/*<Location />*/}
                 </div>
                 <div className={styles.floatingIcons}>
-                  <FloatingIcons />
+                    <FloatingIcons />
                 </div>
               </div>
               <div className={`${styles.catalogPopup} ${openCatalog ? styles.active : '' }  ${scrolled ? styles.activeScrolled : ''}`}>

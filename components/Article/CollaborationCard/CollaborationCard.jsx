@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import styles from "./CollaborationCard.module.scss";
 
-export default function CollaborationCard() {
+export default function CollaborationCard({handleOpenModal}) {
   const videoRef = useRef(null);
 
   return (
@@ -13,7 +13,7 @@ export default function CollaborationCard() {
           Упрощаем и ускоряем производственные процессы в самых разных сферах,
           от электроники до пищевой промышленности
         </p>
-        <button className={styles.button}>Оставить заявку</button>
+        <button onClick={handleOpenModal}  className={styles.button}>Оставить заявку</button>
       </div>
       <div className={styles.videoWrapper}>
         <video
@@ -30,6 +30,7 @@ export default function CollaborationCard() {
           />
         </video>
       </div>
+     
     </div>
   );
 }

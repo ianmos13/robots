@@ -19,9 +19,9 @@ const rootReducer = combineReducers({
   header: headerReducer,
   favorite: favoriteReducer,
   compare: compareReducer,
-  products: productsReducer, 
-  news: newsReducer,
-  category: categoryReducer
+  // products: productsReducer, 
+  // news: newsReducer,
+  // category: categoryReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

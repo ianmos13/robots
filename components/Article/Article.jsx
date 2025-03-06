@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Article.module.scss";
 import BackButton from "./BackButton/BackButton";
 import NewsCenter from "./NewsCenter/NewsCenter";
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal"
 
 import CollaborationCard from "@/components/Article/CollaborationCard/CollaborationCard";
 
@@ -12,8 +15,17 @@ export default function Article({ data, backButtonOptions }) {
   const handleBack = () => {
     router.push(backButtonOptions.link);
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
+      <>
     <section className={styles.container}>
       <div className={styles.containerInner}>
         <div className={styles.buttonContainer}>
@@ -23,9 +35,16 @@ export default function Article({ data, backButtonOptions }) {
             <NewsCenter data={data} />
         </div>
         <div className={styles.sidebarContainer}>
-            <CollaborationCard />
+            <CollaborationCard handleOpenModal={handleOpenModal} />
         </div>
       </div>
     </section>
+    
+    <RequestModal
+       isOpen={isModalOpen}
+       text={"Получить бесплатную консультацию"}
+       onClose={handleCloseModal}
+     />
+    </>
   );
 }

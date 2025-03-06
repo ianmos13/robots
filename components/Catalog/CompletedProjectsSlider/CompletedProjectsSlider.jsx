@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./CompletedProjectsSlider.module.scss";
 import useConvertedDate from "@/hooks/useConvertedDate";
 import useCompletedProjects from "@/hooks/useCompletedProjects";
+import Link from 'next/link'
 
 
 // function randomDate() {
@@ -97,12 +98,12 @@ const TruncatedText = ({ prj }) => {
         {isTruncated ? (
           <>
             {displayText}{" "}
-            <a
+            <Link
               href={`/our-projects/${prj.slug}`}
               className={styles.mobileRead}
             >
               Читать далее
-            </a>
+            </Link>
           </>
         ) : (
           displayText
@@ -124,6 +125,23 @@ export default function CompletedProjectsSlider() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
+
+  const sortedProjects = projects
+  .slice()
+  .sort((a, b) => {
+    const parseDate = (dateStr) => {
+      const [day, month, year, hours, minutes, seconds] = dateStr
+        .split(/[\s.:]/)
+        .map(Number);
+      return new Date(year, month - 1, day, hours, minutes, seconds).getTime();
+    };
+
+    return  parseDate(a.date)-parseDate(b.date) ; 
+  })
+  .slice(0, 10); 
+
+
+ 
   const handlePrevClick = () => {
     swiperRef.current?.slidePrev();
     setActiveButton("prev");
@@ -136,7 +154,7 @@ export default function CompletedProjectsSlider() {
     setTimeout(() => setActiveButton(""), 300);
   };
 
-  if (projects.length > 0)
+  if (sortedProjects.length > 0)
     return (
       <div className={styles.sliderContainer}>
         <div className={styles.header}>
@@ -194,7 +212,7 @@ export default function CompletedProjectsSlider() {
               },
             }}
           >
-            {projects.map((prj, index) => (
+            {sortedProjects.map((prj, index) => (
               <SwiperSlide key={index} className={styles.swiperSlide}>
                 <div className={styles.card}>
                   <div className={styles.imageContainer}>
