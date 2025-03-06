@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styles from "./Breadcrumbs.module.scss";
+import { useRouter } from 'next/navigation'
 
 const Breadcrumbs = ({ items }) => {
+  const router = useRouter()
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -31,7 +33,7 @@ const Breadcrumbs = ({ items }) => {
                 className={`${styles.breadcrumbButton} ${
                   index === items.length - 1 ? styles.active : ""
                 }`}
-                onClick={() => (window.location.href = item.link)}
+                onClick={() => router.push(item.link)}
                 disabled={index === items.length - 1}
               >
                 {item.label}
@@ -53,7 +55,7 @@ const Breadcrumbs = ({ items }) => {
               className={`${styles.breadcrumbButton} ${
                 index === items.length - 1 ? styles.active : ""
               }`}
-              onClick={() => (window.location.href = item.link)}
+              onClick={() => router.push(item.link)}
               disabled={index === items.length - 1}
             >
               {item.label}

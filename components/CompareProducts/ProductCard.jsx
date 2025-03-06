@@ -2,6 +2,7 @@
 import styles from "./CompareProducts.module.scss";
 import FavoriteButton from "../UI/FavoriteButton/FavoriteButton";
 import {getProductUrl} from "@/utils/getProductUrl";
+import Link from 'next/link'
 
 export default function ProductCard({ item, categories, onRemove }) {
   const productUrl = getProductUrl(item, categories)
@@ -20,7 +21,7 @@ export default function ProductCard({ item, categories, onRemove }) {
             />
         </div>
       </div>
-      <a href={productUrl}>
+      <Link href={productUrl}>
           <div className={styles.productImage}>
            <img
                loading="lazy"
@@ -29,7 +30,7 @@ export default function ProductCard({ item, categories, onRemove }) {
           />
           </div>
           <div className={styles.productTitle}>{item.title}</div>
-      </a>
+      </Link>
     </div>
   );
 }

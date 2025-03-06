@@ -7,6 +7,7 @@ import CompareButton from '@/components/UI/CompareButton/CompareButton'
 import FavoriteButton from '@/components/UI/FavoriteButton/FavoriteButton'
 import useDeviceType from '../../../hooks/useDeviceType'
 import { getProductUrl } from "@/utils/getProductUrl"
+import Link from 'next/link'
 
 export default function ProductCard({ robot, theme, categories, hoverCard = () => {} }) {
   const router = useRouter()
@@ -93,9 +94,9 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
         </div>
         <div className={styles.buttonContainer}>
           {isHovered ? (
-            <a href={productUrl} className={styles.detailsBtn}>
+            <Link href={productUrl} className={styles.detailsBtn}>
               Подробнее
-            </a>
+            </Link>
           ) : (
             <div className={styles.emptyButton}></div>
           )}

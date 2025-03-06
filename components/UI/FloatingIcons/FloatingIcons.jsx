@@ -34,8 +34,7 @@ export default function FloatingIcons() {
       }`}
     >
       {favoritesCount > 0 && (
-       
-          <a  href="/favorites">
+          <Link  href="/favorites">
             <div className={styles.iconWrapper}>
               <img
                 src="/images/icons/favorite-blue.svg"
@@ -45,12 +44,10 @@ export default function FloatingIcons() {
               <span className={styles.badge}>{favoritesCount}</span>
               <span className={styles.text}>Избранное</span>
             </div>
-          </a>
-     
+          </Link>
       )}
       {comparisonsCount > 0 && (
-       
-          <a href="/compare-products">
+        <Link href={'/compare-products'}>
             <div className={styles.iconWrapper}>
               <img
                 src="/images/icons/compare-blue.svg"
@@ -60,8 +57,7 @@ export default function FloatingIcons() {
               <span className={styles.badge}>{comparisonsCount}</span>
               <span className={styles.text}>Сравнение товаров</span>
             </div>
-          </a>
-        
+        </Link>
       )}
     </div>
   );

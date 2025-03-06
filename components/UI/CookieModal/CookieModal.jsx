@@ -2,6 +2,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import styles from "./CookieModal.module.scss";
+import Link from 'next/link'
 
 const CookieModal = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,7 @@ const CookieModal = () => {
   return (
     <div className={styles.cookieModal}>
       <p>
-        Мы используем  <span>файлы</span> <a href="/cookie-policy">cookie</a> <span>для улучшения работы сайта</span>
+        Мы используем  <span>файлы</span> <Link href="/cookie-policy">cookie</Link> <span>для улучшения работы сайта</span>
       </p>
       <button onClick={acceptCookies}>Принять</button>
     </div>

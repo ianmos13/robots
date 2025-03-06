@@ -1,6 +1,7 @@
 'use client' 
 import { usePathname } from 'next/navigation'
 import styles from "./NewsCard.module.scss"
+import Link from 'next/link'
 
 export default function NewsCard({ id, image, title, description, date, slug }) {
   const pathname = usePathname() 
@@ -9,7 +10,7 @@ export default function NewsCard({ id, image, title, description, date, slug }) 
   const isHomePage = pathname === '/'
 
   return (
-    <a href={`/articles/${slug}`} className={styles.newsCard} key={id}>
+    <Link href={`/articles/${slug}`} className={styles.newsCard} key={id}>
       <div className={styles.imageContainer}>
         <div className={styles.tag}>Тег</div>
         {image ? <img loading="lazy" src={image} alt={title} /> : null}
@@ -21,6 +22,6 @@ export default function NewsCard({ id, image, title, description, date, slug }) 
         </div>
         {description && <div className={styles.description}>{description}</div>}
       </div>
-    </a>
+    </Link>
   )
 }
