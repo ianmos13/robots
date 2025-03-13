@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CheckBox from "@/components/UI/CustomCheckBox/CheckBox";
 import CustomInput from "@/components/UI/CustomInput/CustomInput";
 import styles from "./RequestModal.module.scss";
@@ -13,6 +13,16 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const isSubmittedPage =
+  typeof window !== "undefined" && window.location.pathname.endsWith("/submitted/");
+
+
+  useEffect(() => {
+    if (isSubmittedPage) {
+      setFormSubmitted(true);
+    }
+  }, [isSubmittedPage]);
+
   if (!isOpen) return null;
 
   const stopPropagation = (e) => e.stopPropagation();
@@ -22,14 +32,6 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
     setFormReady(true);
     setError("");
 
-    // if (!validateName(name)) {
-    //   setError("Введите имя.");
-    //   return;
-    // }
-    // if (!validateEmail(email)) {
-    //   setError("Введите корректный email.");
-    //   return;
-    // }
     if (!validatePhone(phone)) {
       setError("Введите корректный номер телефона.");
       return;
@@ -47,12 +49,12 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          name, 
-          phone, 
-          email, 
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
           messageFormat: "modal",
-          productSlug  
+          productSlug,
         }),
       });
 
@@ -62,10 +64,23 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
         throw new Error(result.error || "Ошибка при отправке формы.");
       }
 
+      if (typeof window !== "undefined" && window.ym) {
+        window.ym(62154340, "reachGoal", "B24_FORM_5_END");
+      }
+
       setFormSubmitted(true);
-      setTimeout(() => {
-        handleClose();
-      }, 2000);
+
+      const currentPath =
+      typeof window !== "undefined" ? window.location.pathname : "";
+    const newUrl = currentPath.includes("/submitted")
+      ? currentPath
+      : currentPath.replace(/\/$/, "") + "/submitted";
+    
+    if (typeof window !== "undefined") {
+      window.history.replaceState({}, "", newUrl);
+    }
+
+      setTimeout(handleClose, 2000);
     } catch (err) {
       setError(err.message || "Ошибка соединения. Попробуйте позже.");
     } finally {
@@ -79,7 +94,8 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
     setEmail("");
     setAgreement(false);
     setFormSubmitted(false);
-    onClose();
+
+    onClose(); 
   };
 
   return (
@@ -89,7 +105,7 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
           <img src="/images/icons/x.svg" alt="Close" />
         </button>
 
-        {formSubmitted ? (
+        {formSubmitted || isSubmittedPage ? (
           <div className={styles.header}>
             <div className={styles.title}>ВАША ЗАЯВКА ОТПРАВЛЕНА</div>
             <div className={styles.desciption}>
@@ -109,7 +125,7 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
                 placeholder="Ваше имя"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                validate={()=>{}}
+                validate={() => {}}
               />
               <CustomInput
                 type="tel"
@@ -140,8 +156,7 @@ const RequestModal = ({ isOpen, onClose, text, productSlug }) => {
               <button
                 type="submit"
                 className={styles.submitBtn}
-                disabled={isLoading}
-              >
+                disabled={isLoading}>
                 {isLoading ? "Отправка..." : "Отправить"}
               </button>
             </form>
@@ -160,7 +175,7 @@ function validateName(name) {
 
 function validatePhone(phone) {
   const regex =
-      /^(?:\+?\d{1,3})?[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/
+    /^(?:\+?\d{1,3})?[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
   return regex.test(phone);
 }
 

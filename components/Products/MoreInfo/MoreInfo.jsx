@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import RobotContainSlider from "@/components/Products/RobotContainSlider/RobotContainSlider";
 import DownloadRobotInfoButton from "@/components/UI/Buttons/DownloadRobotInfoButton/DownloadRobotInfoButton";
 import ProductCategoryGridPagination from "@/components/UI/ProductCategoryGridPagination/ProductCategoryGridPagination";
@@ -10,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./MoreInfo.module.scss";
-import {isValidSubData} from "@/utils/validation";
+import { isValidSubData } from "@/utils/validation";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 
 export default function MoreInfo({ productInfo, parentCategory }) {
@@ -43,58 +44,107 @@ export default function MoreInfo({ productInfo, parentCategory }) {
   };
 
   const mergeTechnicalRows = (data) => {
-    if (!data) return [];
-    let rows = [];
-    ["axes", "bases", "flange"].forEach((key) => {
-      if (data[key] && Array.isArray(data[key].table)) {
-      
-        data[key].table.forEach((tableArray) => {
-          if (Array.isArray(tableArray)) {
-            rows.push(...tableArray);
-          }
-        });
-      }
+    if (!data || !data.axes || !Array.isArray(data.axes.table)) return [];
+
+    
+    const columns = data.axes.table.map((tableArray) => {
+      const column = {};
+      tableArray.forEach((row) => {
+        if (row.label && row.value !== undefined && row.value !== null) {
+          column[row.label] = row.value;
+        }
+      });
+      return column;
     });
-  
-    return rows.filter(
-      (row) =>
-        row.value !== undefined &&
-        row.value !== null &&
-        row.value.toString().trim() !== ""
-    );
+
+    return columns;
   };
 
   const renderTable = (data) => {
-    const rows = mergeTechnicalRows(data);
-    if (!rows || rows.length === 0) return null;
-    const visibleRows = showAllRows ? rows : rows.slice(0, MAX_VISIBLE_ROWS);
+    const columns = mergeTechnicalRows(data);
+    if (!columns || columns.length === 0) return null;
+  
+    
+    const groupedRows = {};
+    const conditionsGroup = [
+      "Средняя температура",
+      "Относительная влажность",
+      "Вибрации",
+      "Другие",
+      "Уровень IP",
+    ];
+  
+    
+    const allLabels = new Set();
+    columns.forEach((column) => {
+      Object.keys(column).forEach((label) => allLabels.add(label));
+    });
+  
+   
+    Array.from(allLabels).forEach((label) => {
+      let subheading = "";
+  
+      
+      let cleanedLabel = label
+        .replace("ДДПО:", "")
+        .replace("МСДПО:", "")
+        .replace("ДКМ:", "")
+        .replace("ДМИ:", "")
+        .replace("Преимущества:", "")
+        .replace("Применение:", "")
+        .trim();
+  
+
+      if (label.startsWith("ДДПО:")) {
+        subheading = "Диапазон движения по осям";
+      } else if (label.startsWith("МСДПО:")) {
+        subheading = "Максимальная скорость движения по осям";
+      } else if (label.startsWith("ДКМ:")) {
+        subheading = "Допустимый крутящий момент";
+      } else if (label.startsWith("ДМИ:")) {
+        subheading = "Допустимый момент инерции";
+      } else if (label.startsWith("Преимущества:")) {
+        subheading = "Преимущества";
+      } else if (label.startsWith("Применение:")) {
+        subheading = "Применение";
+      } else if (conditionsGroup.includes(label) || label.startsWith("Требования к условиям:")) {
+        subheading = "Требования к условиям";
+      }
+  
+      if (!groupedRows[subheading]) {
+        groupedRows[subheading] = [];
+      }
+  
+      
+      groupedRows[subheading].push({ label: cleanedLabel, values: columns.map((col) => col[label] || "-") });
+    });
   
     return (
       <div className={styles.tableWrapper}>
         <table className={styles.techTable}>
           <tbody>
-            {visibleRows.map((row, idx) => (
-              <tr key={idx}>
-                <td>{row.label || ""}</td>
-                <td>{row.value || "-"}</td>
-              </tr>
+            {Object.entries(groupedRows).map(([subheading, rows], idx) => (
+              <React.Fragment key={idx}>
+                <tr className={styles.subheadingRow}>
+                  <td colSpan={columns.length + 1}>{subheading}</td>
+                </tr>
+                {rows.map((row, rowIdx) => (
+                  <tr key={rowIdx}>
+                    <td>{row.label}</td>
+                    {row.values.map((value, colIdx) => (
+                      <td key={colIdx}>{value}</td>
+                    ))}
+                  </tr>
+                ))}
+              </React.Fragment>
             ))}
           </tbody>
         </table>
-        {rows.length > MAX_VISIBLE_ROWS && (
-          <div
-            className={!showAllRows ? styles.showMoreDown : styles.showMoreUp}
-            onClick={() => setShowAllRows(!showAllRows)}
-          >
-            {showAllRows ? "Скрыть" : "Раскрыть таблицу"}
-          </div>
-        )}
       </div>
     );
   };
 
-  let addInfo =
-    productInfo?.addInfo?.[0] || { description: [], equipment: [] };
+  let addInfo = productInfo?.addInfo?.[0] || { description: [], equipment: [] };
   !addInfo.description[0] && (addInfo.description = []);
   !addInfo.equipment[0] && (addInfo.equipment = []);
 
@@ -106,13 +156,11 @@ export default function MoreInfo({ productInfo, parentCategory }) {
         {productInfo?.files?.length > 0 && (
           <div className={styles.sidebar}>
             <div className={styles.title}>Файлы робота:</div>
-
             <div className={styles.btnContainer}>
               {(productInfo?.files || []).map((btn, index) => (
                 <DownloadRobotInfoButton key={index} {...btn} />
               ))}
             </div>
-
             <div className={styles.swiper}>
               <Swiper
                 className={styles.btnContainerTablet}
@@ -141,17 +189,13 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                 ))}
               </Swiper>
             </div>
-            <div
-                className={styles.requestButton}
-                onClick={handleOpenModal}
-            >
+            <div className={styles.requestButton} onClick={handleOpenModal}>
               Оставить заявку
             </div>
           </div>
         )}
         <div className={styles.rightSection}>
-          {(addInfo.description?.length > 0 ||
-            addInfo.equipment?.length > 0) && (
+          {(addInfo.description?.length > 0 || addInfo.equipment?.length > 0) && (
             <div className={styles.info}>
               <h2>Информация</h2>
               <div className={styles.btnContainer}>
@@ -205,9 +249,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
 
           {technicalInfo && (
             <div className={styles.technicalInfo}>
-              <h2>
-                Технические характеристики {productInfo?.title}
-              </h2>
+              <h2>Технические характеристики {productInfo?.title}</h2>
               <div className={styles.btnContainer}>
                 {technicalInfo.axes && (
                   <div
@@ -304,9 +346,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                 <span className={styles.longText}>
                   Скачать технические характеристики
                 </span>
-                <span className={styles.shortText}>
-                  Тех.характеристики
-                </span>
+                <span className={styles.shortText}>Тех.характеристики</span>
               </div>
               <div className={styles.downloadIcon}>
                 <img
@@ -318,12 +358,13 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           )}
 
           {productInfo?.howItWorksVideo && (
-              <div className={styles.howItWorks}>
-                <h2>Посмотрите как это работает</h2>
-                <VideoPlayer
-                    theme={"products"}
-                    videoPath={productInfo.howItWorksVideo} />
-              </div>
+            <div className={styles.howItWorks}>
+              <h2>Посмотрите как это работает</h2>
+              <VideoPlayer
+                theme={"products"}
+                videoPath={productInfo.howItWorksVideo}
+              />
+            </div>
           )}
           {productInfo?.containInfo && isValidSubData(productInfo?.containInfo) && (
             <div className={styles.robotContains}>
@@ -345,9 +386,9 @@ export default function MoreInfo({ productInfo, parentCategory }) {
         </div>
       )}
       <RequestModal
-          isOpen={isModalOpen}
-          text={"Оставить заявку"}
-          onClose={handleCloseModal}
+        isOpen={isModalOpen}
+        text={"Оставить заявку"}
+        onClose={handleCloseModal}
       />
     </div>
   );
