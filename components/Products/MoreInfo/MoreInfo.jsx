@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import RobotContainSlider from "@/components/Products/RobotContainSlider/RobotContainSlider";
 import DownloadRobotInfoButton from "@/components/UI/Buttons/DownloadRobotInfoButton/DownloadRobotInfoButton";
 import ProductCategoryGridPagination from "@/components/UI/ProductCategoryGridPagination/ProductCategoryGridPagination";
 import VideoPlayer from "@/components/UI/VideoPlayer/VideoPlayer";
-import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -36,17 +35,13 @@ export default function MoreInfo({ productInfo, parentCategory }) {
     }
   };
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
 
   const mergeTechnicalRows = (data) => {
     if (!data || !data.axes || !Array.isArray(data.axes.table)) return [];
 
-    
     const columns = data.axes.table.map((tableArray) => {
       const column = {};
       tableArray.forEach((row) => {
@@ -56,15 +51,15 @@ export default function MoreInfo({ productInfo, parentCategory }) {
       });
       return column;
     });
-
     return columns;
   };
+
 
   const renderTable = (data) => {
     const columns = mergeTechnicalRows(data);
     if (!columns || columns.length === 0) return null;
-  
-    
+
+ 
     const groupedRows = {};
     const conditionsGroup = [
       "Средняя температура",
@@ -73,18 +68,16 @@ export default function MoreInfo({ productInfo, parentCategory }) {
       "Другие",
       "Уровень IP",
     ];
-  
-    
+
+
     const allLabels = new Set();
     columns.forEach((column) => {
       Object.keys(column).forEach((label) => allLabels.add(label));
     });
-  
-   
+
+
     Array.from(allLabels).forEach((label) => {
       let subheading = "";
-  
-      
       let cleanedLabel = label
         .replace("ДДПО:", "")
         .replace("МСДПО:", "")
@@ -93,7 +86,6 @@ export default function MoreInfo({ productInfo, parentCategory }) {
         .replace("Преимущества:", "")
         .replace("Применение:", "")
         .trim();
-  
 
       if (label.startsWith("ДДПО:")) {
         subheading = "Диапазон движения по осям";
@@ -107,39 +99,70 @@ export default function MoreInfo({ productInfo, parentCategory }) {
         subheading = "Преимущества";
       } else if (label.startsWith("Применение:")) {
         subheading = "Применение";
-      } else if (conditionsGroup.includes(label) || label.startsWith("Требования к условиям:")) {
+      } else if (
+        conditionsGroup.includes(label) ||
+        label.startsWith("Требования к условиям:")
+      ) {
         subheading = "Требования к условиям";
       }
-  
+
       if (!groupedRows[subheading]) {
         groupedRows[subheading] = [];
       }
-  
-      
-      groupedRows[subheading].push({ label: cleanedLabel, values: columns.map((col) => col[label] || "-") });
+
+
+      const values = columns.map((col) => col[label] || "-");
+      groupedRows[subheading].push({ label: cleanedLabel, values });
     });
-  
+
+
+    const groupedEntries = Object.entries(groupedRows);
+    let items = [];
+    groupedEntries.forEach(([subheading, rows]) => {
+      items.push({ type: "subheading", subheading });
+      rows.forEach((row) => {
+        items.push({ type: "row", row });
+      });
+    });
+
+
+    const totalItems = items.length;
+    const visibleItems = showAllRows ? items : items.slice(0, MAX_VISIBLE_ROWS);
+
+
     return (
       <div className={styles.tableWrapper}>
         <table className={styles.techTable}>
           <tbody>
-            {Object.entries(groupedRows).map(([subheading, rows], idx) => (
-              <React.Fragment key={idx}>
-                <tr className={styles.subheadingRow}>
-                  <td colSpan={columns.length + 1}>{subheading}</td>
-                </tr>
-                {rows.map((row, rowIdx) => (
-                  <tr key={rowIdx}>
-                    <td>{row.label}</td>
-                    {row.values.map((value, colIdx) => (
+            {visibleItems.map((item, idx) => {
+              if (item.type === "subheading") {
+                return (
+                  <tr key={"sh-" + idx} className={styles.subheadingRow}>
+                    <td colSpan={columns.length + 1}>{item.subheading}</td>
+                  </tr>
+                );
+              } else {
+                const { label, values } = item.row;
+                return (
+                  <tr key={"row-" + idx}>
+                    <td>{label}</td>
+                    {values.map((value, colIdx) => (
                       <td key={colIdx}>{value}</td>
                     ))}
                   </tr>
-                ))}
-              </React.Fragment>
-            ))}
+                );
+              }
+            })}
           </tbody>
         </table>
+        {totalItems > MAX_VISIBLE_ROWS && (
+          <div
+            className={!showAllRows ? styles.showMoreDown : styles.showMoreUp}
+            onClick={() => setShowAllRows(!showAllRows)}
+          >
+            {showAllRows ? "Скрыть" : "Раскрыть таблицу"}
+          </div>
+        )}
       </div>
     );
   };
@@ -194,6 +217,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
             </div>
           </div>
         )}
+
         <div className={styles.rightSection}>
           {(addInfo.description?.length > 0 || addInfo.equipment?.length > 0) && (
             <div className={styles.info}>
@@ -222,27 +246,20 @@ export default function MoreInfo({ productInfo, parentCategory }) {
               </div>
               <div className={styles.addInfoList}>
                 {activeInfoTab === "description" &&
-                  addInfo.description?.length > 0 && (
-                    <>
-                      {addInfo.description.map((htmlStr, i) => (
-                        <div
-                          key={i}
-                          dangerouslySetInnerHTML={{ __html: htmlStr }}
-                        />
-                      ))}
-                    </>
-                  )}
+                  addInfo.description.map((htmlStr, i) => (
+                    <div
+                      key={i}
+                      dangerouslySetInnerHTML={{ __html: htmlStr }}
+                    />
+                  ))}
+
                 {activeInfoTab === "equipment" &&
-                  addInfo.equipment?.length > 0 && (
-                    <>
-                      {addInfo.equipment.map((htmlStr, i) => (
-                        <div
-                          key={i}
-                          dangerouslySetInnerHTML={{ __html: htmlStr }}
-                        />
-                      ))}
-                    </>
-                  )}
+                  addInfo.equipment.map((htmlStr, i) => (
+                    <div
+                      key={i}
+                      dangerouslySetInnerHTML={{ __html: htmlStr }}
+                    />
+                  ))}
               </div>
             </div>
           )}
@@ -323,6 +340,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                   )}
                 </Swiper>
               </div>
+
               {getCurrentImage() && (
                 <div className={styles.imageContainer}>
                   <img
@@ -360,12 +378,10 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           {productInfo?.howItWorksVideo && (
             <div className={styles.howItWorks}>
               <h2>Посмотрите как это работает</h2>
-              <VideoPlayer
-                theme={"products"}
-                videoPath={productInfo.howItWorksVideo}
-              />
+              <VideoPlayer theme={"products"} videoPath={productInfo.howItWorksVideo} />
             </div>
           )}
+
           {productInfo?.containInfo && isValidSubData(productInfo?.containInfo) && (
             <div className={styles.robotContains}>
               <h2>Из чего состоит наш робот:</h2>
@@ -376,6 +392,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           )}
         </div>
       </div>
+
       {productInfo?.sameRobots && isValidSubData(productInfo?.sameRobots) && (
         <div className={styles.gridContainer}>
           <ProductCategoryGridPagination
@@ -385,6 +402,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
           />
         </div>
       )}
+
       <RequestModal
         isOpen={isModalOpen}
         text={"Оставить заявку"}

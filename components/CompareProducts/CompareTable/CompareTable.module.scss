@@ -71,6 +71,7 @@
   display: block;
   font-family: "DIN Pro medium", sans-serif;
   color: #32323280;
+  margin-bottom: 28px;
   
   @each $property, $value in $b24-medium {
     #{$property}: #{$value};
