@@ -29,7 +29,7 @@ export default function CompareProducts() {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
-  // Флаг для контроля монтирования на клиенте
+
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -50,7 +50,6 @@ export default function CompareProducts() {
     maxVisibleItems = 4;
   }
 
-  // Функции прокрутки
   const scrollLeft = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
@@ -107,6 +106,7 @@ export default function CompareProducts() {
     }
   };
 
+
   const handleDownloadExcel = async () => {
     const ExcelJSModule = await import("exceljs");
     const ExcelJS = ExcelJSModule.default || ExcelJSModule;
@@ -119,56 +119,33 @@ export default function CompareProducts() {
       currentIndex + maxVisibleItems
     );
 
-    const extractValues = (label) => {
-      return exportData.map((product) => {
-        const cellValue =
-          product?.technicalTable?.find((row) => row.label === label)?.values ||
-          "-";
-        return fixExcelValue(cellValue);
-      });
-    };
 
-    const techSpecs = {
-      ID: exportData.map((product) => fixExcelValue(product.id || "-")),
-      Название: exportData.map((product) =>
-        fixExcelValue(product.title || "-")
-      ),
-      Категория: exportData.map((product) =>
-        fixExcelValue(product.category || "-")
-      ),
-      Применение: exportData.map((product) =>
-        fixExcelValue(product.application || "-")
-      ),
-      "Количество осей": exportData.map((product) =>
-        fixExcelValue(product.axes || "-")
-      ),
-      "Длина руки": exportData.map((product) =>
-        product.armLength ? fixExcelValue(`${product.armLength} мм`) : "-"
-      ),
-      "Радиус досягаемости": exportData.map((product) =>
-        product.reachRange ? fixExcelValue(`${product.reachRange} мм`) : "-"
-      ),
-      "Макс. нагрузка": exportData.map((product) =>
-        product.payloadRange ? fixExcelValue(`${product.payloadRange} кг`) : "-"
-      ),
-      Вес: exportData.map((product) =>
-        product.weight ? fixExcelValue(`${product.weight} кг`) : "-"
-      ),
-      Модель: extractValues("Модель"),
-      "Степень подвижности": extractValues("Степень подвижности"),
-      "Ось 1": extractValues("Ось 1"),
-      "Ось 2": extractValues("Ось 2"),
-      "Ось 3": extractValues("Ось 3"),
-      "Ось 4": extractValues("Ось 4"),
-      "Макс. скорость движения по осям": extractValues(
-        "Максимальная скорость движения по Осям"
-      ),
-      "Ширина базы": extractValues("Ширина"),
-      "Длина базы": extractValues("Длина"),
-      "Высота базы": extractValues("Высота"),
-      "Диаметр фланца": extractValues("Диаметр фланца"),
-      "Количество отверстий": extractValues("Количество отверстий"),
-    };
+    const productSpecs = exportData.map((product) => {
+      let specObj = {};
+      if (
+        product.technicalInfo &&
+        product.technicalInfo.axes &&
+        Array.isArray(product.technicalInfo.axes.table) &&
+        product.technicalInfo.axes.table.length > 0
+      ) {
+        const firstTable = product.technicalInfo.axes.table[0];
+        if (Array.isArray(firstTable)) {
+          firstTable.forEach((row) => {
+            if (row.label && row.value !== undefined && row.value !== null) {
+              specObj[row.label] = row.value;
+            }
+          });
+        }
+      }
+      return specObj;
+    });
+
+
+    const allLabelsSet = new Set();
+    productSpecs.forEach((specObj) => {
+      Object.keys(specObj).forEach((label) => allLabelsSet.add(label));
+    });
+    const allLabels = Array.from(allLabelsSet);
 
     const productImages = [];
     for (let i = 0; i < exportData.length; i++) {
@@ -182,7 +159,6 @@ export default function CompareProducts() {
     }
 
     worksheet.getRow(1).height = 80;
-
     for (let i = 0; i < productImages.length; i++) {
       if (productImages[i]) {
         const imageId = workbook.addImage({
@@ -197,9 +173,20 @@ export default function CompareProducts() {
       }
     }
 
+
     const wsData = [];
-    Object.keys(techSpecs).forEach((key) => {
-      wsData.push([key, ...techSpecs[key]]);
+    const headerRow = [""];
+    exportData.forEach((product) => {
+      headerRow.push(product.title || "-");
+    });
+    wsData.push(headerRow);
+
+    allLabels.forEach((label) => {
+      const row = [label];
+      productSpecs.forEach((specObj) => {
+        row.push(specObj[label] || "-");
+      });
+      wsData.push(row);
     });
 
     wsData.forEach((rowData) => {
@@ -313,7 +300,6 @@ export default function CompareProducts() {
               currentIndex,
               currentIndex + maxVisibleItems
             )}
-            categories={categories}
             tableRef={tableRef}
           />
           <div ref={stopStickyRef} className={styles.stopSticky}></div>
