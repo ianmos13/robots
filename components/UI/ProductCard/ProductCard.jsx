@@ -78,9 +78,9 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
         {/* <div>Sort {robot.sort}</div> */}
         <div className={styles.specsContainer}>
           <div className={styles.specsItem}>
-            <img src='/images/icons/lenght.svg' alt='Длина рук' />
+            <img src='/images/icons/lenght.svg' alt='Длина руки' />
             <div className={styles.textContainer}>
-              <div className={styles.text}>Длина рук (мм)</div>
+              <div className={styles.text}>Длина руки (мм)</div>
               <div className={styles.value}>{robot.armLength}</div>
             </div>
           </div>

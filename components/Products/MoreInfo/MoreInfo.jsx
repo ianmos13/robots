@@ -40,20 +40,30 @@ export default function MoreInfo({ productInfo, parentCategory }) {
 
 
   const mergeTechnicalRows = (data) => {
-    if (!data || !data.axes || !Array.isArray(data.axes.table)) return [];
-
-    const columns = data.axes.table.map((tableArray) => {
-      const column = {};
-      tableArray.forEach((row) => {
-        if (row.label && row.value !== undefined && row.value !== null) {
-          column[row.label] = row.value;
-        }
-      });
-      return column;
+    if (
+      !data ||
+      !data.axes ||
+      !Array.isArray(data.axes.table) ||
+      data.axes.table.length === 0
+    ) {
+      return [];
+    }
+  
+ 
+    const firstTableArray = data.axes.table[0];
+    if (!Array.isArray(firstTableArray)) return [];
+  
+    const column = {};
+    firstTableArray.forEach((row) => {
+      if (row.label && row.value !== undefined && row.value !== null) {
+        column[row.label] = row.value;
+      }
     });
-    return columns;
-  };
+  
 
+    return [column];
+  };
+  
 
   const renderTable = (data) => {
     const columns = mergeTechnicalRows(data);

@@ -35,9 +35,17 @@
 	}
 	.swiperContainer {
 		display: block;
-		width: 100%;
+		width: 100vw;
+		margin-left: -10px;
 		.swiperSlide {
-			width: auto !important;
+			width: max-content;
+			margin-left: 10px;
+			&:first-child {
+				margin-left: 10px;
+			}
+			&:last-child {
+				margin-right: 10px;
+			}
 			.categoryContainer {
 				max-height: 40px;
 				display: flex;
