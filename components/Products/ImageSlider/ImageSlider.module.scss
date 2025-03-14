@@ -55,9 +55,9 @@
 			border-radius: 10px;
 			border: unset;
 			cursor: pointer;
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(6px);
+			
+			
+
 			&.leftButton {
 				left: 30px;
 				top: 50%;
@@ -96,7 +96,7 @@
 				display: block;
 			}
 			&:not(.active) {
-				display: none;
+			
 				@media (max-width:1024px) {
 					display: block;
 				}
@@ -126,4 +126,8 @@
 	// .hovered {
 	// 	filter: brightness(0.8);
 	// }
-}
+}.videoSlide {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }

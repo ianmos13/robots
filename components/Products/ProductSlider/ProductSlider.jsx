@@ -1,19 +1,16 @@
 "use client";
-import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal"
-import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice"
-import {
-  addToFavorite,
-  removeFromFavorite,
-} from "@/redux/features/favoriteSlice"
-import { useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/scrollbar"
-import { Swiper, SwiperSlide } from "swiper/react"
-import ImageSlider from '../ImageSlider/ImageSlider'
-import styles from "./ProductSlider.module.scss"
+import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
+import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice";
+import { addToFavorite, removeFromFavorite } from "@/redux/features/favoriteSlice";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ImageSlider from "../ImageSlider/ImageSlider";
+import styles from "./ProductSlider.module.scss";
 
 export default function ProductSlider({ productInfo }) {
   const dispatch = useDispatch();
@@ -24,12 +21,30 @@ export default function ProductSlider({ productInfo }) {
   const favorites = useSelector((state) => state.favorite || []);
   const thumbnailRefs = useRef([]);
 
-  const safeImages =
-      productInfo?.images && productInfo.images.length > 0
-      ? productInfo.images
-      : productInfo?.mainImage
-      ? [productInfo.mainImage]
-      : [];
+
+  const safeMedia = productInfo
+    ? [
+        ...(productInfo.images && productInfo.images.length > 0
+          ? productInfo.images
+          : productInfo.mainImage
+          ? [productInfo.mainImage]
+          : []),
+        ...((productInfo.videos && Array.isArray(productInfo.videos)) ? productInfo.videos : []),
+      ]
+    : [];
+
+
+  const isVideo = (url) => {
+    return url && url.match(/\.(mp4|webm|ogg)$/i);
+  };
+
+
+  const getVideoType = (url) => {
+    if (url.endsWith(".mp4")) return "video/mp4";
+    if (url.endsWith(".webm")) return "video/webm";
+    if (url.endsWith(".ogg")) return "video/ogg";
+    return "video/mp4";
+  };
 
   useEffect(() => {
     if (thumbnailRefs.current[currentImageIndex]) {
@@ -47,13 +62,13 @@ export default function ProductSlider({ productInfo }) {
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? safeImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? safeMedia.length - 1 : prevIndex - 1
     );
   };
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === safeImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === safeMedia.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -88,15 +103,15 @@ export default function ProductSlider({ productInfo }) {
     setIsModalOpen(true);
   };
   const handleOpenImageSlider = () => {
-    setIsImageSliderOpen(true)
-  }
+    setIsImageSliderOpen(true);
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
   const handleCloseImageSlider = () => {
-    setIsImageSliderOpen(false)
-  }
+    setIsImageSliderOpen(false);
+  };
 
   return productInfo ? (
     <>
@@ -111,7 +126,7 @@ export default function ProductSlider({ productInfo }) {
             <Swiper
               className={styles.swiperContainer}
               direction="horizontal"
-              slidesPerView={'auto'}
+              slidesPerView={"auto"}
               spaceBetween={10}
             >
               {productInfo.advantages.map((advantage, index) => (
@@ -122,16 +137,31 @@ export default function ProductSlider({ productInfo }) {
             </Swiper>
           </div>
         )}
-        {safeImages.length > 0 && (
+        {safeMedia.length > 0 && (
           <div className={styles.imageContainer}>
             <div className={styles.mainImageContainer}>
-              <img
-                loading="lazy"
-                src={safeImages[currentImageIndex]}
-                alt="Product"
-                className={styles.mainImage}
-                onClick={handleOpenImageSlider}
-              />
+              {isVideo(safeMedia[currentImageIndex]) ? (
+                <video
+                  loading="lazy"
+                  controls
+                  className={styles.mainImage}
+                  onClick={handleOpenImageSlider}
+                >
+                  <source
+                    src={safeMedia[currentImageIndex]}
+                    type={getVideoType(safeMedia[currentImageIndex])}
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <img
+                  loading="lazy"
+                  src={safeMedia[currentImageIndex]}
+                  alt="Product"
+                  className={styles.mainImage}
+                  onClick={handleOpenImageSlider}
+                />
+              )}
             </div>
             <button className={styles.arrowLeft} onClick={handlePrevImage}>
               <img src="/images/icons/arrow-left-filled.svg" alt="Предыдущий" />
@@ -140,7 +170,7 @@ export default function ProductSlider({ productInfo }) {
               <img src="/images/icons/arrow-rightfilled.svg" alt="Следующий" />
             </button>
             <div className={styles.thumbnailContainer}>
-              {safeImages.map((image, index) => (
+              {safeMedia.map((media, index) => (
                 <div
                   key={index}
                   ref={(el) => (thumbnailRefs.current[index] = el)}
@@ -149,7 +179,22 @@ export default function ProductSlider({ productInfo }) {
                   }`}
                   onClick={() => handleImageChange(index)}
                 >
-                  <img loading="lazy" src={image} alt={`Thumbnail ${index + 1}`} />
+                  {isVideo(media) ? (
+                    <video
+                      loading="lazy"
+                      muted
+                      preload="metadata"
+                      className={styles.thumbnailMedia}
+                    >
+                      <source src={media} type={getVideoType(media)} />
+                    </video>
+                  ) : (
+                    <img
+                      loading="lazy"
+                      src={media}
+                      alt={`Thumbnail ${index + 1}`}
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -167,8 +212,8 @@ export default function ProductSlider({ productInfo }) {
             </div>
           )}
           {((productInfo.assignment?.length > 0) ||
-              productInfo.armLength ||
-              productInfo.payloadRange ||
+            productInfo.armLength ||
+            productInfo.payloadRange ||
             (productInfo.source && productInfo.source.length > 0)) && (
             <div className={styles.infoContainer}>
               {productInfo.assignment && productInfo.assignment.length > 0 && (
@@ -185,7 +230,7 @@ export default function ProductSlider({ productInfo }) {
               )}
               {productInfo.armLength && (
                 <div className={styles.specContainer}>
-                  <div className={styles.specTitle}>Длина рук (мм):</div>
+                  <div className={styles.specTitle}>Длина руки (мм):</div>
                   <div className={styles.specValue}>{productInfo.armLength}</div>
                 </div>
               )}
@@ -311,12 +356,12 @@ export default function ProductSlider({ productInfo }) {
         isOpen={isModalOpen}
         text={"Получить коммерческое предложение"}
         onClose={handleCloseModal}
-        productSlug={productInfo.slug}  
+        productSlug={productInfo.slug}
       />
-      <ImageSlider 
-        isOpen={isImageSliderOpen} 
-        onClose={handleCloseImageSlider} 
-        images={safeImages}
+      <ImageSlider
+        isOpen={isImageSliderOpen}
+        onClose={handleCloseImageSlider}
+        images={safeMedia}
         initialSlide={currentImageIndex}
       />
     </>

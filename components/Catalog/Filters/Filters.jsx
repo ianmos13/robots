@@ -11,6 +11,10 @@ export default function Filters({
   onChangeFilters,
   maxReach,
   maxPayload,
+
+  applications = [],
+
+  axes = [],
 }) {
   const pathname = usePathname();
   const isPozicionery = pathname.toLowerCase().includes("pozicionery");
@@ -24,23 +28,6 @@ export default function Filters({
   const [isReachOpen, setIsReachOpen] = useState(false);
   const [isWeightOpen, setIsWeightOpen] = useState(false);
   const [isVoltageOpen, setIsVoltageOpen] = useState(false);
-
-  const applications = [
-    "Сварка",
-    "Лазерная резка",
-    "Плазменная и гидроабразивная резка",
-    "Контактная сварка",
-    "Паллетирование",
-    "Обслуживание станков с ЧПУ",
-    "Обслуживание ТПА",
-    "Обслуживание гибочного и штамповочного пресса",
-    "Обслуживание конвейерной линии",
-    "Фрезеровка",
-    "Полировка",
-    "Гибка металла",
-    "SCARA",
-  ];
-  const axesOptions = [1, 2, 3, 4, 5, 6];
 
   const [payloadRange, setPayloadRange] = useState([
     DEFAULT_PAYLOAD_MIN,
@@ -83,12 +70,20 @@ export default function Filters({
     } else {
       setRobotWeight("");
     }
+
+    const voltageFilter = selectedFilters.find((f) =>
+      f.startsWith("Напряжение: ")
+    );
+    if (voltageFilter) {
+      const val = voltageFilter.replace("Напряжение: ", "").replace(" В", "");
+      setVoltage(val);
+    } else {
+      setVoltage("");
+    }
   }, [selectedFilters, DEFAULT_PAYLOAD_MAX, DEFAULT_REACH_MAX]);
 
   const isAppSelected = (app) =>
     selectedFilters.includes(`Область применения: ${app}`);
-  const isAxisSelected = (axis) =>
-    selectedFilters.includes(`Кол-во осей: ${axis}`);
 
   const toggleApplication = (app) => {
     const label = `Область применения: ${app}`;
@@ -98,6 +93,9 @@ export default function Filters({
       onChangeFilters([...selectedFilters, label]);
     }
   };
+
+  const isAxisSelected = (axis) =>
+    selectedFilters.includes(`Кол-во осей: ${axis}`);
 
   const toggleAxis = (axis) => {
     const label = `Кол-во осей: ${axis}`;
@@ -137,6 +135,18 @@ export default function Filters({
   const updateWeightFilter = (val) => {
     const label = `Вес: ${val} кг`;
     const withoutOld = selectedFilters.filter((f) => !f.startsWith("Вес: "));
+    if (!val) {
+      onChangeFilters(withoutOld);
+      return;
+    }
+    onChangeFilters([...withoutOld, label]);
+  };
+
+  const updateVoltageFilter = (val) => {
+    const label = `Напряжение: ${val} В`;
+    const withoutOld = selectedFilters.filter(
+      (f) => !f.startsWith("Напряжение: ")
+    );
     if (!val) {
       onChangeFilters(withoutOld);
       return;
@@ -191,22 +201,16 @@ export default function Filters({
     setRobotWeight(val);
     updateWeightFilter(val);
   };
+
   const handleVoltageChange = (e) => {
     const val = e.target.value.trim();
-    setVoltage(val);
-    updateVoltageFilter(val);
-  };
-
-  const updateVoltageFilter = (val) => {
-    const label = `Напряжение: ${val} В`;
-    const withoutOld = selectedFilters.filter(
-      (f) => !f.startsWith("Напряжение: ")
-    );
-    if (!val) {
-      onChangeFilters(withoutOld);
-      return;
+    if (voltage === val) {
+      setVoltage("");
+      updateVoltageFilter("");
+    } else {
+      setVoltage(val);
+      updateVoltageFilter(val);
     }
-    onChangeFilters([...withoutOld, label]);
   };
 
   return (
@@ -259,7 +263,7 @@ export default function Filters({
         </div>
         {isAxesOpen && (
           <div className={styles.filterOptions}>
-            {axesOptions.map((axis) => (
+            {axes.map((axis) => (
               <label key={axis}>
                 <input
                   type="checkbox"
@@ -445,32 +449,6 @@ export default function Filters({
               </div>
             )}
           </div>
-          {/* <div className={styles.filterSection}>
-            <div
-              className={styles.filterHeader}
-              onClick={() => setIsWeightOpen(!isWeightOpen)}
-            >
-              <h2>Вес робота</h2>
-              <img
-                src={
-                  isWeightOpen
-                    ? "/images/icons/filters-dropdown-open.svg"
-                    : "/images/icons/filters-dropdown-close.svg"
-                }
-                alt="toggle"
-              />
-            </div>
-            {isWeightOpen && (
-              <div className={styles.filterOptions}>
-                <input
-                  type="number"
-                  placeholder="Введите вес"
-                  value={robotWeight}
-                  onChange={handleWeightChange}
-                />
-              </div>
-            )}
-          </div> */}
         </>
       )}
     </div>

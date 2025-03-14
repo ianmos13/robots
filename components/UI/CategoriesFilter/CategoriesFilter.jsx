@@ -51,31 +51,33 @@ export default function CategoriesFilter({ categories, onDelete }) {
 					</div>
 				))}
 			</div>
-			<Swiper
-				className={styles.swiperContainer}
-				direction='horizontal'
-				slidesPerView='auto'
-				spaceBetween={10}
-			>
-				{categories.map(category => (
-					<SwiperSlide key={category.key} className={styles.swiperSlide}>
-						<div
-							key={category.key}
-							className={styles.categoryContainer}
-							onClick={() =>
-								handleCategoryDeleteClick(category.key, category.name)
-							}
-						>
-							{category.name}
-							<img
-								className={styles.removeButton}
-								src='/images/icons/x.svg'
-								alt='remove'
-							/>
-						</div>
-					</SwiperSlide>
-				))}
-			</Swiper>
+			<div className={styles.swiperContainer}>
+				<Swiper
+					className={styles.swiper}
+					direction='horizontal'
+					slidesPerView='auto'
+					spaceBetween={0}
+				>
+					{categories.map(category => (
+						<SwiperSlide key={category.key} className={styles.swiperSlide}>
+							<div
+								key={category.key}
+								className={styles.categoryContainer}
+								onClick={() =>
+									handleCategoryDeleteClick(category.key, category.name)
+								}
+							>
+								{category.name}
+								<img
+									className={styles.removeButton}
+									src='/images/icons/x.svg'
+									alt='remove'
+								/>
+							</div>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
 			<ConfirmModal
 				isOpen={isCategoryModalOpen}
 				message={`Вы точно хотите удалить категорию "${categoryName}"?`}

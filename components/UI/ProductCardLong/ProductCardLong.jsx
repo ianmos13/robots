@@ -27,7 +27,7 @@ export default function ProductCardLong({ robot, categories }) {
 					<div className={styles.specsItem}>
 						<img src='/images/icons/lenght.svg' />
 						<div className={styles.textContainer}>
-							<div className={styles.text}>Длина рук (мм)</div>
+							<div className={styles.text}>Длина руки (мм)</div>
 							<div className={styles.value}>{robot.armLength}</div>
 						</div>
 					</div>
