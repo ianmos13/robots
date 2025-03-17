@@ -1,6 +1,6 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import CompareTable from "./CompareTable/CompareTable";
 import CompareHeader from "./CompareHeader";
@@ -12,8 +12,11 @@ import {
 } from "@/redux/features/compareSlice";
 import styles from "./CompareProducts.module.scss";
 import useCategories from "@/hooks/useCategories";
+import CategoriesFilter from "@/components/UI/CategoriesFilter/CategoriesFilter";
+import {useRouter} from "next/navigation";
 
 export default function CompareProducts() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const comparisons = useSelector((state) => state.compare);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,11 +24,12 @@ export default function CompareProducts() {
   const tableRef = useRef(null);
   const stopStickyRef = useRef(null);
   const headerRef = useRef(null);
+  const [compareHeaderWidth, setCompareHeaderWidth] = useState(null);
+  const [compareStickyLeft, setCompareStickyLeft] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
   const [hideSticky, setHideSticky] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const { categories } = useCategories(true);
-  const { isMobileView, isTabletView } = useDeviceType();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
@@ -39,9 +43,18 @@ export default function CompareProducts() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const categoryKeys = new Set(comparisons.map((item) => item.category));
+  const uniqueCategories = categories.filter((category) =>
+      categoryKeys.has(category.key)
+  );
+
+  const goToCatalogPage = () => {
+    router.push("/promyshlennye-roboty");
+  };
+
   let maxVisibleItems;
-  if (windowWidth <= 640) {
-    maxVisibleItems = 2;
+  if (windowWidth <= 767) {
+    maxVisibleItems = comparisons.length;
   } else if (windowWidth <= 1024) {
     maxVisibleItems = 2;
   } else if (windowWidth <= 1400) {
@@ -51,16 +64,15 @@ export default function CompareProducts() {
   }
 
   const scrollLeft = () => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+    if(windowWidth > 767)
+      setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   const scrollRight = () => {
-    setCurrentIndex((prev) =>
-      Math.min(
-        prev + 1,
-        comparisons.length - (windowWidth <= 640 ? 1 : maxVisibleItems)
-      )
-    );
+    if(windowWidth > 767)
+      setCurrentIndex((prev) =>
+        Math.min(prev + 1, comparisons.length - maxVisibleItems)
+      );
   };
 
   const handleClearComparison = () => {
@@ -234,6 +246,10 @@ export default function CompareProducts() {
   useEffect(() => {
     const handleScroll = () => {
       if (!headerRef.current || !stopStickyRef.current) return;
+      if(windowWidth <= 767) {
+        setCompareHeaderWidth(headerRef.current.offsetWidth)
+        tableRef.current.style.width = `${headerRef.current.offsetWidth}px`
+      }
       const headerBottom = headerRef.current.getBoundingClientRect().bottom;
       const stopStickyTop = stopStickyRef.current.getBoundingClientRect().top;
       setIsSticky(headerBottom <= 130);
@@ -242,6 +258,13 @@ export default function CompareProducts() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleScrollCompareProductsContainer = (event) => {
+    if(windowWidth <= 767) {
+      const headerLeft = headerRef.current.getBoundingClientRect().left - 20;
+      setCompareStickyLeft(headerLeft)
+    }
+  };
 
   const openConfirmModal = () => {
     setIsConfirmModalOpen(true);
@@ -264,44 +287,131 @@ export default function CompareProducts() {
         </div>
       ) : (
         <>
-          <div ref={headerRef}>
-            <CompareHeader
-              comparisons={comparisons}
-              currentIndex={currentIndex}
-              maxVisibleItems={maxVisibleItems}
-              onScrollLeft={scrollLeft}
-              onScrollRight={scrollRight}
-              onClearComparison={openConfirmModal}
-              sliderRef={sliderRef}
-              onRemoveItem={handleRemoveFromCompare}
-              onRemoveCategory={handleRemoveCategory}
-              categoryList={categories}
-              onDownloadExcel={handleDownloadExcel}
+          <div className={styles.header}>
+            <div className={styles.topContainer}>
+              <h1>Сравнение товаров</h1>
+              <div className={styles.btnContainer}>
+                {comparisons?.length > 0 && (
+                    <button className={styles.downloadButton} onClick={handleDownloadExcel}>
+                      <img src="/images/icons/download.svg" alt="download" />
+                      <span>Скачать таблицу</span>
+                    </button>
+                )}
+                <button className={styles.addButton} onClick={goToCatalogPage}>
+                  <img
+                      src="/images/icons/plus.svg"
+                      alt="add"
+
+                  />{" "}
+                  <span>Добавить товар</span>
+                </button>
+                {comparisons.length > 0 && (
+                    <button
+                        className={styles.clearButton}
+                        onClick={openConfirmModal}
+                    >
+                      <img src="/images/icons/trash.svg" alt="trash" />
+                      <span>Удалить все </span>
+                    </button>
+                )}
+              </div>
+            </div>
+            <div className={styles.bottomContainer}>
+              <div className={styles.categoriesFilter}>
+                <CategoriesFilter
+                    categories={uniqueCategories}
+                    onDelete={handleRemoveCategory}
+                />
+                {comparisons.length > maxVisibleItems && (
+                    <div className={styles.navControls}>
+                      <div className={styles.containerButton}>
+                        <button
+                            className={styles.arrowLeft}
+                            onClick={scrollLeft}
+                            disabled={currentIndex === 0}
+                        >
+                          <svg className={styles.icon} />
+                        </button>
+                        <button
+                            className={styles.arrowRight}
+                            onClick={scrollRight}
+                            disabled={
+                                currentIndex + maxVisibleItems >= comparisons.length
+                            }
+                        >
+                          <svg className={styles.icon} />
+                        </button>
+                      </div>
+                    </div>
+                )}
+              </div>
+              <div className={styles.btnContainerMobile}>
+                <button className={styles.downloadButton} onClick={handleDownloadExcel}>
+                  <img src="/images/icons/download.svg" alt="download" />
+                  <span>Скачать таблицу</span>
+                </button>
+                <button className={styles.addButton}>
+                  <img
+                      src="/images/icons/plus.svg"
+                      alt="add"
+                      onClick={goToCatalogPage}
+                  />{" "}
+                  <span>Добавить товар</span>
+                </button>
+                {comparisons.length > 0 && (
+                    <button
+                        className={styles.clearButton}
+                        onClick={openConfirmModal}
+                    >
+                      <img src="/images/icons/trash.svg" alt="trash" />
+                      <span>Удалить все </span>
+                    </button>
+                )}
+              </div>
+            </div>
+          </div>
+          <div
+              className={styles.compareProductsContainer}
+              onScroll={handleScrollCompareProductsContainer}
+          >
+            <div className={styles.compareHeaderContainer} ref={headerRef}>
+              <CompareHeader
+                comparisons={comparisons}
+                currentIndex={currentIndex}
+                maxVisibleItems={maxVisibleItems}
+                onScrollLeft={scrollLeft}
+                onScrollRight={scrollRight}
+                sliderRef={sliderRef}
+                onRemoveItem={handleRemoveFromCompare}
+                categoryList={categories}
+              />
+            </div>
+
+            {isSticky && !hideSticky && (
+              <CompareSticky
+                comparisons={comparisons}
+                currentIndex={currentIndex}
+                maxVisibleItems={maxVisibleItems}
+                onScrollLeft={scrollLeft}
+                onScrollRight={scrollRight}
+                onClearComparison={openConfirmModal}
+                sliderRef={sliderRef}
+                categoryList={categories}
+                onRemoveItem={handleRemoveFromCompare}
+                onDownloadExcel={handleDownloadExcel}
+                compareHeaderWidth={compareHeaderWidth}
+                compareStickyLeft={compareStickyLeft}
+              />
+            )}
+
+            <CompareTable
+              data={comparisons.slice(
+                currentIndex,
+                currentIndex + maxVisibleItems
+              )}
+              tableRef={tableRef}
             />
           </div>
-
-          {isSticky && !hideSticky && (
-            <CompareSticky
-              comparisons={comparisons}
-              currentIndex={currentIndex}
-              maxVisibleItems={maxVisibleItems}
-              onScrollLeft={scrollLeft}
-              onScrollRight={scrollRight}
-              onClearComparison={openConfirmModal}
-              sliderRef={sliderRef}
-              categoryList={categories}
-              onRemoveItem={handleRemoveFromCompare}
-              onDownloadExcel={handleDownloadExcel}
-            />
-          )}
-
-          <CompareTable
-            data={comparisons.slice(
-              currentIndex,
-              currentIndex + maxVisibleItems
-            )}
-            tableRef={tableRef}
-          />
           <div ref={stopStickyRef} className={styles.stopSticky}></div>
           <ConfirmModal
             isOpen={isConfirmModalOpen}

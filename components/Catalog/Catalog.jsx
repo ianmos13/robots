@@ -182,6 +182,7 @@ export default function Catalog({ categories, title }) {
 
   const uniqueApplications = useMemo(() => {
     const apps = new Set();
+    console.log(partiallyFilteredRobots)
     partiallyFilteredRobots.forEach((product) => {
       if (product.application) {
         if (Array.isArray(product.application)) {
@@ -321,7 +322,7 @@ export default function Catalog({ categories, title }) {
       : {};
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container}  id="paginationScroll">
       {isDisplayCategories &&
         categories &&
         categories.length > 0 &&
@@ -467,7 +468,7 @@ export default function Catalog({ categories, title }) {
               )}
             </div>
 
-            <div className={styles.productContainerInner}>
+            <div className={styles.productContainerInner} >
               <div
                 className={`${styles.products} ${
                   activeView === "rowView" ? styles.rowView : ""
@@ -484,6 +485,7 @@ export default function Catalog({ categories, title }) {
                   totalPages={totalPages}
                   onPageChange={handlePageChange}
                   catalogPageTheme={true}
+                   scrollToId="paginationScroll"
                 />
               )}
 

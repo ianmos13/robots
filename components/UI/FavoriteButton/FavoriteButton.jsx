@@ -36,7 +36,7 @@ export default function FavoriteButton({ robot, small }) {
 
   return (
     <button
-        className={styles.iconBtn}
+        className={`${styles.iconBtn} ${small ? `${styles.smallIconBtn}` : ''}`}
         onClick={handleFavoriteClick}
         onMouseEnter={onHover}
         onMouseLeave={onLeave}

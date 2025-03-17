@@ -4,9 +4,12 @@
   width: 100%;
   overflow-x: auto;
   border-radius: 10px;
-  padding: 15px;
+  //padding: 15px;
+  @media (max-width: 767px) {
+    overflow-x: unset;
+  }
   @media (max-width: 640px) {
-    padding: 15px 0px 15px 15px;
+    //padding: 15px 0px 15px 15px;
   }
 }
 
@@ -40,10 +43,9 @@
     padding: 24px;
     font-size: 24px;
   }
-  
   @media (max-width: 640px) {
+    padding: 10px;
     font-size: 16px;
-    white-space: nowrap; // предотвращаем перенос текста в ячейках на мобильном
   }
 }
 
@@ -63,7 +65,7 @@
   
   @media (max-width: 640px) {
     gap: 16px;
-    white-space: nowrap; 
+    white-space: nowrap;
   }
 }
 
@@ -79,7 +81,6 @@
   
   @media (max-width: 640px) {
     font-size: 18px;
-    white-space: nowrap; 
   }
 }
 

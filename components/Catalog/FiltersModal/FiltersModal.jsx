@@ -12,6 +12,10 @@ export default function FiltersModal({
 	onClose,
 	selectedFilters,
 	onApply,
+	maxReach,
+	maxPayload,
+	applications,
+	axes,
 }) {
 	const [tempFilters, setTempFilters] = useState([])
 
@@ -47,6 +51,10 @@ export default function FiltersModal({
 					<Filters
 						selectedFilters={tempFilters}
 						onChangeFilters={setTempFilters}
+						maxReach={maxReach}
+						maxPayload={maxPayload}
+						applications={applications}
+						axes={axes}
 					/>
 				</div>
 
@@ -88,9 +96,8 @@ export default function FiltersModal({
 									</div>
 								</SwiperSlide>
 								{tempFilters.map((filter, index) => (
-									<SwiperSlide className={styles.swiperSlide}>
+									<SwiperSlide className={styles.swiperSlide} key={index}>
 										<div
-											key={index}
 											className={styles.active}
 											onClick={() => removeFilter(filter)}
 										>
