@@ -317,7 +317,8 @@
 }
 
 .tableWrapper {
-  overflow-x: auto;
+  // overflow-x: auto;
+  overflow: hidden;
 }
 
 .techTable {

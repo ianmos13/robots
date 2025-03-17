@@ -25,7 +25,7 @@ export default function CompletedProjects({ title }) {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container}  id="paginationScroll">
       <div className={styles.projectsContainer}>
         <h1>{title}</h1>
         {projects?.length > 0 && (
@@ -49,6 +49,7 @@ export default function CompletedProjects({ title }) {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
                 newsPageTheme={true}
+                  scrollToId="paginationScroll"
               />
             )}
           </>

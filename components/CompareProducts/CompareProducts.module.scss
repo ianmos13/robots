@@ -4,89 +4,116 @@
   padding: 0 30px 40px 30px;
 
   @media (max-width: 1600px) {
-    padding: 0px 30px 36px 30px;
+    padding: 0 30px 36px 30px;
   }
   @media (max-width: 1024px) {
-    padding: 0px 20px;
+    padding: 0 20px;
   }
   @media (max-width: 640px) {
-    padding: 0px 0px 24px 10px;
+    padding: 0 0 24px 10px;
   }
 
- 
-  
+  .sliderProductCard {
+    width: 100%;
+  }
 
-  .compareWrapper {
-    .header {
+  .compareProductsContainer {
+    @media (max-width: 767px) {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: nowrap;
       flex-direction: column;
+      gap: 20px;
       width: 100%;
-      gap: 16px;
-      @media (max-width: 1024px){
-        gap: 24px;
+      max-width: 100%;
+      overflow: auto;
+      scroll-behavior: smooth;
+      transition: transform 0.3s ease;
+      &::-webkit-scrollbar {
+        display: none;
       }
-      .topContainer {
+    }
+    .compareHeaderContainer {
+      @media (max-width: 767px) {
+        width: max-content;
+      }
+    }
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    @media (max-width: 1024px){
+      gap: 24px;
+    }
+    .topContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+
+      @media (max-width: 640px) {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 110%;
+        letter-spacing: -2%;
+        text-transform: uppercase;
+        color: $dark-gray;
+        @media (max-width: 640px) {
+          font-size: 32px;
+        }
+      }
+      .btnContainer {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        gap: 40px;
-
-        @media (max-width: 640px) {
-          display: flex;
-          gap: 24px;
-          width: 100%;
+        gap: 32px;
+        height: 26px;
+        .downloadButton,
+        .addButton,
+        .clearButton {
+          background: unset;
         }
-
-        h1 {
-          font-size: 48px;
-          line-height: 110%;
-          letter-spacing: -2%;
-          text-transform: uppercase;
-          color: $dark-gray;
-          @media (max-width: 640px) {
-            font-size: 32px;
-          }
-        }
-        .btnContainer {
-          display: flex;
-          flex-direction: row;
-          gap: 32px;
-          height: 26px;
-          .downloadButton,
-          .addButton,
-          .clearButton {
-            background: unset;
-          }
-          @media (max-width: 1024px) {
-            display: none;
-          }
-        }
-      }
-      .bottomContainer {
-        display: flex;
-        flex-direction: column;
         @media (max-width: 1024px) {
-          gap: 48px;
-        }
-        @media (max-width: 640px) {
-          gap: 24px;
-        }
-        .categoriesFilter {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 20px;
-        }
-        .btnContainerMobile {
           display: none;
-          @media (max-width: 1024px) {
-            display: flex;
-            gap: 24px;
-          }
         }
       }
     }
+    .bottomContainer {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 1024px) {
+        gap: 48px;
+      }
+      @media (max-width: 640px) {
+        gap: 24px;
+      }
+      .categoriesFilter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .btnContainerMobile {
+        display: none;
+        @media (max-width: 1024px) {
+          display: flex;
+          gap: 24px;
+        }
+      }
+    }
+  }
+
+  .compareWrapper {
+    @media (max-width: 767px) {
+      width: max-content;
+    }
+
     .compareContainer {
       display: flex;
       align-items: center;
@@ -105,29 +132,40 @@
 
       scroll-behavior: smooth;
       transition: transform 0.3s ease;
+      @media (max-width: 1024px) {
+        margin: 48px 0 14px 0;
+      }
+      @media (max-width: 767px) {
+        overflow: unset;
+        flex-wrap: unset;
+        margin: 48px 0 10px 0;
+      }
     }
     .productsSlider::-webkit-scrollbar {
       display: none;
     }
+
     .productCard {
+      max-width: 430px;
+      min-width: 254px;
       border-radius: 20px;
       background: $white;
       align-items: center;
       position: relative;
       padding: 40px;
       justify-content: start;
-      flex: 0 0 24%;
+      //flex: 0 0 24%;
       display: flex;
       flex-direction: column;
       @media (max-width: 1400px) {
-        flex: 0 0 32.5%;
+        //flex: 0 0 32.5%;
         padding: 30px;
       }
       @media (max-width: 1024px) {
-        flex: 0 0 49%;
+        //flex: 0 0 49%;
       }
       @media (max-width: 640px) {
-        flex: 0 0 90%;
+        //flex: 0 0 90%;
         padding: 20px;
       }
       a {
@@ -139,12 +177,21 @@
         right: 30px;
         display: flex;
         gap: 16px;
+        @media (max-width: 640px) {
+          gap: 8px;
+          top: 15px;
+          right: 15px;
+        }
       }
       .favoriteIcon,
       .trashIcon {
         cursor: pointer;
         width: 56px;
         height: 56px;
+        @media (max-width: 640px) {
+          width: 40px;
+          height: 40px;
+        }
       }
       .trashIcon {
         background-color: $white;
@@ -157,6 +204,10 @@
         img {
           width: 33px;
           height: 33px;
+          @media (max-width: 640px) {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
       .productImage {
@@ -221,6 +272,12 @@
     @media (max-width: 1024px) {
       top: 124px;
     }
+    @media (max-width: 767px) {
+      left: 0;
+      transform: unset;
+      max-width: unset;
+      transition: unset;
+    }
     @media (max-width: 640px) {
       top: 72px;
     }
@@ -260,7 +317,7 @@
         display: none;
       }
       .separator {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         height: 1px;
         background-color: #3232321a;
         width: 100%;
@@ -289,7 +346,11 @@
           justify-content: unset;
         }
         @media (max-width: 1024px) {
-          margin-left: unset;
+          margin: 0 20px;
+        }
+        @media (max-width: 767px) {
+          overflow: unset;
+          flex-wrap: unset;
         }
       }
       .productsSlider::-webkit-scrollbar {
@@ -312,10 +373,14 @@
         @media (max-width: 1024px) {
           flex: 0 0 49%;
         }
+        @media (max-width: 767px) {
+          width: 350px;
+        }
         @media (max-width: 640px) {
+          width: unset;
           flex: 0 0 65%;
           flex-direction: column;
-          padding-left: 27px;
+          //padding-left: 27px;
           justify-content: center;
           align-items: center;
         }

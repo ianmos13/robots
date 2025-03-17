@@ -1,7 +1,11 @@
 "use client";
+import { usePathname } from "next/navigation";
 import RequestModal from "@/components/UI/Modal/RequestModal/RequestModal";
 import { addToCompare, removeFromCompare } from "@/redux/features/compareSlice";
-import { addToFavorite, removeFromFavorite } from "@/redux/features/favoriteSlice";
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from "@/redux/features/favoriteSlice";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "swiper/css";
@@ -20,7 +24,9 @@ export default function ProductSlider({ productInfo }) {
   const comparisons = useSelector((state) => state.compare || []);
   const favorites = useSelector((state) => state.favorite || []);
   const thumbnailRefs = useRef([]);
-
+  const pathname = usePathname();
+  const isPozicionery = pathname.includes("pozicionery");
+  console.log(isPozicionery);
 
   const safeMedia = productInfo
     ? [
@@ -29,15 +35,15 @@ export default function ProductSlider({ productInfo }) {
           : productInfo.mainImage
           ? [productInfo.mainImage]
           : []),
-        ...((productInfo.videos && Array.isArray(productInfo.videos)) ? productInfo.videos : []),
+        ...(productInfo.videos && Array.isArray(productInfo.videos)
+          ? productInfo.videos
+          : []),
       ]
     : [];
-
 
   const isVideo = (url) => {
     return url && url.match(/\.(mp4|webm|ogg)$/i);
   };
-
 
   const getVideoType = (url) => {
     if (url.endsWith(".mp4")) return "video/mp4";
@@ -127,8 +133,7 @@ export default function ProductSlider({ productInfo }) {
               className={styles.swiperContainer}
               direction="horizontal"
               slidesPerView={"auto"}
-              spaceBetween={10}
-            >
+              spaceBetween={10}>
               {productInfo.advantages.map((advantage, index) => (
                 <SwiperSlide key={index} className={styles.swiperSlide}>
                   <div className={styles.advantage}>{advantage}</div>
@@ -145,8 +150,7 @@ export default function ProductSlider({ productInfo }) {
                   loading="lazy"
                   controls
                   className={styles.mainImage}
-                  onClick={handleOpenImageSlider}
-                >
+                  onClick={handleOpenImageSlider}>
                   <source
                     src={safeMedia[currentImageIndex]}
                     type={getVideoType(safeMedia[currentImageIndex])}
@@ -177,15 +181,13 @@ export default function ProductSlider({ productInfo }) {
                   className={`${styles.thumbnail} ${
                     index === currentImageIndex ? styles.active : ""
                   }`}
-                  onClick={() => handleImageChange(index)}
-                >
+                  onClick={() => handleImageChange(index)}>
                   {isVideo(media) ? (
                     <video
                       loading="lazy"
                       muted
                       preload="metadata"
-                      className={styles.thumbnailMedia}
-                    >
+                      className={styles.thumbnailMedia}>
                       <source src={media} type={getVideoType(media)} />
                     </video>
                   ) : (
@@ -211,7 +213,7 @@ export default function ProductSlider({ productInfo }) {
               ))}
             </div>
           )}
-          {((productInfo.assignment?.length > 0) ||
+          {(productInfo.assignment?.length > 0 ||
             productInfo.armLength ||
             productInfo.payloadRange ||
             (productInfo.source && productInfo.source.length > 0)) && (
@@ -230,8 +232,12 @@ export default function ProductSlider({ productInfo }) {
               )}
               {productInfo.armLength && (
                 <div className={styles.specContainer}>
-                  <div className={styles.specTitle}>Длина руки (мм):</div>
-                  <div className={styles.specValue}>{productInfo.armLength}</div>
+                  <div className={styles.specTitle}>
+                    {isPozicionery ? "Размер" : "Длина руки (мм)"}
+                  </div>
+                  <div className={styles.specValue}>
+                    {productInfo.armLength}
+                  </div>
                 </div>
               )}
               {productInfo.payloadRange && (
@@ -267,8 +273,7 @@ export default function ProductSlider({ productInfo }) {
                 className={`${styles.compereBtn} ${
                   isCompared ? styles.activeBtn : ""
                 }`}
-                onClick={handleComparisonClick}
-              >
+                onClick={handleComparisonClick}>
                 {!isCompared && (
                   <img
                     src="/images/icons/bar-chart.svg"
@@ -284,8 +289,7 @@ export default function ProductSlider({ productInfo }) {
                 className={`${styles.favoriteBtn} ${
                   isFavorited ? styles.activeBtn : ""
                 }`}
-                onClick={handleFavoriteClick}
-              >
+                onClick={handleFavoriteClick}>
                 <img
                   src={
                     isFavorited
@@ -300,16 +304,14 @@ export default function ProductSlider({ productInfo }) {
                 <a
                   href="https://t.me/crprobot_manager"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <img src="/images/icons/tg-icon.svg" alt="Telegram" />
                 </a>
                 <img src="/images/icons/separator.svg" alt="Separator" />
                 <a
                   href="whatsapp://chat?number=84992885394"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <img src="/images/icons/whatsapp-icon.svg" alt="Whatsapp" />
                 </a>
               </div>
@@ -318,8 +320,7 @@ export default function ProductSlider({ productInfo }) {
                   className={`${styles.favoriteBtnMobile} ${
                     isFavorited ? styles.activeBtn : ""
                   }`}
-                  onClick={handleFavoriteClick}
-                >
+                  onClick={handleFavoriteClick}>
                   <img
                     src={
                       isFavorited
@@ -334,16 +335,14 @@ export default function ProductSlider({ productInfo }) {
                   <a
                     href="https://t.me/crprobot_manager"
                     target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                    rel="noopener noreferrer">
                     <img src="/images/icons/tg-icon.svg" alt="Telegram" />
                   </a>
                   <img src="/images/icons/separator.svg" alt="Separator" />
                   <a
                     href="whatsapp://chat?number=84992885394"
                     target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                    rel="noopener noreferrer">
                     <img src="/images/icons/whatsapp-icon.svg" alt="Whatsapp" />
                   </a>
                 </div>

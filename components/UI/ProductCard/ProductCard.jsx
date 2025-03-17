@@ -28,8 +28,8 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
   const hoverImage = robot?.images && robot.images.length > 1 ? robot.images[1] : robot?.hoverImage
   const productUrl = getProductUrl(robot, categories)
 
-  
   const isSpecialPath = pathname.startsWith('/pozicionery') || pathname.startsWith('/promyshlennye-roboty')
+  const isPositioner = productUrl.includes('pozicionery');
 
   return (
     <div
@@ -71,16 +71,19 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
           router.push(productUrl)
         }}
       >
-        
         <div className={styles.title}>
           {isSpecialPath ? <h2>{robot.title}</h2> : <h3>{robot.title}</h3>}
         </div>
-        {/* <div>Sort {robot.sort}</div> */}
         <div className={styles.specsContainer}>
           <div className={styles.specsItem}>
-            <img src='/images/icons/lenght.svg' alt='Длина руки' />
+            <img
+              src='/images/icons/lenght.svg'
+              alt={isPositioner ? 'Размер' : 'Длина руки'}
+            />
             <div className={styles.textContainer}>
-              <div className={styles.text}>Длина руки (мм)</div>
+              <div className={styles.text}>
+                {isPositioner ? 'Размер' : 'Длина руки (мм)'}
+              </div>
               <div className={styles.value}>{robot.armLength}</div>
             </div>
           </div>

@@ -24,7 +24,7 @@ export default function Blog({ title }) {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="paginationScroll">
       <div className={styles.blogContainer}>
         <h1>{title}</h1>
         {/* {loading && <p>Загрузка...</p>}
@@ -50,6 +50,7 @@ export default function Blog({ title }) {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
                 newsPageTheme={true}
+                 scrollToId="paginationScroll"
               />
             )}  
           </>

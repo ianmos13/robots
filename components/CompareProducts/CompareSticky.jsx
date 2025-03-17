@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import styles from "./CompareProducts.module.scss";
 import StickyProductCard from "./StickyProductCard";
 import { useRouter } from "next/navigation";
+import {useMediaQuery} from "react-responsive";
 
 export default function CompareSticky({
   comparisons,
@@ -14,23 +15,26 @@ export default function CompareSticky({
   sliderRef,
   onRemoveItem,
   onDownloadExcel,
-  categoryList
+  categoryList,
+  compareHeaderWidth,
+  compareStickyLeft
 }) {
   const router = useRouter();
   const goToCatalogPage = () => {
     router.push("/promyshlennye-roboty");
   };
 
+  const isAll = useMediaQuery({ query: '(max-width: 767px)' });
 
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  const isDesktop = windowWidth >= 1400;
+  // const [windowWidth, setWindowWidth] = useState(
+  //   typeof window !== "undefined" ? window.innerWidth : 0
+  // );
+  // useEffect(() => {
+  //   const handleResize = () => setWindowWidth(window.innerWidth);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+  const isDesktop = !isAll;
 
   const itemsToRender = isDesktop
     ? comparisons.slice(currentIndex, currentIndex + maxVisibleItems)
@@ -68,8 +72,13 @@ export default function CompareSticky({
     touchStartXRef.current = null;
   };
 
+  let containerStyles = compareHeaderWidth ? {width: `${compareHeaderWidth + 40}px`} : {}
+  containerStyles = compareStickyLeft ? { ...containerStyles, left: `${compareStickyLeft}px`} : containerStyles
+
   return (
-    <div className={`${styles.compareWrapperScroll} ${styles.fixed}`}>
+    <div className={`${styles.compareWrapperScroll} ${styles.fixed}`}
+          style={containerStyles}
+    >
       <div className={styles.topControls}>
         <div className={styles.buttonContainer}>
           <div className={styles.leftContainer}>
@@ -121,12 +130,13 @@ export default function CompareSticky({
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {itemsToRender.map((item) => (
-              <StickyProductCard
-                key={item.id}
-                item={item}
-                categories={categoryList}
-              />
+            {itemsToRender.map((item, index) => (
+              <div key={index} className={styles.sliderProductCard}>
+                <StickyProductCard
+                  item={item}
+                  categories={categoryList}
+                />
+              </div>
             ))}
           </div>
         </div>

@@ -93,6 +93,18 @@ export function Providers({ children }) {
               />
             </div>
           </noscript>
+          <Script
+          id="crm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,u){
+                var s=d.createElement('script'); s.async=true; s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s,h);
+              })(window,document,'https://crm.crp-robot.ru/upload/crm/site_button/loader_1_okfqqu.js');
+            `,
+          }}
+        />
 				<AppTransition>{children}</AppTransition>
 			</QueryClientProvider>
 		</Provider>

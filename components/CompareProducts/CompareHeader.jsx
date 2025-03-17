@@ -11,21 +11,10 @@ export default function CompareHeader({
   maxVisibleItems,
   onScrollLeft,
   onScrollRight,
-  onClearComparison,
   sliderRef,
   onRemoveItem,
-  onRemoveCategory,
   categoryList,
-  onDownloadExcel,
 }) {
-  const categoryKeys = new Set(comparisons.map((item) => item.category));
-  const router = useRouter();
-  const uniqueCategories = categoryList.filter((category) =>
-    categoryKeys.has(category.key)
-  );
-  const goToCatalogPage = () => {
-    router.push("/promyshlennye-roboty");
-  };
 
   const touchStartXRef = useRef(null);
 
@@ -48,89 +37,6 @@ export default function CompareHeader({
 
   return (
     <div className={styles.compareWrapper}>
-      <div className={styles.header}>
-        <div className={styles.topContainer}>
-          <h1>Сравнение товаров</h1>
-          <div className={styles.btnContainer}>
-            {comparisons?.length > 0 && (
-              <button className={styles.downloadButton} onClick={onDownloadExcel}>
-                <img src="/images/icons/download.svg" alt="download" />
-                <span>Скачать таблицу</span>
-              </button>
-            )}
-            <button className={styles.addButton} onClick={goToCatalogPage}>
-              <img
-                  src="/images/icons/plus.svg"
-                  alt="add"
-                  
-              />{" "}
-              <span>Добавить товар</span>
-            </button>
-            {comparisons.length > 0 && (
-                <button
-                    className={styles.clearButton}
-                    onClick={onClearComparison}
-                >
-                  <img src="/images/icons/trash.svg" alt="trash" />
-                  <span>Удалить все </span>
-                </button>
-            )}
-          </div>
-        </div>
-        <div className={styles.bottomContainer}>
-          <div className={styles.categoriesFilter}>
-            <CategoriesFilter
-                categories={uniqueCategories}
-                onDelete={onRemoveCategory}
-            />
-            {comparisons.length > maxVisibleItems && (
-                <div className={styles.navControls}>
-                  <div className={styles.containerButton}>
-                    <button
-                        className={styles.arrowLeft}
-                        onClick={onScrollLeft}
-                        disabled={currentIndex === 0}
-                    >
-                      <svg className={styles.icon} />
-                    </button>
-                    <button
-                        className={styles.arrowRight}
-                        onClick={onScrollRight}
-                        disabled={
-                            currentIndex + maxVisibleItems >= comparisons.length
-                        }
-                    >
-                      <svg className={styles.icon} />
-                    </button>
-                  </div>
-                </div>
-            )}
-          </div>
-          <div className={styles.btnContainerMobile}>
-            <button className={styles.downloadButton} onClick={onDownloadExcel}>
-              <img src="/images/icons/download.svg" alt="download" />
-              <span>Скачать таблицу</span>
-            </button>
-            <button className={styles.addButton}>
-              <img
-                  src="/images/icons/plus.svg"
-                  alt="add"
-                  onClick={goToCatalogPage}
-              />{" "}
-              <span>Добавить товар</span>
-            </button>
-            {comparisons.length > 0 && (
-                <button
-                    className={styles.clearButton}
-                    onClick={onClearComparison}
-                >
-                  <img src="/images/icons/trash.svg" alt="trash" />
-                  <span>Удалить все </span>
-                </button>
-            )}
-          </div>
-        </div>
-      </div>
       <div className={styles.compareContainer}>
         <div
           className={styles.productsSlider}
@@ -140,13 +46,14 @@ export default function CompareHeader({
         >
           {comparisons
             .slice(currentIndex, currentIndex + maxVisibleItems)
-            .map((item) => (
-              <ProductCard
-                key={item.id}
-                categories={categoryList}
-                item={item}
-                onRemove={() => onRemoveItem(item.id)}
-              />
+            .map((item, index) => (
+              <div key={index} className={styles.sliderProductCard}>
+                <ProductCard
+                  categories={categoryList}
+                  item={item}
+                  onRemove={() => onRemoveItem(item.id)}
+                />
+              </div>
             ))}
         </div>
       </div>
