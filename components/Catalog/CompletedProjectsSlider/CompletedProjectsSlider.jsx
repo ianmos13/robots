@@ -11,16 +11,16 @@ import useConvertedDate from "@/hooks/useConvertedDate";
 import useCompletedProjects from "@/hooks/useCompletedProjects";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 // Динамический импорт компонентов Swiper без SSR
-const Swiper = dynamic(
-  () => import("swiper/react").then((mod) => mod.Swiper),
-  { ssr: false }
-);
-const SwiperSlide = dynamic(
-  () => import("swiper/react").then((mod) => mod.SwiperSlide),
-  { ssr: false }
-);
+// const Swiper = dynamic(
+//   () => import("swiper/react").then((mod) => mod.Swiper),
+//   { ssr: false }
+// );
+// const SwiperSlide = dynamic(
+//   () => import("swiper/react").then((mod) => mod.SwiperSlide),
+//   { ssr: false }
+// );
 
 const TruncatedText = ({ prj }) => {
   const textRef = useRef(null);
