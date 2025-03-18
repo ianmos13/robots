@@ -11,10 +11,9 @@ export default function Filters({
   onChangeFilters,
   maxReach,
   maxPayload,
-
   applications = [],
-
   axes = [],
+  voltages = [], // новый пропс для уникальных значений напряжения
 }) {
   const pathname = usePathname();
   const isPozicionery = pathname.toLowerCase().includes("pozicionery");
@@ -426,26 +425,23 @@ export default function Filters({
             </div>
             {isVoltageOpen && (
               <div className={styles.filterOptions}>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="voltage"
-                    value="220"
-                    checked={voltage === "220"}
-                    onChange={handleVoltageChange}
-                  />
-                  <h3>220 В</h3>
-                </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="voltage"
-                    value="380"
-                    checked={voltage === "380"}
-                    onChange={handleVoltageChange}
-                  />
-                  <h3>380 В</h3>
-                </label>
+                {voltages &&
+                  voltages.map((volt) => (
+                    <label key={volt}>
+                      <input
+                        type="checkbox"
+                        name="voltage"
+                        value={volt}
+                        checked={voltage === String(volt)}
+                        onChange={() =>
+                          handleVoltageChange({
+                            target: { value: String(volt) },
+                          })
+                        }
+                      />
+                      <h3>{volt} В</h3>
+                    </label>
+                  ))}
               </div>
             )}
           </div>

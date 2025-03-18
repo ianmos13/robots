@@ -13,7 +13,6 @@ export default function ImageSlider({ images, isOpen, onClose, initialSlide }) {
 
   if (!isOpen) return null;
 
-  
   const isVideo = (url) => {
     return url.endsWith('.mp4') || url.endsWith('.webm') || url.endsWith('.ogg');
   };
@@ -54,7 +53,6 @@ export default function ImageSlider({ images, isOpen, onClose, initialSlide }) {
             className={`${styles.rightButton} ${isHovered && styles.active}`}
             onClick={handleNext}
           ></button>
-
           {images.map((media, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               {isVideo(media) ? (
