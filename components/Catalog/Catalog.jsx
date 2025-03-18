@@ -1,4 +1,6 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import Pagination from "@/components/UI/Pagination/Pagination";
 import useDeviceType from "@/hooks/useDeviceType";
 import useProducts from "@/hooks/useProducts";
@@ -16,11 +18,20 @@ import ProductCard from "../UI/ProductCard/ProductCard";
 import ProductCardLong from "../UI/ProductCardLong/ProductCardLong";
 import Question from "../UI/Question/Question";
 import styles from "./Catalog.module.scss";
-import CompletedProjectsSlider from "./CompletedProjectsSlider/CompletedProjectsSlider";
 import Filters from "./Filters/Filters";
 import FiltersModal from "./FiltersModal/FiltersModal";
 import catalogData from "@/public/data/catalogData.json";
 import { sanitizeData } from "@/utils/sanitizeHtmlText";
+import Image from "next/image";
+
+// Динамический импорт CompletedProjectsSlider без SSR
+const CompletedProjectsSlider = dynamic(
+  () => import("./CompletedProjectsSlider/CompletedProjectsSlider"),
+  {
+    ssr: false,
+    loading: () => <p>Загрузка проектов...</p>,
+  }
+);
 
 const buildRootCategoryMapping = (categories) => {
   const mapping = {};
@@ -201,9 +212,8 @@ export default function Catalog({ categories, title }) {
         voltagesSet.add(product.voltage);
       }
     });
-    return Array.from(voltagesSet).sort(); 
+    return Array.from(voltagesSet).sort();
   }, [partiallyFilteredRobots]);
-  
 
   const uniqueAxes = useMemo(() => {
     const axesSet = new Set();
@@ -212,7 +222,6 @@ export default function Catalog({ categories, title }) {
         axesSet.add(product.axes);
       }
     });
-
     return Array.from(axesSet).sort((a, b) => a - b);
   }, [partiallyFilteredRobots]);
 
@@ -283,15 +292,10 @@ export default function Catalog({ categories, title }) {
     return currentProducts.map((robot, index) => (
       <React.Fragment key={robot.id}>
         {activeView === "cardView" ? (
-          <ProductCard
-            robot={robot}
-            categories={categories}
-            theme={"catalog"}
-          />
+          <ProductCard robot={robot} categories={categories} theme={"catalog"} />
         ) : (
           <ProductCardLong robot={robot} categories={categories} />
         )}
-
         {((isMobileView &&
           (index === 2 ||
             (index === currentProducts.length - 1 && index < 2))) ||
@@ -332,7 +336,7 @@ export default function Catalog({ categories, title }) {
       : {};
 
   return (
-    <section className={styles.container}  id="paginationScroll">
+    <section className={styles.container} id="paginationScroll">
       {isDisplayCategories &&
         categories &&
         categories.length > 0 &&
@@ -356,13 +360,15 @@ export default function Catalog({ categories, title }) {
                   activeView === "cardView" ? styles.active : ""
                 }`}
                 onClick={() => handleViewChange("cardView")}>
-                <img
+                <Image
                   src={
                     activeView === "cardView"
                       ? "/images/icons/card-view-active.svg"
                       : "/images/icons/card-view-inactive.svg"
                   }
                   alt="Card View"
+                  width={24}
+                  height={24}
                 />
               </div>
               <div
@@ -370,13 +376,15 @@ export default function Catalog({ categories, title }) {
                   activeView === "rowView" ? styles.active : ""
                 }`}
                 onClick={() => handleViewChange("rowView")}>
-                <img
+                <Image
                   src={
                     activeView === "rowView"
                       ? "/images/icons/row-view-active.svg"
                       : "/images/icons/row-view-inactive.svg"
                   }
                   alt="Row View"
+                  width={24}
+                  height={24}
                 />
               </div>
             </div>
@@ -387,7 +395,12 @@ export default function Catalog({ categories, title }) {
               <div
                 className={styles.filterButton}
                 onClick={() => setFiltersModalOpen(true)}>
-                <img src="/images/icons/mobile-filters.svg" alt="Фильтры" />
+                <Image
+                  src="/images/icons/mobile-filters.svg"
+                  alt="Фильтры"
+                  width={24}
+                  height={24}
+                />
               </div>
             )}
             {selectedFilters.length > 0 ? (
@@ -398,12 +411,22 @@ export default function Catalog({ categories, title }) {
                     className={styles.active}
                     onClick={() => removeFilter(filter)}>
                     {filter}
-                    <img src="/images/icons/x-blue.svg" alt="Удалить" />
+                    <Image
+                      src="/images/icons/x-blue.svg"
+                      alt="Удалить"
+                      width={16}
+                      height={16}
+                    />
                   </div>
                 ))}
                 <div className={styles.default} onClick={clearFilters}>
                   Очистить всё
-                  <img src="/images/icons/x.svg" alt="Очистить все" />
+                  <Image
+                    src="/images/icons/x.svg"
+                    alt="Очистить все"
+                    width={16}
+                    height={16}
+                  />
                 </div>
               </>
             ) : (
@@ -420,7 +443,12 @@ export default function Catalog({ categories, title }) {
               <div
                 className={styles.filterButton}
                 onClick={() => setFiltersModalOpen(true)}>
-                <img src="/images/icons/mobile-filters.svg" alt="Фильтры" />
+                <Image
+                  src="/images/icons/mobile-filters.svg"
+                  alt="Фильтры"
+                  width={24}
+                  height={24}
+                />
               </div>
             </SwiperSlide>
 
@@ -432,14 +460,24 @@ export default function Catalog({ categories, title }) {
                       className={styles.active}
                       onClick={() => removeFilter(filter)}>
                       {filter}
-                      <img src="/images/icons/x-blue.svg" alt="Удалить" />
+                      <Image
+                        src="/images/icons/x-blue.svg"
+                        alt="Удалить"
+                        width={16}
+                        height={16}
+                      />
                     </div>
                   </SwiperSlide>
                 ))}
                 <SwiperSlide className={styles.swiperSlide}>
                   <div className={styles.default} onClick={clearFilters}>
                     Очистить всё
-                    <img src="/images/icons/x.svg" alt="Очистить все" />
+                    <Image
+                      src="/images/icons/x.svg"
+                      alt="Очистить все"
+                      width={16}
+                      height={16}
+                    />
                   </div>
                 </SwiperSlide>
               </>
@@ -480,7 +518,7 @@ export default function Catalog({ categories, title }) {
               )}
             </div>
 
-            <div className={styles.productContainerInner} >
+            <div className={styles.productContainerInner}>
               <div
                 className={`${styles.products} ${
                   activeView === "rowView" ? styles.rowView : ""
@@ -497,7 +535,7 @@ export default function Catalog({ categories, title }) {
                   totalPages={totalPages}
                   onPageChange={handlePageChange}
                   catalogPageTheme={true}
-                   scrollToId="paginationScroll"
+                  scrollToId="paginationScroll"
                 />
               )}
 

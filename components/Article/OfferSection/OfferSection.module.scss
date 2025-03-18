@@ -26,6 +26,7 @@
     overflow: hidden;
     width: calc(100vw - 20px);
   }
+
   h2 {
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -76,6 +77,10 @@
     }
   }
 
+  p {
+    margin: 10px 0;
+  }
+
   ol {
     margin: 24px 0;
     @media (max-width: 1600px) {
@@ -114,10 +119,6 @@
         margin-bottom: 16px;
         letter-spacing: -0.01em;
       }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -128,12 +129,12 @@
 
 .takeOfferContainer ul {
   padding-left: 40px;
-  margin-top: 40px;
+  margin: 20px 0;
   @media (max-width: 1600px) {
     padding-left: 30px;
   }
   @media (max-width: 640px) {
-    margin-top: 24px;
+    margin: 12px 0;
   }
 }
 
@@ -163,10 +164,6 @@
     line-height: 26px;
     margin-bottom: 10px;
     letter-spacing: -0.01em;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
   }
 }
 

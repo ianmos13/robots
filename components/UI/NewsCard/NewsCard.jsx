@@ -12,7 +12,7 @@ export default function NewsCard({ id, image, title, description, date, slug }) 
   return (
     <Link href={`/articles/${slug}`} className={styles.newsCard} key={id}>
       <div className={styles.imageContainer}>
-        <div className={styles.tag}>Тег</div>
+        {/* <div className={styles.tag}>Тег</div> */}
         {image ? <img loading="lazy" src={image} alt={title} /> : null}
       </div>
       <div className={styles.newsInfo}>
