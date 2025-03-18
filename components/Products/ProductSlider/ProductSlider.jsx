@@ -21,16 +21,16 @@ export default function ProductSlider({ productInfo }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageSliderOpen, setIsImageSliderOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const comparisons = useSelector((state) => state.compare || []);
-  const favorites = useSelector((state) => state.favorite || []);
   const thumbnailRefs = useRef([]);
   const pathname = usePathname();
   const isPozicionery = pathname.includes("pozicionery");
-  console.log(isPozicionery);
+
+  const comparisons = useSelector((state) => state.compare || []);
+  const favorites = useSelector((state) => state.favorite || []);
 
   const safeMedia = productInfo
     ? [
-        ...(productInfo.images && productInfo.images.length > 0
+        ...(productInfo.images?.length
           ? productInfo.images
           : productInfo.mainImage
           ? [productInfo.mainImage]
@@ -142,21 +142,30 @@ export default function ProductSlider({ productInfo }) {
             </Swiper>
           </div>
         )}
+
         {safeMedia.length > 0 && (
           <div className={styles.imageContainer}>
             <div className={styles.mainImageContainer}>
               {isVideo(safeMedia[currentImageIndex]) ? (
-                <video
-                  loading="lazy"
-                  controls
-                  className={styles.mainImage}
+                <div
+                  className={styles.videoWrapper}
                   onClick={handleOpenImageSlider}>
-                  <source
-                    src={safeMedia[currentImageIndex]}
-                    type={getVideoType(safeMedia[currentImageIndex])}
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                  <video
+                    muted
+                    playsinline
+                    webkit-playsinline
+                    preload="none"
+                    poster="/images/preview.svg"
+                    className={styles.mainImage}>
+                    <source
+                      src={safeMedia[currentImageIndex]}
+                      type={getVideoType(safeMedia[currentImageIndex])}
+                    />
+                  </video>
+                  <div className={styles.playIcon}>
+                    <img src="/images/icons/play.svg" alt="Play" />
+                  </div>
+                </div>
               ) : (
                 <img
                   loading="lazy"
@@ -167,12 +176,14 @@ export default function ProductSlider({ productInfo }) {
                 />
               )}
             </div>
+
             <button className={styles.arrowLeft} onClick={handlePrevImage}>
               <img src="/images/icons/arrow-left-filled.svg" alt="Предыдущий" />
             </button>
             <button className={styles.arrowRight} onClick={handleNextImage}>
               <img src="/images/icons/arrow-rightfilled.svg" alt="Следующий" />
             </button>
+
             <div className={styles.thumbnailContainer}>
               {safeMedia.map((media, index) => (
                 <div
@@ -187,7 +198,8 @@ export default function ProductSlider({ productInfo }) {
                       loading="lazy"
                       muted
                       preload="metadata"
-                      className={styles.thumbnailMedia}>
+                      className={styles.thumbnailMedia}
+                      poster="/images/preview.svg">
                       <source src={media} type={getVideoType(media)} />
                     </video>
                   ) : (
@@ -202,8 +214,10 @@ export default function ProductSlider({ productInfo }) {
             </div>
           </div>
         )}
+
         <div className={styles.productInfo}>
           {productInfo.title && <h1>{productInfo.title}</h1>}
+
           {productInfo.advantages?.length > 0 && (
             <div className={styles.advantagesContainer}>
               {productInfo.advantages.map((advantage, index) => (
@@ -213,10 +227,10 @@ export default function ProductSlider({ productInfo }) {
               ))}
             </div>
           )}
+
           {(productInfo.assignment?.length > 0 ||
             productInfo.armLength ||
-            productInfo.payloadRange ||
-            (productInfo.source && productInfo.source.length > 0)) && (
+            productInfo.payloadRange) && (
             <div className={styles.infoContainer}>
               {productInfo.assignment && productInfo.assignment.length > 0 && (
                 <div className={styles.assignmentContainer}>
@@ -230,16 +244,18 @@ export default function ProductSlider({ productInfo }) {
                   </div>
                 </div>
               )}
+
               {productInfo.armLength && (
                 <div className={styles.specContainer}>
                   <div className={styles.specTitle}>
-                    {isPozicionery ? "Размер" : "Длина руки (мм)"}
+                    {isPozicionery ? "Размер:" : "Длина руки (мм):"}
                   </div>
                   <div className={styles.specValue}>
                     {productInfo.armLength}
                   </div>
                 </div>
               )}
+
               {productInfo.payloadRange && (
                 <div className={styles.capabilityContainer}>
                   <div className={styles.capabilityTitle}>
@@ -250,20 +266,9 @@ export default function ProductSlider({ productInfo }) {
                   </div>
                 </div>
               )}
-              {/* {productInfo.source && productInfo.source.length > 0 && (
-                <div className={styles.sourceContainer}>
-                  <div className={styles.sourceTitle}>Источник:</div>
-                  <div className={styles.sourceGrid}>
-                    {productInfo.source.map((src, index) => (
-                      <div className={styles.source} key={index}>
-                        {src}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )} */}
             </div>
           )}
+
           <div className={styles.btnContainer}>
             <button className={styles.ctaButton} onClick={handleOpenModal}>
               Получить коммерческое предложение
@@ -285,6 +290,7 @@ export default function ProductSlider({ productInfo }) {
                   ? "Товар добавлен в сравнение"
                   : "Сравнить с другим товаром"}
               </div>
+
               <div
                 className={`${styles.favoriteBtn} ${
                   isFavorited ? styles.activeBtn : ""
@@ -300,6 +306,7 @@ export default function ProductSlider({ productInfo }) {
                 />
                 {isFavorited ? "Добавлен" : "В избранные"}
               </div>
+
               <div className={styles.social}>
                 <a
                   href="https://t.me/crprobot_manager"
@@ -315,6 +322,7 @@ export default function ProductSlider({ productInfo }) {
                   <img src="/images/icons/whatsapp-icon.svg" alt="Whatsapp" />
                 </a>
               </div>
+
               <div className={styles.mobilebtnContainer}>
                 <div
                   className={`${styles.favoriteBtnMobile} ${
@@ -351,12 +359,14 @@ export default function ProductSlider({ productInfo }) {
           </div>
         </div>
       </div>
+
       <RequestModal
         isOpen={isModalOpen}
         text={"Получить коммерческое предложение"}
         onClose={handleCloseModal}
         productSlug={productInfo.slug}
       />
+
       <ImageSlider
         isOpen={isImageSliderOpen}
         onClose={handleCloseImageSlider}

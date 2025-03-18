@@ -182,7 +182,6 @@ export default function Catalog({ categories, title }) {
 
   const uniqueApplications = useMemo(() => {
     const apps = new Set();
-    console.log(partiallyFilteredRobots)
     partiallyFilteredRobots.forEach((product) => {
       if (product.application) {
         if (Array.isArray(product.application)) {
@@ -194,6 +193,17 @@ export default function Catalog({ categories, title }) {
     });
     return Array.from(apps);
   }, [partiallyFilteredRobots]);
+
+  const uniqueVoltages = useMemo(() => {
+    const voltagesSet = new Set();
+    partiallyFilteredRobots.forEach((product) => {
+      if (product.voltage) {
+        voltagesSet.add(product.voltage);
+      }
+    });
+    return Array.from(voltagesSet).sort(); 
+  }, [partiallyFilteredRobots]);
+  
 
   const uniqueAxes = useMemo(() => {
     const axesSet = new Set();
@@ -450,6 +460,7 @@ export default function Catalog({ categories, title }) {
                   maxPayload={maxPayload}
                   applications={uniqueApplications}
                   axes={uniqueAxes}
+                  voltages={uniqueVoltages}
                 />
               ) : (
                 <FiltersModal
@@ -464,6 +475,7 @@ export default function Catalog({ categories, title }) {
                   maxPayload={maxPayload}
                   applications={uniqueApplications}
                   axes={uniqueAxes}
+                  voltages={uniqueVoltages}
                 />
               )}
             </div>

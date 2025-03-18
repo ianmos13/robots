@@ -16,6 +16,7 @@ export default function FiltersModal({
 	maxPayload,
 	applications,
 	axes,
+	voltages
 }) {
 	const [tempFilters, setTempFilters] = useState([])
 
@@ -55,6 +56,7 @@ export default function FiltersModal({
 						maxPayload={maxPayload}
 						applications={applications}
 						axes={axes}
+						voltages={voltages}
 					/>
 				</div>
 
