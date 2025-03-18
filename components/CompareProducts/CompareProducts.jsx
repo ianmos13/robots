@@ -99,39 +99,21 @@ export default function CompareProducts() {
     return val;
   };
 
-  const getImageBase64 = async (url) => {
-    try {
-      const response = await fetch(url);
-      const blob = await response.blob();
-      return await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64 = reader.result.split(",")[1];
-          resolve(base64);
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
-      });
-    } catch (error) {
-      console.error("Ошибка получения изображения:", error);
-      return null;
-    }
-  };
 
 
   const handleDownloadExcel = async () => {
     const ExcelJSModule = await import("exceljs");
     const ExcelJS = ExcelJSModule.default || ExcelJSModule;
-
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Сравнение товаров");
-
+  
+   
     const exportData = comparisons.slice(
       currentIndex,
       currentIndex + maxVisibleItems
     );
-
-
+  
+   
     const productSpecs = exportData.map((product) => {
       let specObj = {};
       if (
@@ -151,76 +133,154 @@ export default function CompareProducts() {
       }
       return specObj;
     });
-
-
+  
+   
+    const groupedRows = {};
+    const conditionsGroup = [
+      "Средняя температура",
+      "Относительная влажность",
+      "Вибрации",
+      "Другие",
+      "Уровень IP",
+    ];
+  
     const allLabelsSet = new Set();
     productSpecs.forEach((specObj) => {
       Object.keys(specObj).forEach((label) => allLabelsSet.add(label));
     });
     const allLabels = Array.from(allLabelsSet);
-
-    const productImages = [];
-    for (let i = 0; i < exportData.length; i++) {
-      const product = exportData[i];
-      if (product.image) {
-        const base64 = await getImageBase64(product.image);
-        productImages.push(base64);
-      } else {
-        productImages.push(null);
-      }
-    }
-
-    worksheet.getRow(1).height = 80;
-    for (let i = 0; i < productImages.length; i++) {
-      if (productImages[i]) {
-        const imageId = workbook.addImage({
-          base64: "data:image/png;base64," + productImages[i],
-          extension: "png",
-        });
-
-        worksheet.addImage(imageId, {
-          tl: { col: i + 1, row: 0 },
-          ext: { width: 80, height: 80 },
-        });
-      }
-    }
-
-
-    const wsData = [];
-    const headerRow = [""];
-    exportData.forEach((product) => {
-      headerRow.push(product.title || "-");
-    });
-    wsData.push(headerRow);
-
+  
     allLabels.forEach((label) => {
-      const row = [label];
-      productSpecs.forEach((specObj) => {
-        row.push(specObj[label] || "-");
+      let cleanedLabel = label
+        .replace("ДДПО:", "")
+        .replace("МСДПО:", "")
+        .replace("ДКМ:", "")
+        .replace("ДМИ:", "")
+        .replace("Преимущества:", "")
+        .replace("Применение:", "")
+        .trim();
+  
+      let subheading = "";
+      if (label.startsWith("ДДПО:")) {
+        subheading = "Диапазон движения по осям";
+      } else if (label.startsWith("МСДПО:")) {
+        subheading = "Максимальная скорость движения по осям";
+      } else if (label.startsWith("ДКМ:")) {
+        subheading = "Допустимый крутящий момент";
+      } else if (label.startsWith("ДМИ:")) {
+        subheading = "Допустимый момент инерции";
+      } else if (label.startsWith("Преимущества:")) {
+        subheading = "Преимущества";
+      } else if (label.startsWith("Применение:")) {
+        subheading = "Применение";
+      } else if (
+        conditionsGroup.includes(label) ||
+        label.startsWith("Требования к условиям:")
+      ) {
+        subheading = "Требования к условиям";
+      }
+  
+      if (!groupedRows[subheading]) {
+        groupedRows[subheading] = [];
+      }
+  
+      const values = productSpecs.map((specObj) => specObj[label] || "-");
+      groupedRows[subheading].push({ label: cleanedLabel, values });
+    });
+  
+   
+    const numProducts = productSpecs.length;
+    const totalColumns = numProducts + 1;
+  
+   
+    const headerRow = worksheet.getRow(1);
+    headerRow.getCell(1).value = "Характеристика";
+    exportData.forEach((product, index) => {
+      headerRow.getCell(index + 2).value = product.title || "-";
+    });
+    headerRow.commit();
+    let rowIndex = 2;
+  
+   
+    for (const [subheading, rows] of Object.entries(groupedRows)) {
+     
+      if (subheading) {
+        const subRow = worksheet.getRow(rowIndex);
+        subRow.getCell(1).value = subheading;
+        subRow.commit();
+        rowIndex++;
+      }
+      
+      rows.forEach((rowItem) => {
+        const row = worksheet.getRow(rowIndex);
+        row.getCell(1).value = rowItem.label;
+        rowItem.values.forEach((value, colIndex) => {
+          row.getCell(colIndex + 2).value = value;
+        });
+        row.commit();
+        rowIndex++;
       });
-      wsData.push(row);
+    }
+  
+   
+    rowIndex++;
+    const contactHeaderRow = worksheet.getRow(rowIndex);
+    contactHeaderRow.getCell(1).value = "Контакты:";
+    contactHeaderRow.commit();
+    rowIndex++;
+  
+    const contacts = [
+      {
+        label: "Телефон",
+        text: "84992885394",
+        hyperlink: "tel:84992885394",
+      },
+      {
+        label: "Почта",
+        text: "info@crp-robot.ru",
+        hyperlink: "mailto:info@crp-robot.ru",
+      },
+      {
+        label: "Telegram",
+        text: "crprobot_manager",
+        hyperlink: "https://t.me/crprobot_manager",
+      },
+      {
+        label: "WhatsApp",
+        text: "79850920638",
+        hyperlink:
+          "https://wa.me/79850920638?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82...",
+      },
+    ];
+  
+    contacts.forEach((contact) => {
+      const row = worksheet.getRow(rowIndex);
+      row.getCell(1).value = contact.label;
+      row.getCell(2).value = { text: contact.text, hyperlink: contact.hyperlink };
+      row.commit();
+      rowIndex++;
     });
-
-    wsData.forEach((rowData) => {
-      worksheet.addRow(rowData);
-    });
-
-    const numCols = wsData[0].length;
-    for (let i = 1; i <= numCols; i++) {
+  
+    
+    for (let i = 1; i <= totalColumns; i++) {
       let maxLength = 10;
       worksheet.getColumn(i).eachCell({ includeEmpty: true }, (cell) => {
         if (cell.value) {
-          const cellValue = cell.value.toString();
-          maxLength = Math.max(maxLength, cellValue.length);
+          let cellText = "";
+          if (typeof cell.value === "object" && cell.value.text) {
+            cellText = cell.value.text.toString();
+          } else {
+            cellText = cell.value.toString();
+          }
+          maxLength = Math.max(maxLength, cellText.length);
         }
       });
       worksheet.getColumn(i).width = maxLength + 2;
     }
-
+  
     const buf = await workbook.xlsx.writeBuffer();
     const blob = new Blob([buf], {
-      type:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -229,7 +289,7 @@ export default function CompareProducts() {
     a.click();
     URL.revokeObjectURL(url);
   };
-
+  
   useEffect(() => {
     if (
       sliderRef.current &&
