@@ -22,7 +22,10 @@
   @media (max-width: 1024px) {
     margin-bottom: 24px;
   }
-
+  @media (max-width: 640px) {
+    overflow: hidden;
+    width: calc(100vw - 20px);
+  }
   h2 {
     text-transform: uppercase;
     letter-spacing: -0.02em;
