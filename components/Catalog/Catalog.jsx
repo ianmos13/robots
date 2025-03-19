@@ -1,11 +1,10 @@
 "use client";
-
 import dynamic from "next/dynamic";
 import Pagination from "@/components/UI/Pagination/Pagination";
 import useDeviceType from "@/hooks/useDeviceType";
 import useProducts from "@/hooks/useProducts";
 import { useSearchParams, usePathname } from "next/navigation";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,14 +23,18 @@ import catalogData from "@/public/data/catalogData.json";
 import { sanitizeData } from "@/utils/sanitizeHtmlText";
 import Image from "next/image";
 
-// Динамический импорт CompletedProjectsSlider без SSR
 const CompletedProjectsSlider = dynamic(
   () => import("./CompletedProjectsSlider/CompletedProjectsSlider"),
-  {
-    ssr: false,
-    loading: () => <p>Загрузка проектов...</p>,
-  }
+  { ssr: false, loading: () => <p>Загрузка проектов...</p> }
 );
+
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+}
 
 const buildRootCategoryMapping = (categories) => {
   const mapping = {};
@@ -45,9 +48,7 @@ const buildRootCategoryMapping = (categories) => {
       }
       const rootKey = current.key;
       if (!mapping[rootKey]) mapping[rootKey] = [];
-      if (cat.key !== rootKey) {
-        mapping[rootKey].push(cat.key);
-      }
+      if (cat.key !== rootKey) mapping[rootKey].push(cat.key);
     }
   });
   return mapping;
@@ -118,31 +119,25 @@ export default function Catalog({ categories, title }) {
         }
         return false;
       });
-      if (foundCategory) {
-        newCategory = foundCategory.key;
-      }
+      if (foundCategory) newCategory = foundCategory.key;
     }
-    if (newCategory !== selectedCategory) {
-      setSelectedCategory(newCategory);
-    }
+    if (newCategory !== selectedCategory) setSelectedCategory(newCategory);
   }, [searchParams, pathname, categories, selectedCategory]);
 
   const partiallyFilteredRobots = useMemo(() => {
     if (!products) return [];
-
     let filtered = [...products];
-
     if (selectedCategory && selectedCategory !== "all") {
       if (selectedCategory === "1" || selectedCategory === "2") {
-        const allowed = rootCategoryMapping[selectedCategory] || [];
+        const allowed = [selectedCategory, ...rootCategoryMapping[selectedCategory]] || [selectedCategory];
         filtered = filtered.filter((robot) => allowed.includes(robot.category));
       } else {
-        filtered = filtered.filter(
-          (robot) => robot.category === selectedCategory
-        );
+        if(selectedCategory === "6")
+          filtered = filtered.filter((robot) => ["6", "5", "4", "3"].includes(robot.category))
+        else
+          filtered = filtered.filter((robot) => robot.category === selectedCategory)
       }
     }
-
     const payloadFilter = selectedFilters.find((f) =>
       f.startsWith("Грузоподъёмность: ")
     );
@@ -156,7 +151,6 @@ export default function Catalog({ categories, title }) {
         (r) => r.payloadRange >= min && r.payloadRange <= max
       );
     }
-
     const reachFilter = selectedFilters.find((f) => f.startsWith("Охват: "));
     if (reachFilter) {
       const [min, max] = reachFilter
@@ -168,7 +162,6 @@ export default function Catalog({ categories, title }) {
         (r) => r.reachRange >= min && r.reachRange <= max
       );
     }
-
     const weightFilter = selectedFilters.find((f) => f.startsWith("Вес: "));
     if (weightFilter) {
       const weight = parseInt(
@@ -177,7 +170,6 @@ export default function Catalog({ categories, title }) {
       );
       filtered = filtered.filter((r) => r.weight === weight);
     }
-
     const voltageFilter = selectedFilters.find((f) =>
       f.startsWith("Напряжение: ")
     );
@@ -187,7 +179,6 @@ export default function Catalog({ categories, title }) {
         .replace(" В", "");
       filtered = filtered.filter((r) => r.voltage === voltage);
     }
-
     return filtered;
   }, [products, selectedCategory, selectedFilters, rootCategoryMapping]);
 
@@ -208,9 +199,7 @@ export default function Catalog({ categories, title }) {
   const uniqueVoltages = useMemo(() => {
     const voltagesSet = new Set();
     partiallyFilteredRobots.forEach((product) => {
-      if (product.voltage) {
-        voltagesSet.add(product.voltage);
-      }
+      if (product.voltage) voltagesSet.add(product.voltage);
     });
     return Array.from(voltagesSet).sort();
   }, [partiallyFilteredRobots]);
@@ -218,55 +207,36 @@ export default function Catalog({ categories, title }) {
   const uniqueAxes = useMemo(() => {
     const axesSet = new Set();
     partiallyFilteredRobots.forEach((product) => {
-      if (product.axes) {
-        axesSet.add(product.axes);
-      }
+      if (product.axes) axesSet.add(product.axes);
     });
     return Array.from(axesSet).sort((a, b) => a - b);
   }, [partiallyFilteredRobots]);
 
-  const fullyFilteredRobots = useMemo(() => {
-    let final = [...partiallyFilteredRobots];
-
-    const applicationFilters = selectedFilters
-      .filter((f) => f.startsWith("Область применения: "))
-      .map((f) => f.replace("Область применения: ", ""));
-    if (applicationFilters.length > 0) {
-      final = final.filter((robot) => {
-        if (Array.isArray(robot.application)) {
-          return robot.application.some((app) =>
-            applicationFilters.includes(app)
-          );
-        }
-        return applicationFilters.includes(robot.application);
-      });
+  const prevFilters = usePrevious(selectedFilters);
+  useEffect(() => {
+    if (
+      prevFilters !== undefined &&
+      JSON.stringify(prevFilters) !== JSON.stringify(selectedFilters)
+    ) {
+      setCurrentPage(1);
+      sessionStorage.setItem("catalogPage", "1");
     }
-
-    const axesFilters = selectedFilters
-      .filter((f) => f.startsWith("Кол-во осей: "))
-      .map((f) => parseInt(f.replace("Кол-во осей: ", ""), 10));
-    if (axesFilters.length > 0) {
-      final = final.filter((robot) => axesFilters.includes(Number(robot.axes)));
-    }
-
-    final.sort((a, b) => {
-      const sortA = parseInt(a.sort, 10);
-      const sortB = parseInt(b.sort, 10);
-      return sortA - sortB;
-    });
-
-    return final;
-  }, [partiallyFilteredRobots, selectedFilters]);
+  }, [selectedFilters, prevFilters]);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [fullyFilteredRobots]);
+    const storedPage = sessionStorage.getItem("catalogPage");
+    if (storedPage) {
+      setCurrentPage(Number(storedPage));
+    }
+  }, []);
 
   const productsPerPage = isMobileView ? 6 : isTabletView ? 8 : 12;
-  const totalPages = Math.ceil(fullyFilteredRobots.length / productsPerPage);
+  const totalPages = Math.ceil(
+    partiallyFilteredRobots.length / productsPerPage
+  );
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = fullyFilteredRobots.slice(
+  const currentProducts = partiallyFilteredRobots.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -285,14 +255,18 @@ export default function Catalog({ categories, title }) {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    sessionStorage.setItem("catalogPage", page.toString());
   };
 
-  // Рендер товаров
   const renderProducts = () => {
     return currentProducts.map((robot, index) => (
       <React.Fragment key={robot.id}>
         {activeView === "cardView" ? (
-          <ProductCard robot={robot} categories={categories} theme={"catalog"} />
+          <ProductCard
+            robot={robot}
+            categories={categories}
+            theme={"catalog"}
+          />
         ) : (
           <ProductCardLong robot={robot} categories={categories} />
         )}
@@ -328,7 +302,6 @@ export default function Catalog({ categories, title }) {
     "/pozicionery",
   ].includes(pathname.toLowerCase());
   const subTitle = subtitles[pathname.toLowerCase()];
-
   const headerStyle =
     pathname.toLowerCase() === "/promyshlennye-roboty" ||
     pathname.toLowerCase() === "/pozicionery"
@@ -349,7 +322,6 @@ export default function Catalog({ categories, title }) {
             />
           </div>
         )}
-
       {products.length > 0 && (
         <div className={styles.productContainer}>
           <div className={styles.header} style={headerStyle}>
@@ -389,7 +361,6 @@ export default function Catalog({ categories, title }) {
               </div>
             </div>
           </div>
-
           <div className={styles.selectedFillterContainer}>
             {(isTabletView || isMobileView) && (
               <div
@@ -433,7 +404,6 @@ export default function Catalog({ categories, title }) {
               <div className={styles.default}>Нет активных фильтров</div>
             )}
           </div>
-
           <Swiper
             className={styles.selectedFilterSwiperContainer}
             direction="horizontal"
@@ -451,7 +421,6 @@ export default function Catalog({ categories, title }) {
                 />
               </div>
             </SwiperSlide>
-
             {selectedFilters.length > 0 ? (
               <>
                 {selectedFilters.map((filter, index) => (
@@ -487,7 +456,6 @@ export default function Catalog({ categories, title }) {
               </SwiperSlide>
             )}
           </Swiper>
-
           <div className={styles.productContainer}>
             <div className={styles.filterContainer}>
               {isDesktopView ? (
@@ -517,7 +485,6 @@ export default function Catalog({ categories, title }) {
                 />
               )}
             </div>
-
             <div className={styles.productContainerInner}>
               <div
                 className={`${styles.products} ${
@@ -538,7 +505,6 @@ export default function Catalog({ categories, title }) {
                   scrollToId="paginationScroll"
                 />
               )}
-
               {currentCatalogData?.about && (
                 <div
                   className={styles.addInfoContainer}
@@ -551,13 +517,10 @@ export default function Catalog({ categories, title }) {
           </div>
         </div>
       )}
-
       <CompletedProjectsSlider />
-
       {currentCatalogData?.questions && (
         <Question faqData={currentCatalogData?.questions} />
       )}
-
       <ContactUs theme={"catalog"} />
     </section>
   );

@@ -1,6 +1,6 @@
 "use client";
 import BlogCard from "@/components/UI/BlogCard/BlogCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import styles from "./Blog.module.scss";
 import Pagination from "@/components/UI/Pagination/Pagination";
@@ -21,14 +21,21 @@ export default function Blog({ title }) {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    sessionStorage.setItem("blogPage", page.toString());
   };
+
+  // Восстанавливаем номер страницы при монтировании компонента
+  useEffect(() => {
+    const storedPage = sessionStorage.getItem("blogPage");
+    if (storedPage) {
+      setCurrentPage(Number(storedPage));
+    }
+  }, []);
 
   return (
     <section className={styles.container} id="paginationScroll">
       <div className={styles.blogContainer}>
         <h1>{title}</h1>
-        {/* {loading && <p>Загрузка...</p>}
-        {error && <p>Ошибка: {error.message}</p>} */}
         {blog?.length > 0 && (
           <>
             <div className={styles.blogList}>
@@ -50,9 +57,9 @@ export default function Blog({ title }) {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
                 newsPageTheme={true}
-                 scrollToId="paginationScroll"
+                scrollToId="paginationScroll"
               />
-            )}  
+            )}
           </>
         )}
       </div>

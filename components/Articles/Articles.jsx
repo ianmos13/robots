@@ -1,6 +1,6 @@
 "use client";
 import NewsCard from "@/components/UI/NewsCard/NewsCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import styles from "./Articles.module.scss";
 import Pagination from "@/components/UI/Pagination/Pagination";
@@ -21,26 +21,33 @@ export default function Articles({ title }) {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    sessionStorage.setItem("articlesPage", page.toString());
   };
+
+
+  useEffect(() => {
+    const storedPage = sessionStorage.getItem("articlesPage");
+    if (storedPage) {
+      setCurrentPage(Number(storedPage));
+    }
+  }, []);
 
   return (
     <section className={styles.container} id="paginationScroll">
       <div className={styles.newsContainer}>
         <h1>{title}</h1>
-        {/* {loading && <p>Загрузка...</p>}
-        {error && <p>Ошибка: {error.message}</p>} */}
         {news?.length > 0 && (
           <>
             <div className={styles.newsList}>
-              {visibleNews.map((news, index) => (
+              {visibleNews.map((newsItem, index) => (
                 <NewsCard
                   key={index}
-                  id={news.id}
-                  image={news.image}
-                  title={news.title}
-                  description={news.description}
-                  date={useConvertedDate(news.date)}
-                  slug={news.slug}
+                  id={newsItem.id}
+                  image={newsItem.image}
+                  title={newsItem.title}
+                  description={newsItem.description}
+                  date={useConvertedDate(newsItem.date)}
+                  slug={newsItem.slug}
                 />
               ))}
             </div>
@@ -52,7 +59,7 @@ export default function Articles({ title }) {
                 newsPageTheme={true}
                 scrollToId="paginationScroll"
               />
-            )}  
+            )}
           </>
         )}
       </div>

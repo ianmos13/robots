@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import styles from "./CompletedProjects.module.scss";
 import Pagination from "@/components/UI/Pagination/Pagination";
@@ -22,10 +22,19 @@ export default function CompletedProjects({ title }) {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    sessionStorage.setItem("completedProjectsPage", page.toString());
   };
 
+  // Восстанавливаем номер страницы при монтировании компонента
+  useEffect(() => {
+    const storedPage = sessionStorage.getItem("completedProjectsPage");
+    if (storedPage) {
+      setCurrentPage(Number(storedPage));
+    }
+  }, []);
+
   return (
-    <section className={styles.container}  id="paginationScroll">
+    <section className={styles.container} id="paginationScroll">
       <div className={styles.projectsContainer}>
         <h1>{title}</h1>
         {projects?.length > 0 && (
@@ -49,7 +58,7 @@ export default function CompletedProjects({ title }) {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
                 newsPageTheme={true}
-                  scrollToId="paginationScroll"
+                scrollToId="paginationScroll"
               />
             )}
           </>
