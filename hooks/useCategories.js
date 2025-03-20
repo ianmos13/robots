@@ -1,4 +1,4 @@
-import useApi from '@/hooks/useApi';
+
 import {buildSimpleTree, buildTree} from "@/utils/buildCategoryTree";
 import { useApiCache } from './useApiCache';
 
