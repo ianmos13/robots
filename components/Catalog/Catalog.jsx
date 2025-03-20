@@ -22,6 +22,7 @@ import FiltersModal from "./FiltersModal/FiltersModal";
 import catalogData from "@/public/data/catalogData.json";
 import { sanitizeData } from "@/utils/sanitizeHtmlText";
 import Image from "next/image";
+import useBanner from "@/hooks/useBanner";
 
 const CompletedProjectsSlider = dynamic(
   () => import("./CompletedProjectsSlider/CompletedProjectsSlider"),
@@ -83,6 +84,15 @@ export default function Catalog({ categories, title }) {
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const { banner, error, loading } = useBanner();
+
+  const selectedBanner = React.useMemo(() => {
+    if (banner && banner.length > 0) {
+      const bannerForCategory = banner.find(b => b.category === selectedCategory);
+      return bannerForCategory || banner.find(b => !b.category);
+    }
+    return null;
+  }, [banner, selectedCategory]);
 
   const rootCategoryMapping = useMemo(
     () => buildRootCategoryMapping(categories),
@@ -280,7 +290,7 @@ export default function Catalog({ categories, title }) {
             (index === 5 ||
               (index === currentProducts.length - 1 && index < 5)))) && (
           <div className={styles.bannerContainer}>
-            <LeaveRequestBanner size={"medium"} />
+              <LeaveRequestBanner size="medium" data={selectedBanner} />
           </div>
         )}
       </React.Fragment>
