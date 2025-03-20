@@ -15,11 +15,19 @@ const LeaveRequestBanner = ({ size, data }) => {
   };
 
   const bannerData = {
-    title: data?.title ? data?.title : "Убедитесь в возможностях наших\u00A0роботов\u00A0на\u00A0ваших\u00A0задачах",
-    titleMobile: data?.title ? data?.title : "Убедитесь в возможностях наших роботов на\u00A0ваших задачах",
-    text: data?.text ? data?.text : "Проведем сварку ваших материалов роботами, чтобы вы оценили качество и точность до покупки.",
-    buttonText: data?.buttonText ? data?.buttonText : "Оставить заявку"
-  }
+    title: data?.title
+      ? data.title
+      : "Убедитесь в возможностях наших\u00A0роботов\u00A0на\u00A0ваших\u00A0задачах",
+    titleMobile: data?.title
+      ? data.title
+      : "Убедитесь в возможностях наших роботов на\u00A0ваших задачах",
+    text: data?.text
+      ? data.text
+      : "Проведем сварку ваших материалов роботами, чтобы вы оценили качество и точность до покупки.",
+    buttonText: data?.buttonText ? data.buttonText : "Оставить заявку",
+    video: data?.video ? data.video : "/test_video.webm"
+  };
+  
 
   return (
     <>
@@ -46,7 +54,7 @@ const LeaveRequestBanner = ({ size, data }) => {
           <div className={styles.videoContainer}>
             <video
               className={styles.videoBackground}
-              src="/test_video.webm"
+              src={bannerData.video}
               autoPlay
               loop
               muted
