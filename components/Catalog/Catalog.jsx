@@ -1,4 +1,3 @@
-"use client";
 import dynamic from "next/dynamic";
 import Pagination from "@/components/UI/Pagination/Pagination";
 import useDeviceType from "@/hooks/useDeviceType";
@@ -23,6 +22,7 @@ import catalogData from "@/public/data/catalogData.json";
 import { sanitizeData } from "@/utils/sanitizeHtmlText";
 import Image from "next/image";
 import useBanner from "@/hooks/useBanner";
+import useBlocks from "@/hooks/useBlocks"; 
 
 const CompletedProjectsSlider = dynamic(
   () => import("./CompletedProjectsSlider/CompletedProjectsSlider"),
@@ -85,8 +85,9 @@ export default function Catalog({ categories, title }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { banner, error, loading } = useBanner();
-
-  const selectedBanner = React.useMemo(() => {
+  const { blocks, error: blocksError, loading: blocksLoading } = useBlocks(); 
+  console.log(blocks)
+  const selectedBanner = useMemo(() => {
     if (banner && banner.length > 0) {
       const bannerForCategory = banner.find(b => b.category === selectedCategory);
       return bannerForCategory || banner.find(b => !b.category);
@@ -99,6 +100,38 @@ export default function Catalog({ categories, title }) {
     [categories]
   );
   const currentCatalogData = catalogData[pathname];
+
+
+  const aboutData = useMemo(() => {
+    if (blocks && blocks.length > 0) {
+      const block = blocks.find((item) =>
+        Object.keys(item).includes(selectedCategory)
+      );
+      if (block && block[selectedCategory] && block[selectedCategory].about) {
+        return block[selectedCategory].about;
+      }
+    }
+    const fallbackData = catalogData[pathname.toLowerCase()];
+    return fallbackData && fallbackData.about ? fallbackData.about : null;
+  }, [blocks, selectedCategory, pathname]);
+
+  const faqData = useMemo(() => {
+    if (blocks && blocks.length > 0) {
+      const block = blocks.find((item) =>
+        Object.keys(item).includes(selectedCategory)
+      );
+      if (
+        block &&
+        block[selectedCategory] &&
+        block[selectedCategory].questions &&
+        block[selectedCategory].questions.length > 0
+      ) {
+        return block[selectedCategory].questions;
+      }
+    }
+    const fallbackData = catalogData[pathname.toLowerCase()];
+    return fallbackData && fallbackData.questions ? fallbackData.questions : null;
+  }, [blocks, selectedCategory, pathname]);
 
   const visibleCategories = useMemo(() => {
     const lowerPath = pathname.toLowerCase();
@@ -142,10 +175,10 @@ export default function Catalog({ categories, title }) {
         const allowed = [selectedCategory, ...rootCategoryMapping[selectedCategory]] || [selectedCategory];
         filtered = filtered.filter((robot) => allowed.includes(robot.category));
       } else {
-        if(selectedCategory === "6")
+        if (selectedCategory === "6")
           filtered = filtered.filter((robot) => ["6", "5", "4", "3"].includes(robot.category))
         else
-          filtered = filtered.filter((robot) => robot.category === selectedCategory)
+          filtered = filtered.filter((robot) => robot.category === selectedCategory);
       }
     }
     const payloadFilter = selectedFilters.find((f) =>
@@ -515,11 +548,12 @@ export default function Catalog({ categories, title }) {
                   scrollToId="paginationScroll"
                 />
               )}
-              {currentCatalogData?.about && (
+             
+              {aboutData && (
                 <div
                   className={styles.addInfoContainer}
                   dangerouslySetInnerHTML={{
-                    __html: sanitizeData(currentCatalogData.about),
+                    __html: sanitizeData(aboutData),
                   }}
                 />
               )}
@@ -528,9 +562,7 @@ export default function Catalog({ categories, title }) {
         </div>
       )}
       <CompletedProjectsSlider />
-      {currentCatalogData?.questions && (
-        <Question faqData={currentCatalogData?.questions} />
-      )}
+      {faqData && <Question faqData={faqData} />}
       <ContactUs theme={"catalog"} />
     </section>
   );
