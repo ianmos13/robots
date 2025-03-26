@@ -189,6 +189,7 @@ export default function MoreInfo({ productInfo, parentCategory }) {
   };
 
   let technicalInfo = productInfo?.technicalInfo;
+  const currentImage = getCurrentImage();
 
   return (
     <div className={styles.moreInfo}>
@@ -313,13 +314,13 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                 )}
               </div>
 
-              {getCurrentImage() && (
+              {currentImage && currentImage.url && (
                 <div className={styles.imageContainer}>
                   <img
                     loading="lazy"
-                    src={getCurrentImage().url}
-                    alt={getCurrentImage().alt}
-                    title={getCurrentImage().title}
+                    src={currentImage.url}
+                    alt={currentImage.alt}
+                    title={currentImage.title}
                   />
                 </div>
               )}
@@ -340,7 +341,6 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                   const url = window.URL.createObjectURL(blob);
                   const a = document.createElement("a");
                   a.href = url;
-                 
                   a.download = productInfo.title;
                   document.body.appendChild(a);
                   a.click();
