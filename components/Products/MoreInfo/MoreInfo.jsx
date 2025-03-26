@@ -36,11 +36,23 @@ export default function MoreInfo({ productInfo, parentCategory }) {
   const getCurrentImage = () => {
     switch (activeTechnicalTab) {
       case "axes":
-        return productInfo?.technicalInfo?.axes?.image;
+        return {
+          url: productInfo?.technicalInfo?.axes?.image2?.url,
+          alt: productInfo?.technicalInfo?.axes?.image2?.alt || "Диапазон движения по осям",
+          title: productInfo?.technicalInfo?.axes?.image2?.title || "Диапазон движения по осям",
+        };
       case "bases":
-        return productInfo?.technicalInfo?.bases?.image;
+        return {
+          url: productInfo?.technicalInfo?.bases?.image2?.url,
+          alt: productInfo?.technicalInfo?.bases?.image2?.alt || "Размеры основания",
+          title: productInfo?.technicalInfo?.bases?.image2?.title || "Размеры основания",
+        };
       case "flange":
-        return productInfo?.technicalInfo?.flange?.image;
+        return {
+          url: productInfo?.technicalInfo?.flange?.image2?.url,
+          alt: productInfo?.technicalInfo?.flange?.image2?.alt || "Размеры фланца",
+          title: productInfo?.technicalInfo?.flange?.image2?.title || "Размеры фланца",
+        };
       default:
         return null;
     }
@@ -301,53 +313,13 @@ export default function MoreInfo({ productInfo, parentCategory }) {
                 )}
               </div>
 
-              <div className={styles.btnContainerMobile}>
-                <Swiper
-                  slidesPerView={"auto"}
-                  spaceBetween={10}
-                  freeMode={true}>
-                  {technicalInfo.axes && (
-                    <SwiperSlide className={styles.swiperSlide}>
-                      <div
-                        className={`${styles.btn} ${
-                          activeTechnicalTab === "axes" ? styles.active : ""
-                        }`}
-                        onClick={() => setActiveTechnicalTab("axes")}>
-                        Диапазон движения по осям
-                      </div>
-                    </SwiperSlide>
-                  )}
-                  {technicalInfo.bases && (
-                    <SwiperSlide className={styles.swiperSlide}>
-                      <div
-                        className={`${styles.btn} ${
-                          activeTechnicalTab === "bases" ? styles.active : ""
-                        }`}
-                        onClick={() => setActiveTechnicalTab("bases")}>
-                        Размеры основания
-                      </div>
-                    </SwiperSlide>
-                  )}
-                  {technicalInfo.flange && (
-                    <SwiperSlide className={styles.swiperSlide}>
-                      <div
-                        className={`${styles.btn} ${
-                          activeTechnicalTab === "flange" ? styles.active : ""
-                        }`}
-                        onClick={() => setActiveTechnicalTab("flange")}>
-                        Размеры фланца
-                      </div>
-                    </SwiperSlide>
-                  )}
-                </Swiper>
-              </div>
-
               {getCurrentImage() && (
                 <div className={styles.imageContainer}>
                   <img
                     loading="lazy"
-                    src={getCurrentImage()}
-                    alt={activeTechnicalTab}
+                    src={getCurrentImage().url}
+                    alt={getCurrentImage().alt}
+                    title={getCurrentImage().title}
                   />
                 </div>
               )}
