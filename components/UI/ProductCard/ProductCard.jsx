@@ -26,8 +26,7 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
     setIsHovered(false);
   };
 
- 
-  const hoverImage = robot?.images && robot.images.length > 1 ? robot.images[1] : robot?.hoverImage;
+  const hoverImage = robot?.images2 && robot.images2.length > 1 ? robot.images2[1].url : robot?.hoverImage;
   const productUrl = getProductUrl(robot, categories);
 
   const isSpecialPath = pathname.startsWith('/pozicionery') || pathname.startsWith('/promyshlennye-roboty');
@@ -45,8 +44,9 @@ export default function ProductCard({ robot, theme, categories, hoverCard = () =
             {robot.mainImage && (
               <Image
                 className={`${styles.robotImage} ${styles.mainImage}`}
-                src={robot.mainImage}
-                alt={robot.title}
+                src={robot.mainImage2.url}
+                alt={robot.mainImage2.alt || 'mainImagALT'}
+                title={robot.mainImage2.title || 'mainImagtitle '}
                 loading="lazy"
                 style={{ opacity: isHovered && robot.hoverImage ? 0 : 1 }}
                 width={300} 

@@ -30,10 +30,10 @@ export default function ProductSlider({ productInfo }) {
 
   const safeMedia = productInfo
     ? [
-        ...(productInfo.images?.length
-          ? productInfo.images
-          : productInfo.mainImage
-          ? [productInfo.mainImage]
+        ...(productInfo.images2?.length
+          ? productInfo.images2
+          : productInfo.mainImage2
+          ? [{ url: productInfo.mainImage2.url, alt: 'Основное изображение', title: 'Основное изображение' }]
           : []),
         ...(productInfo.videos && Array.isArray(productInfo.videos)
           ? productInfo.videos
@@ -146,7 +146,7 @@ export default function ProductSlider({ productInfo }) {
         {safeMedia.length > 0 && (
           <div className={styles.imageContainer}>
             <div className={styles.mainImageContainer}>
-              {isVideo(safeMedia[currentImageIndex]) ? (
+              {isVideo(safeMedia[currentImageIndex].url) ? (
                 <div
                   className={styles.videoWrapper}
                   onClick={handleOpenImageSlider}>
@@ -158,8 +158,8 @@ export default function ProductSlider({ productInfo }) {
                     poster="/images/preview.svg"
                     className={styles.mainImage}>
                     <source
-                      src={safeMedia[currentImageIndex]}
-                      type={getVideoType(safeMedia[currentImageIndex])}
+                      src={safeMedia[currentImageIndex].url}
+                      type={getVideoType(safeMedia[currentImageIndex].url)}
                     />
                   </video>
                   <div className={styles.playIcon}>
@@ -169,8 +169,9 @@ export default function ProductSlider({ productInfo }) {
               ) : (
                 <img
                   loading="lazy"
-                  src={safeMedia[currentImageIndex]}
-                  alt="Product"
+                  src={safeMedia[currentImageIndex].url}
+                  alt={safeMedia[currentImageIndex].alt || 'Product'}
+                  title={safeMedia[currentImageIndex].title || 'Product'}
                   className={styles.mainImage}
                   onClick={handleOpenImageSlider}
                 />
@@ -193,20 +194,21 @@ export default function ProductSlider({ productInfo }) {
                     index === currentImageIndex ? styles.active : ""
                   }`}
                   onClick={() => handleImageChange(index)}>
-                  {isVideo(media) ? (
+                  {isVideo(media.url) ? (
                     <video
                       loading="lazy"
                       muted
                       preload="metadata"
                       className={styles.thumbnailMedia}
                       poster="/images/preview.svg">
-                      <source src={media} type={getVideoType(media)} />
+                      <source src={media.url} type={getVideoType(media.url)} />
                     </video>
                   ) : (
                     <img
                       loading="lazy"
-                      src={media}
-                      alt={`Thumbnail ${index + 1}`}
+                      src={media.url}
+                      alt={media.alt || `Thumbnail ${index + 1}`}
+                      title={media.title || `Thumbnail ${index + 1}`}
                     />
                   )}
                 </div>
@@ -370,7 +372,7 @@ export default function ProductSlider({ productInfo }) {
       <ImageSlider
         isOpen={isImageSliderOpen}
         onClose={handleCloseImageSlider}
-        images={safeMedia}
+        images={safeMedia.map((media) => media.url)}
         initialSlide={currentImageIndex}
       />
     </>
