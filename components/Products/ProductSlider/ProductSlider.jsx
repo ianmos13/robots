@@ -33,7 +33,13 @@ export default function ProductSlider({ productInfo }) {
         ...(productInfo.images2?.length
           ? productInfo.images2
           : productInfo.mainImage2
-          ? [{ url: productInfo.mainImage2.url, alt: 'Основное изображение', title: 'Основное изображение' }]
+          ? [
+              {
+                url: productInfo.mainImage2.url,
+                alt: "Основное изображение",
+                title: "Основное изображение",
+              },
+            ]
           : []),
         ...(productInfo.videos && Array.isArray(productInfo.videos)
           ? productInfo.videos
@@ -170,8 +176,8 @@ export default function ProductSlider({ productInfo }) {
                 <img
                   loading="lazy"
                   src={safeMedia[currentImageIndex].url}
-                  alt={safeMedia[currentImageIndex].alt || 'Product'}
-                  title={safeMedia[currentImageIndex].title || 'Product'}
+                  alt={safeMedia[currentImageIndex].alt || "Product"}
+                  title={safeMedia[currentImageIndex].title || "Product"}
                   className={styles.mainImage}
                   onClick={handleOpenImageSlider}
                 />
@@ -230,46 +236,44 @@ export default function ProductSlider({ productInfo }) {
             </div>
           )}
 
-          {(productInfo.assignment?.length > 0 ||
-            productInfo.armLength ||
-            productInfo.payloadRange) && (
-            <div className={styles.infoContainer}>
-              {productInfo.assignment && productInfo.assignment.length > 0 && (
-                <div className={styles.assignmentContainer}>
-                  <div className={styles.assignmentTitle}>Назначение:</div>
-                  <div className={styles.assignmentItem}>
-                    {productInfo.assignment.map((item, index) => (
-                      <div className={styles.assignment} key={index}>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {productInfo.armLength && (
-                <div className={styles.specContainer}>
-                  <div className={styles.specTitle}>
-                    {isPozicionery ? "Размер:" : "Длина руки (мм):"}
-                  </div>
-                  <div className={styles.specValue}>
-                    {productInfo.armLength}
-                  </div>
-                </div>
-              )}
-
-              {productInfo.payloadRange && (
-                <div className={styles.capabilityContainer}>
-                  <div className={styles.capabilityTitle}>
-                    Грузоподъемность (кг):
-                  </div>
-                  <div className={styles.capabilityValue}>
-                    {productInfo.payloadRange}
-                  </div>
-                </div>
-              )}
+          <div className={styles.infoContainer}>
+          {productInfo.assignment &&
+  productInfo.assignment.filter(Boolean).length > 0 && (
+    <div className={styles.assignmentContainer}>
+      <div className={styles.assignmentTitle}>Назначение:</div>
+      <div className={styles.assignmentItem}>
+        {productInfo.assignment
+          .filter(Boolean)
+          .map((item, index) => (
+            <div className={styles.assignment} key={index}>
+              {item}
             </div>
-          )}
+          ))}
+      </div>
+    </div>
+  )}
+
+
+            {productInfo.armLength && (
+              <div className={styles.specContainer}>
+                <div className={styles.specTitle}>
+                  {isPozicionery ? "Размер:" : "Длина руки (мм):"}
+                </div>
+                <div className={styles.specValue}>{productInfo.armLength}</div>
+              </div>
+            )}
+
+            {productInfo.payloadRange && (
+              <div className={styles.capabilityContainer}>
+                <div className={styles.capabilityTitle}>
+                  Грузоподъемность (кг):
+                </div>
+                <div className={styles.capabilityValue}>
+                  {productInfo.payloadRange}
+                </div>
+              </div>
+            )}
+          </div>
 
           <div className={styles.btnContainer}>
             <button className={styles.ctaButton} onClick={handleOpenModal}>
