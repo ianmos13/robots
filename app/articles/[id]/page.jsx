@@ -1,33 +1,71 @@
-"use client";
-import Article from "@/components/Article/Article";
-import { useParams } from "next/navigation";
-import Breadcrumbs from "@/components/UI/Breadcrumbs/Breadcrumbs";
-import React from "react";
-import ContactUs from "@/components/UI/ContactUs/ContactUs";
-import useNews from "@/hooks/useNews";
+import { notFound } from "next/navigation";
+import SingleNewsPageClient from "./SingleNewsPageClient";
 
-export default function page() {
-  const { news, error, loading } = useNews();
-  const { id } = useParams();
-   const newsSlug = id; 
-   const singleNewsData = news?.find((news) => news.slug === newsSlug);
-   const singleNewsTitle = singleNewsData?.title;
-  const breadcrumbItems = [
-    { label: "Главная", link: "/" },
-    { label: "Новости", link: "/articles" },
-    { label: singleNewsTitle, link: "" },
-  ];
-  const backButtonOptions = {
-    link: "/articles",
-    title: {
-        small: "К\u00A0новостям",
-        large: "Вернуться\u00A0к\u00A0новостям"
-    }}
-  return (
-   <>
-     <Breadcrumbs items={breadcrumbItems} />
-     <Article data={singleNewsData} backButtonOptions={backButtonOptions}  />
-     <ContactUs />
-   </>
-  );
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL_API;
+const API_AUTH = process.env.NEXT_PUBLIC_API_AUTH;
+
+async function fetchData(endpoint, method = "GET") {
+  const response = await fetch(`${BASE_URL}/${endpoint}`, {
+    method,
+    headers: {
+      Auth: API_AUTH,
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || "Error fetching data");
+  }
+  return response.json();
+}
+
+
+async function getAllNews() {
+  const data = await fetchData("news", "GET"); 
+  return data?.data || [];
+}
+
+
+async function getNewsBySlug(slug) {
+  const allNews = await getAllNews();
+  return allNews.find((item) => item.slug === slug);
+}
+
+
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  let singleNewsData;
+
+  try {
+    singleNewsData = await getNewsBySlug(id);
+  } catch (error) {
+    console.error("Ошибка получения данных новости:", error);
+  }
+
+  if (!singleNewsData) {
+    return {
+      title: "Новость не найдена",
+      description: "",
+    };
+  }
+
+  return {
+    title: singleNewsData.meta_title || singleNewsData.title,
+    description: singleNewsData.meta_description || "",
+    keywords: singleNewsData.meta_keywords,
+  };
+}
+
+
+export default async function Page({ params }) {
+  const { id } = params;
+  const singleNewsData = await getNewsBySlug(id);
+
+  if (!singleNewsData) {
+    notFound(); 
+  }
+
+
+  return <SingleNewsPageClient singleNewsData={singleNewsData} />;
 }
