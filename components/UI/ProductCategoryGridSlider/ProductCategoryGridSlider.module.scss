@@ -44,18 +44,26 @@
 	.footer {
 		display: flex;
 		justify-content: flex-end;
-		margin-top: -22px;
+		//margin-top: -22px;
+		margin-top: -55px;
 		position: relative;
 		z-index: 10;
 		@media (max-width: 1600px) {
-			margin-top: -74px;
+			//margin-top: -74px;
+			margin-top: -120px;
+		}
+		@media (max-width: 1100px) {
+			//margin-top: -74px;
+			margin-top: -95px;
 		}
 		@media (max-width: 1024px) {
 			justify-content: flex-start;
-			margin-top: -64px;
+			//margin-top: -64px;
+			margin-top: -90px;
 		}
 		@media (max-width: 640px) {
-			margin-top: 24px;
+			//margin-top: 24px;
+			margin-top: 0;
 			justify-content: flex-start;
 		}
 		.prevButton,

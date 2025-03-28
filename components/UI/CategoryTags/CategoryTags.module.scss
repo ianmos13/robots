@@ -104,10 +104,8 @@
 }
 
 .indexContainer {
-    max-width: 1270px;
-    @media (max-width: 1600px) {
-        max-width: 845px;
-    }
+    max-width: unset;
+    margin-bottom: unset;
     @media (max-width: 1024px) {
         display: none;
     }
