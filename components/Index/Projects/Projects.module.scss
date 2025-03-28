@@ -137,6 +137,9 @@
       max-width: 285px;
       width: 285px;
       margin: 72px auto 0 auto;
+      @media (max-width: 1600px) {
+        margin: 0 auto;
+      }
       @media (max-width: 640px) {
         max-width: unset;
         width: 100%;

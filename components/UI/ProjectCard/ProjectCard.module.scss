@@ -63,6 +63,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        max-width: 85%;
         @each $property, $value in $b24-medium {
             #{$property}: #{$value};
         }
@@ -75,6 +76,7 @@
             margin-bottom: 72px;
         }
         @media (max-width: 640px) {
+            max-width: unset;
             font-size: 16px;
             line-height: 20.8px;
             margin-bottom: 0;
